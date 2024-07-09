@@ -100,13 +100,26 @@ The word "*kanban*" roughly means board in Japanese (signboard or billboard, act
 
 ::: notes
 Kanban is a general technique, you can use it for household chores, for job applications (e.g., backlog, application sent, interview, done, declined).
+A whiteboard can be used or there a many different software for the task.
+Some general examples are:
+- Trello (https://trello.com/),
+   - free and paid plans
+- Taiga (https://taiga.io/).
+   - open source, self-hosted, cloud based free and paid plans
+- WeKan (https://wekan.github.io/)
+   - open source, self-hosted
 :::
 
 ## kanban in software development
 
 ![](figures/kanban.drawio.svg)
 
-# scrumban
+::: notes
+Kanban is widespread in software development.
+The major code hosting solutions (GitHub, GitLab, Bitbucket, Gitea) all have some board functionalities.
+:::
+
+# SCUM + kanban = scrumban
 
 - SCRUM and kanban can coexist
 
