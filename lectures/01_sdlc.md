@@ -90,9 +90,21 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 ::::::::::::
 
 ::: notes
-The word "*kanban*" roughly means board in Japanese.
-Kanban is a general technique, you can use it for household chores, for job applications (e.g., backlog, application sent, interview, done, declined)
+The word "*kanban*" roughly means board in Japanese (signboard or billboard, actually).
+
 :::
+
+## kanban for job hunting
+
+![](figures/job_hunting_kanban.drawio.svg)
+
+::: notes
+Kanban is a general technique, you can use it for household chores, for job applications (e.g., backlog, application sent, interview, done, declined).
+:::
+
+## kanban in software development
+
+![](figures/kanban.drawio.svg)
 
 # scrumban
 
