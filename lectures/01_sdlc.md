@@ -28,7 +28,7 @@ title: Software Development Life Cycle
 - Clients may not know exactly what their requirements are before they see working software and so change their requirements, leading to redesign, redevelopment, and retesting, and increased costs. [@parnas1986rational]
 In most cases the people who comission the building of the a software system do not know exactly what they want and are unable to tell us all they know.
 
-# modified waterfall model
+## modified waterfall model
 
 ![based on Figure 4. of [@royce1970managing]](figures/waterfall_modified.svg){width=750}
 
@@ -56,11 +56,11 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 >
 > <cite>[forrás](https://www.agilealliance.org/agile101/the-agile-manifesto/)</cite>
 
-# subway map to agile practices
+## subway map to agile practices
 
 ![](borrowed/subway_map_to_agile_practices.svg)
 
-# agile vs. waterfall
+## agile vs. waterfall
 
 | agile       | waterfall  |
 |:-----------:|:----------:|
@@ -75,13 +75,13 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 
 :::::::::::: {.columns}
 ::::::::: {.column width="45%"}
-![simple kanban board by [Jeff Lasovski](https://commons.wikimedia.org/wiki/File:Simple-kanban-board-.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)](figures/simple_kanban_board.jpg){width=700}
+![simple kanban board<br>by [Jeff Lasovski](https://commons.wikimedia.org/wiki/File:Simple-kanban-board-.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)](figures/simple_kanban_board.jpg){width=700}
 :::::::::
 ::::::::: {.column width="55%"}
 - notes move from left to right
 - order denote priority
-- allways process the left- and topmost one to finish it ASAP
-- tool-dependant but a note can indicate:
+- allways process the right- and topmost one to finish it ASAP
+- tool-dependent but a note can indicate:
     - who's responsible
     - how much effort to do it
     - etc.
@@ -91,7 +91,7 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 
 ::: notes
 The word "*kanban*" roughly means board in Japanese.
-
+Kanban is a general technique, you can use it for household chores, for job applications (e.g., backlog, application sent, interview, done, declined)
 :::
 
 # scrumban
