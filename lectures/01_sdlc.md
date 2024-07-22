@@ -49,25 +49,166 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 >
 > - **Individuals and interactions** over processes and tools
 > - **Working software** over comprehensive documentation
-> - **Customer collaboration over** contract negotiation
-> - **Responding to change over** following a plan
+> - **Customer collaboration** over contract negotiation
+> - **Responding to change** over following a plan
 >
 > That is, while there is value in the items on the right, we value the items on the left more.
+
+[agilemanifesto.org](https://agilemanifesto.org/)
+
+. . .
+
+[Principles behind the Agile Manifesto](https://agilemanifesto.org/principles.html)
+
+::: notes
+- The agile does not mean a specific methodology, so SCRUM is not the only agile approach (the course will cover SCRUM later), and agile is not the only approach.
+<!-- - Processes and protocols are established with good reason, but they cannot be more important than people. -->
+- The documentation is still important, the course will cover later what and how should be documented, but the point is no matter how much documentation you have, if the software does not work as expected.
+- In the business world, contracts are important, especially contract violations and the penalty clauses, but customers should be treated as a partner, and collaborative communication should come first, before giving more jobs to the lawyers.
+- Planing is import (even having a plan B is often advisable), but the world is in constant change, so flexibility is required. Compared to the waterfall, which requires you to follow the initial plan, agile allows changes during the development. Remember, programming is more like gardening.
+
+There are also twelve principles behind the Agile Manifesto, that provides some more detailed interpretation for the values. 
+:::
+
+## 1. Principle behind the Agile Manifesto
+
+> Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+
+. . .
+
+> Release early. Release often. And listen to your customers.
 >
-> <cite>[forrás](https://www.agilealliance.org/agile101/the-agile-manifesto/)</cite>
+> Eric S. Raymond: The Cathedral and the Bazaar (1997)
 
-## subway map to agile practices
+::: notes
+The "release early, release often mantra" is quite widespread, but I rarely see the "listen to your customers" part.
+One of the main principle of agile is to collaborate with the customer, who should be involved into the development. Show them the software as soon as possible and ask for feedback.
+Feedback means there will be change requests.
+:::
 
-![](borrowed/subway_map_to_agile_practices.svg)
+## 2. Principle behind the Agile Manifesto
+
+> Welcome changing requirements, even late in development. <span class=".fragment">Agile processes harness change for the customer's competitive advantage.<span>
+>
+> <cite>[Principles behind the Agile Manifesto](https://agilemanifesto.org/principles.html)</cite>
+
+::: notes
+A feedback is something that represent value, so change requests should be welcomed.
+Satisfing the customer is good for the business.
+:::
+
+## 3. Principle behind the Agile Manifesto
+
+> Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+
+::: notes
+This is a significant seep-up compared to the waterfall, where it could even take years while the customer sees something in action.
+And if you consider this as a users' perspective, small changes are easier to adapt, than drastic restructurings which are comparable to learn a completely new software.
+:::
+
+## 4. Principle behind the Agile Manifesto
+
+> Business people and developers must work together daily throughout the project.
+
+::: notes
+Polarization is not good.
+There should not be sides, business people and developers must not consider the other foes.
+They work together for the same goal.
+:::
+
+## 5. Principle behind the Agile Manifesto
+
+> Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
+
+## 6. Principle behind the Agile Manifesto
+
+> The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
+
+::: notes
+This one is interesting. While it is not untrue. I consider it outdated from some aspect.
+TODO
+:::
+
+## 7. Principle behind the Agile Manifesto
+
+> Working software is the primary measure of progress.
+
+::: notes
+:::
+
+## 8. Principle behind the Agile Manifesto
+
+> Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+
+::: notes
+:::
+
+## 9. Principle behind the Agile Manifesto
+
+> Continuous attention to technical excellence and good design enhances agility.
+
+::: notes
+:::
+
+## 10. Principle behind the Agile Manifesto
+
+> Simplicity--the art of maximizing the amount of work not done--is essential.
+
+::: notes
+:::
+
+## 11. Principle behind the Agile Manifesto
+
+> The best architectures, requirements, and designs emerge from self-organizing teams.
+
+::: notes
+:::
+
+## 12. Principle behind the Agile Manifesto
+
+> At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
+
+::: notes
+:::
+
+# manifesto for software craftsmanship
+
+::: {.wide-quote}
+> As aspiring Software Craftsmen we are raising the bar of professional software development by practicing it and helping others learn the craft. Through this work we have come to value:
+>
+> - Not only working software, but also **well-crafted software**
+> - Not only responding to change, but also **steadily adding value**
+> - Not only individuals and interactions, but also **a community of professionals**
+> - Not only customer collaboration, but also **productive partnerships**
+>
+> That is, in pursuit of the items on the left we have found the items on the right to be indispensable.
+
+:::
+
+::: notes
+This reads like an answer to the agile manifesto.
+The working software is good, but should well-crafted, which aligns with the ninth agile principle: "Continuous attention to technical excellence and good design enhances agility."
+<!-- Accepting change requests is okay, but the change should improve the software. -->
+:::
+
+<!--## subway map to agile practices
+
+![](borrowed/subway_map_to_agile_practices.svg)-->
 
 ## agile vs. waterfall
 
-| agile       | waterfall  |
-|:-----------:|:----------:|
-| incremental | sequential |
-| phases repeated | phases completed exactly once |
-| flexible    | rigid      |
+| agile                                 | waterfall                              |
+|:-------------------------------------:|:--------------------------------------:|
+| incremental                           | sequential                             |
+| phases repeated                       | phases completed exactly once          |
+| flexible                              | rigid                                  |
 | allows changes during the development | no change once the development started |
+
+## agile vs. waterfall
+
+Can waterfall work? Yes, it can, if the customer exactly knows what they want and can express it in technical terms.
+
+Although usually the customer does not know what they want, so agile usually work better.
 
 # SCRUM
 
