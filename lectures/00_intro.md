@@ -45,7 +45,7 @@ showSlideNumber: "print"
 
 :::::::::
 ::::::::: {.column width="25%"}
-![](figures/program_software_wiki.drawio.svg)
+![](figures/program_software_product.drawio.svg)
 
 :::::::::
 ::::::::::::
