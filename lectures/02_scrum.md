@@ -33,7 +33,7 @@ scrum requires a scrum master to foster an environment where:
 
 :::
 
-![](figures/scrum_sprint.drawio.png){height=300}
+![](figures/scrum_sprint.drawio.svg){height=300}
 
 # Scrum team
 
