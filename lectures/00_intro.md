@@ -52,7 +52,7 @@ showSlideNumber: "print"
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
-There is an metaphor saying that a program is like a recipe.
+There is a metaphor saying that a program is like a recipe.
 
 The computer follows the instructions of a program as the cook follows the instruction in a recipe.
 
@@ -93,7 +93,7 @@ It is easy to read this code snippet and figure out what it does, but constructi
 | program      | software     |
 |:------------:|:------------:|
 | less complex | more complex |
-| 
+
 :::::::::
 ::::::::: {.column width="30%"}
 ![](figures/program_software.drawio.svg)
@@ -121,7 +121,7 @@ Wikipedia says: In computing, a script is a relatively short and simple set of i
 - after the construction is finished, the contractor leaves the site
 :::::::::
 ::::::::: {.column width="35%"}
-![<span class="text-smaller">[Wikimedia](https://commons.wikimedia.org/wiki/File:Sample_Floorplan.jpg) | public domain </span>](figures/sample_floorplan.jpg)
+![[Wikimedia](https://commons.wikimedia.org/wiki/File:Sample_Floorplan.jpg) | public domain](figures/sample_floorplan.jpg)
 
 :::::::::
 ::::::::::::
