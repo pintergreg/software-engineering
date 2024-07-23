@@ -14,14 +14,14 @@ available from [scrumguides.org](https://scrumguides.org/) under [CC BY-SA 4.0](
 
 or download directly [from here](../resources/2020-Scrum-Guide-US.pdf)
 
-# what is Scrum?
+# what is scrum?
 
 Scrum is a lightweight framework that helps people, teams and organizations generate value through adaptive solutions for complex problems.
 
 Scrum employs an iterative, incremental approach to optimize predictability and to control risk.
 Scrum engages groups of people who collectively have all the skills and expertise to do the work and share or acquire such skills as needed.
 
-## Scrum in a nutshell
+## scrum in a nutshell
 
 ::: {.text-smaller}
 scrum requires a scrum master to foster an environment where:
@@ -35,7 +35,7 @@ scrum requires a scrum master to foster an environment where:
 
 ![](figures/scrum_sprint.drawio.svg){height=300}
 
-# Scrum team
+# scrum team
 
 - the Scrum team consists of
     - one scrum master, 
@@ -43,7 +43,7 @@ scrum requires a scrum master to foster an environment where:
     - and developers 
 - there are no sub-teams or hierarchies
 
-## size of a Scrum team
+## size of a scrum team
 
 - small enough to remain nimble and large enough to complete work in a sprint
     - typically 10 or fewer people
@@ -53,7 +53,7 @@ scrum requires a scrum master to foster an environment where:
     - therefore, they should share the same product goal, product backlog, and product owner
 
 
-## SCRUM teams are cross-functional
+## scrum teams are cross-functional
 
 ![](figures/cross_functional.drawio.svg){width=500}
 
@@ -61,6 +61,15 @@ scrum requires a scrum master to foster an environment where:
 - they are also self-managing, meaning they internally decide who does what, when, and how
 
 ## developers
+
+- committed to creating any aspect of a usable increment each sprint
+- the specific skills needed by the developers are often broad and will vary with the domain of work
+- developers are accountable for
+    - creating a plan for the sprint, the sprint backlog,
+    - instilling quality by adhering to a definition of done,
+    - adapting their plan each day toward the sprint goal, and
+    - holding each other accountable as professionals
+
 
 ## definition of done
 
@@ -85,9 +94,46 @@ course definition of done:
 
 ## product owner
 
-## Scrum master
+- accountable for maximizing the value of the product resulting from the work of the scrum team
+- also accountable for effective product backlog management, which includes:
+    - developing and explicitly communicating the product goal,
+    - creating and clearly communicating product backlog items,
+    - ordering product backlog items, and
+    - ensuring that the product backlog is transparent, visible and understood
 
+The product owner may do the above work or may delegate the responsibility to others. Regardless, the product owner remains accountable.
 
+## scrum master
+
+- accountable for 
+    - establishing scrum as defined in the Scrum Guide
+        - by helping everyone understand the theory and practice, both within the scrum team and the organization
+    - for the scrum team's effectiveness
+        - by enabling the scrum team to improve its practices, within the scrum framework
+    
+
+## scrum master serves the scrum team
+
+- coaching the team members in self-management and cross-functionality,
+- helping the scrum team focus on creating high-value increments that meet the definition of done,
+- causing the removal of impediments to the scrum team's progress, and
+- ensuring that all scrum events take place and are positive, productive, and kept within the timebox
+
+## scrum master serves the product owner
+
+- helping find techniques for effective product goal definition and product backlog management,
+- helping the scrum team understand the need for clear and concise product backlog items,
+- helping establish empirical product planning for a complex environment, and
+- facilitating stakeholder collaboration as requested or needed
+
+## scrum master serves the organization
+
+- leading, training, and coaching the organization in its scrum adoption,
+- planning and advising scrum implementations within the organization,
+- helping employees and stakeholders understand and enact an empirical approach for complex work, and
+- removing barriers between stakeholders and scrum teams
+
+# scrum events
 
 # team size
 
