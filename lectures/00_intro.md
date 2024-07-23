@@ -16,10 +16,10 @@ showSlideNumber: "print"
 | week | date       | lecture                          | practical class |
 |-----:|:----------:|:--------------------------------:|:---------------:|
 |    1 | 2024-09-10 | software development life cycles | SCRUM           |
-|    2 | 2024-09-17 | software architecture            |
-|    3 | 2024-09-24 | 
-|    4 | 2024-10-01 |
-|    5 | 2024-10-08 |
+|    2 | 2024-09-17 | software architecture            |                 |
+|    3 | 2024-09-24 | requirements analysis            | user story map  |
+|    4 | 2024-10-01 | UML, C4                          | UML in practice |
+|    5 | 2024-10-08 | 
 |    6 | 2024-10-15 |
 |    7 | 2024-10-22 | 
 |    9 | 2024-11-05 | 
@@ -89,6 +89,30 @@ It is easy to read this code snippet and figure out what it does, but constructi
 :::
 
 
+# program vs. software -- code aspect
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+| program      | software     |
+|:------------:|:------------:|
+| less complex | more complex |
+| 
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/program_software.drawio.svg)
+
+:::::::::
+::::::::::::
+
+::: notes
+In contrast of the previous definition and from the code aspect, I like to think of computer program as a more general expression and consider the software as a special program, where the main difference is the life cycle and the crafting process of the program.
+In this sense, software is usually more complex, developed by a team as a product for people who are not often not proficient in programming and only users of the program. In this case the user interface and the documentation should be prepared for not proper use.
+
+Wikipedia says: In computing, a script is a relatively short and simple set of instructions that typically automate an otherwise manual process [@enwiki:1234532469].
+
+:::
+
+
 # software development is like building a house
 
 :::::::::::: {.columns}
@@ -125,7 +149,6 @@ a software does not have to obey the laws of physics
 ::::::::: {.column width="55%"}
 - a garden needs to be taken care of constantly
 - without attention the garden will decay
-<!--     - and the code rots -->
 - external factors like weather, pests, weeds can influence the garden
 :::::::::
 ::::::::: {.column width="45%"}
