@@ -1,0 +1,17 @@
+[book]
+authors = ["Gergő Pintér"]
+multilingual = false
+src = "src"
+title = "handout"
+description = "software engineering"
+
+[rust]
+edition = "2021"
+
+[output.html]
+mathjax-support = true
+
+[output.html.fold]
+enable = true
+level = 1
+
