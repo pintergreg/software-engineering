@@ -77,6 +77,7 @@ scrum requires a scrum master to foster an environment where:
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
 - checklist
+- defines steps to complete the task
 - helps to track the progress of a task
      ![](figures/gitea_dod.png)
 - a task is done, if every element of the checklist is done
@@ -85,7 +86,7 @@ scrum requires a scrum master to foster an environment where:
 ::::::::: {.column width="50%"}
 course definition of done:
 
-- [x] attended the classes
+- [x] attended all classes
 - [x] homeworks completed
 - [x] midterm exam passed
 - [x] project work completed
@@ -111,7 +112,10 @@ The product owner may do the above work or may delegate the responsibility to ot
         - by helping everyone understand the theory and practice, both within the scrum team and the organization
     - for the scrum team's effectiveness
         - by enabling the scrum team to improve its practices, within the scrum framework
-    
+
+::: notes
+You can watch a parody about a the scrum master role: [Scrum Master - Funny movie about The Power of Scrum](https://www.youtube.com/watch?v=P6v-I9VvTq4) (5m 23s)
+:::
 
 ## scrum master serves the scrum team
 
@@ -133,6 +137,7 @@ The product owner may do the above work or may delegate the responsibility to ot
 - planning and advising scrum implementations within the organization,
 - helping employees and stakeholders understand and enact an empirical approach for complex work, and
 - removing barriers between stakeholders and scrum teams
+
 
 # scrum events
 
