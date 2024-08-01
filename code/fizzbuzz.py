@@ -1,18 +1,20 @@
-def fizzbuzz(i: int) -> None:
+def fizzbuzz(i: int) -> str:
+    result = ""
     if i % 15 == 0:
-        print("" + "FizzBuzz")
+        result += "FizzBuzz"
     elif i % 3 == 0:
-        print("" + "Fizz")
+        result += "Fizz"
     elif i % 5 == 0:
-        print("" + "Buzz")
+        result += "Buzz"
     else:
-        print(i)
+        result = str(i)
+    return result
 
 
-def fizzbuzz_range(n: int = 100) -> None:
+def fizzbuzz_loop(n: int = 100) -> None:
     for i in range(1, n + 1):
-        fizzbuzz(i)
+        print(fizzbuzz(i))
 
 
 if __name__ == "__main__":
-    fizzbuzz()
+    fizzbuzz_loop()
