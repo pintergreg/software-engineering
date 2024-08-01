@@ -1,2 +1,5 @@
 untracked/*
 ref/*
+
+# preprocessed source for the mdbook compilation
+src/*
