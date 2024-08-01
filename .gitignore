@@ -3,3 +3,5 @@ ref/*
 
 # preprocessed source for the mdbook compilation
 src/*
+# compiled mdbook
+book/*
