@@ -2,10 +2,8 @@ require 'optparse'
 require 'yaml'
 
 options = YAML.load_file('build_config.yaml')
-puts options
 
 #options[:reveal_url] = "http://127.0.0.1/reveal.js-5.1.0/"
-# options[:self_contained] = true
 
 OptionParser.new do |parser|
   parser.banner = 'Usage: build.rb [options]'
@@ -30,15 +28,24 @@ OptionParser.new do |parser|
   end
 end.parse!
 
-p options
 if options[:markdown] == "README"
   exit(0)
 end
 
-if options[:self_contained]
-  `pandoc -f markdown+tex_math_double_backslash -t revealjs #{options[:markdown]}.md --standalone --slide-level 2 --css #{options[:assets]}/custom.css -o #{options[:markdown]}_embedded.html --citeproc --csl #{options[:cls]} --bibliography #{options[:bibliography]} --bibliography wikipedia.bib --mathml --embed-resources #{options[:reveal_url]}`
-else
-  `pandoc -f markdown+tex_math_double_backslash -t revealjs #{options[:markdown]}.md --standalone --slide-level 2 --css #{options[:assets]}/custom.css -o #{options[:markdown]}.html --citeproc --csl #{options["csl"]} --bibliography #{options["bibliography"]} --bibliography wikipedia.bib --mathml #{options[:reveal_url]} -H #{options["assets"]}/custom_header.html -A #{options["assets"]}/custom_after_body.html `#-L #{options[:assets]}/highlight_code.lua`
-  # `pandoc -f markdown+tex_math_double_backslash -t revealjs #{options[:markdown]}.md --standalone --slide-level 2 --css #{options[:assets]}/custom.css -o #{options[:markdown]}_print.html --citeproc --csl #{options[:cls]} --bibliography #{options[:bibliography]} --bibliography wikipedia.bib --bibliography wikipedia.bib --mathml #{options[:reveal_url]}`
+arguments = "-f markdown+tex_math_double_backslash -t revealjs"
+arguments += " #{options[:markdown]}.md -o #{options[:markdown]}.html"
+arguments += " --standalone"
+arguments += " --slide-level 2"
+arguments += " --css #{options["assets"]}/custom.css"
+if options["citeproc"]
+  arguments += " --citeproc --csl #{options["csl"]}"
 end
- # -L ../assets/revealjs-codeblock.lua
+if options["bibliography"]
+  arguments += " --bibliography #{options["bibliography"]} --bibliography wikipedia.bib"
+end
+if options["mathml"]
+  arguments += " --mathml #{options[:reveal_url]}"
+end
+arguments += " -H #{options["assets"]}/custom_header.html -A #{options["assets"]}/custom_after_body.html"
+
+`pandoc #{arguments}`
