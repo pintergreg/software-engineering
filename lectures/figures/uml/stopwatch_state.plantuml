@@ -1,0 +1,15 @@
+@startuml
+scale 4
+skin rose
+
+[*] --> idle
+'idle: waits for user
+idle --> [*]
+
+idle -> started
+started --> stopped
+stopped --> [*]
+
+stopped --> started
+stopped -> idle
+@enduml
