@@ -28,8 +28,10 @@ OptionParser.new do |parser|
   end
 end.parse!
 
-if options[:markdown] == "README"
-  exit(0)
+options["exclude"].each do |filename|
+  if options[:markdown] == filename
+    exit(0)
+  end
 end
 
 arguments = "-f markdown+tex_math_double_backslash -t revealjs"
