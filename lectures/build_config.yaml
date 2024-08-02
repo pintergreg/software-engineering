@@ -1,5 +1,7 @@
 self_contained: false
-bibliography: "references.bib"
+bibliography:
+    - "references.bib"
+    - "wikipedia.bib"
 citeproc: true
 csl: "../assets/ieee.csl"
 mathml: true

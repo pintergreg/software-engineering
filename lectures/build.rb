@@ -40,8 +40,8 @@ arguments += " --css #{options["assets"]}/custom.css"
 if options["citeproc"]
   arguments += " --citeproc --csl #{options["csl"]}"
 end
-if options["bibliography"]
-  arguments += " --bibliography #{options["bibliography"]} --bibliography wikipedia.bib"
+options["bibliography"].each do |bibfile|
+  arguments += " --bibliography #{bibfile}"
 end
 if options["mathml"]
   arguments += " --mathml #{options[:reveal_url]}"
