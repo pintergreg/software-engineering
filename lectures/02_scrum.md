@@ -141,6 +141,46 @@ You can watch a parody about a the scrum master role: [Scrum Master - Funny movi
 
 # scrum events
 
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+- sprint
+- sprint planning
+- daily scrum
+- sprint review
+- sprint retrospective
+
+:::::::::
+::::::::: {.column width="60%"}
+
+![](figures/scrum_events.drawio.svg)
+:::::::::
+::::::::::::
+
+::: notes
+Besides people there are events in scrum.
+:::
+
+# sprint
+
+> Sprints are the heartbeat of Scrum, where ideas are turned into value.
+
+- fixed length events (maximum one month) to create consistency
+- a new sprint starts immediately after the end of the previous
+
+## during the sprint
+
+- no changes are made that would endanger the sprint goal,
+- quality does not decrease,
+- the Product Backlog is refined as needed, and
+- scope may be clarified and renegotiated with the product owner as more is learned
+
+##
+
+- a sprint could be cancelled if the sprint goal becomes obsolete
+- only the Product Owner has the authority to cancel the sprint
+
+# sprint planning
+
 # team size
 
 :::::::::::: {.columns}
