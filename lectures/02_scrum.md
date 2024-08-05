@@ -174,12 +174,241 @@ Besides people there are events in scrum.
 - the Product Backlog is refined as needed, and
 - scope may be clarified and renegotiated with the product owner as more is learned
 
-##
+::: notes
+:::
 
+## about sprints
+
+- in the case of a long spring
+    - the sprint goal may become invalid
+    - complexity may rise, and 
+    - risk may increase
+- each sprint may be considered a short project
 - a sprint could be cancelled if the sprint goal becomes obsolete
-- only the Product Owner has the authority to cancel the sprint
+- only the product owner has the authority to cancel the sprint
+
+
+## tracking progress - burndown chart
+
+> burndown chart is a graphical representation of work left to do versus time [@enwiki:1219224248]
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index="1"}
+![](figures/burndownchart_ideal.svg){width=500}
+
+:::
+::: {.fragment .fade-in data-fragment-index="1"}
+![](figures/burndownchart.svg){width=500}
+
+:::
+::::::
+:::::::::
+::::::::: {.column width="50%" .column-align-left}
+::: {}
+- two week sprint
+- 26 tasks
+- ideal work line (green)
+:::
+::: {.fragment .fade-in data-fragment-index="1"}
+- actual work line (red)
+    - not realistic
+- finished tasks per day (blue bars)
+:::
+:::::::::
+::::::::::::
+
+::: notes
+Various practices exist to forecast progress, like burn-downs, burn-ups, or cumulative flows.
+
+Let's assume a 2-week sprint with 26 tasks.
+The burndown chart shows the work left to do compared to the time (days of the sprint).
+
+Often used in agile software development methodologies such as Scrum.
+However, burndown charts can be applied to any project with measurable progress over time [@enwiki:1219224248]. 
+
+Remaining work can be represented in either the number of tasks or the amount of time required to finish the tasks.
+The ideal work line often assumes a linear progress, which is not realistic, as tasks are often not finished at the beginning of the sprint.
+Partly because planning is necessary to solve tasks, partly because it may be required to learn a new technology to complete a task. 
+
+<!-- The ideal work line can give an estimation actual work line may -->
+
+Read more about burndown chart at [Feel The Burn, Getting the Most out of Burn Charts](https://idiacomputing.com/pub/BetterSoftware-BurnCharts.pdf) by George Dinwiddie (PDF, 6 pages).
+:::
 
 # sprint planning
+
+- sprint planning initiates the sprint
+- collaborative work of the entire scrum team 
+- the product owner ensures that attendees are prepared to discuss the most important product backlog items and how they map to the product goal
+- the scrum team may invite other people to provide advice
+- sprint planning lasts a maximum of eight hours for a one-month sprint
+    - for shorter sprints the event is shorter
+
+## topics of sprint planning - why is this sprint valuable?
+
+- the product owner proposes how the product could increase its value and utility in the current sprint
+- the whole scrum team then collaborates to define a sprint goal that communicates why the sprint is valuable to stakeholders
+- the sprint goal must be finalized prior to the end of sprint planning
+
+## topics of sprint planning - what can be done this sprint?
+
+- in agreement with the product owner, the developers select items from the product backlog to include in the current sprint agenda
+- the scrum team may refine these items during this process
+<!--     - which increases understanding and confidence -->
+- not easy to select how much can be completed within a sprint
+- the more the developers know about
+    - their past performance (e.g., burndown charts),
+    - their upcoming capacity (e.g., vacation, holidays), and
+    - the definition of done,
+    - the more confident they will be in their sprint forecasts
+
+## topics of sprint planning - wow will the chosen work get done?
+
+- for each selected item, the developers plan the work necessary to create an increment that meets the DoD
+- often done by decomposing product backlog items into smaller work items of one day or less
+    - tasks completable in 1-4 hours may be preferred
+- how this is done is up to the developers
+    - no one else tells them how to turn product backlog items into increments
+
+## sprint planning - summary
+
+1. select the sprint goal
+2. select product backlog items to achieve the sprint goal
+3. plan how they shall be implemented
+
+> The sprint goal, the product backlog items selected for the sprint, plus the plan for delivering them are together referred to as the sprint backlog.
+
+
+# daily scrum
+
+- the purpose of the daily scrum is to inspect progress toward the sprint goal and adapt the sprint backlog as necessary, and discussing the upcoming planned work
+- the daily scrum is a **15-minute** event for the developers
+- to reduce complexity, it is held at the **same time and place** every working day of the sprint
+- if the product owner or scrum master are actively working on items in the sprint backlog, they participate as developers
+
+## daily stand-up
+
+- the developers can select whatever structure and techniques they want
+- also called daily stand-up, because they stand up from the desks and go to a meeting place
+    - as it is limited to 15 minute, no need to book a meeting room; 
+<!-- this creates focus and improves self-management -->
+- daily scrums improve communications, identify impediments, promote quick decision-making, and consequently eliminate the need for other meetings
+
+::: notes
+Daily scrum can eliminate the need for unnecessary meetings, where the whole team has to attend.
+However, daily stand-up is a perfect occasion to arrange a one-to-one meeting with an other developer to solve an issue.
+:::
+
+
+## three questions
+
+each team member participating the daily scrum answers three questions:
+
+1. what was done since the last daily scrum?
+2. what will be done till the next daily scrum?
+3. are there any impediments that prevent the work?
+
+## keep daily stand-up short
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+- answer the three question only
+    - do not start finding solutions for the problems
+- the daily scrum is not the only time developers are allowed to discuss the sprint backlog
+- they can meet throughout the day for more detailed discussions
+:::::::::
+::::::::: {.column width="45%" .center-content}
+![by [Sam Lau](https://www.samlau.xyz/about) | used with the author's permission](borrowed/stand_ups.jpg)
+
+:::::::::
+::::::::::::
+
+# sprint review
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+<!-- - the purpose of the sprint review is to inspect the outcome of the sprint and determine future adaptations -->
+- the scrum team presents the their work to key stakeholders
+    - and the progress toward the product goal is discussed
+<!-- - the scrum team and stakeholders review what was accomplished in the sprint -->
+- the attendees collaborate on<br>what to do next
+- the product backlog may also be adjusted to meet new opportunities
+<!--- should not limiting it to a presentation, the working product should be demonstrated and discussed
+- timeboxed to a maximum of four hours for a one-month sprint
+    - for shorter sprints, the event is usually shorter-->
+:::::::::
+::::::::: {.column width="50%"}
+![Thea Schukken | [CC BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)](borrowed/sprint_review.png)
+
+:::::::::
+::::::::::::
+    
+::: notes
+Also known as "demo", when the scrum team demonstrates the sprint goal to the stakeholders.
+:::
+
+# sprint review II
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- should not limiting it to a presentation, the working product should be demonstrated and discussed
+- timeboxed to a maximum of four hours for a one-month sprint
+    - for shorter sprints, the event is usually shorter
+:::::::::
+::::::::: {.column width="50%"}
+![Thea Schukken | [CC BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)](borrowed/sprint_review.png)
+
+:::::::::
+::::::::::::
+    
+::: notes
+Also known as "demo", when the scrum team demonstrates the sprint goal to the stakeholders.
+:::
+
+# sprint retrospective
+
+- he purpose of the sprint retrospective is to plan ways to increase quality and effectiveness
+- the sprint retrospective concludes the sprint
+- it is timeboxed to a maximum of three hours for a one-month sprint 
+    - for shorter sprints, the event is usually shorter
+
+## sprint retrospective II {.remove-heading} 
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- the scrum team inspects how the last sprint went with regards to 
+    - individuals,
+    - interactions,
+    - processes,
+    - tools, and 
+    - their definition of done
+:::::::::
+::::::::: {.column width="50%"}
+- the scrum team discusses 
+    - what went well during the sprint,
+    - what problems it encountered, and 
+    - how those problems were (or were not) solved
+:::::::::
+::::::::::::
+
+## start, stop, continue, more, less
+
+![](figures/retro.drawio.svg){width=600}
+
+::: notes
+During the sprint retrospective, it could discussed what the team should start doing to increase the effectiveness.
+What needs to be stopped because it decreases the effectiveness.
+What was good, but needs to do more, what was not so good, so needs to do less.
+And what is good as is, so the team should keep doing without change.
+
+For example, less online meeting, because it is not so efficient as face-to-face ones. For a given team, for another team, the opposite might be true.
+:::
+
+# team size
+
+
 
 # team size
 
