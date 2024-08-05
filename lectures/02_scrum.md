@@ -349,7 +349,7 @@ each team member participating the daily scrum answers three questions:
 Also known as "demo", when the scrum team demonstrates the sprint goal to the stakeholders.
 :::
 
-# sprint review II
+## sprint review II
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
@@ -406,6 +406,19 @@ And what is good as is, so the team should keep doing without change.
 For example, less online meeting, because it is not so efficient as face-to-face ones. For a given team, for another team, the opposite might be true.
 :::
 
+# scrum artifacts
+
+- scrum artifacts represent work or value 
+- they are designed to maximize transparency of information
+- the product backlog
+    - progress towards the product goal
+- sprint backlog
+    - progress within the sprint goal
+- definition of done
+    - state of the product increment
+
+# product backlog    
+    
 # team size
 
 
