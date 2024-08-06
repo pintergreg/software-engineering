@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "cumulative-flow"
+version = "0.1.0"
+description = "scripts to plot sample cumulative flow diagrams"
+authors = ["pintergreg <pintergreg@gmail.com>"]
+License = "BSD-3-Clause"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+matplotlib = "^3.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
