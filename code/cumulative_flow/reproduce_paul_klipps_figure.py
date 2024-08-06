@@ -11,6 +11,23 @@ def cumulative(x: list[int]) -> list[int]:
     return result
 
 
+def create_half_arrow(
+    startx: float,
+    starty: float,
+    endx: float,
+    endy: float,
+    scale: int = 65,
+    color: str = "#962212",
+) -> mpatches.FancyArrowPatch:
+    return mpatches.FancyArrowPatch(
+        (startx, starty),
+        (endx, endy),
+        arrowstyle="simple",
+        mutation_scale=scale,
+        color=color,
+    )
+
+
 if __name__ == "__main__":
     output = "../../lectures/figures"
 
@@ -37,22 +54,8 @@ if __name__ == "__main__":
         ],
         colors=["#4c70a8", "#87b664", "#e9b257", "#c04a42", "#895e9d"],
     )
-    arrow = mpatches.FancyArrowPatch(
-        (2, 6),
-        (5, 6),
-        arrowstyle="simple",
-        mutation_scale=75,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
-    arrow = mpatches.FancyArrowPatch(
-        (3, 6),
-        (0, 6),
-        arrowstyle="simple",
-        mutation_scale=75,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
+    ax.add_patch(create_half_arrow(2, 6, 5, 6, scale=75))
+    ax.add_patch(create_half_arrow(3, 6, 0, 6, scale=75))
     ax.text(
         2.5,
         6,
@@ -63,22 +66,8 @@ if __name__ == "__main__":
         color="white",
     )
 
-    arrow = mpatches.FancyArrowPatch(
-        (1.5, 3),
-        (3, 3),
-        arrowstyle="simple",
-        mutation_scale=65,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
-    arrow = mpatches.FancyArrowPatch(
-        (2.5, 3),
-        (1, 3),
-        arrowstyle="simple",
-        mutation_scale=65,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
+    ax.add_patch(create_half_arrow(1.5, 3, 3, 3))
+    ax.add_patch(create_half_arrow(2.5, 3, 1, 3))
     ax.text(
         2,
         3,
@@ -89,22 +78,8 @@ if __name__ == "__main__":
         color="white",
     )
 
-    arrow = mpatches.FancyArrowPatch(
-        (4, 9),
-        (4, 12),
-        arrowstyle="simple",
-        mutation_scale=65,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
-    arrow = mpatches.FancyArrowPatch(
-        (4, 10),
-        (4, 8),
-        arrowstyle="simple",
-        mutation_scale=65,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
+    ax.add_patch(create_half_arrow(4, 9, 4, 12))
+    ax.add_patch(create_half_arrow(4, 10, 4, 8))
     ax.text(
         4,
         10,
@@ -116,22 +91,8 @@ if __name__ == "__main__":
         rotation=270,
     )
 
-    arrow = mpatches.FancyArrowPatch(
-        (5, 8),
-        (5, 11),
-        arrowstyle="simple",
-        mutation_scale=65,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
-    arrow = mpatches.FancyArrowPatch(
-        (5, 9),
-        (5, 6),
-        arrowstyle="simple",
-        mutation_scale=65,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
+    ax.add_patch(create_half_arrow(5, 8, 5, 11))
+    ax.add_patch(create_half_arrow(5, 9, 5, 6))
     ax.text(
         5,
         8.5,
@@ -143,22 +104,8 @@ if __name__ == "__main__":
         rotation=270,
     )
 
-    arrow = mpatches.FancyArrowPatch(
-        (6, 10),
-        (6, 14),
-        arrowstyle="simple",
-        mutation_scale=65,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
-    arrow = mpatches.FancyArrowPatch(
-        (6, 11),
-        (6, 8),
-        arrowstyle="simple",
-        mutation_scale=65,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
+    ax.add_patch(create_half_arrow(6, 10, 6, 14))
+    ax.add_patch(create_half_arrow(6, 11, 6, 8))
     ax.text(
         6,
         11,
@@ -170,22 +117,8 @@ if __name__ == "__main__":
         rotation=270,
     )
 
-    arrow = mpatches.FancyArrowPatch(
-        (1, 10),
-        (1, 14),
-        arrowstyle="simple",
-        mutation_scale=65,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
-    arrow = mpatches.FancyArrowPatch(
-        (1, 11),
-        (1, 8),
-        arrowstyle="simple",
-        mutation_scale=65,
-        color="#962212",
-    )
-    ax.add_patch(arrow)
+    ax.add_patch(create_half_arrow(1, 10, 1, 14))
+    ax.add_patch(create_half_arrow(1, 11, 1, 8))
     ax.text(
         1,
         11,
