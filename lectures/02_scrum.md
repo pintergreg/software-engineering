@@ -445,12 +445,26 @@ For example, less online meeting, because it is not so efficient as face-to-face
     - by and for the developers
 - visible, real-time snapshot of the sprint progress
 
-The Sprint Goal is created during the Sprint Planning event and then added to the Sprint Backlog. 
- If the work turns out to be
-different than they expected, they collaborate with the Product Owner to negotiate the scope of the
-Sprint Backlog within the Sprint without affecting the Sprint Goal.
+::: notes
+The sprint goal is created during the sprint planning event and then added to the sprint backlog. 
+If the work turns out to be different than they expected, they collaborate with the product owner to negotiate the scope of the sprint backlog within the sprint without affecting the sprint goal.
+:::
 
 # increment
+
+- an increment is a step toward the product goal 
+- each increment is additive to all prior increments
+    - and verified, ensuring that all increments work together
+- in order to provide value, the increment must be usable
+- multiple increments may be created within a sprint
+- work cannot be considered part of an increment unless it meets the definition of done
+
+::: notes
+Writing some functions that might be useful later does not produce an increment.
+Increment is useful for the customer/user.
+:::
+
+# scrum of scrums
 
 # team size
 
