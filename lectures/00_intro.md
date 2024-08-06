@@ -5,6 +5,9 @@ date: gergo.pinter@uni-corvinus.hu
 lang: en-US
 title-slide-attributes:
     data-background-color: "#181d37"
+    data-background-image: ../assets/by-sa.svg
+    data-background-size: 125px
+    data-background-position: 1.25rem calc(100% - 1.25rem)
 slideNumber: "true"
 showSlideNumber: "print"
 ---
@@ -25,6 +28,8 @@ showSlideNumber: "print"
 |   11 | 2024-11-19 | 
 |   12 | 2024-11-26 | 
 |   13 | 2024-12-03 | 
+
+testing, communication
 
 # materials
 
@@ -165,7 +170,7 @@ Another famous metaphor is the gardening.
 The most important aspect of the gardening is that a garden needs to be taken care of constantly.
 :::
 
-## software development is like gardening II
+## software development is like gardening II {.hide-heading} 
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
