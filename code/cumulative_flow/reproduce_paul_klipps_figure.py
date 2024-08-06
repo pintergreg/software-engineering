@@ -197,4 +197,6 @@ if __name__ == "__main__":
         rotation=270,
     )
     ax.margins(0)
+    ax.set_xlabel("days", fontsize=14)
+    ax.set_ylabel("number of tasks", fontsize=14)
     fig.savefig(f"{output}/cdf.svg", dpi=300, pad_inches=0.1)
