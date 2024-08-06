@@ -41,16 +41,22 @@ scrum requires a scrum master to foster an environment where:
 
 # scrum team
 
-- the Scrum team consists of
+- the scrum team consists of
     - one scrum master, 
     - one product owner, 
     - and developers 
 - there are no sub-teams or hierarchies
 
+::: notes
+These are more roles, not necessarily people.
+The scrum master and the product owner can also be a developer.
+:::
+
 ## size of a scrum team
 
 - small enough to remain nimble and large enough to complete work in a sprint
     - typically 10 or fewer people
+    - 3 to 9 people is optimal
     - smaller teams communicate better and are more productive
 - if a team becomes too large, they should consider reorganizing into multiple cohesive scrum teams
     - each focused on the same product
@@ -191,7 +197,6 @@ You can watch a parody about a the scrum master role: [Scrum Master - Funny movi
 - helping employees and stakeholders understand and enact an empirical approach for complex work, and
 - removing barriers between stakeholders and scrum teams
 
-
 # scrum events
 
 :::::::::::: {.columns}
@@ -232,7 +237,7 @@ Besides people there are events in scrum.
 
 ## about sprints
 
-- in the case of a long spring
+- in the case of a long sprint
     - the sprint goal may become invalid
     - complexity may rise, and 
     - risk may increase
@@ -422,7 +427,7 @@ Also known as "demo", when the scrum team demonstrates the sprint goal to the st
 
 # sprint retrospective
 
-- he purpose of the sprint retrospective is to plan ways to increase quality and effectiveness
+- he purpose of the sprint retrospective is to increase quality and effectiveness
 - the sprint retrospective concludes the sprint
 - it is timeboxed to a maximum of three hours for a one-month sprint 
     - for shorter sprints, the event is usually shorter
