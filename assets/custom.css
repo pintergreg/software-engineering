@@ -145,6 +145,15 @@
     font-size: 1rem;
 }
 
+.mt-8 {
+    margin-top: 8rem;
+}
+.mt-7 {
+    margin-top: 7rem;
+}
+.mt-6 {
+    margin-top: 6rem;
+}
 .mt-5 {
     margin-top: 5rem;
 }
