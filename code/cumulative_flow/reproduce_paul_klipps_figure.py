@@ -196,7 +196,15 @@ if __name__ == "__main__":
         color="white",
         rotation=270,
     )
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(
+        handles[::-1],
+        labels[::-1],
+        ncols=5,
+        loc="lower center",
+        bbox_to_anchor=(0.5, -0.175),
+    )
     ax.margins(0)
     ax.set_xlabel("days", fontsize=14)
     ax.set_ylabel("number of tasks", fontsize=14)
-    fig.savefig(f"{output}/cdf.svg", dpi=300, pad_inches=0.1)
+    fig.savefig(f"{output}/cdf.svg", dpi=300, pad_inches=0.1, bbox_inches="tight")
