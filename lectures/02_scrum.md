@@ -466,6 +466,24 @@ Increment is useful for the customer/user.
 
 # scrum of scrums
 
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- each scrum team delegates an "ambassador" to attend the scrum of scrums meetings
+- meetings are not as frequent as daily scrum
+- synchronizes state of the scrum teams
+- agenda: same 3 questions but regarding a team
+    - plus, issues that (can) affect the other scrum teams
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/scrum_of_scrums.drawio.svg)
+
+:::::::::
+::::::::::::
+
+::: notes
+Also known as meta scrum.
+:::
+
 # team size
 
 
