@@ -393,9 +393,18 @@ Also known as "demo", when the scrum team demonstrates the sprint goal to the st
 :::::::::
 ::::::::::::
 
-## start, stop, continue, more, less
+## retrospective starfish
 
-![](figures/retro.drawio.svg){width=600}
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/retro.drawio.svg)
+
+:::::::::
+::::::::: {.column width="50%"}
+- divide the whiteboard to 5 parts
+- every team member adds sticky notes to the respective parts
+:::::::::
+::::::::::::
 
 ::: notes
 During the sprint retrospective, it could discussed what the team should start doing to increase the effectiveness.
@@ -417,8 +426,32 @@ For example, less online meeting, because it is not so efficient as face-to-face
 - definition of done
     - state of the product increment
 
-# product backlog    
-    
+# product backlog
+
+- ordered list of what is needed to improve the product
+- describes a future state of the product 
+- It is the single source of work undertaken by the Scrum Team.
+- product owner is responsible for its content and prioritization
+
+## product backlog refinement
+
+> product backlog refinement is the act of breaking down and further defining product backlog items into smaller more precise items.
+
+## sprint backlog
+
+- composed of the sprint goal (why),
+- the set of product backlog items selected for the sprint (what),
+- a plan for delivering the increment (how)
+    - by and for the developers
+- visible, real-time snapshot of the sprint progress
+
+The Sprint Goal is created during the Sprint Planning event and then added to the Sprint Backlog. 
+ If the work turns out to be
+different than they expected, they collaborate with the Product Owner to negotiate the scope of the
+Sprint Backlog within the Sprint without affecting the Sprint Goal.
+
+# increment
+
 # team size
 
 
