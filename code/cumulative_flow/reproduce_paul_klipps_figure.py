@@ -13,23 +13,23 @@ def cumulative(x: list[int]) -> list[int]:
 if __name__ == "__main__":
     output = "../../lectures/figures"
 
-    dep = [0, 0, 0, 1, 3, 6, 8, 12, 14]
-    rfa = [0, 0, 1, 2, 2, 1, 2, 1, 0]
-    ite = [0, 1, 2, 2, 2, 2, 2, 1, 0]
-    inp = [1, 2, 2, 2, 1, 2, 1, 0, 0]
-    rts = [5, 5, 5, 4, 4, 2, 1, 0, 0]
+    deployed = [0, 0, 0, 1, 3, 6, 8, 12, 14]
+    ready_for_approval = [0, 0, 1, 2, 2, 1, 2, 1, 0]
+    in_testing = [0, 1, 2, 2, 2, 2, 2, 1, 0]
+    in_progress = [1, 2, 2, 2, 1, 2, 1, 0, 0]
+    ready_to_start = [5, 5, 5, 4, 4, 2, 1, 0, 0]
 
     fig, ax = plt.subplots(figsize=(6, 4), layout="constrained")
     ax.stackplot(
         range(9),
-        dep,
-        rfa,
-        ite,
-        inp,
-        rts,
+        deployed,
+        ready_for_approval,
+        in_testing,
+        in_progress,
+        ready_to_start,
         labels=[
             "deployed",
-            "ready to approval",
+            "ready for approval",
             "in testing",
             "in progress",
             "ready to start",
