@@ -320,7 +320,7 @@ each team member participating the daily scrum answers three questions:
 - they can meet throughout the day for more detailed discussions
 :::::::::
 ::::::::: {.column width="45%" .center-content}
-![by [Sam Lau](https://www.samlau.xyz/about) | used with the author's permission](borrowed/stand_ups.jpg)
+![by [Sam Lau](https://www.samlau.xyz/about) | used with the author's permission](borrowed/how_to_run_short_and_effective_meetings.jpg)
 
 :::::::::
 ::::::::::::
