@@ -25,3 +25,10 @@
 2. [ ] to conclude the sprint
 3. [x] to increase quality and effectiveness
 4. [ ] to identify bad coding practices
+
+### What is the Definition of Done?
+
+- [x] set of criteria that a product increment must meet
+- [ ] a list of risks that must be avoided to complete the sprint
+- [ ] a long text that describes the importance of the product increment
+- [x] a checklist

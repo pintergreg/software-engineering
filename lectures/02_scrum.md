@@ -136,10 +136,9 @@ $\frac{n(n − 1)}{2}$
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
 - checklist
-- defines steps to complete the task
-- helps to track the progress of a task
-     ![](figures/gitea_dod.png)
-- a task is done, if every element of the checklist is done
+- defines steps to complete the sprint goal
+- helps to track the progress of the sprint
+- the sprint is done, if every element of the checklist is done
 
 :::::::::
 ::::::::: {.column width="50%"}
@@ -196,6 +195,21 @@ You can watch a parody about a the scrum master role: [Scrum Master - Funny movi
 - planning and advising scrum implementations within the organization,
 - helping employees and stakeholders understand and enact an empirical approach for complex work, and
 - removing barriers between stakeholders and scrum teams
+
+# quiz {.hide-handout}
+
+Is there a project manager role in scrum?
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index="1"}
+- yes
+- no
+:::
+::: {.fragment .fade-in data-fragment-index="1"}
+- yes
+- [no]{.background-color-lightblue}
+:::
+::::::
 
 # quiz {.hide-handout}
 
