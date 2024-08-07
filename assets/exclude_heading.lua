@@ -1,6 +1,6 @@
 if FORMAT:match 'commonmark' then
     function Header(block)
-        if block.attr.classes:includes('hide-header') then
+        if block.attr.classes:includes('exclude-header') then
             return ""
         end
     end
