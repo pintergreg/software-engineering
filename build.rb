@@ -12,4 +12,10 @@ File.readlines('lectures/SUMMARY.md').each do |line|
 end
 
 FileUtils.rm_r @target if Dir.exist?(@target)
-FileUtils.mkdir_p @target
+FileUtils.mkdir_p "#{@target}/lectures"
+
+
+FileUtils.cp('lectures/SUMMARY.md', "#{@target}/")
+chapters.each do |x|
+  `pandoc #{x} -f markdown -t commonmark -o #{@target}/#{x}`
+end
