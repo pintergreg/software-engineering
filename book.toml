@@ -11,7 +11,7 @@ edition = "2021"
 [output.html]
 mathjax-support = true
 # additional-js = ["quizdown/quizdown.js", "quizdown/quizdown-init.js"]
-# additional-css = ["quizdown/fix.css"]
+additional-css = ["assets/custom-mdbook.css"]
 
 [output.html.fold]
 enable = true
