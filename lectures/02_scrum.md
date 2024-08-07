@@ -82,7 +82,7 @@ $\frac{4(4 − 1)}{2} = 6$
 :::::::::
 ::::::::::::
 
-## communication within a team {.hide-heading}
+## communication within a team {.exclude-header}
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
@@ -196,8 +196,9 @@ You can watch a parody about a the scrum master role: [Scrum Master - Funny movi
 - helping employees and stakeholders understand and enact an empirical approach for complex work, and
 - removing barriers between stakeholders and scrum teams
 
-# quiz {.hide-handout}
+# quiz {.exclude-header}
 
+::::::::::::::: {.exclude}
 Is there a project manager role in scrum?
 
 :::::: {.r-stack}
@@ -210,9 +211,11 @@ Is there a project manager role in scrum?
 - [no]{.background-color-lightblue}
 :::
 ::::::
+:::::::::::::::
 
-# quiz {.hide-handout}
+# quiz {.exclude-header}
 
+::::::::::::::: {.exclude}
 What is the optimal size of a scrum team?
 
 :::::: {.r-stack}
@@ -229,6 +232,7 @@ What is the optimal size of a scrum team?
 - there is no limit, the more the merrier
 :::
 ::::::
+:::::::::::::::
 
 # scrum events
 
@@ -449,7 +453,7 @@ each team member participating the daily scrum answers three questions:
 Also known as "demo", when the scrum team demonstrates the sprint goal to the stakeholders.
 :::
 
-## sprint review II
+## sprint review II {.exclude-header}
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
@@ -474,7 +478,7 @@ Also known as "demo", when the scrum team demonstrates the sprint goal to the st
 - it is timeboxed to a maximum of three hours for a one-month sprint 
     - for shorter sprints, the event is usually shorter
 
-## sprint retrospective II {.hide-heading} 
+## sprint retrospective II {.exclude-header} 
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
@@ -551,7 +555,7 @@ The sprint goal is created during the sprint planning event and then added to th
 If the work turns out to be different than the developers expected, they collaborate with the product owner to negotiate the scope of the sprint backlog within the sprint without affecting the sprint goal.
 :::
 
-## sprint backlog {.hide-heading}
+## sprint backlog {.exclude-header}
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
