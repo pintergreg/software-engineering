@@ -197,6 +197,25 @@ You can watch a parody about a the scrum master role: [Scrum Master - Funny movi
 - helping employees and stakeholders understand and enact an empirical approach for complex work, and
 - removing barriers between stakeholders and scrum teams
 
+# quiz {.hide-handout}
+
+What is the optimal size of a scrum team?
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index="1"}
+- at most 5 people
+- 3 to 9 people
+- 10-20 people
+- there is no limit, the more the merrier
+:::
+::: {.fragment .fade-in data-fragment-index="1"}
+- at most 5 people
+- [3 to 9 people]{.background-color-lightblue}
+- 10-20 people
+- there is no limit, the more the merrier
+:::
+::::::
+
 # scrum events
 
 :::::::::::: {.columns}

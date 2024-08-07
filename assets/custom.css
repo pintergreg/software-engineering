@@ -219,6 +219,9 @@ li.fragment.visible.current-fragment {
     font-family: "GochiHand";
     font-size: 36px;
 }
+.background-color-lightblue {
+    background: #bee4fd !important;
+}
 .text-color-primary {
     color: var(--r-heading-color) !important;
 }
@@ -255,6 +258,9 @@ figcaption {
 }
 .alpha-50 {
     opacity: 0.5;
+}
+.alpha-100 {
+    opacity: 1;
 }
 .left {
     left: 0;
