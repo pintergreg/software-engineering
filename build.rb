@@ -17,5 +17,5 @@ FileUtils.mkdir_p "#{@target}/lectures"
 
 FileUtils.cp('lectures/SUMMARY.md', "#{@target}/")
 chapters.each do |x|
-  `pandoc #{x} -f markdown -t commonmark -o #{@target}/#{x}`
+  `pandoc #{x} -f markdown -t commonmark -o #{@target}/#{x} -L assets/exclude_elements.lua`
 end
