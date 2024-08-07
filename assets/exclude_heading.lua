@@ -3,11 +3,6 @@ if FORMAT:match 'commonmark' then
         if block.attr.classes:includes('hide-header') then
             return ""
         end
-        if block.attr.classes:includes('hide-slide') then
-            --             print(block.content)
-            --             block.content = pandoc.RawInline('markdown', '')
-            return ""
-        end
     end
 
     function Div(div)
