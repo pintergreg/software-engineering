@@ -362,11 +362,20 @@ However, daily stand-up is a perfect occasion to arrange a one-to-one meeting wi
 
 ## three questions
 
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
 each team member participating the daily scrum answers three questions:
 
 1. what was done since the last daily scrum?
 2. what will be done till the next daily scrum?
 3. are there any impediments that prevent the work?
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/question-mark-color.svg){width=150}
+
+:::::::::
+::::::::::::
 
 ## keep daily stand-up short
 
@@ -488,7 +497,7 @@ For example, less online meeting, because it is not so efficient as face-to-face
 
 - ordered list of what is needed to improve the product
 - describes a future state of the product 
-- It is the single source of work undertaken by the Scrum Team.
+<!-- - it is the single source of work undertaken by the scrum team -->
 - product owner is responsible for its content and prioritization
 
 ## product backlog refinement
@@ -503,10 +512,24 @@ For example, less online meeting, because it is not so efficient as face-to-face
     - by and for the developers
 - visible, real-time snapshot of the sprint progress
 
+
 ::: notes
 The sprint goal is created during the sprint planning event and then added to the sprint backlog. 
-If the work turns out to be different than they expected, they collaborate with the product owner to negotiate the scope of the sprint backlog within the sprint without affecting the sprint goal.
+If the work turns out to be different than the developers expected, they collaborate with the product owner to negotiate the scope of the sprint backlog within the sprint without affecting the sprint goal.
 :::
+
+## sprint backlog {.hide-heading}
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- if the work may turn out different than expected
+    - because software development is like gardening
+- then the developers negotiate the scope with the product owner without affecting the sprint goal
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/gardener-watering-with-a-hose.svg)
+:::::::::
+::::::::::::
 
 # increment
 
