@@ -332,6 +332,17 @@ Partly because planning is necessary to solve tasks, partly because it may be re
 Read more about burndown chart at [Feel The Burn, Getting the Most out of Burn Charts](https://idiacomputing.com/pub/BetterSoftware-BurnCharts.pdf) by George Dinwiddie (PDF, 6 pages).
 :::
 
+## tracking progress - cumulative flow diagram
+
+![based on Paul Klipps' figure](figures/cdf.svg){width=70%}
+
+::: notes
+Another diagram used to track progress is cumulative flow diagram (CDF).
+It is a stacked area chart that shows the various statuses of the tasks.
+
+Read more about CDF from[Pawel Brodzinski](http://brodzinski.com/2013/07/cumulative-flow-diagram.html).
+:::
+
 # sprint planning
 
 - sprint planning initiates the sprint
