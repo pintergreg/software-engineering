@@ -339,8 +339,38 @@ Read more about burndown chart at [Feel The Burn, Getting the Most out of Burn C
 ::: notes
 Another diagram used to track progress is cumulative flow diagram (CDF).
 It is a stacked area chart that shows the various statuses of the tasks.
+It can help to identify bottlenecks.
+
+Although it often used for kanban-style workflow, it can also work for scrum.
 
 Read more about CDF from[Pawel Brodzinski](http://brodzinski.com/2013/07/cumulative-flow-diagram.html).
+:::
+
+## tracking progress - cumulative flow diagram {.exclude-header}
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/cdf_widening.svg)
+
+::: {.text-smaller}
+widening of bands: bottleneck;<br>more tasks enter that phase than leaving
+:::
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/cdf_narrowing.svg)
+
+::: {.text-smaller}
+narrowing of bands: throughput is higher than the number of tasks entering the workflow
+:::
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+figures are based on [@boogaard2021how]
+:::
+
+::: notes
+Read more from [Kat Boogaard](https://www.wrike.com/blog/how-to-use-cumulative-flow-diagram/).
 :::
 
 # sprint planning
@@ -435,7 +465,7 @@ each team member participating the daily scrum answers three questions:
 - they can meet throughout the day for more detailed discussions
 :::::::::
 ::::::::: {.column width="45%" .center-content}
-![by [Sam Lau](https://www.samlau.xyz/about) | used with the author's permission](borrowed/how_to_run_short_and_effective_meetings.jpg)
+![by [Sam Lau](https://www.samlau.xyz/about) | used with the author's permission](figures/borrowed/how_to_run_short_and_effective_meetings.jpg)
 
 :::::::::
 ::::::::::::
@@ -455,7 +485,7 @@ each team member participating the daily scrum answers three questions:
     - for shorter sprints, the event is usually shorter-->
 :::::::::
 ::::::::: {.column width="50%"}
-![Thea Schukken | [CC BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)](borrowed/sprint_review.png)
+![Thea Schukken | [CC BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)](figures/borrowed/sprint_review.png)
 
 :::::::::
 ::::::::::::
@@ -473,7 +503,7 @@ Also known as "demo", when the scrum team demonstrates the sprint goal to the st
     - for shorter sprints, the event is usually shorter
 :::::::::
 ::::::::: {.column width="50%"}
-![Thea Schukken | [CC BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)](borrowed/sprint_review.png)
+![Thea Schukken | [CC BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)](figures/borrowed/sprint_review.png)
 
 :::::::::
 ::::::::::::
