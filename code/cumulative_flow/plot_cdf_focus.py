@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from matplotlib.patches import Ellipse
 
 output = "../../lectures/figures"
 colors = ["#110F0E", "#673821", "#BD9931", "#EEE436", "#E9E9DC"][1:]
@@ -35,6 +36,7 @@ ax.legend(
     ncols=4,
     loc="upper left",
 )
+ax.add_patch(Ellipse((3, 80), 0.80, 110, ec="#dd0d10", fc="none", lw=5))
 ax.margins(0)
 ax.set_ylim([0, 150])
 ax.set_xticks([])
@@ -63,6 +65,7 @@ ax.legend(
     ncols=4,
     loc="upper left",
 )
+ax.add_patch(Ellipse((3, 60), 0.75, 75, ec="#dd0d10", fc="none", lw=5))
 ax.margins(0)
 ax.set_ylim([0, 150])
 ax.set_xticks([])

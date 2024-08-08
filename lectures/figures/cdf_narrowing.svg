@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2024-08-08T10:34:29.235615</dc:date>
+    <dc:date>2024-08-08T11:03:18.705608</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -51,7 +51,7 @@ L 216 209.799888
 L 109.50012 266.199792 
 L 3.00024 284.99976 
 z
-" clip-path="url(#pca668248c6)" style="fill: #252916"/>
+" clip-path="url(#p071ee45264)" style="fill: #252916"/>
    </g>
    <g id="PolyCollection_2">
     <path d="M 3.00024 284.99976 
@@ -67,7 +67,7 @@ L 216 190.99992
 L 109.50012 243.63983 
 L 3.00024 284.99976 
 z
-" clip-path="url(#pca668248c6)" style="fill: #225f2f"/>
+" clip-path="url(#p071ee45264)" style="fill: #225f2f"/>
    </g>
    <g id="PolyCollection_3">
     <path d="M 3.00024 237.99984 
@@ -83,7 +83,7 @@ L 216 175.959946
 L 109.50012 187.239926 
 L 3.00024 237.99984 
 z
-" clip-path="url(#pca668248c6)" style="fill: #5e9432"/>
+" clip-path="url(#p071ee45264)" style="fill: #5e9432"/>
    </g>
    <g id="PolyCollection_4">
     <path d="M 3.00024 162.799968 
@@ -99,32 +99,46 @@ L 216 160.919971
 L 109.50012 140.240006 
 L 3.00024 162.799968 
 z
-" clip-path="url(#pca668248c6)" style="fill: #b4bf3a"/>
+" clip-path="url(#p071ee45264)" style="fill: #b4bf3a"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 216 242.699832 
+C 226.591537 242.699832 236.750698 235.27152 244.240045 222.050895 
+C 251.729393 208.830271 255.937455 190.896739 255.937455 172.199952 
+C 255.937455 153.503165 251.729393 135.569633 244.240045 122.349009 
+C 236.750698 109.128384 226.591537 101.700072 216 101.700072 
+C 205.408463 101.700072 195.249302 109.128384 187.759955 122.349009 
+C 180.270607 135.569633 176.062545 153.503165 176.062545 172.199952 
+C 176.062545 190.896739 180.270607 208.830271 187.759955 222.050895 
+C 195.249302 235.27152 205.408463 242.699832 216 242.699832 
+L 216 242.699832 
+z
+" clip-path="url(#p071ee45264)" style="fill: none; stroke: #dd0d10; stroke-width: 5; stroke-linejoin: miter"/>
    </g>
    <g id="matplotlib.axis_1"/>
    <g id="matplotlib.axis_2"/>
-   <g id="patch_3">
+   <g id="patch_4">
     <path d="M 3.00024 284.99976 
 L 3.00024 3.00024 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="patch_4">
+   <g id="patch_5">
     <path d="M 428.99976 284.99976 
 L 428.99976 3.00024 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="patch_5">
+   <g id="patch_6">
     <path d="M 3.00024 284.99976 
 L 428.99976 284.99976 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="patch_6">
+   <g id="patch_7">
     <path d="M 3.00024 3.00024 
 L 428.99976 3.00024 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="legend_1">
-    <g id="patch_7">
+    <g id="patch_8">
      <path d="M 10.00024 25.678365 
 L 294.46274 25.678365 
 Q 296.46274 25.678365 296.46274 23.678365 
@@ -137,7 +151,7 @@ Q 8.00024 25.678365 10.00024 25.678365
 z
 " style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
     </g>
-    <g id="patch_8">
+    <g id="patch_9">
      <path d="M 12.00024 19.598678 
 L 32.00024 19.598678 
 L 32.00024 12.598678 
@@ -247,7 +261,7 @@ z
       <use xlink:href="#DejaVuSans-65" x="188.037109"/>
      </g>
     </g>
-    <g id="patch_9">
+    <g id="patch_10">
      <path d="M 84.958053 19.598678 
 L 104.958053 19.598678 
 L 104.958053 12.598678 
@@ -324,7 +338,7 @@ z
       <use xlink:href="#DejaVuSans-77" x="248.873047"/>
      </g>
     </g>
-    <g id="patch_10">
+    <g id="patch_11">
      <path d="M 166.02524 19.598678 
 L 186.02524 19.598678 
 L 186.02524 12.598678 
@@ -378,7 +392,7 @@ z
       <use xlink:href="#DejaVuSans-67" x="215.820312"/>
      </g>
     </g>
-    <g id="patch_11">
+    <g id="patch_12">
      <path d="M 241.95649 19.598678 
 L 261.95649 19.598678 
 L 261.95649 12.598678 
@@ -422,7 +436,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pca668248c6">
+  <clipPath id="p071ee45264">
    <rect x="3.00024" y="3.00024" width="425.99952" height="281.99952"/>
   </clipPath>
  </defs>
