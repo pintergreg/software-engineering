@@ -122,7 +122,7 @@ if __name__ == "__main__":
     ax.text(
         1,
         11,
-        "remaining to be done",
+        "new tasks",
         ha="center",
         va="center",
         size=12,
