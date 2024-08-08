@@ -32,15 +32,39 @@ ax.stackplot(
 )
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(
-    # handles[::-1],
-    # labels[::-1],
     ncols=4,
     loc="upper left",
 )
 ax.margins(0)
-# ax.set_xlabel("days")
 ax.set_ylim([0, 150])
 ax.set_xticks([])
 ax.set_yticks([])
-# fig.savefig(f"{output}/cumulative_flow_diagram.svg", dpi=300, pad_inches=0.1)
-fig.savefig("bn.svg", dpi=300, pad_inches=0)
+fig.savefig(f"{output}/cdf_widening.svg", dpi=300, pad_inches=0)
+
+
+done = [0, 10, 40, 42, 45]
+review = [0, 12, 10, 22, 28]
+doing = [25, 30, 8, 10, 12]
+todo = [40, 25, 8, 12, 15]
+
+
+fig, ax = plt.subplots(figsize=(6, 4), layout="constrained")
+ax.stackplot(
+    days,
+    done,
+    review,
+    doing,
+    todo,
+    labels=["done", "review", "doing", "todo"],
+    colors=colors,
+)
+handles, labels = ax.get_legend_handles_labels()
+ax.legend(
+    ncols=4,
+    loc="upper left",
+)
+ax.margins(0)
+ax.set_ylim([0, 150])
+ax.set_xticks([])
+ax.set_yticks([])
+fig.savefig(f"{output}/cdf_narrowing.svg", dpi=300, pad_inches=0)
