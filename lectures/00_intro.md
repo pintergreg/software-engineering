@@ -17,26 +17,36 @@ showSlideNumber: "print"
 | week | date       | lecture                          | practical class |
 |-----:|:----------:|:--------------------------------:|:---------------:|
 |    1 | 2024-09-10 | software development life cycles | SCRUM           |
-|    2 | 2024-09-17 | software architecture            |                 |
+|    2 | 2024-09-17 | software architecture            | kanban          |
 |    3 | 2024-09-24 | requirements analysis            | user story map  |
 |    4 | 2024-10-01 | UML, C4                          | UML in practice |
 |    5 | 2024-10-08 | 
-|    6 | 2024-10-15 |
-|    7 | 2024-10-22 | 
-|    9 | 2024-11-05 | 
+|    6 | 2024-10-15 | communication                    |
+|    7 | 2024-10-22 | testing, review                  |
+|    9 | 2024-11-05 | CI, automatization, devops
 |   10 | 2024-11-12 | 
 |   11 | 2024-11-19 | 
 |   12 | 2024-11-26 | 
-|   13 | 2024-12-03 | 
+|   13 | 2024-12-03 | midterm                          | project demo    |
 
-testing, communication
+legacy code, review
 
 # materials
 
 - hangout, presentation website introduction
 - also, moodle?
 
+# tools
 
+- diagram drawing: 
+    - [draw.io](https://app.diagrams.net/)
+    - [plantuml](https://plantuml.com/)
+- code hosting / task management
+    - [GitHub](https://github.com/)
+    
+::: notes
+:::
+    
 # program vs. software
 
 :::::::::::: {.columns}
@@ -92,7 +102,7 @@ It is easy to read this code snippet and figure out what it does, but constructi
 :::
 
 
-# program vs. software -- code aspect
+# program vs. software -- code aspect {visibility=hidden}
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
@@ -172,6 +182,8 @@ There are two types of software rot: dormant rot and active rot.
 :::
 
 ## what is software rot?
+
+> Software rot (or software entropy) is the degradation, deterioration, or loss of the use or performance of software over time [@enwiki:1236668404]. 
 
 
 :::::::::::: {.columns}
@@ -260,5 +272,137 @@ Another similarity to gardening is that external factors can influence the softw
 ::: {.text-smaller}
 based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
 :::
+
+# software craftmanship
+
+::: {.text-smaller}
+As aspiring Software Craftsmen we are raising the bar of professional software development by practicing it and helping others learn the craft. Through this work we have come to value:
+:::
+
+- Not only working software, but also **well-crafted software**
+- Not only responding to change, but also **steadily adding value**
+- Not only individuals and interactions, but also **a community of professionals**
+- Not only customer collaboration, but also **productive partnerships**
+
+::: {.text-smaller .mt-4}
+That is, in pursuit of the items on the left we have found the items on the right to be indispensable.
+:::
+
+::: {.text-size-1}
+© 2009, the undersigned.
+This statement may be freely copied in any form, but only in its entirety through this notice.
+:::
+
+::: notes
+From [/manifesto.softwarecraftsmanship.org](https://manifesto.softwarecraftsmanship.org/).
+:::
+
+# software growth
+
+24 million lines of code -- operational and support -- needed for the F-35 to be fully operational
+
+::: notes
+
+:::
+
+## the more, the better?
+
+> if we wish to count lines of code, we should not regard them as "lines produced" but as "lines spent"
+>
+> E.W. Dijkstra [EWD 1036](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html)
+
+::: {.fragment}
+> Every line of code written comes at a price: maintenance. To avoid paying for a lot of code, we build reusable software. The problem with code re-use is that it gets in the way of changing your mind later on.
+>
+> tef - [Write code that is easy to delete, not easy to extend](https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to)
+:::
+
+## keep it simple
+
+> A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.
+>
+> -- [Antoine de Saint-Exupéry](https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry)
+
+::: {.fragment}
+- KISS, an acronym for "Keep it simple, stupid!"
+    - a variations: keep it stupidly simple
+    - the term was popular in the 70s
+:::
+
+
+## Linux 5.8 -- 800,000 new lines of code
+
+::: {.text-smaller}
+> [Linux Torvalds](https://lore.kernel.org/lkml/CAHk-=whfuea587g8rh2DeLFFGYxiVuh-bzq22osJwz3q4SOfmA@mail.gmail.com/): despite not really having any single thing that stands out... 5.8 looks to be one of our biggest releases of all time
+
+:::
+
+- how is it manageable?
+    - process
+    - version control
+- each change must do only one thing
+    - proper documentaion
+- changes cannot break the software
+    - rigorous and automated testing
+    
+# version control
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+- version control (a.k.a. revision control) is system for recording and managing changes made in files
+- commonly used to manage source code
+    - however, it can be used to tracking changes to any kind of files
+- people often employ their own version control system, without realising it
+:::::::::
+::::::::: {.column width="45%"}
+![Simon Mutch | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)](figures/borrowed/custom_version_control.png)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-3}
+based on Simon Mutch's [Version Control materials](http://smutch.github.io/VersionControlTutorial/pages/0-intro.html)
+:::
+
+::: notes
+[Simon Mutch | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en) | [source](https://gist.github.com/smutch/4951871)](figures/borrowed/vc-xkcd.jpg)
+
+:::
+
+## why you should use version control (for everything)
+
+::: {.wide-quote}
+> In practice, everything that has been created manually should be put in version control, including programs, original field observations, and the source files for papers.
+>
+> -- Best Practices for Scientific Computing; Wilson et al. 2012 ([arXiv:1210.0530](https://arxiv.org/abs/1210.0530))
+
+:::
+
+::: {.mt-5}
+this presentation is under version control as well
+:::
+
+::: notes
+Many services have some kind of version control built in. 
+For example Google Docs or Microsoft Word also provides some level of version control.
+:::
+
+# project complexity
+
+:::::: {.r-stack}
+::: {}
+![](figures/complex_projects.drawio.cropped_no_people.svg){width=55%}
+:::
+::: {.fragment}
+![](figures/complex_projects.drawio.cropped.svg){width=55%}
+:::
+::::::
+
+<!--# project management triangle
+
+![](figures/quality_time_cost.drawio.svg){width=60%}
+
+::: notes
+:::-->
 
 # references
