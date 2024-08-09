@@ -404,6 +404,23 @@ For example Google Docs or Microsoft Word also provides some level of version co
 :::
 ::::::
 
+# what is software architecture?
+
+> "Architecture" is a term that lots of people try to define, with little agreement. There are two common elements: One is the highest-level breakdown of a system into its parts; the other, decisions that are hard to change.
+>
+> -- Martin Fowler - Patterns of Enterprise Application Architecture
+
+##
+
+> In most successful software projects, the expert developers working on that project have a shared understanding of the system design. This **shared understanding** is called ‘architecture’. This understanding includes how the system is divided into components and how the components interact through interfaces. These components are usually composed of smaller components, but the architecture only includes the components  and interfaces that are understood by all the developers.
+> 
+> Ralph Johnson, XP mailing list
+
+## 
+
+> All architecture is design but not all design is architecture. Architecture represents the significant **design decisions** that shape a system, where significant is measured by cost of change.
+>
+> -- Grady Booch
 
 <!--# project management triangle
 
