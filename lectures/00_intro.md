@@ -41,6 +41,8 @@ legacy code, review
 - diagram drawing: 
     - [draw.io](https://app.diagrams.net/)
     - [plantuml](https://plantuml.com/)
+- whiteboard:
+    - [excalidraw](https://excalidraw.com/)
 - code hosting / task management
     - [GitHub](https://github.com/)
     
@@ -403,6 +405,9 @@ For example Google Docs or Microsoft Word also provides some level of version co
 ![](figures/complex_projects.drawio.cropped.svg){width=55%}
 :::
 ::::::
+
+::: notes
+:::
 
 # what is software architecture?
 
