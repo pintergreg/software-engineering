@@ -138,12 +138,10 @@ maintenance?
 
 ## software development *not* is like building a house
 
+a software does not have to obey the laws of physics
+
 - in software development you can start with the door of the second floor bathroom
 - the size of a room can be changed during the construction -- even several times
-
-. . .
-
-a software does not have to obey the laws of physics
 
 
 # software development is like gardening
@@ -152,25 +150,98 @@ a software does not have to obey the laws of physics
 ::::::::: {.column width="55%"}
 - a garden needs to be taken care of constantly
 - without attention the garden will decay
-- external factors like weather, pests, weeds can influence the garden
+<!-- - external factors like weather, pests, weeds can influence the garden -->
 :::::::::
 ::::::::: {.column width="45%"}
 - maintenance is part of software development
-- code rots
-- change in user requirements, but importantly the external dependencies such as frameworks, libraries, etc. can affect the software
+- software rots
+<!-- - change in user requirements, but importantly the external dependencies such as frameworks, libraries, etc. can affect the software -->
 :::::::::
 ::::::::::::
 
-::: {.text-smaller}
+::: {.text-smaller .mt-5}
 based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
 :::
 
 ::: notes
 Another famous metaphor is the gardening.
 The most important aspect of the gardening is that a garden needs to be taken care of constantly.
+Without attention the garden will decay, which is also true for the software; the software can rot.
+
+There are two types of software rot: dormant rot and active rot.
 :::
 
-## software development is like gardening II {.hide-heading} 
+## what is software rot?
+
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+**dormant rot**: the software in question is not changed, but as the environment evolves, it eventually becomes dysfunctional
+
+:::::::::
+::::::::: {.column width="50%" .fragment}
+![Muni metro San Francisco<br>photo by [Albert](https://www.flickr.com/photos/24208255@N07/2751036689/) [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)](figures/borrowed/muni_metro.jpg)
+
+:::::::::
+::::::::::::
+
+::: notes
+Environment change can be either software or hardware.
+The operating system, a software framework or even a hardware can be outdated to
+
+The photo shows the San Fransico Muni metro, which still uses floppy disks to load its Automatic Train Control System every morning.
+It is planned to replace by the end of the decade.
+The system works without any problems, but the risk of failure is getting higher. [@harding2024san]
+
+:::
+
+## what is software rot? {.exclude-header}
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+**active rot**
+
+- the software has undergone constant modifications but gradually loses its integrity
+- the constant updates / bug fixing can lead to an evolution process,
+    - which makes the program deviate from its original design, 
+    - even introducing newer bugs
+
+:::::::::
+::::::::: {.column width="50%"}
+![Randall Munroe | [CC BY-NC 2.5](https://creativecommons.org/licenses/by-nc/2.5/)](figures/borrowed/code_lifespan_2x.png)
+
+:::::::::
+::::::::::::
+
+::: notes
+It is said that nothing is more permanent than a temporary fix.
+A quick fix often ignores the architectural design, not documented properly, thus contributes to the software rot.
+:::
+
+## software development is like gardening - cont.
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+<!-- - a garden needs to be taken care of constantly -->
+<!-- - without attention the garden will decay -->
+- external factors like weather, pests, weeds can influence the garden
+:::::::::
+::::::::: {.column width="45%"}
+<!-- - maintenance is part of software development -->
+<!-- - software rots -->
+- change in user requirements, but importantly the external dependencies such as frameworks, libraries, etc. can affect the software
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-5}
+based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
+:::
+
+::: notes
+Another similarity to gardening is that external factors can influence the software.
+:::
+
+## software development is like gardening - cont. {.exclude-header}
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
