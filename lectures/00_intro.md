@@ -315,6 +315,12 @@ From [/manifesto.softwarecraftsmanship.org](https://manifesto.softwarecraftsmans
 > Every line of code written comes at a price: maintenance. To avoid paying for a lot of code, we build reusable software. The problem with code re-use is that it gets in the way of changing your mind later on.
 >
 > tef - [Write code that is easy to delete, not easy to extend](https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to)
+
+:::
+
+::: notes
+More code means more plants in your garden to take care of.
+It requires more resources, but at the same time it also increases complexity.
 :::
 
 ## keep it simple
@@ -397,6 +403,7 @@ For example Google Docs or Microsoft Word also provides some level of version co
 ![](figures/complex_projects.drawio.cropped.svg){width=55%}
 :::
 ::::::
+
 
 <!--# project management triangle
 
