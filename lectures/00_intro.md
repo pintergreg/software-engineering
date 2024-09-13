@@ -20,14 +20,21 @@ showSlideNumber: "print"
 |    2 | 2024-09-17 | SCRUM                             | kanban             |
 |    3 | 2024-09-24 | requirement analysis              | user story map     |
 |    4 | 2024-10-01 | UML, C4                           | UML in practice    |
-|    5 | 2024-10-08 | communication                     | case studies       |
+|    5 | 2024-10-08 | "communication", clean code       | case studies       |
 |    6 | 2024-10-15 | legacy code, review               | "coding" example   |
 |    7 | 2024-10-22 | testing, review                   | project assignment |
+
+## schedule
+
+| week | date       | lecture                           | practical class    |
+|-----:|:----------:|:---------------------------------:|:------------------:|
+|    8 | 2024-10-29 | school holiday                    |                    |
 |    9 | 2024-11-05 | dependency management             | VCS basics         |
 |   10 | 2024-11-12 | CI, automatization, devops        | project workshop   |
 |   11 | 2024-11-19 | project workshop                  | project workshop   |
 |   12 | 2024-11-26 | summary, course feedback          | project workshop   |
 |   13 | 2024-12-03 | midterm                           | project demo       |
+|   14 | 2024-12-10 | no planned lecture                |                    |
 
 
 # materials {visibility=hidden}
