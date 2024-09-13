@@ -45,13 +45,59 @@ In most cases the people who comission the building of the a software system do 
 
 # V model [@forsberg1991relationship]
 
-![based on [guru99.com's image](https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png)](figures/v_model.drawio.svg){width=750}
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- still rigid
+- each phase has output and a review process
+    - errors are found at early stage
+    - decreases the risk of failure
+- large to small: testing is done in a hierarchical perspective
+
+:::::::::
+::::::::: {.column width="50%"}
+:::::: {.r-stack}
+![based on [guru99.com's image](https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png)](figures/v_model.drawio.svg){width=500}
+::::::
+:::::::::
+::::::::::::
 
 ::: notes
 The *unit testing* will be discussed later in the testing chapter. For now it is enough to know that it is a tool to test the lower level part of the software.
 :::
 
-# incremental
+# iterative model
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- software is built incrementally,
+    - with each iteration adding new features or refining existing ones
+- possible to get feedback after each iteration
+- can be rigid within an iteration
+
+:::::::::
+::::::::: {.column width="50%"}
+:::::: {.r-stack}
+![](figures/iterative.drawio.svg){width=500}
+::::::
+:::::::::
+::::::::::::
+
+
+# agile model
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- continuous collaboration and fast response to change, while the iterative model takes a more gradual approach, building up the final product over multiple iterations
+- scrum is an agile methodology
+
+:::::::::
+::::::::: {.column width="50%"}
+:::::: {.r-stack}
+![](figures/agile.drawio.svg){width=500}
+::::::
+:::::::::
+::::::::::::
+
 
 # the agile manifesto
 
@@ -135,8 +181,7 @@ They work together for the same goal.
 > The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
 
 ::: notes
-This one is interesting. While it is not untrue. I consider it outdated from some aspect.
-TODO
+While it is not untrue. I consider it outdated from some aspect.
 :::
 
 ## 7. Principle behind the Agile Manifesto
@@ -221,6 +266,8 @@ Can waterfall work? Yes, it can, if the customer exactly knows what they want an
 Although usually the customer does not know what they want, so agile usually work better.
 
 # SCRUM
+
+![](figures/scrum_sprint.drawio.svg)
 
 # kanban
 
