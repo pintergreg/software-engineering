@@ -1,6 +1,6 @@
 ---
 title: software engineering
-author: Gergő Pintér
+author: Gergő Pintér, PhD
 date: gergo.pinter@uni-corvinus.hu
 lang: en-US
 title-slide-attributes:
@@ -14,24 +14,23 @@ showSlideNumber: "print"
 
 # schedule
 
-| week | date       | lecture                          | practical class |
-|-----:|:----------:|:--------------------------------:|:---------------:|
-|    1 | 2024-09-10 | software development life cycles | SCRUM           |
-|    2 | 2024-09-17 | software architecture            | kanban          |
-|    3 | 2024-09-24 | requirements analysis            | user story map  |
-|    4 | 2024-10-01 | UML, C4                          | UML in practice |
-|    5 | 2024-10-08 | 
-|    6 | 2024-10-15 | communication                    |
-|    7 | 2024-10-22 | testing, review                  |
-|    9 | 2024-11-05 | CI, automatization, devops
-|   10 | 2024-11-12 | 
-|   11 | 2024-11-19 | 
-|   12 | 2024-11-26 | 
-|   13 | 2024-12-03 | midterm                          | project demo    |
+| week | date       | lecture                           | practical class    |
+|-----:|:----------:|:---------------------------------:|:------------------:|
+|    1 | 2024-09-10 | intro, software architecture      | SDLC               |
+|    2 | 2024-09-17 | SCRUM                             | kanban             |
+|    3 | 2024-09-24 | requirement analysis              | user story map     |
+|    4 | 2024-10-01 | UML, C4                           | UML in practice    |
+|    5 | 2024-10-08 | communication                     | case studies       |
+|    6 | 2024-10-15 | legacy code, review               | "coding" example   |
+|    7 | 2024-10-22 | testing, review                   | project assignment |
+|    9 | 2024-11-05 | dependency management             | VCS basics         |
+|   10 | 2024-11-12 | CI, automatization, devops        | project workshop   |
+|   11 | 2024-11-19 | project workshop                  | project workshop   |
+|   12 | 2024-11-26 | summary, course feedback          | project workshop   |
+|   13 | 2024-12-03 | midterm                           | project demo       |
 
-legacy code, review
 
-# materials
+# materials {visibility=hidden}
 
 - hangout, presentation website introduction
 - also, moodle?
@@ -51,7 +50,7 @@ legacy code, review
     
 # program vs. software
 
-:::::::::::: {.columns}
+:::::::::::: {.columns .fragment}
 ::::::::: {.column width="75%"}
 > A computer program is a sequence or set of instructions in a programming language for a computer to execute.
 > It is one component of software, which also includes documentation and other intangible components.
@@ -74,7 +73,7 @@ There is a metaphor saying that a program is like a recipe.
 
 The computer follows the instructions of a program as the cook follows the instruction in a recipe.
 
-Consequently programming is like a creating a recipe.
+Consequently programming is like creating a recipe.
 
 :::::::::
 ::::::::: {.column width="50%" .fragment}
@@ -97,33 +96,52 @@ for i in range(1, 101):
 ::: notes
 It is easy to read this code snippet and figure out what it does, but constructing an algorithm might be more complicated.
 
+It contains a loop going from 1 to 100 (ranges are not closed in Python, so 101 is excluded and the range step is 1 by default).
+If the loop variable is dividable by 15, "FizzBuzz" is printed to the screen.
+I it is only dividable by 3 "Fizz" is printed, if only by 5 "Buzz" is printed.
+In any other cases the number id printed.
+
+
 > Writing a computer program requires a nuanced understanding of the problem being solved by the computer program, pros and cons of various approaches, etc.
 > It also requires the knowledge and expertise to describe those steps in a manner amenable to execution by a computer.
 >
 > [Jeff Rabinowitz](https://justabloginthepark.com/2016/01/09/how-programming-is-like-cooking/)
+
 :::
 
 
-# program vs. software -- code aspect {visibility=hidden}
+# programming vs. software development
 
 :::::::::::: {.columns}
-::::::::: {.column width="60%"}
-| program      | software     |
-|:------------:|:------------:|
-| less complex | more complex |
+::::::::: {.column width="50%"}
+![](figures/software_development.drawio.svg){width=400}
 
 :::::::::
-::::::::: {.column width="30%"}
-![](figures/program_software.drawio.svg)
+::::::::: {.column width="50%" .mt-5 .column-align-left}
+::: {.fragment}
+- does that mean a program is not 
+    - planned
+    - documented
+    - tested
+    - verified?
+:::
+::: {.fragment}
+- the main difference is the formality of the process
+    - which correlates the complexity of the project
+:::
 
 :::::::::
 ::::::::::::
 
 ::: notes
-In contrast of the previous definition and from the code aspect, I like to think of computer program as a more general expression and consider the software as a special program, where the main difference is the life cycle and the crafting process of the program.
-In this sense, software is usually more complex, developed by a team as a product for people who are not often not proficient in programming and only users of the program. In this case the user interface and the documentation should be prepared for not proper use.
+A program code is only a part of a software.
+Programming is more or less a synonym to coding.
 
-Wikipedia says: In computing, a script is a relatively short and simple set of instructions that typically automate an otherwise manual process [@enwiki:1234532469].
+As a software is more than just the code, software development is more than just coding/programming.
+The work is planned, documented, tested, verified, and framed by a process.
+
+If programming is like creating a recipe, software development is more like running a restaurant.
+One should come up with recipes, cook the food, but the restaurant also needs constant ingredient logistics and preparation, food serving, marketing, cleaning etc.
 
 :::
 
@@ -158,7 +176,7 @@ a software does not have to obey the laws of physics
 
 # software development is like gardening
 
-:::::::::::: {.columns}
+:::::::::::: {.columns .fragment}
 ::::::::: {.column width="55%"}
 - a garden needs to be taken care of constantly
 - without attention the garden will decay
@@ -185,10 +203,12 @@ There are two types of software rot: dormant rot and active rot.
 
 ## what is software rot?
 
+::: {.wide-quote}
 > Software rot (or software entropy) is the degradation, deterioration, or loss of the use or performance of software over time [@enwiki:1236668404]. 
 
+:::
 
-:::::::::::: {.columns}
+:::::::::::: {.columns .mt-2}
 ::::::::: {.column width="50%"}
 **dormant rot**: the software in question is not changed, but as the environment evolves, it eventually becomes dysfunctional
 
@@ -230,6 +250,11 @@ The system works without any problems, but the risk of failure is getting higher
 ::: notes
 It is said that nothing is more permanent than a temporary fix.
 A quick fix often ignores the architectural design, not documented properly, thus contributes to the software rot.
+
+A change in a production system should be properly planned in every possible details.
+For example, because it can have side effects, or can affect the architecture.
+Also, the documentation needs to be updated. Both documentations actually since there is a development documentation, that should contain information about the system for the developers and a user documentation (manual) for the operators of the system.
+
 :::
 
 ## software development is like gardening - cont.
@@ -243,7 +268,7 @@ A quick fix often ignores the architectural design, not documented properly, thu
 ::::::::: {.column width="45%"}
 <!-- - maintenance is part of software development -->
 <!-- - software rots -->
-- change in user requirements, but importantly the external dependencies such as frameworks, libraries, etc. can affect the software
+- change in user requirements, and the external dependencies such as frameworks, libraries, etc. can affect the software
 :::::::::
 ::::::::::::
 
@@ -261,7 +286,7 @@ Another similarity to gardening is that external factors can influence the softw
 ::::::::: {.column width="50%"}
 - gardeners has a set of tools, selected for the characteristics of the garden and the gardener
 - a beautiful garden is a piece of art
-    - which can serve a function, like producing vegetables or fruits
+    - which can also serve a function, like producing vegetables / fruits
 :::::::::
 ::::::::: {.column width="50%"}
 - software developer also uses tools chosen according to the environment and type of software 
@@ -311,7 +336,7 @@ From [/manifesto.softwarecraftsmanship.org](https://manifesto.softwarecraftsmans
 
 > if we wish to count lines of code, we should not regard them as "lines produced" but as "lines spent"
 >
-> E.W. Dijkstra [EWD 1036](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html)
+> E. W. Dijkstra [EWD 1036](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html)
 
 ::: {.fragment}
 > Every line of code written comes at a price: maintenance. To avoid paying for a lot of code, we build reusable software. The problem with code re-use is that it gets in the way of changing your mind later on.
@@ -321,6 +346,12 @@ From [/manifesto.softwarecraftsmanship.org](https://manifesto.softwarecraftsmans
 :::
 
 ::: notes
+Some people may consider the code as the product.
+In this regard, more lines of code means more product.
+If you write more code you work better, which is not true.
+You should work smarter, not harder.
+
+As Dijkstra said, lines should considered an expense, which you want to minimize, not maximize.
 More code means more plants in your garden to take care of.
 It requires more resources, but at the same time it also increases complexity.
 :::
@@ -337,6 +368,13 @@ It requires more resources, but at the same time it also increases complexity.
     - the term was popular in the 70s
 :::
 
+::: notes
+<!-- According to Saint-Exupéry (who was the author of The Little Prince by the way) -->
+
+The design, the code should be kept as simple as possible.
+When you want to simplify a design, keep only those parts that are absolutely necessary to get the job done.
+:::
+
 
 ## Linux 5.8 -- 800,000 new lines of code
 
@@ -349,7 +387,7 @@ It requires more resources, but at the same time it also increases complexity.
     - process
     - version control
 - each change must do only one thing
-    - proper documentaion
+    - proper documentation
 - changes cannot break the software
     - rigorous and automated testing
     
@@ -426,6 +464,27 @@ For example Google Docs or Microsoft Word also provides some level of version co
 > All architecture is design but not all design is architecture. Architecture represents the significant **design decisions** that shape a system, where significant is measured by cost of change.
 >
 > -- Grady Booch
+
+
+# Topologies
+
+[Introduction to Software Architecture](https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture)
+
+## Layered Architechture
+
+![](http://1.bp.blogspot.com/-TbA8p6DWYJc/Uc0zYwSG_iI/AAAAAAAAAag/cPytbL6oeM4/s800/layered.png)
+
+- [Layered Architecture: Introduction](http://serena-yeoh.blogspot.com/2013/06/layered-architecture-for-net.html)
+- [Layered Architecture: Component Interactions](http://serena-yeoh.blogspot.com/2014/01/layered-architecture-components.html)
+
+## Message Bus Architecture
+
+![](https://www.codeproject.com/KB/architecture/1064240/message-bus.gif)
+
+
+## Server-Client Architecture
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1200px-Client-server-model.svg.png)
 
 <!--# project management triangle
 
