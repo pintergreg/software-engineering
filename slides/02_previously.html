@@ -50,6 +50,16 @@
     }  </style>
   <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
   <link rel="stylesheet" href="../assets/custom.css"/>
+  <!--<script src="../assets/reveal_menu/menu.js"></script>
+  <link rel="stylesheet" href="../assets/reveal_menu/menu.css"/>
+
+  <script src="../assets/verticator/verticator.js"></script>
+  <link rel="stylesheet" href="../assets/verticator/verticator.css"/>-->
+
+  <script src="../assets/reveal-drawer-0.1.2/drawer.js"></script>
+  <link rel="stylesheet" href="../assets/reveal-drawer-0.1.2/drawer.css"/>
+
+  <!-- <script src="../assets/highlight_line.js"></script> -->
 </head>
 <body>
   <div class="reveal">
@@ -178,8 +188,36 @@ width="250" /></p>
 </div>
 </section>
 
-<section id="waterfall-model" class="title-slide slide level1">
-<h1>waterfall model</h1>
+<section>
+<section id="evolution-of-software-life-cycle-models-incomplete"
+class="title-slide slide level1">
+<h1>evolution of software life cycle models (incomplete)</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>software life cycle models
+<ul>
+<li>waterfall
+<ul>
+<li>improved waterfall</li>
+</ul></li>
+<li>V model</li>
+<li>iterative</li>
+<li>agile</li>
+</ul></li>
+<li>regarding to change management</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img
+data-src="figures/publicdomainvectors/mobile-phones-evolution.svg"
+width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+<section id="waterfall-model" class="slide level2">
+<h2>waterfall model</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -190,17 +228,19 @@ width="250" /></p>
 <li>testing is after the implementation, errors are found late in the
 process</li>
 <li>not possible to make changes during the development</li>
+<li>could take years</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="r-stack">
 <p><img data-src="figures/waterfall.svg" width="500" /></p>
+<p><img data-src="figures/waterfall_modified.svg" class="fragment"
+width="500" /></p>
 </div>
 </div>
 </div>
 </section>
-
-<section id="v-model" class="title-slide slide level1">
-<h1>V model</h1>
+<section id="v-model" class="slide level2">
+<h2>V model</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -219,9 +259,8 @@ process</li>
 </div>
 </div>
 </section>
-
-<section id="iterative-model" class="title-slide slide level1">
-<h1>iterative model</h1>
+<section id="iterative-model" class="slide level2">
+<h2>iterative model</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -240,9 +279,8 @@ ones</li>
 </div>
 </div>
 </section>
-
-<section id="agile-model" class="title-slide slide level1">
-<h1>agile model</h1>
+<section id="agile-model" class="slide level2">
+<h2>agile model</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -257,8 +295,7 @@ product over multiple iterations</li>
 </div>
 </div>
 </div>
-</section>
-
+</section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
 <div id="refs" class="references csl-bib-body" role="list">
@@ -435,6 +472,25 @@ not easy to extend.”</span> <a href="
           RevealZoom
         ]
       });
+    </script>
+    <script>
+    Reveal.initialize({
+        verticator: {
+    		color: '#181d37',
+    	},
+    	drawer: {
+          toggleDrawKey: "d", // (optional) key to enable drawing, default "d"
+          toggleBoardKey: "t", // (optional) key to show drawing board, default "t"
+          colors: ["#fa1e0e", "#8ac926", "#1982c4", "#ffca3a"], // (optional) list of colors avaiable (hex color codes)
+          color: "#FF0000", // (optional) color of a cursor, first color from `codes` is a default
+          pathSize: 4, // (optional) path size in px, default 4
+        },
+    	// markdown: {
+     //      smartypants: true,
+     //    },
+        // plugins: [ RevealMenu, Verticator ] 
+        plugins: [ RevealDrawer ] 
+    });
     </script>
     </body>
 </html>

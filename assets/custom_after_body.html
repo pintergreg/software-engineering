@@ -3,11 +3,17 @@ Reveal.initialize({
     verticator: {
 		color: '#181d37',
 	},
+	drawer: {
+      toggleDrawKey: "d", // (optional) key to enable drawing, default "d"
+      toggleBoardKey: "t", // (optional) key to show drawing board, default "t"
+      colors: ["#fa1e0e", "#8ac926", "#1982c4", "#ffca3a"], // (optional) list of colors avaiable (hex color codes)
+      color: "#FF0000", // (optional) color of a cursor, first color from `codes` is a default
+      pathSize: 4, // (optional) path size in px, default 4
+    },
 	// markdown: {
  //      smartypants: true,
  //    },
     // plugins: [ RevealMenu, Verticator ] 
-    plugins: [ RevealMenu ] 
+    plugins: [ RevealDrawer ] 
 });
-highlight_lines();
 </script>
