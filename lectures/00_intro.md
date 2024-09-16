@@ -63,9 +63,21 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 :::
 
-# materials {visibility=hidden .exclude}
+# materials {.exclude}
 
-- hangout, presentation website introduction
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-3}
+- available online in two formats
+    - hangout
+    - presentation
+- [pintergreg.github.io/software-engineering](https://pintergreg.github.io/software-engineering/)
+
+:::::::::
+::::::::: {.column width="40%"}
+![](../assets/qr_code.png)
+
+:::::::::
+::::::::::::
 
 # tools
 
