@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Gergő Pintér, PhD">
-  <title>Previously</title>
+  <title>Kanban</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,26 +28,7 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
+  </style>
   <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
   <link rel="stylesheet" href="../assets/custom.css"/>
 </head>
@@ -57,248 +38,204 @@
 
 <section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
 calc(100% - 1.25rem)" data-background-size="125px">
-  <h1 class="title">Previously</h1>
+  <h1 class="title">Kanban</h1>
   <p class="author">Gergő Pintér, PhD</p>
   <p class="date">gergo.pinter@uni-corvinus.hu</p>
 </section>
 
-<section id="program-is-like-a-recipe" class="title-slide slide level1">
-<h1>program is like a recipe</h1>
+<section class="slide level2">
+
+<p>this presentation is based on The Kanban Guide (2020) by Daniel S.
+Vacanti</p>
+<p>available from <a
+href="https://kanbanguides.org">kanbanguides.org</a> under <a
+href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
+4.0</a></p>
+<p>or download directly <a
+href="../resources/Kanban-Guide-2020-12.pdf">from here</a></p>
+</section>
+<section>
+<section id="what-is-kanban" class="title-slide slide level1">
+<h1>what is kanban?</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<blockquote>
+<p>Kanban is a strategy for optimizing the flow of value through a
+process that uses a visual, pull-based system</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/kanban.drawio.svg" /></p>
+</div>
+</div>
+</section>
+<section id="principles-of-kanban" class="slide level2">
+<h2>principles of kanban</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ol type="1">
+<li>defining and visualizing a workflow</li>
+<li>actively managing items in a workflow</li>
+<li>improving a workflow</li>
+</ol>
+</div><div class="column" style="width:30%;">
+<p><img
+data-src="figures/publicdomainvectors/scrum-task-board.svg" /></p>
+</div>
+</div>
+<aside class="notes">
+<p>These Kanban practices are collectively called a Kanban system. Those
+who participate in the value delivery of a Kanban system are called
+Kanban system members.</p>
+</aside>
+</section></section>
+<section>
+<section id="defining-and-visualizing-the-workflow"
+class="title-slide slide level1">
+<h1>defining and visualizing the workflow</h1>
+<div class="columns">
+<div class="column column-align-left" style="width:60%;">
+<div>
+<ul>
+<li>definition of workflow (DoW)
+<ul>
+<li>the visualization of the DoW is called a Kanban board</li>
+<li>states (columns)</li>
+<li>conditions when to move an item between columns</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>a definition of the individual units of value that are moving
+through the workflow
+<ul>
+<li>referred to as work items (or items)</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/job_hunting_kanban_item.drawio.svg"
+class="fragment" data-fragment-index="1" /></p>
+</div>
+</div>
+</section>
+<section id="defining-and-visualizing-the-workflow-1"
+class="slide level2">
+<h2>defining and visualizing the workflow</h2>
 <div class="columns">
 <div class="column column-align-left" style="width:60%;">
 <ul>
-<li>executing a program is following a recipe</li>
-<li>programming is like creating a recipe</li>
-</ul>
-<div class="fragment" data-fragment-index="1">
+<li>a definition for when work items are started and finished within the
+workflow
 <ul>
-<li>software development is like running a restaurant
-<ul>
-<li>come up with recipes,</li>
-<li>cook the food,</li>
-<li>ingredient logistics and preparation,</li>
-<li>food serving,</li>
-<li>marketing,</li>
-<li>cleaning</li>
-</ul></li>
-</ul>
-</div>
-</div><div class="column" style="width:40%;">
-<div class="r-stack">
-<div class="fragment fade-out" data-fragment-index="1">
-<p><img
-data-src="figures/publicdomainvectors/a-cook-is-preparing-a-meal-publicdomainvectors.org.svg"
-width="250" /></p>
-</div>
-<div class="fragment" data-fragment-index="1">
-<p><img
-data-src="figures/publicdomainvectors/restaurant-table-publicdomainvectors.org.svg"
-width="250" /></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="software-development-often-compared-to-house-building"
-class="title-slide slide level1">
-<h1>software development often compared to house building</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<ul>
-<li>because it is an engineering discipline</li>
-<li>but software does not have to obey the laws of physics</li>
-<li>software design should focus only on the data structures and the
-connection between the modules
-<ul>
-<li>not the implementation details<br>(e.g., hardware)</li>
+<li>a workflow may have more than one started or finished points</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
-<div class="r-stack">
-<p><img
-data-src="figures/publicdomainvectors/architect-engineer-developing-a-construction-of-house.svg"
-width="250" /></p>
-</div>
+<p><img data-src="figures/job_hunting_kanban_finish.drawio.svg" /></p>
 </div>
 </div>
 </section>
-
-<section id="software-development-is-more-like-gardening"
-class="title-slide slide level1">
-<h1>software development is more like gardening</h1>
+<section id="defining-and-visualizing-the-workflow-2"
+class="slide level2">
+<h2>defining and visualizing the workflow</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column column-align-left" style="width:60%;">
 <ul>
-<li>a garden might be planned</li>
-<li>external factors influence the result
+<li>one or more defined states between the started to finished
 <ul>
-<li>weather, pests</li>
+<li>item between start and finish point are considered work in progress
+(WIP)</li>
 </ul></li>
-<li>garden needs constant care to bloom</li>
-<li>sometimes also experimentation
-<ul>
-<li>methods, tools</li>
-</ul></li>
-<li>garden is like an art (with function)</li>
+<li>a definition of how WIP will be controlled from started to
+finished</li>
+<li>explicit policies about how work items can flow through each
+state</li>
 </ul>
 </div><div class="column" style="width:40%;">
-<div class="r-stack">
 <p><img
-data-src="figures/publicdomainvectors/gardener-watering-with-a-hose.svg"
-width="250" /></p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="software-growth" class="title-slide slide level1">
-<h1>software growth</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<ul>
-<li>number of lines of code is increasing
-<ul>
-<li>which increases complexity</li>
-</ul></li>
-<li>“every line of code written comes at a price: maintenance” <span
-class="citation" data-cites="tef2016write">[1]</span>
-<ul>
-<li>larger garden, more gardening</li>
-</ul></li>
-<li>software development processes to handle the complexity</li>
-</ul>
-</div><div class="column" style="width:40%;">
-<div class="r-stack">
-<p><img
-data-src="figures/publicdomainvectors/idea-of-success-achievement.svg"
-width="250" /></p>
-</div>
-</div>
-</div>
-</section>
-
-<section>
-<section id="evolution-of-software-life-cycle-models-incomplete"
-class="title-slide slide level1">
-<h1>evolution of software life cycle models (incomplete)</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>software life cycle models
-<ul>
-<li>waterfall
-<ul>
-<li>improved waterfall</li>
-</ul></li>
-<li>V model</li>
-<li>iterative</li>
-<li>agile</li>
-</ul></li>
-<li>regarding to change management</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="r-stack">
-<p><img
-data-src="figures/publicdomainvectors/mobile-phones-evolution.svg"
-width="500" /></p>
-</div>
-</div>
-</div>
-</section>
-<section id="waterfall-model" class="slide level2">
-<h2>waterfall model</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>sequential, rigid model
-<ul>
-<li>(originally) not possible to step back to a previous phase</li>
-</ul></li>
-<li>testing is after the implementation, errors are found late in the
-process</li>
-<li>not possible to make changes during the development</li>
-<li>could take years</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="r-stack">
-<p><img data-src="figures/waterfall.svg" width="500" /></p>
-<p><img data-src="figures/waterfall_modified.svg" class="fragment"
-width="500" /></p>
-</div>
-</div>
-</div>
-</section>
-<section id="v-model" class="slide level2">
-<h2>V model</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>still rigid</li>
-<li>each phase has output and a review process
-<ul>
-<li>errors are found at early stage</li>
-<li>decreases the risk of failure</li>
-</ul></li>
-<li>large to small: testing is done in a hierarchical perspective</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="r-stack">
-<p><img data-src="figures/v_model.drawio.svg" width="500" /></p>
-</div>
-</div>
-</div>
-</section>
-<section id="iterative-model" class="slide level2">
-<h2>iterative model</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>software is built incrementally,
-<ul>
-<li>with each iteration adding new features or refining existing
-ones</li>
-</ul></li>
-<li>possible to get feedback after each iteration</li>
-<li>can be rigid within an iteration</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="r-stack">
-<p><img data-src="figures/iterative.drawio.svg" width="500" /></p>
-</div>
-</div>
-</div>
-</section>
-<section id="agile-model" class="slide level2">
-<h2>agile model</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>continuous collaboration and fast response to change, while the
-iterative model takes a more gradual approach, building up the final
-product over multiple iterations</li>
-<li>scrum is an agile methodology</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="r-stack">
-<p><img data-src="figures/agile.drawio.svg" width="500" /></p>
-</div>
+data-src="figures/job_hunting_kanban_transitions.drawio.svg" /></p>
 </div>
 </div>
 </section></section>
-<section id="references" class="title-slide slide level1">
-<h1>references</h1>
-<div id="refs" class="references csl-bib-body" role="list">
-<div id="ref-tef2016write" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div
-class="csl-right-inline">tef, <span>“Write code that is easy to delete,
-not easy to extend.”</span> <a href="
-                    https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to
-                    " class="uri">
-                    https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to
-</a>, 13-Feb-2016.</div>
+<section>
+<section id="service-level-expectation"
+class="title-slide slide level1">
+<h1>Service Level Expectation</h1>
+<div class="columns">
+<div class="column column-align-left" style="width:50%;">
+<ul>
+<li>a service level expectation (SLE)
+<ul>
+<li>which is a forecast of how long it <strong>should</strong> take a
+work item to flow from started to finished</li>
+</ul></li>
+<li>the SLE itself has two parts: a period of elapsed time and a
+probability associated with that period
+<ul>
+<li>e.g., 85% of work items will be finished in eight days or less</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img
+data-src="figures/job_hunting_kanban_transitions_2.drawio.svg" /></p>
 </div>
 </div>
+</section>
+<section id="service-level-expectation-1" class="slide level2">
+<h2>Service Level Expectation</h2>
+<div class="columns">
+<div class="column column-align-left" style="width:50%;">
+<ul>
+<li>the SLE should be based on historical cycle time
+<ul>
+<li>and once calculated, should be visualized on the Kanban board</li>
+<li>if historical cycle time data does not exist, a best guess will do
+until there is enough historical data</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img
+data-src="figures/job_hunting_kanban_transitions_2.drawio.svg" /></p>
+</div>
+</div>
+</section></section>
+<section id="improving-the-workflow" class="title-slide slide level1">
+<h1>improving the Workflow</h1>
+<ul>
+<li>it is common practice to review the DoW from time to time to discuss
+and implement any changes needed
+<ul>
+<li>e.g., need a new column for a new state</li>
+</ul></li>
+<li>not necessary to wait for a formal meeting at a regular cadence to
+make these changes</li>
+</ul>
+</section>
+
+<section id="kanban-measures" class="title-slide slide level1">
+<h1>kanban measures</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>WIP: number of work items started but not finished</li>
+<li>throughput: number of work items finished per unit of time
+<ul>
+<li>Note the measurement of throughput is the exact count of work
+items</li>
+</ul></li>
+<li>work item age: elapsed time from when a work item started</li>
+<li>cycle time: time between when a work item started and finished</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/cdf.svg" /></p>
+</div>
+</div>
+<aside class="notes">
+<p>Visualizing these metrics using charts is recommended. It does not
+matter what kind of charts are used as long as they enable a shared
+understanding of the Kanban system’s current health and performance.</p>
+</aside>
 </section>
     </div>
   </div>

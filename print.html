@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="lectures/HOME.html">home</a></li><li class="chapter-item expanded affix "><a href="lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="lectures/02_scrum.html">scrum</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="lectures/HOME.html">home</a></li><li class="chapter-item expanded affix "><a href="lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="lectures/02_scrum.html">scrum</a></li><li class="chapter-item expanded affix "><a href="lectures/03_kanban.html">kanban</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -203,6 +203,7 @@
 <ol>
 <li><a href="lectures/slides/02_previously.html">week 1 summary</a></li>
 <li><a href="lectures/slides/02_scrum.html">scrum</a></li>
+<li><a href="lectures/slides/03_kanban.html">kanban</a></li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="schedule"><a class="header" href="#schedule">schedule</a></h1>
 <table>
@@ -1976,6 +1977,178 @@ this team a long time ago.</p>
 </div>
 <h1 id="references-2"><a class="header" href="#references-2">references</a></h1>
 <div id="refs">
+</div>
+<div style="break-before: page; page-break-before: always;"></div><p>this presentation is based on The Kanban Guide (2020) by Daniel S.
+Vacanti</p>
+<p>available from <a href="https://kanbanguides.org">kanbanguides.org</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC
+BY-SA 4.0</a></p>
+<p>or download directly <a href="lectures/../resources/Kanban-Guide-2020-12.pdf">from here</a></p>
+<h1 id="what-is-kanban"><a class="header" href="#what-is-kanban">what is kanban?</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<blockquote>
+<p>Kanban is a strategy for optimizing the flow of value through a
+process that uses a visual, pull-based system</p>
+</blockquote>
+</div>
+<div class="column" width="50%">
+<p><img src="lectures/figures/kanban.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="principles-of-kanban"><a class="header" href="#principles-of-kanban">principles of kanban</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<ol>
+<li>defining and visualizing a workflow</li>
+<li>actively managing items in a workflow</li>
+<li>improving a workflow</li>
+</ol>
+</div>
+<div class="column" width="30%">
+<p><img src="lectures/figures/publicdomainvectors/scrum-task-board.svg" alt="" /></p>
+</div>
+</div>
+<div class="notes">
+<p>These Kanban practices are collectively called a Kanban system. Those
+who participate in the value delivery of a Kanban system are called
+Kanban system members.</p>
+</div>
+<h1 id="defining-and-visualizing-the-workflow"><a class="header" href="#defining-and-visualizing-the-workflow">defining and visualizing the workflow</a></h1>
+<div class="columns">
+<div class="column column-align-left" width="60%">
+<div>
+<ul>
+<li>definition of workflow (DoW)
+<ul>
+<li>the visualization of the DoW is called a Kanban board</li>
+<li>states (columns)</li>
+<li>conditions when to move an item between columns</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>a definition of the individual units of value that are moving through
+the workflow
+<ul>
+<li>referred to as work items (or items)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="column" width="40%">
+<p><img src="lectures/figures/job_hunting_kanban_item.drawio.svg" class="fragment"
+data-fragment-index="1" /></p>
+</div>
+</div>
+<h2 id="defining-and-visualizing-the-workflow-1"><a class="header" href="#defining-and-visualizing-the-workflow-1">defining and visualizing the workflow</a></h2>
+<div class="columns">
+<div class="column column-align-left" width="60%">
+<ul>
+<li>a definition for when work items are started and finished within the
+workflow
+<ul>
+<li>a workflow may have more than one started or finished points</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="lectures/figures/job_hunting_kanban_finish.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="defining-and-visualizing-the-workflow-2"><a class="header" href="#defining-and-visualizing-the-workflow-2">defining and visualizing the workflow</a></h2>
+<div class="columns">
+<div class="column column-align-left" width="60%">
+<ul>
+<li>one or more defined states between the started to finished
+<ul>
+<li>item between start and finish point are considered work in progress
+(WIP)</li>
+</ul>
+</li>
+<li>a definition of how WIP will be controlled from started to finished</li>
+<li>explicit policies about how work items can flow through each state</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="lectures/figures/job_hunting_kanban_transitions.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h1 id="service-level-expectation"><a class="header" href="#service-level-expectation">Service Level Expectation</a></h1>
+<div class="columns">
+<div class="column column-align-left" width="50%">
+<ul>
+<li>a service level expectation (SLE)
+<ul>
+<li>which is a forecast of how long it <strong>should</strong> take a work item to
+flow from started to finished</li>
+</ul>
+</li>
+<li>the SLE itself has two parts: a period of elapsed time and a
+probability associated with that period
+<ul>
+<li>e.g., 85% of work items will be finished in eight days or less</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p><img src="lectures/figures/job_hunting_kanban_transitions_2.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="service-level-expectation-1"><a class="header" href="#service-level-expectation-1">Service Level Expectation</a></h2>
+<div class="columns">
+<div class="column column-align-left" width="50%">
+<ul>
+<li>the SLE should be based on historical cycle time
+<ul>
+<li>and once calculated, should be visualized on the Kanban board</li>
+<li>if historical cycle time data does not exist, a best guess will do
+until there is enough historical data</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p><img src="lectures/figures/job_hunting_kanban_transitions_2.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h1 id="improving-the-workflow"><a class="header" href="#improving-the-workflow">improving the Workflow</a></h1>
+<ul>
+<li>it is common practice to review the DoW from time to time to discuss
+and implement any changes needed
+<ul>
+<li>e.g., need a new column for a new state</li>
+</ul>
+</li>
+<li>not necessary to wait for a formal meeting at a regular cadence to
+make these changes</li>
+</ul>
+<h1 id="kanban-measures"><a class="header" href="#kanban-measures">kanban measures</a></h1>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>WIP: number of work items started but not finished</li>
+<li>throughput: number of work items finished per unit of time
+<ul>
+<li>Note the measurement of throughput is the exact count of work items</li>
+</ul>
+</li>
+<li>work item age: elapsed time from when a work item started</li>
+<li>cycle time: time between when a work item started and finished</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="lectures/figures/cdf.svg" alt="" /></p>
+</div>
+</div>
+<div class="notes">
+<p>Visualizing these metrics using charts is recommended. It does not
+matter what kind of charts are used as long as they enable a shared
+understanding of the Kanban system’s current health and performance.</p>
 </div>
 
                     </main>

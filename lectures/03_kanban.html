@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>home - handout</title>
+        <title>kanban - handout</title>
 
 
         <!-- Custom HTML head -->
@@ -12,24 +12,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="assets/custom-mdbook.css">
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -38,7 +38,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="lectures/HOME.html" class="active">home</a></li><li class="chapter-item expanded affix "><a href="lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="lectures/02_scrum.html">scrum</a></li><li class="chapter-item expanded affix "><a href="lectures/03_kanban.html">kanban</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../lectures/HOME.html">home</a></li><li class="chapter-item expanded affix "><a href="../lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="../lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="../lectures/02_scrum.html">scrum</a></li><li class="chapter-item expanded affix "><a href="../lectures/03_kanban.html" class="active">kanban</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -147,7 +147,7 @@
                     <h1 class="menu-title">handout</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -176,43 +176,187 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="software-engineering"><a class="header" href="#software-engineering">Software Engineering</a></h1>
-<h2 id="presentations"><a class="header" href="#presentations">Presentations</a></h2>
-<!--| week | lecture                           | practical class    |
-|-----:|:---------------------------------:|:------------------:|
-|    1 | intro, software architecture      | SDLC               |
-|    2 | SCRUM                             | kanban             |
-|    3 | requirement analysis              | user story map     |
-|    4 | UML, C4                           | UML in practice    |
-|    5 | "communication", clean code       | case studies       |
-|    6 | legacy code, review               | "coding" example   |
-|    7 | testing, review                   | project assignment |
-|    8 | school holiday                    |                    |
-|    9 | dependency management             | VCS basics         |
-|   10 | CI, automatization, devops        | project workshop   |
-|   11 | project workshop                  | project workshop   |
-|   12 | summary, course feedback          | project workshop   |
-|   13 | midterm                           | project demo       |-->
-<h3 id="week-1"><a class="header" href="#week-1">week 1</a></h3>
+                        <p>this presentation is based on The Kanban Guide (2020) by Daniel S.
+Vacanti</p>
+<p>available from <a href="https://kanbanguides.org">kanbanguides.org</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC
+BY-SA 4.0</a></p>
+<p>or download directly <a href="../resources/Kanban-Guide-2020-12.pdf">from here</a></p>
+<h1 id="what-is-kanban"><a class="header" href="#what-is-kanban">what is kanban?</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<blockquote>
+<p>Kanban is a strategy for optimizing the flow of value through a
+process that uses a visual, pull-based system</p>
+</blockquote>
+</div>
+<div class="column" width="50%">
+<p><img src="figures/kanban.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="principles-of-kanban"><a class="header" href="#principles-of-kanban">principles of kanban</a></h2>
+<div class="columns">
+<div class="column" width="70%">
 <ol>
-<li><a href="slides/00_intro.html">intro, software architecture</a></li>
-<li><a href="slides/01_sdlc.html">software development life cycles</a></li>
+<li>defining and visualizing a workflow</li>
+<li>actively managing items in a workflow</li>
+<li>improving a workflow</li>
 </ol>
-<h3 id="week-2"><a class="header" href="#week-2">week 2</a></h3>
-<ol>
-<li><a href="slides/02_previously.html">week 1 summary</a></li>
-<li><a href="slides/02_scrum.html">scrum</a></li>
-<li><a href="slides/03_kanban.html">kanban</a></li>
-</ol>
+</div>
+<div class="column" width="30%">
+<p><img src="figures/publicdomainvectors/scrum-task-board.svg" alt="" /></p>
+</div>
+</div>
+<div class="notes">
+<p>These Kanban practices are collectively called a Kanban system. Those
+who participate in the value delivery of a Kanban system are called
+Kanban system members.</p>
+</div>
+<h1 id="defining-and-visualizing-the-workflow"><a class="header" href="#defining-and-visualizing-the-workflow">defining and visualizing the workflow</a></h1>
+<div class="columns">
+<div class="column column-align-left" width="60%">
+<div>
+<ul>
+<li>definition of workflow (DoW)
+<ul>
+<li>the visualization of the DoW is called a Kanban board</li>
+<li>states (columns)</li>
+<li>conditions when to move an item between columns</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>a definition of the individual units of value that are moving through
+the workflow
+<ul>
+<li>referred to as work items (or items)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/job_hunting_kanban_item.drawio.svg" class="fragment"
+data-fragment-index="1" /></p>
+</div>
+</div>
+<h2 id="defining-and-visualizing-the-workflow-1"><a class="header" href="#defining-and-visualizing-the-workflow-1">defining and visualizing the workflow</a></h2>
+<div class="columns">
+<div class="column column-align-left" width="60%">
+<ul>
+<li>a definition for when work items are started and finished within the
+workflow
+<ul>
+<li>a workflow may have more than one started or finished points</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/job_hunting_kanban_finish.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="defining-and-visualizing-the-workflow-2"><a class="header" href="#defining-and-visualizing-the-workflow-2">defining and visualizing the workflow</a></h2>
+<div class="columns">
+<div class="column column-align-left" width="60%">
+<ul>
+<li>one or more defined states between the started to finished
+<ul>
+<li>item between start and finish point are considered work in progress
+(WIP)</li>
+</ul>
+</li>
+<li>a definition of how WIP will be controlled from started to finished</li>
+<li>explicit policies about how work items can flow through each state</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/job_hunting_kanban_transitions.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h1 id="service-level-expectation"><a class="header" href="#service-level-expectation">Service Level Expectation</a></h1>
+<div class="columns">
+<div class="column column-align-left" width="50%">
+<ul>
+<li>a service level expectation (SLE)
+<ul>
+<li>which is a forecast of how long it <strong>should</strong> take a work item to
+flow from started to finished</li>
+</ul>
+</li>
+<li>the SLE itself has two parts: a period of elapsed time and a
+probability associated with that period
+<ul>
+<li>e.g., 85% of work items will be finished in eight days or less</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p><img src="figures/job_hunting_kanban_transitions_2.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="service-level-expectation-1"><a class="header" href="#service-level-expectation-1">Service Level Expectation</a></h2>
+<div class="columns">
+<div class="column column-align-left" width="50%">
+<ul>
+<li>the SLE should be based on historical cycle time
+<ul>
+<li>and once calculated, should be visualized on the Kanban board</li>
+<li>if historical cycle time data does not exist, a best guess will do
+until there is enough historical data</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p><img src="figures/job_hunting_kanban_transitions_2.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h1 id="improving-the-workflow"><a class="header" href="#improving-the-workflow">improving the Workflow</a></h1>
+<ul>
+<li>it is common practice to review the DoW from time to time to discuss
+and implement any changes needed
+<ul>
+<li>e.g., need a new column for a new state</li>
+</ul>
+</li>
+<li>not necessary to wait for a formal meeting at a regular cadence to
+make these changes</li>
+</ul>
+<h1 id="kanban-measures"><a class="header" href="#kanban-measures">kanban measures</a></h1>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>WIP: number of work items started but not finished</li>
+<li>throughput: number of work items finished per unit of time
+<ul>
+<li>Note the measurement of throughput is the exact count of work items</li>
+</ul>
+</li>
+<li>work item age: elapsed time from when a work item started</li>
+<li>cycle time: time between when a work item started and finished</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/cdf.svg" alt="" /></p>
+</div>
+</div>
+<div class="notes">
+<p>Visualizing these metrics using charts is recommended. It does not
+matter what kind of charts are used as long as they enable a shared
+understanding of the Kanban system’s current health and performance.</p>
+</div>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-
-                            <a rel="next prefetch" href="lectures/00_intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                            <a rel="prev" href="../lectures/02_scrum.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
+
 
                         <div style="clear: both"></div>
                     </nav>
@@ -220,10 +364,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-
-                    <a rel="next prefetch" href="lectures/00_intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                    <a rel="prev" href="../lectures/02_scrum.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
+
             </nav>
 
         </div>
@@ -236,13 +380,13 @@
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 
