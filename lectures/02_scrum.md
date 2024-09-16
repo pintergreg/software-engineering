@@ -87,7 +87,12 @@ $\frac{4(4 − 1)}{2} = 6$
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
+:::::: {.r-stack}
 ![](figures/team_intercommunication_5.drawio.svg){width=300}
+
+![](figures/communication_overhead.svg){.fragment data-fragment-index="1"}
+
+::::::
 :::::::::
 ::::::::: {.column width="50%" .center-content}
 :::::: {.r-stack}
@@ -98,6 +103,7 @@ $\frac{5(5 − 1)}{2} = 10$
 ::: {.fragment .text-size-4 data-fragment-index="1"}
 $\frac{n(n − 1)}{2}$
 :::
+
 ::::::
 :::::::::
 ::::::::::::
@@ -123,6 +129,8 @@ $\frac{n(n − 1)}{2}$
 
 ## developers
 
+:::::::::::: {.columns}
+::::::::: {.column width="80%"}
 - committed to creating any aspect of a usable increment each sprint
 - the specific skills needed by the developers are often broad and will vary with the domain of work
 - developers are accountable for
@@ -131,24 +139,32 @@ $\frac{n(n − 1)}{2}$
     - adapting their plan each day toward the sprint goal, and
     - holding each other accountable as professionals
 
+:::::::::
+::::::::: {.column width="20%"}
+![](figures/publicdomainvectors/developer-at-work.svg)
+
+:::::::::
+::::::::::::
 
 ## definition of done
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%"}
+::::::::: {.column width="60%"}
 - checklist
 - defines steps to complete the sprint goal
 - helps to track the progress of the sprint
 - the sprint is done, if every element of the checklist is done
 
 :::::::::
-::::::::: {.column width="50%"}
-course definition of done:
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/filling-out-the-checklist.svg)
+
+<!--course definition of done:
 
 - [x] attended all classes
 - [x] homeworks completed
 - [x] midterm exam passed
-- [x] project work completed
+- [x] project work completed-->
 
 :::::::::
 ::::::::::::
@@ -376,12 +392,21 @@ Read more from [Kat Boogaard](https://www.wrike.com/blog/how-to-use-cumulative-f
 
 # sprint planning
 
+:::::::::::: {.columns}
+::::::::: {.column width="80%"}
 - sprint planning initiates the sprint
 - collaborative work of the entire scrum team 
 - the product owner ensures that attendees are prepared to discuss the most important product backlog items and how they map to the product goal
 - the scrum team may invite other people to provide advice
 - sprint planning lasts a maximum of eight hours for a one-month sprint
     - for shorter sprints the event is shorter
+
+:::::::::
+::::::::: {.column width="20%"}
+![](figures/publicdomainvectors/tasks-on-the-dashboard.svg)
+
+:::::::::
+::::::::::::
 
 ## topics of sprint planning - why is this sprint valuable?
 
@@ -561,6 +586,146 @@ And what is good as is, so the team should keep doing without change.
 For example, less online meeting, because it is not so efficient as face-to-face ones. For a given team, for another team, the opposite might be true.
 :::
 
+# {.exclude-header}
+
+::::::::::::::: {.exclude}
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+Which of the following is not a Scrum event?
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index="1"}
+1. Sprint Planning
+2. Sprint Review
+3. Sprint Retrospective
+4. Sprint Estimation
+
+:::
+::: {.fragment .fade-in data-fragment-index="1"}
+1. Sprint Planning
+2. Sprint Review
+3. Sprint Retrospective
+4. [Sprint Estimation]{.background-color-lightblue}
+
+:::
+::::::
+:::::::::
+::::::::: {.column width="25%"}
+:::::: {.r-stack}
+![](figures/publicdomainvectors/man-sitting-on-question-mark.svg){.fragment .fade-out data-fragment-index="1"}
+
+![](figures/publicdomainvectors/inspired-child-has-good-idea.svg){.fragment data-fragment-index="1"}
+::::::
+
+:::::::::
+::::::::::::
+:::::::::::::::
+
+## {.exclude-header}
+
+::::::::::::::: {.exclude}
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+What happens during Sprint Planning?
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index="1"}
+1. The team inspects the product increment
+2. The team plans the work for the upcoming Sprint
+3. The Product Backlog is finalized
+4. The Sprint is reviewed
+
+:::
+::: {.fragment .fade-in data-fragment-index="1"}
+1. The team inspects the product increment
+2. [The team plans the work for the upcoming Sprint]{.background-color-lightblue}
+3. The Product Backlog is finalized
+4. The Sprint is reviewed
+
+:::
+::::::
+:::::::::
+::::::::: {.column width="25%"}
+:::::: {.r-stack}
+![](figures/publicdomainvectors/man-sitting-on-question-mark.svg){.fragment .fade-out data-fragment-index="1"}
+
+![](figures/publicdomainvectors/inspired-child-has-good-idea.svg){.fragment data-fragment-index="1"}
+::::::
+
+:::::::::
+::::::::::::
+:::::::::::::::
+
+## {.exclude-header}
+
+::::::::::::::: {.exclude}
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+What is the purpose of the Sprint Retrospective?
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index="1"}
+1. Review the product backlog
+2. Plan the next Sprint
+3. Inspect how the last Sprint went with regards to people, relationships, process, and tools
+4. Refine the Definition of Done
+
+:::
+::: {.fragment .fade-in data-fragment-index="1"}
+1. Review the product backlog
+2. Plan the next Sprint
+3. [Inspect how the last Sprint went with regards to people, relationships, process, and tools]{.background-color-lightblue}
+4. Refine the Definition of Done
+
+:::
+::::::
+:::::::::
+::::::::: {.column width="25%"}
+:::::: {.r-stack}
+![](figures/publicdomainvectors/man-sitting-on-question-mark.svg){.fragment .fade-out data-fragment-index="1"}
+
+![](figures/publicdomainvectors/inspired-child-has-good-idea.svg){.fragment data-fragment-index="1"}
+::::::
+
+:::::::::
+::::::::::::
+:::::::::::::::
+
+## {.exclude-header}
+
+::::::::::::::: {.exclude}
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+How long should a Sprint Review be for a one-month Sprint?
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index="1"}
+- 1 hour
+- 2 hours
+- 4 hours
+- 8 hours
+
+:::
+::: {.fragment .fade-in data-fragment-index="1"}
+- 1 hour
+- 2 hours
+- [4 hours]{.background-color-lightblue}
+- 8 hours
+
+:::
+::::::
+:::::::::
+::::::::: {.column width="25%"}
+:::::: {.r-stack}
+![](figures/publicdomainvectors/man-sitting-on-question-mark.svg){.fragment .fade-out data-fragment-index="1"}
+
+![](figures/publicdomainvectors/inspired-child-has-good-idea.svg){.fragment data-fragment-index="1"}
+::::::
+:::::::::
+::::::::::::
+:::::::::::::::
+
+
 # scrum artifacts
 
 - scrum artifacts represent work or value 
@@ -653,6 +818,23 @@ Also known as meta scrum.
 :::
 
 # zombie scrum
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+> Zombie Scrum is Scrum, but without the beating heart of working software.
+
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/borrowed/zombie_scrum.png)
+
+:::::::::
+::::::::::::
+
+::: notes
+At first sight, zombie scrum seems to be a normal scrum. But it lacks a beating heart.
+The Scrum teams do all the Scrum events but a potentially releasable increment is rarely the result of a Sprint.
+The team also doesn’t have any intention to improve their situation. Actually, nobody cares about this team. The stakeholders have forgotten the existence of this team a long time ago.
+:::
 
 # references
 
