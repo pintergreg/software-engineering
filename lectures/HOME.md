@@ -27,3 +27,4 @@
 
 1. [week 1 summary](slides/02_previously.html)
 2. [scrum](slides/02_scrum.html)
+2. [kanban](slides/03_kanban.html)
