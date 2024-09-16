@@ -12,7 +12,7 @@ slideNumber: "true"
 showSlideNumber: "print"
 ---
 
-# schedule
+# schedule {visibility=hidden}
 
 | week | date       | lecture                           | practical class    |
 |-----:|:----------:|:---------------------------------:|:------------------:|
@@ -23,9 +23,33 @@ showSlideNumber: "print"
 |    5 | 2024-10-08 | "communication", clean code       | case studies       |
 |    6 | 2024-10-15 | legacy code, review               | "coding" example   |
 |    7 | 2024-10-22 | testing, review                   | project assignment |
+|    8 | 2024-10-29 | school holiday                    |                    |
+|    9 | 2024-11-05 | dependency management             | VCS basics         |
+|   10 | 2024-11-12 | CI, automatization, devops        | project workshop   |
+|   11 | 2024-11-19 | project workshop                  | project workshop   |
+|   12 | 2024-11-26 | summary, course feedback          | project workshop   |
+|   13 | 2024-12-03 | midterm                           | project demo       |
+|   14 | 2024-12-10 | no planned lecture                |                    |
 
-## schedule
 
+# schedule {.exclude-header}
+
+::: {.exclude}
+| week | date       | lecture                           | practical class    |
+|-----:|:----------:|:---------------------------------:|:------------------:|
+|    1 | 2024-09-10 | intro, software architecture      | SDLC               |
+|    2 | 2024-09-17 | SCRUM                             | kanban             |
+|    3 | 2024-09-24 | requirement analysis              | user story map     |
+|    4 | 2024-10-01 | UML, C4                           | UML in practice    |
+|    5 | 2024-10-08 | "communication", clean code       | case studies       |
+|    6 | 2024-10-15 | legacy code, review               | "coding" example   |
+|    7 | 2024-10-22 | testing, review                   | project assignment |
+
+:::
+
+## schedule {.exclude-header}
+
+::: {.exclude}
 | week | date       | lecture                           | practical class    |
 |-----:|:----------:|:---------------------------------:|:------------------:|
 |    8 | 2024-10-29 | school holiday                    |                    |
@@ -36,11 +60,11 @@ showSlideNumber: "print"
 |   13 | 2024-12-03 | midterm                           | project demo       |
 |   14 | 2024-12-10 | no planned lecture                |                    |
 
+:::
 
-# materials {visibility=hidden}
+# materials {visibility=hidden .exclude}
 
 - hangout, presentation website introduction
-- also, moodle?
 
 # tools
 
@@ -105,7 +129,7 @@ It is easy to read this code snippet and figure out what it does, but constructi
 
 It contains a loop going from 1 to 100 (ranges are not closed in Python, so 101 is excluded and the range step is 1 by default).
 If the loop variable is dividable by 15, "FizzBuzz" is printed to the screen.
-I it is only dividable by 3 "Fizz" is printed, if only by 5 "Buzz" is printed.
+If it is only dividable by 3 "Fizz" is printed, if only by 5 "Buzz" is printed.
 In any other cases the number id printed.
 
 
@@ -443,7 +467,7 @@ For example Google Docs or Microsoft Word also provides some level of version co
 # project complexity
 
 :::::: {.r-stack}
-::: {}
+::: {.exclude}
 ![](figures/complex_projects.drawio.cropped_no_people.svg){width=55%}
 :::
 ::: {.fragment}
