@@ -31,7 +31,7 @@ jobs:
             - name: compile presentaion
               run: |
                   cd lectures
-                  ruby build.rb
+                  ruby build_slides.rb
                   cd ..
 
             - name: compile handout
