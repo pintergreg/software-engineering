@@ -1,4 +1,4 @@
-embed_resources: true
+embed_resources: false
 bibliography:
     - "references.bib"
     - "wikipedia.bib"

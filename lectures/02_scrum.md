@@ -10,6 +10,7 @@ title-slide-attributes:
     data-background-position: 1.25rem calc(100% - 1.25rem)
 slideNumber: "true"
 showSlideNumber: "print"
+revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
 this presentation is based on The Scrum Guide (2020)<br>by Ken Schwaber and Jeff Sutherland [@schwaber2020scrum]
