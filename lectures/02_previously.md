@@ -98,7 +98,27 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 :::::::::
 ::::::::::::
 
-# waterfall model
+# evolution of software life cycle models (incomplete)
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- software life cycle models 
+    - waterfall
+        - improved waterfall
+    - V model
+    - iterative
+    - agile
+- regarding to change management
+
+:::::::::
+::::::::: {.column width="50%"}
+:::::: {.r-stack}
+![](figures/publicdomainvectors/mobile-phones-evolution.svg){width=500}
+::::::
+:::::::::
+::::::::::::
+
+## waterfall model
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
@@ -106,16 +126,19 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
     - (originally) not possible to step back to a previous phase
 - testing is after the implementation, errors are found late in the process
 - not possible to make changes during the development
+- could take years
 
 :::::::::
 ::::::::: {.column width="50%"}
 :::::: {.r-stack}
 ![](figures/waterfall.svg){width=500}
+
+![](figures/waterfall_modified.svg){width=500 .fragment}
 ::::::
 :::::::::
 ::::::::::::
 
-# V model
+## V model
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
@@ -133,7 +156,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 :::::::::
 ::::::::::::
 
-# iterative model
+## iterative model
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
@@ -150,7 +173,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 :::::::::
 ::::::::::::
 
-# agile model
+## agile model
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
