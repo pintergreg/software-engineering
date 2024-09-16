@@ -21,9 +21,6 @@ OptionParser.new do |parser|
   parser.on('-e', '--embed-resources', 'embed resources') do |_s|
     options["embed_resources"] = true
   end
-  parser.on('--revealjs-url REVEALURL', 'RevealJS URL') do |url|
-    options["revealjs_url"] = "-V revealjs-url:\"#{url}\""
-  end
 end.parse!
 
 options["exclude"].each do |filename|
