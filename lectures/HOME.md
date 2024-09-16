@@ -18,6 +18,12 @@
 |   12 | summary, course feedback          | project workshop   |
 |   13 | midterm                           | project demo       |-->
 
+### week 1
+
 1. [intro, software architecture](slides/00_intro.html)
 2. [software development life cycles](slides/01_sdlc.html)
-3. [scrum](slides/02_srcum.html)
+
+### week 2
+
+1. [week 1 summary](slides/02_previously.html)
+2. [scrum](slides/02_srcum.html)
