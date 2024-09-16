@@ -163,3 +163,47 @@ changes needed
 Visualizing these metrics using charts is recommended.
 It does not matter what kind of charts are used as long as they enable a shared understanding of the Kanban system's current health and performance.
 :::
+
+# Toyota's six rules [@enwiki:1239509091]
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+1. Each process issues requests (kanban) to its suppliers when it consumes its supplies.
+2. Each process produces according to the quantity and sequence of incoming requests.
+3. No items are made or transported without a request.
+4. The request associated with an item is always attached to it.
+5. Processes must not send out defective items, to ensure that the finished products will be defect-free.
+6. Limiting the number of pending requests makes the process more sensitive and reveals inefficiencies.
+
+:::::::::
+::::::::: {.column width="30%"}
+![Kanban card together with the bag of bolts](figures/080527-F-0000A-001.JPG)
+
+:::::::::
+::::::::::::
+
+# scrumban
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+Scrum contributes to scrumban:
+
+- sprints
+- daily standups
+- retrospectives
+
+:::::::::
+::::::::: {.column width="50%"}
+Kanban contributes to scrumban:
+
+- board
+- cards
+- work-in-progress limits
+
+:::::::::
+::::::::::::
+
+# references
+
+::: refs
+:::

@@ -321,5 +321,6 @@ The major code hosting solutions (GitHub, GitLab, Bitbucket, Gitea) all have som
 # SCUM + kanban = scrumban
 
 - SCRUM and kanban can coexist
+- quite new methodology
 
 # references
