@@ -44,8 +44,8 @@ jobs:
                   mkdir -p book/slides/figures
                   mkdir -p book/slides/assets
                   cp -r lectures/figures/* book/slides/figures/
-                  cp lectures/*.html book/slides/
-                  cp assets/* book/assets/
+                  cp -r lectures/*.html book/slides/
+                  cp -r assets/* book/assets/
 
             - name: deploy
               uses: peaceiris/actions-gh-pages@v4
