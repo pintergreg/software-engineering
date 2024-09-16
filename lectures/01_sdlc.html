@@ -1,0 +1,605 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>software development life cycle - handout</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="software engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="../lectures/01_sdlc.html" class="active">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="../lectures/02_scrum.html">scrum</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">handout</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="content"><a class="header" href="#content">content</a></h1>
+<ul>
+<li>software development life cycle</li>
+<li>waterfal</li>
+<li>V model</li>
+<li>incremental</li>
+<li>agile
+<ul>
+<li>SCRUM</li>
+</ul>
+</li>
+<li>kanban</li>
+</ul>
+<h1 id="waterfall-model"><a class="header" href="#waterfall-model">waterfall model</a></h1>
+<img src="figures/waterfall.svg" width="750" />
+<div class="notes">
+<ul>
+<li>earliest SDLC model</li>
+<li>the origin of the name is that the progress flows in one direction,
+downwards like a waterfall</li>
+<li>not iterative, not flexible</li>
+<li>linear, sequential phases</li>
+</ul>
+</div>
+<h2 id="criticism"><a class="header" href="#criticism">criticism</a></h2>
+<ul>
+<li>Clients may not know exactly what their requirements are before they
+see working software and so change their requirements, leading to
+redesign, redevelopment, and retesting, and increased costs.
+[@parnas1986rational] In most cases the people who comission the
+building of the a software system do not know exactly what they want
+and are unable to tell us all they know.</li>
+</ul>
+<h2 id="modified-waterfall-model"><a class="header" href="#modified-waterfall-model">modified waterfall model</a></h2>
+<figure>
+<img src="figures/waterfall_modified.svg" width="750"
+alt="based on Figure 4. of [@royce1970managing]" />
+<figcaption aria-hidden="true">based on Figure 4. of <span
+class="citation"
+data-cites="royce1970managing">[@royce1970managing]</span></figcaption>
+</figure>
+<h1 id="v-model-forsberg1991relationship"><a class="header" href="#v-model-forsberg1991relationship">V model [@forsberg1991relationship]</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>still rigid</li>
+<li>each phase has output and a review process
+<ul>
+<li>errors are found at early stage</li>
+<li>decreases the risk of failure</li>
+</ul>
+</li>
+<li>large to small: testing is done in a hierarchical perspective</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<div class="r-stack">
+<figure>
+<img src="figures/v_model.drawio.svg" width="500"
+alt="based on guru99.com’s image" />
+<figcaption aria-hidden="true">based on <a
+href="https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png">guru99.com’s
+image</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>The <em>unit testing</em> will be discussed later in the testing chapter. For
+now it is enough to know that it is a tool to test the lower level part
+of the software.</p>
+</div>
+<h1 id="iterative-model"><a class="header" href="#iterative-model">iterative model</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>software is built incrementally,
+<ul>
+<li>with each iteration adding new features or refining existing ones</li>
+</ul>
+</li>
+<li>possible to get feedback after each iteration</li>
+<li>can be rigid within an iteration</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<div class="r-stack">
+<img src="figures/iterative.drawio.svg" width="500" />
+</div>
+</div>
+</div>
+<h1 id="agile-model"><a class="header" href="#agile-model">agile model</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>continuous collaboration and fast response to change, while the
+iterative model takes a more gradual approach, building up the final
+product over multiple iterations</li>
+<li>scrum is an agile methodology</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<div class="r-stack">
+<img src="figures/agile.drawio.svg" width="500" />
+</div>
+</div>
+</div>
+<h1 id="the-agile-manifesto"><a class="header" href="#the-agile-manifesto">the agile manifesto</a></h1>
+<blockquote>
+<p>We are uncovering better ways of developing software by doing it and
+helping others do it. Through this work we have come to value:</p>
+<ul>
+<li><strong>Individuals and interactions</strong> over processes and tools</li>
+<li><strong>Working software</strong> over comprehensive documentation</li>
+<li><strong>Customer collaboration</strong> over contract negotiation</li>
+<li><strong>Responding to change</strong> over following a plan</li>
+</ul>
+<p>That is, while there is value in the items on the right, we value the
+items on the left more.</p>
+</blockquote>
+<p><a href="https://agilemanifesto.org/">agilemanifesto.org</a></p>
+<p>. . .</p>
+<p><a href="https://agilemanifesto.org/principles.html">Principles behind the Agile
+Manifesto</a></p>
+<div class="notes">
+<ul>
+<li>The agile does not mean a specific methodology, so SCRUM is not the
+only agile approach (the course will cover SCRUM later), and agile is
+not the only approach.<!-- - Processes and protocols are established with good reason, but they cannot be more important than people. -->
+</li>
+<li>The documentation is still important, the course will cover later what
+and how should be documented, but the point is no matter how much
+documentation you have, if the software does not work as expected.</li>
+<li>In the business world, contracts are important, especially contract
+violations and the penalty clauses, but customers should be treated as
+a partner, and collaborative communication should come first, before
+giving more jobs to the lawyers.</li>
+<li>Planing is import (even having a plan B is often advisable), but the
+world is in constant change, so flexibility is required. Compared to
+the waterfall, which requires you to follow the initial plan, agile
+allows changes during the development. Remember, programming is more
+like gardening.</li>
+</ul>
+<p>There are also twelve principles behind the Agile Manifesto, that
+provides some more detailed interpretation for the values.</p>
+</div>
+<h2 id="1-principle-behind-the-agile-manifesto"><a class="header" href="#1-principle-behind-the-agile-manifesto">1. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>Our highest priority is to satisfy the customer through early and
+continuous delivery of valuable software.</p>
+</blockquote>
+<p>. . .</p>
+<blockquote>
+<p>Release early. Release often. And listen to your customers.</p>
+<p>Eric S. Raymond: The Cathedral and the Bazaar (1997)</p>
+</blockquote>
+<div class="notes">
+<p>The “release early, release often mantra” is quite widespread, but I
+rarely see the “listen to your customers” part. One of the main
+principle of agile is to collaborate with the customer, who should be
+involved into the development. Show them the software as soon as
+possible and ask for feedback. Feedback means there will be change
+requests.</p>
+</div>
+<h2 id="2-principle-behind-the-agile-manifesto"><a class="header" href="#2-principle-behind-the-agile-manifesto">2. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>Welcome changing requirements, even late in development.
+<span class=".fragment">Agile processes harness change for the
+customer’s competitive advantage.<span></p>
+<p><cite><a href="https://agilemanifesto.org/principles.html">Principles behind the Agile
+Manifesto</a></cite></p>
+</blockquote>
+<div class="notes">
+<p>A feedback is something that represent value, so change requests should
+be welcomed. Satisfing the customer is good for the business.</p>
+</div>
+<h2 id="3-principle-behind-the-agile-manifesto"><a class="header" href="#3-principle-behind-the-agile-manifesto">3. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>Deliver working software frequently, from a couple of weeks to a
+couple of months, with a preference to the shorter timescale.</p>
+</blockquote>
+<div class="notes">
+<p>This is a significant seep-up compared to the waterfall, where it could
+even take years while the customer sees something in action. And if you
+consider this as a users’ perspective, small changes are easier to
+adapt, than drastic restructurings which are comparable to learn a
+completely new software.</p>
+</div>
+<h2 id="4-principle-behind-the-agile-manifesto"><a class="header" href="#4-principle-behind-the-agile-manifesto">4. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>Business people and developers must work together daily throughout the
+project.</p>
+</blockquote>
+<div class="notes">
+<p>Polarization is not good. There should not be sides, business people and
+developers must not consider the other foes. They work together for the
+same goal.</p>
+</div>
+<h2 id="5-principle-behind-the-agile-manifesto"><a class="header" href="#5-principle-behind-the-agile-manifesto">5. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>Build projects around motivated individuals. Give them the environment
+and support they need, and trust them to get the job done.</p>
+</blockquote>
+<h2 id="6-principle-behind-the-agile-manifesto"><a class="header" href="#6-principle-behind-the-agile-manifesto">6. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>The most efficient and effective method of conveying information to
+and within a development team is face-to-face conversation.</p>
+</blockquote>
+<div class="notes">
+<p>While it is not untrue. I consider it outdated from some aspect.</p>
+</div>
+<h2 id="7-principle-behind-the-agile-manifesto"><a class="header" href="#7-principle-behind-the-agile-manifesto">7. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>Working software is the primary measure of progress.</p>
+</blockquote>
+<div class="notes">
+</div>
+<h2 id="8-principle-behind-the-agile-manifesto"><a class="header" href="#8-principle-behind-the-agile-manifesto">8. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>Agile processes promote sustainable development. The sponsors,
+developers, and users should be able to maintain a constant pace
+indefinitely.</p>
+</blockquote>
+<div class="notes">
+</div>
+<h2 id="9-principle-behind-the-agile-manifesto"><a class="header" href="#9-principle-behind-the-agile-manifesto">9. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>Continuous attention to technical excellence and good design enhances
+agility.</p>
+</blockquote>
+<div class="notes">
+</div>
+<h2 id="10-principle-behind-the-agile-manifesto"><a class="header" href="#10-principle-behind-the-agile-manifesto">10. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>Simplicity–the art of maximizing the amount of work not done–is
+essential.</p>
+</blockquote>
+<div class="notes">
+</div>
+<h2 id="11-principle-behind-the-agile-manifesto"><a class="header" href="#11-principle-behind-the-agile-manifesto">11. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>The best architectures, requirements, and designs emerge from
+self-organizing teams.</p>
+</blockquote>
+<div class="notes">
+</div>
+<h2 id="12-principle-behind-the-agile-manifesto"><a class="header" href="#12-principle-behind-the-agile-manifesto">12. Principle behind the Agile Manifesto</a></h2>
+<blockquote>
+<p>At regular intervals, the team reflects on how to become more
+effective, then tunes and adjusts its behavior accordingly.</p>
+</blockquote>
+<div class="notes">
+</div>
+<h1 id="manifesto-for-software-craftsmanship"><a class="header" href="#manifesto-for-software-craftsmanship">manifesto for software craftsmanship</a></h1>
+<div class="wide-quote">
+<blockquote>
+<p>As aspiring Software Craftsmen we are raising the bar of professional
+software development by practicing it and helping others learn the
+craft. Through this work we have come to value:</p>
+<ul>
+<li>Not only working software, but also <strong>well-crafted software</strong></li>
+<li>Not only responding to change, but also <strong>steadily adding value</strong></li>
+<li>Not only individuals and interactions, but also <strong>a community of
+professionals</strong></li>
+<li>Not only customer collaboration, but also <strong>productive
+partnerships</strong></li>
+</ul>
+<p>That is, in pursuit of the items on the left we have found the items
+on the right to be indispensable.</p>
+</blockquote>
+</div>
+<div class="notes">
+<p>This reads like an answer to the agile manifesto. The working software
+is good, but should well-crafted, which aligns with the ninth agile
+principle: “Continuous attention to technical excellence and good design
+enhances agility.”</p>
+<!-- Accepting change requests is okay, but the change should improve the software. -->
+</div>
+<!--## subway map to agile practices
+&#10;![](borrowed/subway_map_to_agile_practices.svg)-->
+<h2 id="agile-vs-waterfall"><a class="header" href="#agile-vs-waterfall">agile vs. waterfall</a></h2>
+<table>
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">agile</th>
+<th style="text-align: center;">waterfall</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">incremental</td>
+<td style="text-align: center;">sequential</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">phases repeated</td>
+<td style="text-align: center;">phases completed exactly once</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">flexible</td>
+<td style="text-align: center;">rigid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">allows changes during the
+development</td>
+<td style="text-align: center;">no change once the development
+started</td>
+</tr>
+</tbody>
+</table>
+<h2 id="agile-vs-waterfall-1"><a class="header" href="#agile-vs-waterfall-1">agile vs. waterfall</a></h2>
+<p>Can waterfall work? Yes, it can, if the customer exactly knows what they
+want and can express it in technical terms.</p>
+<p>Although usually the customer does not know what they want, so agile
+usually work better.</p>
+<h1 id="scrum"><a class="header" href="#scrum">SCRUM</a></h1>
+<p><img src="figures/scrum_sprint.drawio.svg" alt="" /></p>
+<h1 id="kanban"><a class="header" href="#kanban">kanban</a></h1>
+<div class="columns">
+<div class="column" width="45%">
+<figure>
+<img src="figures/simple_kanban_board.jpg" width="700"
+alt="simple kanban board by Jeff Lasovski | CC BY-SA 3.0" />
+<figcaption aria-hidden="true">simple kanban board<br>by <a
+href="https://commons.wikimedia.org/wiki/File:Simple-kanban-board-.jpg">Jeff
+Lasovski</a> | <a
+href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA
+3.0</a></figcaption>
+</figure>
+</div>
+<div class="column" width="55%">
+<ul>
+<li>notes move from left to right</li>
+<li>order denote priority</li>
+<li>allways process the right- and topmost one to finish it ASAP</li>
+<li>tool-dependent but a note can indicate:
+<ul>
+<li>who’s responsible</li>
+<li>how much effort to do it</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="notes">
+<p>The word “<em>kanban</em>” roughly means board in Japanese (signboard or
+billboard, actually).</p>
+</div>
+<h2 id="kanban-for-job-hunting"><a class="header" href="#kanban-for-job-hunting">kanban for job hunting</a></h2>
+<p><img src="figures/job_hunting_kanban.drawio.svg" alt="" /></p>
+<div class="notes">
+<p>Kanban is a general technique, you can use it for household chores, for
+job applications (e.g., backlog, application sent, interview, done,
+declined). A whiteboard can be used or there a many different software
+for the task. Some general examples are: - Trello
+(https://trello.com/), - free and paid plans - Taiga
+(https://taiga.io/). - open source, self-hosted, cloud based free and
+paid plans - WeKan (https://wekan.github.io/) - open source, self-hosted</p>
+</div>
+<h2 id="kanban-in-software-development"><a class="header" href="#kanban-in-software-development">kanban in software development</a></h2>
+<p><img src="figures/kanban.drawio.svg" alt="" /></p>
+<div class="notes">
+<p>Kanban is widespread in software development. The major code hosting
+solutions (GitHub, GitLab, Bitbucket, Gitea) all have some board
+functionalities.</p>
+</div>
+<h1 id="scum--kanban--scrumban"><a class="header" href="#scum--kanban--scrumban">SCUM + kanban = scrumban</a></h1>
+<ul>
+<li>SCRUM and kanban can coexist</li>
+</ul>
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/00_intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../lectures/02_scrum.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/00_intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../lectures/02_scrum.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

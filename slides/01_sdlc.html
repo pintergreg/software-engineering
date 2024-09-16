@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér">
+  <title>Software Development Life Cycle</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">Software Development Life Cycle</h1>
+  <p class="author">Gergő Pintér</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section id="content" class="title-slide slide level1">
+<h1>content</h1>
+<ul>
+<li>software development life cycle</li>
+<li>waterfal</li>
+<li>V model</li>
+<li>incremental</li>
+<li>agile
+<ul>
+<li>SCRUM</li>
+</ul></li>
+<li>kanban</li>
+</ul>
+</section>
+
+<section>
+<section id="waterfall-model" class="title-slide slide level1">
+<h1>waterfall model</h1>
+<p><img data-src="figures/waterfall.svg" width="750" /></p>
+<aside class="notes">
+<ul>
+<li>earliest SDLC model</li>
+<li>the origin of the name is that the progress flows in one direction,
+downwards like a waterfall</li>
+<li>not iterative, not flexible</li>
+<li>linear, sequential phases</li>
+</ul>
+</aside>
+</section>
+<section id="criticism" class="slide level2">
+<h2>criticism</h2>
+<ul>
+<li>Clients may not know exactly what their requirements are before they
+see working software and so change their requirements, leading to
+redesign, redevelopment, and retesting, and increased costs. <span
+class="citation" data-cites="parnas1986rational">[1]</span> In most
+cases the people who comission the building of the a software system do
+not know exactly what they want and are unable to tell us all they
+know.</li>
+</ul>
+</section>
+<section id="modified-waterfall-model" class="slide level2">
+<h2>modified waterfall model</h2>
+<figure>
+<img data-src="figures/waterfall_modified.svg" width="750"
+alt="based on Figure 4. of [2]" />
+<figcaption aria-hidden="true">based on Figure 4. of <span
+class="citation" data-cites="royce1970managing">[2]</span></figcaption>
+</figure>
+</section></section>
+<section id="v-model-forsberg1991relationship"
+class="title-slide slide level1">
+<h1>V model <span class="citation"
+data-cites="forsberg1991relationship">[3]</span></h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>still rigid</li>
+<li>each phase has output and a review process
+<ul>
+<li>errors are found at early stage</li>
+<li>decreases the risk of failure</li>
+</ul></li>
+<li>large to small: testing is done in a hierarchical perspective</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<figure>
+<img data-src="figures/v_model.drawio.svg" width="500"
+alt="based on guru99.com’s image" />
+<figcaption aria-hidden="true">based on <a
+href="https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png">guru99.com’s
+image</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>The <em>unit testing</em> will be discussed later in the testing
+chapter. For now it is enough to know that it is a tool to test the
+lower level part of the software.</p>
+</aside>
+</section>
+
+<section id="iterative-model" class="title-slide slide level1">
+<h1>iterative model</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>software is built incrementally,
+<ul>
+<li>with each iteration adding new features or refining existing
+ones</li>
+</ul></li>
+<li>possible to get feedback after each iteration</li>
+<li>can be rigid within an iteration</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="figures/iterative.drawio.svg" width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="agile-model" class="title-slide slide level1">
+<h1>agile model</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>continuous collaboration and fast response to change, while the
+iterative model takes a more gradual approach, building up the final
+product over multiple iterations</li>
+<li>scrum is an agile methodology</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="figures/agile.drawio.svg" width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<section id="the-agile-manifesto" class="title-slide slide level1">
+<h1>the agile manifesto</h1>
+<blockquote>
+<p>We are uncovering better ways of developing software by doing it and
+helping others do it. Through this work we have come to value:</p>
+<ul>
+<li><strong>Individuals and interactions</strong> over processes and
+tools</li>
+<li><strong>Working software</strong> over comprehensive
+documentation</li>
+<li><strong>Customer collaboration</strong> over contract
+negotiation</li>
+<li><strong>Responding to change</strong> over following a plan</li>
+</ul>
+<p>That is, while there is value in the items on the right, we value the
+items on the left more.</p>
+</blockquote>
+<p><a href="https://agilemanifesto.org/">agilemanifesto.org</a></p>
+<div class="fragment">
+<p><a href="https://agilemanifesto.org/principles.html">Principles
+behind the Agile Manifesto</a></p>
+<aside class="notes">
+<ul>
+<li>The agile does not mean a specific methodology, so SCRUM is not the
+only agile approach (the course will cover SCRUM later), and agile is
+not the only approach.
+<!-- - Processes and protocols are established with good reason, but they cannot be more important than people. --></li>
+<li>The documentation is still important, the course will cover later
+what and how should be documented, but the point is no matter how much
+documentation you have, if the software does not work as expected.</li>
+<li>In the business world, contracts are important, especially contract
+violations and the penalty clauses, but customers should be treated as a
+partner, and collaborative communication should come first, before
+giving more jobs to the lawyers.</li>
+<li>Planing is import (even having a plan B is often advisable), but the
+world is in constant change, so flexibility is required. Compared to the
+waterfall, which requires you to follow the initial plan, agile allows
+changes during the development. Remember, programming is more like
+gardening.</li>
+</ul>
+<p>There are also twelve principles behind the Agile Manifesto, that
+provides some more detailed interpretation for the values.</p>
+</aside>
+</div>
+</section>
+<section id="principle-behind-the-agile-manifesto" class="slide level2">
+<h2>1. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>Our highest priority is to satisfy the customer through early and
+continuous delivery of valuable software.</p>
+</blockquote>
+<div class="fragment">
+<blockquote>
+<p>Release early. Release often. And listen to your customers.</p>
+<p>Eric S. Raymond: The Cathedral and the Bazaar (1997)</p>
+</blockquote>
+<aside class="notes">
+<p>The “release early, release often mantra” is quite widespread, but I
+rarely see the “listen to your customers” part. One of the main
+principle of agile is to collaborate with the customer, who should be
+involved into the development. Show them the software as soon as
+possible and ask for feedback. Feedback means there will be change
+requests.</p>
+</aside>
+</div>
+</section>
+<section id="principle-behind-the-agile-manifesto-1"
+class="slide level2">
+<h2>2. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>Welcome changing requirements, even late in development.
+<span class=".fragment">Agile processes harness change for the
+customer’s competitive advantage.<span></p>
+<p><cite><a href="https://agilemanifesto.org/principles.html">Principles
+behind the Agile Manifesto</a></cite></p>
+</blockquote>
+<aside class="notes">
+<p>A feedback is something that represent value, so change requests
+should be welcomed. Satisfing the customer is good for the business.</p>
+</aside>
+</section>
+<section id="principle-behind-the-agile-manifesto-2"
+class="slide level2">
+<h2>3. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>Deliver working software frequently, from a couple of weeks to a
+couple of months, with a preference to the shorter timescale.</p>
+</blockquote>
+<aside class="notes">
+<p>This is a significant seep-up compared to the waterfall, where it
+could even take years while the customer sees something in action. And
+if you consider this as a users’ perspective, small changes are easier
+to adapt, than drastic restructurings which are comparable to learn a
+completely new software.</p>
+</aside>
+</section>
+<section id="principle-behind-the-agile-manifesto-3"
+class="slide level2">
+<h2>4. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>Business people and developers must work together daily throughout
+the project.</p>
+</blockquote>
+<aside class="notes">
+<p>Polarization is not good. There should not be sides, business people
+and developers must not consider the other foes. They work together for
+the same goal.</p>
+</aside>
+</section>
+<section id="principle-behind-the-agile-manifesto-4"
+class="slide level2">
+<h2>5. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>Build projects around motivated individuals. Give them the
+environment and support they need, and trust them to get the job
+done.</p>
+</blockquote>
+</section>
+<section id="principle-behind-the-agile-manifesto-5"
+class="slide level2">
+<h2>6. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>The most efficient and effective method of conveying information to
+and within a development team is face-to-face conversation.</p>
+</blockquote>
+<aside class="notes">
+<p>While it is not untrue. I consider it outdated from some aspect.</p>
+</aside>
+</section>
+<section id="principle-behind-the-agile-manifesto-6"
+class="slide level2">
+<h2>7. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>Working software is the primary measure of progress.</p>
+</blockquote>
+<aside class="notes">
+
+</aside>
+</section>
+<section id="principle-behind-the-agile-manifesto-7"
+class="slide level2">
+<h2>8. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>Agile processes promote sustainable development. The sponsors,
+developers, and users should be able to maintain a constant pace
+indefinitely.</p>
+</blockquote>
+<aside class="notes">
+
+</aside>
+</section>
+<section id="principle-behind-the-agile-manifesto-8"
+class="slide level2">
+<h2>9. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>Continuous attention to technical excellence and good design enhances
+agility.</p>
+</blockquote>
+<aside class="notes">
+
+</aside>
+</section>
+<section id="principle-behind-the-agile-manifesto-9"
+class="slide level2">
+<h2>10. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>Simplicity–the art of maximizing the amount of work not done–is
+essential.</p>
+</blockquote>
+<aside class="notes">
+
+</aside>
+</section>
+<section id="principle-behind-the-agile-manifesto-10"
+class="slide level2">
+<h2>11. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>The best architectures, requirements, and designs emerge from
+self-organizing teams.</p>
+</blockquote>
+<aside class="notes">
+
+</aside>
+</section>
+<section id="principle-behind-the-agile-manifesto-11"
+class="slide level2">
+<h2>12. Principle behind the Agile Manifesto</h2>
+<blockquote>
+<p>At regular intervals, the team reflects on how to become more
+effective, then tunes and adjusts its behavior accordingly.</p>
+</blockquote>
+<aside class="notes">
+
+</aside>
+</section></section>
+<section>
+<section id="manifesto-for-software-craftsmanship"
+class="title-slide slide level1">
+<h1>manifesto for software craftsmanship</h1>
+<div class="wide-quote">
+<blockquote>
+<p>As aspiring Software Craftsmen we are raising the bar of professional
+software development by practicing it and helping others learn the
+craft. Through this work we have come to value:</p>
+<ul>
+<li>Not only working software, but also <strong>well-crafted
+software</strong></li>
+<li>Not only responding to change, but also <strong>steadily adding
+value</strong></li>
+<li>Not only individuals and interactions, but also <strong>a community
+of professionals</strong></li>
+<li>Not only customer collaboration, but also <strong>productive
+partnerships</strong></li>
+</ul>
+<p>That is, in pursuit of the items on the left we have found the items
+on the right to be indispensable.</p>
+</blockquote>
+</div>
+<aside class="notes">
+<p>This reads like an answer to the agile manifesto. The working
+software is good, but should well-crafted, which aligns with the ninth
+agile principle: “Continuous attention to technical excellence and good
+design enhances agility.”
+<!-- Accepting change requests is okay, but the change should improve the software. --></p>
+</aside>
+<!--## subway map to agile practices
+
+![](borrowed/subway_map_to_agile_practices.svg)-->
+</section>
+<section id="agile-vs.-waterfall" class="slide level2">
+<h2>agile vs. waterfall</h2>
+<table>
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">agile</th>
+<th style="text-align: center;">waterfall</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">incremental</td>
+<td style="text-align: center;">sequential</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">phases repeated</td>
+<td style="text-align: center;">phases completed exactly once</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">flexible</td>
+<td style="text-align: center;">rigid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">allows changes during the
+development</td>
+<td style="text-align: center;">no change once the development
+started</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="agile-vs.-waterfall-1" class="slide level2">
+<h2>agile vs. waterfall</h2>
+<p>Can waterfall work? Yes, it can, if the customer exactly knows what
+they want and can express it in technical terms.</p>
+<p>Although usually the customer does not know what they want, so agile
+usually work better.</p>
+</section></section>
+<section id="scrum" class="title-slide slide level1">
+<h1>SCRUM</h1>
+<p><img data-src="figures/scrum_sprint.drawio.svg" /></p>
+</section>
+
+<section>
+<section id="kanban" class="title-slide slide level1">
+<h1>kanban</h1>
+<div class="columns">
+<div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/simple_kanban_board.jpg" width="700"
+alt="simple kanban board by Jeff Lasovski | CC BY-SA 3.0" />
+<figcaption aria-hidden="true">simple kanban board<br>by <a
+href="https://commons.wikimedia.org/wiki/File:Simple-kanban-board-.jpg">Jeff
+Lasovski</a> | <a
+href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA
+3.0</a></figcaption>
+</figure>
+</div><div class="column" style="width:55%;">
+<ul>
+<li>notes move from left to right</li>
+<li>order denote priority</li>
+<li>allways process the right- and topmost one to finish it ASAP</li>
+<li>tool-dependent but a note can indicate:
+<ul>
+<li>who’s responsible</li>
+<li>how much effort to do it</li>
+<li>etc.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>The word “<em>kanban</em>” roughly means board in Japanese (signboard
+or billboard, actually).</p>
+</aside>
+</section>
+<section id="kanban-for-job-hunting" class="slide level2">
+<h2>kanban for job hunting</h2>
+<p><img data-src="figures/job_hunting_kanban.drawio.svg" /></p>
+<aside class="notes">
+<p>Kanban is a general technique, you can use it for household chores,
+for job applications (e.g., backlog, application sent, interview, done,
+declined). A whiteboard can be used or there a many different software
+for the task. Some general examples are: - Trello (https://trello.com/),
+- free and paid plans - Taiga (https://taiga.io/). - open source,
+self-hosted, cloud based free and paid plans - WeKan
+(https://wekan.github.io/) - open source, self-hosted</p>
+</aside>
+</section>
+<section id="kanban-in-software-development" class="slide level2">
+<h2>kanban in software development</h2>
+<p><img data-src="figures/kanban.drawio.svg" /></p>
+<aside class="notes">
+<p>Kanban is widespread in software development. The major code hosting
+solutions (GitHub, GitLab, Bitbucket, Gitea) all have some board
+functionalities.</p>
+</aside>
+</section></section>
+<section id="scum-kanban-scrumban" class="title-slide slide level1">
+<h1>SCUM + kanban = scrumban</h1>
+<ul>
+<li>SCRUM and kanban can coexist</li>
+</ul>
+</section>
+
+<section id="references" class="title-slide slide level1 unnumbered">
+<h1 class="unnumbered">references</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-parnas1986rational" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">D.
+L. Parnas and P. C. Clements, <span>“A rational design process: How and
+why to fake it,”</span> <em>IEEE transactions on software
+engineering</em>, no. 2, pp. 251–257, 1986.</div>
+</div>
+<div id="ref-royce1970managing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">W.
+W. Royce, <span>“Managing the development of large software systems:
+Concepts and techniques,”</span> <em>Proc. IEEE WESTCON, Los
+Angeles</em>, pp. 1–9, 1970.</div>
+</div>
+<div id="ref-forsberg1991relationship" class="csl-entry"
+role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">K.
+Forsberg and H. Mooz, <span>“The relationship of system engineering to
+the project cycle,”</span> <em>Center for Systems Management</em>, vol.
+5333, 1991.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

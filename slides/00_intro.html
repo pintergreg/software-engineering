@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>software engineering</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">software engineering</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section id="schedule" class="title-slide slide level1"
+data-visibility="hidden">
+<h1 data-visibility="hidden">schedule</h1>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 16%" />
+<col style="width: 47%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">week</th>
+<th style="text-align: center;">date</th>
+<th style="text-align: center;">lecture</th>
+<th style="text-align: center;">practical class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: center;">2024-09-10</td>
+<td style="text-align: center;">intro, software architecture</td>
+<td style="text-align: center;">SDLC</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: center;">2024-09-17</td>
+<td style="text-align: center;">SCRUM</td>
+<td style="text-align: center;">kanban</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: center;">2024-09-24</td>
+<td style="text-align: center;">requirement analysis</td>
+<td style="text-align: center;">user story map</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: center;">2024-10-01</td>
+<td style="text-align: center;">UML, C4</td>
+<td style="text-align: center;">UML in practice</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: center;">2024-10-08</td>
+<td style="text-align: center;">“communication”, clean code</td>
+<td style="text-align: center;">case studies</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: center;">2024-10-15</td>
+<td style="text-align: center;">legacy code, review</td>
+<td style="text-align: center;">“coding” example</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: center;">2024-10-22</td>
+<td style="text-align: center;">testing, review</td>
+<td style="text-align: center;">project assignment</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: center;">2024-10-29</td>
+<td style="text-align: center;">school holiday</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: center;">2024-11-05</td>
+<td style="text-align: center;">dependency management</td>
+<td style="text-align: center;">VCS basics</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: center;">2024-11-12</td>
+<td style="text-align: center;">CI, automatization, devops</td>
+<td style="text-align: center;">project workshop</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: center;">2024-11-19</td>
+<td style="text-align: center;">project workshop</td>
+<td style="text-align: center;">project workshop</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: center;">2024-11-26</td>
+<td style="text-align: center;">summary, course feedback</td>
+<td style="text-align: center;">project workshop</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: center;">2024-12-03</td>
+<td style="text-align: center;">midterm</td>
+<td style="text-align: center;">project demo</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: center;">2024-12-10</td>
+<td style="text-align: center;">no planned lecture</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<section id="schedule-1"
+class="title-slide slide level1 exclude-header">
+<h1 class="exclude-header">schedule</h1>
+<div class="exclude">
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 16%" />
+<col style="width: 47%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">week</th>
+<th style="text-align: center;">date</th>
+<th style="text-align: center;">lecture</th>
+<th style="text-align: center;">practical class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: center;">2024-09-10</td>
+<td style="text-align: center;">intro, software architecture</td>
+<td style="text-align: center;">SDLC</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: center;">2024-09-17</td>
+<td style="text-align: center;">SCRUM</td>
+<td style="text-align: center;">kanban</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: center;">2024-09-24</td>
+<td style="text-align: center;">requirement analysis</td>
+<td style="text-align: center;">user story map</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: center;">2024-10-01</td>
+<td style="text-align: center;">UML, C4</td>
+<td style="text-align: center;">UML in practice</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: center;">2024-10-08</td>
+<td style="text-align: center;">“communication”, clean code</td>
+<td style="text-align: center;">case studies</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: center;">2024-10-15</td>
+<td style="text-align: center;">legacy code, review</td>
+<td style="text-align: center;">“coding” example</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: center;">2024-10-22</td>
+<td style="text-align: center;">testing, review</td>
+<td style="text-align: center;">project assignment</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="schedule-2" class="slide level2 exclude-header">
+<h2 class="exclude-header">schedule</h2>
+<div class="exclude">
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 16%" />
+<col style="width: 47%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">week</th>
+<th style="text-align: center;">date</th>
+<th style="text-align: center;">lecture</th>
+<th style="text-align: center;">practical class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: center;">2024-10-29</td>
+<td style="text-align: center;">school holiday</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">9</td>
+<td style="text-align: center;">2024-11-05</td>
+<td style="text-align: center;">dependency management</td>
+<td style="text-align: center;">VCS basics</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: center;">2024-11-12</td>
+<td style="text-align: center;">CI, automatization, devops</td>
+<td style="text-align: center;">project workshop</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">11</td>
+<td style="text-align: center;">2024-11-19</td>
+<td style="text-align: center;">project workshop</td>
+<td style="text-align: center;">project workshop</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: center;">2024-11-26</td>
+<td style="text-align: center;">summary, course feedback</td>
+<td style="text-align: center;">project workshop</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">13</td>
+<td style="text-align: center;">2024-12-03</td>
+<td style="text-align: center;">midterm</td>
+<td style="text-align: center;">project demo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">14</td>
+<td style="text-align: center;">2024-12-10</td>
+<td style="text-align: center;">no planned lecture</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section></section>
+<section id="materials" class="title-slide slide level1 exclude"
+data-visibility="hidden">
+<h1 class="exclude" data-visibility="hidden">materials</h1>
+<ul>
+<li>hangout, presentation website introduction</li>
+</ul>
+</section>
+
+<section id="tools" class="title-slide slide level1">
+<h1>tools</h1>
+<ul>
+<li>diagram drawing:
+<ul>
+<li><a href="https://app.diagrams.net/">draw.io</a></li>
+<li><a href="https://plantuml.com/">plantuml</a></li>
+</ul></li>
+<li>whiteboard:
+<ul>
+<li><a href="https://excalidraw.com/">excalidraw</a></li>
+</ul></li>
+<li>code hosting / task management
+<ul>
+<li><a href="https://github.com/">GitHub</a></li>
+</ul></li>
+</ul>
+<aside class="notes">
+
+</aside>
+</section>
+
+<section>
+<section id="program-vs.-software" class="title-slide slide level1">
+<h1>program vs. software</h1>
+<div class="columns fragment">
+<div class="column" style="width:75%;">
+<blockquote>
+<p>A computer program is a sequence or set of instructions in a
+programming language for a computer to execute. It is one component of
+software, which also includes documentation and other intangible
+components.</p>
+<p>ISO/IEC 2382:2015 via Wikipedia <span class="citation"
+data-cites="enwiki:1233276268">[1]</span></p>
+</blockquote>
+</div><div class="column" style="width:25%;">
+<p><img data-src="figures/program_software_product.drawio.svg" /></p>
+</div>
+</div>
+</section>
+<section id="program-is-like-a-recipe" class="slide level2">
+<h2>program is like a recipe</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>There is a metaphor saying that a program is like a recipe.</p>
+<p>The computer follows the instructions of a program as the cook
+follows the instruction in a recipe.</p>
+<p>Consequently programming is like creating a recipe.</p>
+</div><div class="column fragment" style="width:50%;">
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">101</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;&quot;</span> <span class="op">+</span> <span class="st">&quot;FizzBuzz&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;&quot;</span> <span class="op">+</span> <span class="st">&quot;Fizz&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;&quot;</span> <span class="op">+</span> <span class="st">&quot;Buzz&quot;</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span></code></pre></div>
+</div>
+</div>
+<aside class="notes">
+<p>It is easy to read this code snippet and figure out what it does, but
+constructing an algorithm might be more complicated.</p>
+<p>It contains a loop going from 1 to 100 (ranges are not closed in
+Python, so 101 is excluded and the range step is 1 by default). If the
+loop variable is dividable by 15, “FizzBuzz” is printed to the screen.
+If it is only dividable by 3 “Fizz” is printed, if only by 5 “Buzz” is
+printed. In any other cases the number id printed.</p>
+<blockquote>
+<p>Writing a computer program requires a nuanced understanding of the
+problem being solved by the computer program, pros and cons of various
+approaches, etc. It also requires the knowledge and expertise to
+describe those steps in a manner amenable to execution by a
+computer.</p>
+<p><a
+href="https://justabloginthepark.com/2016/01/09/how-programming-is-like-cooking/">Jeff
+Rabinowitz</a></p>
+</blockquote>
+</aside>
+</section></section>
+<section id="programming-vs.-software-development"
+class="title-slide slide level1">
+<h1>programming vs. software development</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/software_development.drawio.svg"
+width="400" /></p>
+</div><div class="column mt-5 column-align-left" style="width:50%;">
+<div class="fragment">
+<ul>
+<li>does that mean a program is not
+<ul>
+<li>planned</li>
+<li>documented</li>
+<li>tested</li>
+<li>verified?</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>the main difference is the formality of the process
+<ul>
+<li>which correlates the complexity of the project</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>A program code is only a part of a software. Programming is more or
+less a synonym to coding.</p>
+<p>As a software is more than just the code, software development is
+more than just coding/programming. The work is planned, documented,
+tested, verified, and framed by a process.</p>
+<p>If programming is like creating a recipe, software development is
+more like running a restaurant. One should come up with recipes, cook
+the food, but the restaurant also needs constant ingredient logistics
+and preparation, food serving, marketing, cleaning etc.</p>
+</aside>
+</section>
+
+<section>
+<section id="software-development-is-like-building-a-house"
+class="title-slide slide level1">
+<h1>software development is like building a house</h1>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>the software development is often compared to house building
+<ul>
+<li>which is more like a sequential process</li>
+</ul></li>
+<li>after the planning (including building permit, budget, etc.), the
+foundation is built first, then walls and the roof
+<ul>
+<li>these phases cannot be swapped</li>
+</ul></li>
+<li>after the construction is finished, the contractor leaves the
+site</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="figures/sample_floorplan.jpg"
+alt="Wikimedia | public domain" />
+<figcaption aria-hidden="true"><a
+href="https://commons.wikimedia.org/wiki/File:Sample_Floorplan.jpg">Wikimedia</a>
+| public domain</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment text-size-3">
+<p>maintenance?</p>
+</div>
+</section>
+<section id="software-development-not-is-like-building-a-house"
+class="slide level2">
+<h2>software development <em>not</em> is like building a house</h2>
+<p>a software does not have to obey the laws of physics</p>
+<ul>
+<li>in software development you can start with the door of the second
+floor bathroom</li>
+<li>the size of a room can be changed during the construction – even
+several times</li>
+</ul>
+</section></section>
+<section>
+<section id="software-development-is-like-gardening"
+class="title-slide slide level1">
+<h1>software development is like gardening</h1>
+<div class="columns fragment">
+<div class="column" style="width:55%;">
+<ul>
+<li>a garden needs to be taken care of constantly</li>
+<li>without attention the garden will decay
+<!-- - external factors like weather, pests, weeds can influence the garden --></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<ul>
+<li>maintenance is part of software development</li>
+<li>software rots
+<!-- - change in user requirements, but importantly the external dependencies such as frameworks, libraries, etc. can affect the software --></li>
+</ul>
+</div>
+</div>
+<div class="text-smaller mt-5">
+<p>based on Software Architecture Metaphors by Lisa Stähli <span
+class="citation" data-cites="stahli2021software">[2]</span></p>
+</div>
+<aside class="notes">
+<p>Another famous metaphor is the gardening. The most important aspect
+of the gardening is that a garden needs to be taken care of constantly.
+Without attention the garden will decay, which is also true for the
+software; the software can rot.</p>
+<p>There are two types of software rot: dormant rot and active rot.</p>
+</aside>
+</section>
+<section id="what-is-software-rot" class="slide level2">
+<h2>what is software rot?</h2>
+<div class="wide-quote">
+<blockquote>
+<p>Software rot (or software entropy) is the degradation, deterioration,
+or loss of the use or performance of software over time <span
+class="citation" data-cites="enwiki:1236668404">[3]</span>.</p>
+</blockquote>
+</div>
+<div class="columns mt-2">
+<div class="column" style="width:50%;">
+<p><strong>dormant rot</strong>: the software in question is not
+changed, but as the environment evolves, it eventually becomes
+dysfunctional</p>
+</div><div class="column fragment" style="width:50%;">
+<figure>
+<img data-src="figures/borrowed/muni_metro.jpg"
+alt="Muni metro San Francisco photo by Albert CC BY-NC 2.0" />
+<figcaption aria-hidden="true">Muni metro San Francisco<br>photo by <a
+href="https://www.flickr.com/photos/24208255@N07/2751036689/">Albert</a>
+<a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC
+2.0</a></figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<p>Environment change can be either software or hardware. The operating
+system, a software framework or even a hardware can be outdated to</p>
+<p>The photo shows the San Fransico Muni metro, which still uses floppy
+disks to load its Automatic Train Control System every morning. It is
+planned to replace by the end of the decade. The system works without
+any problems, but the risk of failure is getting higher. <span
+class="citation" data-cites="harding2024san">[4]</span></p>
+</aside>
+</section>
+<section id="what-is-software-rot-1"
+class="slide level2 exclude-header">
+<h2 class="exclude-header">what is software rot?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>active rot</strong></p>
+<ul>
+<li>the software has undergone constant modifications but gradually
+loses its integrity</li>
+<li>the constant updates / bug fixing can lead to an evolution process,
+<ul>
+<li>which makes the program deviate from its original design,</li>
+<li>even introducing newer bugs</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="figures/borrowed/code_lifespan_2x.png"
+alt="Randall Munroe | CC BY-NC 2.5" />
+<figcaption aria-hidden="true">Randall Munroe | <a
+href="https://creativecommons.org/licenses/by-nc/2.5/">CC BY-NC
+2.5</a></figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<p>It is said that nothing is more permanent than a temporary fix. A
+quick fix often ignores the architectural design, not documented
+properly, thus contributes to the software rot.</p>
+<p>A change in a production system should be properly planned in every
+possible details. For example, because it can have side effects, or can
+affect the architecture. Also, the documentation needs to be updated.
+Both documentations actually since there is a development documentation,
+that should contain information about the system for the developers and
+a user documentation (manual) for the operators of the system.</p>
+</aside>
+</section>
+<section id="software-development-is-like-gardening---cont."
+class="slide level2">
+<h2>software development is like gardening - cont.</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<!-- - a garden needs to be taken care of constantly -->
+<!-- - without attention the garden will decay -->
+<ul>
+<li>external factors like weather, pests, weeds can influence the
+garden</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<!-- - maintenance is part of software development -->
+<!-- - software rots -->
+<ul>
+<li>change in user requirements, and the external dependencies such as
+frameworks, libraries, etc. can affect the software</li>
+</ul>
+</div>
+</div>
+<div class="text-smaller mt-5">
+<p>based on Software Architecture Metaphors by Lisa Stähli <span
+class="citation" data-cites="stahli2021software">[2]</span></p>
+</div>
+<aside class="notes">
+<p>Another similarity to gardening is that external factors can
+influence the software.</p>
+</aside>
+</section>
+<section id="software-development-is-like-gardening---cont.-1"
+class="slide level2 exclude-header">
+<h2 class="exclude-header">software development is like gardening -
+cont.</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>gardeners has a set of tools, selected for the characteristics of
+the garden and the gardener</li>
+<li>a beautiful garden is a piece of art
+<ul>
+<li>which can also serve a function, like producing vegetables /
+fruits</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>software developer also uses tools chosen according to the
+environment and type of software
+<!--     -  e.g., to automate processes --></li>
+<li>software is a piece of art, e.g., the UI has to be not just
+functional, but aesthetic and ergonomic
+<ul>
+<li>software code/design is also a piece of art; see software
+craftmanship (later)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on Software Architecture Metaphors by Lisa Stähli <span
+class="citation" data-cites="stahli2021software">[2]</span></p>
+</div>
+</section></section>
+<section id="software-craftmanship" class="title-slide slide level1">
+<h1>software craftmanship</h1>
+<div class="text-smaller">
+<p>As aspiring Software Craftsmen we are raising the bar of professional
+software development by practicing it and helping others learn the
+craft. Through this work we have come to value:</p>
+</div>
+<ul>
+<li>Not only working software, but also <strong>well-crafted
+software</strong></li>
+<li>Not only responding to change, but also <strong>steadily adding
+value</strong></li>
+<li>Not only individuals and interactions, but also <strong>a community
+of professionals</strong></li>
+<li>Not only customer collaboration, but also <strong>productive
+partnerships</strong></li>
+</ul>
+<div class="text-smaller mt-4">
+<p>That is, in pursuit of the items on the left we have found the items
+on the right to be indispensable.</p>
+</div>
+<div class="text-size-1">
+<p>© 2009, the undersigned. This statement may be freely copied in any
+form, but only in its entirety through this notice.</p>
+</div>
+<aside class="notes">
+<p>From <a
+href="https://manifesto.softwarecraftsmanship.org/">/manifesto.softwarecraftsmanship.org</a>.</p>
+</aside>
+</section>
+
+<section>
+<section id="software-growth" class="title-slide slide level1">
+<h1>software growth</h1>
+<p>24 million lines of code – operational and support – needed for the
+F-35 to be fully operational</p>
+<aside class="notes">
+
+</aside>
+</section>
+<section id="the-more-the-better" class="slide level2">
+<h2>the more, the better?</h2>
+<blockquote>
+<p>if we wish to count lines of code, we should not regard them as
+“lines produced” but as “lines spent”</p>
+<p>E. W. Dijkstra <a
+href="https://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html">EWD
+1036</a></p>
+</blockquote>
+<div class="fragment">
+<blockquote>
+<p>Every line of code written comes at a price: maintenance. To avoid
+paying for a lot of code, we build reusable software. The problem with
+code re-use is that it gets in the way of changing your mind later
+on.</p>
+<p>tef - <a
+href="https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to">Write
+code that is easy to delete, not easy to extend</a></p>
+</blockquote>
+</div>
+<aside class="notes">
+<p>Some people may consider the code as the product. In this regard,
+more lines of code means more product. If you write more code you work
+better, which is not true. You should work smarter, not harder.</p>
+<p>As Dijkstra said, lines should considered an expense, which you want
+to minimize, not maximize. More code means more plants in your garden to
+take care of. It requires more resources, but at the same time it also
+increases complexity.</p>
+</aside>
+</section>
+<section id="keep-it-simple" class="slide level2">
+<h2>keep it simple</h2>
+<blockquote>
+<p>A designer knows he has achieved perfection not when there is nothing
+left to add, but when there is nothing left to take away.</p>
+<p>– <a
+href="https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry">Antoine
+de Saint-Exupéry</a></p>
+</blockquote>
+<div class="fragment">
+<ul>
+<li>KISS, an acronym for “Keep it simple, stupid!”
+<ul>
+<li>a variations: keep it stupidly simple</li>
+<li>the term was popular in the 70s</li>
+</ul></li>
+</ul>
+</div>
+<aside class="notes">
+<!-- According to Saint-Exupéry (who was the author of The Little Prince by the way) -->
+<p>The design, the code should be kept as simple as possible. When you
+want to simplify a design, keep only those parts that are absolutely
+necessary to get the job done.</p>
+</aside>
+</section>
+<section id="linux-5.8-800000-new-lines-of-code" class="slide level2">
+<h2>Linux 5.8 – 800,000 new lines of code</h2>
+<div class="text-smaller">
+<blockquote>
+<p><a
+href="https://lore.kernel.org/lkml/CAHk-=whfuea587g8rh2DeLFFGYxiVuh-bzq22osJwz3q4SOfmA@mail.gmail.com/">Linux
+Torvalds</a>: despite not really having any single thing that stands
+out… 5.8 looks to be one of our biggest releases of all time</p>
+</blockquote>
+</div>
+<ul>
+<li>how is it manageable?
+<ul>
+<li>process</li>
+<li>version control</li>
+</ul></li>
+<li>each change must do only one thing
+<ul>
+<li>proper documentation</li>
+</ul></li>
+<li>changes cannot break the software
+<ul>
+<li>rigorous and automated testing</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="version-control" class="title-slide slide level1">
+<h1>version control</h1>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>version control (a.k.a. revision control) is system for recording
+and managing changes made in files</li>
+<li>commonly used to manage source code
+<ul>
+<li>however, it can be used to tracking changes to any kind of
+files</li>
+</ul></li>
+<li>people often employ their own version control system, without
+realising it</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/borrowed/custom_version_control.png"
+alt="Simon Mutch | CC BY-SA 3.0" />
+<figcaption aria-hidden="true">Simon Mutch | <a
+href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA
+3.0</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-3">
+<p>based on Simon Mutch’s <a
+href="http://smutch.github.io/VersionControlTutorial/pages/0-intro.html">Version
+Control materials</a></p>
+</div>
+<aside class="notes">
+<p><a href="figures/borrowed/vc-xkcd.jpg">Simon Mutch | [CC BY-SA
+3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en) |
+[source](https://gist.github.com/smutch/4951871)</a></p>
+</aside>
+</section>
+<section id="why-you-should-use-version-control-for-everything"
+class="slide level2">
+<h2>why you should use version control (for everything)</h2>
+<div class="wide-quote">
+<blockquote>
+<p>In practice, everything that has been created manually should be put
+in version control, including programs, original field observations, and
+the source files for papers.</p>
+<p>– Best Practices for Scientific Computing; Wilson et al. 2012 (<a
+href="https://arxiv.org/abs/1210.0530">arXiv:1210.0530</a>)</p>
+</blockquote>
+</div>
+<div class="mt-5">
+<p>this presentation is under version control as well</p>
+</div>
+<aside class="notes">
+<p>Many services have some kind of version control built in. For example
+Google Docs or Microsoft Word also provides some level of version
+control.</p>
+</aside>
+</section></section>
+<section id="project-complexity" class="title-slide slide level1">
+<h1>project complexity</h1>
+<div class="r-stack">
+<div class="exclude">
+<p><img data-src="figures/complex_projects.drawio.cropped_no_people.svg"
+style="width:55.0%" /></p>
+</div>
+<div class="fragment">
+<p><img data-src="figures/complex_projects.drawio.cropped.svg"
+style="width:55.0%" /></p>
+</div>
+</div>
+<aside class="notes">
+
+</aside>
+</section>
+
+<section>
+<section id="what-is-software-architecture"
+class="title-slide slide level1">
+<h1>what is software architecture?</h1>
+<blockquote>
+<p>“Architecture” is a term that lots of people try to define, with
+little agreement. There are two common elements: One is the
+highest-level breakdown of a system into its parts; the other, decisions
+that are hard to change.</p>
+<p>– Martin Fowler - Patterns of Enterprise Application Architecture</p>
+</blockquote>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>In most successful software projects, the expert developers working
+on that project have a shared understanding of the system design. This
+<strong>shared understanding</strong> is called ‘architecture’. This
+understanding includes how the system is divided into components and how
+the components interact through interfaces. These components are usually
+composed of smaller components, but the architecture only includes the
+components and interfaces that are understood by all the developers.</p>
+<p>Ralph Johnson, XP mailing list</p>
+</blockquote>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>All architecture is design but not all design is architecture.
+Architecture represents the significant <strong>design
+decisions</strong> that shape a system, where significant is measured by
+cost of change.</p>
+<p>– Grady Booch</p>
+</blockquote>
+</section></section>
+<section>
+<section id="topologies" class="title-slide slide level1">
+<h1>Topologies</h1>
+<p><a
+href="https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture">Introduction
+to Software Architecture</a></p>
+</section>
+<section id="layered-architechture" class="slide level2">
+<h2>Layered Architechture</h2>
+<p><img
+data-src="http://1.bp.blogspot.com/-TbA8p6DWYJc/Uc0zYwSG_iI/AAAAAAAAAag/cPytbL6oeM4/s800/layered.png" /></p>
+<ul>
+<li><a
+href="http://serena-yeoh.blogspot.com/2013/06/layered-architecture-for-net.html">Layered
+Architecture: Introduction</a></li>
+<li><a
+href="http://serena-yeoh.blogspot.com/2014/01/layered-architecture-components.html">Layered
+Architecture: Component Interactions</a></li>
+</ul>
+</section>
+<section id="message-bus-architecture" class="slide level2">
+<h2>Message Bus Architecture</h2>
+<p><img
+data-src="https://www.codeproject.com/KB/architecture/1064240/message-bus.gif" /></p>
+</section>
+<section id="server-client-architecture" class="slide level2">
+<h2>Server-Client Architecture</h2>
+<p><img
+data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1200px-Client-server-model.svg.png" /></p>
+<!--# project management triangle
+
+![](figures/quality_time_cost.drawio.svg){width=60%}
+
+::: notes
+:::-->
+</section></section>
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-enwiki:1233276268" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Computer program
+— <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
+href="
+                    https://en.wikipedia.org/w/index.php?title=Computer_program&amp;oldid=1233276268
+                    " class="uri">
+                    https://en.wikipedia.org/w/index.php?title=Computer_program&amp;oldid=1233276268
+</a>, 2024.</div>
+</div>
+<div id="ref-stahli2021software" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">L.
+Stähli, <span>“<span>S</span>oftware <span>A</span>rchitecture
+<span>M</span>etaphors — medium.com.”</span> <a href="
+                    https://medium.com/decoding-tech/software-architecture-metaphors-90992e9be5f4
+                    " class="uri">
+                    https://medium.com/decoding-tech/software-architecture-metaphors-90992e9be5f4
+</a>, 07-Jun-2021.</div>
+</div>
+<div id="ref-enwiki:1236668404" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Software rot —
+<span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
+href="
+                    https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+                    " class="uri">
+                    https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+</a>, 2024.</div>
+</div>
+<div id="ref-harding2024san" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">S.
+Harding, <span>“San francisco’s train system still uses floppy disks—and
+will for years,”</span> <em>Ars Technica</em>. <a href="
+                    https://www.wired.com/story/san-francisco-muni-trains-floppy-disks/
+                    " class="uri">
+                    https://www.wired.com/story/san-francisco-muni-trains-floppy-disks/
+</a>, 11-Apr-2024.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

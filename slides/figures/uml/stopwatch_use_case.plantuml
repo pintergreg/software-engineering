@@ -1,0 +1,17 @@
+@startuml
+scale 4
+skin rose
+left to right direction
+
+actor user
+
+package stopwatch {
+    usecase start
+    usecase stop
+    usecase reset
+}
+
+user --> start
+user --> stop
+user --> reset
+@enduml

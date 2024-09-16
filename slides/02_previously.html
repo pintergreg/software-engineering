@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>Previously</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">Previously</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section id="program-is-like-a-recipe" class="title-slide slide level1">
+<h1>program is like a recipe</h1>
+<div class="columns">
+<div class="column column-align-left" style="width:60%;">
+<ul>
+<li>executing a program is following a recipe</li>
+<li>programming is like creating a recipe</li>
+</ul>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>software development is like running a restaurant
+<ul>
+<li>come up with recipes,</li>
+<li>cook the food,</li>
+<li>ingredient logistics and preparation,</li>
+<li>food serving,</li>
+<li>marketing,</li>
+<li>cleaning</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img
+data-src="figures/publicdomainvectors/a-cook-is-preparing-a-meal-publicdomainvectors.org.svg"
+width="250" /></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p><img
+data-src="figures/publicdomainvectors/restaurant-table-publicdomainvectors.org.svg"
+width="250" /></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="software-development-often-compared-to-house-building"
+class="title-slide slide level1">
+<h1>software development often compared to house building</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>because it is an engineering discipline</li>
+<li>but software does not have to obey the laws of physics</li>
+<li>software design should focus only on the data structures and the
+connection between the modules
+<ul>
+<li>not the implementation details<br>(e.g., hardware)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="r-stack">
+<p><img
+data-src="figures/publicdomainvectors/architect-engineer-developing-a-construction-of-house.svg"
+width="250" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="software-development-is-more-like-gardening"
+class="title-slide slide level1">
+<h1>software development is more like gardening</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>a garden might be planned</li>
+<li>external factors influence the result
+<ul>
+<li>weather, pests</li>
+</ul></li>
+<li>garden needs constant care to bloom</li>
+<li>sometimes also experimentation
+<ul>
+<li>methods, tools</li>
+</ul></li>
+<li>garden is like an art (with function)</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="r-stack">
+<p><img
+data-src="figures/publicdomainvectors/gardener-watering-with-a-hose.svg"
+width="250" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="software-growth" class="title-slide slide level1">
+<h1>software growth</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>number of lines of code is increasing
+<ul>
+<li>which increases complexity</li>
+</ul></li>
+<li>“every line of code written comes at a price: maintenance” <span
+class="citation" data-cites="tef2016write">[1]</span>
+<ul>
+<li>larger garden, more gardening</li>
+</ul></li>
+<li>software development processes to handle the complexity</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="r-stack">
+<p><img
+data-src="figures/publicdomainvectors/idea-of-success-achievement.svg"
+width="250" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="waterfall-model" class="title-slide slide level1">
+<h1>waterfall model</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>sequential, rigid model
+<ul>
+<li>(originally) not possible to step back to a previous phase</li>
+</ul></li>
+<li>testing is after the implementation, errors are found late in the
+process</li>
+<li>not possible to make changes during the development</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="figures/waterfall.svg" width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="v-model" class="title-slide slide level1">
+<h1>V model</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>still rigid</li>
+<li>each phase has output and a review process
+<ul>
+<li>errors are found at early stage</li>
+<li>decreases the risk of failure</li>
+</ul></li>
+<li>large to small: testing is done in a hierarchical perspective</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="figures/v_model.drawio.svg" width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="iterative-model" class="title-slide slide level1">
+<h1>iterative model</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>software is built incrementally,
+<ul>
+<li>with each iteration adding new features or refining existing
+ones</li>
+</ul></li>
+<li>possible to get feedback after each iteration</li>
+<li>can be rigid within an iteration</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="figures/iterative.drawio.svg" width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="agile-model" class="title-slide slide level1">
+<h1>agile model</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>continuous collaboration and fast response to change, while the
+iterative model takes a more gradual approach, building up the final
+product over multiple iterations</li>
+<li>scrum is an agile methodology</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="figures/agile.drawio.svg" width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-tef2016write" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div
+class="csl-right-inline">tef, <span>“Write code that is easy to delete,
+not easy to extend.”</span> <a href="
+                    https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to
+                    " class="uri">
+                    https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to
+</a>, 13-Feb-2016.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,939 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>scrum - handout</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="software engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="../lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="../lectures/02_scrum.html" class="active">scrum</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">handout</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>this presentation is based on The Scrum Guide (2020)<br>by Ken Schwaber
+and Jeff Sutherland [@schwaber2020scrum]</p>
+<p>available from <a href="https://scrumguides.org/">scrumguides.org</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC
+BY-SA 4.0</a></p>
+<p>or download directly <a href="../resources/2020-Scrum-Guide-US.pdf">from here</a></p>
+<h1 id="what-is-scrum"><a class="header" href="#what-is-scrum">what is scrum?</a></h1>
+<p>Scrum is a lightweight framework that helps people, teams and
+organizations generate value through adaptive solutions for complex
+problems.</p>
+<p>Scrum employs an iterative, incremental approach to optimize
+predictability and to control risk. Scrum engages groups of people who
+collectively have all the skills and expertise to do the work and share
+or acquire such skills as needed.</p>
+<h2 id="scrum-in-a-nutshell"><a class="header" href="#scrum-in-a-nutshell">scrum in a nutshell</a></h2>
+<div class="text-smaller">
+<p>scrum requires a scrum master to foster an environment where:</p>
+<ol>
+<li>a product owner orders the work for a complex problem into a product
+backlog</li>
+<li>the scrum team turns a selection of the work into an increment of
+value during a sprint</li>
+<li>the scrum team and its stakeholders inspect the results and adjust
+for the next sprint</li>
+<li>repeat</li>
+</ol>
+</div>
+<img src="figures/scrum_sprint.drawio.svg" height="300" />
+<h1 id="scrum-team"><a class="header" href="#scrum-team">scrum team</a></h1>
+<ul>
+<li>the scrum team consists of
+<ul>
+<li>one scrum master,</li>
+<li>one product owner,</li>
+<li>and developers</li>
+</ul>
+</li>
+<li>there are no sub-teams or hierarchies</li>
+</ul>
+<div class="notes">
+<p>These are more roles, not necessarily people. The scrum master and the
+product owner can also be a developer.</p>
+</div>
+<h2 id="size-of-a-scrum-team"><a class="header" href="#size-of-a-scrum-team">size of a scrum team</a></h2>
+<ul>
+<li>small enough to remain nimble and large enough to complete work in a
+sprint
+<ul>
+<li>typically 10 or fewer people</li>
+<li>3 to 9 people is optimal</li>
+<li>smaller teams communicate better and are more productive</li>
+</ul>
+</li>
+<li>if a team becomes too large, they should consider reorganizing into
+multiple cohesive scrum teams
+<ul>
+<li>each focused on the same product</li>
+<li>therefore, they should share the same product goal, product backlog,
+and product owner</li>
+</ul>
+</li>
+</ul>
+<h2 id="communication-within-a-team"><a class="header" href="#communication-within-a-team">communication within a team</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<img src="figures/team_intercommunication_3.drawio.svg" width="200" />
+<div class="text-size-3 mt-6">
+<p>$\frac{3(3 − 1)}{2} = 3$</p>
+</div>
+</div>
+<div class="column" width="50%">
+<img src="figures/team_intercommunication_4.drawio.svg" width="200" />
+<div class="text-size-3 mt-3">
+<p>$\frac{4(4 − 1)}{2} = 6$</p>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" width="50%">
+<img src="figures/team_intercommunication_5.drawio.svg" width="300" />
+</div>
+<div class="column center-content" width="50%">
+<div class="r-stack">
+<div class="text-size-4 fragment fade-out" data-fragment-index="1">
+<p>$\frac{5(5 − 1)}{2} = 10$</p>
+</div>
+<div class="fragment text-size-4" data-fragment-index="1">
+<p>$\frac{n(n − 1)}{2}$</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="team-size"><a class="header" href="#team-size">team size</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<img src="figures/team_intercommunication_4.drawio.svg" width="350" />
+</div>
+<div class="column fragment" width="50%">
+<img src="figures/team_intercommunication_5.drawio.svg" width="350" />
+</div>
+</div>
+<h2 id="scrum-teams-are-cross-functional"><a class="header" href="#scrum-teams-are-cross-functional">scrum teams are cross-functional</a></h2>
+<img src="figures/cross_functional.drawio.svg" width="500" />
+<ul>
+<li>the members have all the skills necessary to create value each sprint</li>
+<li>they are also self-managing, meaning they internally decide who does
+what, when, and how</li>
+</ul>
+<h2 id="developers"><a class="header" href="#developers">developers</a></h2>
+<ul>
+<li>committed to creating any aspect of a usable increment each sprint</li>
+<li>the specific skills needed by the developers are often broad and will
+vary with the domain of work</li>
+<li>developers are accountable for
+<ul>
+<li>creating a plan for the sprint, the sprint backlog,</li>
+<li>instilling quality by adhering to a definition of done,</li>
+<li>adapting their plan each day toward the sprint goal, and</li>
+<li>holding each other accountable as professionals</li>
+</ul>
+</li>
+</ul>
+<h2 id="definition-of-done"><a class="header" href="#definition-of-done">definition of done</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>checklist</li>
+<li>defines steps to complete the sprint goal</li>
+<li>helps to track the progress of the sprint</li>
+<li>the sprint is done, if every element of the checklist is done</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p>course definition of done:</p>
+<ul>
+<li>☒ attended all classes</li>
+<li>☒ homeworks completed</li>
+<li>☒ midterm exam passed</li>
+<li>☒ project work completed</li>
+</ul>
+</div>
+</div>
+<h2 id="product-owner"><a class="header" href="#product-owner">product owner</a></h2>
+<ul>
+<li>accountable for maximizing the value of the product resulting from the
+work of the scrum team</li>
+<li>also accountable for effective product backlog management, which
+includes:
+<ul>
+<li>developing and explicitly communicating the product goal,</li>
+<li>creating and clearly communicating product backlog items,</li>
+<li>ordering product backlog items, and</li>
+<li>ensuring that the product backlog is transparent, visible and
+understood</li>
+</ul>
+</li>
+</ul>
+<p>The product owner may do the above work or may delegate the
+responsibility to others. Regardless, the product owner remains
+accountable.</p>
+<h2 id="scrum-master"><a class="header" href="#scrum-master">scrum master</a></h2>
+<ul>
+<li>accountable for
+<ul>
+<li>establishing scrum as defined in the Scrum Guide
+<ul>
+<li>by helping everyone understand the theory and practice, both
+within the scrum team and the organization</li>
+</ul>
+</li>
+<li>for the scrum team’s effectiveness
+<ul>
+<li>by enabling the scrum team to improve its practices, within the
+scrum framework</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="notes">
+<p>You can watch a parody about a the scrum master role: <a href="https://www.youtube.com/watch?v=P6v-I9VvTq4">Scrum Master -
+Funny movie about The Power of
+Scrum</a> (5m 23s)</p>
+</div>
+<h2 id="scrum-master-serves-the-scrum-team"><a class="header" href="#scrum-master-serves-the-scrum-team">scrum master serves the scrum team</a></h2>
+<ul>
+<li>coaching the team members in self-management and cross-functionality,</li>
+<li>helping the scrum team focus on creating high-value increments that
+meet the definition of done,</li>
+<li>causing the removal of impediments to the scrum team’s progress, and</li>
+<li>ensuring that all scrum events take place and are positive,
+productive, and kept within the timebox</li>
+</ul>
+<h2 id="scrum-master-serves-the-product-owner"><a class="header" href="#scrum-master-serves-the-product-owner">scrum master serves the product owner</a></h2>
+<ul>
+<li>helping find techniques for effective product goal definition and
+product backlog management,</li>
+<li>helping the scrum team understand the need for clear and concise
+product backlog items,</li>
+<li>helping establish empirical product planning for a complex
+environment, and</li>
+<li>facilitating stakeholder collaboration as requested or needed</li>
+</ul>
+<h2 id="scrum-master-serves-the-organization"><a class="header" href="#scrum-master-serves-the-organization">scrum master serves the organization</a></h2>
+<ul>
+<li>leading, training, and coaching the organization in its scrum
+adoption,</li>
+<li>planning and advising scrum implementations within the organization,</li>
+<li>helping employees and stakeholders understand and enact an empirical
+approach for complex work, and</li>
+<li>removing barriers between stakeholders and scrum teams</li>
+</ul>
+<h1 id="scrum-events"><a class="header" href="#scrum-events">scrum events</a></h1>
+<div class="columns">
+<div class="column" width="40%">
+<ul>
+<li>sprint</li>
+<li>sprint planning</li>
+<li>daily scrum</li>
+<li>sprint review</li>
+<li>sprint retrospective</li>
+</ul>
+</div>
+<div class="column" width="60%">
+<p><img src="figures/scrum_events.drawio.svg" alt="" /></p>
+</div>
+</div>
+<div class="notes">
+<p>Besides people there are events in scrum.</p>
+</div>
+<h1 id="sprint"><a class="header" href="#sprint">sprint</a></h1>
+<blockquote>
+<p>Sprints are the heartbeat of Scrum, where ideas are turned into value.</p>
+</blockquote>
+<ul>
+<li>fixed length events (maximum one month) to create consistency</li>
+<li>a new sprint starts immediately after the end of the previous</li>
+</ul>
+<h2 id="during-the-sprint"><a class="header" href="#during-the-sprint">during the sprint</a></h2>
+<ul>
+<li>no changes are made that would endanger the sprint goal,</li>
+<li>quality does not decrease,</li>
+<li>the Product Backlog is refined as needed, and</li>
+<li>scope may be clarified and renegotiated with the product owner as more
+is learned</li>
+</ul>
+<div class="notes">
+</div>
+<h2 id="about-sprints"><a class="header" href="#about-sprints">about sprints</a></h2>
+<ul>
+<li>in the case of a long sprint
+<ul>
+<li>the sprint goal may become invalid</li>
+<li>complexity may rise, and</li>
+<li>risk may increase</li>
+</ul>
+</li>
+<li>each sprint may be considered a short project</li>
+<li>a sprint could be cancelled if the sprint goal becomes obsolete</li>
+<li>only the product owner has the authority to cancel the sprint</li>
+</ul>
+<h2 id="tracking-progress---burndown-chart"><a class="header" href="#tracking-progress---burndown-chart">tracking progress - burndown chart</a></h2>
+<blockquote>
+<p>burndown chart is a graphical representation of work left to do versus
+time [@enwiki:1219224248]</p>
+</blockquote>
+<div class="columns">
+<div class="column" width="50%">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<img src="figures/burndownchart_ideal.svg" width="500" />
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<img src="figures/burndownchart.svg" width="500" />
+</div>
+</div>
+</div>
+<div class="column column-align-left" width="50%">
+<div>
+<ul>
+<li>two week sprint</li>
+<li>26 tasks</li>
+<li>ideal work line (green)</li>
+</ul>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<ul>
+<li>actual work line (red)
+<ul>
+<li>not realistic</li>
+</ul>
+</li>
+<li>finished tasks per day (blue bars)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>Various practices exist to forecast progress, like burn-downs, burn-ups,
+or cumulative flows.</p>
+<p>Let’s assume a 2-week sprint with 26 tasks. The burndown chart shows the
+work left to do compared to the time (days of the sprint).</p>
+<p>Often used in agile software development methodologies such as Scrum.
+However, burndown charts can be applied to any project with measurable
+progress over time [@enwiki:1219224248].</p>
+<p>Remaining work can be represented in either the number of tasks or the
+amount of time required to finish the tasks. The ideal work line often
+assumes a linear progress, which is not realistic, as tasks are often
+not finished at the beginning of the sprint. Partly because planning is
+necessary to solve tasks, partly because it may be required to learn a
+new technology to complete a task.</p>
+<!-- The ideal work line can give an estimation actual work line may -->
+<p>Read more about burndown chart at <a href="https://idiacomputing.com/pub/BetterSoftware-BurnCharts.pdf">Feel The Burn, Getting the Most out
+of Burn
+Charts</a> by
+George Dinwiddie (PDF, 6 pages).</p>
+</div>
+<h2 id="tracking-progress---cumulative-flow-diagram"><a class="header" href="#tracking-progress---cumulative-flow-diagram">tracking progress - cumulative flow diagram</a></h2>
+<figure>
+<img src="figures/cdf.svg" style="width:70.0%"
+alt="based on Paul Klipps’ figure" />
+<figcaption aria-hidden="true">based on Paul Klipps’ figure</figcaption>
+</figure>
+<div class="notes">
+<p>Another diagram used to track progress is cumulative flow diagram (CDF).
+It is a stacked area chart that shows the various statuses of the tasks.
+It can help to identify bottlenecks.</p>
+<p>Although it often used for kanban-style workflow, it can also work for
+scrum.</p>
+<p>Read more about CDF from<a href="http://brodzinski.com/2013/07/cumulative-flow-diagram.html">Pawel
+Brodzinski</a>.</p>
+</div>
+<div class="columns">
+<div class="column" width="50%">
+<p><img src="figures/cdf_widening.svg" alt="" /></p>
+<div class="text-smaller">
+<p>widening of bands: bottleneck;<br>more tasks enter that phase than
+leaving</p>
+</div>
+</div>
+<div class="column" width="50%">
+<p><img src="figures/cdf_narrowing.svg" alt="" /></p>
+<div class="text-smaller">
+<p>narrowing of bands: throughput is higher than the number of tasks
+entering the workflow</p>
+</div>
+</div>
+</div>
+<div class="text-smaller">
+<p>figures are based on [@boogaard2021how]</p>
+</div>
+<div class="notes">
+<p>Read more from <a href="https://www.wrike.com/blog/how-to-use-cumulative-flow-diagram/">Kat
+Boogaard</a>.</p>
+</div>
+<h1 id="sprint-planning"><a class="header" href="#sprint-planning">sprint planning</a></h1>
+<ul>
+<li>sprint planning initiates the sprint</li>
+<li>collaborative work of the entire scrum team</li>
+<li>the product owner ensures that attendees are prepared to discuss the
+most important product backlog items and how they map to the product
+goal</li>
+<li>the scrum team may invite other people to provide advice</li>
+<li>sprint planning lasts a maximum of eight hours for a one-month sprint
+<ul>
+<li>for shorter sprints the event is shorter</li>
+</ul>
+</li>
+</ul>
+<h2 id="topics-of-sprint-planning---why-is-this-sprint-valuable"><a class="header" href="#topics-of-sprint-planning---why-is-this-sprint-valuable">topics of sprint planning - why is this sprint valuable?</a></h2>
+<ul>
+<li>the product owner proposes how the product could increase its value
+and utility in the current sprint</li>
+<li>the whole scrum team then collaborates to define a sprint goal that
+communicates why the sprint is valuable to stakeholders</li>
+<li>the sprint goal must be finalized prior to the end of sprint planning</li>
+</ul>
+<h2 id="topics-of-sprint-planning---what-can-be-done-this-sprint"><a class="header" href="#topics-of-sprint-planning---what-can-be-done-this-sprint">topics of sprint planning - what can be done this sprint?</a></h2>
+<ul>
+<li>in agreement with the product owner, the developers select items from
+the product backlog to include in the current sprint agenda</li>
+<li>the scrum team may refine these items during this process<!--     - which increases understanding and confidence -->
+</li>
+<li>not easy to select how much can be completed within a sprint</li>
+<li>the more the developers know about
+<ul>
+<li>their past performance (e.g., burndown charts),</li>
+<li>their upcoming capacity (e.g., vacation, holidays), and</li>
+<li>the definition of done,</li>
+<li>the more confident they will be in their sprint forecasts</li>
+</ul>
+</li>
+</ul>
+<h2 id="topics-of-sprint-planning---wow-will-the-chosen-work-get-done"><a class="header" href="#topics-of-sprint-planning---wow-will-the-chosen-work-get-done">topics of sprint planning - wow will the chosen work get done?</a></h2>
+<ul>
+<li>for each selected item, the developers plan the work necessary to
+create an increment that meets the DoD</li>
+<li>often done by decomposing product backlog items into smaller work
+items of one day or less
+<ul>
+<li>tasks completable in 1-4 hours may be preferred</li>
+</ul>
+</li>
+<li>how this is done is up to the developers
+<ul>
+<li>no one else tells them how to turn product backlog items into
+increments</li>
+</ul>
+</li>
+</ul>
+<h2 id="sprint-planning---summary"><a class="header" href="#sprint-planning---summary">sprint planning - summary</a></h2>
+<ol>
+<li>select the sprint goal</li>
+<li>select product backlog items to achieve the sprint goal</li>
+<li>plan how they shall be implemented</li>
+</ol>
+<blockquote>
+<p>The sprint goal, the product backlog items selected for the sprint,
+plus the plan for delivering them are together referred to as the
+sprint backlog.</p>
+</blockquote>
+<h1 id="daily-scrum"><a class="header" href="#daily-scrum">daily scrum</a></h1>
+<ul>
+<li>the purpose of the daily scrum is to inspect progress toward the
+sprint goal and adapt the sprint backlog as necessary, and discussing
+the upcoming planned work</li>
+<li>the daily scrum is a <strong>15-minute</strong> event for the developers</li>
+<li>to reduce complexity, it is held at the <strong>same time and place</strong> every
+working day of the sprint</li>
+<li>if the product owner or scrum master are actively working on items in
+the sprint backlog, they participate as developers</li>
+</ul>
+<h2 id="daily-stand-up"><a class="header" href="#daily-stand-up">daily stand-up</a></h2>
+<ul>
+<li>the developers can select whatever structure and techniques they want</li>
+<li>also called daily stand-up, because they stand up from the desks and
+go to a meeting place
+<ul>
+<li>as it is limited to 15 minute, no need to book a meeting room;<!-- this creates focus and improves self-management -->
+</li>
+</ul>
+</li>
+<li>daily scrums improve communications, identify impediments, promote
+quick decision-making, and consequently eliminate the need for other
+meetings</li>
+</ul>
+<div class="notes">
+<p>Daily scrum can eliminate the need for unnecessary meetings, where the
+whole team has to attend. However, daily stand-up is a perfect occasion
+to arrange a one-to-one meeting with an other developer to solve an
+issue.</p>
+</div>
+<h2 id="three-questions"><a class="header" href="#three-questions">three questions</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<p>each team member participating the daily scrum answers three questions:</p>
+<ol>
+<li>what was done since the last daily scrum?</li>
+<li>what will be done till the next daily scrum?</li>
+<li>are there any impediments that prevent the work?</li>
+</ol>
+</div>
+<div class="column" width="30%">
+<p><img src="figures/publicdomainvectors/question-mark-color.svg"
+width="150" /></p>
+</div>
+</div>
+<h2 id="keep-daily-stand-up-short"><a class="header" href="#keep-daily-stand-up-short">keep daily stand-up short</a></h2>
+<div class="columns">
+<div class="column" width="55%">
+<ul>
+<li>answer the three question only
+<ul>
+<li>do not start finding solutions for the problems</li>
+</ul>
+</li>
+<li>the daily scrum is not the only time developers are allowed to discuss
+the sprint backlog</li>
+<li>they can meet throughout the day for more detailed discussions</li>
+</ul>
+</div>
+<div class="column center-content" width="45%">
+<figure>
+<img src="figures/borrowed/how_to_run_short_and_effective_meetings.jpg"
+alt="by Sam Lau | used with the author’s permission" />
+<figcaption aria-hidden="true">by <a
+href="https://www.samlau.xyz/about">Sam Lau</a> | used with the author’s
+permission</figcaption>
+</figure>
+</div>
+</div>
+<h1 id="sprint-review"><a class="header" href="#sprint-review">sprint review</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<!-- - the purpose of the sprint review is to inspect the outcome of the sprint and determine future adaptations -->
+<ul>
+<li>the scrum team presents the their work to key stakeholders
+<ul>
+<li>and the progress toward the product goal is discussed<!-- - the scrum team and stakeholders review what was accomplished in the sprint -->
+</li>
+</ul>
+</li>
+<li>the attendees collaborate on<br>what to do next</li>
+<li>the product backlog may also be adjusted to meet new opportunities<!--- should not limiting it to a presentation, the working product should be demonstrated and discussed
+- timeboxed to a maximum of four hours for a one-month sprint
+    - for shorter sprints, the event is usually shorter-->
+</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<figure>
+<img src="figures/borrowed/sprint_review.png"
+alt="Thea Schukken | CC BY-NC-ND" />
+<figcaption aria-hidden="true">Thea Schukken | <a
+href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC
+BY-NC-ND</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="notes">
+<p>Also known as “demo”, when the scrum team demonstrates the sprint goal
+to the stakeholders.</p>
+</div>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>should not limiting it to a presentation, the working product should
+be demonstrated and discussed</li>
+<li>timeboxed to a maximum of four hours for a one-month sprint
+<ul>
+<li>for shorter sprints, the event is usually shorter</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<figure>
+<img src="figures/borrowed/sprint_review.png"
+alt="Thea Schukken | CC BY-NC-ND" />
+<figcaption aria-hidden="true">Thea Schukken | <a
+href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC
+BY-NC-ND</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="notes">
+<p>Also known as “demo”, when the scrum team demonstrates the sprint goal
+to the stakeholders.</p>
+</div>
+<h1 id="sprint-retrospective"><a class="header" href="#sprint-retrospective">sprint retrospective</a></h1>
+<ul>
+<li>he purpose of the sprint retrospective is to increase quality and
+effectiveness</li>
+<li>the sprint retrospective concludes the sprint</li>
+<li>it is timeboxed to a maximum of three hours for a one-month sprint
+<ul>
+<li>for shorter sprints, the event is usually shorter</li>
+</ul>
+</li>
+</ul>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>the scrum team inspects how the last sprint went with regards to
+<ul>
+<li>individuals,</li>
+<li>interactions,</li>
+<li>processes,</li>
+<li>tools, and</li>
+<li>their definition of done</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<ul>
+<li>the scrum team discusses
+<ul>
+<li>what went well during the sprint,</li>
+<li>what problems it encountered, and</li>
+<li>how those problems were (or were not) solved</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2 id="retrospective-starfish"><a class="header" href="#retrospective-starfish">retrospective starfish</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<p><img src="figures/retro.drawio.svg" alt="" /></p>
+</div>
+<div class="column" width="50%">
+<ul>
+<li>divide the whiteboard to 5 parts</li>
+<li>every team member adds sticky notes to the respective parts</li>
+</ul>
+</div>
+</div>
+<div class="notes">
+<p>During the sprint retrospective, it could discussed what the team should
+start doing to increase the effectiveness. What needs to be stopped
+because it decreases the effectiveness. What was good, but needs to do
+more, what was not so good, so needs to do less. And what is good as is,
+so the team should keep doing without change.</p>
+<p>For example, less online meeting, because it is not so efficient as
+face-to-face ones. For a given team, for another team, the opposite
+might be true.</p>
+</div>
+<h1 id="scrum-artifacts"><a class="header" href="#scrum-artifacts">scrum artifacts</a></h1>
+<ul>
+<li>scrum artifacts represent work or value</li>
+<li>they are designed to maximize transparency of information</li>
+<li>the product backlog
+<ul>
+<li>progress towards the product goal</li>
+</ul>
+</li>
+<li>sprint backlog
+<ul>
+<li>progress within the sprint goal</li>
+</ul>
+</li>
+<li>definition of done
+<ul>
+<li>state of the product increment</li>
+</ul>
+</li>
+</ul>
+<h1 id="product-backlog"><a class="header" href="#product-backlog">product backlog</a></h1>
+<ul>
+<li>ordered list of what is needed to improve the product</li>
+<li>describes a future state of the product<!-- - it is the single source of work undertaken by the scrum team -->
+</li>
+<li>product owner is responsible for its content and prioritization</li>
+</ul>
+<h2 id="product-backlog-refinement"><a class="header" href="#product-backlog-refinement">product backlog refinement</a></h2>
+<blockquote>
+<p>product backlog refinement is the act of breaking down and further
+defining product backlog items into smaller more precise items.</p>
+</blockquote>
+<h2 id="sprint-backlog"><a class="header" href="#sprint-backlog">sprint backlog</a></h2>
+<ul>
+<li>composed of the sprint goal (why),</li>
+<li>the set of product backlog items selected for the sprint (what),</li>
+<li>a plan for delivering the increment (how)
+<ul>
+<li>by and for the developers</li>
+</ul>
+</li>
+<li>visible, real-time snapshot of the sprint progress</li>
+</ul>
+<div class="notes">
+<p>The sprint goal is created during the sprint planning event and then
+added to the sprint backlog. If the work turns out to be different than
+the developers expected, they collaborate with the product owner to
+negotiate the scope of the sprint backlog within the sprint without
+affecting the sprint goal.</p>
+</div>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>if the work may turn out different than expected
+<ul>
+<li>because software development is like gardening</li>
+</ul>
+</li>
+<li>then the developers negotiate the scope with the product owner without
+affecting the sprint goal</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/publicdomainvectors/gardener-watering-with-a-hose.svg" alt="" /></p>
+</div>
+</div>
+<h1 id="increment"><a class="header" href="#increment">increment</a></h1>
+<ul>
+<li>an increment is a step toward the product goal</li>
+<li>each increment is additive to all prior increments
+<ul>
+<li>and verified, ensuring that all increments work together</li>
+</ul>
+</li>
+<li>in order to provide value, the increment must be usable</li>
+<li>multiple increments may be created within a sprint</li>
+<li>work cannot be considered part of an increment unless it meets the
+definition of done</li>
+</ul>
+<div class="notes">
+<p>Writing some functions that might be useful later does not produce an
+increment. Increment is useful for the customer/user.</p>
+</div>
+<h1 id="scrum-of-scrums"><a class="header" href="#scrum-of-scrums">scrum of scrums</a></h1>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>each scrum team delegates an “ambassador” to attend the scrum of
+scrums meetings</li>
+<li>meetings are not as frequent as daily scrum</li>
+<li>synchronizes state of the scrum teams</li>
+<li>agenda: same 3 questions but regarding a team
+<ul>
+<li>plus, issues that (can) affect the other scrum teams</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/scrum_of_scrums.drawio.svg" alt="" /></p>
+</div>
+</div>
+<div class="notes">
+<p>Also known as meta scrum.</p>
+</div>
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+<div id="refs">
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/01_sdlc.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/01_sdlc.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

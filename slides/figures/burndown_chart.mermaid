@@ -1,0 +1,26 @@
+---
+config:
+    xyChart:
+        width: 500
+        height: 400
+    themeVariables:
+        xyChart:
+            plotColorPalette: "#3498db, #2ecc71, #e74c3c"
+            backgroundColor: "transparent"
+            titleColor: "#2d2d2d"
+            xAxisLabelColor: "#2d2d2d"
+            xAxisTickColor: "#2d2d2d"
+            xAxisLineColor: "#2d2d2d"
+            xAxisTitleColor: "#2d2d2d"
+            yAxisLabelColor: "#2d2d2d"
+            yAxisTickColor: "#2d2d2d"
+            yAxisLineColor: "#2d2d2d"
+            yAxisTitleColor: "#2d2d2d"
+---
+xychart-beta
+    title "burndown chart"
+    x-axis "day" [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+    y-axis "ramining effort (task)" 0 --> 30
+    bar  [ 0,  0,  1,  0,  2,  3,  0,  1,  1,  3,  2,  4, 5, 4]
+    line "ideal" [26, 24, 22, 20, 18, 16, 14, 12, 10,  8,  6,  4, 2, 0]
+    line "remaining task" [26, 26, 25, 25, 23, 20, 20, 19, 18, 15, 13,  9, 4, 0]
