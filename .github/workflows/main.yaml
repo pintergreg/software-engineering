@@ -22,7 +22,8 @@ jobs:
 
             - name: install dependencies
               run: |
-                  sudo apt-get install -y ruby lua pandoc mdbook
+                  sudo apt-get install -y snapd ruby pandoc
+                  sudo snap install mdbook
 
             - name: compile presentaion
               run: |
