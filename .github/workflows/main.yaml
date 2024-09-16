@@ -34,7 +34,7 @@ jobs:
             - name: compile handout
               run: |
                   ruby build.rb
-                  mdbook
+                  mdbook build
 
             - name: copy slides
               run: |
