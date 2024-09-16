@@ -1,6 +1,6 @@
 ---
 title: Scrum
-author: Gergő Pintér
+author: Gergő Pintér, PhD
 date: gergo.pinter@uni-corvinus.hu
 lang: en-US
 title-slide-attributes:
@@ -585,11 +585,19 @@ For example, less online meeting, because it is not so efficient as face-to-face
 
 ## sprint backlog
 
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
 - composed of the sprint goal (why),
 - the set of product backlog items selected for the sprint (what),
 - a plan for delivering the increment (how)
     - by and for the developers
 - visible, real-time snapshot of the sprint progress
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/scrum-board.svg)
+:::::::::
+::::::::::::
 
 
 ::: notes
@@ -600,12 +608,12 @@ If the work turns out to be different than the developers expected, they collabo
 ## sprint backlog {.exclude-header}
 
 :::::::::::: {.columns}
-::::::::: {.column width="60%"}
+::::::::: {.column width="70%"}
 - if the work may turn out different than expected
     - because software development is like gardening
 - then the developers negotiate the scope with the product owner without affecting the sprint goal
 :::::::::
-::::::::: {.column width="40%"}
+::::::::: {.column width="30%"}
 ![](figures/publicdomainvectors/gardener-watering-with-a-hose.svg)
 :::::::::
 ::::::::::::
@@ -643,6 +651,8 @@ Increment is useful for the customer/user.
 ::: notes
 Also known as meta scrum.
 :::
+
+# zombie scrum
 
 # references
 
