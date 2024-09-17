@@ -823,6 +823,10 @@ Also known as meta scrum.
 ::::::::: {.column width="50%"}
 > Zombie Scrum is Scrum, but without the beating heart of working software.
 
+in details
+~ - [the rise of zombie scrum](https://medium.com/the-liberators/the-rise-of-zombie-scrum-cd98741015d5)
+~ - [zombie scrum symptoms causes and treatment](https://www.scrum.org/resources/blog/zombie-scrum-symptoms-causes-and-treatment)
+
 :::::::::
 ::::::::: {.column width="50%"}
 ![](figures/borrowed/zombie_scrum.png)
@@ -834,6 +838,83 @@ Also known as meta scrum.
 At first sight, zombie scrum seems to be a normal scrum. But it lacks a beating heart.
 The Scrum teams do all the Scrum events but a potentially releasable increment is rarely the result of a Sprint.
 The team also doesn’t have any intention to improve their situation. Actually, nobody cares about this team. The stakeholders have forgotten the existence of this team a long time ago.
+
+:::
+
+## mindset
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+::: {.column-align-left}
+zombie scrum
+
+: although every sprint can result in a  new version, only the final version delivers real value
+
+:::
+
+::: {.column-align-left .fragment}
+healthy scrum
+
+: every sprint delivers value
+
+:::
+
+:::::::::
+::::::::: {.column width="45%"}
+![](figures/borrowed/zombie_scrum_no_coach.png)
+
+:::::::::
+::::::::::::
+
+## working software
+
+::: {.column-align-left}
+zombie scrum
+
+: working software is nice to have
+
+:::
+
+::: {.column-align-left .fragment}
+healthy scrum
+
+: working software is essential
+
+:::
+
+## what is work
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+::: {.column-align-left}
+zombie scrum
+
+: writing code is work, everything else is a waste of time
+
+:::
+
+::: {.column-align-left .fragment}
+healthy scrum
+
+: writing code is important part of work, but building good software requires frequent interaction with the team, stakeholders, and peers
+
+:::
+
+:::::::::
+::::::::: {.column width="45%"}
+![](figures/borrowed/zombie_scrum_work_alone.png)
+
+:::::::::
+::::::::::::
+
+## treatments
+
+::: {.incremental}
+- Zombie Scrum teams often benefit from a shortened Sprint length. Instead of three to four-week iterations decrease the length to two weeks or even just one.
+- Focus the Sprint Planning on answering the question of what type of impact the team would like to achieve within the upcoming Sprint.
+- Start the Daily Scrum by reviewing the Sprint Goal and asking what achievements the team has made towards reaching that goal.
+- Use the roadmap to provide context for the insights from the Review meeting. And for heaven’s sake, invite some real customers or stakeholders!
+- Use the Retrospective not to drag out the same old problems but to dream big. A transformational approach might be better suited than an incremental one.
 :::
 
 # references
