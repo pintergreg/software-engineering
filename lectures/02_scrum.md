@@ -71,14 +71,16 @@ The scrum master and the product owner can also be a developer.
 ![](figures/team_intercommunication_3.drawio.svg){width=200}
 
 ::: {.text-size-3 .mt-6}
-$\frac{3(3 − 1)}{2} = 3$
+\\[ \frac{3(3 − 1)}{2} = 3 \\]
+
 :::
 :::::::::
 ::::::::: {.column width="50%"}
 ![](figures/team_intercommunication_4.drawio.svg){width=200}
 
 ::: {.text-size-3 .mt-3}
-$\frac{4(4 − 1)}{2} = 6$
+\\[ \frac{4(4 − 1)}{2} = 6 \\]
+
 :::
 :::::::::
 ::::::::::::
@@ -97,11 +99,13 @@ $\frac{4(4 − 1)}{2} = 6$
 ::::::::: {.column width="50%" .center-content}
 :::::: {.r-stack}
 ::: {.text-size-4 .fragment .fade-out data-fragment-index="1"}
-$\frac{5(5 − 1)}{2} = 10$
+\\[ \frac{5(5 − 1)}{2} = 10 \\]
+
 :::
 
 ::: {.fragment .text-size-4 data-fragment-index="1"}
-$\frac{n(n − 1)}{2}$
+\\[ \frac{n(n − 1)}{2} \\]
+
 :::
 
 ::::::
