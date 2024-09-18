@@ -15,7 +15,7 @@
 
 ## week 2
 
-1. [week 1 summary](/software-engineering/slides/02_previously.html)
+1. [week 1 summary](/software-engineering/slides/summary_week01.html)
 2. [scrum](/software-engineering/slides/02_scrum.html)
 2. [kanban](/software-engineering/slides/03_kanban.html)
 
@@ -31,3 +31,11 @@ zombie scrum
 
 kanban
 ~ - [the Kanban Guide](/software-engineering/resources/Kanban-Guide-2020-12.pdf)
+
+## week 3
+
+1. [week 2 summary](/software-engineering/slides/summary_week02.html)
+
+### readings
+
+[Quickstart Guide to User Story Mapping]((/software-engineering/resources/quickstart-guide-to-user-story-mapping.pdf)
