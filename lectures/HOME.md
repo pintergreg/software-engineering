@@ -5,6 +5,14 @@
 1. [intro, software architecture](/software-engineering/slides/00_intro.html)
 2. [software development life cycles](/software-engineering/slides/01_sdlc.html)
 
+### readings
+
+- [Software Architecture Metaphors](https://medium.com/decoding-tech/software-architecture-metaphors-90992e9be5f4) - by Lisa Stähli
+- [What is Software Architecture?](https://www.developerfusion.com/article/84899/what-is-software-architecture/) - by Kevlin Henney
+- [Practical Tips on Software Architecture Design, Part One](https://medium.com/@mbue/practical-tips-on-software-architecture-design-part-one-1c6bb0167157) - by Marco Bürckel
+- [Practical Tips on Software Architecture Design, Part Two](https://medium.com/@mbue/practical-tips-on-software-architecture-design-part-two-37c2b61d7b6d) - by Marco Bürckel
+- [Why Write ADRs](https://github.blog/engineering/why-write-adrs/) - by Eli Perkins
+
 ## week 2
 
 1. [week 1 summary](/software-engineering/slides/02_previously.html)
