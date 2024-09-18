@@ -21,3 +21,4 @@ chapters.each do |x|
 end
 
 FileUtils.cp_r "lectures/figures/.", "#{@target}/lectures/figures/"
+FileUtils.cp_r "resources", "#{@target}/"
