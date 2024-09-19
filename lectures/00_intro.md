@@ -83,6 +83,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 - diagram drawing: 
     - [draw.io](https://app.diagrams.net/)
+    - [Google Drawings](https://docs.google.com/drawings)
     - [plantuml](https://plantuml.com/)
 - whiteboard:
     - [excalidraw](https://excalidraw.com/)
