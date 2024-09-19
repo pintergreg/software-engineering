@@ -34,7 +34,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 ::::::::: {.column width="40%"}
 :::::: {.r-stack}
 ::: {.fragment .fade-out data-fragment-index="1"}
-![](figures/publicdomainvectors/a-cook-is-preparing-a-meal-publicdomainvectors.org.svg){width=250}
+![](figures/publicdomainvectors/a-cook-is-preparing-a-meal.svg){width=250}
 :::
 ::: {.fragment data-fragment-index="1"}
 ![](figures/publicdomainvectors/restaurant-table-publicdomainvectors.org.svg){width=250}
