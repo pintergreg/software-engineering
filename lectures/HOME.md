@@ -35,7 +35,7 @@ kanban
 ## week 3
 
 1. [week 2 summary](/software-engineering/slides/summary_week02.html)
-2. requirement analysis
+2. [requirement analysis](/software-engineering/slides/04_requirement_analysis.html)
 3. user story mapping
 
 ### readings
