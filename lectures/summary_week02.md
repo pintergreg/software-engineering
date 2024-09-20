@@ -13,10 +13,21 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
-# roles
+# scrum team
+
+- optimally 3 to 9 people
+- cross-functional
+- self-organizing
+
+## roles
 
 - scrum master
+    - responsible establishing scrum as defined in [the Scrum Guide](/software-engineering/slides/02_scrum.html)
+        - by helping everyone understand the theory and practice, both within the scrum team and the organization
+    - responsible for the scrum team's effectiveness
 - product owner
+    - responsible for maximizing the value of the product resulting from the work of the scrum team
+    - also responsible for effective product backlog management
 - developers
 
 # sprint planning
@@ -57,7 +68,23 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 ![](figures/scrum_sprint_retrospective.drawio.svg){height=300}
 
-# references
+# kanban
 
-::: {#refs}
-:::
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- uses a visual workflow
+- pull-based system
+    - no task in the workflow without request
+- uses columns for states of the product
+- defines conditions when to move a task between columns
+- conditions flow
+    - no iterations (sprints)
+    - no roles
+- encourages to improve the workflow
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/kanban.drawio.svg)
+
+:::::::::
+::::::::::::
