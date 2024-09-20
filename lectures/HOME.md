@@ -35,7 +35,16 @@ kanban
 ## week 3
 
 1. [week 2 summary](/software-engineering/slides/summary_week02.html)
+2. requirement analysis
+3. user story mapping
 
 ### readings
 
-[Quickstart Guide to User Story Mapping]((/software-engineering/resources/quickstart-guide-to-user-story-mapping.pdf)
+requirement analysis
+
+:    - [SDLC Guide: Requirement Analysis in Software Engineering](https://stratoflow.com/requirements-analysis/) - by Arkadiusz Krysik
+     - [What's in a Story?](https://dannorth.net/whats-in-a-story/) - by Daniel Terhorst-North
+
+user story mapping
+
+:    - [Quickstart Guide to User Story Mapping](/software-engineering/resources/quickstart-guide-to-user-story-mapping.pdf)
