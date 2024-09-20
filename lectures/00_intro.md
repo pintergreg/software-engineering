@@ -87,6 +87,8 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
     - [plantuml](https://plantuml.com/)
 - whiteboard:
     - [excalidraw](https://excalidraw.com/)
+- kanban board
+    - [Trello](https://trello.com/)
 - code hosting / task management
     - [GitHub](https://github.com/)
     
