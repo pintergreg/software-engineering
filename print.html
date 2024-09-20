@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="lectures/HOME.html">home</a></li><li class="chapter-item expanded affix "><a href="lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="lectures/02_scrum.html">scrum</a></li><li class="chapter-item expanded affix "><a href="lectures/03_kanban.html">kanban</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="lectures/HOME.html">home</a></li><li class="chapter-item expanded affix "><a href="lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="lectures/02_scrum.html">scrum</a></li><li class="chapter-item expanded affix "><a href="lectures/03_kanban.html">kanban</a></li><li class="chapter-item expanded affix "><a href="lectures/04_requirement_analysis.html">requirement analysis</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -2315,6 +2315,460 @@ bolts</figcaption>
 </div>
 <h1 id="references-3"><a class="header" href="#references-3">references</a></h1>
 <div class="refs">
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="requirement-analysis"><a class="header" href="#requirement-analysis">requirement analysis</a></h1>
+<blockquote>
+<p>Requirement analysis is all about understanding what software is
+supposed to do and the constraints it must operate within
+[@krysik2023sdlc].</p>
+</blockquote>
+<ul>
+<li>first step of the software development life cycle (SDLC)</li>
+<li>about understanding the task to avoid costly mistakes</li>
+</ul>
+<div class="text-smaller">
+<p>this section is based on [@krysik2023sdlc]</p>
+</div>
+<h2 id="steps-of-requirement-analysis"><a class="header" href="#steps-of-requirement-analysis">steps of requirement analysis</a></h2>
+<ol>
+<li>stakeholder identification</li>
+<li>elicitation of requirements (gathering data)</li>
+<li>documentation of requirements</li>
+<li>analysis and negotiation</li>
+<li>validation and verification</li>
+</ol>
+<!--::: {.mt-2}
+![based on [@krysik2023sdlc]](figures/requirement_analysis_steps.drawio.svg){height=75}
+&#10;:::-->
+<h2 id="1-stakeholder-identification"><a class="header" href="#1-stakeholder-identification">1. stakeholder identification</a></h2>
+<ul>
+<li>not just the customers who commission the software</li>
+<li>also end users
+<ul>
+<li>different roles / groups</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-elicitation-of-requirements"><a class="header" href="#2-elicitation-of-requirements">2. elicitation of requirements</a></h2>
+<blockquote>
+<p>the team actively gathers detailed information about what the software
+needs to do from the identified stakeholders [@krysik2023sdlc]</p>
+</blockquote>
+<div class="columns">
+<div class="column" width="65%">
+<ul>
+<li>interviews
+<ul>
+<li><span class="text-smaller">one-on-one conversations with
+stakeholders<br>to understand their needs</span></li>
+</ul>
+</li>
+<li>questionnaires
+<ul>
+<li><span class="text-smaller">gather information from a larger
+group</span></li>
+</ul>
+</li>
+<li>user observation
+<ul>
+<li><span class="text-smaller">how potential users interact with
+existing systems<br>to identify unspoken needs or problems</span></li>
+<li><span class="text-smaller">telemetry</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="30%">
+<p><img src="lectures/figures/publicdomainvectors/opinion-poll.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="3-documentation-of-requirements"><a class="header" href="#3-documentation-of-requirements">3. documentation of requirements</a></h2>
+<div class="columns">
+<div class="column" width="35%">
+<p>for who</p>
+<ul>
+<li>future self</li>
+<li>colleagues</li>
+<li>every stakeholder of the project</li>
+</ul>
+</div>
+<div class="column" width="65%">
+<p>how</p>
+<ul>
+<li>searchable
+<ul>
+<li>organization-wide knowledge sharing (e.g., wiki)</li>
+</ul>
+</li>
+<li>version tracked</li>
+<li>traceable
+<ul>
+<li>who wrote / edited / approved it</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2 id="4-analysis-and-negotiation"><a class="header" href="#4-analysis-and-negotiation">4. analysis and negotiation</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<p>reviewing the documented requirements to make sure they are realistic
+and its implications are understood</p>
+<ul>
+<li>how difficult will it be to implement?</li>
+<li>does it conflict with any other requirements?</li>
+<li>is it actually necessary for the software’s success?</li>
+</ul>
+</div>
+<div class="column" width="30%">
+<p><img src="lectures/figures/publicdomainvectors/puzzle-pieces.svg" alt="" /></p>
+</div>
+</div>
+<div class="fragment">
+<p>Negotiation comes into play when there are conflicting requirements or
+limitations in resources like time or budget. <br>[…]<br> The goal
+here is to finalize a set of requirements that is achievable and aligns
+with the overall objectives of the project. [@krysik2023sdlc]</p>
+</div>
+<h2 id="5-validation-and-verification"><a class="header" href="#5-validation-and-verification">5. validation and verification</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<p>validation</p>
+<ul>
+<li>is about confirming that the requirements actually meet the needs of
+the stakeholders</li>
+<li>are we building the right thing?</li>
+<li>every stakeholder of the project</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p>verification</p>
+<ul>
+<li>making sure that the requirements are documented correctly and
+consistently
+<ul>
+<li>like proofreading and quality checking</li>
+</ul>
+</li>
+<li>to ensure that all requirements are clear, unambiguous, and consistent</li>
+<li>are we building the thing right?</li>
+</ul>
+</div>
+</div>
+<h2 id="requirement-smells"><a class="header" href="#requirement-smells">requirement smells</a></h2>
+<ul>
+<li>based on the idea of code smells (later in the course)</li>
+<li>(language based) signs in the requirements that are not necessarily
+wrong but could be problematic, e.g.,:
+<ul>
+<li>subjective language
+<ul>
+<li><span class="text-smaller">“The architecture as well as the
+programming must ensure a <strong>simple</strong> and <strong>efficient</strong>
+maintainability.”</span></li>
+</ul>
+</li>
+<li>ambiguous adverbs and adjectives
+<ul>
+<li><span class="text-smaller">“If the (…) quality is <strong>too low</strong>, a
+fault must be written to the error memory.”</span></li>
+</ul>
+</li>
+<li>non-verifiable terms
+<ul>
+<li><span class="text-smaller">“The system may only be activated, if
+all required sensors (…) work with <strong>sufficient</strong> measurement
+accuracy.”</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="text-smaller">
+<p>examples from [@femmer2017rapid]</p>
+</div>
+<h1 id="requirement-analysis-document-example"><a class="header" href="#requirement-analysis-document-example">requirement analysis document example</a></h1>
+<div class="columns">
+<div class="column" width="45%">
+<p><strong>contents</strong></p>
+<ul>
+<li>introduction</li>
+<li>stakeholder identification</li>
+<li>methodology</li>
+<li>detailed requirements
+<ul>
+<li>functional requirements</li>
+<li>non-functional requirements</li>
+</ul>
+</li>
+<li>data flow diagrams or models</li>
+<li>prioritization of requirements</li>
+<li>constraints and assumptions</li>
+<li>acceptance criteria (DoD)</li>
+<li>appendices</li>
+<li>version history and approvals</li>
+</ul>
+</div>
+<div class="column mt-4" width="55%">
+<ul>
+<li>it is a living document</li>
+<li>often updated throughout the project<br>as new information becomes
+available or requirements evolve</li>
+<li>its main goal is to provide a clear, detailed, and agreed-upon set of
+requirements that guide the software development process</li>
+</ul>
+</div>
+</div>
+<h2 id="functional-and-non-functional-requirements"><a class="header" href="#functional-and-non-functional-requirements">functional and non-functional requirements</a></h2>
+<div class="wide-quote">
+<p>functional requirements define what a system is supposed to do<br>and
+non-functional requirements define how a system is supposed to operate
+[@enwiki:1245895117]</p>
+</div>
+<div class="columns mt-3">
+<div class="column" width="50%">
+<p>functional</p>
+<ul>
+<li>features</li>
+<li>the webserver can serve pages via HTTP2</li>
+</ul>
+</div>
+<div class="column" width="&quot;50%">
+<p>non-functional</p>
+<ul>
+<li>quality goals, quality of service requirements</li>
+<li>webserver is available 99.9% of time<br>(yearly about 8h 41m downtime)</li>
+<li>can serve at least 5.000 queries per sec</li>
+</ul>
+</div>
+</div>
+<p><span class="text-smaller">more examples on
+<a href="https://en.wikipedia.org/wiki/Non-functional_requirement">Wikipedia</a></span></p>
+<div class="notes">
+<p>non-functional requirements specifies criteria that can be used to
+evaluate the operation of a system, rather than specific behaviours</p>
+</div>
+<h1 id="dependencies"><a class="header" href="#dependencies">dependencies</a></h1>
+<div class="r-stack">
+<div class="columns fragment fade-out" data-fragment-index="1">
+<div class="column" width="25%">
+<p><img src="lectures/figures/publicdomainvectors/a-cook-is-preparing-a-meal.svg"
+height="250" /></p>
+</div>
+<div class="column" width="25%">
+<img src="lectures/figures/publicdomainvectors/steak-vector.svg" height="250" />
+</div>
+<div class="column" width="25%">
+<p><img src="lectures/figures/publicdomainvectors/chef-serving-a-meal.svg"
+height="250" /></p>
+</div>
+<div class="column" width="25%">
+<p><img src="lectures/figures/publicdomainvectors/chef-cuts-the-sausage.svg"
+height="250" /></p>
+</div>
+</div>
+<div class="columns fragment fade-in" data-fragment-index="1">
+<div class="column" width="25%">
+<p><img src="lectures/figures/publicdomainvectors/chef-cuts-the-sausage.svg"
+height="250" /></p>
+</div>
+<div class="column" width="25%">
+<p><img src="lectures/figures/publicdomainvectors/a-cook-is-preparing-a-meal.svg"
+height="250" /></p>
+</div>
+<div class="column" width="25%">
+<p><img src="lectures/figures/publicdomainvectors/chef-serving-a-meal.svg"
+height="250" /></p>
+</div>
+<div class="column" width="25%">
+<img src="lectures/figures/publicdomainvectors/steak-vector.svg" height="200" />
+</div>
+</div>
+</div>
+<h2 id="dependencies-within-a-software"><a class="header" href="#dependencies-within-a-software">dependencies within a software</a></h2>
+<ul>
+<li>dependencies between the software components are not always obvious
+<ul>
+<li>and change over time</li>
+</ul>
+</li>
+<li>the core functionalities should be determined at the start of the
+project
+<ul>
+<li>that can serve as a foundation for the rest of the software</li>
+<li>this requires comprehensive understanding of the project
+<ul>
+<li>requirement analysis</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="minimum-viable-product"><a class="header" href="#minimum-viable-product">minimum viable product</a></h2>
+<!--
+- is the simplest version of your idea that solves the core problem or provides a key benefit
+- it's a way to quickly launch a basic version of your product to gather feedback from users
+-->
+<blockquote>
+<p>a new product or service is created with the minimum features
+necessary to satisfy early adopters and gather feedback for future
+development</p>
+</blockquote>
+<h2 id="minimum-viable-product-1"><a class="header" href="#minimum-viable-product-1">minimum viable product</a></h2>
+<div class="columns">
+<div class="column" width="30%">
+<p><img src="lectures/figures/publicdomainvectors/blue-saloon-car-wheels.svg"
+height="150" /></p>
+</div>
+<div class="column" width="30%">
+<p><img src="lectures/figures/publicdomainvectors/blue-saloon-car-body.svg"
+height="150" /></p>
+</div>
+<div class="column" width="30%">
+<p><img src="lectures/figures/publicdomainvectors/blue-saloon-car.svg"
+height="150" /></p>
+</div>
+</div>
+<div class="columns fragment">
+<div class="column" width="30%">
+<p><img src="lectures/figures/publicdomainvectors/children-bicycle.svg"
+height="150" /></p>
+</div>
+<div class="column" width="30%">
+<p><img src="lectures/figures/publicdomainvectors/red-scooter-motorbike.svg"
+height="150" /></p>
+</div>
+<div class="column" width="30%">
+<p><img src="lectures/figures/publicdomainvectors/blue-saloon-car.svg"
+height="150" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <a href="https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp">Making sense of MVP (Minimum Viable
+Product)</a>
+by Henrik Kniberg</p>
+</div>
+<!-- ## minimum marketable product -->
+<h1 id="what-is-a-user-story"><a class="header" href="#what-is-a-user-story">what is a user story?</a></h1>
+<div>
+<ul>
+<li>a popular tool in requirements analysis, particularly in agile
+software development methodologies</li>
+<li>simple description of a software feature
+<ul>
+<li>from the perspective of the end user or customer</li>
+</ul>
+</li>
+<li>usually recorded on cards or digital tools</li>
+<li>and are often accompanied by acceptance criteria (DoD),
+<ul>
+<li>which define the conditions that must be met to be considered
+complete</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mt-4">
+<p>as a <code>[type of user]</code>, I want to <code>[action/function]</code> in order to
+<code>[benefit/value]</code></p>
+</div>
+<h1 id="behaviour-driven-development"><a class="header" href="#behaviour-driven-development">behaviour-driven development</a></h1>
+<ul>
+<li>BDD is an extension of Test-Driven Development
+<ul>
+<li>later in the course</li>
+</ul>
+</li>
+<li>using behaviour-driven development (BDD) can help you to turn an idea
+for a requirement into implemented, tested, production-ready code,
+<ul>
+<li>as long as the requirement is specific enough that everyone knows
+what’s going on [@north2007what]</li>
+</ul>
+</li>
+<li>BDD starts from a user story and focuses on adding the acceptance
+criteria</li>
+</ul>
+<h2 id="the-structure-of-a-story"><a class="header" href="#the-structure-of-a-story">the structure of a story</a></h2>
+<pre><code>Title (one line describing the story)
+
+Narrative:
+As a [role]
+I want [feature]
+So that [benefit]
+
+Acceptance Criteria: (presented as Scenarios)
+
+Scenario 1: Title
+Given [context]
+  And [some more context]...
+When  [event]
+Then  [outcome]
+  And [another outcome]...
+
+Scenario 2: ...
+</code></pre>
+<div class="text-smaller">
+<p>taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0</p>
+</div>
+<h2 id="atm-example"><a class="header" href="#atm-example">ATM example</a></h2>
+<pre><code>Story: Account Holder withdraws cash
+
+As an Account Holder
+I want to withdraw cash from an ATM
+So that I can get money when the bank is closed
+</code></pre>
+<div class="fragment">
+<p><span class="text-smaller">Acceptance Criteria:</span></p>
+<pre><code>Scenario 1: Account has sufficient funds
+Given the account balance is $100
+ And the card is valid
+ And the machine contains enough money
+When the Account Holder requests $20
+Then the ATM should dispense $20
+ And the account balance should be $80
+ And the card should be returned
+
+Scenario 2: Account has insufficient funds
+
+Scenario 3: Card has been disabled
+
+Scenario 4: The ATM has insufficient funds
+</code></pre>
+</div>
+<div class="text-smaller">
+<p>taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0</p>
+</div>
+<h2 id="it-may-be-difficult-to-extract-knowledge"><a class="header" href="#it-may-be-difficult-to-extract-knowledge">it may be difficult to extract knowledge</a></h2>
+<ul>
+<li>the scenarios (and tests) may require exact thresholds</li>
+<li>need to interview domain specialists</li>
+<li>communication barrier, lack of common dictionary</li>
+</ul>
+<!--
+- experts might not be able to tell how they work
+    - "bake the meat until it is ready"
+-->
+<h1 id="benefits-of-requirements-analysis"><a class="header" href="#benefits-of-requirements-analysis">benefits of requirements analysis</a></h1>
+<ul>
+<li>clear project scope and objectives</li>
+<li>improved stakeholder satisfaction</li>
+<li>reduced development costs and time</li>
+<li>enhanced product quality</li>
+<li>better risk management</li>
+<li>facilitates prioritization</li>
+<li>improved communication and collaboration</li>
+</ul>
+<h1 id="requirements-analysis-techniques"><a class="header" href="#requirements-analysis-techniques">requirements analysis techniques</a></h1>
+<ul>
+<li>user stories and user story mapping</li>
+<li>gantt charts</li>
+<li>flowcharts</li>
+<li>data flow diagram</li>
+<li>etc.</li>
+</ul>
+<h1 id="references-4"><a class="header" href="#references-4">references</a></h1>
+<div id="refs">
 </div>
 
                     </main>

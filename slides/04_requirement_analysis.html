@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>requirement analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">requirement analysis</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section>
+<section id="requirement-analysis" class="title-slide slide level1">
+<h1>requirement analysis</h1>
+<blockquote>
+<p>Requirement analysis is all about understanding what software is
+supposed to do and the constraints it must operate within <span
+class="citation" data-cites="krysik2023sdlc">[1]</span>.</p>
+</blockquote>
+<ul>
+<li>first step of the software development life cycle (SDLC)</li>
+<li>about understanding the task to avoid costly mistakes</li>
+</ul>
+<div class="text-smaller">
+<p>this section is based on <span class="citation"
+data-cites="krysik2023sdlc">[1]</span></p>
+</div>
+</section>
+<section id="steps-of-requirement-analysis" class="slide level2">
+<h2>steps of requirement analysis</h2>
+<ol type="1">
+<li>stakeholder identification</li>
+<li>elicitation of requirements (gathering data)</li>
+<li>documentation of requirements</li>
+<li>analysis and negotiation</li>
+<li>validation and verification</li>
+</ol>
+<!--::: {.mt-2}
+![based on [@krysik2023sdlc]](figures/requirement_analysis_steps.drawio.svg){height=75}
+
+:::-->
+</section>
+<section id="stakeholder-identification" class="slide level2">
+<h2>1. stakeholder identification</h2>
+<ul>
+<li>not just the customers who commission the software</li>
+<li>also end users
+<ul>
+<li>different roles / groups</li>
+</ul></li>
+</ul>
+</section>
+<section id="elicitation-of-requirements" class="slide level2">
+<h2>2. elicitation of requirements</h2>
+<blockquote>
+<p>the team actively gathers detailed information about what the
+software needs to do from the identified stakeholders <span
+class="citation" data-cites="krysik2023sdlc">[1]</span></p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>interviews
+<ul>
+<li><span class="text-smaller">one-on-one conversations with
+stakeholders<br>to understand their needs</span></li>
+</ul></li>
+<li>questionnaires
+<ul>
+<li><span class="text-smaller">gather information from a larger
+group</span></li>
+</ul></li>
+<li>user observation
+<ul>
+<li><span class="text-smaller">how potential users interact with
+existing systems<br>to identify unspoken needs or problems</span></li>
+<li><span class="text-smaller">telemetry</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/opinion-poll.svg" /></p>
+</div>
+</div>
+</section>
+<section id="documentation-of-requirements" class="slide level2">
+<h2>3. documentation of requirements</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<dl>
+<dt>for who</dt>
+<dd>
+<ul>
+<li>future self</li>
+<li>colleagues</li>
+<li>every stakeholder of the project</li>
+</ul>
+</dd>
+</dl>
+</div><div class="column" style="width:65%;">
+<dl>
+<dt>how</dt>
+<dd>
+<ul>
+<li>searchable
+<ul>
+<li>organization-wide knowledge sharing (e.g., wiki)</li>
+</ul></li>
+<li>version tracked</li>
+<li>traceable
+<ul>
+<li>who wrote / edited / approved it</li>
+</ul></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="analysis-and-negotiation" class="slide level2">
+<h2>4. analysis and negotiation</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>reviewing the documented requirements to make sure they are realistic
+and its implications are understood</p>
+<ul>
+<li>how difficult will it be to implement?</li>
+<li>does it conflict with any other requirements?</li>
+<li>is it actually necessary for the software’s success?</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/puzzle-pieces.svg" /></p>
+</div>
+</div>
+<div class="fragment">
+<p>Negotiation comes into play when there are conflicting requirements
+or limitations in resources like time or budget. <br>[…]<br> The goal
+here is to finalize a set of requirements that is achievable and aligns
+with the overall objectives of the project. <span class="citation"
+data-cites="krysik2023sdlc">[1]</span></p>
+</div>
+</section>
+<section id="validation-and-verification" class="slide level2">
+<h2>5. validation and verification</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<dl>
+<dt>validation</dt>
+<dd>
+<ul>
+<li>is about confirming that the requirements actually meet the needs of
+the stakeholders</li>
+<li>are we building the right thing?</li>
+<li>every stakeholder of the project</li>
+</ul>
+</dd>
+</dl>
+</div><div class="column" style="width:50%;">
+<dl>
+<dt>verification</dt>
+<dd>
+<ul>
+<li>making sure that the requirements are documented correctly and
+consistently
+<ul>
+<li>like proofreading and quality checking</li>
+</ul></li>
+<li>to ensure that all requirements are clear, unambiguous, and
+consistent</li>
+<li>are we building the thing right?</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="requirement-smells" class="slide level2">
+<h2>requirement smells</h2>
+<ul>
+<li>based on the idea of code smells (later in the course)</li>
+<li>(language based) signs in the requirements that are not necessarily
+wrong but could be problematic, e.g.,:
+<ul>
+<li>subjective language
+<ul>
+<li><span class="text-smaller">“The architecture as well as the
+programming must ensure a <strong>simple</strong> and
+<strong>efficient</strong> maintainability.”</span></li>
+</ul></li>
+<li>ambiguous adverbs and adjectives
+<ul>
+<li><span class="text-smaller">“If the (…) quality is <strong>too
+low</strong>, a fault must be written to the error memory.”</span></li>
+</ul></li>
+<li>non-verifiable terms
+<ul>
+<li><span class="text-smaller">“The system may only be activated, if all
+required sensors (…) work with <strong>sufficient</strong> measurement
+accuracy.”</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="text-smaller">
+<p>examples from <span class="citation"
+data-cites="femmer2017rapid">[2]</span></p>
+</div>
+</section></section>
+<section>
+<section id="requirement-analysis-document-example"
+class="title-slide slide level1">
+<h1>requirement analysis document example</h1>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><strong>contents</strong></p>
+<ul>
+<li>introduction</li>
+<li>stakeholder identification</li>
+<li>methodology</li>
+<li>detailed requirements
+<ul>
+<li>functional requirements</li>
+<li>non-functional requirements</li>
+</ul></li>
+<li>data flow diagrams or models</li>
+<li>prioritization of requirements</li>
+<li>constraints and assumptions</li>
+<li>acceptance criteria (DoD)</li>
+<li>appendices</li>
+<li>version history and approvals</li>
+</ul>
+</div><div class="column mt-4" style="width:55%;">
+<ul>
+<li>it is a living document</li>
+<li>often updated throughout the project<br>as new information becomes
+available or requirements evolve</li>
+<li>its main goal is to provide a clear, detailed, and agreed-upon set
+of requirements that guide the software development process</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="functional-and-non-functional-requirements"
+class="slide level2">
+<h2>functional and non-functional requirements</h2>
+<div class="wide-quote">
+<p>functional requirements define what a system is supposed to do<br>and
+non-functional requirements define how a system is supposed to operate
+<span class="citation" data-cites="enwiki:1245895117">[3]</span></p>
+</div>
+<div class="columns mt-3">
+<div class="column" style="width:50%;">
+<p>functional</p>
+<ul>
+<li>features</li>
+<li>the webserver can serve pages via HTTP2</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p>non-functional</p>
+<ul>
+<li>quality goals, quality of service requirements</li>
+<li>webserver is available 99.9% of time<br>(yearly about 8h 41m
+downtime)</li>
+<li>can serve at least 5.000 queries per sec</li>
+</ul>
+</div>
+</div>
+<p><span class="text-smaller">more examples on <a
+href="https://en.wikipedia.org/wiki/Non-functional_requirement">Wikipedia</a></span></p>
+<aside class="notes">
+<p>non-functional requirements specifies criteria that can be used to
+evaluate the operation of a system, rather than specific behaviours</p>
+</aside>
+</section></section>
+<section>
+<section id="dependencies" class="title-slide slide level1">
+<h1>dependencies</h1>
+<div class="r-stack">
+<div class="columns fragment fade-out" data-fragment-index="1">
+<div class="column" style="width:25%;">
+<p><img
+data-src="figures/publicdomainvectors/a-cook-is-preparing-a-meal.svg"
+height="250" /></p>
+</div><div class="column" style="width:25%;">
+<p><img data-src="figures/publicdomainvectors/steak-vector.svg"
+height="250" /></p>
+</div><div class="column" style="width:25%;">
+<p><img data-src="figures/publicdomainvectors/chef-serving-a-meal.svg"
+height="250" /></p>
+</div><div class="column" style="width:25%;">
+<p><img data-src="figures/publicdomainvectors/chef-cuts-the-sausage.svg"
+height="250" /></p>
+</div>
+</div>
+<div class="columns fragment fade-in" data-fragment-index="1">
+<div class="column" style="width:25%;">
+<p><img data-src="figures/publicdomainvectors/chef-cuts-the-sausage.svg"
+height="250" /></p>
+</div><div class="column" style="width:25%;">
+<p><img
+data-src="figures/publicdomainvectors/a-cook-is-preparing-a-meal.svg"
+height="250" /></p>
+</div><div class="column" style="width:25%;">
+<p><img data-src="figures/publicdomainvectors/chef-serving-a-meal.svg"
+height="250" /></p>
+</div><div class="column" style="width:25%;">
+<p><img data-src="figures/publicdomainvectors/steak-vector.svg"
+height="200" /></p>
+</div>
+</div>
+</div>
+</section>
+<section id="dependencies-within-a-software" class="slide level2">
+<h2>dependencies within a software</h2>
+<ul>
+<li>dependencies between the software components are not always obvious
+<ul>
+<li>and change over time</li>
+</ul></li>
+<li>the core functionalities should be determined at the start of the
+project
+<ul>
+<li>that can serve as a foundation for the rest of the software</li>
+<li>this requires comprehensive understanding of the project
+<ul>
+<li>requirement analysis</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="minimum-viable-product" class="slide level2">
+<h2>minimum viable product</h2>
+<!--
+- is the simplest version of your idea that solves the core problem or provides a key benefit
+- it's a way to quickly launch a basic version of your product to gather feedback from users
+-->
+<blockquote>
+<p>a new product or service is created with the minimum features
+necessary to satisfy early adopters and gather feedback for future
+development</p>
+</blockquote>
+</section>
+<section id="minimum-viable-product-1" class="slide level2">
+<h2>minimum viable product</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img
+data-src="figures/publicdomainvectors/blue-saloon-car-wheels.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/blue-saloon-car-body.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/blue-saloon-car.svg"
+height="150" /></p>
+</div>
+</div>
+<div class="columns fragment">
+<div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/children-bicycle.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/red-scooter-motorbike.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/blue-saloon-car.svg"
+height="150" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <a
+href="https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp">Making
+sense of MVP (Minimum Viable Product)</a> by Henrik Kniberg</p>
+</div>
+<!-- ## minimum marketable product -->
+</section></section>
+<section id="what-is-a-user-story" class="title-slide slide level1">
+<h1>what is a user story?</h1>
+<div>
+<ul>
+<li>a popular tool in requirements analysis, particularly in agile
+software development methodologies</li>
+<li>simple description of a software feature
+<ul>
+<li>from the perspective of the end user or customer</li>
+</ul></li>
+<li>usually recorded on cards or digital tools</li>
+<li>and are often accompanied by acceptance criteria (DoD),
+<ul>
+<li>which define the conditions that must be met to be considered
+complete</li>
+</ul></li>
+</ul>
+</div>
+<div class="mt-4">
+<p>as a <code>[type of user]</code>, I want to
+<code>[action/function]</code> in order to
+<code>[benefit/value]</code></p>
+</div>
+</section>
+
+<section>
+<section id="behaviour-driven-development"
+class="title-slide slide level1">
+<h1>behaviour-driven development</h1>
+<ul>
+<li>BDD is an extension of Test-Driven Development
+<ul>
+<li>later in the course</li>
+</ul></li>
+<li>using behaviour-driven development (BDD) can help you to turn an
+idea for a requirement into implemented, tested, production-ready code,
+<ul>
+<li>as long as the requirement is specific enough that everyone knows
+what’s going on <span class="citation"
+data-cites="north2007what">[4]</span></li>
+</ul></li>
+<li>BDD starts from a user story and focuses on adding the acceptance
+criteria</li>
+</ul>
+</section>
+<section id="the-structure-of-a-story" class="slide level2">
+<h2>the structure of a story</h2>
+<pre><code>Title (one line describing the story)
+
+Narrative:
+As a [role]
+I want [feature]
+So that [benefit]
+
+Acceptance Criteria: (presented as Scenarios)
+
+Scenario 1: Title
+Given [context]
+  And [some more context]...
+When  [event]
+Then  [outcome]
+  And [another outcome]...
+
+Scenario 2: ...</code></pre>
+<div class="text-smaller">
+<p>taken from <span class="citation"
+data-cites="north2007what">[4]</span> by Daniel Terhorst-North | CC-BY
+4.0</p>
+</div>
+</section>
+<section id="atm-example" class="slide level2">
+<h2>ATM example</h2>
+<pre><code>Story: Account Holder withdraws cash
+
+As an Account Holder
+I want to withdraw cash from an ATM
+So that I can get money when the bank is closed</code></pre>
+<div class="fragment">
+<p><span class="text-smaller">Acceptance Criteria:</span></p>
+<pre><code>Scenario 1: Account has sufficient funds
+Given the account balance is $100
+ And the card is valid
+ And the machine contains enough money
+When the Account Holder requests $20
+Then the ATM should dispense $20
+ And the account balance should be $80
+ And the card should be returned</code></pre>
+<pre><code>Scenario 2: Account has insufficient funds</code></pre>
+<pre><code>Scenario 3: Card has been disabled</code></pre>
+<pre><code>Scenario 4: The ATM has insufficient funds</code></pre>
+</div>
+<div class="text-smaller">
+<p>taken from <span class="citation"
+data-cites="north2007what">[4]</span> by Daniel Terhorst-North | CC-BY
+4.0</p>
+</div>
+</section>
+<section id="it-may-be-difficult-to-extract-knowledge"
+class="slide level2">
+<h2>it may be difficult to extract knowledge</h2>
+<ul>
+<li>the scenarios (and tests) may require exact thresholds</li>
+<li>need to interview domain specialists</li>
+<li>communication barrier, lack of common dictionary</li>
+</ul>
+<!--
+- experts might not be able to tell how they work
+    - "bake the meat until it is ready"
+-->
+</section></section>
+<section id="benefits-of-requirements-analysis"
+class="title-slide slide level1">
+<h1>benefits of requirements analysis</h1>
+<ul>
+<li>clear project scope and objectives</li>
+<li>improved stakeholder satisfaction</li>
+<li>reduced development costs and time</li>
+<li>enhanced product quality</li>
+<li>better risk management</li>
+<li>facilitates prioritization</li>
+<li>improved communication and collaboration</li>
+</ul>
+</section>
+
+<section id="requirements-analysis-techniques"
+class="title-slide slide level1">
+<h1>requirements analysis techniques</h1>
+<ul>
+<li>user stories and user story mapping</li>
+<li>gantt charts</li>
+<li>flowcharts</li>
+<li>data flow diagram</li>
+<li>etc.</li>
+</ul>
+</section>
+
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-krysik2023sdlc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A.
+Krysik, <span>“SDLC guide: Requirement analysis in software
+engineering.”</span> <a href="
+                    https://stratoflow.com/requirements-analysis/
+                    " class="uri">
+                    https://stratoflow.com/requirements-analysis/
+</a>, 24-Nov-2023.</div>
+</div>
+<div id="ref-femmer2017rapid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">H.
+Femmer, D. M. Fernández, S. Wagner, and S. Eder, <span>“Rapid quality
+assurance with requirements smells,”</span> <em>Journal of Systems and
+Software</em>, vol. 123, pp. 190–213, 2017.</div>
+</div>
+<div id="ref-enwiki:1245895117" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Non-functional
+requirement — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Non-functional_requirement&amp;oldid=1245895117"
+class="uri">https://en.wikipedia.org/w/index.php?title=Non-functional_requirement&amp;oldid=1245895117</a>,
+2024.</div>
+</div>
+<div id="ref-north2007what" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">D.
+Terhorst-North, <span>“What’s in a story?”</span> <a href="
+                    https://dannorth.net/whats-in-a-story/
+                    " class="uri">
+                    https://dannorth.net/whats-in-a-story/
+</a>, 11-Feb-2007.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
