@@ -28,26 +28,7 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
+  </style>
   <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
   <link rel="stylesheet" href="../assets/custom.css"/>
 </head>
@@ -62,15 +43,37 @@ calc(100% - 1.25rem)" data-background-size="125px">
   <p class="date">gergo.pinter@uni-corvinus.hu</p>
 </section>
 
-<section id="roles" class="title-slide slide level1">
-<h1>roles</h1>
+<section>
+<section id="scrum-team" class="title-slide slide level1">
+<h1>scrum team</h1>
 <ul>
-<li>scrum master</li>
-<li>product owner</li>
-<li>developers</li>
+<li>optimally 3 to 9 people</li>
+<li>cross-functional</li>
+<li>self-organizing</li>
 </ul>
 </section>
-
+<section id="roles" class="slide level2">
+<h2>roles</h2>
+<ul>
+<li>scrum master
+<ul>
+<li>responsible establishing scrum as defined in <a
+href="/software-engineering/slides/02_scrum.html">the Scrum Guide</a>
+<ul>
+<li>by helping everyone understand the theory and practice, both within
+the scrum team and the organization</li>
+</ul></li>
+<li>responsible for the scrum team’s effectiveness</li>
+</ul></li>
+<li>product owner
+<ul>
+<li>responsible for maximizing the value of the product resulting from
+the work of the scrum team</li>
+<li>also responsible for effective product backlog management</li>
+</ul></li>
+<li>developers</li>
+</ul>
+</section></section>
 <section id="sprint-planning" class="title-slide slide level1">
 <h1>sprint planning</h1>
 <ul>
@@ -125,10 +128,28 @@ encountered</li>
 height="300" /></p>
 </section>
 
-<section id="references" class="title-slide slide level1">
-<h1>references</h1>
-<div id="refs" role="list">
-
+<section id="kanban" class="title-slide slide level1">
+<h1>kanban</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>uses a visual workflow</li>
+<li>pull-based system
+<ul>
+<li>no task in the workflow without request</li>
+</ul></li>
+<li>uses columns for states of the product</li>
+<li>defines conditions when to move a task between columns</li>
+<li>conditions flow
+<ul>
+<li>no iterations (sprints)</li>
+<li>no roles</li>
+</ul></li>
+<li>encourages to improve the workflow</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/kanban.drawio.svg" /></p>
+</div>
 </div>
 </section>
     </div>
