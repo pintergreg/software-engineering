@@ -44,6 +44,7 @@ requirement analysis
 
 :    - [SDLC Guide: Requirement Analysis in Software Engineering](https://stratoflow.com/requirements-analysis/) - by Arkadiusz Krysik
      - [What's in a Story?](https://dannorth.net/whats-in-a-story/) - by Daniel Terhorst-North
+     - [Making sense of MVP (Minimum Viable Product) – and why I prefer Earliest Testable/Usable/Lovable](https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp) - by Henrik Kniberg
 
 user story mapping
 
