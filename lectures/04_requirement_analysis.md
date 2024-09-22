@@ -445,6 +445,45 @@ taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
 - etc.
 
 
+# gantt chart
+
+- illustrates a project schedule
+- practical to construct the schedule from the deadline and go backward
+<!-- - a task is often scheduled to start immediately when its prerequisites -->
+
+::: {.fragment}
+![](figures/ccs24.svg)
+
+:::
+
+
+# flowchart
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-4}
+- represents a workflow or process
+- diagrammatic representation of an algorithm, a step-by-step approach to solving a task
+- ISO 5807
+    - published in 1985
+    - last reviewed in 2019
+- [Wikipedia / Flowchart](https://en.wikipedia.org/wiki/Flowchart)
+    
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/common_flowchart_elements.drawio.svg)
+
+:::::::::
+::::::::::::
+
+
+## flowchart example
+
+![a code review process](figures/proc3.png){height=500}
+
+
+<!-- # data flow diagram -->
+
+
 # references
 
 ::: {#refs}
