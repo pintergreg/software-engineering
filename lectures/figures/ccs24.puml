@@ -1,0 +1,13 @@
+@startgantt
+skin rose
+scale 3
+
+printscale daily zoom 3
+
+Project starts 2024-08-29
+[yrCCS] starts 2024-08-30 and requires 2 days
+[satellite] starts 2024-09-02 and requires 2 days
+[main conference] starts 2024-09-04 and requires 3 days
+
+[prezentation] happens at 2024-09-05
+@endgantt
