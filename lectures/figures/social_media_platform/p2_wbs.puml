@@ -1,0 +1,20 @@
+@startwbs
+scale 2
+skin rose
+
++ social media
+++ user management
++++ sign up
++++ log in
++++ log out
+++ content
++++ browse
++++ create post
+++++[#SkyBlue] upload multimedia
+++[#SkyBlue] react to posts
++++[#SkyBlue] like post
++++[#SkyBlue] comment
+++ social connections
++++ follow user
++++ unfollow user
+@endwbs
