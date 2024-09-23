@@ -3,7 +3,8 @@ inputs = [
     "01_sdlc.md",
     "02_scrum.md",
     "03_kanban.md",
-    "04_requirement_analysis.md"
+    "04_requirement_analysis.md",
+    "project.md",
 ]
 Dir.glob('./summary_week*.md') do |x|
     inputs.push x
