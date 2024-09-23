@@ -467,6 +467,7 @@ taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
 
 # gantt chart
 
+- project management tool
 - illustrates a project schedule
 - practical to construct the schedule from the deadline and go backward
 <!-- - a task is often scheduled to start immediately when its prerequisites -->
