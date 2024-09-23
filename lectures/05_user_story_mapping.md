@@ -21,6 +21,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 - the backlog is one dimensional
     - priority
 
+
 # user story map
 
 ![](figures/user_story_map.drawio.svg)
@@ -34,10 +35,65 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 - N.B.: sometimes the activities / steps / user tasks terminology is used 
 :::
 
+
+## activity
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- is sort of a big thing that people do 
+- that has lots of steps,
+- and doesn't always have a precise workflow
+
+activities are still user stories with roles
+
+:::::::::
+::::::::: {.column width="50%" .text-size-2}
+```
+As a social media platform user
+I want to follow users
+so I can keep up with their posts.
+```
+
+:::::::::
+::::::::::::
+
+::: notes
+An activity is close to an epic in the scrum literature.
+:::
+
+
+## user task
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+- in agile a "task" refers to the things that *developers* do
+    - to finish user stories
+- user story mapping considers the *user*,
+    - so a user task is what a user needs to do to complete an activity
+
+:::::::::
+::::::::: {.column width="45%"}
+for example (follow a user)
+
+:   1. search for user
+    2. add user to followed list
+
+:::::::::
+::::::::::::
+
+<!--## details
+
+search for user
+
+:   - type username
+    - browse the result lists
+    - click to the "follow" button-->
+
 ## 
 
 ![from "Quickstart Guide to User Story Mapping" by Eben Halford | CC BY-SA 2.5](figures/borrowed/split_restaurant_bill.jpg){width=80%}
     
+
 # user story mapping
 
 - popularized by Jeff Patton
@@ -49,6 +105,28 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
     - developers,
     - testers,
     - and stakeholders
-- build a shared understanding of the product and a common language 
+- build a shared understanding of the product and a common language
 
 
+## user story map as a document
+
+- not final, not set in stone
+- it is possible and encouraged to adjust<br>as the more knowledge is acquired about the software
+    - versioning
+- you are free to move notes up and down
+    - change the role (activity &#8596; user task)
+
+
+# backbone, skeleton, ribs
+
+![](figures/user_story_map_bones.drawio.svg)
+
+
+## iterations
+
+![](figures/user_story_map_increments.drawio.svg)
+
+
+# social media platform - example
+
+![](figures/social_media_platform/usm_sign_up.drawio.svg)
