@@ -1,0 +1,30 @@
+@startwbs
+scale 2
+skin rose
+
++ social media
+++ user management
++++ sign up
++++ log in
++++ log out
++++ edit profile
+++ content
++++ browse
++++ create post
+++++ upload multimedia
++++ edit
+++++ version tracking
++++ delete post
+++ react to posts
++++ like post
++++ comment
+++ social connections
++++ follow user
++++ unfollow user
++++ block user
+++ direct messaging
++++ send message
++++ edit message
++++ delete message
++++ react to message
+@endwbs
