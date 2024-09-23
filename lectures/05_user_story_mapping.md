@@ -30,9 +30,8 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 - two dimensional
 - consists of three elements
     1. activities
-    2. tasks
+    2. steps
     3. details
-- N.B.: sometimes the activities / steps / user tasks terminology is used 
 :::
 
 
