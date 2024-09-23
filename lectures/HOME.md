@@ -49,4 +49,5 @@ requirement analysis
 
 user story mapping
 
-:    - [Quickstart Guide to User Story Mapping](/software-engineering/resources/quickstart-guide-to-user-story-mapping.pdf)
+:    - [Jeff Patton's original blogpost](https://jpattonassociates.com/the-new-backlog/)
+     - [Quickstart Guide to User Story Mapping](/software-engineering/resources/quickstart-guide-to-user-story-mapping.pdf)
