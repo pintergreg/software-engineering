@@ -317,6 +317,26 @@ based on [Making sense of MVP (Minimum Viable Product)](https://blog.crisp.se/20
 <!-- ## minimum marketable product -->
 
 
+# social media platform - example
+
+![](figures/social_media_platform/p1_wbs.svg){width=85%}
+
+
+## social media platform - example
+
+
+![](figures/social_media_platform/p2_wbs.svg){width=85%}
+
+
+## social media platform - example
+
+![](figures/social_media_platform/p3_wbs.svg){width=85%}
+
+## social media platform - example
+
+![](figures/social_media_platform/p4_wbs.svg){width=85%}
+
+
 # what is a user story?
 
 ::: {}
