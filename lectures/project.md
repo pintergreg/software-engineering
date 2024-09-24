@@ -26,6 +26,12 @@ The software generates a trajectory for every drone that it will follow.
 
 Your task is to design this software.
 
+
+## drone show example
+
+[Dragon Boat Show with 1500 drones in Shenzhen, China](https://www.youtube.com/watch?v=3G1KBu6H6BM)
+
+
 # contents
 
 - introduction
