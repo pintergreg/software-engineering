@@ -50,4 +50,7 @@ requirement analysis
 user story mapping
 
 :    - [Jeff Patton's original blogpost](https://jpattonassociates.com/the-new-backlog/)
+          - [Five common story mapping mistakes](https://jpattonassociates.com/5-story-mapping-mistakes/) - by Jeff Patton
+     - [The Ultimate Guide to User Story Mapping](https://www.easyagile.com/blog/the-ultimate-guide-to-user-story-maps/) - by Nick Muldoon
+     - [Mapping User Stories in Agile](https://www.nngroup.com/articles/user-story-mapping/) - by Anna Kaley
      - [Quickstart Guide to User Story Mapping](/software-engineering/resources/quickstart-guide-to-user-story-mapping.pdf)
