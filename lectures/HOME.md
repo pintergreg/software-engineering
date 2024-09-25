@@ -54,3 +54,7 @@ user story mapping
      - [The Ultimate Guide to User Story Mapping](https://www.easyagile.com/blog/the-ultimate-guide-to-user-story-maps/) - by Nick Muldoon
      - [Mapping User Stories in Agile](https://www.nngroup.com/articles/user-story-mapping/) - by Anna Kaley
      - [Quickstart Guide to User Story Mapping](/software-engineering/resources/quickstart-guide-to-user-story-mapping.pdf)
+
+## week 4
+
+1. [week 3 summary](/software-engineering/slides/summary_week03.html)
