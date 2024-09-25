@@ -18,7 +18,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 | week | date       | lecture                            | practical class    |
 |-----:|:----------:|:----------------------------------:|:------------------:|
 |    1 | 2024-09-10 | intro, software architecture, SDLC |                    |
-|    2 | 2024-09-17 | scrum, kanban                      | kanban             |
+|    2 | 2024-09-17 | scrum, kanban                      |                    |
 |    3 | 2024-09-24 | requirement analysis               | user story mapping |
 |    4 | 2024-10-01 | UML, C4                            | UML in practice    |
 |    5 | 2024-10-08 | "communication", clean code        | case studies       |
