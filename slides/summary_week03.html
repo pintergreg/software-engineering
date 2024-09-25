@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>week 3 summary</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">week 3 summary</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section>
+<section id="steps-of-requirement-analysis"
+class="title-slide slide level1">
+<h1>steps of requirement analysis</h1>
+<div class="mt-2">
+<figure>
+<img data-src="figures/requirement_analysis_steps.drawio.svg"
+height="75" alt="based on [1]" />
+<figcaption aria-hidden="true">based on <span class="citation"
+data-cites="krysik2023sdlc">[1]</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="functional-and-non-functional-requirements"
+class="slide level2">
+<h2>functional and non-functional requirements</h2>
+<div class="columns">
+<div class="column mt-4" style="width:65%;">
+<ul>
+<li>functional requirements define<br> <strong>what</strong> a system is
+supposed to do</li>
+<li>non-functional requirements define<br> <strong>how</strong> a system
+is supposed to operate
+<ul>
+<li>e.g., legal requirements (GDPR)</li>
+</ul></li>
+</ul>
+<!--::: {.text-smaller}
+source: [@enwiki:1245895117]
+:::-->
+</div><div class="column" style="width:35%;">
+<p><img data-src="figures/publicdomainvectors/cogwheel.svg"
+height="250" /></p>
+</div>
+</div>
+</section></section>
+<section id="minimum-viable-product" class="title-slide slide level1">
+<h1>minimum viable product</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img
+data-src="figures/publicdomainvectors/blue-saloon-car-wheels.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/blue-saloon-car-body.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/blue-saloon-car.svg"
+height="150" /></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/children-bicycle.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/red-scooter-motorbike.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/blue-saloon-car.svg"
+height="150" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <a
+href="https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp">Making
+sense of MVP (Minimum Viable Product)</a> by Henrik Kniberg</p>
+</div>
+</section>
+
+<section id="what-is-a-user-story" class="title-slide slide level1">
+<h1>what is a user story?</h1>
+<div>
+<ul>
+<li>a popular tool in requirements analysis, particularly in agile
+software development methodologies</li>
+<li>simple description of a software feature
+<ul>
+<li>from the perspective of the end user or customer</li>
+</ul></li>
+<li>and are often accompanied by acceptance criteria (BDD),
+<ul>
+<li>which define the conditions that must be met to be considered
+complete</li>
+</ul></li>
+</ul>
+</div>
+<div class="mt-4">
+<p>as a <code>[type of user]</code>, I want to
+<code>[action/function]</code> in order to
+<code>[benefit/value]</code></p>
+</div>
+</section>
+
+<section id="behaviour-driven-development"
+class="title-slide slide level1">
+<h1>behaviour-driven development</h1>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>BDD starts from a user story and<br>focuses on adding acceptance
+criteria</li>
+<li>extends user stories how the software should react in some with
+scenarios (conditions)</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<pre><code>Title (one line describing the story)
+
+Narrative:
+As a [role]
+I want [feature]
+So that [benefit]
+
+Acceptance Criteria:
+(presented as Scenarios)
+
+Scenario 1: Title
+Given [context]
+  And [some more context]...
+When  [event]
+Then  [outcome]
+  And [another outcome]...
+
+Scenario 2: ...</code></pre>
+</div>
+</div>
+</section>
+
+<section>
+<section id="user-story-mapping" class="title-slide slide level1">
+<h1>user story mapping</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>performed in workshops including
+<ul>
+<li>users,</li>
+<li>(UI) designers,</li>
+<li>developers,</li>
+<li>testers,</li>
+<li>and stakeholders</li>
+</ul></li>
+<li>build a shared understanding of the product and a common
+language</li>
+<li>living document</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/user_story_map.drawio.svg" /></p>
+</div>
+</div>
+</section>
+<section id="user-story-mapping-mistakes" class="slide level2">
+<h2>user story mapping mistakes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/usm_too_many_details.drawio.svg"
+height="450" /></p>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<div class="fragment">
+<p><img data-src="figures/usm_whole_story_first.drawio.svg"
+height="450" /></p>
+</div>
+<div class="fragment">
+<p><img data-src="figures/usm_whole_story_first_extra.drawio.svg"
+height="450" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-smaller">
+<p>more from Jeff Patton: <a
+href="https://jpattonassociates.com/5-story-mapping-mistakes/">5 story
+mapping mistakes</a></p>
+</div>
+</section></section>
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-krysik2023sdlc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A.
+Krysik, <span>“SDLC guide: Requirement analysis in software
+engineering.”</span> <a href="
+                    https://stratoflow.com/requirements-analysis
+                    " class="uri">
+                    https://stratoflow.com/requirements-analysis
+</a>, 24-Nov-2023.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
