@@ -158,6 +158,9 @@ Scenario 2: ...
 ![](figures/usm_whole_story_first.drawio.svg){height=450}
 :::
 ::: {.fragment}
+![](figures/usm_whole_story_first_verbs.drawio.svg){height=450}
+:::
+::: {.fragment}
 ![](figures/usm_whole_story_first_extra.drawio.svg){height=450}
 :::
 ::::::
