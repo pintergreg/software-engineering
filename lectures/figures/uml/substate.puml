@@ -1,0 +1,21 @@
+@startuml
+scale 2
+skin rose
+
+state state1 {
+    state x {
+    }
+    state y {
+    }
+}
+ 
+state state2 {
+    state z {
+    }
+}
+
+z : it's a substate
+
+x --> z : event1
+z --> y : event2
+@enduml
