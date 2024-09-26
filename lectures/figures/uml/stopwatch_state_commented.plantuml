@@ -1,20 +1,19 @@
 @startuml
-scale 4
 skin rose
 
 [*] --> idle
-'idle: waits for user
+idle : waits for user
 idle --> [*]
 
-note left of idle: displays zero
+'note left of idle: displays zero
 
 idle -> started
 started --> stopped
-'started: measures elapsed time
-note right of started: measures elapsed time
+started: measures elapsed time
+'note right of started: measures elapsed time
 stopped --> [*]
-'stopped: displays measured time
-note right of stopped: displays measured time
+stopped: displays measured time
+'note right of stopped: displays measured time
 
 stopped --> started
 stopped -> idle
