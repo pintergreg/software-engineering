@@ -10,11 +10,11 @@
 
 ## used software
 
-- [reveal.js](https://github.com/hakimel/reveal.js)
 - [pandoc](https://pandoc.org/)
 - [mdbook](https://github.com/rust-lang/mdBook)
 
 ### included into this repo
 
+- [reveal.js 5.1.0](https://github.com/hakimel/reveal.js)
 - [reveal.js verticator plugin 1.2.6](https://github.com/Martinomagnifico/reveal.js-verticator)
 - ieee.csl and apa.csl files are from https://github.com/citation-style-language/styles repository and licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
