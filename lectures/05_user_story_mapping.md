@@ -129,3 +129,30 @@ search for user
 # social media platform - example
 
 ![](figures/social_media_platform/usm_sign_up.drawio.svg)
+
+
+# user story mapping mistakes
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/usm_too_many_details.drawio.svg){height=450}
+
+:::::::::
+::::::::: {.column width="50%"}
+:::::: {.r-stack}
+::: {.fragment}
+![](figures/usm_whole_story_first.drawio.svg){height=450}
+:::
+::: {.fragment}
+![](figures/usm_whole_story_first_verbs.drawio.svg){height=450}
+:::
+::: {.fragment}
+![](figures/usm_whole_story_first_extra.drawio.svg){height=450}
+:::
+::::::
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+more from Jeff Patton: [5 story mapping mistakes](https://jpattonassociates.com/5-story-mapping-mistakes/)
+:::
