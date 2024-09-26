@@ -1,0 +1,26 @@
+c: "a > 17"
+c: {
+  shape: diamond
+}
+d: "a -= 5"
+i: "a += 5"
+c -> d: {
+  label: "yes"
+  style: {
+    stroke: "#a80036"
+    font-color: black
+    bold: true
+  }
+}
+c -> i: {
+  label: "no"
+  style: {
+    stroke: "#a80036"
+    font-color: black
+    bold: true
+  }
+}
+
+*.style.fill: "#fefece"
+*.style.font-color: black
+*.style.stroke: "#a80036"
