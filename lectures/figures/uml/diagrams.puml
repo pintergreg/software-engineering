@@ -1,0 +1,24 @@
+@startwbs
+scale 2
+skin rose
+
++ UML 2
+++ behavior
++++[#LightGreen] use case
++++[#LightGreen] activity
++++[#LightGreen] state machine
++++ interaction
+++++ communication
+++++ interaction overview
+++++[#LightGreen] sequence
+++++[#SkyBlue] timing
+++ structure
++++[#LightGreen] class
++++[#LightGreen] object
++++ component
++++ deployment
++++ package
++++ profile
++++ composite structure
+
+@endwbs
