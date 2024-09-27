@@ -296,6 +296,11 @@ stereotype (can be applied to actors as well)
 
 # object diagram
 
+- special case of a class diagram
+- graphical representation of the objects and their relationships<br>**at a specific moment in time**
+- provides a snapshot of the system's structure
+- does not show anything architecturally different to class diagram
+
 
 # component diagram
 
