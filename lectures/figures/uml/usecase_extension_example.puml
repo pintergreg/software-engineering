@@ -1,0 +1,8 @@
+@startuml
+scale 2
+skin rose
+
+(rent vehicle)  <|-- (rent bike)
+(rent vehicle)  <|-- (rent scooter)
+
+@enduml
