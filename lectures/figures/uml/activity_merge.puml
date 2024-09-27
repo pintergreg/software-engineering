@@ -1,0 +1,13 @@
+@startuml
+skin rose
+scale 2
+
+start
+fork
+  :action 1;
+fork again
+  :action 2;
+end merge
+
+stop
+@enduml

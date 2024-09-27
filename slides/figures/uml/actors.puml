@@ -1,0 +1,7 @@
+@startuml
+scale 3
+skin rose
+
+:actor: --> (use case)
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+scale 2
+skin rose
+
+Actor user as user
+participant "login manager" as lm
+database    database    as db
+
+user -> lm: Authentication Request
+
+
+group login [successful]
+
+    lm -> db: query username & password
+    db -> lm: user exists with the given credentials
+
+    lm -> user: Authentication Accepted
+
+else wrong username or password
+    db -> lm: user does not exist with the given credentials
+
+    lm -> user: Authentication Failure
+
+end
+@enduml

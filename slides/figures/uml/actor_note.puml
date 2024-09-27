@@ -1,0 +1,9 @@
+@startuml
+scale 2
+skin rose
+
+:actor:
+
+note right of actor : Not necessarily human\n(This is a note.)
+
+@enduml

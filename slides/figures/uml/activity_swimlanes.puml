@@ -1,0 +1,15 @@
+@startuml
+skin rose
+scale 2
+|regular user|
+start
+:foo1;
+|#AntiqueWhite|moderator|
+:foo2;
+:foo3;
+|regular user|
+:foo4;
+|moderator|
+:foo5;
+stop
+@enduml

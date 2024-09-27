@@ -1,0 +1,11 @@
+@startuml
+scale 2
+skin rose
+left to right direction
+
+rectangle system\nboundary {
+    usecase b
+    usecase a
+}
+
+@enduml

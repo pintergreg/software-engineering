@@ -1,0 +1,10 @@
+@startuml
+skin rose
+scale 2
+
+if (is it boring?) is (yes) then
+:action on true;
+else (no)
+:action on false;
+endif
+@enduml
