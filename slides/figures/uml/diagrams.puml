@@ -15,7 +15,7 @@ skin rose
 ++ structure
 +++[#LightGreen] class
 +++[#LightGreen] object
-+++ component
++++[#LightGreen] component
 +++ deployment
 +++ package
 +++ profile

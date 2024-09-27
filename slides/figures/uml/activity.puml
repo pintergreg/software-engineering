@@ -1,0 +1,12 @@
+@startuml
+skin rose
+scale 2
+start
+:r = a;
+while (i  < (b-1)) is (yes)
+:r *= r;
+:i+= 1;
+endwhile (no)
+
+stop
+@enduml
