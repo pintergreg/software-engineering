@@ -302,6 +302,10 @@ stereotype (can be applied to actors as well)
 - depicts the component structure and relations
 - highlighting the interfaces
 
+::: {.mt-2}
+![](figures/uml/component.svg){height=275}
+:::
+
 
 # state diagram
 
