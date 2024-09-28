@@ -63,5 +63,5 @@ user story mapping
 ## week 4
 
 1. [week 3 summary](/software-engineering/slides/summary_week03.html)
-2. [UML](/software-engineering/slides/uml.html)
+2. [UML](/software-engineering/slides/06_uml.html)
 3. C4
