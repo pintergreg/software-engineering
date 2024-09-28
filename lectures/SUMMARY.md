@@ -6,3 +6,5 @@
 [scrum](lectures/02_scrum.md)
 [kanban](lectures/03_kanban.md)
 [requirement analysis](lectures/04_requirement_analysis.md)
+[user story mapping](lectures/05_user_story_mapping.md)
+[UML](lectures/06_uml.md)
