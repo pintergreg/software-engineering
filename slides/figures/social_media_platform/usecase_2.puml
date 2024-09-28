@@ -1,0 +1,25 @@
+@startuml
+scale 2
+skin rose
+left to right direction
+
+package users {
+actor moderator
+actor user
+}
+
+package "user management" {
+usecase "sign up" as su
+usecase "log in" as li
+usecase "log out" as lo
+}
+
+user --> su
+user --> li
+user --> lo
+
+
+user <|- moderator
+
+
+@enduml

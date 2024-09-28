@@ -1,0 +1,36 @@
+@startuml
+scale 2
+skin rose
+left to right direction
+
+package users {
+actor moderator
+actor user
+}
+
+rectangle "social media platform" {
+    package "user management" {
+    usecase "sign up" as su
+    usecase "log in" as li
+    usecase "log out" as lo
+    }
+    package "content management" {
+    usecase "post" as p
+    usecase "edit post" as ep
+    usecase "moderate post" as mp
+    }
+}
+
+user --> su
+user --> li
+user --> lo
+
+user --> p
+user --> ep
+moderator --> mp
+
+
+user <|- moderator
+
+
+@enduml

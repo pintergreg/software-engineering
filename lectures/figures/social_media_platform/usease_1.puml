@@ -1,0 +1,14 @@
+@startuml
+scale 2
+skin rose
+left to right direction
+
+:user: --> (sign up)
+:user: --> (log in)
+:user: --> (log out)
+
+:moderator: --> (sign up)
+:moderator: --> (log in)
+:moderator: --> (log out)
+
+@enduml
