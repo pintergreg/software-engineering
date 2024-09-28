@@ -1,0 +1,10 @@
+@startuml
+skin rose
+scale 2
+
+object user {
+  name = "Hetény"
+  id = 47
+}
+
+@enduml
