@@ -1,0 +1,17 @@
+@startuml
+skin rose
+scale 2
+
+class User {
+    -String name
+    -Integer id
+    +String getName()
+    +String setName()
+    +String getId()
+}
+
+object user {
+  name = "Hetény"
+  id = 47
+}
+@enduml
