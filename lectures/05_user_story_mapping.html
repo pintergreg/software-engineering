@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>home - handout</title>
+        <title>user story mapping - handout</title>
 
 
         <!-- Custom HTML head -->
@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../lectures/HOME.html" class="active">home</a></li><li class="chapter-item expanded affix "><a href="../lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="../lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="../lectures/02_scrum.html">scrum</a></li><li class="chapter-item expanded affix "><a href="../lectures/03_kanban.html">kanban</a></li><li class="chapter-item expanded affix "><a href="../lectures/04_requirement_analysis.html">requirement analysis</a></li><li class="chapter-item expanded affix "><a href="../lectures/05_user_story_mapping.html">user story mapping</a></li><li class="chapter-item expanded affix "><a href="../lectures/06_uml.html">UML</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../lectures/HOME.html">home</a></li><li class="chapter-item expanded affix "><a href="../lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="../lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="../lectures/02_scrum.html">scrum</a></li><li class="chapter-item expanded affix "><a href="../lectures/03_kanban.html">kanban</a></li><li class="chapter-item expanded affix "><a href="../lectures/04_requirement_analysis.html">requirement analysis</a></li><li class="chapter-item expanded affix "><a href="../lectures/05_user_story_mapping.html" class="active">user story mapping</a></li><li class="chapter-item expanded affix "><a href="../lectures/06_uml.html">UML</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -176,117 +176,166 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="software-engineering"><a class="header" href="#software-engineering">Software Engineering</a></h1>
-<h2 id="week-1"><a class="header" href="#week-1">week 1</a></h2>
-<ol>
-<li><a href="/software-engineering/slides/00_intro.html">intro, software
-architecture</a></li>
-<li><a href="/software-engineering/slides/01_sdlc.html">software development life
-cycles</a></li>
-</ol>
-<h3 id="readings"><a class="header" href="#readings">readings</a></h3>
+                        <h1 id="the-problem"><a class="header" href="#the-problem">the problem</a></h1>
 <ul>
-<li><a href="https://medium.com/decoding-tech/software-architecture-metaphors-90992e9be5f4">Software Architecture
-Metaphors</a> -
-by Lisa Stähli</li>
-<li><a href="https://www.developerfusion.com/article/84899/what-is-software-architecture/">What is Software
-Architecture?</a> -
-by Kevlin Henney</li>
-<li><a href="https://medium.com/@mbue/practical-tips-on-software-architecture-design-part-one-1c6bb0167157">Practical Tips on Software Architecture Design, Part
-One</a> -
-by Marco Bürckel</li>
-<li><a href="https://medium.com/@mbue/practical-tips-on-software-architecture-design-part-two-37c2b61d7b6d">Practical Tips on Software Architecture Design, Part
-Two</a> -
-by Marco Bürckel</li>
-<li><a href="https://github.blog/engineering/why-write-adrs/">Why Write ADRs</a> - by
-Eli Perkins</li>
-</ul>
-<h2 id="week-2"><a class="header" href="#week-2">week 2</a></h2>
-<ol>
-<li><a href="/software-engineering/slides/summary_week01.html">week 1 summary</a></li>
-<li><a href="/software-engineering/slides/02_scrum.html">scrum</a></li>
-<li><a href="/software-engineering/slides/03_kanban.html">kanban</a></li>
-</ol>
-<h3 id="readings-1"><a class="header" href="#readings-1">readings</a></h3>
-<p>scrum</p>
+<li>the backlog difficult to prioritize
 <ul>
-<li><a href="/software-engineering/resources/2020-Scrum-Guide-US.pdf">The Scrum
-Guide</a></li>
-</ul>
-<p>zombie scrum</p>
-<ul>
-<li><a href="https://www.scrum.org/resources/blog/zombie-scrum-symptoms-causes-and-treatment">Zombie Scrum - Symptoms, Causes and
-Treatment</a></li>
-<li><a href="https://medium.com/the-liberators/the-rise-of-zombie-scrum-cd98741015d5">The Rise Of Zombie
-Scrum</a></li>
-</ul>
-<p>kanban</p>
-<ul>
-<li><a href="/software-engineering/resources/Kanban-Guide-2020-12.pdf">the Kanban
-Guide</a></li>
-</ul>
-<h2 id="week-3"><a class="header" href="#week-3">week 3</a></h2>
-<ol>
-<li><a href="/software-engineering/slides/summary_week02.html">week 2 summary</a></li>
-<li><a href="/software-engineering/slides/04_requirement_analysis.html">requirement
-analysis</a></li>
-<li><a href="/software-engineering/slides/05_user_story_mapping.html">user story
-mapping</a></li>
-<li><a href="/software-engineering/slides/project.html">project assignment</a></li>
-</ol>
-<h3 id="readings-2"><a class="header" href="#readings-2">readings</a></h3>
-<p>requirement analysis</p>
-<ul>
-<li><a href="https://stratoflow.com/requirements-analysis/">SDLC Guide: Requirement Analysis in Software
-Engineering</a> - by
-Arkadiusz Krysik</li>
-<li><a href="https://dannorth.net/whats-in-a-story/">What’s in a Story?</a> - by
-Daniel Terhorst-North</li>
-<li><a href="https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp">Making sense of MVP (Minimum Viable Product) – and why I prefer
-Earliest
-Testable/Usable/Lovable</a> -
-by Henrik Kniberg</li>
-<li><a href="https://www.wrike.com/blog/how-carry-out-requirements-analysis/">How to Carry Out a Requirements
-Analysis</a> -
-by Kelechi Udoagwu</li>
-</ul>
-<p>user story mapping</p>
-<ul>
-<li><a href="https://jpattonassociates.com/the-new-backlog/">Jeff Patton’s original
-blogpost</a>
-<ul>
-<li><a href="https://jpattonassociates.com/5-story-mapping-mistakes/">Five common story mapping
-mistakes</a> -
-by Jeff Patton</li>
+<li>identify dependencies</li>
+<li>already at this point the tasks need detailed understanding</li>
 </ul>
 </li>
-<li><a href="https://www.easyagile.com/blog/the-ultimate-guide-to-user-story-maps/">The Ultimate Guide to User Story
-Mapping</a> -
-by Nick Muldoon</li>
-<li><a href="https://www.nngroup.com/articles/user-story-mapping/">Mapping User Stories in
-Agile</a> - by Anna
-Kaley</li>
-<li><a href="/software-engineering/resources/quickstart-guide-to-user-story-mapping.pdf">Quickstart Guide to User Story
-Mapping</a></li>
-</ul>
-<h4 id="optional"><a class="header" href="#optional">optional</a></h4>
+<li>the backlog is one dimensional
 <ul>
-<li><a href="https://www.lucidchart.com/pages/data-flow-diagram">What is a Data Flow
-Diagram</a></li>
+<li>priority</li>
 </ul>
-<h2 id="week-4"><a class="header" href="#week-4">week 4</a></h2>
+</li>
+</ul>
+<h1 id="user-story-map"><a class="header" href="#user-story-map">user story map</a></h1>
+<p><img src="figures/user_story_map.drawio.svg" alt="" /></p>
+<div class="notes">
+<ul>
+<li>two dimensional</li>
+<li>consists of three elements
 <ol>
-<li><a href="/software-engineering/slides/summary_week03.html">week 3 summary</a></li>
-<li><a href="/software-engineering/slides/06_uml.html">UML</a></li>
-<li>C4</li>
+<li>activities</li>
+<li>steps</li>
+<li>details</li>
 </ol>
+</li>
+</ul>
+</div>
+<h2 id="activity"><a class="header" href="#activity">activity</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>is sort of a big thing that people do</li>
+<li>that has lots of steps,</li>
+<li>and doesn’t always have a precise workflow</li>
+</ul>
+<p>activities are still user stories with roles</p>
+</div>
+<div class="column text-size-2" width="50%">
+<pre><code>As a social media platform user
+I want to follow users
+so I can keep up with their posts.
+</code></pre>
+</div>
+</div>
+<div class="notes">
+<p>An activity is close to an epic in the scrum literature.</p>
+</div>
+<h2 id="user-task"><a class="header" href="#user-task">user task</a></h2>
+<div class="columns">
+<div class="column" width="55%">
+<ul>
+<li>in agile a “task” refers to the things that <em>developers</em> do
+<ul>
+<li>to finish user stories</li>
+</ul>
+</li>
+<li>user story mapping considers the <em>user</em>,
+<ul>
+<li>so a user task is what a user needs to do to complete an activity</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="45%">
+<p>for example (follow a user)</p>
+<ol>
+<li>search for user</li>
+<li>add user to followed list</li>
+</ol>
+</div>
+</div>
+<!--## details
+&#10;search for user
+&#10;:   - type username
+    - browse the result lists
+    - click to the "follow" button-->
+<h2 id=""><a class="header" href="#"></a></h2>
+<figure>
+<img src="figures/borrowed/split_restaurant_bill.jpg"
+style="width:80.0%"
+alt="from “Quickstart Guide to User Story Mapping” by Eben Halford | CC BY-SA 2.5" />
+<figcaption aria-hidden="true">from “Quickstart Guide to User Story
+Mapping” by Eben Halford | CC BY-SA 2.5</figcaption>
+</figure>
+<h1 id="user-story-mapping"><a class="header" href="#user-story-mapping">user story mapping</a></h1>
+<ul>
+<li>popularized by Jeff Patton
+<ul>
+<li><a href="https://jpattonassociates.com/the-new-backlog/">original blog post</a></li>
+<li>User Story Mapping, O’Reilly, 2014, ISBN-13: 978-1491904909</li>
+</ul>
+</li>
+<li>performed in workshops including
+<ul>
+<li>users,</li>
+<li>(UI) designers,</li>
+<li>developers,</li>
+<li>testers,</li>
+<li>and stakeholders</li>
+</ul>
+</li>
+<li>build a shared understanding of the product and a common language</li>
+</ul>
+<h2 id="user-story-map-as-a-document"><a class="header" href="#user-story-map-as-a-document">user story map as a document</a></h2>
+<ul>
+<li>not final, not set in stone</li>
+<li>it is possible and encouraged to adjust<br>as the more knowledge is
+acquired about the software
+<ul>
+<li>versioning</li>
+</ul>
+</li>
+<li>you are free to move notes up and down
+<ul>
+<li>change the role (activity ↔ user task)</li>
+</ul>
+</li>
+</ul>
+<h1 id="backbone-skeleton-ribs"><a class="header" href="#backbone-skeleton-ribs">backbone, skeleton, ribs</a></h1>
+<p><img src="figures/user_story_map_bones.drawio.svg" alt="" /></p>
+<h2 id="iterations"><a class="header" href="#iterations">iterations</a></h2>
+<p><img src="figures/user_story_map_increments.drawio.svg" alt="" /></p>
+<h1 id="social-media-platform---example"><a class="header" href="#social-media-platform---example">social media platform - example</a></h1>
+<p><img src="figures/social_media_platform/usm_sign_up.drawio.svg" alt="" /></p>
+<h1 id="user-story-mapping-mistakes"><a class="header" href="#user-story-mapping-mistakes">user story mapping mistakes</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<img src="figures/usm_too_many_details.drawio.svg" height="450" />
+</div>
+<div class="column" width="50%">
+<div class="r-stack">
+<div class="fragment">
+<img src="figures/usm_whole_story_first.drawio.svg" height="450" />
+</div>
+<div class="fragment">
+<p><img src="figures/usm_whole_story_first_verbs.drawio.svg"
+height="450" /></p>
+</div>
+<div class="fragment">
+<p><img src="figures/usm_whole_story_first_extra.drawio.svg"
+height="450" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-smaller">
+<p>more from Jeff Patton: <a href="https://jpattonassociates.com/5-story-mapping-mistakes/">5 story mapping
+mistakes</a></p>
+</div>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/04_requirement_analysis.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next prefetch" href="../lectures/00_intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../lectures/06_uml.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -296,8 +345,11 @@ Diagram</a></li>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/04_requirement_analysis.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next prefetch" href="../lectures/00_intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../lectures/06_uml.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

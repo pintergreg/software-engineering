@@ -1,0 +1,751 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>UML - handout</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="software engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../lectures/HOME.html">home</a></li><li class="chapter-item expanded affix "><a href="../lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="../lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="../lectures/02_scrum.html">scrum</a></li><li class="chapter-item expanded affix "><a href="../lectures/03_kanban.html">kanban</a></li><li class="chapter-item expanded affix "><a href="../lectures/04_requirement_analysis.html">requirement analysis</a></li><li class="chapter-item expanded affix "><a href="../lectures/05_user_story_mapping.html">user story mapping</a></li><li class="chapter-item expanded affix "><a href="../lectures/06_uml.html" class="active">UML</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">handout</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="programming-paradigms"><a class="header" href="#programming-paradigms">programming paradigms</a></h1>
+<ul>
+<li>structural</li>
+<li>procedural</li>
+<li>object oriented</li>
+</ul>
+<h1 id="structural"><a class="header" href="#structural">structural</a></h1>
+<div class="columns">
+<div class="column mt-5" width="20%">
+<ul>
+<li>statement</li>
+<li><span class="fragment" data-fragment-index="1">condition</span></li>
+<li><span class="fragment" data-fragment-index="2">iteration</span></li>
+</ul>
+</div>
+<div class="column" width="40%">
+<div class="r-stack text-size-2">
+<div class="fragment fade-out pre-width-100" data-fragment-index="1">
+<pre><code class="language-python">a = 4.2
+a = a * 10
+</code></pre>
+</div>
+<div class="fragment current-visible pre-width-100"
+data-fragment-index="1">
+<pre><code class="language-python">if a &gt; 17
+    a -= 5
+else:
+    a += 5
+</code></pre>
+</div>
+<div class="fragment pre-width-100" data-fragment-index="2">
+<br>
+<pre><code class="language-python">for i in range(10):
+    print(i)
+</code></pre>
+<br>
+<pre><code class="language-js">for (var i = 0; i &lt; 10; i++) {
+    console.log(i);
+}
+</code></pre>
+</div>
+</div>
+</div>
+<div class="column" width="40%">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img src="figures/flowchart_statement.drawio.svg" alt="" /></p>
+</div>
+<div class="fragment current-visible" data-fragment-index="1">
+<p><img src="figures/flowchart_condition.drawio.svg" alt="" /></p>
+</div>
+<div class="fragment current-visible" data-fragment-index="2">
+<p><img src="figures/flowchart_iteration.drawio.svg" alt="" /></p>
+</div>
+</div>
+</div>
+</div>
+<h1 id="procedural"><a class="header" href="#procedural">procedural</a></h1>
+<!-- :::::::::::: {.columns} -->
+<!-- ::::::::: {.column width="70%"} -->
+<ul>
+<li>extends structural with procedures
+<ul>
+<li>a.k.a. functions, subroutines</li>
+</ul>
+</li>
+<li>the two main concepts
+<ul>
+<li>modularity: organizing the parts of a program into separate modules
+<ul>
+<li>reusability</li>
+</ul>
+</li>
+<li>scoping
+<ul>
+<li>limit the scope of the variables</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!--:::::::::
+::::::::: {.column width="30%"}
+![](figures/flowchart_procedure.drawio.svg)
+&#10;```python
+def power(a, b):
+    r = a
+    for _ in range(b - 1):
+        r *= r
+    return r
+&#10;a = 4.2
+a = a * 10
+power(a, 3)
+```
+&#10;:::::::::-->
+<h2 id="procedural---example"><a class="header" href="#procedural---example">procedural - example</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<p><img src="figures/flowchart_procedure_2.drawio.svg" alt="" /></p>
+</div>
+<div class="column pre-width-100 mt-4 text-size-3" width="50%">
+<pre><code class="language-python">def power(a, b):
+    r = a
+    for _ in range(b - 1):
+        r *= r
+    return r
+
+a = 3
+a = power(a, 3)
+</code></pre>
+</div>
+</div>
+<h1 id="object-oriented-programming"><a class="header" href="#object-oriented-programming">object oriented programming</a></h1>
+<ul>
+<li>extends procedural programming with the concept of objects</li>
+<li>main properties of OOP
+<ol>
+<li>abstraction</li>
+<li>encapsulation</li>
+<li>inheritance</li>
+<li>polymorphism</li>
+</ol>
+</li>
+</ul>
+<h2 id="1-abstraction"><a class="header" href="#1-abstraction">1. abstraction</a></h2>
+<!-- Abstraction involves hiding the complex reality while exposing only the necessary parts. It allows programmers to focus on interactions at a higher level without needing to understand the intricate details of the implementation. This is achieved through abstract classes and interfaces, which define a contract for what methods an object must implement without specifying how they should be implemented -->
+<ul>
+<li>hiding the complex reality while exposing only the necessary parts</li>
+<li>allows to focus on interactions at a higher level without needing to
+understand the details of the implementation</li>
+<li>achieved through abstract classes and interfaces, which define a
+contract for what methods an object must implement without specifying
+how they should be implemented</li>
+</ul>
+<h2 id="2-encapsulation"><a class="header" href="#2-encapsulation">2. encapsulation</a></h2>
+<!--Encapsulation is the principle of bundling data (attributes) and methods (functions) that operate on that data into a single unit known as a class. This property restricts direct access to some of the object's components, which is a means of preventing unintended interference and misuse of the methods and data. By exposing only necessary parts of an object through public methods (getters and setters), encapsulation enhances security and integrity of the data-->
+<ul>
+<li>bundling data (attributes) and methods (functions) that operate on
+that data into a single unit known as a class</li>
+<li>this property restricts direct access to some of the object’s
+components
+<ul>
+<li>private, public, protected</li>
+</ul>
+</li>
+<li>can preventing unintended interference and misuse of the methods and
+data
+<ul>
+<li>by exposing only the necessary parts of an object through public
+methods</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-inheritance"><a class="header" href="#3-inheritance">3. inheritance</a></h2>
+<!--Inheritance is a mechanism that allows one class (subclass or derived class) to inherit attributes and methods from another class (superclass or base class). This promotes code reusability, as common functionality can be defined in a base class and reused in derived classes.-->
+<ul>
+<li>a mechanism that allows one class (subclass or derived class) to
+inherit attributes and methods from another class (superclass or base
+class)</li>
+<li>this promotes code reusability, as common functionality can be defined
+in a base class and reused in derived classes</li>
+<li>results hierarchical relationship which fosters modular design
+<ul>
+<li>also increases dependency</li>
+</ul>
+</li>
+</ul>
+<h2 id="class-based-inheritance"><a class="header" href="#class-based-inheritance">class-based inheritance</a></h2>
+<ul>
+<li>every object is defined by a class
+<ul>
+<li>which is a definition or a blueprint</li>
+<li>describes the structure and behavior of an object</li>
+</ul>
+</li>
+<li>most common</li>
+</ul>
+<h2 id="prototype-based-inheritance"><a class="header" href="#prototype-based-inheritance">prototype based inheritance</a></h2>
+<blockquote>
+<p>The object function untangles JavaScript’s constructor pattern,
+achieving true prototypal inheritance. It takes an old object as a
+parameter and returns an empty new object that inherits from the old
+one. If we attempt to obtain a member from the new object, and it
+lacks that key, then the old object will supply the member. Objects
+inherit from objects. What could be more object oriented than that?</p>
+<p><a href="http://crockford.com/javascript/prototypal.html">Douglas Crockford</a></p>
+</blockquote>
+<h2 id="oo-without-inheritance"><a class="header" href="#oo-without-inheritance">OO without inheritance</a></h2>
+<ul>
+<li>Go does not support inheritance at all, though it is considered
+object-oriented
+<ul>
+<li>at least partially [<a href="https://go.dev/doc/faq#Is_Go_an_object-oriented_language">Go
+FAQ</a>]</li>
+</ul>
+</li>
+<li>Bjarne Stroustrup (author of C++) has stated that it is possible to do
+OOP without inheritance (Stroustrup, 2015)</li>
+</ul>
+<h2 id="4-polymorphism"><a class="header" href="#4-polymorphism">4. polymorphism</a></h2>
+<!--Polymorphism allows objects to be treated as instances of their parent class, enabling a single interface to control access to different underlying forms (data types). There are two types of polymorphism: compile-time (method overloading) and runtime (method overriding). This property enables flexibility in code, allowing for methods to perform differently based on the object that invokes them. For instance, a method defined in a base class can be overridden in a derived class to provide specific behavior-->
+<ul>
+<li>allows objects to be treated as instances of their parent class</li>
+<li>enables flexibility in code, allowing for methods to perform
+differently based on the object that invokes them
+<ul>
+<li>method defined in a base class can be overridden in a derived class
+to provide specific behavior</li>
+</ul>
+</li>
+</ul>
+<h1 id="unified-modeling-language"><a class="header" href="#unified-modeling-language">Unified Modeling Language</a></h1>
+<div class="columns">
+<div class="column mt-4" width="60%">
+<ul>
+<li>UML 2.0 released in 2005
+<ul>
+<li>latest revision in 2017</li>
+</ul>
+</li>
+<li>ISO/IEC 19501 standard</li>
+<li>designed to be a complete language of software modelling</li>
+<li>UML 2 has 14 diagrams in two categories: structure and behavior</li>
+</ul>
+<div class="fragment">
+<p>most software developer do not use UML (in a formal way), but hand drawn
+sketches which often include UML elements (Baltes &amp; Diehl, 2014)</p>
+</div>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/uml/diagrams.svg" alt="" /></p>
+</div>
+</div>
+<h1 id="use-case-diagram"><a class="header" href="#use-case-diagram">use case diagram</a></h1>
+<div class="columns">
+<div class="column" width="55%">
+<ul>
+<li>depicts the interactions between system users (actors) and the system
+itself</li>
+<li>used to specify the functional requirements</li>
+<li>provides a high-level view
+<ul>
+<li>helping stakeholders to understand the system’s functionality</li>
+</ul>
+</li>
+<li>it’s purpose is similar to the user story</li>
+</ul>
+</div>
+<div class="column" width="45%">
+<img src="figures/uml/stopwatch_use_case.svg" width="275" />
+</div>
+</div>
+<h2 id="elements-of-the-use-case-diagram"><a class="header" href="#elements-of-the-use-case-diagram">elements of the use case diagram</a></h2>
+<div class="columns">
+<div class="column" width="40%">
+<p><img src="figures/uml/actor_note.svg" alt="" /></p>
+</div>
+<div class="column" width="50%">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img src="figures/uml/usecase_extension.svg" alt="" /></p>
+</div>
+<div class="fragment current-visible" data-fragment-index="1">
+<p><img src="figures/uml/usecase_extension_example.svg" alt="" /></p>
+</div>
+<div class="fragment" data-fragment-index="2">
+<p><img src="figures/uml/usecase_extension_example_boundary.svg" alt="" /></p>
+</div>
+</div>
+</div>
+</div>
+<!--:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+::: {.fragment data-fragment-index=3}
+![](figures/uml/stereotype.svg){height=100}
+:::
+:::::::::
+::::::::: {.column width="50%"}
+stereotype (can be applied to actors as well) 
+:::::::::
+::::::::::::-->
+<h2 id="use-case-diagram---example"><a class="header" href="#use-case-diagram---example">use case diagram - example</a></h2>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<img src="figures/social_media_platform/usecase_1.svg" width="400" />
+</div>
+<div class="fragment current-visible" data-fragment-index="1">
+<img src="figures/social_media_platform/usecase_2.svg" width="400" />
+</div>
+<div class="fragment current-visible" data-fragment-index="2">
+<img src="figures/social_media_platform/usecase_3.svg" width="400" />
+</div>
+</div>
+<h1 id="class-diagram"><a class="header" href="#class-diagram">class diagram</a></h1>
+<ul>
+<li>describes the structure of a system by its classes
+<ul>
+<li>their attributes, methods, and the relationships among them</li>
+</ul>
+</li>
+<li>main building block of the object-oriented modeling</li>
+</ul>
+<h2 id="most-common-elements-of-a-class-diagram"><a class="header" href="#most-common-elements-of-a-class-diagram">(most common) elements of a class diagram</a></h2>
+<img src="figures/uml/class.svg" height="350" />
+<div class="text-smaller">
+<p>based on PlantUML documentation</p>
+</div>
+<h2 id="relations"><a class="header" href="#relations">relations</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="50%">
+<figure>
+<img src="figures/borrowed/class_relations.svg" height="450"
+alt="from Wikipedia | CC BY-SA" />
+<figcaption aria-hidden="true"><a
+href="https://en.wikipedia.org/wiki/File:Uml_classes_en.svg">from
+Wikipedia</a> | CC BY-SA</figcaption>
+</figure>
+</div>
+<div class="column text-smaller mt-5" width="50%">
+<ul>
+<li>association: structural relationship
+<ul>
+<li>allows one object instance to cause another to perform an action on
+its behalf</li>
+</ul>
+</li>
+<li>realization: e.g., class implements a interface</li>
+<li>aggregation: “has a” relation
+<ul>
+<li>without life cycle control</li>
+</ul>
+</li>
+<li>composition: stronger form of aggregation
+<ul>
+<li>where the aggregate controls the lifecycle of the elements</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="notes">
+<p>Aggregation can occur when a class is a collection or container of other
+classes, but the contained classes do not have a strong lifecycle
+dependency on the container. The contents of the container still exist
+when the container is destroyed. (Wikipedia contributors, 2024)</p>
+</div>
+<h2 id="class-diagram---example"><a class="header" href="#class-diagram---example">class diagram - example</a></h2>
+<img src="figures/uml/class_example.svg" height="450" />
+<h1 id="object-diagram"><a class="header" href="#object-diagram">object diagram</a></h1>
+<ul>
+<li>special case of a class diagram</li>
+<li>graphical representation of the objects and their
+relationships<br><strong>at a specific moment in time</strong></li>
+<li>provides a snapshot of the system’s structure</li>
+<li>does not show anything architecturally different to class diagram</li>
+</ul>
+<img src="figures/uml/object_class.svg" height="250" />
+<!--
+## collections
+&#10;![](figures/uml/object_collections.svg){height=350}
+-->
+<h1 id="component-diagram"><a class="header" href="#component-diagram">component diagram</a></h1>
+<ul>
+<li>depicts the component structure and relations</li>
+<li>highlighting the interfaces</li>
+</ul>
+<div class="mt-2">
+<img src="figures/uml/component.svg" height="275" />
+</div>
+<h1 id="state-diagram"><a class="header" href="#state-diagram">state diagram</a></h1>
+<ul>
+<li>a visual representation of the states a system or an object can be in
+also the transitions between those states</li>
+<li>models the dynamic behavior of the system, capturing how it responds
+to different events over time</li>
+<li>shows the system’s life cycle</li>
+</ul>
+<h2 id="state-diagram-elements"><a class="header" href="#state-diagram-elements">state diagram elements</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<img src="figures/uml/state.svg" width="400" />
+</div>
+<div class="column" width="50%">
+<img src="figures/uml/substate.svg" width="300" />
+</div>
+</div>
+<h2 id="state-diagram---example"><a class="header" href="#state-diagram---example">state diagram - example</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<img src="figures/uml/stopwatch_state_commented.svg" width="350" />
+</div>
+<div class="column mt-4" width="40%">
+<img src="figures/cronometro-mauro-olivo-01.svg" width="175" />
+</div>
+</div>
+<!--
+# activity diagram
+&#10;- graphical representations of workflows
+- similar to flowcharts
+    - but uses UML notation
+    - and can visualize parallel processing
+&#10;:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/uml/power.drawio.svg){height=300}
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/uml/activity.svg){height=300}
+:::::::::
+::::::::::::-->
+<h1 id="activity-diagram"><a class="header" href="#activity-diagram">activity diagram</a></h1>
+<div class="columns">
+<div class="column mt-4" width="60%">
+<ul>
+<li>graphical representations of workflows</li>
+<li>similar to flowcharts
+<ul>
+<li>but uses UML notation</li>
+<li>and can visualize parallel processing</li>
+<li>has more features</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="20%">
+<figure>
+<img src="figures/uml/power.drawio.svg" height="300" alt="flowchart" />
+<figcaption aria-hidden="true">flowchart</figcaption>
+</figure>
+</div>
+<div class="column" width="20%">
+<figure>
+<img src="figures/uml/activity.svg" height="300" alt="activity (UML)" />
+<figcaption aria-hidden="true">activity (UML)</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="parallel-processing"><a class="header" href="#parallel-processing">parallel processing</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<figure>
+<img src="figures/uml/activity_join.svg" height="300"
+alt="fork with join" />
+<figcaption aria-hidden="true">fork with join</figcaption>
+</figure>
+</div>
+<div class="column" width="50%">
+<figure>
+<img src="figures/uml/activity_merge.svg" height="300"
+alt="fork with merge" />
+<figcaption aria-hidden="true">fork with merge</figcaption>
+</figure>
+</div>
+</div>
+<p>a join synchronizes two inflows (waits for the slower)</p>
+<h2 id="merge-after-condition"><a class="header" href="#merge-after-condition">merge after condition</a></h2>
+<p><img src="figures/uml/activity_decision.svg" alt="" /></p>
+<h2 id="swimlanes"><a class="header" href="#swimlanes">swimlanes</a></h2>
+<div class="columns">
+<div class="column mt-3" width="65%">
+<ul>
+<li>actions can be separated using “swimlanes”</li>
+<li>swimlanes can represent actors, components or other parts of the
+software system</li>
+</ul>
+</div>
+<div class="column" width="35%">
+<img src="figures/uml/activity_swimlanes.svg" height="400" />
+</div>
+</div>
+<h1 id="sequence-diagram"><a class="header" href="#sequence-diagram">sequence diagram</a></h1>
+<div class="columns">
+<div class="column" width="60%">
+<p><img src="figures/uml/sequence.svg" alt="" /></p>
+</div>
+<div class="column mt-3" width="40%">
+<ul>
+<li>shows process interactions arranged in time sequence</li>
+<li>depicts the processes and objects involved and the sequence of
+messages exchanged</li>
+<li>instead of the inner parts of a system, message exchange between
+software systems can be depicted</li>
+</ul>
+</div>
+</div>
+<h1 id="timing-diagram"><a class="header" href="#timing-diagram">timing diagram</a></h1>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>focuses on the chronological order of events, showing how different
+objects interact with each other over time</li>
+<li>especially useful in real-time systems and embedded systems</li>
+<li>more like for documentation rather than modelling</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img src="figures/uml/timing.svg" alt="" /></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<p><img src="figures/uml/timing_2.svg" alt="" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://plantuml.com/timing-diagram">PlantUML documentation</a></p>
+</div>
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+line-spacing="2">
+<div id="ref-baltes2014sketches" class="csl-entry">
+<p>Baltes, S., &amp; Diehl, S. (2014). Sketches and diagrams in practice.
+<em>Proceedings of the 22nd ACM SIGSOFT International Symposium on
+Foundations of Software Engineering</em>, 530–541.</p>
+</div>
+<div id="ref-stroustrup2015object" class="csl-entry">
+<p>Stroustrup, B. (2015). <em>Object oriented programming without
+inheritance - ECOOP 2015</em>. Youtube.
+<a href="https://www.youtube.com/watch?v=xcpSLRpOMJM">https://www.youtube.com/watch?v=xcpSLRpOMJM</a></p>
+</div>
+<div id="ref-enwiki:1230720147" class="csl-entry">
+<p>Wikipedia contributors. (2024). <em>Class diagram — Wikipedia, the free
+encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Class_diagram&amp;oldid=1230720147">https://en.wikipedia.org/w/index.php?title=Class_diagram&amp;oldid=1230720147</a>.</p>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/05_user_story_mapping.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/05_user_story_mapping.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
