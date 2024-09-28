@@ -307,7 +307,25 @@ based on PlantUML documentation
 
 ## relations
 
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="50%"}
 ![[from Wikipedia](https://en.wikipedia.org/wiki/File:Uml_classes_en.svg) | CC BY-SA](figures/borrowed/class_relations.svg){height=450}
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .mt-5}
+- association: structural relationship
+    - allows one object instance to cause another to perform an action on its behalf
+- realization: e.g., class implements a interface
+- aggregation: "has a" relation
+    - without life cycle control
+- composition: stronger form of aggregation
+    - where the aggregate controls the lifecycle of the elements
+:::::::::
+::::::::::::
+
+::: notes
+Aggregation can occur when a class is a collection or container of other classes, but the contained classes do not have a strong lifecycle dependency on the container. The contents of the container still exist when the container is destroyed. [@enwiki:1230720147]
+:::
 
 # object diagram
 
