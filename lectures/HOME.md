@@ -46,6 +46,7 @@ requirement analysis
 :    - [SDLC Guide: Requirement Analysis in Software Engineering](https://stratoflow.com/requirements-analysis/) - by Arkadiusz Krysik
      - [What's in a Story?](https://dannorth.net/whats-in-a-story/) - by Daniel Terhorst-North
      - [Making sense of MVP (Minimum Viable Product) – and why I prefer Earliest Testable/Usable/Lovable](https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp) - by Henrik Kniberg
+     - [How to Carry Out a Requirements Analysis](https://www.wrike.com/blog/how-carry-out-requirements-analysis/) - by Kelechi Udoagwu
 
 user story mapping
 
@@ -55,6 +56,12 @@ user story mapping
      - [Mapping User Stories in Agile](https://www.nngroup.com/articles/user-story-mapping/) - by Anna Kaley
      - [Quickstart Guide to User Story Mapping](/software-engineering/resources/quickstart-guide-to-user-story-mapping.pdf)
 
+#### optional
+
+- [What is a Data Flow Diagram](https://www.lucidchart.com/pages/data-flow-diagram)
+     
 ## week 4
 
 1. [week 3 summary](/software-engineering/slides/summary_week03.html)
+2. UML
+3. C4
