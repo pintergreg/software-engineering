@@ -293,6 +293,13 @@ stereotype (can be applied to actors as well)
 
 # class diagram
 
+- describes the structure of a system by its classes
+    - their attributes, methods, and the relationships among them 
+- main building block of the object-oriented modeling
+
+## relations
+
+![[from Wikipedia](https://en.wikipedia.org/wiki/File:Uml_classes_en.svg) | CC BY-SA](figures/borrowed/class_relations.svg){height=450}
 
 # object diagram
 
