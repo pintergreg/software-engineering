@@ -327,6 +327,11 @@ based on PlantUML documentation
 Aggregation can occur when a class is a collection or container of other classes, but the contained classes do not have a strong lifecycle dependency on the container. The contents of the container still exist when the container is destroyed. [@enwiki:1230720147]
 :::
 
+## class diagram - example
+
+![](figures/uml/class_example.svg){height=450}
+
+
 # object diagram
 
 - special case of a class diagram
@@ -336,6 +341,12 @@ Aggregation can occur when a class is a collection or container of other classes
 
 ![](figures/uml/object_class.svg){height=250}
 
+
+<!--
+## collections
+
+![](figures/uml/object_collections.svg){height=350}
+-->
 
 # component diagram
 

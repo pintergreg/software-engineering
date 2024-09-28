@@ -1,0 +1,31 @@
+@startuml
+skin rose
+
+class Car {
+  string model
+  
+}
+
+class Person {
+  String name
+}
+
+class Wheel {
+  Float diameter
+}
+
+class Driver {
+  void drive()
+}
+
+class License {
+  Date validity
+}
+
+Car "1" *- "4" Wheel : have 
+Car -- Person : < owns
+Person <|-- Driver
+License --o Driver
+
+Driver - Car : drives >
+@enduml
