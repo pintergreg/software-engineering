@@ -301,6 +301,8 @@ stereotype (can be applied to actors as well)
 - provides a snapshot of the system's structure
 - does not show anything architecturally different to class diagram
 
+![](figures/uml/object_class.svg){height=250}
+
 
 # component diagram
 
