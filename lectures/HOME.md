@@ -65,3 +65,9 @@ user story mapping
 1. [week 3 summary](/software-engineering/slides/summary_week03.html)
 2. [UML](/software-engineering/slides/06_uml.html)
 3. C4
+
+#### readings
+
+C4 model
+
+:    - [C4 model](https://c4model.com/)
