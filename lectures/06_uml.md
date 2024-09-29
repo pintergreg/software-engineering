@@ -332,6 +332,11 @@ Aggregation can occur when a class is a collection or container of other classes
 ![](figures/uml/class_example.svg){height=450}
 
 
+## class diagram - example
+
+![](figures/uml/class_example_2.svg){height=450}
+
+
 # object diagram
 
 - special case of a class diagram
