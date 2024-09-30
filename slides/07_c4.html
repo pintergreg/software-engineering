@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>C4 model</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37">
+  <h1 class="title">C4 model</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section id="what-is-the-issue-with-uml"
+class="title-slide slide level1">
+<h1>what is the issue with UML?</h1>
+<ul>
+<li>closely connected with OOP</li>
+<li>propagates object-oriented modelling
+<ul>
+<li>however the design should not consider the implementation</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="c4-model" class="title-slide slide level1">
+<h1>C4 model</h1>
+<ul>
+<li>hierarchical set of software architecture diagrams
+<ul>
+<li>different levels of abstraction for different audience</li>
+</ul></li>
+<li>has four levels:
+<ul>
+<li>context, containers, components and code</li>
+</ul></li>
+<li>popularized by Simon Brown</li>
+</ul>
+<div class="text-smaller mt-3">
+<p>this chapter is based on <a
+href="https://c4model.com/">c4model.com</a></p>
+</div>
+</section>
+
+<section>
+<section id="level-1-system-context-diagram"
+class="title-slide slide level1">
+<h1>Level 1: System Context diagram</h1>
+<ul>
+<li>high level relation with other systems or users</li>
+<li>similar to use case diagram</li>
+<li>technologies, protocols and other low-level details are not
+important</li>
+<li>understandable for non-technical people</li>
+</ul>
+<blockquote>
+<p>Shows the software system you are building and how it fits into the
+world in terms of the people who use it and the other software systems
+it interacts with.</p>
+<p>Simon Brown - <a
+href="https://www.infoq.com/articles/C4-architecture-model/">The C4
+Model for Software Architecture</a></p>
+</blockquote>
+</section>
+<section id="system-context-example" class="slide level2">
+<h2>system context example</h2>
+<figure>
+<img data-src="figures/borrowed/c4/SystemContext.png" height="550"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</section>
+<section id="notation" class="slide level2">
+<h2>notation</h2>
+<figure>
+<img data-src="figures/borrowed/c4/SystemContext-key.png"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="level-2-container-diagram"
+class="title-slide slide level1">
+<h1>Level 2: Container diagram</h1>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>Zooms into the software system, and shows the containers
+(applications, data stores, microservices, etc.) that make up that
+software system. Technology decisions are also a key part of this
+diagram.</p>
+<p>Simon Brown - <a
+href="https://www.infoq.com/articles/C4-architecture-model/">The C4
+Model for Software Architecture</a></p>
+</blockquote>
+</section>
+<section id="container-example" class="slide level2">
+<h2>container example</h2>
+<figure>
+<img data-src="figures/borrowed/c4/Containers.png" height="550"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</section>
+<section id="notation-1" class="slide level2">
+<h2>notation</h2>
+<figure>
+<img data-src="figures/borrowed/c4/Containers-key.png"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="level-3-component-diagram"
+class="title-slide slide level1">
+<h1>Level 3: Component diagram</h1>
+<blockquote>
+<p>Zooms into an individual container to show the components inside it.
+These components should map to real abstractions (e.g., a grouping of
+code) in your codebase.</p>
+<p>Simon Brown - <a
+href="https://www.infoq.com/articles/C4-architecture-model/">The C4
+Model for Software Architecture</a></p>
+</blockquote>
+</section>
+<section id="component-example" class="slide level2">
+<h2>component example</h2>
+<figure>
+<img data-src="figures/borrowed/c4/Components.png" height="550"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</section>
+<section id="notation-2" class="slide level2">
+<h2>notation</h2>
+<figure>
+<img data-src="figures/borrowed/c4/Components-key.png"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="level-4-code" class="title-slide slide level1">
+<h1>Level 4: Code</h1>
+<blockquote>
+<p>Finally, if you really want or need to, you can zoom into an
+individual component to show how that component is implemented.</p>
+<p>Simon Brown - <a
+href="https://www.infoq.com/articles/C4-architecture-model/">The C4
+Model for Software Architecture</a></p>
+</blockquote>
+</section>
+<section id="code-example" class="slide level2">
+<h2>code example</h2>
+<figure>
+<img data-src="figures/borrowed/c4/MainframeBankingSystemFacade.png"
+height="500" alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="additional-diagrams-in-c4-model"
+class="title-slide slide level1">
+<h1>additional diagrams in C4 model</h1>
+<ul>
+<li>system landscape diagram
+<ul>
+<li>even broader environment than the system context diagram</li>
+</ul></li>
+<li>dynamic diagram
+<ul>
+<li>based on the UML communication and sequence diagrams</li>
+</ul></li>
+<li>deployment diagram
+<ul>
+<li>based on the UML deployment diagram
+<!--    - audience: technical people inside and outside of the software development team
+      - software architects, developers, infrastructure architects, and operations/support staff--></li>
+</ul></li>
+</ul>
+</section>
+<section id="system-landscape-diagram" class="slide level2">
+<h2>system landscape diagram</h2>
+<figure>
+<img data-src="figures/borrowed/c4/SystemLandscape.png" height="550"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</section>
+<section id="dynamic-diagram-collaboration-style" class="slide level2">
+<h2>dynamic diagram (collaboration style)</h2>
+<figure>
+<img data-src="figures/borrowed/c4/SignIn.png" height="550"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</section>
+<section id="dynamic-diagram-sequence" class="slide level2">
+<h2>dynamic diagram (sequence)</h2>
+<figure>
+<img data-src="figures/borrowed/c4/bigbankplc-SignIn-sequence.png"
+height="550" alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</section>
+<section id="deployment-diagram" class="slide level2">
+<h2>deployment diagram</h2>
+<div class="columns">
+<div class="column text-smaller" style="width:40%;">
+<ul>
+<li>s where an instance of a software system is running e.g.,
+<ul>
+<li>physical infrastructure (e.g. a physical server or device)</li>
+<li>virtualised infrastructure,</li>
+<li>containerised infrastructure (e.g. a Docker container),</li>
+<li>an execution environment (e.g. a database server, Java EE
+web/application server, Microsoft IIS), etc.</li>
+</ul></li>
+<li>deployment nodes can be nested</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<figure>
+<img data-src="figures/borrowed/c4/LiveDeployment.png"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</div>
+</div>
+</section></section>
+<section id="summary" class="title-slide slide level1">
+<h1>summary</h1>
+<blockquote>
+<p>overview first, zoom and filter, then details on demand</p>
+<p>– Ben Shneiderman</p>
+</blockquote>
+</section>
+
+<section id="suggested-software" class="title-slide slide level1">
+<h1>suggested software</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li><a href="https://docs.google.com/drawings">Google Drawings</a>
+<ul>
+<li>it does not have a person shape though, but can be constucted from a
+circle and a rectange</li>
+</ul></li>
+<li>Visio</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/c4_drawings_person_shape.png" /></p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
