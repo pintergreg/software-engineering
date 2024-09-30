@@ -8,3 +8,4 @@
 [requirement analysis](lectures/04_requirement_analysis.md)
 [user story mapping](lectures/05_user_story_mapping.md)
 [UML](lectures/06_uml.md)
+[C4](lectures/07_c4.md)
