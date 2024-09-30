@@ -303,3 +303,13 @@ figcaption {
 .column-align-left{
     text-align:left;
 }
+.pre-width-100 pre {
+    width: 100% !important;
+    margin: 0 !important;
+}
+.pre-width-100 > div {
+    margin: 0 !important;
+}
+.column-vertical-align {
+    vertical-align: top;
+}
