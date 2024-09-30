@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="lectures/HOME.html">home</a></li><li class="chapter-item expanded affix "><a href="lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="lectures/02_scrum.html">scrum</a></li><li class="chapter-item expanded affix "><a href="lectures/03_kanban.html">kanban</a></li><li class="chapter-item expanded affix "><a href="lectures/04_requirement_analysis.html">requirement analysis</a></li><li class="chapter-item expanded affix "><a href="lectures/05_user_story_mapping.html">user story mapping</a></li><li class="chapter-item expanded affix "><a href="lectures/06_uml.html">UML</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="lectures/HOME.html">home</a></li><li class="chapter-item expanded affix "><a href="lectures/00_intro.html">introduction</a></li><li class="chapter-item expanded affix "><a href="lectures/01_sdlc.html">software development life cycle</a></li><li class="chapter-item expanded affix "><a href="lectures/02_scrum.html">scrum</a></li><li class="chapter-item expanded affix "><a href="lectures/03_kanban.html">kanban</a></li><li class="chapter-item expanded affix "><a href="lectures/04_requirement_analysis.html">requirement analysis</a></li><li class="chapter-item expanded affix "><a href="lectures/05_user_story_mapping.html">user story mapping</a></li><li class="chapter-item expanded affix "><a href="lectures/06_uml.html">UML</a></li><li class="chapter-item expanded affix "><a href="lectures/07_c4.html">C4</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -279,12 +279,15 @@ Diagram</a></li>
 <ol>
 <li><a href="lectures//software-engineering/slides/summary_week03.html">week 3 summary</a></li>
 <li><a href="lectures//software-engineering/slides/06_uml.html">UML</a></li>
-<li>C4</li>
+<li><a href="lectures//software-engineering/slides/07_c4.html">C4</a></li>
 </ol>
 <h4 id="readings-3"><a class="header" href="#readings-3">readings</a></h4>
 <p>C4 model</p>
 <ul>
 <li><a href="https://c4model.com/">C4 model</a></li>
+<li><a href="https://www.infoq.com/articles/C4-architecture-model/">The C4 Model for Software
+Architecture</a> -
+by Simon Brown</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="schedule"><a class="header" href="#schedule">schedule</a></h1>
 <table>
@@ -3637,6 +3640,210 @@ inheritance - ECOOP 2015</em>. Youtube.
 <p>Wikipedia contributors. (2024). <em>Class diagram — Wikipedia, the free
 encyclopedia</em>.
 <a href="https://en.wikipedia.org/w/index.php?title=Class_diagram&amp;oldid=1230720147">https://en.wikipedia.org/w/index.php?title=Class_diagram&amp;oldid=1230720147</a>.</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="what-is-the-issue-with-uml"><a class="header" href="#what-is-the-issue-with-uml">what is the issue with UML?</a></h1>
+<ul>
+<li>closely connected with OOP</li>
+<li>propagates object-oriented modelling
+<ul>
+<li>however the design should not consider the implementation</li>
+</ul>
+</li>
+</ul>
+<h1 id="c4-model"><a class="header" href="#c4-model">C4 model</a></h1>
+<ul>
+<li>hierarchical set of software architecture diagrams
+<ul>
+<li>different levels of abstraction for different audience</li>
+</ul>
+</li>
+<li>has four levels:
+<ul>
+<li>context, containers, components and code</li>
+</ul>
+</li>
+<li>popularized by Simon Brown</li>
+</ul>
+<div class="text-smaller mt-3">
+<p>this chapter is based on <a href="https://c4model.com/">c4model.com</a></p>
+</div>
+<h1 id="level-1-system-context-diagram"><a class="header" href="#level-1-system-context-diagram">Level 1: System Context diagram</a></h1>
+<ul>
+<li>high level relation with other systems or users</li>
+<li>similar to use case diagram</li>
+<li>technologies, protocols and other low-level details are not important</li>
+<li>understandable for non-technical people</li>
+</ul>
+<blockquote>
+<p>Shows the software system you are building and how it fits into the
+world in terms of the people who use it and the other software systems
+it interacts with.</p>
+<p>Simon Brown - <a href="https://www.infoq.com/articles/C4-architecture-model/">The C4 Model for Software
+Architecture</a></p>
+</blockquote>
+<h2 id="system-context-example"><a class="header" href="#system-context-example">system context example</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/c4/SystemContext.png" height="550"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+<h2 id="notation"><a class="header" href="#notation">notation</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/c4/SystemContext-key.png"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+<h1 id="level-2-container-diagram"><a class="header" href="#level-2-container-diagram">Level 2: Container diagram</a></h1>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>Zooms into the software system, and shows the containers
+(applications, data stores, microservices, etc.) that make up that
+software system. Technology decisions are also a key part of this
+diagram.</p>
+<p>Simon Brown - <a href="https://www.infoq.com/articles/C4-architecture-model/">The C4 Model for Software
+Architecture</a></p>
+</blockquote>
+<h2 id="container-example"><a class="header" href="#container-example">container example</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/c4/Containers.png" height="550"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+<h2 id="notation-1"><a class="header" href="#notation-1">notation</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/c4/Containers-key.png"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+<h1 id="level-3-component-diagram"><a class="header" href="#level-3-component-diagram">Level 3: Component diagram</a></h1>
+<blockquote>
+<p>Zooms into an individual container to show the components inside it.
+These components should map to real abstractions (e.g., a grouping of
+code) in your codebase.</p>
+<p>Simon Brown - <a href="https://www.infoq.com/articles/C4-architecture-model/">The C4 Model for Software
+Architecture</a></p>
+</blockquote>
+<h2 id="component-example"><a class="header" href="#component-example">component example</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/c4/Components.png" height="550"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+<h2 id="notation-2"><a class="header" href="#notation-2">notation</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/c4/Components-key.png"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+<h1 id="level-4-code"><a class="header" href="#level-4-code">Level 4: Code</a></h1>
+<blockquote>
+<p>Finally, if you really want or need to, you can zoom into an
+individual component to show how that component is implemented.</p>
+<p>Simon Brown - <a href="https://www.infoq.com/articles/C4-architecture-model/">The C4 Model for Software
+Architecture</a></p>
+</blockquote>
+<h2 id="code-example"><a class="header" href="#code-example">code example</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/c4/MainframeBankingSystemFacade.png"
+height="500" alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+<h1 id="additional-diagrams-in-c4-model"><a class="header" href="#additional-diagrams-in-c4-model">additional diagrams in C4 model</a></h1>
+<ul>
+<li>system landscape diagram
+<ul>
+<li>even broader environment than the system context diagram</li>
+</ul>
+</li>
+<li>dynamic diagram
+<ul>
+<li>based on the UML communication and sequence diagrams</li>
+</ul>
+</li>
+<li>deployment diagram
+<ul>
+<li>based on the UML deployment diagram<!--    - audience: technical people inside and outside of the software development team
+      - software architects, developers, infrastructure architects, and operations/support staff-->
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="system-landscape-diagram"><a class="header" href="#system-landscape-diagram">system landscape diagram</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/c4/SystemLandscape.png" height="550"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+<h2 id="dynamic-diagram-collaboration-style"><a class="header" href="#dynamic-diagram-collaboration-style">dynamic diagram (collaboration style)</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/c4/SignIn.png" height="550"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+<h2 id="dynamic-diagram-sequence"><a class="header" href="#dynamic-diagram-sequence">dynamic diagram (sequence)</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/c4/bigbankplc-SignIn-sequence.png"
+height="550" alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+<h2 id="deployment-diagram"><a class="header" href="#deployment-diagram">deployment diagram</a></h2>
+<div class="columns">
+<div class="column text-smaller" width="40%">
+<ul>
+<li>s where an instance of a software system is running e.g.,
+<ul>
+<li>physical infrastructure (e.g. a physical server or device)</li>
+<li>virtualised infrastructure,</li>
+<li>containerised infrastructure (e.g. a Docker container),</li>
+<li>an execution environment (e.g. a database server, Java EE
+web/application server, Microsoft IIS), etc.</li>
+</ul>
+</li>
+<li>deployment nodes can be nested</li>
+</ul>
+</div>
+<div class="column" width="60%">
+<figure>
+<img src="lectures/figures/borrowed/c4/LiveDeployment.png"
+alt="from c4model.com | CC-BY" />
+<figcaption aria-hidden="true">from <a
+href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
+</figure>
+</div>
+</div>
+<h1 id="summary"><a class="header" href="#summary">summary</a></h1>
+<blockquote>
+<p>overview first, zoom and filter, then details on demand</p>
+<p>– Ben Shneiderman</p>
+</blockquote>
+<h1 id="suggested-software"><a class="header" href="#suggested-software">suggested software</a></h1>
+<div class="columns">
+<div class="column" width="70%">
+<ul>
+<li><a href="https://docs.google.com/drawings">Google Drawings</a>
+<ul>
+<li>it does not have a person shape though, but can be constucted from a
+circle and a rectange</li>
+</ul>
+</li>
+<li>Visio</li>
+</ul>
+</div>
+<div class="column" width="30%">
+<p><img src="lectures/figures/c4_drawings_person_shape.png" alt="" /></p>
 </div>
 </div>
 
