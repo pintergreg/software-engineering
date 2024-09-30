@@ -292,6 +292,7 @@ figcaption {
 .wide-quote blockquote {
     width: 100% !important;
     margin: 0;
+    padding: 0;
 }
 
 .wide-quote blockquote p {
