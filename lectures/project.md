@@ -97,3 +97,4 @@ Your task is to design this software.
 - flowchart: [Google Drawings](https://docs.google.com/drawings)
 - team management: [Trello](https://trello.com/)
 - UML: [draw.io](https://app.diagrams.net/)
+- C4: [Google Drawings](https://docs.google.com/drawings)
