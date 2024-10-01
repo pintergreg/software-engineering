@@ -35,7 +35,8 @@ Your task is to design this software.
 # contents
 
 - introduction
-    - team members
+    - what the software is -- practically the project assignment
+    - team members -- students working on the assignment
 - stakeholder identification
 - methodology
 - detailed requirements
@@ -58,7 +59,8 @@ Your task is to design this software.
     - with BDD-style acceptance criteria
 - flowcharts
 - first 3 level of C4
-- also static and dynamic models of the software (UML)
+- also static and dynamic models of the software
+    - UML
 - UI mockups
 
 :::::::::
@@ -75,8 +77,13 @@ Your task is to design this software.
     - for example the choreography design
 - you don't have to detail every single role
     - but give an overview of the system
+    - illustrate the every roles and the connections between them
 
+> overview first, zoom and filter, then details on demand
+>
+> -- Ben Shneiderman
 
+    
 ## work in agile methodology
 
 :::::::::::: {.columns}
