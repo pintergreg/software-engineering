@@ -57,7 +57,8 @@ Your task is to design this software.
     - user story maps
     - with BDD-style acceptance criteria
 - flowcharts
-- static and dynamic models of the software (UML)
+- first 3 level of C4
+- also static and dynamic models of the software (UML)
 - UI mockups
 
 :::::::::
@@ -66,6 +67,14 @@ Your task is to design this software.
 
 :::::::::
 ::::::::::::
+
+
+## diagrams details
+
+- create a user story map in details for one role's set of features
+    - for example the choreography design
+- you don't have to detail every single role
+    - but give an overview of the system
 
 
 ## work in agile methodology
