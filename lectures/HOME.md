@@ -68,7 +68,16 @@ user story mapping
 
 #### readings
 
+UML
+
+:    - [Unified Modeling Language (UML) Diagrams](https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/)
+
 C4 model
 
 :    - [C4 model](https://c4model.com/)
      - [The C4 Model for Software Architecture](https://www.infoq.com/articles/C4-architecture-model/) - by Simon Brown
+
+## week 5
+
+1. week 4 summary
+2. SOLID
