@@ -260,4 +260,29 @@ this example violates the Liskov substitution principle
 
 > states that many client-specific interfaces are better than one general-purpose interface. Clients should not be forced to implement a function they do no need.
 
+
 ## dependency inversion principle
+
+
+# coupling
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-5}
+- the degree of interdependence between software modules
+- coupling is usually contrasted with cohesion
+    - low coupling often correlates with high cohesion, and vice versa
+:::::::::
+::::::::: {.column width="45%"}
+![from [Wikimedia](https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg) | public domain](figures/borrowed/CouplingVsCohesion.svg)
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-2}
+source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) [@enwiki:1245630908]
+:::
+
+
+# references
+
+::: {#refs}
+:::
