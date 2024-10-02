@@ -143,3 +143,103 @@ https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
 ##
 
 https://devopedia.org/solid-design-principles#Merson-2020
+
+
+## single responsibility principle
+
+> a class should do one thing and therefore it should have only a single reason to change
+
+## open-closed principle
+
+> classes should be open for extension and closed to modification
+
+## Liskov substitution principle
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .pre-width-100}
+```python
+class Rectangle:
+
+    def __init__(self, width: int, height: int):
+        self.__width = width
+        self.__height = height
+
+    def setWidth(self, width: int):
+        self.__width = width
+
+    def setHeight(self, height: int):
+        self.__height = height
+
+    def getWidth(self):
+        return self.__width
+
+    def getHeight(self):
+        return self.__height
+
+    def getArea(self):
+        return self.__width * self.__height
+
+```
+
+:::::::::
+::::::::: {.column width="50%"}
+```python
+class Square(Rectangle):
+
+    def __init__(self, width: int):
+        super().setWidth(width)
+        super().setHeight(width)
+
+    def setWidth(self, width: int):
+        super().setWidth(width)
+        super().setHeight(width)
+
+    def setHeight(self, height: int):
+        super().setWidth(height)
+        super().setHeight(height)
+```
+
+```python
+>>> r = Rectangle(2, 3)
+>>> print(r.getArea())
+6
+
+>>> s = Square(2)
+>>> print(s.getArea())
+4
+```
+:::::::::
+::::::::::::
+
+
+## Liskov substitution principle
+
+```python
+def getAreaTest(r: Rectangle):
+    width = r.getWidth()  # width is 2
+    r.setHeight(10)
+    return f"Expected area of {width * 10}, got {r.getArea()}"
+```
+
+```python
+>>> r = Rectangle(2, 3)
+>>> print(r.getArea())
+6
+
+>>> s = Square(2)
+>>> print(s.getArea())
+4
+
+>>> print(getAreaTest(r))
+Expected area of 20, got 20
+
+>>> print(getAreaTest(s))
+Expected area of 20, got 100
+
+```
+
+this example violates the Liskov substitution principle
+
+## interface segregation principle
+
+## dependency inversion principle
