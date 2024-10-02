@@ -51,3 +51,25 @@ this chapter is based on the book _Working Efficiently with Legacy Code_ by Mich
 ::: {.text-smaller}
 Feathers, M. (2004). Working Effectively with Legacy Code: p1. pp 6. Prentice Hall Professional
 :::
+
+
+# versioning
+
+## semantic versioning
+
+![](https://jontejada.com/blog/assets/semver02.png)
+
+- [website](https://semver.org)
+- [Why I don't like SemVer anymore](https://snarky.ca/why-i-dont-like-semver/)
+
+## calendar versioning
+
+- "*CalVer* is a versioning convention based on your project's release calendar, instead of arbitrary numbers."
+- YYYY.MINOR.MICRO
+- [website](https://calver.org)
+
+## ZeroVer: 0-based versioning
+
+- "Your software's major version should never exceed the first and most important number in computing: zero."
+- e.g.: **0.4.1**
+- [website](https://0ver.org)
