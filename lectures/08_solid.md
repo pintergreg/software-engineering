@@ -1,5 +1,5 @@
 ---
-title: SOLID
+title: design patterns
 author: Gergő Pintér, PhD
 date: gergo.pinter@uni-corvinus.hu
 lang: en-US
@@ -9,6 +9,84 @@ slideNumber: "true"
 showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
+
+# software design and architecture stack
+
+![based on Khalil Stemmel's figure [@stemmler2019how]](figures/the_software_design_and_architecture_stack_generalized.drawio.svg){height=475}
+
+
+# gang of four (GoF) design patterns
+
+- GoF: Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides
+- 23 common software design patterns
+    - published in "Design Patterns: Elements of Reusable Object-Oriented Software" (1994) [@gamma1994design]
+- provides solutions to common design problems
+- categorized into three main groups
+    1. creational
+    2. structural
+    3. behavioral
+
+## the 23 (GoF) design patterns
+
+:::::::::::: {.columns}
+::::::::: {.column width="30%"}
+**creational**
+
+- Factory Method
+- Abstract Factory
+- Builder
+- Prototype 
+- Singleton 
+
+:::::::::
+::::::::: {.column width="30%"}
+**structural**
+
+- Adapter 
+- Bridge 
+- Composite 
+- Decorator 
+- Facade 
+- Flyweight 
+- Proxy 
+
+:::::::::
+::::::::: {.column width="40%"}
+**behavioral**
+
+- Chain of Responsibility
+- Command
+- Interpreter
+- Iterator
+- Mediator
+- Memento
+- Observer
+- State
+- Strategy 
+- Template Method
+- Visitor 
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+read about the design patterns in details, for example at [refactoring.guru](https://refactoring.guru/design-patterns/catalog)
+:::
+
+
+## bridge pattern (structural)
+
+![](figures/gof/bridge_pre.svg){height=175}
+
+:::::: {.r-stack .fragment data-fragment-index=1}
+::: {.fragment .fade-out data-fragment-index=2}
+![](figures/gof/bridge.svg){height=200}
+:::
+::: {.fragment data-fragment-index=2}
+![](figures/gof/bridge_2.svg){height=225}
+:::
+:::::
+
 
 # You aren't gonna need it (YAGNI)
 
@@ -43,3 +121,25 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 :::::::::
 ::::::::::::
 
+
+# hollywood principle (inversion of control)
+
+::: notes
+:::
+
+
+# SOLID principles
+
+- single responsibility principle
+- open-closed principle
+- Liskov substitution principle
+- interface segregation principle
+- dependency inversion principle
+
+::: notes
+https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
+:::
+
+##
+
+https://devopedia.org/solid-design-principles#Merson-2020
