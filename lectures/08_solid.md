@@ -282,6 +282,61 @@ source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)
 :::
 
 
+# user statistics example
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .pre-width-100}
+`as a user I want to see my activity to see my progress`
+
+display user statistics including
+
+:    - username
+     - profile image
+     - registration date
+     - progress in course
+     - daily activity in the current month
+
+
+:::::::::
+::::::::: {.column width="45%"}
+![](figures/user_stats.drawio.svg){width=300}
+:::::::::
+::::::::::::
+
+
+## architecture v1
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+![](figures/user_statistics/component_1.svg)
+:::::::::
+::::::::: {.column width="40%"}
+send everything to the UI
+
+![](figures/user_statistics/user_data.svg)
+
+::: {.fragment}
+in this case the UI has to calculate the daily activity
+:::
+:::::::::
+::::::::::::
+
+
+## architecture v2
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+![](figures/user_statistics/component_2.svg)
+:::::::::
+::::::::: {.column width="40%"}
+send only the aggregated data
+
+![](figures/user_statistics/user_data_light.svg)
+
+:::::::::
+::::::::::::
+
+
 # references
 
 ::: {#refs}
