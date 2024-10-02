@@ -26,6 +26,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
     2. structural
     3. behavioral
 
+
 ## the 23 (GoF) design patterns
 
 :::::::::::: {.columns}
@@ -136,6 +137,13 @@ read about the design patterns in details, for example at [refactoring.guru](htt
 - interface segregation principle
 - dependency inversion principle
 
+
+::: {.mt-3}
+- introduced by Robert C. Martin
+    - in his 2000 paper [*Design Principles and Design Patterns*](https://web.archive.org/web/20150906155800/http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf) about software rot
+- the SOLID acronym was coined around 2004 by Michael Feathers
+:::
+
 ::: notes
 https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
 :::
@@ -149,11 +157,18 @@ https://devopedia.org/solid-design-principles#Merson-2020
 
 > a class should do one thing and therefore it should have only a single reason to change
 
+
 ## open-closed principle
 
 > classes should be open for extension and closed to modification
 
+
 ## Liskov substitution principle
+
+- named after Barbara Liskov
+
+
+## Liskov substitution principle - example
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%" .pre-width-100}
@@ -212,7 +227,7 @@ class Square(Rectangle):
 ::::::::::::
 
 
-## Liskov substitution principle
+## Liskov substitution principle - example
 
 ```python
 def getAreaTest(r: Rectangle):
@@ -230,16 +245,19 @@ def getAreaTest(r: Rectangle):
 >>> print(s.getArea())
 4
 
->>> print(getAreaTest(r))
+>>> print(getAreaTest(r))  # rectangle
 Expected area of 20, got 20
 
->>> print(getAreaTest(s))
+>>> print(getAreaTest(s))  # square
 Expected area of 20, got 100
 
 ```
 
 this example violates the Liskov substitution principle
 
+
 ## interface segregation principle
+
+> states that many client-specific interfaces are better than one general-purpose interface. Clients should not be forced to implement a function they do no need.
 
 ## dependency inversion principle
