@@ -1,0 +1,23 @@
+@startuml
+skin rose
+
+class Shape {
+}
+
+class BlueCircle {
+}
+
+class RedCircle {
+}
+
+class BlueSquare {
+}
+
+class RedSquare {
+}
+
+Shape <|-- BlueCircle
+Shape <|-- RedCircle
+Shape <|-- BlueSquare
+Shape <|-- RedSquare
+@enduml
