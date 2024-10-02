@@ -1,0 +1,46 @@
+@startuml
+skin rose
+
+package database <<Database>> {
+}
+
+package UI {
+  class GUI {
+    drawProgressBar()
+    drawActivityMatrix()
+    loadProfilePicture()
+    calculateProgress()
+    calculateActivityMatrix()
+  }
+}
+package UserStatistics {
+  class UserData {
+    String name
+    Integer id
+    DateTime registration
+    List activities
+  }
+  class Activity {
+    DateTime timestamp
+    Integer lesson
+    Result result
+  }
+  Enum Result {
+  }
+  class DataCollector {
+    readUserDataFromDatabase()
+    sendData()
+  }
+}
+
+UserData -right- GUI
+DataCollector -right-> GUI
+Activity -right- GUI
+
+Result --o Activity
+UserData o-- Activity
+
+DataCollector -- UserData
+
+DataCollector -left- database
+@enduml
