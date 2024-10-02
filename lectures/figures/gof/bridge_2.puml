@@ -1,0 +1,32 @@
+@startuml
+skin rose
+
+rectangle {
+    class Shape {
+    }
+
+    class Square {
+    }
+
+    class Circle {
+    }
+}
+
+rectangle {
+    class Color {
+    }
+
+    class Red {
+    }
+
+    class Blue {
+    }
+}
+
+Shape <|-- Circle
+Shape <|-- Square
+Color <|-- Blue
+Color <|-- Red
+
+Shape o- Color
+@enduml
