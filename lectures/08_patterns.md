@@ -163,6 +163,22 @@ https://devopedia.org/solid-design-principles#Merson-2020
 
 > a class should do one thing and therefore it should have only a single reason to change
 
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .text-smaller}
+Unix philosophy
+
+Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features".
+:::::::::
+::::::::: {.column width="50%" .text-smaller}
+advantages
+
+- testing is easier
+    - fewer test cases required
+- less dependencies
+    - to other modules or classes
+:::::::::
+::::::::::::
+
 
 ## open-closed principle
 
