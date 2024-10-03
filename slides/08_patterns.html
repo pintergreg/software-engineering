@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>design patterns</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">design patterns</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section class="slide level2">
+
+<p><img data-src="figures/sdlc_2.drawio.svg" width="900" /></p>
+</section>
+<section id="software-design-and-architecture-stack"
+class="title-slide slide level1">
+<h1>software design and architecture stack</h1>
+<figure>
+<img
+data-src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
+height="475" alt="based on Khalil Stemmel’s figure stemmler2019how?" />
+<figcaption aria-hidden="true">based on Khalil Stemmel’s figure <span
+class="citation"
+data-cites="stemmler2019how"><strong>stemmler2019how?</strong></span></figcaption>
+</figure>
+</section>
+
+<section>
+<section id="gang-of-four-gof-design-patterns"
+class="title-slide slide level1">
+<h1>gang of four (GoF) design patterns</h1>
+<ul>
+<li>GoF: Erich Gamma, Richard Helm, Ralph Johnson, and John
+Vlissides</li>
+<li>23 common software design patterns
+<ul>
+<li>published in “Design Patterns: Elements of Reusable Object-Oriented
+Software” (1994) <span class="citation"
+data-cites="gamma1994design"><strong>gamma1994design?</strong></span></li>
+</ul></li>
+<li>provides solutions to common design problems</li>
+<li>categorized into three main groups
+<ol type="1">
+<li>creational</li>
+<li>structural</li>
+<li>behavioral</li>
+</ol></li>
+</ul>
+</section>
+<section id="the-23-gof-design-patterns" class="slide level2">
+<h2>the 23 (GoF) design patterns</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><strong>creational</strong></p>
+<ul>
+<li>Factory Method</li>
+<li>Abstract Factory</li>
+<li>Builder</li>
+<li>Prototype</li>
+<li>Singleton</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><strong>structural</strong></p>
+<ul>
+<li>Adapter</li>
+<li>Bridge</li>
+<li>Composite</li>
+<li>Decorator</li>
+<li>Facade</li>
+<li>Flyweight</li>
+<li>Proxy</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><strong>behavioral</strong></p>
+<ul>
+<li>Chain of Responsibility</li>
+<li>Command</li>
+<li>Interpreter</li>
+<li>Iterator</li>
+<li>Mediator</li>
+<li>Memento</li>
+<li>Observer</li>
+<li>State</li>
+<li>Strategy</li>
+<li>Template Method</li>
+<li>Visitor</li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>read about the design patterns in details, for example at <a
+href="https://refactoring.guru/design-patterns/catalog">refactoring.guru</a></p>
+</div>
+</section>
+<section id="bridge-pattern-structural" class="slide level2">
+<h2>bridge pattern (structural)</h2>
+<p><img data-src="figures/gof/bridge_pre.svg" height="175" /></p>
+<div class="r-stack fragment" data-fragment-index="1">
+<div class="fragment fade-out" data-fragment-index="2">
+<p><img data-src="figures/gof/bridge.svg" height="200" /></p>
+</div>
+<div class="fragment" data-fragment-index="2">
+<p><img data-src="figures/gof/bridge_2.svg" height="225" /></p>
+</div>
+</div>
+</section></section>
+<section id="you-arent-gonna-need-it-yagni"
+class="title-slide slide level1">
+<h1>You aren’t gonna need it (YAGNI)</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>states that a programmer should not add functionality until deemed
+necessary</li>
+<li>principle originates from extreme programming (XP)</li>
+</ul>
+<div class="wide-quote mt-3">
+<blockquote>
+<p>Always implement things when you actually need them, never when you
+just foresee that you need them.</p>
+<p>– <a
+href="https://ronjeffries.com/xprog/articles/practices/pracnotneed/">Ron
+Jeffries</a></p>
+</blockquote>
+</div>
+</div><div class="column text-size-1" style="width:55%;">
+<div class="r-frame">
+<p><strong>extreme programming</strong></p>
+<ul>
+<li>advocates frequent releases in short development cycles</li>
+<li>intended to improve productivity and introduce checkpoints at which
+new customer requirements can be adopted</li>
+<li>features
+<ul>
+<li>programming in pairs,</li>
+<li>doing extensive code review,</li>
+<li>unit testing of all code,</li>
+<li>not programming features until they are actually needed,</li>
+<li>flat management structure</li>
+</ul></li>
+<li>considered a type of agile software development</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="hollywood-principle-inversion-of-control"
+class="title-slide slide level1">
+<h1>hollywood principle (inversion of control)</h1>
+<aside class="notes">
+
+</aside>
+</section>
+
+<section>
+<section id="solid-principles" class="title-slide slide level1">
+<h1>SOLID principles</h1>
+<ul>
+<li>single responsibility principle</li>
+<li>open-closed principle</li>
+<li>Liskov substitution principle</li>
+<li>interface segregation principle</li>
+<li>dependency inversion principle</li>
+</ul>
+<div class="mt-3">
+<ul>
+<li>introduced by Robert C. Martin
+<ul>
+<li>in his 2000 paper <a
+href="https://web.archive.org/web/20150906155800/http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf"><em>Design
+Principles and Design Patterns</em></a> about software rot</li>
+</ul></li>
+<li>the SOLID acronym was coined around 2004 by Michael Feathers</li>
+</ul>
+</div>
+<aside class="notes">
+<p>https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/</p>
+</aside>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>https://devopedia.org/solid-design-principles#Merson-2020</p>
+</section>
+<section id="single-responsibility-principle" class="slide level2">
+<h2>single responsibility principle</h2>
+<blockquote>
+<p>a class should do one thing and therefore it should have only a
+single reason to change</p>
+</blockquote>
+</section>
+<section id="open-closed-principle" class="slide level2">
+<h2>open-closed principle</h2>
+<blockquote>
+<p>classes should be open for extension and closed to modification</p>
+</blockquote>
+</section>
+<section id="liskov-substitution-principle" class="slide level2">
+<h2>Liskov substitution principle</h2>
+<ul>
+<li>named after Barbara Liskov</li>
+</ul>
+</section>
+<section id="liskov-substitution-principle---example"
+class="slide level2">
+<h2>Liskov substitution principle - example</h2>
+<div class="columns">
+<div class="column pre-width-100" style="width:50%;">
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, width: <span class="bu">int</span>, height: <span class="bu">int</span>):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__width <span class="op">=</span> width</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__height <span class="op">=</span> height</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> setWidth(<span class="va">self</span>, width: <span class="bu">int</span>):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__width <span class="op">=</span> width</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> setHeight(<span class="va">self</span>, height: <span class="bu">int</span>):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__height <span class="op">=</span> height</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> getWidth(<span class="va">self</span>):</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.__width</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> getHeight(<span class="va">self</span>):</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.__height</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> getArea(<span class="va">self</span>):</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.__width <span class="op">*</span> <span class="va">self</span>.__height</span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Square(Rectangle):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, width: <span class="bu">int</span>):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().setWidth(width)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().setHeight(width)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> setWidth(<span class="va">self</span>, width: <span class="bu">int</span>):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().setWidth(width)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().setHeight(width)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> setHeight(<span class="va">self</span>, height: <span class="bu">int</span>):</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().setWidth(height)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().setHeight(height)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> r <span class="op">=</span> Rectangle(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(r.getArea())</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s <span class="op">=</span> Square(<span class="dv">2</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(s.getArea())</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span></span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="liskov-substitution-principle---example-1"
+class="slide level2">
+<h2>Liskov substitution principle - example</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getAreaTest(r: Rectangle):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> r.getWidth()  <span class="co"># width is 2</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    r.setHeight(<span class="dv">10</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f&quot;Expected area of </span><span class="sc">{</span>width <span class="op">*</span> <span class="dv">10</span><span class="sc">}</span><span class="ss">, got </span><span class="sc">{</span>r<span class="sc">.</span>getArea()<span class="sc">}</span><span class="ss">&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> r <span class="op">=</span> Rectangle(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(r.getArea())</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s <span class="op">=</span> Square(<span class="dv">2</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(s.getArea())</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(getAreaTest(r))  <span class="co"># rectangle</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>Expected area of <span class="dv">20</span>, got <span class="dv">20</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(getAreaTest(s))  <span class="co"># square</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>Expected area of <span class="dv">20</span>, got <span class="dv">100</span></span></code></pre></div>
+<p>this example violates the Liskov substitution principle</p>
+</section>
+<section id="interface-segregation-principle" class="slide level2">
+<h2>interface segregation principle</h2>
+<blockquote>
+<p>states that many client-specific interfaces are better than one
+general-purpose interface. Clients should not be forced to implement a
+function they do no need.</p>
+</blockquote>
+</section>
+<section id="dependency-inversion-principle" class="slide level2">
+<h2>dependency inversion principle</h2>
+</section></section>
+<section id="coupling" class="title-slide slide level1">
+<h1>coupling</h1>
+<div class="columns">
+<div class="column mt-5" style="width:55%;">
+<ul>
+<li>the degree of interdependence between software modules</li>
+<li>coupling is usually contrasted with cohesion
+<ul>
+<li>low coupling often correlates with high cohesion, and vice
+versa</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/borrowed/CouplingVsCohesion.svg"
+alt="from Wikimedia | public domain" />
+<figcaption aria-hidden="true">from <a
+href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia</a>
+| public domain</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-2">
+<p>source <a
+href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
+<span class="citation" data-cites="enwiki:1245630908">[1]</span></p>
+</div>
+</section>
+
+<section id="topologies" class="title-slide slide level1">
+<h1>topologies</h1>
+
+</section>
+
+<section>
+<section id="user-statistics-example" class="title-slide slide level1">
+<h1>user statistics example</h1>
+<div class="columns">
+<div class="column pre-width-100" style="width:55%;">
+<p><code>as a user I want to see my activity to see my progress</code></p>
+<dl>
+<dt>display user statistics including</dt>
+<dd>
+<ul>
+<li>username</li>
+<li>profile image</li>
+<li>registration date</li>
+<li>progress in course</li>
+<li>daily activity in the current month</li>
+</ul>
+</dd>
+</dl>
+</div><div class="column" style="width:45%;">
+<p><img data-src="figures/user_stats.drawio.svg" width="300" /></p>
+</div>
+</div>
+</section>
+<section id="architecture-v1" class="slide level2">
+<h2>architecture v1</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="figures/user_statistics/component_1.svg" /></p>
+</div><div class="column" style="width:40%;">
+<p>send everything to the UI</p>
+<p><img data-src="figures/user_statistics/user_data_full.svg" /></p>
+</div>
+</div>
+</section>
+<section id="architecture-v1---class" class="slide level2">
+<h2>architecture v1 - class</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="figures/user_statistics/class_1.svg"
+width="600" /></p>
+</div><div class="column mt-5 fragment" style="width:30%;">
+<p>in this case the UI has to calculate the daily activity</p>
+<div class="fragment">
+<ul>
+<li>tight coupling</li>
+<li>single responsibility principle violated</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="architecture-v2" class="slide level2">
+<h2>architecture v2</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="figures/user_statistics/component_2.svg" /></p>
+</div><div class="column" style="width:40%;">
+<p>send only the aggregated data</p>
+<p><img data-src="figures/user_statistics/user_data_light.svg" /></p>
+</div>
+</div>
+</section>
+<section id="architecture-v2---class" class="slide level2">
+<h2>architecture v2 - class</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="figures/user_statistics/class_2.svg"
+width="600" /></p>
+</div><div class="column mt-5" style="width:30%;">
+<p>data collector still has the whole user data but that aligns with its
+purpose</p>
+<p>data aggregator calculates everything and the UI only displays it</p>
+</div>
+</div>
+</section>
+<section id="architecture-v3" class="slide level2">
+<h2>architecture v3</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="figures/user_statistics/component_3.svg" /></p>
+</div><div class="column" style="width:40%;">
+<p>make the database aggregate the data</p>
+<p><img data-src="figures/user_statistics/user_data_light.svg" /></p>
+</div>
+</div>
+</section>
+<section id="architecture-v3---sql" class="slide level2">
+<h2>architecture v3 - SQL</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:35%;">
+<p><img data-src="figures/user_statistics/component_3.svg" /></p>
+</div><div class="column pre-width-100" style="width:65%;">
+<p><span class="text-smaller">for the activity matrix:</span></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">CAST</span>(strftime(<span class="st">&#39;%W&#39;</span>, <span class="dt">timestamp</span>) <span class="kw">AS</span> <span class="dt">INTEGER</span>) <span class="kw">AS</span> week_of_year,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">CAST</span>(strftime(<span class="st">&#39;%u&#39;</span>, <span class="dt">timestamp</span>) <span class="kw">AS</span> <span class="dt">INTEGER</span>) <span class="kw">AS</span> day_of_week,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> <span class="fu">count</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> activity</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    user_id <span class="op">=</span> <span class="dv">42</span> <span class="kw">AND</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    week_of_year <span class="op">&gt;</span> <span class="dv">35</span> <span class="kw">AND</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    week_of_year <span class="op">&lt;</span> <span class="dv">40</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    week_of_year,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    day_of_week</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>;</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="architecture-v3---sql-1" class="slide level2">
+<h2>architecture v3 - SQL</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/component_3.svg" /></p>
+</div><div class="column pre-width-100" style="width:50%;">
+<p><span class="text-smaller">for the progress:</span></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    lesson <span class="op">/</span> <span class="fl">50.0</span> <span class="kw">AS</span> progress</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> activity</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    user_id <span class="op">=</span> <span class="dv">42</span> <span class="kw">AND</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&#39;success&#39;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    lesson <span class="kw">DESC</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">1</span>;</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="architecture-v3---issues" class="slide level2">
+<h2>architecture v3 - issues</h2>
+<ul>
+<li>hard dependency on database
+<ul>
+<li>business logic in persistence layer</li>
+<li>code depends on the SQL dialect
+<ul>
+<li>can be mitigated with an object-relational mapping (ORM) framework
+but that would also be a dependency</li>
+</ul></li>
+</ul></li>
+<li>may not suitable for complex aggregations
+<ul>
+<li>stored functions just increase dependency</li>
+</ul></li>
+<li>harder to unit test</li>
+</ul>
+<div class="fragment text-color-secondary">
+<p>on the other hand, most of these are present in all the three
+architectures!</p>
+</div>
+</section></section>
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-enwiki:1245630908" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Coupling
+(computer programming) — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908"
+class="uri">https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908</a>,
+2024.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
