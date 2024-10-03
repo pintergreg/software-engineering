@@ -10,6 +10,9 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
+![](figures/sdlc_2.drawio.svg){width=900}
+
+
 # software design and architecture stack
 
 ![based on Khalil Stemmel's figure [@stemmler2019how]](figures/the_software_design_and_architecture_stack_generalized.drawio.svg){height=475}
@@ -280,6 +283,9 @@ this example violates the Liskov substitution principle
 ::: {.text-smaller .mt-2}
 source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) [@enwiki:1245630908]
 :::
+
+
+# topologies
 
 
 # user statistics example
