@@ -1,0 +1,19 @@
+@startuml
+skin rose
+rectangle "user statistics" {
+  [UI]
+  [data collector]
+}
+
+[data collector]
+
+database "database" {
+
+}
+
+note left of [database]: aggregate in the DB
+
+[UI] <- [data collector]: sends user data
+[data collector] --> [database]: read user data
+
+@enduml

@@ -321,9 +321,6 @@ send everything to the UI
 
 ![](figures/user_statistics/user_data_full.svg)
 
-::: {.fragment}
-in this case the UI has to calculate the daily activity
-:::
 :::::::::
 ::::::::::::
 
@@ -334,8 +331,12 @@ in this case the UI has to calculate the daily activity
 ![](figures/user_statistics/class_1.svg){width=600}
 :::::::::
 ::::::::: {.column width="30%" .mt-5 .fragment}
+in this case the UI has to calculate the daily activity
+
+::: {.fragment}
 - tight coupling
 - single responsibility principle violated
+:::
 :::::::::
 ::::::::::::
 
@@ -361,9 +362,90 @@ send only the aggregated data
 ![](figures/user_statistics/class_2.svg){width=600}
 :::::::::
 ::::::::: {.column width="30%" .mt-5}
+data collector still has the whole user data but that aligns with its purpose
+
+data aggregator calculates everything and the UI only displays it
 :::::::::
 ::::::::::::
 
+
+## architecture v3
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+![](figures/user_statistics/component_3.svg)
+:::::::::
+::::::::: {.column width="40%"}
+make the database aggregate the data
+
+![](figures/user_statistics/user_data_light.svg)
+
+:::::::::
+::::::::::::
+
+## architecture v3 - SQL
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="35%"}
+![](figures/user_statistics/component_3.svg)
+:::::::::
+::::::::: {.column width="65%" .pre-width-100}
+[for the activity matrix:]{.text-smaller}
+
+```sql
+SELECT
+    CAST(strftime('%W', timestamp) AS INTEGER) AS week_of_year,
+    CAST(strftime('%u', timestamp) AS INTEGER) AS day_of_week,
+    count(*) AS count
+FROM activity
+WHERE
+    user_id = 42 AND
+    week_of_year > 35 AND
+    week_of_year < 40
+GROUP BY
+    week_of_year,
+    day_of_week
+;
+```
+:::::::::
+::::::::::::
+
+## architecture v3 - SQL
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/user_statistics/component_3.svg)
+:::::::::
+::::::::: {.column width="50%" .pre-width-100}
+[for the progress:]{.text-smaller}
+
+```sql
+SELECT
+	lesson / 50.0 AS progress
+FROM activity
+WHERE
+    user_id = 42 AND
+    result = 'success'
+ORDER BY
+	lesson DESC
+LIMIT 1;
+```
+:::::::::
+::::::::::::
+
+## architecture v3 - issues
+
+- hard dependency on database
+    - business logic in persistence layer
+    - code depends on the SQL dialect
+        - can be mitigated with an object-relational mapping (ORM) framework but that would also be a dependency
+- may not suitable for complex aggregations
+    - stored functions just increase dependency
+- harder to unit test
+
+::: {.fragment .text-color-secondary}
+on the other hand, most of these are present in all the three architectures!
+:::
 
 # references
 
