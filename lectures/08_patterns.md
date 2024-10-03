@@ -417,7 +417,14 @@ GROUP BY
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
 ![](figures/user_statistics/component_3.svg)
+:::
+::: {.fragment data-fragment-index=1}
+![](figures/user_statistics/sequence.svg)
+:::
+:::::
 :::::::::
 ::::::::: {.column width="50%" .pre-width-100}
 [for the progress:]{.text-smaller}
