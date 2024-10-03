@@ -313,11 +313,23 @@ display user statistics including
 ::::::::: {.column width="40%"}
 send everything to the UI
 
-![](figures/user_statistics/user_data.svg)
+![](figures/user_statistics/user_data_full.svg)
 
 ::: {.fragment}
 in this case the UI has to calculate the daily activity
 :::
+:::::::::
+::::::::::::
+
+## architecture v1 - class
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+![](figures/user_statistics/class_1.svg){width=600}
+:::::::::
+::::::::: {.column width="30%" .mt-5 .fragment}
+- tight coupling
+- single responsibility principle violated
 :::::::::
 ::::::::::::
 
@@ -333,6 +345,16 @@ send only the aggregated data
 
 ![](figures/user_statistics/user_data_light.svg)
 
+:::::::::
+::::::::::::
+
+## architecture v2 - class
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+![](figures/user_statistics/class_2.svg){width=600}
+:::::::::
+::::::::: {.column width="30%" .mt-5}
 :::::::::
 ::::::::::::
 
