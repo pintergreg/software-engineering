@@ -1,6 +1,6 @@
 @startuml
 skin rose
-package "user statistics" {
+rectangle "user statistics" {
   [UI]
   [data collector]
 }

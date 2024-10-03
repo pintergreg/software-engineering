@@ -1,7 +1,9 @@
 @startuml
 skin rose
-package "user statistics" {
+package GUI {
   [UI]
+}
+package "user statistics" {
   [data collector]
 [data aggregator]
 }
