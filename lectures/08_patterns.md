@@ -603,18 +603,6 @@ based on [@baeldung20214layered]
 :::
 
 
-## hexagonal (ports & adapters)
-
-:::::::::::: {.columns}
-::::::::: {.column width="50%"}
-
-:::::::::
-::::::::: {.column width="50%"}
-
-:::::::::
-::::::::::::
-
-
 ## onion
 
 :::::::::::: {.columns}
@@ -627,7 +615,21 @@ based on [@baeldung20214layered]
 :::::::::
 ::::::::::::
 
-[@palermo2008onion]
+::: {.text-smaller}
+based on [@palermo2008onion]
+:::
+
+
+## hexagonal (ports & adapters)
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+
+:::::::::
+::::::::: {.column width="45%"}
+![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300}
+:::::::::
+::::::::::::
 
 
 # MVC
