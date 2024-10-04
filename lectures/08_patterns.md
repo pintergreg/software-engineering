@@ -318,6 +318,13 @@ this example violates the Liskov substitution principle
 
 ## dependency inversion principle
 
+> Dependency inversion principle says that modules should depend upon interfaces or abstract classes, not concrete classes. It's an inversion because implementations depend upon abstractions and not the other way round. [@millington2019solid]
+
+![](figures/solid/dependency_inversion.svg){height=300}
+
+::: {.text-smaller}
+increases reusability
+:::
 
 
 # topologies
