@@ -401,9 +401,12 @@ increases reusability
 - exactly once
     - at least once, extended by guarantee that there will be no duplicates
 
-
 :::::::::
 ::::::::::::
+
+::: {.text-smaller}
+based on [@okeyo2023beginners] and [@inngest2022message]
+:::
 
 ::: notes
 https://www.inngest.com/blog/message-bus-vs-queues
