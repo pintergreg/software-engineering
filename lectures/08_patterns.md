@@ -323,6 +323,9 @@ this example violates the Liskov substitution principle
 # topologies
 
 
+# MVC
+
+
 # user statistics example
 
 :::::::::::: {.columns}
