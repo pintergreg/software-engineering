@@ -1,0 +1,18 @@
+@startuml
+skin rose
+interface ShapeArea{
+  +area()
+}
+
+interface ShapeVolume{
+  +volume()
+}
+
+class Square
+class Cube
+
+Cube -up-|> ShapeArea
+Cube -up-|> ShapeVolume
+Square -up-|> ShapeArea
+
+@enduml
