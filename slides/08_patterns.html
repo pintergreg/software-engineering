@@ -737,7 +737,7 @@ ensuring that only that recipient processes the message</li>
 </ul></li>
 </ul>
 </div><div class="column fragment" style="width:50%;">
-<p><strong>delivery quaranties</strong></p>
+<p><strong>delivery guaranties</strong></p>
 <ul>
 <li>at most once
 <ul>
@@ -768,12 +768,64 @@ data-cites="inngest2022message">[16]</span></p>
 </section>
 <section id="layered" class="slide level2">
 <h2>layered</h2>
+<p>number of layers in a layered architecture is not set to a specific
+number</p>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>presentation layer (a.k.a. UI layer, view layer)
+<ul>
+<li>responsible for user interactions with the software system</li>
+</ul></li>
+<li>application layer (a.k.a. service layer)
+<ul>
+<li>aspects related to accomplishing functional requirements</li>
+</ul></li>
+<li>business (logic) layer
+<ul>
+<li>responsible for algorithms, and programming components</li>
+</ul></li>
+<li>data access layer (a.k.a. persistence layer)
+<ul>
+<li>responsible for handling data, databases</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img data-src="figures/layered_4_gray.drawio.svg" width="300" /></p>
+</div>
+</div>
+</section>
+<section id="layered---properties" class="slide level2">
+<h2>layered - properties</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-
+<p><strong>advantages</strong></p>
+<ul>
+<li>simple and easy to learn and implement</li>
+<li>reduced dependency because the function of each layer is separate
+from the other layers</li>
+<li>testing is easier because of the separated components
+<ul>
+<li>components can be tested individually</li>
+</ul></li>
+<li>cost overheads are fairly low</li>
+</ul>
 </div><div class="column" style="width:50%;">
-
+<p><strong>disadvantages</strong></p>
+<ul>
+<li>scalability is difficult</li>
+<li>can be difficult to maintain
+<ul>
+<li>a change in a single layer can affect the entire system because it
+operates as a single unit</li>
+</ul></li>
+<li>a layer depends on the layer above it</li>
+</ul>
 </div>
+</div>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="baeldung20214layered">[17]</span></p>
 </div>
 </section>
 <section id="hexagonal-ports-adapters" class="slide level2">
@@ -800,7 +852,7 @@ data-cites="inngest2022message">[16]</span></p>
 
 </div>
 </div>
-<p><span class="citation" data-cites="palermo2008onion">[17]</span></p>
+<p><span class="citation" data-cites="palermo2008onion">[18]</span></p>
 </section></section>
 <section id="mvc" class="title-slide slide level1">
 <h1>MVC</h1>
@@ -1154,8 +1206,17 @@ differences.”</span> <a href="
                     https://www.inngest.com/blog/message-bus-vs-queues
 </a>, 29-Jun-2022.</div>
 </div>
+<div id="ref-baeldung20214layered" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[17] </div><div
+class="csl-right-inline">baeldung, <span>“Layered architecture.”</span>
+<a href="
+                    https://www.baeldung.com/cs/layered-architecture
+                    " class="uri">
+                    https://www.baeldung.com/cs/layered-architecture
+</a>, 11-Nov-2021.</div>
+</div>
 <div id="ref-palermo2008onion" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">J.
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">J.
 Palermo, <span>“The onion architecture : Part 1.”</span> <a href="
                     https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
                     " class="uri">
