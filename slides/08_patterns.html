@@ -220,6 +220,48 @@ href="https://refactoring.guru/design-patterns/catalog">refactoring.guru</a></p>
 <p><img data-src="figures/gof/bridge_2.svg" height="225" /></p>
 </div>
 </div>
+</section>
+<section id="gof-design-patterns-in-functional-programming"
+class="slide level2">
+<h2>GoF design patterns in functional programming</h2>
+<table>
+<thead>
+<tr class="header">
+<th>OO pattern</th>
+<th>FP pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>factory pattern</td>
+<td>function</td>
+</tr>
+<tr class="even">
+<td>strategy pattern</td>
+<td>function</td>
+</tr>
+<tr class="odd">
+<td>decorator pattern</td>
+<td>function</td>
+</tr>
+<tr class="even">
+<td>visitor pattern</td>
+<td>function</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>Peter Norvig <a
+href="http://www.norvig.com/design-patterns/">demonstrated</a> that 16
+out of the 23 patterns are simplified or eliminated by language features
+in Lisp or Dylan (1998) <span class="citation"
+data-cites="norvig1998design">[3]</span></p>
+<p><a href="https://fsharpforfunandprofit.com/fppatterns/">more
+about</a> it from Scott Wlaschin <span class="citation"
+data-cites="wlaschin2014functional">[4]</span></p>
 </section></section>
 <section id="you-arent-gonna-need-it-yagni"
 class="title-slide slide level1">
@@ -270,6 +312,35 @@ class="title-slide slide level1">
 </aside>
 </section>
 
+<section id="coupling" class="title-slide slide level1">
+<h1>coupling</h1>
+<div class="columns">
+<div class="column mt-5" style="width:55%;">
+<ul>
+<li>the degree of interdependence between software modules</li>
+<li>coupling is usually contrasted with cohesion
+<ul>
+<li>low coupling often correlates with high cohesion, and vice
+versa</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/borrowed/CouplingVsCohesion.svg"
+alt="from Wikimedia | public domain" />
+<figcaption aria-hidden="true">from <a
+href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia</a>
+| public domain</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-2">
+<p>source <a
+href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
+<span class="citation" data-cites="enwiki:1245630908">[5]</span></p>
+</div>
+</section>
+
 <section>
 <section id="solid-principles" class="title-slide slide level1">
 <h1>SOLID principles</h1>
@@ -292,12 +363,11 @@ Principles and Design Patterns</em></a> about software rot</li>
 </ul>
 </div>
 <aside class="notes">
-<p>https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/</p>
+<ul>
+<li>https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/</li>
+<li>https://devopedia.org/solid-design-principles#Merson-2020</li>
+</ul>
 </aside>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p>https://devopedia.org/solid-design-principles#Merson-2020</p>
 </section>
 <section id="single-responsibility-principle" class="slide level2">
 <h2>single responsibility principle</h2>
@@ -333,9 +403,24 @@ rather than complicate old programs by adding new “features”.</p>
 </section>
 <section id="liskov-substitution-principle" class="slide level2">
 <h2>Liskov substitution principle</h2>
+<blockquote>
+<p>if class A is a subtype of class B, B should be able to replaced with
+A without disrupting the behavior of the program <span class="citation"
+data-cites="millington2019solid">[6]</span></p>
+</blockquote>
+<div class="text-smaller mt-3">
 <ul>
 <li>named after Barbara Liskov</li>
+<li>presented first in 1987 <span class="citation"
+data-cites="liskov1987data">[7]</span></li>
+<li>circle-ellipse problem / square–rectangle problem
+<ul>
+<li>existence of the circle–ellipse problem is used to criticize
+object-oriented programming <span class="citation"
+data-cites="enwiki:1165573623">[8]</span></li>
+</ul></li>
 </ul>
+</div>
 </section>
 <section id="liskov-substitution-principle---example"
 class="slide level2">
@@ -388,6 +473,10 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a hr
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span></span></code></pre></div>
 </div>
 </div>
+<div class="text-smaller">
+<p>code is based on <span class="citation"
+data-cites="erinc2020solid">[9]</span></p>
+</div>
 </section>
 <section id="liskov-substitution-principle---example-1"
 class="slide level2">
@@ -412,6 +501,10 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a hr
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(getAreaTest(s))  <span class="co"># square</span></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>Expected area of <span class="dv">20</span>, got <span class="dv">100</span></span></code></pre></div>
 <p>this example violates the Liskov substitution principle</p>
+<div class="text-smaller">
+<p>code is based on <span class="citation"
+data-cites="erinc2020solid">[9]</span></p>
+</div>
 </section>
 <section id="interface-segregation-principle" class="slide level2">
 <h2>interface segregation principle</h2>
@@ -423,38 +516,26 @@ function they do no need.</p>
 </section>
 <section id="dependency-inversion-principle" class="slide level2">
 <h2>dependency inversion principle</h2>
+<blockquote>
+<p>Dependency inversion principle says that modules should depend upon
+interfaces or abstract classes, not concrete classes. It’s an inversion
+because implementations depend upon abstractions and not the other way
+round. <span class="citation"
+data-cites="millington2019solid">[6]</span></p>
+</blockquote>
+<p><img data-src="figures/solid/dependency_inversion.svg"
+height="300" /></p>
+<div class="text-smaller">
+<p>increases reusability</p>
+</div>
 </section></section>
-<section id="coupling" class="title-slide slide level1">
-<h1>coupling</h1>
-<div class="columns">
-<div class="column mt-5" style="width:55%;">
-<ul>
-<li>the degree of interdependence between software modules</li>
-<li>coupling is usually contrasted with cohesion
-<ul>
-<li>low coupling often correlates with high cohesion, and vice
-versa</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:45%;">
-<figure>
-<img data-src="figures/borrowed/CouplingVsCohesion.svg"
-alt="from Wikimedia | public domain" />
-<figcaption aria-hidden="true">from <a
-href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia</a>
-| public domain</figcaption>
-</figure>
-</div>
-</div>
-<div class="text-smaller mt-2">
-<p>source <a
-href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
-<span class="citation" data-cites="enwiki:1245630908">[3]</span></p>
-</div>
-</section>
-
 <section id="topologies" class="title-slide slide level1">
 <h1>topologies</h1>
+
+</section>
+
+<section id="mvc" class="title-slide slide level1">
+<h1>MVC</h1>
 
 </section>
 
@@ -687,14 +768,63 @@ href="https://books.google.hu/books?id=6oHuKQe3TjQC">Design patterns:
 Elements of reusable object-oriented software</a></em>. Pearson
 Education, 1994.</div>
 </div>
+<div id="ref-norvig1998design" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">P.
+Norvig, <span>“Design patterns in dynamic languages.”</span> <a href="
+                    http://www.norvig.com/design-patterns/
+                    " class="uri">
+                    http://www.norvig.com/design-patterns/
+</a>, 17-Mar-1998.</div>
+</div>
+<div id="ref-wlaschin2014functional" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">S.
+Wlaschin, <span>“Functional programming design patterns.”</span> <a
+href="
+                    https://fsharpforfunandprofit.com/fppatterns/
+                    " class="uri">
+                    https://fsharpforfunandprofit.com/fppatterns/
+</a>, Dec-2014.</div>
+</div>
 <div id="ref-enwiki:1245630908" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div
+<div class="csl-left-margin">[5] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Coupling
 (computer programming) — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
 href="https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908"
 class="uri">https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908</a>,
 2024.</div>
+</div>
+<div id="ref-millington2019solid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">S.
+Millington, <span>“A solid guide to SOLID principles.”</span> <a href="
+                    https://www.baeldung.com/solid-principles
+                    " class="uri">
+                    https://www.baeldung.com/solid-principles
+</a>, 05-Feb-2019.</div>
+</div>
+<div id="ref-liskov1987data" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">B.
+Liskov, <span>“<a href="https://doi.org/10.1145/62139.62141">Keynote
+address - data abstraction and hierarchy</a>,”</span> <em>SIGPLAN
+Not.</em>, vol. 23, no. 5, pp. 17–34, Jan. 1987.</div>
+</div>
+<div id="ref-enwiki:1165573623" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Circle–ellipse
+problem — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Circle%E2%80%93ellipse_problem&amp;oldid=1165573623"
+class="uri">https://en.wikipedia.org/w/index.php?title=Circle%E2%80%93ellipse_problem&amp;oldid=1165573623</a>,
+2023.</div>
+</div>
+<div id="ref-erinc2020solid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Y.
+K. Erinç, <span>“The SOLID principles of object-oriented programming
+explained in plain english.”</span> <a href="
+                https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
+                    " class="uri">
+                https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
+</a>, 20-Aug-2020.</div>
 </div>
 </div>
 </section>
