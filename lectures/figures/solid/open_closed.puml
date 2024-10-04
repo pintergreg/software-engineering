@@ -1,0 +1,26 @@
+@startuml
+skin rose
+class Shape
+
+class Square {
+  +float width
+}
+
+class Circle {
+  +float radius
+}
+
+class AreaCalculator {
+  +sum()
+}
+
+interface AreaInterface {
+  +area()
+}
+
+Square -up-|> Shape
+Circle -up-|> Shape
+Square -up-|> AreaInterface
+Circle -up-|> AreaInterface
+AreaCalculator -right- Shape
+@enduml

@@ -208,6 +208,84 @@ advantages
 
 > classes should be open for extension and closed to modification
 
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/solid/open_closed_pre.svg)
+:::::::::
+::::::::: {.column width="50%" .pre-width-100 .text-smaller}
+```python
+class Shape:
+    pass
+
+
+class Square(Shape):
+    def __init__(self, width: float):
+        self.width = width
+
+class Circle(Shape):
+    def __init__(self, radius: float):
+        self.radius = radius
+
+class AreaCalculator:
+
+    def sum(self, shapes: list[Shape]) -> float:
+        result = 0
+        for shape in shapes:
+            if isinstance(shape, Square):
+                result += shape.width**2
+            elif isinstance(shape, Circle):
+                result += shape.radius**2 * math.pi
+
+        return round(result, 2)
+```
+:::::::::
+::::::::::::
+
+:::{.text-smaller}
+example based on [@oloruntoba2024solid]
+:::
+
+
+## open-closed principle
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/solid/open_closed.svg)
+:::::::::
+::::::::: {.column width="50%" .text-smaller}
+```python
+class Shape:
+    pass
+
+class AreaInterface:
+    def area(shape: Shape) -> float:
+        pass
+
+class Square(Shape, AreaInterface):
+    def __init__(self, width: float):
+        self.width = width
+
+    def area(self) -> float:
+        return self.width**2
+
+class Circle(Shape, AreaInterface):
+    def __init__(self, radius: float):
+        self.radius = radius
+
+    def area(self) -> float:
+        return round(self.radius**2 * math.pi, 2)
+
+class AreaCalculator:
+    def sum(self, shapes: list[Shape]) -> float:
+        return sum([i.area() for i in shapes])
+```
+:::::::::
+::::::::::::
+
+:::{.text-smaller}
+example based on [@oloruntoba2024solid]
+:::
+
 
 ## Liskov substitution principle
 
@@ -452,6 +530,8 @@ https://www.inngest.com/blog/message-bus-vs-queues
 
 :::::::::
 ::::::::::::
+
+[@palermo2008onion]
 
 
 # MVC
