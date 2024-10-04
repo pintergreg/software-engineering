@@ -531,7 +531,7 @@ control flow? structure?
 
 :::::::::
 ::::::::: {.column width="50%" .fragment}
-**delivery quaranties**
+**delivery guaranties**
 
 - at most once
     - push based
@@ -556,14 +556,51 @@ https://www.inngest.com/blog/message-bus-vs-queues
 
 ## layered
 
+number of layers in a layered architecture is not set to a specific number
+
 :::::::::::: {.columns}
-::::::::: {.column width="50%"}
-
+::::::::: {.column width="65%"}
+- presentation layer (a.k.a. UI layer, view layer)
+    - responsible for user interactions with the software system
+- application layer (a.k.a. service layer)
+    - aspects related to accomplishing functional requirements
+- business (logic) layer
+    - responsible for algorithms, and programming components
+- data access layer (a.k.a. persistence layer)
+    - responsible for handling data, databases
 :::::::::
-::::::::: {.column width="50%"}
-
+::::::::: {.column width="35%"}
+![](figures/layered_4_gray.drawio.svg){width=300}
 :::::::::
 ::::::::::::
+
+
+## layered - properties
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+**advantages**
+
+- simple and easy to learn and implement
+- reduced dependency because the function of each layer is separate from the other layers
+- testing is easier because of the separated components
+    - components can be tested individually
+- cost overheads are fairly low
+
+:::::::::
+::::::::: {.column width="50%"}
+**disadvantages**
+
+- scalability is difficult
+- can be difficult to maintain
+    - a change in a single layer can affect the entire system because it operates as a single unit
+- a layer depends on the layer above it
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+based on [@baeldung20214layered]
+:::
 
 
 ## hexagonal (ports & adapters)
