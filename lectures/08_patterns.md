@@ -144,22 +144,6 @@ Peter Norvig [demonstrated](http://www.norvig.com/design-patterns/) that 16 out 
 ::::::::::::
 
 
-# hollywood principle (inversion of control)
-
-> don't call us, we'll call you
-
-- for control flow management
-- IoC shifts control from the application to an outside framework
-- promotes a more modular design by decoupling components
-    - however, adding an IoC framework can increase complexity
-        - with a significant learning curve for those unfamiliar with the concept
-- e.g., Spring Framework, ASP.NET Core
-
-:::{.text-smaller}
-based on [@stec2024inversion]
-:::
-
-
 # coupling
 
 :::::::::::: {.columns}
@@ -346,6 +330,22 @@ code is based on [@erinc2020solid]
 
 ::: {.text-smaller}
 increases reusability
+:::
+
+
+# hollywood principle (inversion of control)
+
+> don't call us, we'll call you
+
+- for control flow management
+- IoC shifts control from the application to an outside framework
+- promotes a more modular design by decoupling components
+    - however, adding an IoC framework can increase complexity
+        - with a significant learning curve for those unfamiliar with the concept
+- e.g., Spring Framework, ASP.NET Core
+
+:::{.text-smaller}
+based on [@stec2024inversion]
 :::
 
 
