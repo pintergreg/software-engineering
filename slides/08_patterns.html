@@ -304,14 +304,6 @@ new customer requirements can be adopted</li>
 </div>
 </section>
 
-<section id="hollywood-principle-inversion-of-control"
-class="title-slide slide level1">
-<h1>hollywood principle (inversion of control)</h1>
-<aside class="notes">
-
-</aside>
-</section>
-
 <section id="coupling" class="title-slide slide level1">
 <h1>coupling</h1>
 <div class="columns">
@@ -529,10 +521,36 @@ height="300" /></p>
 <p>increases reusability</p>
 </div>
 </section></section>
+<section id="hollywood-principle-inversion-of-control"
+class="title-slide slide level1">
+<h1>hollywood principle (inversion of control)</h1>
+<blockquote>
+<p>don’t call us, we’ll call you</p>
+</blockquote>
+<ul>
+<li>for control flow management</li>
+<li>IoC shifts control from the application to an outside framework</li>
+<li>promotes a more modular design by decoupling components
+<ul>
+<li>however, adding an IoC framework can increase complexity
+<ul>
+<li>with a significant learning curve for those unfamiliar with the
+concept</li>
+</ul></li>
+</ul></li>
+<li>e.g., Spring Framework, ASP.NET Core</li>
+</ul>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="stec2024inversion">[10]</span></p>
+</div>
+</section>
+
 <section>
 <section id="topologies" class="title-slide slide level1">
 <h1>topologies</h1>
-
+<p><img data-src="figures/server_client.drawio.svg" width="325" /></p>
+<p><img data-src="figures/message_bus.drawio.svg" width="325" /></p>
 </section>
 <section id="serverclient-architecture" class="slide level2">
 <h2>server/client architecture</h2>
@@ -564,8 +582,12 @@ services</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="figures/message_bus.drawio.svg" width="325" /></p>
-<p><img data-src="figures/can_bus.drawio.svg" class="fragment"
-width="325" /></p>
+<div class="fragment">
+<figure>
+<img data-src="figures/can_bus.drawio.svg" width="325" alt="CAN bus" />
+<figcaption aria-hidden="true">CAN bus</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -609,15 +631,39 @@ duplicates</li>
 </ul>
 </div>
 </div>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="okeyo2023beginners">[11]</span> and <span class="citation"
+data-cites="inngest2022message">[12]</span></p>
+</div>
 <aside class="notes">
 <p>https://www.inngest.com/blog/message-bus-vs-queues</p>
 </aside>
 </section>
 <section id="layered" class="slide level2">
 <h2>layered</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
 </section>
 <section id="onion" class="slide level2">
 <h2>onion</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>appropriate for long-lived business applications
+<ul>
+<li>as well as applications with complex behavior</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
 </section></section>
 <section id="mvc" class="title-slide slide level1">
 <h1>MVC</h1>
@@ -910,6 +956,32 @@ explained in plain english.”</span> <a href="
                     " class="uri">
                 https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
 </a>, 20-Aug-2020.</div>
+</div>
+<div id="ref-stec2024inversion" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">A.
+Stec, <span>“Inversion of control.”</span> <a href="
+                    https://www.baeldung.com/cs/ioc
+                    " class="uri">
+                    https://www.baeldung.com/cs/ioc
+</a>, 16-Feb-2024.</div>
+</div>
+<div id="ref-okeyo2023beginners" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">B.
+Okeyo, <span>“A beginners guide to understanding message bus
+architecture.”</span> <a href="
+                    https://dev.to/billy_de_cartel/a-beginners-guide-to-understanding-message-bus-architecture-22ec
+                    " class="uri">
+                    https://dev.to/billy_de_cartel/a-beginners-guide-to-understanding-message-bus-architecture-22ec
+</a>, 24-Apr-2023.</div>
+</div>
+<div id="ref-inngest2022message" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">I.
+Inc., <span>“Message queue vs message bus: The practical
+differences.”</span> <a href="
+                    https://www.inngest.com/blog/message-bus-vs-queues
+                    " class="uri">
+                    https://www.inngest.com/blog/message-bus-vs-queues
+</a>, 29-Jun-2022.</div>
 </div>
 </div>
 </section>
