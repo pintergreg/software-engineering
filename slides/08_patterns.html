@@ -529,11 +529,96 @@ height="300" /></p>
 <p>increases reusability</p>
 </div>
 </section></section>
+<section>
 <section id="topologies" class="title-slide slide level1">
 <h1>topologies</h1>
 
 </section>
-
+<section id="serverclient-architecture" class="slide level2">
+<h2>server/client architecture</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>consists of two parts
+<ul>
+<li>client and server</li>
+</ul></li>
+<li>distributed</li>
+<li>always the client initiates a connection to the server</li>
+<li>while the server process always waits for requests from any
+client</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/server_client.drawio.svg" width="325" /></p>
+</div>
+</div>
+</section>
+<section id="message-bus" class="slide level2">
+<h2>message bus</h2>
+<div class="columns">
+<div class="column mt-2" style="width:50%;">
+<ul>
+<li>shared communication channel that connects multiple components or
+services</li>
+<li>simple, extensible</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/message_bus.drawio.svg" width="325" /></p>
+<p><img data-src="figures/can_bus.drawio.svg" class="fragment"
+width="325" /></p>
+</div>
+</div>
+</section>
+<section id="message-bus-types" class="slide level2">
+<h2>message bus types</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>models</strong></p>
+<ul>
+<li>publish-subscribe model
+<ul>
+<li>messages are published to a specific topic, and all subscribed
+receivers receive those messages</li>
+<li>one to many</li>
+</ul></li>
+<li>point-to-point model
+<ul>
+<li>messages are sent directly from a sender to a specific receiver,
+ensuring that only that recipient processes the message</li>
+<li>one to one</li>
+</ul></li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<p><strong>delivery quaranties</strong></p>
+<ul>
+<li>at most once
+<ul>
+<li>push based</li>
+<li>no retries</li>
+</ul></li>
+<li>at least once
+<ul>
+<li>delivery confirmation</li>
+<li>(typically) pull based</li>
+</ul></li>
+<li>exactly once
+<ul>
+<li>at least once, extended by guarantee that there will be no
+duplicates</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>https://www.inngest.com/blog/message-bus-vs-queues</p>
+</aside>
+</section>
+<section id="layered" class="slide level2">
+<h2>layered</h2>
+</section>
+<section id="onion" class="slide level2">
+<h2>onion</h2>
+</section></section>
 <section id="mvc" class="title-slide slide level1">
 <h1>MVC</h1>
 
