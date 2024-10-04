@@ -95,6 +95,21 @@ read about the design patterns in details, for example at [refactoring.guru](htt
 :::::
 
 
+## GoF design patterns in functional programming
+
+| OO pattern        | FP pattern |
+|-------------------|------------|
+| factory pattern   | function   |
+| strategy pattern  | function   |
+| decorator pattern | function   |
+| visitor pattern   | function   |
+| ...               | ...        |
+
+Peter Norvig [demonstrated](http://www.norvig.com/design-patterns/) that 16 out of the 23 patterns are simplified or eliminated by language features in Lisp or Dylan (1998) [@norvig1998design]
+
+[more about](https://fsharpforfunandprofit.com/fppatterns/) it from Scott Wlaschin [@wlaschin2014functional]
+
+
 # You aren't gonna need it (YAGNI)
 
 :::::::::::: {.columns}
@@ -186,6 +201,9 @@ advantages
 
 
 ## Liskov substitution principle
+
+> if class A is a subtype of class B, B should be able to replaced with A without disrupting the behavior of the program
+
 
 - named after Barbara Liskov
 
