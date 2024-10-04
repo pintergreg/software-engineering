@@ -592,6 +592,7 @@ number of layers in a layered architecture is not set to a specific number
 **disadvantages**
 
 - scalability is difficult
+    - not well-suited for large projects
 - can be difficult to maintain
     - a change in a single layer can affect the entire system because it operates as a single unit
 - a layer depends on the layer above it
@@ -623,16 +624,27 @@ based on [@palermo2008onion]
 ## hexagonal (ports & adapters)
 
 :::::::::::: {.columns}
-::::::::: {.column width="55%"}
+::::::::: {.column width="60%"}
+- invented by Alistair Cockburn [@cockburn2010hexagonal]
+- application should be equally controllable by users, other applications, or automated tests
+    - for the business logic, it makes no difference whether it is invoked from a user interface, a REST API, or a test framework
+- infrastructure modernization should be possible without changing the business logic
+<!-- - easy to mock -->
 
 :::::::::
-::::::::: {.column width="45%"}
+::::::::: {.column width="40%"}
 ![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300}
 :::::::::
 ::::::::::::
 
+::: {.text-smaller}
+based on [@woltmann2023hexagonal]
+:::
+
 
 # MVC
+
+MVC pattern was implemented as early as 1974 in the Smalltalk project
 
 
 # user statistics example
