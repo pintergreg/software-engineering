@@ -473,6 +473,41 @@ LIMIT 1;
 on the other hand, most of these are present in all the three architectures!
 :::
 
+
+# record architecture decisions
+
+::: {.text-small}
+in each architecture decision record, write these sections:
+:::
+
+```markdown
+# Title
+
+## Status
+
+What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.?
+
+## Context
+
+What is the issue that we're seeing that is motivating this decision or change?
+
+## Decision
+
+What is the change that we're proposing and/or doing?
+
+## Consequences
+
+What becomes easier or more difficult to do because of this change?
+```
+
+::: {.text-small}
+ADR template by Michael Nygard from [Documenting architecture decisions](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions)
+:::
+
+::: notes
+You can use [adr-tools](https://github.com/npryce/adr-tools) to manage the markdown based (Nygard stlye) the ADR files.
+:::
+
 # references
 
 ::: {#refs}
