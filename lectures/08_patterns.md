@@ -164,6 +164,8 @@ source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)
 
 # SOLID principles
 
+> SOLID is a mnemonic acronym for five design principles intended to make object-oriented designs more understandable, flexible, and maintainable [@enwiki:1237710587]
+
 - single responsibility principle
 - open-closed principle
 - Liskov substitution principle
@@ -771,5 +773,5 @@ You can use [adr-tools](https://github.com/npryce/adr-tools) to manage the markd
 
 # references
 
-::: {#refs}
+::: {#refs .text-smaller}
 :::
