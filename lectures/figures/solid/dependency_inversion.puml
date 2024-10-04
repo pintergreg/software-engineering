@@ -1,0 +1,23 @@
+@startuml
+skin rose
+rectangle before {
+package A {
+  class Apple
+}
+package B {
+  class Banana
+}
+A.Apple -right-|> B.Banana: references
+}
+rectangle after {
+package A {
+  class Apple
+  interface Interface
+}
+package B {
+  class Banana
+}
+after.A.Apple -down-|> after.A.Interface: references
+after.B.Banana -right-> after.A.Interface
+}
+@enduml
