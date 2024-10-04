@@ -4,14 +4,28 @@ skin rose
 package database <<Database>> {
 }
 
-package UI {
+package UI #efefef {
   class GUI {
     drawProgressBar()
     drawActivityMatrix()
     loadProfilePicture()
   }
+  class AggregatedData {
+    String name
+    Integer id
+    DateTime registration
+    Float progress
+    List[List] activityMatrix
+  }
+  class ServerConnector {
+  }
+  'note as n
+  '  different codebase
+  'end note
 }
-package UserStatistics {
+
+
+package UserStatistics as us{
   class UserData {
     String name
     Integer id
@@ -40,18 +54,22 @@ package UserStatistics {
     Float progress
     List[List] activityMatrix
   }
+  class ClientConnector {
+  }
 }
 
-AggregatedData .right. GUI
-AggregatedData -up- DataAggregator
-DataCollector -right-> DataAggregator
-DataAggregator -right-> GUI
-
+UI.AggregatedData -up- GUI
+us.AggregatedData -up-* DataAggregator
+DataCollector <-right- DataAggregator
+'DataAggregator --> GUI
+ClientConnector <-right- ServerConnector
+us.ClientConnector --> DataAggregator
+ServerConnector <-- GUI
 
 Result -left-o Activity
 UserData o-- Activity
 
-DataCollector -- UserData
+DataCollector *-- UserData
 
-DataCollector -left- database
+DataCollector -left-> database
 @enduml

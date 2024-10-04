@@ -42,7 +42,7 @@ package UserStatistics {
   }
 }
 
-AggregatedData -right- GUI
+AggregatedData .right. GUI
 AggregatedData -up- DataAggregator
 DataCollector -right-> DataAggregator
 DataAggregator -right-> GUI
