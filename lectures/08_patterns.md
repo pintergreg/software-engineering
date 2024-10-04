@@ -444,9 +444,41 @@ based on [@stec2024inversion]
 
 # topologies
 
-![](figures/server_client.drawio.svg){width=325}
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+Object-oriented design (OOD) is the process of planning a system of interacting objects to solve a software problem [@enwiki:1230588445].
 
-![](figures/message_bus.drawio.svg){width=325}
+::: {.fragment data-fragment-index=1}
+control flow? structure?
+
+![historically grown architecture<br>based on [@woltmann2023hexagonal]](figures/legacy_structure.drawio.svg){width=400}
+:::
+
+
+
+<!--
+::: {.fragment data-fragment-index=1 .mt-2}
+![](figures/message_bus.drawio.svg){width=200 .m-0}
+
+![](figures/server_client.drawio.svg){width=200 .m-0}
+:::-->
+
+:::::::::
+::::::::: {.column width="40%" .fragment data-fragment-index=2}
+
+<!-- ![](figures/message_bus.drawio.svg){width=200 .m-0} -->
+
+![](figures/server_client.drawio.svg){width=200 .m-0}
+
+![](figures/layered_gray.drawio.svg){width=200 .m-0}
+
+<!--![](figures/layered.drawio.svg){width=175 .m-0}-->
+
+![based on ](figures/hexagonal_gray.drawio.svg){width=175 .m-0}
+
+<!-- ![](figures/onion_gray.drawio.svg){width=175 .m-0} -->
+:::::::::
+::::::::::::
 
 
 ## server/client architecture
@@ -523,6 +555,18 @@ https://www.inngest.com/blog/message-bus-vs-queues
 
 
 ## layered
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+
+:::::::::
+::::::::: {.column width="50%"}
+
+:::::::::
+::::::::::::
+
+
+## hexagonal (ports & adapters)
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
