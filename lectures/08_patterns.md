@@ -342,6 +342,81 @@ increases reusability
 # topologies
 
 
+## server/client architecture
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- consists of two parts
+    - client and server
+- distributed
+- always the client initiates a connection to the server
+- while the server process always waits for requests from any client
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/server_client.drawio.svg){width=325}
+:::::::::
+::::::::::::
+
+
+## message bus
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-2}
+
+- shared communication channel that connects multiple components or services
+- simple, extensible
+
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/message_bus.drawio.svg){width=325}
+
+![](figures/can_bus.drawio.svg){width=325 .fragment}
+:::::::::
+::::::::::::
+
+
+## message bus types
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+**models**
+
+- publish-subscribe model
+    - messages are published to a specific topic, and all subscribed receivers receive those messages
+    - one to many
+- point-to-point model
+    - messages are sent directly from a sender to a specific receiver, ensuring that only that recipient processes the message
+    - one to one
+
+:::::::::
+::::::::: {.column width="50%" .fragment}
+**delivery quaranties**
+
+- at most once
+    - push based
+    - no retries
+- at least once
+    - delivery confirmation
+    - (typically) pull based
+- exactly once
+    - at least once, extended by guarantee that there will be no duplicates
+
+
+:::::::::
+::::::::::::
+
+::: notes
+https://www.inngest.com/blog/message-bus-vs-queues
+:::
+
+
+## layered
+
+
+## onion
+
+
+
 # MVC
 
 
