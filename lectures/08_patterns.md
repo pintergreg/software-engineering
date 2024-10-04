@@ -150,6 +150,24 @@ Peter Norvig [demonstrated](http://www.norvig.com/design-patterns/) that 16 out 
 :::
 
 
+# coupling
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-5}
+- the degree of interdependence between software modules
+- coupling is usually contrasted with cohesion
+    - low coupling often correlates with high cohesion, and vice versa
+:::::::::
+::::::::: {.column width="45%"}
+![from [Wikimedia](https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg) | public domain](figures/borrowed/CouplingVsCohesion.svg)
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-2}
+source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) [@enwiki:1245630908]
+:::
+
+
 # SOLID principles
 
 - single responsibility principle
@@ -166,12 +184,9 @@ Peter Norvig [demonstrated](http://www.norvig.com/design-patterns/) that 16 out 
 :::
 
 ::: notes
-https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
+- https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
+- https://devopedia.org/solid-design-principles#Merson-2020
 :::
-
-##
-
-https://devopedia.org/solid-design-principles#Merson-2020
 
 
 ## single responsibility principle
@@ -303,23 +318,6 @@ this example violates the Liskov substitution principle
 
 ## dependency inversion principle
 
-
-# coupling
-
-:::::::::::: {.columns}
-::::::::: {.column width="55%" .mt-5}
-- the degree of interdependence between software modules
-- coupling is usually contrasted with cohesion
-    - low coupling often correlates with high cohesion, and vice versa
-:::::::::
-::::::::: {.column width="45%"}
-![from [Wikimedia](https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg) | public domain](figures/borrowed/CouplingVsCohesion.svg)
-:::::::::
-::::::::::::
-
-::: {.text-smaller .mt-2}
-source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) [@enwiki:1245630908]
-:::
 
 
 # topologies
