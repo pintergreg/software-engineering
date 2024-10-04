@@ -374,6 +374,7 @@ send only the aggregated data
 :::::::::
 ::::::::::::
 
+
 ## architecture v2 - class
 
 :::::::::::: {.columns}
@@ -384,6 +385,23 @@ send only the aggregated data
 data collector still has the whole user data but that aligns with its purpose
 
 data aggregator calculates everything and the UI only displays it
+:::::::::
+::::::::::::
+
+
+## architecture v2.1 - class
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+![](figures/user_statistics/class_3.svg){width=600}
+:::::::::
+::::::::: {.column width="30%" .mt-2}
+![](figures/user_statistics/server_client.drawio.svg){height=100}
+
+UI might be on a client
+
+different code base, different language
+
 :::::::::
 ::::::::::::
 
