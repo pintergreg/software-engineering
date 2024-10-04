@@ -399,6 +399,19 @@ code is based on [@erinc2020solid]
 
 > states that many client-specific interfaces are better than one general-purpose interface. Clients should not be forced to implement a function they do no need.
 
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/solid/interface_segregation_pre.svg){height=275}
+:::::::::
+::::::::: {.column width="50%" .fragment}
+![](figures/solid/interface_segregation.svg){height=275}
+:::::::::
+::::::::::::
+
+:::{.text-smaller}
+example based on [@oloruntoba2024solid]
+:::
+
 
 ## dependency inversion principle
 

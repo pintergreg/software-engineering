@@ -1,0 +1,19 @@
+@startuml
+skin rose
+
+interface ShapeProperties{
+  +area()
+  +volume()
+}
+
+class Square
+class Cube
+
+Cube -up-|> ShapeProperties
+Square -up-|> ShapeProperties
+
+note left of Square
+  volume?
+end note
+
+@enduml
