@@ -1,0 +1,25 @@
+@startuml
+skin rose
+participant UI as ui
+participant "data collector" as dc
+database database as db
+
+dc -> db: query activity
+activate db
+db -> dc: aggregated activity
+deactivate db
+
+'rnote over db
+'  run select
+'endrnote
+
+dc -> db: query progress
+activate db
+
+db -> dc: calculated progress
+deactivate db
+activate dc
+dc -> ui: uset statistics
+deactivate dc
+
+@enduml

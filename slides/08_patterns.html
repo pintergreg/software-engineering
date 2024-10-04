@@ -305,6 +305,25 @@ Principles and Design Patterns</em></a> about software rot</li>
 <p>a class should do one thing and therefore it should have only a
 single reason to change</p>
 </blockquote>
+<div class="columns">
+<div class="column text-smaller" style="width:50%;">
+<p>Unix philosophy</p>
+<p>Make each program do one thing well. To do a new job, build afresh
+rather than complicate old programs by adding new “features”.</p>
+</div><div class="column text-smaller" style="width:50%;">
+<p>advantages</p>
+<ul>
+<li>testing is easier
+<ul>
+<li>fewer test cases required</li>
+</ul></li>
+<li>less dependencies
+<ul>
+<li>to other modules or classes</li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="open-closed-principle" class="slide level2">
 <h2>open-closed principle</h2>
@@ -553,7 +572,14 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb6-1"><a href="#c
 <h2>architecture v3 - SQL</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
 <p><img data-src="figures/user_statistics/component_3.svg" /></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p><img data-src="figures/user_statistics/sequence.svg" /></p>
+</div>
+</div>
 </div><div class="column pre-width-100" style="width:50%;">
 <p><span class="text-smaller">for the progress:</span></p>
 <div class="sourceCode" id="cb7"><pre
@@ -592,6 +618,42 @@ but that would also be a dependency</li>
 architectures!</p>
 </div>
 </section></section>
+<section id="record-architecture-decisions"
+class="title-slide slide level1">
+<h1>record architecture decisions</h1>
+<div class="text-small">
+<p>in each architecture decision record, write these sections:</p>
+</div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Title</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Status</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.?</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>What is the issue that we&#39;re seeing that is motivating this decision or change?</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>What is the change that we&#39;re proposing and/or doing?</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consequences</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>What becomes easier or more difficult to do because of this change?</span></code></pre></div>
+<div class="text-small">
+<p>ADR template by Michael Nygard from <a
+href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions">Documenting
+architecture decisions</a></p>
+</div>
+<aside class="notes">
+<p>You can use <a
+href="https://github.com/npryce/adr-tools">adr-tools</a> to manage the
+markdown based (Nygard stlye) the ADR files.</p>
+</aside>
+</section>
+
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
 <div id="refs" class="references csl-bib-body" role="list">
