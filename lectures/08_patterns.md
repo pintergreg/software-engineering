@@ -217,10 +217,14 @@ advantages
 
 ## Liskov substitution principle
 
-> if class A is a subtype of class B, B should be able to replaced with A without disrupting the behavior of the program
+> if class A is a subtype of class B, B should be able to replaced with A without disrupting the behavior of the program [@millington2019solid]
 
-
+::: {.text-smaller .mt-3}
 - named after Barbara Liskov
+- presented first in 1987 [@liskov1987data]
+- circle-ellipse problem / square–rectangle problem
+    - existence of the circle–ellipse problem is used to criticize object-oriented programming [@enwiki:1165573623]
+:::
 
 
 ## Liskov substitution principle - example
@@ -281,6 +285,10 @@ class Square(Rectangle):
 :::::::::
 ::::::::::::
 
+::: {.text-smaller}
+code is based on [@erinc2020solid]
+:::
+
 
 ## Liskov substitution principle - example
 
@@ -309,6 +317,10 @@ Expected area of 20, got 100
 ```
 
 this example violates the Liskov substitution principle
+
+::: {.text-smaller}
+code is based on [@erinc2020solid]
+:::
 
 
 ## interface segregation principle
