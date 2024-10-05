@@ -671,8 +671,10 @@ width="200" /></p>
 <!--![](figures/layered.drawio.svg){width=175 .m-0}-->
 <figure>
 <img data-src="figures/hexagonal_gray.drawio.svg" class="m-0"
-width="175" alt="based on" />
-<figcaption aria-hidden="true">based on</figcaption>
+width="175" alt="based on Cth027’s figure | CC BY-SA" />
+<figcaption aria-hidden="true"><span class="text-small">based on <a
+href="https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg">Cth027’s
+figure</a> | CC BY-SA</span></figcaption>
 </figure>
 <!-- ![](figures/onion_gray.drawio.svg){width=175 .m-0} -->
 </div>
@@ -791,7 +793,7 @@ number</p>
 </ul></li>
 </ul>
 </div><div class="column" style="width:35%;">
-<p><img data-src="figures/layered_4_gray.drawio.svg" width="300" /></p>
+<p><img data-src="figures/layered_4.drawio.svg" height="400" /></p>
 </div>
 </div>
 </section>
@@ -813,7 +815,10 @@ from the other layers</li>
 </div><div class="column" style="width:50%;">
 <p><strong>disadvantages</strong></p>
 <ul>
-<li>scalability is difficult</li>
+<li>scalability is difficult
+<ul>
+<li>not well-suited for large projects</li>
+</ul></li>
 <li>can be difficult to maintain
 <ul>
 <li>a change in a single layer can affect the entire system because it
@@ -828,35 +833,160 @@ operates as a single unit</li>
 data-cites="baeldung20214layered">[17]</span></p>
 </div>
 </section>
+<section id="onion-architecture" class="slide level2">
+<h2>onion architecture</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>popularized by Jeffrey Palermo</li>
+<li>code can depend on layers more central, but code cannot depend on
+layers further out from the core
+<ul>
+<li>all coupling is toward the center</li>
+</ul></li>
+<li>the database is not the center, it is external
+<ul>
+<li>the data model is in focus, whereas in layered data is the
+foundation</li>
+</ul></li>
+<li>relies on the dependency inversion principle</li>
+<li>appropriate for long-lived business applications
+<ul>
+<li>also applications with complex behavior</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/onion.drawio.svg" width="350" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="palermo2008onion">[18]</span></p>
+</div>
+<aside class="notes">
+<ul>
+<li><a
+href="https://softwareengineering.stackexchange.com/questions/319747/onion-architecture-vs-3-layered-architecture">onion
+vs layered</a></li>
+</ul>
+</aside>
+</section>
+<section id="hexagonal---motivation" class="slide level2">
+<h2>hexagonal - motivation</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>invented by Alistair Cockburn <span class="citation"
+data-cites="cockburn2010hexagonal"><strong>cockburn2010hexagonal?</strong></span></li>
+<li>application should be equally controllable by users, other
+applications, or automated tests
+<ul>
+<li>for the business logic, it makes no difference whether it is invoked
+from a user interface, a REST API, or a test framework</li>
+</ul></li>
+<li>infrastructure modernization should be possible without changing the
+business logic <!-- - easy to mock --></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<!-- ![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300} -->
+<p><img data-src="figures/hexagonal_extend.drawio.svg"
+width="325" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="woltmann2023hexagonal">[14]</span></p>
+</div>
+</section>
 <section id="hexagonal-ports-adapters" class="slide level2">
 <h2>hexagonal (ports &amp; adapters)</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-
+<dl>
+<dt>advantages</dt>
+<dd>
+<ul>
+<li>modifiability</li>
+<li>isolates responsibilities</li>
+<li>once the ports are defined, the work on the components can be
+divided among developers</li>
+</ul>
+</dd>
+<dt>disadvantages</dt>
+<dd>
+<ul>
+<li>the effort of port-adapter implementation is non-negligible</li>
+<li>for smaller applications, the extra effort is not worth it</li>
+</ul>
+</dd>
+</dl>
 </div><div class="column" style="width:50%;">
-
-</div>
-</div>
-</section>
-<section id="onion" class="slide level2">
-<h2>onion</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<!-- ![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300} -->
+<p><img data-src="figures/hexagonal_extend.drawio.svg"
+width="325" /></p>
+<div class="fragment text-smaller">
 <ul>
-<li>appropriate for long-lived business applications
+<li>hexagonal architecture does not specify what is inside the
+application hexagon</li>
+<li>represents a single design decision:
 <ul>
-<li>as well as applications with complex behavior</li>
+<li>wrap your application in an API and put tests around it</li>
 </ul></li>
 </ul>
+</div>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="woltmann2023hexagonal">[14]</span></p>
+</div>
+</section>
+<section id="hexagonal-vs.-layered" class="slide level2">
+<h2>hexagonal vs. layered</h2>
+<!--
+- hexagonal architecture does not specify what is inside the application hexagon
+- represents a single design decision:
+    - wrap your application in an API and put tests around it
+-->
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img data-src="figures/hexagonal.drawio.svg" width="350" /></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p><img data-src="figures/hexagonal_extend.drawio.svg"
+width="350" /></p>
+</div>
+</div>
 </div><div class="column" style="width:50%;">
-
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img data-src="figures/wide_layered.drawio.svg" width="350" /></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p><img data-src="figures/extend_layered.drawio.svg" width="350" /></p>
 </div>
 </div>
-<p><span class="citation" data-cites="palermo2008onion">[18]</span></p>
+</div>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p>can be extend without changing the business logic</p>
+</div>
+<div class="text-smaller fragment" data-fragment-index="2">
+<p>it is very similar to the onion and (the clean architecture <span
+class="citation"
+data-cites="martin2012clean"><strong>martin2012clean?</strong></span>)</p>
+</div>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="woltmann2023hexagonal">[14]</span></p>
+</div>
 </section></section>
-<section id="mvc" class="title-slide slide level1">
-<h1>MVC</h1>
-
+<section id="model-view-controller" class="title-slide slide level1">
+<h1>Model-View-Controller</h1>
+<p>MVC pattern was implemented as early as 1974 in the Smalltalk
+project</p>
 </section>
 
 <section>
