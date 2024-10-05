@@ -474,7 +474,7 @@ control flow? structure?
 
 <!--![](figures/layered.drawio.svg){width=175 .m-0}-->
 
-![based on ](figures/hexagonal_gray.drawio.svg){width=175 .m-0}
+![[based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg) | CC BY-SA]{.text-small}](figures/hexagonal_gray.drawio.svg){width=175 .m-0}
 
 <!-- ![](figures/onion_gray.drawio.svg){width=175 .m-0} -->
 :::::::::
@@ -570,7 +570,7 @@ number of layers in a layered architecture is not set to a specific number
     - responsible for handling data, databases
 :::::::::
 ::::::::: {.column width="35%"}
-![](figures/layered_4_gray.drawio.svg){width=300}
+![](figures/layered_4.drawio.svg){height=400}
 :::::::::
 ::::::::::::
 
@@ -604,15 +604,21 @@ based on [@baeldung20214layered]
 :::
 
 
-## onion
+## onion architecture
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%"}
+::::::::: {.column width="60%"}
+- popularized by Jeffrey Palermo
+- code can depend on layers more central, but code cannot depend on layers further out from the core
+    - all coupling is toward the center
+- the database is not the center, it is external
+    - the data model is in focus, whereas in layered data is the foundation
+- relies on the dependency inversion principle
 - appropriate for long-lived business applications
-    - as well as applications with complex behavior
+    - also applications with complex behavior
 :::::::::
-::::::::: {.column width="50%"}
-
+::::::::: {.column width="40%"}
+![](figures/onion.drawio.svg){width=350}
 :::::::::
 ::::::::::::
 
@@ -620,8 +626,12 @@ based on [@baeldung20214layered]
 based on [@palermo2008onion]
 :::
 
+::: notes
+- [onion vs layered](https://softwareengineering.stackexchange.com/questions/319747/onion-architecture-vs-3-layered-architecture)
+:::
 
-## hexagonal (ports & adapters)
+
+## hexagonal - motivation
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
@@ -633,7 +643,8 @@ based on [@palermo2008onion]
 
 :::::::::
 ::::::::: {.column width="40%"}
-![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300}
+<!-- ![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300} -->
+![](figures/hexagonal_extend.drawio.svg){width=325}
 :::::::::
 ::::::::::::
 
@@ -642,7 +653,82 @@ based on [@woltmann2023hexagonal]
 :::
 
 
-# MVC
+## hexagonal (ports & adapters)
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+advantages
+
+:    - modifiability
+     - isolates responsibilities
+     - once the ports are defined, the work on the components can be divided among developers
+
+disadvantages
+
+:    - the effort of port-adapter implementation is non-negligible
+     - for smaller applications, the extra effort is not worth it 
+:::::::::
+::::::::: {.column width="50%"}
+<!-- ![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300} -->
+![](figures/hexagonal_extend.drawio.svg){width=325}
+
+::: {.fragment .text-smaller}
+- hexagonal architecture does not specify what is inside the application hexagon
+- represents a single design decision:
+    - wrap your application in an API and put tests around it
+:::
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+based on [@woltmann2023hexagonal]
+:::
+
+
+## hexagonal vs. layered
+
+<!--
+- hexagonal architecture does not specify what is inside the application hexagon
+- represents a single design decision:
+    - wrap your application in an API and put tests around it
+-->
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![](figures/hexagonal.drawio.svg){width=350}
+:::
+::: {.fragment data-fragment-index=1}
+![](figures/hexagonal_extend.drawio.svg){width=350}
+:::
+::::::
+:::::::::
+::::::::: {.column width="50%"}
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![](figures/wide_layered.drawio.svg){width=350}
+:::
+::: {.fragment data-fragment-index=1}
+![](figures/extend_layered.drawio.svg){width=350}
+:::
+::::::
+:::::::::
+::::::::::::
+
+::: {.fragment data-fragment-index=1}
+can be extend without changing the business logic
+:::
+
+::: {.text-smaller .fragment data-fragment-index=2}
+it is very similar to the onion and (the clean architecture [@martin2012clean])
+:::
+
+::: {.text-smaller}
+based on [@woltmann2023hexagonal]
+:::
+
+
+# Model-View-Controller
 
 MVC pattern was implemented as early as 1974 in the Smalltalk project
 
