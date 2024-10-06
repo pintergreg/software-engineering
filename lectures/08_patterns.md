@@ -730,10 +730,19 @@ based on [@woltmann2023hexagonal]
 
 # Model-View-Controller
 
-MVC pattern was implemented as early as 1974 in the Smalltalk project
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- architectural pattern
+- MVC pattern was implemented as early as 1974 in the Smalltalk project
+
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/mvc.drawio.svg){width=300}
+:::::::::
+::::::::::::
 
 
-# MVC - MVP - MVVM
+## MVC - MVP - MVVM
 
 :::::::::::: {.columns}
 ::::::::: {.column width="30%"}
