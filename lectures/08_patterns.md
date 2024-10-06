@@ -733,6 +733,24 @@ based on [@woltmann2023hexagonal]
 MVC pattern was implemented as early as 1974 in the Smalltalk project
 
 
+# MVC - MVP - MVVM
+
+:::::::::::: {.columns}
+::::::::: {.column width="30%"}
+![](figures/mvc.drawio.svg){width=300}
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/mvp.drawio.svg){width=300}
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/mvvm.drawio.svg){width=300}
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+:::
+
+
 # user statistics example
 
 :::::::::::: {.columns}
