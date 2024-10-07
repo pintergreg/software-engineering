@@ -728,16 +728,35 @@ based on [@woltmann2023hexagonal]
 :::
 
 
-# Model-View-Controller
+# Model-View-Controller [@enwiki:1244967192]
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%"}
+::::::::: {.column width="55%"}
 - architectural pattern
 - MVC pattern was implemented as early as 1974 in the Smalltalk project
 
+::: {.text-smaller .mt-2}
+- view is responsible for rendering UI
+- controller responds to the user input and performs interactions on the data model
+- model is responsible for managing the data
+:::
+
+::: {.text-smaller .mt-2}
+- the view and the model are tightly coupled 
+- view is monolithic and usually couples tightly with the UI framework
+    - unit testing the view becomes difficult
+:::
+
 :::::::::
-::::::::: {.column width="50%"}
+::::::::: {.column width="45%"}
 ![](figures/mvc.drawio.svg){width=300}
+
+<!--::: {.text-smaller}
+- view is responsible for rendering UI
+- controller responds to the user input and performs interactions on the data model
+- model is responsible for managing the data
+:::-->
+
 :::::::::
 ::::::::::::
 
@@ -769,6 +788,7 @@ WPF, AngularJS
 ::::::::::::
 
 ::: {.text-smaller}
+figures based on [@pedamkar2023mvc]
 :::
 
 
