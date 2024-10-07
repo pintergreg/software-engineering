@@ -91,5 +91,12 @@ This may be considered as a part of the communication overhead, it is an importa
 
 
 
+# quality - time - cost
+
+![](figures/quality_time_cost.drawio.svg){height=375}
 
 
+# references
+
+::: {#refs}
+:::
