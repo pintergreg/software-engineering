@@ -44,7 +44,26 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 :::::::::
 ::::::::::::
 
+
+## experiments
+
+
+## fail fast
+
+
 # identify risks
+
+
+## Rust-GCC example
+
+| Risk | Impact<br>(1-3) | Likelihood<br>(0-10) | Risk<br>(I * L) | Mitigation |
+|-----------|---:|---:|---:|----------------|
+| Rust Language Changes | 2 | 7 | 14 | Target a specific Rustc version |
+| Missing GCC 13 upstream window | 1 | 6 | 6 | Merge in GCC 14 and be proactive about reviews |
+
+::: {.text-smaller}
+source: [Rust-GCC / Reporting](https://github.com/Rust-GCC/Reporting/blob/main/2022/2022-04-11-report.org)
+:::
 
 
 # risk storming
