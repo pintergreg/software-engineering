@@ -20,14 +20,14 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 |    1 | 2024-09-10 | intro, software architecture, SDLC       |                    |
 |    2 | 2024-09-17 | scrum, kanban                            |                    |
 |    3 | 2024-09-24 | requirement analysis, user story mapping | project assignment |
-|    4 | 2024-10-01 | UML, C4                                  | workshop           |
-|    5 | 2024-10-08 | SOLID, clean code                        | project workshop   |
-|    6 | 2024-10-15 | legacy code, review                      | "coding" example   |
-|    7 | 2024-10-22 | testing, review                          | project workshop   |
+|    4 | 2024-10-01 | UML, C4                                  | project workshop   |
+|    5 | 2024-10-08 | design patterns                          | project workshop   |
+|    6 | 2024-10-15 | implementation planning, clean clode     | project workshop   |
+|    7 | 2024-10-22 | legacy code, review                      | project workshop   |
 |    8 | 2024-10-29 | **school holiday**                       |                    |
-|    9 | 2024-11-05 | dependency management                    | VCS basics         |
-|   10 | 2024-11-12 | CI, automatization, devops               | project workshop   |
-|   11 | 2024-11-19 | project workshop                         | project workshop   |
+|    9 | 2024-11-05 | testing, review                          | VCS basics         |
+|   10 | 2024-11-12 | dependency management                    | project workshop   |
+|   11 | 2024-11-19 | CI, automatization, devops               | project workshop   |
 |   12 | 2024-11-26 | summary, course feedback                 | project workshop   |
 |   13 | 2024-12-03 | midterm                                  | project demo       |
 |   14 | 2024-12-10 | no planned lecture                       |                    |
@@ -41,10 +41,10 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 |    1 | 2024-09-10 | intro, software architecture, SDLC       |                    |
 |    2 | 2024-09-17 | scrum, kanban                            |                    |
 |    3 | 2024-09-24 | requirement analysis, user story mapping | project assignment |
-|    4 | 2024-10-01 | UML, C4                                  | UML in practice    |
-|    5 | 2024-10-08 | SOLID, clean code                        | project workshop   |
-|    6 | 2024-10-15 | legacy code, review                      | "coding" example   |
-|    7 | 2024-10-22 | testing, review                          | project workshop   |
+|    4 | 2024-10-01 | UML, C4                                  | project workshop   |
+|    5 | 2024-10-08 | design patterns                          | project workshop   |
+|    6 | 2024-10-15 | implementation planning, clean clode     | project workshop   |
+|    7 | 2024-10-22 | legacy code, review                      | project workshop   |
 
 :::
 
@@ -54,9 +54,9 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 | week | date       | lecture                                  | practical class    |
 |-----:|:----------:|:----------------------------------------:|:------------------:|
 |    8 | 2024-10-29 | **school holiday**                       |                    |
-|    9 | 2024-11-05 | dependency management                    | VCS basics         |
-|   10 | 2024-11-12 | CI, automatization, devops               | project workshop   |
-|   11 | 2024-11-19 | project workshop                         | project workshop   |
+|    9 | 2024-11-05 | testing, review                          | VCS basics         |
+|   10 | 2024-11-12 | dependency management                    | project workshop   |
+|   11 | 2024-11-19 | CI, automatization, devops               | project workshop   |
 |   12 | 2024-11-26 | summary, course feedback                 | project workshop   |
 |   13 | 2024-12-03 | midterm                                  | project demo       |
 |   14 | 2024-12-10 | no planned lecture                       |                    |
