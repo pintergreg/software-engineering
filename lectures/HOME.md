@@ -87,11 +87,6 @@ C4 model
 
 1. [design patterns](/software-engineering/slides/08_patterns.html)
 
-<!--1. week 4 summary
-2. entity relationship diagram
-3. SOLID
-4. MCV, separation of concerns-->
-
 ### readings
 
 - [The Full-stack Software Design & Architecture Map](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/) - by Khalil Stemmler
