@@ -59,6 +59,7 @@ user story mapping
 #### optional
 
 - [What is a Data Flow Diagram](https://www.lucidchart.com/pages/data-flow-diagram)
+- [Mastering Python’s Hidden Power: Monad Design Patterns for Smarter Code](https://medium.com/@hk151817/mastering-pythons-hidden-power-monad-design-patterns-for-smarter-code-123e509553d1)
      
 ## week 4
 
@@ -70,14 +71,57 @@ user story mapping
 
 UML
 
-:    - [Unified Modeling Language (UML) Diagrams](https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/)
+:    - [What is UML 2?](https://sparxsystems.com/resources/tutorials/uml2/)
+     - [Unified Modeling Language (UML) Diagrams](https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/)
 
 C4 model
 
 :    - [C4 model](https://c4model.com/)
      - [The C4 Model for Software Architecture](https://www.infoq.com/articles/C4-architecture-model/) - by Simon Brown
 
+### optional
+
+- [What is object-oriented programming (OOP)? Explained in depth](https://www.educative.io/blog/object-oriented-programming)
+
 ## week 5
 
-1. week 4 summary
-2. SOLID
+1. [design patterns](/software-engineering/slides/08_patterns.html)
+
+<!--1. week 4 summary
+2. entity relationship diagram
+3. SOLID
+4. MCV, separation of concerns-->
+
+### readings
+
+- [The Full-stack Software Design & Architecture Map](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/) - by Khalil Stemmler
+
+SOLID
+
+:    - [A Solid Guide to SOLID Principles](https://www.baeldung.com/solid-principles) - by Sam Millington
+     - [SOLID Design Principles](https://devopedia.org/solid-design-principles) - Devopedia
+
+inversion of control
+
+:    - [Inversion Of Control](https://martinfowler.com/bliki/InversionOfControl.html) - by Martin Fowler
+     - [Don’t Call Us, We’ll Call You: The Hollywood Principle for Maintainable Code](https://medium.com/@tenigada/dont-call-us-we-ll-call-you-the-hollywood-principle-for-maintainable-code-e03e2df79f0c) - by Teni Gada
+     
+topologies
+
+:    - [Hexagonal Architecture](https://www.happycoders.eu/software-craftsmanship/hexagonal-architecture/) - by Sven Woltmann
+     - [The Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/) - by Jeffrey Palermo
+<!-- :    - [Introduction to Software Architecture](https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture) -->
+
+MVC-MVP-MVVM
+
+:    - [MVC vs MVP vs MVVM](https://www.educba.com/mvc-vs-mvp-vs-mvvm/) - by Priya Pedamkar
+
+#### optional
+
+- [The Composition Over Inheritance Principle](https://python-patterns.guide/gang-of-four/composition-over-inheritance/)
+     - with Python examples
+- [Railway oriented programming](https://fsharpforfunandprofit.com/posts/recipe-part2/) -by Scott Wlaschin
+
+## week 6
+
+1. implementation planning
