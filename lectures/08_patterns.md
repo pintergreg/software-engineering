@@ -747,12 +747,24 @@ based on [@woltmann2023hexagonal]
 :::::::::::: {.columns}
 ::::::::: {.column width="30%"}
 ![](figures/mvc.drawio.svg){width=300}
+
+:::{.text-smaller}
+ASP.NET, Django (Python), Ruby on Rails, Laravel (PHP)
+:::
 :::::::::
 ::::::::: {.column width="30%"}
 ![](figures/mvp.drawio.svg){width=300}
+
+:::{.text-smaller}
+Windows Forms, Java Swing
+:::
 :::::::::
 ::::::::: {.column width="30%"}
 ![](figures/mvvm.drawio.svg){width=300}
+
+:::{.text-smaller}
+WPF, AngularJS
+:::
 :::::::::
 ::::::::::::
 
