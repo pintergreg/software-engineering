@@ -110,6 +110,7 @@ topologies
 MVC-MVP-MVVM
 
 :    - [MVC vs MVP vs MVVM](https://www.educba.com/mvc-vs-mvp-vs-mvvm/) - by Priya Pedamkar
+     - [Alternatives To MVC ](https://blog.ircmaxell.com/2014/11/alternatives-to-mvc.html) - by Anthony Ferrara
 
 #### optional
 
