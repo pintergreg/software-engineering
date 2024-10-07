@@ -982,28 +982,70 @@ class="citation" data-cites="martin2012clean">[20]</span>)</p>
 data-cites="woltmann2023hexagonal">[14]</span></p>
 </div>
 </section></section>
-<section id="model-view-controller" class="title-slide slide level1">
-<h1>Model-View-Controller</h1>
-<p>MVC pattern was implemented as early as 1974 in the Smalltalk
-project</p>
+<section>
+<section id="model-view-controller-enwiki1244967192"
+class="title-slide slide level1">
+<h1>Model-View-Controller <span class="citation"
+data-cites="enwiki:1244967192">[21]</span></h1>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>architectural pattern</li>
+<li>MVC pattern was implemented as early as 1974 in the Smalltalk
+project</li>
+</ul>
+<div class="text-smaller mt-2">
+<ul>
+<li>view is responsible for rendering UI</li>
+<li>controller responds to the user input and performs interactions on
+the data model</li>
+<li>model is responsible for managing the data</li>
+</ul>
+</div>
+<div class="text-smaller mt-2">
+<ul>
+<li>the view and the model are tightly coupled</li>
+<li>view is monolithic and usually couples tightly with the UI framework
+<ul>
+<li>unit testing the view becomes difficult</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:45%;">
+<p><img data-src="figures/mvc.drawio.svg" width="300" /></p>
+<!--::: {.text-smaller}
+- view is responsible for rendering UI
+- controller responds to the user input and performs interactions on the data model
+- model is responsible for managing the data
+:::-->
+</div>
+</div>
 </section>
-
-<section id="mvc---mvp---mvvm" class="title-slide slide level1">
-<h1>MVC - MVP - MVVM</h1>
+<section id="mvc---mvp---mvvm" class="slide level2">
+<h2>MVC - MVP - MVVM</h2>
 <div class="columns">
 <div class="column" style="width:30%;">
 <p><img data-src="figures/mvc.drawio.svg" width="300" /></p>
+<div class="text-smaller">
+<p>ASP.NET, Django (Python), Ruby on Rails, Laravel (PHP)</p>
+</div>
 </div><div class="column" style="width:30%;">
 <p><img data-src="figures/mvp.drawio.svg" width="300" /></p>
+<div class="text-smaller">
+<p>Windows Forms, Java Swing</p>
+</div>
 </div><div class="column" style="width:30%;">
 <p><img data-src="figures/mvvm.drawio.svg" width="300" /></p>
+<div class="text-smaller">
+<p>WPF, AngularJS</p>
+</div>
 </div>
 </div>
 <div class="text-smaller">
-
+<p>figures based on <span class="citation"
+data-cites="pedamkar2023mvc">[22]</span></p>
 </div>
-</section>
-
+</section></section>
 <section>
 <section id="user-statistics-example" class="title-slide slide level1">
 <h1>user statistics example</h1>
@@ -1383,6 +1425,23 @@ C. Martin, <span>“The clean architecture.”</span> <a href="
                     " class="uri">
                    https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 </a>, 13-Aug-2012.</div>
+</div>
+<div id="ref-enwiki:1244967192" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[21] </div><div
+class="csl-right-inline">Wikipedia contributors,
+<span>“Model–view–controller — <span>Wikipedia</span><span>,</span> the
+free encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;oldid=1244967192"
+class="uri">https://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;oldid=1244967192</a>,
+2024.</div>
+</div>
+<div id="ref-pedamkar2023mvc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">P.
+Pedamkar, <span>“MVC vs MVP vs MVVM.”</span> <a href="
+                   https://www.educba.com/mvc-vs-mvp-vs-mvvm/
+                    " class="uri">
+                   https://www.educba.com/mvc-vs-mvp-vs-mvvm/
+</a>, 05-Apr-2023.</div>
 </div>
 </div>
 </section>
