@@ -89,3 +89,6 @@ Feathers, M. (2004). Working Effectively with Legacy Code: p1. pp 6. Prentice Ha
 table: KDE / Plasma 6.1 series [release schedule](https://community.kde.org/Schedules/Plasma_6)
 
 
+# wireframe
+
+## low fidelity vs. high fidelity
