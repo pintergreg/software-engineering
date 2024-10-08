@@ -791,6 +791,10 @@ WPF, AngularJS
 figures based on [@pedamkar2023mvc]
 :::
 
+::: {.text-smaller}
+other alternatives: [Alternatives To MVC ](https://blog.ircmaxell.com/2014/11/alternatives-to-mvc.html) - by Anthony Ferrara
+:::
+
 
 # user statistics example
 
