@@ -173,13 +173,35 @@ fast feedback, agile, and so on...
 
 # do not change the interface (without notice)
 
+:::::::::::: {.columns .mt-4}
+::::::::: {.column width="50%" }
+![float: 0--1](figures/user_statistics/user_data_light.svg)
+
+:::::::::
+::::::::: {.column width="50%" }
+![integer: 0--100](figures/user_statistics/user_data_light_changed.svg)
+
+:::::::::
+::::::::::::
+
+::: {.mt-4}
+this will break the frontend
+
+::: {.text-smaller}
+it is not just rude, but will waste the time of the other team (with pointless debugging)
+:::
+:::
+
+
+## do no break the userland
+
 :::::::::::: {.columns}
 ::::::::: {.column width="50%" }
 do no break the userland
 
 :::::::::
 ::::::::: {.column width="50%" }
-![by ScotXW [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)](figures/borrowed/Linux kernel and OpenGL video games.svg)
+![by [ScotXW](https://commons.wikimedia.org/wiki/File:Linux_kernel_and_OpenGL_video_games.svg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)](figures/borrowed/Linux kernel and OpenGL video games.svg)
 :::::::::
 ::::::::::::
 

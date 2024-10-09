@@ -1,0 +1,19 @@
+@startyaml
+<style>
+    .highlighted {
+      BackGroundColor GreenYellow
+      FontColor black
+    }
+</style>
+!theme plain
+#highlight "progress" <<highlighted>>
+name: Marvin
+id: 42
+registration: 2019-10-02
+progress: 78
+activity: nil
+  - [1,8,4,1,7,4,3]
+  - [7,2,8,5,7,4,4]
+  - [4,2,7,5,2,5,1]
+  - [8,5,2,7,9,2,4]
+@endyaml
