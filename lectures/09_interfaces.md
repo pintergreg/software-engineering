@@ -209,19 +209,6 @@ it is not just rude, but will waste the time of the other team (with pointless d
 
 ## API changes should be communicated
 
-<!-- ![](https://developer.spotify.com/images/blog/ads-api-release-calendar.png) -->
-
-GeoPandas 1.0
-
-New deprecations:
-
-unary_union attribute is now deprecated and replaced by the union_all() method (#3007) allowing opting for a faster union algorithm for coverages (#3151)
-    
-```
->>> geodata.unary_union
-DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_all()' method instead.
-[...]
-```
 
 ## language support
 
