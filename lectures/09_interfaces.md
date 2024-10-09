@@ -197,13 +197,110 @@ it is not just rude, but will waste the time of the other team (with pointless d
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%" }
-do no break the userland
+> the number one rule of kernel development is that "we don't break users"
+>
+> -- [Linus Torvalds](https://lkml.org/lkml/2017/11/21/356)
 
 :::::::::
 ::::::::: {.column width="50%" }
 ![by [ScotXW](https://commons.wikimedia.org/wiki/File:Linux_kernel_and_OpenGL_video_games.svg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)](figures/borrowed/Linux kernel and OpenGL video games.svg)
 :::::::::
 ::::::::::::
+
+## API changes should be communicated
+
+<!-- ![](https://developer.spotify.com/images/blog/ads-api-release-calendar.png) -->
+
+GeoPandas 1.0
+
+New deprecations:
+
+unary_union attribute is now deprecated and replaced by the union_all() method (#3007) allowing opting for a faster union algorithm for coverages (#3151)
+    
+```
+>>> geodata.unary_union
+DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_all()' method instead.
+[...]
+```
+
+## language support
+
+:::{.text-smaller}
+```java
+public class Worker {
+    /**
+     * Calculate period between versions
+     * @deprecated
+     * This method is no longer acceptable to compute time between versions.
+     * <p> Use {@link Utils#calculatePeriod(Machine)} instead.
+     *
+     * @param machine instance
+     * @return computed time
+     */
+    @Deprecated(since = "4.5", forRemoval = true)
+    public int calculate(Machine machine) {
+        return machine.exportVersions().size() * 10;
+    }
+}
+
+```
+source: [@ozler2019java]
+
+```python
+def unary_union(self):
+    warnings.warn(
+        "The 'unary_union' attribute is deprecated, "
+        "use the 'union_all' method instead.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return self.union_all()
+```
+
+source: [github.com/geopandas/geopandas](https://github.com/geopandas/geopandas/blob/f150ec0480cfbf2ad8074d210d103b4aed313f11/geopandas/array.py#L848-L855)
+
+:::
+
+## geopandas 1.0 deprecated unary_union
+
+```python
+from shapely import Polygon
+import geopandas as gpd
+
+p1 = Polygon([[1, 2], [3, 2], [3, 4], [1, 4]])
+p2 = Polygon([[2, 3], [4, 3], [4, 5], [2, 5]])
+
+gpd.GeoDataFrame(geometry=[p1, p2]).unary_union
+```
+
+:::::::::::: {.columns .fragment}
+::::::::: {.column width="80%" .text-smaller }
+`DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_all()' method instead.`
+
+:::::::::
+::::::::: {.column width="20%"}
+![](figures/unary_union.svg){height=100}
+
+:::::::::
+::::::::::::
+
+::: {.fragment}
+```python
+def unary_union(self):
+    warnings.warn(
+        "The 'unary_union' attribute is deprecated, "
+        "use the 'union_all' method instead.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return self.union_all()
+```
+
+::: {.text-small}
+source: [github.com/geopandas/geopandas](https://github.com/geopandas/geopandas/blob/f150ec0480cfbf2ad8074d210d103b4aed313f11/geopandas/array.py#L848-L855)
+:::
+:::
+
 
 # NASA lost a 327 Million Dollar Mission
 
