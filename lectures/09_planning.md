@@ -88,14 +88,20 @@ this chapter is based on [riskstorming.com](https://riskstorming.com/) | [CC BY 
 :::
 
 
-# man-month
+# schedule milestones
+
+
+# assign responsibilities and tasks
+
+
+# allocate resources: man-month
 
 :::  {.text-size-3}
 Man-month is a hypothetical unit of work representing the work done by one person in one month.
 :::
 
 
-# Brooks's law
+## Brooks's law
 
 > Adding manpower to a late software project makes it later.
 
