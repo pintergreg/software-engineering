@@ -49,6 +49,75 @@ specify
 :::::::::
 ::::::::::::
 
+# interface mocking
+
+- an interface is a boundary where a module can be separated
+- in the user statistics example there are two parts: a backend and a frontend
+- with a well defined interface, the frontend can work regardless of the backends's state
+    - e.g., using a mock backend
+
+::: {.wide-quote .fragment}
+> A mock, in software engineering, is a simulated object or module that acts as a stand-in for a real object or module.
+<!-- Mocks are often used in testing to isolate the behavior of a particular module or component and to verify that it behaves as expected. -->
+:::
+
+
+## user statistics - mock backend
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .text-smaller .pre-height-100}
+```ruby {#sinatra .number-lines style="height:450px"}
+require 'sinatra'
+
+def generate_progress
+  rand.round(2)
+end
+
+def generate_activity_matrix
+  result = []
+  (1..4).each do |_w|
+    daily = []
+    (1..7).each do |_d|
+      daily.push rand(10)
+    end
+    result.push daily
+  end
+  result
+end
+
+get '/user-statistics' do
+  data = {}
+  data['name'] = 'Marvin'
+  data['id'] = 42
+  data['registration'] = '2019-10-02'
+  data['progress'] = generate_progress
+  data['activity'] = generate_activity_matrix
+  return data.to_json
+end
+```
+:::::::::
+::::::::: {.column width="40%"}
+::: {.text-smaller}
+`http://localhost:4567/user-statistics`
+:::
+
+```json
+{
+    "name": "Marvin",
+    "id": 42,
+    "registration": "2019-10-02",
+    "progress": 0.92,
+    "activity": [
+        [4,9,7,4,7,1,8],
+        [9,8,1,8,4,1,7],
+        [3,6,8,4,2,4,5],
+        [3,5,5,3,2,9,7]
+    ]
+}
+```
+:::::::::
+::::::::::::
+
 
 # NASA lost a 327 Million Dollar Mission
 
