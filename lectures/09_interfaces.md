@@ -28,8 +28,18 @@ an interface is a shared boundary across which two or more separate components o
 
 ## interface is an agreement
 
-![](figures/publicdomainvectors/business-handshake-hands.svg){width=500}
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-4}
+- how a module / component will work
+- so as long as the agreement is complied the components do not need to know about the internal structure/work of the other components
+    - separation of concerns
+    - single responsibility principle
 
+:::::::::
+::::::::: {.column width="45%"}
+![](figures/publicdomainvectors/business-handshake-hands.svg){width=500}
+:::::::::
+::::::::::::
 
 #
 
