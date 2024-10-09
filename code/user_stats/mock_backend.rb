@@ -1,29 +1,31 @@
-require "sinatra"
+# frozen_string_literal: true
 
-def generate_progress()
-    return rand().round(2)
+require 'sinatra'
+
+def generate_progress
+  rand.round(2)
 end
 
-def generate_activity_matrix()
-    result = []
-    (1..4).each do |w|
-        daily = []
-        (1..7).each do |d|
-            daily.push rand(10)
-        end
-        result.push daily
+def generate_activity_matrix
+  result = []
+  (1..4).each do |_w|
+    daily = []
+    (1..7).each do |_d|
+      daily.push rand(10)
     end
-    return result
+    result.push daily
+  end
+  result
 end
 
 get '/user-statistics' do
-      data = Hash.new
-      data["name"] = "Marvin"
-      data["id"] = 42
-      data["registration"] = "2019-10-02"
-      data["progress"] = generate_progress
-      data["activity"] = generate_activity_matrix
-      return data.to_json
+  data = {}
+  data['name'] = 'Marvin'
+  data['id'] = 42
+  data['registration'] = '2019-10-02'
+  data['progress'] = generate_progress
+  data['activity'] = generate_activity_matrix
+  return data.to_json
 end
 
 # irb(main):002:0> generate_progress
