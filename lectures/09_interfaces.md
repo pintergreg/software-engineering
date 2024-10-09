@@ -25,7 +25,13 @@ an interface is a shared boundary across which two or more separate components o
 :::::::::
 ::::::::::::
 
-##
+
+## interface is an agreement
+
+![](figures/publicdomainvectors/business-handshake-hands.svg){width=500}
+
+
+#
 
 ![hexagonal arcitectural pattern (a.k.a. ports & adapters)](figures/hexagonal_interface.drawio.svg){width=700}
 
@@ -119,6 +125,53 @@ end
 :::::::::
 ::::::::::::
 
+## frontend development
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+a mock backend should be enough for a frontend developer to create and test the user statistics view of the user interface
+
+```json
+{
+    "name": "Marvin",
+    "id": 42,
+    "registration": "2019-10-02",
+    "progress": 0.92,
+    "activity": [
+        [4,9,7,4,7,1,8],
+        [9,8,1,8,4,1,7],
+        [3,6,8,4,2,4,5],
+        [3,5,5,3,2,9,7]
+    ]
+}
+```
+
+::: {.fragment .mt-2}
+it may be presented to the customer
+
+::: {.text-smaller}
+fast feedback, agile, and so on...
+:::
+:::
+
+:::::::::
+::::::::: {.column width="45%"}
+![](figures/user_stats.drawio.svg){width=300}
+:::::::::
+::::::::::::
+
+
+# do not change the interface (without notice)
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" }
+do no break the userland
+
+:::::::::
+::::::::: {.column width="50%" }
+![by ScotXW [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)](figures/borrowed/Linux kernel and OpenGL video games.svg)
+:::::::::
+::::::::::::
 
 # NASA lost a 327 Million Dollar Mission
 
