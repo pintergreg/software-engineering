@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>interfaces</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">interfaces</h1>
+  <p class="subtitle">why they are important and why you should pay
+close attention to interface definition</p>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section class="slide level2">
+
+<p>an interface is a shared boundary across which two or more separate
+components of a computer system <span class="citation"
+data-cites="enwiki:1244878409">[1]</span></p>
+<div class="columns mt-3">
+<div class="column" style="width:50%;">
+<figure>
+<img
+data-src="figures/borrowed/RJ-45_Ethernet_socket_on_Lenovo_T410_Laptop.jpg"
+width="450" alt="hardware interfaces by Pittigrilli | CC BY-SA" />
+<figcaption aria-hidden="true">hardware interfaces by <a
+href="https://en.wikipedia.org/wiki/File:RJ-45_Ethernet_socket_on_Lenovo_T410_Laptop.jpg">Pittigrilli</a>
+| <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC
+BY-SA</a></figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="figures/borrowed/KDE_Plasma_5.22.png" width="450"
+alt="user interface KDE Plasma 5.22 from Wikimedia CC BY-SA" />
+<figcaption aria-hidden="true">user interface KDE Plasma 5.22 from <a
+href="https://commons.wikimedia.org/wiki/File:KDE_Plasma_5.22.png">Wikimedia</a>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC
+BY-SA</a></figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="interface-is-an-agreement" class="slide level2">
+<h2>interface is an agreement</h2>
+<div class="columns">
+<div class="column mt-4" style="width:55%;">
+<ul>
+<li>how a module / component will work</li>
+<li>so as long as the agreement is complied the components do not need
+to know about the internal structure/work of the other components
+<ul>
+<li>separation of concerns</li>
+<li>single responsibility principle</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><img
+data-src="figures/publicdomainvectors/business-handshake-hands.svg"
+width="500" /></p>
+</div>
+</div>
+</section>
+<section>
+<section id="section" class="title-slide slide level1">
+<h1></h1>
+<figure>
+<img data-src="figures/hexagonal_interface.drawio.svg" width="700"
+alt="hexagonal arcitectural pattern (a.k.a. ports &amp; adapters)" />
+<figcaption aria-hidden="true">hexagonal arcitectural pattern (a.k.a.
+ports &amp; adapters)</figcaption>
+</figure>
+</section>
+<section id="user-statistics-example---interfaces" class="slide level2">
+<h2>user statistics example - interfaces</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img
+data-src="figures/user_statistics/component_interface.svg" /></p>
+</div><div class="column" style="width:40%;">
+<p>data sent to the UI</p>
+<p><img data-src="figures/user_statistics/user_data_light.svg" /></p>
+<dl>
+<dt>specify</dt>
+<dd>
+<ul>
+<li>the JSON schema</li>
+<li>endpoint</li>
+<li>etc.</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</section></section>
+<section>
+<section id="interface-mocking" class="title-slide slide level1">
+<h1>interface mocking</h1>
+<ul>
+<li>an interface is a boundary where a module can be separated</li>
+<li>in the user statistics example there are two parts: a backend and a
+frontend</li>
+<li>with a well defined interface, the frontend can work regardless of
+the backends’s state
+<ul>
+<li>e.g., using a mock backend</li>
+</ul></li>
+</ul>
+<div class="wide-quote fragment">
+<blockquote>
+<p>A mock, in software engineering, is a simulated object or module that
+acts as a stand-in for a real object or module <span class="citation"
+data-cites="geeksforgeeks2019mock">[2]</span>.
+<!-- Mocks are often used in testing to isolate the behavior of a particular module or component and to verify that it behaves as expected. --></p>
+</blockquote>
+</div>
+</section>
+<section id="user-statistics---mock-backend" class="slide level2">
+<h2>user statistics - mock backend</h2>
+<div class="columns">
+<div class="column text-smaller pre-height-100" style="width:60%;">
+<div class="sourceCode" id="sinatra" style="height:450px"><pre
+class="sourceCode numberSource ruby number-lines"><code class="sourceCode ruby"><span id="sinatra-1"><a href="#sinatra-1"></a><span class="fu">require</span> <span class="vs">&#39;sinatra&#39;</span></span>
+<span id="sinatra-2"><a href="#sinatra-2"></a></span>
+<span id="sinatra-3"><a href="#sinatra-3"></a><span class="cf">def</span> generate_progress</span>
+<span id="sinatra-4"><a href="#sinatra-4"></a>  <span class="fu">rand</span><span class="at">.round</span>(<span class="dv">2</span>)</span>
+<span id="sinatra-5"><a href="#sinatra-5"></a><span class="cf">end</span></span>
+<span id="sinatra-6"><a href="#sinatra-6"></a></span>
+<span id="sinatra-7"><a href="#sinatra-7"></a><span class="cf">def</span> generate_activity_matrix</span>
+<span id="sinatra-8"><a href="#sinatra-8"></a>  result <span class="kw">=</span> <span class="kw">[]</span></span>
+<span id="sinatra-9"><a href="#sinatra-9"></a>  (<span class="dv">1</span><span class="kw">..</span><span class="dv">4</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>_w<span class="kw">|</span></span>
+<span id="sinatra-10"><a href="#sinatra-10"></a>    daily <span class="kw">=</span> <span class="kw">[]</span></span>
+<span id="sinatra-11"><a href="#sinatra-11"></a>    (<span class="dv">1</span><span class="kw">..</span><span class="dv">7</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>_d<span class="kw">|</span></span>
+<span id="sinatra-12"><a href="#sinatra-12"></a>      daily<span class="at">.push</span> <span class="fu">rand</span>(<span class="dv">10</span>)</span>
+<span id="sinatra-13"><a href="#sinatra-13"></a>    <span class="cf">end</span></span>
+<span id="sinatra-14"><a href="#sinatra-14"></a>    result<span class="at">.push</span> daily</span>
+<span id="sinatra-15"><a href="#sinatra-15"></a>  <span class="cf">end</span></span>
+<span id="sinatra-16"><a href="#sinatra-16"></a>  result</span>
+<span id="sinatra-17"><a href="#sinatra-17"></a><span class="cf">end</span></span>
+<span id="sinatra-18"><a href="#sinatra-18"></a></span>
+<span id="sinatra-19"><a href="#sinatra-19"></a>get <span class="vs">&#39;/user-statistics&#39;</span> <span class="cf">do</span></span>
+<span id="sinatra-20"><a href="#sinatra-20"></a>  data <span class="kw">=</span> <span class="kw">{}</span></span>
+<span id="sinatra-21"><a href="#sinatra-21"></a>  data<span class="kw">[</span><span class="vs">&#39;name&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;Marvin&#39;</span></span>
+<span id="sinatra-22"><a href="#sinatra-22"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="dv">42</span></span>
+<span id="sinatra-23"><a href="#sinatra-23"></a>  data<span class="kw">[</span><span class="vs">&#39;registration&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;2019-10-02&#39;</span></span>
+<span id="sinatra-24"><a href="#sinatra-24"></a>  data<span class="kw">[</span><span class="vs">&#39;progress&#39;</span><span class="kw">]</span> <span class="kw">=</span> generate_progress</span>
+<span id="sinatra-25"><a href="#sinatra-25"></a>  data<span class="kw">[</span><span class="vs">&#39;activity&#39;</span><span class="kw">]</span> <span class="kw">=</span> generate_activity_matrix</span>
+<span id="sinatra-26"><a href="#sinatra-26"></a>  <span class="cf">return</span> data<span class="at">.to_json</span></span>
+<span id="sinatra-27"><a href="#sinatra-27"></a><span class="cf">end</span></span></code></pre></div>
+</div><div class="column" style="width:40%;">
+<div class="text-smaller">
+<p><code>http://localhost:4567/user-statistics</code></p>
+</div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Marvin&quot;</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">42</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;registration&quot;</span><span class="fu">:</span> <span class="st">&quot;2019-10-02&quot;</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;progress&quot;</span><span class="fu">:</span> <span class="fl">0.92</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;activity&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">4</span><span class="ot">,</span><span class="dv">9</span><span class="ot">,</span><span class="dv">7</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">7</span><span class="ot">,</span><span class="dv">1</span><span class="ot">,</span><span class="dv">8</span><span class="ot">],</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">9</span><span class="ot">,</span><span class="dv">8</span><span class="ot">,</span><span class="dv">1</span><span class="ot">,</span><span class="dv">8</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">1</span><span class="ot">,</span><span class="dv">7</span><span class="ot">],</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">3</span><span class="ot">,</span><span class="dv">6</span><span class="ot">,</span><span class="dv">8</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">2</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">5</span><span class="ot">],</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">3</span><span class="ot">,</span><span class="dv">5</span><span class="ot">,</span><span class="dv">5</span><span class="ot">,</span><span class="dv">3</span><span class="ot">,</span><span class="dv">2</span><span class="ot">,</span><span class="dv">9</span><span class="ot">,</span><span class="dv">7</span><span class="ot">]</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="frontend-development" class="slide level2">
+<h2>frontend development</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>a mock backend should be enough for a frontend developer to create
+and test the user statistics view of the user interface</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Marvin&quot;</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">42</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;registration&quot;</span><span class="fu">:</span> <span class="st">&quot;2019-10-02&quot;</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;progress&quot;</span><span class="fu">:</span> <span class="fl">0.92</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;activity&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">4</span><span class="ot">,</span><span class="dv">9</span><span class="ot">,</span><span class="dv">7</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">7</span><span class="ot">,</span><span class="dv">1</span><span class="ot">,</span><span class="dv">8</span><span class="ot">],</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">9</span><span class="ot">,</span><span class="dv">8</span><span class="ot">,</span><span class="dv">1</span><span class="ot">,</span><span class="dv">8</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">1</span><span class="ot">,</span><span class="dv">7</span><span class="ot">],</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">3</span><span class="ot">,</span><span class="dv">6</span><span class="ot">,</span><span class="dv">8</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">2</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">5</span><span class="ot">],</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">3</span><span class="ot">,</span><span class="dv">5</span><span class="ot">,</span><span class="dv">5</span><span class="ot">,</span><span class="dv">3</span><span class="ot">,</span><span class="dv">2</span><span class="ot">,</span><span class="dv">9</span><span class="ot">,</span><span class="dv">7</span><span class="ot">]</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<div class="fragment mt-2">
+<p>it may be presented to the customer</p>
+<div class="text-smaller">
+<p>fast feedback, agile, and so on…</p>
+</div>
+</div>
+</div><div class="column" style="width:45%;">
+<p><img data-src="figures/user_stats.drawio.svg" width="300" /></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="do-not-change-the-interface-without-notice"
+class="title-slide slide level1">
+<h1>do not change the interface (without notice)</h1>
+<div class="columns mt-4">
+<div class="column" style="width:50%;">
+<figure>
+<img data-src="figures/user_statistics/user_data_light.svg"
+alt="float: 0–1" />
+<figcaption aria-hidden="true">float: 0–1</figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="figures/user_statistics/user_data_light_changed.svg"
+alt="integer: 0–100" />
+<figcaption aria-hidden="true">integer: 0–100</figcaption>
+</figure>
+</div>
+</div>
+<div class="mt-4">
+<p>this will break the frontend</p>
+<div class="text-smaller">
+<p>it is not just rude, but will waste the time of the other team (with
+pointless debugging)</p>
+</div>
+</div>
+</section>
+<section id="do-no-break-the-userland" class="slide level2">
+<h2>do no break the userland</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<blockquote>
+<p>the number one rule of kernel development is that “we don’t break
+users”</p>
+<p>– <a href="https://lkml.org/lkml/2017/11/21/356">Linus
+Torvalds</a></p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<figure>
+<img
+data-src="figures/borrowed/Linux%20kernel%20and%20OpenGL%20video%20games.svg"
+alt="by ScotXW | CC BY-SA 3.0" />
+<figcaption aria-hidden="true">by <a
+href="https://commons.wikimedia.org/wiki/File:Linux_kernel_and_OpenGL_video_games.svg">ScotXW</a>
+| <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA
+3.0</a></figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="api-changes-should-be-communicated" class="slide level2">
+<h2>API changes should be communicated</h2>
+<div class="columns mt-4">
+<div class="column" style="width:65%;">
+<div class="align-left">
+<ul>
+<li>during design / development
+<ul>
+<li>change can be necessary / allowed, but communicate towards the
+impacted teams</li>
+<li>diagrams show inner dependencies</li>
+</ul></li>
+</ul>
+</div>
+<div class="align-left fragment">
+<ul>
+<li>services announce API deprecations</li>
+<li>so as library / framework developers
+<ul>
+<li>can be a source of new issues even if downstream code is not
+changed</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:35%;">
+<p><img
+data-src="figures/publicdomainvectors/policeman-screams-into-a-megaphone.svg"
+width="225" /></p>
+</div>
+</div>
+</section>
+<section id="language-level" class="slide level2">
+<h2>language level</h2>
+<div class="text-smaller">
+<p>GeoPandas 1.0 / new deprecations: unary_union attribute is now
+deprecated and replaced by the union_all() method (#3007) allowing
+opting for a faster union algorithm for coverages (#3151)</p>
+</div>
+<div class="columns fragment">
+<div class="column pre-width-100" style="width:55%;">
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shapely <span class="im">import</span> Polygon</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> Polygon([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">1</span>, <span class="dv">4</span>]])</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> Polygon([[<span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>], [<span class="dv">2</span>, <span class="dv">5</span>]])</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>gpd.GeoDataFrame(geometry<span class="op">=</span>[p1, p2]).unary_union</span></code></pre></div>
+</div><div class="column text-smaller" style="width:45%;">
+<p>DeprecationWarning: The ‘unary_union’ attribute is deprecated, use
+the ‘union_all()’ method instead.</p>
+<p><img data-src="figures/unary_union.svg" height="100" /></p>
+</div>
+</div>
+<!--:::::::::::: {.columns .fragment}
+::::::::: {.column width="80%" .text-smaller }
+`DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_all()' method instead.`
+
+:::::::::
+::::::::: {.column width="20%"}
+![](figures/unary_union.svg){height=100}
+
+:::::::::
+::::::::::::-->
+<div class="fragment">
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unary_union(<span class="va">self</span>):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    warnings.warn(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;The &#39;unary_union&#39; attribute is deprecated, &quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;use the &#39;union_all&#39; method instead.&quot;</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="pp">DeprecationWarning</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        stacklevel<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.union_all()</span></code></pre></div>
+<div class="text-small">
+<p>source: <a
+href="https://github.com/geopandas/geopandas/blob/f150ec0480cfbf2ad8074d210d103b4aed313f11/geopandas/array.py#L848-L855">github.com/geopandas/geopandas</a></p>
+</div>
+</div>
+</section>
+<section id="java" class="slide level2">
+<h2>java</h2>
+<div class="text-smaller">
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Worker <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/**</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> Calculate period between versions</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">     * @</span>deprecated</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> This method is no longer acceptable to compute time between versions<span class="co">.</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span> Use <span class="co">{@</span>link Utils<span class="co">#</span>calculatePeriod<span class="co">(</span>Machine<span class="co">)}</span> instead<span class="co">.</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> <span class="co">@</span>param machine instance</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> <span class="co">@</span>return computed time</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>     <span class="co">*/</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Deprecated</span><span class="op">(</span>since <span class="op">=</span> <span class="st">&quot;4.5&quot;</span><span class="op">,</span> forRemoval <span class="op">=</span> <span class="kw">true</span><span class="op">)</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">calculate</span><span class="op">(</span>Machine machine<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> machine<span class="op">.</span><span class="fu">exportVersions</span><span class="op">().</span><span class="fu">size</span><span class="op">()</span> <span class="op">*</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>source: <span class="citation"
+data-cites="ozler2019java">[3]</span></p>
+</div>
+<p>IDEs can parse the deprecation decorators and show to the developer
+during work</p>
+</section></section>
+<section id="nasa-lost-a-327-million-dollar-mission"
+class="title-slide slide level1">
+<h1>NASA lost a 327 Million Dollar Mission</h1>
+<p>NASA and Lockheed Martin mixed up units for the Mars Climate
+Orbiter</p>
+<div class="columns">
+<div class="column mt-1" style="width:60%;">
+<ul>
+<li>spacecraft sent values back to Earth in <strong>Newton
+seconds</strong></li>
+<li>the software in the ground station read those results as
+<strong>pound seconds</strong>
+<ul>
+<li>the guidance and navigation teams was off by a factor of 4.45
+times</li>
+</ul></li>
+<li>this led to a miscalculated trajectory, which doomed the probe and
+the mission</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/borrowed/Mars_Climate_Orbiter_2.jpg"
+alt="rendering of the Mars Climate Orbiter by NASA/JPL/Corby Waste via Wikipedia [4]" />
+<figcaption aria-hidden="true">rendering of the Mars Climate Orbiter
+<span class="text-small">by NASA/JPL/Corby Waste via <a
+href="https://en.wikipedia.org/wiki/File:Mars_Climate_Orbiter_2.jpg">Wikipedia</a>
+<span class="citation"
+data-cites="enwiki:1248652445">[4]</span></span></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="dodd2020metric">[5]</span>, read the <a
+href="https://everydayastronaut.com/mars-climate-orbiter/">full
+story</a> written by Tim Dodd</p>
+</div>
+</section>
+
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-enwiki:1244878409" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Interface
+(computing) — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Interface_(computing)&amp;oldid=1244878409"
+class="uri">https://en.wikipedia.org/w/index.php?title=Interface_(computing)&amp;oldid=1244878409</a>,
+2024.</div>
+</div>
+<div id="ref-geeksforgeeks2019mock" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div
+class="csl-right-inline">GeeksforGeeks, <span>“MOCK (introduction) –
+software engineering.”</span> <a href="
+                   https://www.geeksforgeeks.org/software-engineering-mock-introduction/
+                    " class="uri">
+                   https://www.geeksforgeeks.org/software-engineering-mock-introduction/
+</a>, 26-Apr-2019.</div>
+</div>
+<div id="ref-ozler2019java" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">H.
+Ozler, <span>“Java @deprecated annotation.”</span> <a href="
+                   https://www.baeldung.com/java-deprecated
+                    " class="uri">
+                   https://www.baeldung.com/java-deprecated
+</a>, 02-Jan-2019.</div>
+</div>
+<div id="ref-enwiki:1248652445" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Mars climate
+orbiter — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Mars_Climate_Orbiter&amp;oldid=1248652445"
+class="uri">https://en.wikipedia.org/w/index.php?title=Mars_Climate_Orbiter&amp;oldid=1248652445</a>,
+2024.</div>
+</div>
+<div id="ref-dodd2020metric" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">T.
+Dodd, <span>“Metric vs imperial units: How NASA lost a 327 million
+dollar mission to mars.”</span> <a href="
+                   https://everydayastronaut.com/mars-climate-orbiter/
+                    " class="uri">
+                   https://everydayastronaut.com/mars-climate-orbiter/
+</a>, 14-Mar-2020.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
