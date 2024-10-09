@@ -1,0 +1,25 @@
+@startuml
+skin rose
+package GUI {
+  [UI]
+}
+package "user statistics" {
+  [data collector]
+[data aggregator]
+}
+
+database "database" {
+
+}
+
+interface "PostgreSQL adapter\n(Psycopg 3)" as da
+interface "HTTP\n(REST)" as rest
+
+[data collector] -down- da
+da -down- [database]
+
+[UI] -right- rest
+rest --right-- [data aggregator]
+
+[data aggregator] <- [data collector]: send user data
+@enduml

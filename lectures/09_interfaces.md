@@ -29,6 +29,27 @@ an interface is a shared boundary across which two or more separate components o
 ![hexagonal arcitectural pattern (a.k.a. ports & adapters)](figures/hexagonal_interface.drawio.svg){width=700}
 
 
+## user statistics example - interfaces
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+![](figures/user_statistics/component_interface.svg)
+:::::::::
+::::::::: {.column width="40%"}
+data sent to the UI
+
+![](figures/user_statistics/user_data_light.svg)
+
+specify
+
+:    - the JSON schema
+     - endpoint
+     - etc.
+
+:::::::::
+::::::::::::
+
+
 # NASA lost a 327 Million Dollar Mission
 
 NASA and Lockheed Martin mixed up units for the Mars Climate Orbiter
