@@ -1,0 +1,38 @@
+@startuml
+skin rose
+package client {
+  [UI]
+}
+package oldclient{
+  [UI] as oui
+}
+package "user statistics" {
+  [data collector]
+  [data aggregator]
+  [rest adapter]
+}
+
+database "database" {
+
+}
+
+interface "PostgreSQL adapter\n(Psycopg 3)" as da
+
+interface "HTTP\n(REST) v1" as rest1 #Red
+interface "HTTP\n(REST) v2" as rest2 #Yellow
+interface "HTTP\n(REST) v3" as rest3 #GreenYellow
+
+
+[rest adapter] -down- rest1
+[rest adapter] -down- rest2 
+[rest adapter] -down- rest3 
+
+[data collector] -down- da
+da -down- [database]
+
+[UI] -up- rest3
+oui -up- rest2
+[rest adapter] <- [data aggregator]
+
+[data aggregator] <- [data collector]
+@enduml
