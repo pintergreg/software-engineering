@@ -13,9 +13,21 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
+an interface is a shared boundary across which two or more separate components of a computer system [@enwiki:1244878409]
+
+:::::::::::: {.columns .mt-3}
+::::::::: {.column width="50%"}
+![hardware interfaces by [Pittigrilli](https://en.wikipedia.org/wiki/File:RJ-45_Ethernet_socket_on_Lenovo_T410_Laptop.jpg) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/RJ-45_Ethernet_socket_on_Lenovo_T410_Laptop.jpg){width=450}
+:::::::::
+::::::::: {.column width="50%"}
+![user interface KDE Plasma 5.22 from [Wikimedia](https://commons.wikimedia.org/wiki/File:KDE_Plasma_5.22.png) [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/KDE_Plasma_5.22.png){width=450}
+:::::::::
+::::::::::::
+
+##
+
 ![hexagonal arcitectural pattern (a.k.a. ports & adapters)](figures/hexagonal_interface.drawio.svg){width=700}
 
-an interface is a shared boundary across which two or more separate components of a computer system [@enwiki:1244878409]
 
 # NASA lost a 327 Million Dollar Mission
 
