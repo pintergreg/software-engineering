@@ -74,7 +74,7 @@ specify
     - e.g., using a mock backend
 
 ::: {.wide-quote .fragment}
-> A mock, in software engineering, is a simulated object or module that acts as a stand-in for a real object or module.
+> A mock, in software engineering, is a simulated object or module that acts as a stand-in for a real object or module [@geeksforgeeks2019mock].
 <!-- Mocks are often used in testing to isolate the behavior of a particular module or component and to verify that it behaves as expected. -->
 :::
 
