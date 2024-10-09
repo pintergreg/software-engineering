@@ -1,5 +1,6 @@
 ---
 title: interfaces
+subtitle: why they are important and why you should pay close attention to interface definition
 author: Gergő Pintér, PhD
 date: gergo.pinter@uni-corvinus.hu
 lang: en-US
