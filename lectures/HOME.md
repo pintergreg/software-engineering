@@ -120,4 +120,5 @@ MVC-MVP-MVVM
 
 ## week 6
 
-1. implementation planning
+1. interfaces
+2. implementation planning
