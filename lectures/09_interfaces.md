@@ -209,9 +209,36 @@ it is not just rude, but will waste the time of the other team (with pointless d
 
 ## API changes should be communicated
 
+:::::::::::: {.columns .mt-4}
+::::::::: {.column width="65%"}
+::: {.align-left}
+- during design / development
+    - change can be necessary / allowed, but communicate towards the impacted teams
+    - diagrams show inner dependencies
 
-## language support
+:::
+::: {.align-left .fragment}
+- services announce API deprecations
+- so as library / framework developers
+    - can be a source of new issues even if downstream code is not changed
 
+:::
+:::::::::
+::::::::: {.column width="35%"}
+![](figures/publicdomainvectors/policeman-screams-into-a-megaphone.svg){width=225}
+
+:::::::::
+::::::::::::
+
+
+## language level
+
+::: {.text-smaller}
+GeoPandas 1.0 / new deprecations: unary_union attribute is now deprecated and replaced by the union_all() method (#3007) allowing opting for a faster union algorithm for coverages (#3151)
+:::
+
+:::::::::::: {.columns .fragment}
+::::::::: {.column width="55%" .pre-width-100}
 ```python
 from shapely import Polygon
 import geopandas as gpd
@@ -221,8 +248,15 @@ p2 = Polygon([[2, 3], [4, 3], [4, 5], [2, 5]])
 
 gpd.GeoDataFrame(geometry=[p1, p2]).unary_union
 ```
+:::::::::
+::::::::: {.column width="45%" .text-smaller}
+DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_all()' method instead.
 
-:::::::::::: {.columns .fragment}
+![](figures/unary_union.svg){height=100}
+:::::::::
+::::::::::::
+
+<!--:::::::::::: {.columns .fragment}
 ::::::::: {.column width="80%" .text-smaller }
 `DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_all()' method instead.`
 
@@ -231,7 +265,9 @@ gpd.GeoDataFrame(geometry=[p1, p2]).unary_union
 ![](figures/unary_union.svg){height=100}
 
 :::::::::
-::::::::::::
+::::::::::::-->
+
+
 
 ::: {.fragment}
 ```python
