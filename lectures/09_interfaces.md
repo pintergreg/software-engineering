@@ -225,44 +225,6 @@ DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_al
 
 ## language support
 
-:::{.text-smaller}
-```java
-public class Worker {
-    /**
-     * Calculate period between versions
-     * @deprecated
-     * This method is no longer acceptable to compute time between versions.
-     * <p> Use {@link Utils#calculatePeriod(Machine)} instead.
-     *
-     * @param machine instance
-     * @return computed time
-     */
-    @Deprecated(since = "4.5", forRemoval = true)
-    public int calculate(Machine machine) {
-        return machine.exportVersions().size() * 10;
-    }
-}
-
-```
-source: [@ozler2019java]
-
-```python
-def unary_union(self):
-    warnings.warn(
-        "The 'unary_union' attribute is deprecated, "
-        "use the 'union_all' method instead.",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    return self.union_all()
-```
-
-source: [github.com/geopandas/geopandas](https://github.com/geopandas/geopandas/blob/f150ec0480cfbf2ad8074d210d103b4aed313f11/geopandas/array.py#L848-L855)
-
-:::
-
-## geopandas 1.0 deprecated unary_union
-
 ```python
 from shapely import Polygon
 import geopandas as gpd
@@ -300,6 +262,35 @@ def unary_union(self):
 source: [github.com/geopandas/geopandas](https://github.com/geopandas/geopandas/blob/f150ec0480cfbf2ad8074d210d103b4aed313f11/geopandas/array.py#L848-L855)
 :::
 :::
+
+
+## java
+
+:::{.text-smaller}
+```java
+public class Worker {
+    /**
+     * Calculate period between versions
+     * @deprecated
+     * This method is no longer acceptable to compute time between versions.
+     * <p> Use {@link Utils#calculatePeriod(Machine)} instead.
+     *
+     * @param machine instance
+     * @return computed time
+     */
+    @Deprecated(since = "4.5", forRemoval = true)
+    public int calculate(Machine machine) {
+        return machine.exportVersions().size() * 10;
+    }
+}
+
+```
+
+source: [@ozler2019java]
+
+:::
+
+IDEs can parse the deprecation decorators and show to the developer during work
 
 
 # NASA lost a 327 Million Dollar Mission
