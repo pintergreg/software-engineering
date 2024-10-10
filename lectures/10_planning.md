@@ -35,6 +35,7 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 ::::::::: {.column width="65%"}
 - during the requirement analysis some data was already collected
     - regarding functional and non-functional requirements
+    - interviews, questionnaires, telemetry, etc.
 - some research may be needed to select the tools and frameworks during the implementation
     - do some experiments with different libraries
 
@@ -51,7 +52,17 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 ## fail fast
 
 
+## minimal working example
+
+eliminate variables
+
+https://stackoverflow.com/help/minimal-reproducible-example
+
+
 # identify risks
+
+
+## risk register
 
 
 ## Rust-GCC example
@@ -89,6 +100,22 @@ this chapter is based on [riskstorming.com](https://riskstorming.com/) | [CC BY 
 
 
 # schedule milestones
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- visualize project milestones
+    - Gantt chart
+- keep the entire team posted
+- things won't go as planned, so
+    - add safety margin (wiggle room)
+    - e.g., an extra week before deadline for fixing bugs
+
+:::::::::
+::::::::: {.column width="40%"}
+![Gantt chart from [Wikipedia](https://commons.wikimedia.org/wiki/File:GanttChartAnatomy.svg) <br> public domain](figures/borrowed/GanttChartAnatomy.svg)
+
+:::::::::
+::::::::::::
 
 
 # assign responsibilities and tasks
