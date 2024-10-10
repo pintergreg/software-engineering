@@ -66,6 +66,12 @@ specify
 :::::::::
 ::::::::::::
 
+
+## user statistics - C4 component
+
+![](figures/user_statistics/c4_component.excalidraw.svg){height=500}
+
+
 # interface mocking
 
 - an interface is a boundary where a module can be separated
