@@ -1,0 +1,13 @@
+@startgantt
+skin rose
+Project starts 2020-07-01
+printscale quarterly
+[v1] requires 365 days
+[v2] requires 365 days
+[v3] requires 365 days
+[v2] starts at 2021-01-01
+[v3] starts at 2021-07-01
+[v1] is colored in Red/#a80036
+[v2] is colored in Yellow/#a80036
+[v3] is colored in GreenYellow/#a80036
+@endgantt
