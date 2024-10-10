@@ -230,8 +230,31 @@ it is not just rude, but will waste the time of the other team (with pointless d
 :::::::::
 ::::::::::::
 
+## API versions
 
-## language level
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="60%"}
+![](figures/user_statistics/interface_versions.svg){width=475}
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/user_statistics/interface_versions_gantt.svg){width=375}
+
+::: {.text-smaller}
+- 2020-06-30: API v1's end of live
+    - service does not accept connections via APIv1
+    - code can be removed (no need to maintain it anymore)
+
+:::
+:::::::::
+::::::::::::
+
+::: {.fragment}
+`https://developers.facebook.com/v21.0/me?fields=id,name`
+:::
+
+
+# language level
 
 ::: {.text-smaller}
 GeoPandas 1.0 / new deprecations: unary_union attribute is now deprecated and replaced by the union_all() method (#3007) allowing opting for a faster union algorithm for coverages (#3151)
