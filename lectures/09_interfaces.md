@@ -241,7 +241,7 @@ it is not just rude, but will waste the time of the other team (with pointless d
 ![](figures/user_statistics/interface_versions_gantt.svg){width=375}
 
 ::: {.text-smaller}
-- 2020-06-30: API v1's end of live
+- 2021-06-30: API v1's end of live
     - service does not accept connections via APIv1
     - code can be removed (no need to maintain it anymore)
 
@@ -339,9 +339,9 @@ source: [@ozler2019java]
 IDEs can parse the deprecation decorators and show to the developer during work
 
 
-# NASA lost a 327 Million Dollar Mission
+# a 327 Million Dollar interface miscommunication
 
-NASA and Lockheed Martin mixed up units for the Mars Climate Orbiter
+NASA and Lockheed Martin mixed up units for the Mars Climate Orbiter (1999)
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%" .mt-1}
