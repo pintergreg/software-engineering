@@ -92,7 +92,7 @@ Your task is to design this software.
     - what functions would you need
 - identify dependencies between the functions / modules
 - plan sprints with usable increments
-- deadline: 2024-12-03 (week 13)
+- deadline: **3 December 2024** (week 13)
     - when the team also presents the design as a presentation
 - practical classes are workshops
     - possible feedback from the instructor
@@ -114,3 +114,42 @@ Your task is to design this software.
 - team management: [Trello](https://trello.com/)
 - UML: [draw.io](https://app.diagrams.net/)
 - C4: [Google Drawings](https://docs.google.com/drawings)
+    - [create C4 diagrams in draw.io](https://www.drawio.com/blog/c4-modelling)
+
+
+# submission
+
+- you have to submit the main design document
+- you may indicate who was responsible for each part
+- including every diagram
+    - please keep every version of the diagrams and attach them to the submission
+        - I would like to see the evolution of your design
+- and the presentation
+
+you should the submit these by 3 December 2024 via Moodle,
+when you also present your work
+
+
+# presentation
+
+- the presentation should contain the purpose of the software
+    - practically the project assignment
+    - but with your interpretation
+- team members
+    - maybe with responsibilities
+- the introduction of your design
+    - from high level to the low level (according to C4)
+    - describe the overall design
+    - focusing on the interactions between your components
+    - detail at least one of the component to the class level
+    - attach UI mockups
+
+    
+## presentation
+
+- you may separate the presentation by target audience
+    - for the customer almost as if you wanted "sell" the software and introduce it from the user's perspective
+        - C4 system context, use case, user story flows with UI mockups and explanation
+    - and a more technical part focusing on the internal structures
+        - zoom into the system as C4 modelling propagates
+        - detail the interfaces and the environments where a software will operate
