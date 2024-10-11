@@ -1015,6 +1015,35 @@ ADR template by Michael Nygard from [Documenting architecture decisions](http://
 You can use [adr-tools](https://github.com/npryce/adr-tools) to manage the markdown based (Nygard stlye) the ADR files.
 :::
 
+
+## why write ARDs?
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="80%"}
+- they're not for you, they're for the future you
+    - ADRs capture the decision at the time it's being made
+        - on a meeting, on Slack, Teams, Zoom, etc.
+        - like a structured memo
+
+- they're not for you, they're for your peers
+    - ADRs help your teammates understand why the feature is built the way it is and not built some other way 
+        - alternatives considered and pros/cons within the ADRs
+
+- they're not for you, they're for your future peers
+    - writing down decisions help communicate to your current teammates, but also those who will join later
+    - it is an asynchronous way of communication, no need for a Zoom call, which reduces interruption
+
+:::::::::
+::::::::: {.column width="20%"}
+![](figures/publicdomainvectors/shelves-with-office-folders.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-1}
+based on [Why Write ADRs](https://github.blog/2020-08-13-why-write-adrs/) by Eli Perkins
+:::
+
 # references
 
 ::: {#refs .text-smaller}
