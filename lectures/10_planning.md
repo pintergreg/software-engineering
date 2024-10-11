@@ -76,6 +76,41 @@ https://stackoverflow.com/help/minimal-reproducible-example
 
 # identify risks
 
+a risk is a possibility that something bad can happen
+
+- there is risk inherent with building any piece of software
+- whether you're building a completely new greenfield project,
+- or adding a new feature to an existing codebase
+    - other parts cease to work
+    - the new feature alienate users
+    - data loss
+
+::: {.text-smaller}
+based on [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+:::
+
+
+## prioritize risks
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- often difficult to prioritise which risks you should take care of 
+- one way to do this is to map risks to a matrix
+- where you evaluate 
+    - the probability: how likely is it that the risk will happen?
+    - and the impact: what is the negative impact if the risk does occur?
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/borrowed/quantifying-risk-1.png){width=350}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+:::
+
 
 ## risk register
 
@@ -97,16 +132,42 @@ https://stackoverflow.com/help/minimal-reproducible-example
 source [Wikipedia](https://en.wikipedia.org/wiki/Risk_register) [@enwiki:1245973868]
 :::
 
-
+<!--
 ## risk register - table
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+**common columns**
+
+- category
+- name
+- responsible
+- probability
+- impact
+- mitigation
+- action by
+- action when
+
+:::::::::
+::::::::: {.column width="60%"}
+instance Toyota's risk register listed reputation risks caused by Prius' malfunctions but the company failed to take action
+:::::::::
+::::::::::::-->
 
 
 ## Rust-GCC example
+
+common columns in table-based risk registers:
+~ category, name, responsible, probability, impact, mitigation, action by, action when
+
+::: {.mt-3}
 
 | Risk | Impact<br>(1-3) | Likelihood<br>(0-10) | Risk<br>(I * L) | Mitigation |
 |-----------|---:|---:|---:|----------------|
 | Rust Language Changes | 2 | 7 | 14 | Target a specific Rustc version |
 | Missing GCC 13 upstream window | 1 | 6 | 6 | Merge in GCC 14 and be proactive about reviews |
+
+:::
 
 ::: {.text-smaller}
 source: [Rust-GCC / Reporting](https://github.com/Rust-GCC/Reporting/blob/main/2022/2022-04-11-report.org)
