@@ -46,6 +46,9 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 ::::::::::::
 
 
+## learning could be a task
+
+
 ## experiments
 
 
@@ -79,12 +82,30 @@ source: [Rust-GCC / Reporting](https://github.com/Rust-GCC/Reporting/blob/main/2
 
 ## risk storming
 
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
 - visual and collaborative risk identification technique
 - created by Simon Brown
     - author of C4 model
+- motivation: often only one person evaluated risks
+    - ~ four eyes see more than two
+- risk evaluation should be collaborative activity
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/borrowed/risk-storming-1.png){width=250}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+this chapter is based on [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+:::
+    
+## steps of risk storming
 
 1. draw some software architecture diagrams
-    - to show what you're planning to build or change, ideally at different levels of abstraction
+    - to show what you're planning to build, at different levels of abstraction
     - ideally C4
 2. identify the risks individually 
     - gather people in front of the diagrams, 
@@ -95,8 +116,71 @@ source: [Rust-GCC / Reporting](https://github.com/Rust-GCC/Reporting/blob/main/2
     - do it in silence
 
 ::: {.text-smaller}
-this chapter is based on [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 :::
+    
+
+## steps of risk storming
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+3. converge the risks on the diagrams
+    - ask everyone to place their sticky notes onto the diagrams,
+    - sticking them in close to the area where the risk has been identified
+4. review and summarise the risks
+    - review and summarise the output,
+    - especially focusing on risks that only one person identified,
+    - or risks where multiple people disgree on the priority
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/borrowed/risk-storming-2-cropped.png){width=250}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+:::
+
+
+## mitigating risks
+
+- risks are identified
+    - and prioritized
+- come up with mitigation strategies
+    - either to prevent the risks from happening
+    - or to take corrective action if the risk does occur
+- focus on the highest priority ones first
+<!--- mitigation strategies the are applicable depending upon the type of risk, including: 
+    - education
+    - writing code
+    - re-work-->
+
+::: {.text-smaller}
+from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+:::
+
+
+## mitigation strategies
+
+- education
+    - train the team, 
+    - or hire new team members in areas where you lack experience
+- writing code
+    - create prototypes, proofs of concept, walking skeletons, etc. to mitigate technical risks by proving that something does or doesn't work
+- re-work
+    - change software architecture to remove or reduce the probability/impact of identified risks
+        - e.g. removing single points of failure, 
+    - upon change you should re-run the risk-storming process
+
+::: {.text-smaller}
+from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+:::
+
+## risk storming example
+
+![](figures/user_statistics/risk_storming.excalidraw.svg){height=550}
 
 
 # schedule milestones
