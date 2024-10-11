@@ -121,7 +121,7 @@ MVC-MVP-MVVM
 ## week 6
 
 1. [interfaces](/software-engineering/slides/09_interfaces.html)
-2. implementation planning
+2. [implementation planning](/software-engineering/slides/10_planning.html)
 
 ### readings
 

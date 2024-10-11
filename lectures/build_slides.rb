@@ -9,6 +9,7 @@ inputs = [
     "07_c4.md",
     "08_patterns.md",
     "09_interfaces.md",
+    "10_planning.md",
     "project.md",
 ]
 Dir.glob('./summary_week*.md') do |x|
