@@ -578,12 +578,6 @@ For example Google Docs or Microsoft Word also provides some level of version co
 :::::::::
 ::::::::::::
 
-<!--# project management triangle
-
-![](figures/quality_time_cost.drawio.svg){width=60%}
-
-::: notes
-:::-->
 
 # references
 
