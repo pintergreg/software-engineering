@@ -25,4 +25,8 @@ if __name__ == "__main__":
     ax.set_xlabel("number of people in the team")
     ax.set_ylabel("communication channels")
     ax.margins(0)
-    fig.savefig(f"{output}/communication_overhead.svg", dpi=300, pad_inches=0.1)
+    fig.savefig(
+        f"{output}/communication_overhead.svg",
+        dpi=300,
+        pad_inches=0.1,
+    )
