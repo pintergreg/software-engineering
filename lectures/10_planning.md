@@ -84,6 +84,8 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 
 ## fail fast
 
+~ indirect proof, proof of contradiction
+
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
 - the requirements are known
@@ -96,7 +98,7 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 
 :::::::::
 ::::::::: {.column width="40%"}
-![screenshot of [leblancfg/autocrop](https://github.com/leblancfg/autocrop) GitHub project](figures/autocrop.png){width=300}
+![screenshot of [leblancfg/autocrop](https://github.com/leblancfg/autocrop) GitHub project page](figures/autocrop.png){width=300}
 
 :::::::::
 ::::::::::::
