@@ -29,4 +29,5 @@ if __name__ == "__main__":
         f"{output}/communication_overhead.svg",
         dpi=300,
         pad_inches=0.1,
+        metadata={"Creator": "Gergő Pintér", "Date": None},
     )
