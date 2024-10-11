@@ -190,6 +190,30 @@ from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativ
 from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 :::
 
+
+## walking skeleton
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+
+> A Walking Skeleton is a tiny implementation of the system that performs a small end-to-end function. It need not use the final architecture, but it should link together the main architectural components. The architecture and the functionality can then evolve in parallel.
+>
+> -- Alistair Cockburn
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/skeleton.svg){width=275}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+it is a pattern intended to kick-start test driven development (later in the course)
+
+via [wiki.c2.com](https://wiki.c2.com/?WalkingSkeleton)
+:::
+
+
 ## risk storming example
 
 ![](figures/user_statistics/risk_storming.excalidraw.svg){height=550}
