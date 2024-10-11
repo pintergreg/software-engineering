@@ -79,6 +79,27 @@ https://stackoverflow.com/help/minimal-reproducible-example
 
 ## risk register
 
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="65%"}
+- a risk register is a document used as a risk management tool 
+- contains all identified risks with additional information
+    - e.g., nature of the risk, probability, impact, reference and owner, mitigation measures
+- it can be displayed as a table or as a scatterplot
+
+:::::::::
+::::::::: {.column width="35%"}
+![by [Hou710](https://en.wikipedia.org/wiki/File:Hou710_RiskLog.svg) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en) ](figures/borrowed/Risk Log - Party Example.svg){width=300}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-4}
+source [Wikipedia](https://en.wikipedia.org/wiki/Risk_register) [@enwiki:1245973868]
+:::
+
+
+## risk register - table
+
 
 ## Rust-GCC example
 
