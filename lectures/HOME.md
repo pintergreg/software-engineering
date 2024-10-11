@@ -122,3 +122,10 @@ MVC-MVP-MVVM
 
 1. [interfaces](/software-engineering/slides/09_interfaces.html)
 2. implementation planning
+
+### readings
+
+- [riskstorming.com](https://riskstorming.com/)
+- [OWASP Risk Rating Methodology](https://owasp.org/www-community/OWASP_Risk_Rating_Methodology)
+- [Story points and estimation ](https://www.atlassian.com/agile/project-management/estimation) - by Dan Radigan 
+- [What Scrum Says About Estimates](https://www.scrum.org/resources/blog/what-scrum-says-about-estimates) 
