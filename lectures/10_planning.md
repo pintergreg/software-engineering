@@ -48,6 +48,18 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 
 ## learning could be a task
 
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-4}
+- you may need to work a technology / framework / language that you are not familiar with
+- or you just have to learn a new codebase
+- calculate with learning during the planning
+
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/complex_projects.drawio.cropped_no_people.svg){height=400}
+:::::::::
+::::::::::::
+
 
 ## experiments
 
