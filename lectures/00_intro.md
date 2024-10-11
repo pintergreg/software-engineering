@@ -22,8 +22,8 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 |    3 | 2024-09-24 | requirement analysis, user story mapping | project assignment |
 |    4 | 2024-10-01 | UML, C4                                  | project workshop   |
 |    5 | 2024-10-08 | design patterns                          | project workshop   |
-|    6 | 2024-10-15 | implementation planning, clean clode     | project workshop   |
-|    7 | 2024-10-22 | legacy code, review                      | project workshop   |
+|    6 | 2024-10-15 | interfaces, implementation planning      | project workshop   |
+|    7 | 2024-10-22 | clean clode, legacy code, review         | project workshop   |
 |    8 | 2024-10-29 | **school holiday**                       |                    |
 |    9 | 2024-11-05 | testing, review                          | VCS basics         |
 |   10 | 2024-11-12 | dependency management                    | project workshop   |
@@ -43,8 +43,8 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 |    3 | 2024-09-24 | requirement analysis, user story mapping | project assignment |
 |    4 | 2024-10-01 | UML, C4                                  | project workshop   |
 |    5 | 2024-10-08 | design patterns                          | project workshop   |
-|    6 | 2024-10-15 | implementation planning, clean clode     | project workshop   |
-|    7 | 2024-10-22 | legacy code, review                      | project workshop   |
+|    6 | 2024-10-15 | interfaces, implementation planning      | project workshop   |
+|    7 | 2024-10-22 | clean clode, legacy code, review         | project workshop   |
 
 :::
 
