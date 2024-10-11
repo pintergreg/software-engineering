@@ -57,21 +57,71 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 :::::::::
 ::::::::: {.column width="50%"}
 ![](figures/complex_projects.drawio.cropped_no_people.svg){height=400}
+
 :::::::::
 ::::::::::::
 
 
 ## experiments
 
+<!--:::::::::::: {.columns}
+::::::::: {.column width="77%"}-->
+- sometimes the task requires a step that you don't want to implement (again) but use an existing framework instead
+    - e.g., crop a profile picture to a standard size, while keeping the face in focus
+- then you may want to search for a suitable framework and do some research about how to use it
+
+
+<!-- - this may help to measure the  -->
+<!--:::::::::
+::::::::: {.column width="23%"}
+![](figures/cropping.drawio.svg){width=250}
+
+:::::::::
+::::::::::::-->
+
+<!-- - do not invent the wheel again, use an existing framework / method -->
+
 
 ## fail fast
 
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- the requirements are known
+- try to eliminate candidates as soon as possible
+    - unmaintained
+    - cannot handle certain file formats
+    - target language / version is not supported
+- then move on the next one
+- document findings (~ decision records)
 
-## minimal working example
+:::::::::
+::::::::: {.column width="40%"}
+![screenshot of [leblancfg/autocrop](https://github.com/leblancfg/autocrop) GitHub project](figures/autocrop.png){width=300}
 
-eliminate variables
+:::::::::
+::::::::::::
 
-https://stackoverflow.com/help/minimal-reproducible-example
+
+## minimal workable example
+
+:::::::::::: {.columns}
+::::::::: {.column width="65%"}
+- when you have a promising candidate, write code to try it out in practice
+- start new project<br>(for every candidate / experiment)
+    - simple, clean
+    - no interference, side effects
+    - eliminate unknown variables
+- document research findings (~ decision records)
+
+:::::::::
+::::::::: {.column width="35%"}
+![](figures/publicdomainvectors/developer-at-work.svg){width=250}
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+Stackoverflow guideline on [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)
+:::
 
 
 # identify risks
