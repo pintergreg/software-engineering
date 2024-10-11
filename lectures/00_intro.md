@@ -513,25 +513,70 @@ For example Google Docs or Microsoft Word also provides some level of version co
 > -- Grady Booch
 
 
-# Topologies
+# topologies
 
+:::::::::::: {.columns}
+::::::::: {.column width="33%"}
+![](figures/server_client.drawio.svg){width=250}
+
+![](figures/message_bus.drawio.svg){width=250}
+
+:::::::::
+::::::::: {.column width="33%"}
+![](figures/layered_4.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="33%"}
+![](figures/onion.drawio.svg){width=250}
+
+![](figures/hexagonal_extend.drawio.svg){width=250}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
 [Introduction to Software Architecture](https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture)
+:::
+
 
 ## Layered Architechture
 
-![](http://1.bp.blogspot.com/-TbA8p6DWYJc/Uc0zYwSG_iI/AAAAAAAAAag/cPytbL6oeM4/s800/layered.png)
+![](figures/borrowed/Linux kernel and OpenGL video games.svg){height=450}
 
 - [Layered Architecture: Introduction](http://serena-yeoh.blogspot.com/2013/06/layered-architecture-for-net.html)
 - [Layered Architecture: Component Interactions](http://serena-yeoh.blogspot.com/2014/01/layered-architecture-components.html)
 
-## Message Bus Architecture
 
-![](https://www.codeproject.com/KB/architecture/1064240/message-bus.gif)
+## message bus
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-2}
+
+- shared communication channel that connects multiple components or services
+- simple, extensible
+
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/message_bus.drawio.svg){width=325}
+
+:::::::::
+::::::::::::
 
 
-## Server-Client Architecture
+## server/client architecture
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1200px-Client-server-model.svg.png)
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- consists of two parts
+    - client and server
+- distributed
+- always the client initiates a connection to the server
+- while the server process always waits for requests from any client
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/server_client.drawio.svg){width=325}
+:::::::::
+::::::::::::
 
 <!--# project management triangle
 
