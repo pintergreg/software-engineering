@@ -128,4 +128,5 @@ MVC-MVP-MVVM
 - [riskstorming.com](https://riskstorming.com/)
 - [OWASP Risk Rating Methodology](https://owasp.org/www-community/OWASP_Risk_Rating_Methodology)
 - [Story points and estimation ](https://www.atlassian.com/agile/project-management/estimation) - by Dan Radigan 
-- [What Scrum Says About Estimates](https://www.scrum.org/resources/blog/what-scrum-says-about-estimates) 
+- [What Scrum Says About Estimates](https://www.scrum.org/resources/blog/what-scrum-says-about-estimates)
+- [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)
