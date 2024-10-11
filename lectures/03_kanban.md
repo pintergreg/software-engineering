@@ -177,7 +177,7 @@ It does not matter what kind of charts are used as long as they enable a shared 
 
 :::::::::
 ::::::::: {.column width="30%"}
-![Kanban card together with the bag of bolts](figures/080527-F-0000A-001.JPG)
+![Kanban card together with the bag of bolts](figures/borrowed/080527-F-0000A-001.JPG)
 
 :::::::::
 ::::::::::::

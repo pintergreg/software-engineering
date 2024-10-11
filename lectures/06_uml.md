@@ -393,7 +393,7 @@ Aggregation can occur when a class is a collection or container of other classes
 ![](figures/uml/stopwatch_state_commented.svg){width=350}
 :::::::::
 ::::::::: {.column width="40%" .mt-4}
-![](figures/cronometro-mauro-olivo-01.svg){width=175}
+![](figures/borrowed/cronometro-mauro-olivo-01.svg){width=175}
 :::::::::
 ::::::::::::
 
