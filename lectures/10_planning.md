@@ -391,6 +391,7 @@ source: [@enwiki:1243064642]
         - ["Architecture is the decisions that you wish you could get right early in a project." -- Ralph Johnson]{.text-smaller}
 - make educated guesses instead
     - measure
+        - [burn down charts, cumulative flow diagram]{.text-smaller}
     - infer from previous tasks
 
 :::::::::
