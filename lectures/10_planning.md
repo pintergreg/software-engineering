@@ -106,6 +106,8 @@ this chapter is based on [riskstorming.com](https://riskstorming.com/) | [CC BY 
 - visualize project milestones
     - Gantt chart
 - keep the entire team posted
+- pay attention to holidays
+    - multiple countries in the case of an international team
 - things won't go as planned, so
     - add safety margin (wiggle room)
     - e.g., an extra week before deadline for fixing bugs
@@ -120,11 +122,65 @@ this chapter is based on [riskstorming.com](https://riskstorming.com/) | [CC BY 
 
 # assign responsibilities and tasks
 
+- every task you want to make done should have exactly one person responsible
+    - no responsible
+- define area of responsibility
+    - a task (in scrum terminology) should have definition of done, which specifies it
+- everyone needs to know what other people are responsible for
+    - scrum/kanban board can visualize it
+    - issue/ticket trackers can also work
+- at the end of a sprint planning, every task in the sprint backlog should have an assignee
+
+:::{.text-smaller}
+source: [@paquet2019when]
+:::
+
 
 # allocate resources: man-month
 
-:::  {.text-size-3}
+::: {.text-size-2 .mt-5}
 Man-month is a hypothetical unit of work representing the work done by one person in one month.
+:::
+
+-- Fred Brooks: The Mythical Man-Month [@brooks1974mythical]
+
+
+## estimating time requirement of a task
+
+- scrum (and agile in general) does not say anything about *how* to estimate time
+- seemingly simple task can be difficult
+
+Brooks' law says that it is impossible to measure useful work in man-months.
+
+
+## poker planning
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- is a consensus-based, gamified technique for estimation (in agile)
+- members of the group make estimates by playing numbered cards face-down to the table, instead of speaking them aloud
+- estimates are then discussed and high and low estimates are explained
+    - repeat until estimates converge
+- by hiding the figures, the group can avoid the cognitive bias of anchoring
+    - where the first number spoken aloud sets a precedent for subsequent estimates
+
+:::::::::
+::::::::: {.column width="40%"}
+![by [Hkniberg ](https://en.wikipedia.org/wiki/File:CrispPlanningPokerDeck.jpg) | public domain](figures/borrowed/CrispPlanningPokerDeck.jpg)
+
+::: {.text-smaller .mt-1}
+optional cards
+
+:    - ? means *unsure*
+     - &#9749; mean "I need a break"
+<!--- card values: 0, ½, 1, 2, 3, 5, 8, 13, 20, 40, 100, and optionally a ? (unsure)
+- Fibonacci sequence: 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89-->
+:::
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [@enwiki:1243064642]
 :::
 
 
