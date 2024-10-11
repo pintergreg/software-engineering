@@ -986,21 +986,65 @@ Architecture represents the significant <strong>design decisions</strong> that
 shape a system, where significant is measured by cost of change.</p>
 <p>– Grady Booch</p>
 </blockquote>
-<h1 id="topologies"><a class="header" href="#topologies">Topologies</a></h1>
+<h1 id="topologies"><a class="header" href="#topologies">topologies</a></h1>
+<div class="columns">
+<div class="column" width="33%">
+<img src="lectures/figures/server_client.drawio.svg" width="250" />
+<img src="lectures/figures/message_bus.drawio.svg" width="250" />
+</div>
+<div class="column" width="33%">
+<img src="lectures/figures/layered_4.drawio.svg" width="200" />
+</div>
+<div class="column" width="33%">
+<img src="lectures/figures/onion.drawio.svg" width="250" />
+<img src="lectures/figures/hexagonal_extend.drawio.svg" width="250" />
+</div>
+</div>
+<div class="text-smaller">
 <p><a href="https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture">Introduction to Software
 Architecture</a></p>
+</div>
 <h2 id="layered-architechture"><a class="header" href="#layered-architechture">Layered Architechture</a></h2>
-<p><img src="http://1.bp.blogspot.com/-TbA8p6DWYJc/Uc0zYwSG_iI/AAAAAAAAAag/cPytbL6oeM4/s800/layered.png" alt="" /></p>
+<p><img
+src="figures/borrowed/Linux%20kernel%20and%20OpenGL%20video%20games.svg"
+height="450" /></p>
 <ul>
 <li><a href="http://serena-yeoh.blogspot.com/2013/06/layered-architecture-for-net.html">Layered Architecture:
 Introduction</a></li>
 <li><a href="http://serena-yeoh.blogspot.com/2014/01/layered-architecture-components.html">Layered Architecture: Component
 Interactions</a></li>
 </ul>
-<h2 id="message-bus-architecture"><a class="header" href="#message-bus-architecture">Message Bus Architecture</a></h2>
-<p><img src="https://www.codeproject.com/KB/architecture/1064240/message-bus.gif" alt="" /></p>
-<h2 id="server-client-architecture"><a class="header" href="#server-client-architecture">Server-Client Architecture</a></h2>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1200px-Client-server-model.svg.png" alt="" /></p>
+<h2 id="message-bus"><a class="header" href="#message-bus">message bus</a></h2>
+<div class="columns">
+<div class="column mt-2" width="50%">
+<ul>
+<li>shared communication channel that connects multiple components or
+services</li>
+<li>simple, extensible</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<img src="lectures/figures/message_bus.drawio.svg" width="325" />
+</div>
+</div>
+<h2 id="serverclient-architecture"><a class="header" href="#serverclient-architecture">server/client architecture</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>consists of two parts
+<ul>
+<li>client and server</li>
+</ul>
+</li>
+<li>distributed</li>
+<li>always the client initiates a connection to the server</li>
+<li>while the server process always waits for requests from any client</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<img src="lectures/figures/server_client.drawio.svg" width="325" />
+</div>
+</div>
 <!--# project management triangle
 &#10;![](figures/quality_time_cost.drawio.svg){width=60%}
 &#10;::: notes

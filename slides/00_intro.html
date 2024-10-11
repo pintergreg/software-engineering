@@ -959,15 +959,30 @@ cost of change.</p>
 </section></section>
 <section>
 <section id="topologies" class="title-slide slide level1">
-<h1>Topologies</h1>
+<h1>topologies</h1>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="figures/server_client.drawio.svg" width="250" /></p>
+<p><img data-src="figures/message_bus.drawio.svg" width="250" /></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="figures/layered_4.drawio.svg" width="200" /></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="figures/onion.drawio.svg" width="250" /></p>
+<p><img data-src="figures/hexagonal_extend.drawio.svg"
+width="250" /></p>
+</div>
+</div>
+<div class="text-smaller">
 <p><a
 href="https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture">Introduction
 to Software Architecture</a></p>
+</div>
 </section>
 <section id="layered-architechture" class="slide level2">
 <h2>Layered Architechture</h2>
 <p><img
-data-src="http://1.bp.blogspot.com/-TbA8p6DWYJc/Uc0zYwSG_iI/AAAAAAAAAag/cPytbL6oeM4/s800/layered.png" /></p>
+data-src="figures/borrowed/Linux%20kernel%20and%20OpenGL%20video%20games.svg"
+height="450" /></p>
 <ul>
 <li><a
 href="http://serena-yeoh.blogspot.com/2013/06/layered-architecture-for-net.html">Layered
@@ -977,15 +992,38 @@ href="http://serena-yeoh.blogspot.com/2014/01/layered-architecture-components.ht
 Architecture: Component Interactions</a></li>
 </ul>
 </section>
-<section id="message-bus-architecture" class="slide level2">
-<h2>Message Bus Architecture</h2>
-<p><img
-data-src="https://www.codeproject.com/KB/architecture/1064240/message-bus.gif" /></p>
+<section id="message-bus" class="slide level2">
+<h2>message bus</h2>
+<div class="columns">
+<div class="column mt-2" style="width:50%;">
+<ul>
+<li>shared communication channel that connects multiple components or
+services</li>
+<li>simple, extensible</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/message_bus.drawio.svg" width="325" /></p>
+</div>
+</div>
 </section>
-<section id="server-client-architecture" class="slide level2">
-<h2>Server-Client Architecture</h2>
-<p><img
-data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1200px-Client-server-model.svg.png" /></p>
+<section id="serverclient-architecture" class="slide level2">
+<h2>server/client architecture</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>consists of two parts
+<ul>
+<li>client and server</li>
+</ul></li>
+<li>distributed</li>
+<li>always the client initiates a connection to the server</li>
+<li>while the server process always waits for requests from any
+client</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/server_client.drawio.svg" width="325" /></p>
+</div>
+</div>
 <!--# project management triangle
 
 ![](figures/quality_time_cost.drawio.svg){width=60%}
