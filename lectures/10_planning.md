@@ -406,10 +406,17 @@ source: [@enwiki:1243064642]
 
 > Adding manpower to a late software project makes it later.
 
-::: {.fragment}
+:::::::::::: {.columns .column-gapless .fragment}
+::::::::: {.column width="72%"}
 Assigning more programmers to a project running behind schedule will make it even later.
 This is because the **time required for the new programmers to learn about the project** and the **increased communication overhead** will consume an ever-increasing quantity of available time [@enwiki:1233664045].
-:::
+
+:::::::::
+::::::::: {.column width="28%"}
+![](figures/communication_overhead_eq.svg){width=200}
+
+:::::::::
+::::::::::::
 
 ::: notes
 Furthermore, in many cases the new programmer cannot just learn about the project on their own, but someone should mentor them.
