@@ -103,6 +103,10 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 :::::::::
 ::::::::::::
 
+::: notes
+https://en.wikipedia.org/wiki/Fail_fast_(business)
+:::
+
 
 ## minimal workable example
 
