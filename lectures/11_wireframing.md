@@ -15,13 +15,23 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 # wireframe
 
-A wireframe is an outline / blueprint of a webpage or application.
+:::::::::::: {.columns}
+::::::::: {.column width="70" .mt-5}
+- a wireframe is an outline / blueprint of a webpage or application
+- can be hand drawn on paper or built out digitally
 
-It’s usually a two-dimensional skeleton outlining what you’ll include in each view of your app, kind of like a blueprint. Wireframes can be hand drawn on paper or built out digitally.
+::: {.text-smaller}
+source: [@bruton2022what]
+:::
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/user_stats.drawio.svg){width=250}
+:::::::::
+::::::::::::
 
-https://technofaq.org/posts/2017/08/how-are-wireframes-significant-in-mobile-application-development/
-https://www.uxdesigninstitute.com/blog/what-is-wireframing/
-https://www.figma.com/resource-library/what-is-wireframing/
+<!--https://www.uxdesigninstitute.com/blog/what-is-wireframing/
+https://www.figma.com/resource-library/what-is-wireframing/-->
+
 
 ## low fidelity vs. high fidelity
 
