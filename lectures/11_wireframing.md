@@ -141,11 +141,14 @@ source: [@bruton2022what]
 
 # wireframe map
 
-![](figures/user_statistics/wireframe_map_2.drawio.svg){height=550}
+![](figures/user_statistics/wireframe_map_2.drawio.svg){height=500}
+
+::: {.text-smaller}
+shows user flow, ~ user story map flow 
+:::
 
 
 # sitemap
-
 
 :::::::::::: {.columns}
 ::::::::: {.column width="25"}
@@ -162,7 +165,7 @@ source: [@bruton2022what]
 :::::::::
 ::::::::::::
 
-## sitemap as wireframe
+## sitemap as wireframe map
 
 ![](figures/sitemap_wireframe.drawio.svg){height=550}
 
