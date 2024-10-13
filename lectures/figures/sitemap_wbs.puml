@@ -1,0 +1,17 @@
+@startwbs
+skin rose
+* home page
+** issue page
+*** visual content
+*** table of contents
+*** download section
+*** coment section
+** topic descriptions
+** issue database
+*** search
+**** by title
+**** author
+**** topic
+** archive
+*** yearly package download
+@endwbs

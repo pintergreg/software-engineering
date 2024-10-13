@@ -146,8 +146,21 @@ source: [@bruton2022what]
 
 # sitemap
 
-- similar to a wireframe map but for web sites
 
+:::::::::::: {.columns}
+::::::::: {.column width="25"}
+- similar to a wireframe map but for web sites
+- for design, documentation
+- also for machine processing
+    - for web scrawlers
+    - sitemap.xml
+
+:::::::::
+::::::::: {.column width="75%"}
+![](figures/sitemap_wbs.svg){width=600}
+
+:::::::::
+::::::::::::
 
 ## sitemap as wireframe
 
