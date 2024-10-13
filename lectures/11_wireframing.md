@@ -16,9 +16,11 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 # wireframe
 
 :::::::::::: {.columns}
-::::::::: {.column width="70" .mt-5}
-- a wireframe is an outline / blueprint of a webpage or application
+::::::::: {.column width="70" .mt-2}
+- a wireframe is an outline / blueprint / concept art of a webpage or application
 - can be hand drawn on paper or built out digitally
+- provides visual understanding of page structure, layout, user flow, functionality and intended behaviours
+- presented to stakeholders before the interface is coded
 
 ::: {.text-smaller}
 source: [@bruton2022what]
@@ -32,13 +34,49 @@ source: [@bruton2022what]
 <!--https://www.uxdesigninstitute.com/blog/what-is-wireframing/
 https://www.figma.com/resource-library/what-is-wireframing/-->
 
+# wireframing
 
-## low fidelity vs. high fidelity
+:::::::::::: {.columns}
+::::::::: {.column width="65" .mt-2}
+- responsibility of the UI/UX designers
+- occurs during the exploratory design phase
+    - experimenting
+- iterative process
+- iterations are presented to the stakeholders to gain feedback
+- some professional tools: [Figma](https://www.figma.com/), [Balsamiq](https://balsamiq.com/), [Sketch](https://www.sketch.com/)
+:::::::::
+::::::::: {.column width="35%"}
+![](figures/publicdomainvectors/designer-workspace.svg){width=275}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+based on: [@bruton2022what]
+:::
+
+
+# types of wireframes
+
+:::::::::::: {.columns}
+::::::::: {.column width="33"}
+![low-fidelity](figures/user_statistics/wireframe_lofi.drawio.svg){width=250}
+:::::::::
+::::::::: {.column width="33"}
+![mid-fidelity](figures/user_stats.drawio.svg){width=250}
+:::::::::
+::::::::: {.column width="33"}
+![high-fidelity](figures/user_statistics/wireframe_hifi.drawio.svg){width=250}
+:::::::::
+::::::::::::
 
 
 # wireframe map
 
 ![](figures/user_statistics/wireframe_map_2.drawio.svg){height=550}
+
+
+# sitemap
 
 
 # references
