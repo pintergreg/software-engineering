@@ -71,6 +71,64 @@ based on: [@bruton2022what]
 ::::::::::::
 
 
+## low-fidelity wireframe
+
+:::::::::::: {.columns}
+::::::::: {.column width="70" .mt-2}
+- first sketch
+- simple
+- rough visual representations of a webpage or application
+- don't consider scale or pixel accuracy
+- don't include actual content, typography, colors
+    - image: boxes with an X
+    - text: scrible
+- might be hard to undersand
+
+::: {.text-smaller}
+source: [@bruton2022what]
+:::
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/user_statistics/wireframe_lofi.drawio.svg){width=250}
+:::::::::
+::::::::::::
+
+
+## mid-fidelity wireframe
+
+:::::::::::: {.columns}
+::::::::: {.column width="70" .mt-2}
+- 
+
+::: {.text-smaller}
+source: [@bruton2022what]
+:::
+:::::::::
+::::::::: {.column width="30%"}
+![mid-fidelity](figures/user_stats.drawio.svg){width=250}
+:::::::::
+::::::::::::
+
+
+## hi-fidelity wireframe
+
+:::::::::::: {.columns}
+::::::::: {.column width="70" .mt-2}
+- 
+
+::: {.text-smaller}
+source: [@bruton2022what]
+:::
+:::::::::
+::::::::: {.column width="30%"}
+![high-fidelity](figures/user_statistics/wireframe_hifi.drawio.svg){width=250}
+:::::::::
+::::::::::::
+
+
+## prototype
+
+
 # wireframe map
 
 ![](figures/user_statistics/wireframe_map_2.drawio.svg){height=550}
