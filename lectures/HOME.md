@@ -122,6 +122,7 @@ MVC-MVP-MVVM
 
 1. [interfaces](/software-engineering/slides/09_interfaces.html)
 2. [implementation planning](/software-engineering/slides/10_planning.html)
+3. [wireframing](/software-engineering/slides/11_wireframeing.html)
 
 ### readings
 
@@ -130,3 +131,4 @@ MVC-MVP-MVVM
 - [Story points and estimation ](https://www.atlassian.com/agile/project-management/estimation) - by Dan Radigan 
 - [What Scrum Says About Estimates](https://www.scrum.org/resources/blog/what-scrum-says-about-estimates)
 - [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)
+- [What is wireframing? A complete guide](https://www.uxdesigninstitute.com/blog/what-is-wireframing/) - by Louise Bruton
