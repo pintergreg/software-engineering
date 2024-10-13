@@ -149,12 +149,17 @@ source: [@bruton2022what]
 - similar to a wireframe map but for web sites
 
 
+## sitemap as wireframe
+
+![](figures/sitemap_wireframe.drawio.svg){height=550}
+
+
 # some free tools
 
 - [Google Drawings](https://docs.google.com/drawings)
 - [draw.io](https://app.diagrams.net/)
 - [Quant-UX](https://quant-ux.com/)
-    - open source (need hosting) or free as a service
+    - open source (self-hosted) or free as a service
 - [wireframe.cc](https://wireframe.cc/)
     - only public and no export in free plan
 - [Figma](https://www.figma.com/)
