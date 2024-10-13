@@ -98,7 +98,12 @@ source: [@bruton2022what]
 
 :::::::::::: {.columns}
 ::::::::: {.column width="70" .mt-2}
-- 
+- provides more precise representations of the layout
+- for exploring design ideas, establishing spacing and buttons, and user flow
+- still don't include images, typography or detailed content
+    - but show more details regarding components and features
+- no colors, grayscale
+- usually made with digital tool
 
 ::: {.text-smaller}
 source: [@bruton2022what]
@@ -114,7 +119,12 @@ source: [@bruton2022what]
 
 :::::::::::: {.columns}
 ::::::::: {.column width="70" .mt-2}
-- 
+- exploring complex concepts, finalising design
+- provides pixel-specific layouts
+- usually have actual images and written content
+- created using a digital tool
+- feature actual typography, detailed features, design elements (logos) and menu systems
+- may presented as initial prototypes
 
 ::: {.text-smaller}
 source: [@bruton2022what]
