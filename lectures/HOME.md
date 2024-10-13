@@ -122,7 +122,7 @@ MVC-MVP-MVVM
 
 1. [interfaces](/software-engineering/slides/09_interfaces.html)
 2. [implementation planning](/software-engineering/slides/10_planning.html)
-3. [wireframing](/software-engineering/slides/11_wireframeing.html)
+3. [wireframing](/software-engineering/slides/11_wireframing.html)
 
 ### readings
 
