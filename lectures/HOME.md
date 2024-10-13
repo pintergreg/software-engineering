@@ -116,7 +116,7 @@ MVC-MVP-MVVM
 
 - [The Composition Over Inheritance Principle](https://python-patterns.guide/gang-of-four/composition-over-inheritance/)
      - with Python examples
-- [Railway oriented programming](https://fsharpforfunandprofit.com/posts/recipe-part2/) -by Scott Wlaschin
+- [Railway oriented programming](https://fsharpforfunandprofit.com/posts/recipe-part2/) - by Scott Wlaschin
 
 ## week 6
 
@@ -132,3 +132,4 @@ MVC-MVP-MVVM
 - [What Scrum Says About Estimates](https://www.scrum.org/resources/blog/what-scrum-says-about-estimates)
 - [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)
 - [What is wireframing? A complete guide](https://www.uxdesigninstitute.com/blog/what-is-wireframing/) - by Louise Bruton
+- [UI Prototypes](https://www.interaction-design.org/literature/topics/prototypes)
