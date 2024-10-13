@@ -56,6 +56,11 @@ based on: [@bruton2022what]
 :::
 
 
+## design prototyping
+
+![Interaction Design Foundation [@ixdf2019what] | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/td-design-thinking-non-linear-process.webp){height=475}
+
+
 # types of wireframes
 
 :::::::::::: {.columns}
@@ -125,6 +130,7 @@ source: [@bruton2022what]
 - created using a digital tool
 - feature actual typography, detailed features, design elements (logos) and menu systems
 - may presented as initial prototypes
+    - interactive, clickable
 
 ::: {.text-smaller}
 source: [@bruton2022what]
@@ -136,7 +142,7 @@ source: [@bruton2022what]
 ::::::::::::
 
 
-## prototype
+<!-- ## prototype -->
 
 
 # wireframe map
