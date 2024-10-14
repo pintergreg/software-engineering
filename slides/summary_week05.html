@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>week 5 summary</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">week 5 summary</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section id="software-design-and-architecture-stack"
+class="title-slide slide level1">
+<h1>software design and architecture stack</h1>
+<figure>
+<img
+data-src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
+height="475" alt="based on Khalil Stemmel’s figure [1]" />
+<figcaption aria-hidden="true">based on Khalil Stemmel’s figure <span
+class="citation" data-cites="stemmler2019how">[1]</span></figcaption>
+</figure>
+</section>
+
+<section>
+<section id="gang-of-four-gof-design-patterns"
+class="title-slide slide level1">
+<h1>gang of four (GoF) design patterns</h1>
+<ul>
+<li>GoF: Erich Gamma, Richard Helm, Ralph Johnson, and John
+Vlissides</li>
+<li>23 common software design patterns
+<ul>
+<li>published in “Design Patterns: Elements of Reusable Object-Oriented
+Software” (1994) <span class="citation"
+data-cites="gamma1994design">[2]</span></li>
+</ul></li>
+<li>provides solutions to common design problems</li>
+<li>categorized into three main groups
+<ol type="1">
+<li>creational</li>
+<li>structural</li>
+<li>behavioral</li>
+</ol></li>
+</ul>
+<div class="text-smaller">
+<p>read about the design patterns in details, for example at <a
+href="https://refactoring.guru/design-patterns/catalog">refactoring.guru</a></p>
+</div>
+</section>
+<section id="gof-design-patterns-in-functional-programming"
+class="slide level2">
+<h2>GoF design patterns in functional programming</h2>
+<table>
+<thead>
+<tr class="header">
+<th>OO pattern</th>
+<th>FP pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>factory pattern</td>
+<td>function</td>
+</tr>
+<tr class="even">
+<td>strategy pattern</td>
+<td>function</td>
+</tr>
+<tr class="odd">
+<td>decorator pattern</td>
+<td>function</td>
+</tr>
+<tr class="even">
+<td>visitor pattern</td>
+<td>function</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>Peter Norvig <a
+href="http://www.norvig.com/design-patterns/">demonstrated</a> that 16
+out of the 23 patterns are simplified or eliminated by language features
+in Lisp or Dylan (1998) <span class="citation"
+data-cites="norvig1998design">[3]</span></p>
+<p><a href="https://fsharpforfunandprofit.com/fppatterns/">more
+about</a> it from Scott Wlaschin <span class="citation"
+data-cites="wlaschin2014functional">[4]</span></p>
+</section></section>
+<section id="solid-principles" class="title-slide slide level1">
+<h1>SOLID principles</h1>
+<p><span class="text-smaller">SOLID is a mnemonic acronym for five
+design principles intended to make object-oriented designs more
+understandable, flexible, and maintainable <span class="citation"
+data-cites="enwiki:1237710587">[5]</span></span></p>
+<dl>
+<dt>single responsibility principle</dt>
+<dd>
+<span class="text-smaller">a class should do one thing and therefore it
+should have only a single reason to change</span>
+</dd>
+<dt>open-closed principle</dt>
+<dd>
+<span class="text-smaller">classes should be open for extension and
+closed to modification</span>
+</dd>
+<dt>Liskov substitution principle</dt>
+<dd>
+<span class="text-smaller">if class A is a subtype of class B, B should
+be able to replaced with A without disrupting the behavior of the
+program</span>
+</dd>
+<dt>interface segregation principle</dt>
+<dd>
+<span class="text-smaller">many client-specific interfaces are better
+than one general-purpose interface. Clients should not be forced to
+implement a function they do no need.</span>
+</dd>
+<dt>dependency inversion principle</dt>
+<dd>
+<span class="text-smaller">modules should depend upon interfaces or
+abstract classes, not concrete classes. It’s an inversion because
+implementations depend upon abstractions and not the other way
+round</span>
+</dd>
+</dl>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="millington2019solid">[6]</span>, <span class="citation"
+data-cites="oloruntoba2024solid">[7]</span></p>
+</div>
+</section>
+
+<section id="coupling" class="title-slide slide level1">
+<h1>coupling</h1>
+<div class="columns">
+<div class="column mt-5" style="width:55%;">
+<ul>
+<li>the degree of interdependence between software modules</li>
+<li>coupling is usually contrasted with cohesion
+<ul>
+<li>low coupling often correlates with high cohesion, and vice
+versa</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/borrowed/CouplingVsCohesion.svg"
+alt="from Wikimedia | public domain" />
+<figcaption aria-hidden="true">from <a
+href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia</a>
+| public domain</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-2">
+<p>source <a
+href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
+<span class="citation" data-cites="enwiki:1245630908">[8]</span></p>
+</div>
+</section>
+
+<section id="architectural-styles-topologies"
+class="title-slide slide level1">
+<h1>architectural styles / topologies</h1>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="figures/server_client.drawio.svg" width="250" /></p>
+<p><img data-src="figures/message_bus.drawio.svg" width="250" /></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="figures/layered_4.drawio.svg" width="200" /></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="figures/onion.drawio.svg" width="250" /></p>
+<p><img data-src="figures/hexagonal_extend.drawio.svg"
+width="250" /></p>
+</div>
+</div>
+</section>
+
+<section id="architectural-patterns" class="title-slide slide level1">
+<h1>architectural patterns</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<figure>
+<img data-src="figures/mvc.drawio.svg" width="300" alt="MVC" />
+<figcaption aria-hidden="true">MVC</figcaption>
+</figure>
+<div class="text-smaller">
+<p>ASP.NET, Django (Python), Ruby on Rails, Laravel (PHP)</p>
+</div>
+</div><div class="column" style="width:30%;">
+<figure>
+<img data-src="figures/mvp.drawio.svg" width="300" alt="MVP" />
+<figcaption aria-hidden="true">MVP</figcaption>
+</figure>
+<div class="text-smaller">
+<p>Windows Forms, Java Swing</p>
+</div>
+</div><div class="column" style="width:30%;">
+<figure>
+<img data-src="figures/mvvm.drawio.svg" width="300" alt="MVVM" />
+<figcaption aria-hidden="true">MVVM</figcaption>
+</figure>
+<div class="text-smaller">
+<p>WPF, AngularJS</p>
+</div>
+</div>
+</div>
+<div class="text-smaller mt-2">
+<ul>
+<li>view is responsible for rendering UI</li>
+<li>controller responds to the user input (in MVC) and performs
+interactions on the data model</li>
+<li>model is responsible for managing the data</li>
+</ul>
+</div>
+</section>
+
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-stemmler2019how" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
+Stemmler, <span>“How to learn software design and architecture.”</span>
+<a href="
+                    https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
+                    " class="uri">
+                    https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
+</a>, 28-Sep-2019.</div>
+</div>
+<div id="ref-gamma1994design" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">E.
+Gamma, R. Helm, R. Johnson, and J. Vlissides, <em><a
+href="https://books.google.hu/books?id=6oHuKQe3TjQC">Design patterns:
+Elements of reusable object-oriented software</a></em>. Pearson
+Education, 1994.</div>
+</div>
+<div id="ref-norvig1998design" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">P.
+Norvig, <span>“Design patterns in dynamic languages.”</span> <a href="
+                    http://www.norvig.com/design-patterns/
+                    " class="uri">
+                    http://www.norvig.com/design-patterns/
+</a>, 17-Mar-1998.</div>
+</div>
+<div id="ref-wlaschin2014functional" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">S.
+Wlaschin, <span>“Functional programming design patterns.”</span> <a
+href="
+                    https://fsharpforfunandprofit.com/fppatterns/
+                    " class="uri">
+                    https://fsharpforfunandprofit.com/fppatterns/
+</a>, Dec-2014.</div>
+</div>
+<div id="ref-enwiki:1237710587" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“SOLID —
+<span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=SOLID&amp;oldid=1237710587"
+class="uri">https://en.wikipedia.org/w/index.php?title=SOLID&amp;oldid=1237710587</a>,
+2024.</div>
+</div>
+<div id="ref-millington2019solid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">S.
+Millington, <span>“A solid guide to SOLID principles.”</span> <a href="
+                    https://www.baeldung.com/solid-principles
+                    " class="uri">
+                    https://www.baeldung.com/solid-principles
+</a>, 05-Feb-2019.</div>
+</div>
+<div id="ref-oloruntoba2024solid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">S.
+Oloruntoba and A. S. Walia, <span>“SOLID: The first 5 principles of
+object oriented design.”</span> <a href="
+                    https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+                    " class="uri">
+                    https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+</a>, 23-Apr-2024.</div>
+</div>
+<div id="ref-enwiki:1245630908" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Coupling
+(computer programming) — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908"
+class="uri">https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908</a>,
+2024.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
