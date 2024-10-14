@@ -5,7 +5,8 @@ package GUI {
 }
 package "user statistics" {
   [data collector]
-[data aggregator]
+  [data aggregator]
+  [rest adapter]
 }
 
 database "database" {
@@ -19,7 +20,8 @@ interface "HTTP\n(REST)" as rest
 da -down- [database]
 
 [UI] -right- rest
-rest --right-- [data aggregator]
+rest --right-- [rest adapter]
 
+[rest adapter] <- [data aggregator]
 [data aggregator] <- [data collector]: send user data
 @enduml
