@@ -74,4 +74,65 @@ just as in the case of natural languages, you ought to use a language properly
 :::
 
 
+## write idiomatic code
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="55"}
+```javascript
+for (i = 0; i < 10; i++) {
+    console.log(i);
+}
+```
+
+::: {.fragment data-fragment-index="5"}
+```javascript
+[...Array(10).keys()].forEach(i => {
+    console.log(i);
+});
+```
+
+:::
+:::::::::
+::::::::: {.column width="20%"}
+```python
+i = 0
+while i < 10:
+    print(i)
+    i += 1
+```
+
+::: {.fragment data-fragment-index="1"}
+```python
+for i in range(10):
+    print(i)
+```
+
+:::
+:::::::::
+::::::::: {.column width="25%"}
+::: {.fragment data-fragment-index="2"}
+```ruby
+for i in 0..9 do
+   puts i
+end
+```
+
+:::
+::: {.fragment data-fragment-index="3"}
+```ruby
+(0..9).each do |i|
+    puts i
+end
+```
+
+:::
+::: {.fragment data-fragment-index="4"}
+```ruby
+(0..9).each {|i| puts i}
+```
+
+:::
+:::::::::
+::::::::::::
+
 
