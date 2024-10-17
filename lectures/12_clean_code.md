@@ -26,6 +26,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
     - Python: [PEP 8](https://peps.python.org/pep-0008/) or [pep8.org](https://pep8.org/)
     - Ruby: [Ruby Style Guide](https://rubystyle.guide/)
     - Rust [The Rust Style Guide](https://doc.rust-lang.org/beta/style-guide/index.html)
+    - etc.
 - organization level:
     - [Google Style Guides](https://google.github.io/styleguide/)
         - [C# at Google Style Guide](https://google.github.io/styleguide/csharp-style.html)
@@ -41,6 +42,36 @@ not just style guides, also best practices
 
 :::::::::
 ::::::::::::
+
+
+# write idiomatic code
+
+:::::::::::: {.columns}
+::::::::: {.column width="70"}
+::: {.text-align-left}
+- a prog. language implements a prog. paradigm
+- a paradigm defines a certain "way" of writing code
+    - using different abstractions / building blocks
+    - promoting a given concept
+:::
+::: {.fragment .text-align-left}
+- some languages implements multiple paradigms
+:::
+::: {.fragment .text-align-left}
+- and languages have their own way of doing things
+    - languages have pros and cons
+    - for a given problem
+:::
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/rural-road-with-signpost.svg){width=250}
+
+:::::::::
+::::::::::::
+
+::: {.fragment .mt-3}
+just as in the case of natural languages, you ought to use a language properly
+:::
 
 
 
