@@ -609,6 +609,7 @@ data-cites="martin2009clean">[2]</span></p>
 instead to add context</li>
 </ul>
 </section></section>
+<section>
 <section id="functions" class="title-slide slide level1">
 <h1>functions</h1>
 <div class="columns">
@@ -621,6 +622,97 @@ data-cites="martin2009clean">[2]</span></p>
 height="300" /></p>
 </div>
 </div>
+</section>
+<section id="functions-should-be-as-small-as-possible"
+class="slide level2">
+<h2>functions should be as small as possible</h2>
+<blockquote>
+<p>Functions should hardly ever be 20 lines long <span class="citation"
+data-cites="martin2009clean">[2]</span></p>
+</blockquote>
+<ul>
+<li>shorter functions are easier to understand</li>
+</ul>
+</section>
+<section id="do-one-thing" class="slide level2">
+<h2>do one thing</h2>
+<ul>
+<li>single responsibility principle</li>
+</ul>
+</section>
+<section id="use-descriptive-names" class="slide level2">
+<h2>use descriptive names</h2>
+<ul>
+<li>a function <em>does</em> something, so it should start with an
+imperative verb (imperative)
+<ul>
+<li>e.g., <code>increaseSpeed</code></li>
+</ul></li>
+<li>should be obvious what it does</li>
+<li>The Inverse Scope Law of Function Names
+<ul>
+<li><blockquote>
+<p>Robert C. Martin <a
+href="https://www.informit.com/articles/article.aspx?p=1323426">The
+Inverse Scope Law of Function Names</a>: The longer the scope of a
+function, the shorter its name should be. Functions that are called
+locally from a few nearby places should have long descriptive names, and
+the longest function names should be given to those functions that are
+called from just one place.</p>
+</blockquote></li>
+</ul></li>
+</ul>
+</section>
+<section id="function-arguments" class="slide level2">
+<h2>function arguments</h2>
+<ul>
+<li>do not use more than three</li>
+<li><blockquote>
+<p>Flag arguments are ugly […] loudly proclaiming that this function
+does more than one thing <span class="citation"
+data-cites="martin2009clean">[2]</span>.</p>
+</blockquote></li>
+</ul>
+</section>
+<section id="no-side-effects" class="slide level2">
+<h2>no side effects</h2>
+<div class="columns">
+<div class="column wide-qoute" style="width:50%;">
+<blockquote>
+<p>Side effects are lies. Your function promises to do one thing, but it
+also does other hidden things <span class="citation"
+data-cites="martin2009clean">[2]</span>.</p>
+<p>– Robert C. Martin</p>
+</blockquote>
+</div><div class="column text-smaller wide-qoute" style="width:50%;">
+<blockquote>
+<p>an operation, function or expression is said to have a <strong>side
+effect</strong> if it modifies some state variable value(s) outside its
+local environment, that is to say has an observable effect besides
+returning a value (the main effect) to the invoker of the operation
+<span class="citation" data-cites="enwiki:1063806709">[5]</span>.</p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="prefer-exceptions-to-returning-error-codes"
+class="slide level2">
+<h2>prefer exceptions to returning error codes</h2>
+<ul>
+<li>in unix-like systems processes still return 0 if the execution was
+successful</li>
+<li>but returning error codes in functions are discouraged</li>
+<li><code>FileNotFoundException</code> is better than
+<code>ERRCODE_26375</code>
+<ul>
+<li>meaningful name</li>
+<li>no mental mapping</li>
+<li>exception handling syntactically more readable</li>
+</ul></li>
+</ul>
+</section></section>
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
 <div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-stemmler2019how" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
@@ -650,6 +742,15 @@ Bhargav, <span>“Hungarian notation.”</span> <a href="
                     " class="uri">
                     https://www.baeldung.com/cs/hungarian-notation
 </a>, 18-Mar-2024.</div>
+</div>
+<div id="ref-enwiki:1063806709" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Side effect
+(computer science) — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Side_effect_(computer_science)&amp;oldid=1063806709"
+class="uri">https://en.wikipedia.org/w/index.php?title=Side_effect_(computer_science)&amp;oldid=1063806709</a>,
+2022.</div>
 </div>
 </div>
 </section>
