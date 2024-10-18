@@ -1,0 +1,7 @@
+@startyaml
+!theme plain
+apl: apple
+per: pear
+org: orange  
+plm: plum
+@endyaml
