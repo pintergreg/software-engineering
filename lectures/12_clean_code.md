@@ -494,3 +494,61 @@ this section is based on the book *Clean Code* (chapter 3) by Robert C. Martin [
 :::::::::
 ::::::::::::
 
+
+## functions should be as small as possible
+
+> Functions should hardly ever be 20 lines long [@martin2009clean]
+
+- shorter functions are easier to understand
+
+
+## do one thing
+
+- single responsibility principle
+
+
+## use descriptive names
+
+- a function _does_ something, so it should start with an imperative verb (imperative)
+    - e.g., `increaseSpeed`
+- should be obvious what it does
+- The Inverse Scope Law of Function Names
+    - > Robert C. Martin [The Inverse Scope Law of Function Names](https://www.informit.com/articles/article.aspx?p=1323426): The longer the scope of a function, the shorter its name should be. Functions that are called locally from a few nearby places should have long descriptive names, and the longest function names should be given to those functions that are called from just one place.
+
+## function arguments
+
+- do not use more than three 
+- > Flag arguments are ugly \[...\] loudly proclaiming that this function does more than one thing [@martin2009clean].
+
+
+## no side effects
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .wide-qoute}
+> Side effects are lies.
+> Your function promises to do one thing, but it also does other hidden things [@martin2009clean].
+>
+> -- Robert C. Martin
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .wide-qoute}
+> an operation, function or expression is said to have a **side effect** if it modifies some state variable value(s) outside its local environment, that is to say has an observable effect besides returning a value (the main effect) to the invoker of the operation [@enwiki:1063806709].
+
+:::::::::
+::::::::::::
+
+## prefer exceptions to returning error codes
+
+- in unix-like systems processes still return 0 if the execution was successful
+- but returning error codes in functions are discouraged
+- `FileNotFoundException` is better than `ERRCODE_26375`
+    - meaningful name
+    - no mental mapping
+    - exception handling syntactically more readable
+
+    
+
+# references
+
+::: {#refs}
+:::
