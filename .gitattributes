@@ -1,0 +1,5 @@
+# Linguist overrides
+# based on: https://joshuatz.com/posts/2019/how-to-get-github-to-recognize-a-pure-markdown-repo/
+*.md linguist-detectable=true
+README.md linguist-detectable=false
+readme.md linguist-detectable=false
