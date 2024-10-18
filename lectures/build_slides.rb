@@ -11,6 +11,7 @@ inputs = [
     "09_interfaces.md",
     "10_planning.md",
     "11_wireframing.md",
+    "12_clean_code.md",
     "project.md",
 ]
 Dir.glob('./summary_week*.md') do |x|
