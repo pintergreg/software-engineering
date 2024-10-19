@@ -273,7 +273,7 @@ better to use `accounts`, it does not depend on the collection name
 :::
 
 ::: {.fragment .mt-3}
-inconsistent spellings is also disinformation
+inconsistent spelling is also disinformation
 :::
 
 ::: {.fragment .mt-3}
@@ -689,6 +689,7 @@ def query_progress(as_percentage: bool):
 :::
 :::::::::
 ::::::::::::
+
 
 ## no side effects
 
