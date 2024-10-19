@@ -707,6 +707,45 @@ def query_progress(as_percentage: bool):
 ::::::::::::
 
 
+## side effect example
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="50%"}
+```python
+class Something:
+    foo = 0
+    
+    def increase(self, by):
+        self.foo += by
+    
+    def decrease(self, by):
+        self.foo -= by
+    
+something = Something()
+print(something.foo)  # 0
+something.increase(2)
+print(something.foo)  # 2
+```
+:::::::::
+::::::::: {.column width="50%" .fragment}
+```python
+smth = {"foo": 0}
+
+def increase(what, by):
+    return what + by
+
+def decrease(what, by):
+    return what - by
+
+print(smth["foo"])  # 0
+increase(smth["foo"], 2)  # 2
+print(smth["foo"])  # 0
+smth["foo"] = increase(smth["foo"], 2)
+print(smth["foo"])  # 2
+```
+:::::::::
+::::::::::::
+
 ## prefer exceptions to returning error codes
 
 - in unix-like systems processes still return 0 if the execution was successful
