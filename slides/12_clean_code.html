@@ -300,9 +300,9 @@ class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb7-1"><a href="
 <p>Clean Code: A Handbook of Agile Software Craftsmanship</p>
 <p>by Robert C. Martin (2009) <span class="citation"
 data-cites="martin2009clean">[2]</span></p>
-<div class="fragment text-smaller">
-<p>some recommendations are too specific to C-like languages</p>
-</div>
+<!--::: {.fragment .text-smaller}
+some recommendations are too specific to C-like languages
+:::-->
 </section>
 
 <section>
@@ -885,39 +885,82 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb24-1"><a href="#
 </div>
 </div>
 </section>
-<section id="use-descriptive-names" class="slide level2">
-<h2>use descriptive names</h2>
-<ul>
-<li>a function <em>does</em> something, so it should start with an
-imperative verb (imperative)
-<ul>
-<li>e.g., <code>increaseSpeed</code></li>
-</ul></li>
-<li>should be obvious what it does</li>
-<li>The Inverse Scope Law of Function Names
-<ul>
-<li><blockquote>
-<p>Robert C. Martin <a
-href="https://www.informit.com/articles/article.aspx?p=1323426">The
-Inverse Scope Law of Function Names</a>: The longer the scope of a
-function, the shorter its name should be. Functions that are called
-locally from a few nearby places should have long descriptive names, and
-the longest function names should be given to those functions that are
-called from just one place.</p>
-</blockquote></li>
-</ul></li>
-</ul>
+<section id="the-inverse-scope-law-of-function-names"
+class="slide level2">
+<h2>the inverse scope law of function names</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="wide-quote">
+<blockquote>
+<p><strong>The longer the scope of a function, the shorter its name
+should be.</strong> Functions that are called locally from a few nearby
+places should have long descriptive names, and the longest function
+names should be given to those functions that are called from just one
+place.</p>
+<p>– <a
+href="https://www.informit.com/articles/article.aspx?p=1323426">Robert
+C. Martin</a></p>
+</blockquote>
+</div>
+<div class="text-smaller mt-3">
+<p>“longer scope”: more general part of a code</p>
+</div>
+</div><div class="column fragment" style="width:30%;">
+<p><img data-src="figures/name_and_scope.drawio.svg" width="300" /></p>
+</div>
+</div>
 </section>
 <section id="function-arguments" class="slide level2">
 <h2>function arguments</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:45%;">
+<div class="text-align-left">
 <ul>
-<li>do not use more than three</li>
-<li><blockquote>
-<p>Flag arguments are ugly […] loudly proclaiming that this function
-does more than one thing <span class="citation"
-data-cites="martin2009clean">[2]</span>.</p>
-</blockquote></li>
+<li>do not use more than three <span class="citation"
+data-cites="martin2009clean">[2]</span></li>
 </ul>
+</div>
+<div class="text-align-left fragment" data-fragment-index="1">
+<ul>
+<li>what if you’d need more?
+<ul>
+<li>wrap it into an object</li>
+</ul></li>
+</ul>
+</div>
+<div class="text-align-left fragment" data-fragment-index="2">
+<ul>
+<li>do not use flags
+<ul>
+<li><span class="text-smaller">“Flag arguments are ugly […] loudly
+proclaiming that this function does more than one thing <span
+class="citation" data-cites="martin2009clean">[2]</span>.”</span></li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:55%;">
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_empty_dataframe(start, end, cols):</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    records <span class="op">=</span> []</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> woy <span class="kw">in</span> <span class="bu">range</span>(start, end):</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> dow <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>            records.append([woy, dow, <span class="dv">0</span>])</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame.from_records(</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>        records, columns<span class="op">=</span>cols</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<div class="fragment" data-fragment-index="2">
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> query_progress(as_percentage: <span class="bu">bool</span>):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> con.execute(progress_query)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    progress <span class="op">=</span> res.fetchone()[<span class="dv">0</span>]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> as_percentage:</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="no-side-effects" class="slide level2">
 <h2>no side effects</h2>
@@ -961,28 +1004,28 @@ successful</li>
 <h1>denoting blocks</h1>
 <div class="columns column-gapless">
 <div class="column" style="width:50;">
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb26"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span></code></pre></div>
 <div class="sourceCode" id="cb27"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    a<span class="op">++;</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span></code></pre></div>
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    a<span class="op">++;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span></code></pre></div>
 </div><div class="column" style="width:25%;">
 <div class="fragment" data-fragment-index="1">
-<div class="sourceCode" id="cb28"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
-<div class="sourceCode" id="cb29"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    a <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    a <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
 </div>
 </div><div class="column" style="width:25%;">
 <div class="fragment" data-fragment-index="2">
@@ -1000,24 +1043,24 @@ for i in 0..9 {
    puts i
 }
 ```-->
-<div class="sourceCode" id="cb30"><pre
-class="sourceCode go"><code class="sourceCode go"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">package</span> main</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="op">(</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;fmt&quot;</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i<span class="op">:=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span> i<span class="op">++</span> <span class="op">{</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>        fmt<span class="op">.</span>Println<span class="op">(</span>i<span class="op">)</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<div class="sourceCode" id="cb31"><pre
-class="sourceCode rust"><code class="sourceCode rust"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="dv">0</span><span class="op">..</span><span class="dv">9</span> <span class="op">{</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>        <span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> i)<span class="op">;</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode go"><code class="sourceCode go"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">package</span> main</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="op">(</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;fmt&quot;</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i<span class="op">:=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span> i<span class="op">++</span> <span class="op">{</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>        fmt<span class="op">.</span>Println<span class="op">(</span>i<span class="op">)</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode rust"><code class="sourceCode rust"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="dv">0</span><span class="op">..</span><span class="dv">9</span> <span class="op">{</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>        <span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> i)<span class="op">;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1029,23 +1072,23 @@ class="sourceCode rust"><code class="sourceCode rust"><span id="cb31-1"><a href=
 <p>parts from <a
 href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">sslKeyExchange.c</a></p>
 </div>
-<div class="sourceCode" id="cb32" data-startFrom="623"><pre
-class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 622;"><span id="cb32-623"><a href="#cb32-623"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> ReadyHash<span class="op">(&amp;</span>SSLHashSHA1<span class="op">,</span> <span class="op">&amp;</span>hashCtx<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb32-624"><a href="#cb32-624"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb32-625"><a href="#cb32-625"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>clientRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb32-626"><a href="#cb32-626"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb32-627"><a href="#cb32-627"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>serverRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb32-628"><a href="#cb32-628"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb32-629"><a href="#cb32-629"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>signedParams<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb32-630"><a href="#cb32-630"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb32-631"><a href="#cb32-631"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb32-632"><a href="#cb32-632"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>final<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>hashOut<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb32-633"><a href="#cb32-633"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span></code></pre></div>
-<div class="sourceCode" id="cb33" data-startFrom="647"><pre
-class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 646;"><span id="cb33-647"><a href="#cb33-647"></a>fail<span class="op">:</span></span>
-<span id="cb33-648"><a href="#cb33-648"></a>    SSLFreeBuffer<span class="op">(&amp;</span>signedHashes<span class="op">);</span></span>
-<span id="cb33-649"><a href="#cb33-649"></a>    SSLFreeBuffer<span class="op">(&amp;</span>hashCtx<span class="op">);</span></span>
-<span id="cb33-650"><a href="#cb33-650"></a>    <span class="cf">return</span> err<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb34" data-startFrom="623"><pre
+class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 622;"><span id="cb34-623"><a href="#cb34-623"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> ReadyHash<span class="op">(&amp;</span>SSLHashSHA1<span class="op">,</span> <span class="op">&amp;</span>hashCtx<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb34-624"><a href="#cb34-624"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb34-625"><a href="#cb34-625"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>clientRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb34-626"><a href="#cb34-626"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb34-627"><a href="#cb34-627"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>serverRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb34-628"><a href="#cb34-628"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb34-629"><a href="#cb34-629"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>signedParams<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb34-630"><a href="#cb34-630"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb34-631"><a href="#cb34-631"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb34-632"><a href="#cb34-632"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>final<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>hashOut<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb34-633"><a href="#cb34-633"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb35" data-startFrom="647"><pre
+class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 646;"><span id="cb35-647"><a href="#cb35-647"></a>fail<span class="op">:</span></span>
+<span id="cb35-648"><a href="#cb35-648"></a>    SSLFreeBuffer<span class="op">(&amp;</span>signedHashes<span class="op">);</span></span>
+<span id="cb35-649"><a href="#cb35-649"></a>    SSLFreeBuffer<span class="op">(&amp;</span>hashCtx<span class="op">);</span></span>
+<span id="cb35-650"><a href="#cb35-650"></a>    <span class="cf">return</span> err<span class="op">;</span></span></code></pre></div>
 <div class="fragment">
 <p>more about Apple’s “goto fail” fiasco (2014): <span class="citation"
 data-cites="wheeler2014apple">[6]</span>, <span class="citation"
