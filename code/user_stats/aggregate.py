@@ -38,6 +38,9 @@ data = (
     .reset_index(drop=True)
 )
 print(data)
+pivoted = pd.pivot(
+    data, index=["week_of_year"], columns=["day_of_week"], values=["count"]
+)
 
 progress_query = """
 SELECT
