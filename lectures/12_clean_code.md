@@ -747,6 +747,7 @@ print(smth["foo"])  # 2
 :::::::::
 ::::::::::::
 
+
 ## prefer exceptions to returning error codes
 
 - in unix-like systems processes still return 0 if the execution was successful
@@ -756,7 +757,21 @@ print(smth["foo"])  # 2
     - no mental mapping
     - exception handling syntactically more readable
 
-    
+
+# comments
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-5}
+this section is based on the book *Clean Code* (chapter 4) by Robert C. Martin [@martin2009clean]
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/notebook-papers.svg){height=300}
+
+:::::::::
+::::::::::::
+
+
 # denoting blocks
 
 :::::::::::: {.columns .column-gapless}
