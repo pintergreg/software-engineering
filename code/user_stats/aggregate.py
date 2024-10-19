@@ -3,7 +3,7 @@ import pandas as pd
 
 con = sqlite3.connect("data.db")
 
-query = """
+activity_query = """
 SELECT
     CAST(strftime('%W', timestamp) AS INTEGER) AS week_of_year,
     CAST(strftime('%u', timestamp) AS INTEGER) AS day_of_week,
@@ -18,7 +18,7 @@ GROUP BY
     day_of_week
 ;
 """
-data = pd.read_sql(query, con)
+data = pd.read_sql(activity_query, con)
 
 records = []
 for woy in range(36, 40):
