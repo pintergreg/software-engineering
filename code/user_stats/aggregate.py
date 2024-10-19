@@ -24,7 +24,7 @@ GROUP BY
 data = pd.read_sql(query, con)
 
 records = []
-for woy in range(37, 40):
+for woy in range(36, 40):
     for dow in range(1, 8):
         records.append([woy, dow, 0])
 empty = pd.DataFrame.from_records(
