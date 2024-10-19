@@ -668,7 +668,7 @@ Table: empty activity table
 ```python
 def build_empty_dataframe(start, end, cols):
     records = []
-    for woy in range(start, end):
+    for woy in range(start, end + 1):
         for dow in range(1, 8):
             records.append([woy, dow, 0])
     return pd.DataFrame.from_records(
@@ -770,6 +770,124 @@ this section is based on the book *Clean Code* (chapter 4) by Robert C. Martin [
 
 :::::::::
 ::::::::::::
+
+
+## separating comments
+
+```python
+# connect to the database
+con = sqlite3.connect("data.db")
+# query activity data
+data = pd.read_sql(activity_query, con)
+# create empty dataframe
+records = []
+for woy in range(36, 40):
+    for dow in range(1, 8):
+        records.append([woy, dow, 0])
+empty = pd.DataFrame.from_records(records, columns=["week_of_year", "day_of_week", "count"])
+# combine empty and sparse dataframe
+data = (
+    pd.concat([data, empty])
+    .drop_duplicates(subset=["week_of_year", "day_of_week"], keep="first")
+    .sort_values(["week_of_year", "day_of_week"])
+    .reset_index(drop=True)
+)
+# pivot dataframe
+activity = pd.pivot(
+    data, index=["week_of_year"], columns=["day_of_week"], values=["count"]
+).values
+```
+
+
+## separated functions
+
+```python
+def create_empty_dataframe(start_week, end_week):
+    records = []
+    for woy in range(start_week, end_week+1):
+        for dow in range(1, 8):
+            records.append([woy, dow, 0])
+    return pd.DataFrame.from_records(
+        records, columns=["week_of_year", "day_of_week", "count"]
+    )
+
+def fill_empty_with_activities(emty, activities):
+    return (
+        pd.concat([activities, empty])
+        .drop_duplicates(subset=["week_of_year", "day_of_week"], keep="first")
+        .sort_values(["week_of_year", "day_of_week"])
+        .reset_index(drop=True)
+    )
+
+def pivot_dataframe(data):
+    return pd.pivot(
+        data, index=["week_of_year"], columns=["day_of_week"], values=["count"]
+    ).values
+```
+
+::: {.text-smaller}
+these functions do one thing
+:::
+
+## separated functions - usage
+
+```python
+con = sqlite3.connect("data.db")
+
+activities = pd.read_sql(activity_query, con)
+
+empty = create_empty_dataframe(36, 39)
+
+data = fill_empty_with_activities(emty, activities)
+
+activities_matrix = pivot_dataframe(data)
+```
+
+only the comments remained, which can be read as a prose
+
+
+## more bad comments
+
+:::::: {.fragment}
+**journal comment**
+
+```python
+# 2024-10-17 -- Add idiomatic coding examples 
+# 2024-10-18 -- Add meaningful names section 
+```
+
+::: {.text-smaller}
+the version tracker keeps better journal
+:::
+::::::
+
+:::::: {.fragment}
+**noise comments**
+
+```python
+# creates an empty dataframe
+def create_empty_dataframe(start_week, end_week):
+    # ...
+```
+
+::: {.text-smaller}
+don't write something that is already in the code
+:::
+::::::
+
+:::::: {.fragment}
+**closing brace comments**
+
+```javascript
+for (i = 0; i < 10; i++) {
+    console.log(i);
+} // for
+```
+
+::: {.text-smaller}
+modern editors can find (end display) the block endings
+:::
+::::::
 
 
 # denoting blocks
