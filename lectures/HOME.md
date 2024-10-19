@@ -136,7 +136,7 @@ MVC-MVP-MVVM
 
 1. [week 6 summary](/software-engineering/slides/summary_week06.html)
 2. [wireframing](/software-engineering/slides/11_wireframing.html)
-3. clean code
+3. [clean code](/software-engineering/slides/12_clean_code.html)
 
 ### readings
 
