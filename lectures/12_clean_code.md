@@ -166,9 +166,9 @@ Clean Code: A Handbook of Agile Software Craftsmanship
 
 by Robert C. Martin (2009) [@martin2009clean]
 
-::: {.fragment .text-smaller}
+<!--::: {.fragment .text-smaller}
 some recommendations are too specific to C-like languages
-:::
+:::-->
 
 
 # meaningful names
@@ -283,6 +283,7 @@ inconsistent spellings is also disinformation
 - PEP8 (Python style guide) [forbids](https://pep8.org/#names-to-avoid) to use them
 
 :::
+
 
 ## make meaningful distinctions
 
@@ -634,6 +635,10 @@ Table: empty activity table
 >
 > -- [Robert C. Martin](https://www.informit.com/articles/article.aspx?p=1323426)
 
+:::
+
+::: {.text-smaller .mt-3}
+"longer scope": more general part of a code
 :::
 :::::::::
 ::::::::: {.column width="30%" .fragment}
