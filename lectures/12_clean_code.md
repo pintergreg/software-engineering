@@ -502,9 +502,127 @@ this section is based on the book *Clean Code* (chapter 3) by Robert C. Martin [
 - shorter functions are easier to understand
 
 
-## do one thing
+## do one thing (single responsibility principle)
 
-- single responsibility principle
+:::::::::::: {.columns .column-gapless .fragment}
+::::::::: {.column width="68%" .pre-height-100}
+::: {.text-smaller .pre-height-100}
+```python
+import sqlite3
+import pandas as pd
+
+con = sqlite3.connect("data.db")
+data = pd.read_sql(activity_query, con)
+
+records = []
+for woy in range(36, 40):
+    for dow in range(1, 8):
+        records.append([woy, dow, 0])
+empty = pd.DataFrame.from_records(
+    records, columns=["week_of_year", "day_of_week", "count"]
+)
+data = (
+    pd.concat([data, empty])
+    .drop_duplicates(subset=["week_of_year", "day_of_week"], keep="first")
+    .sort_values(["week_of_year", "day_of_week"])
+    .reset_index(drop=True)
+)
+activity = pd.pivot(
+    data, index=["week_of_year"], columns=["day_of_week"], values=["count"]
+).values
+res = con.execute(progress_query)
+progress = res.fetchone()[0]
+```
+:::
+:::::::::
+::::::::: {.column width="32%"}
+::: { .text-smaller}
+```sql
+SELECT
+    CAST(
+        strftime('%W', timestamp) 
+        AS INTEGER
+    ) AS week_of_year,
+    CAST(
+        strftime('%u', timestamp)
+        AS INTEGER
+    ) AS day_of_week,
+    count(*) AS count
+FROM activity
+WHERE
+    user_id = 42 AND
+    week_of_year > 35 AND
+    week_of_year < 40
+GROUP BY
+    week_of_year,
+    day_of_week;
+```
+
+```sql
+SELECT
+	lesson / 50.0 AS progress
+FROM activity
+WHERE
+    user_id = 42 AND
+    result = 'success'
+ORDER BY lesson DESC
+LIMIT 1;
+```
+
+:::
+:::::::::
+::::::::::::
+
+
+## debug tables
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+::: {.text-smaller}
+|week_of_year|day_of_week|count|
+|------------|-----------|-----|
+|          36|          2|    1|
+|          38|          5|    1|
+|          39|          6|    2|
+Table: queried user activity
+
+:::
+
+::: {.text-smaller .mt-5}
+|day_of_week |1|2|3|4|5|6|7|
+|------------|-|-|-|-|-|-|-|
+|week_of_year| | | | | | | |
+|          36|0|1|0|0|0|0|0|
+|          37|0|0|0|0|0|0|0|
+|          38|0|0|0|0|1|0|0|
+|          39|0|0|0|0|0|2|0|
+Table: pivoted user activity table
+
+:::
+
+:::::::::
+::::::::: {.column width="50%"}
+::: {.text-smaller}
+|week_of_year|day_of_week|count|
+|------------|-----------|-----|
+|          36|          1|    0|
+|          36|          2|    0|
+|         ...|        ...|  ...|
+|          36|          7|    0|
+|          37|          1|    0|
+|         ...|        ...|  ...|
+|          37|          7|    0|
+|          38|          1|    0|
+|         ...|        ...|  ...|
+|          38|          5|    0|
+|         ...|        ...|  ...|
+|          39|          6|    0|
+|          39|          7|    0|
+Table: empty activity table
+
+:::
+:::::::::
+::::::::::::
 
 
 ## use descriptive names
@@ -657,8 +775,9 @@ fail:
     return err;
 ```
 
-more about Apple's "goto fail" fiasco: [@wheeler2014apple], [@migues2014understanding]
-
+::: {.fragment}
+more about Apple's "goto fail" fiasco (2014): [@wheeler2014apple], [@migues2014understanding]
+:::
 ::::::
 
 
