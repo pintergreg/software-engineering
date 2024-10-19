@@ -38,3 +38,19 @@ data = (
     .reset_index(drop=True)
 )
 print(data)
+
+progress_query = """
+SELECT
+	lesson / 50.0 AS progress
+FROM activity
+WHERE
+    user_id = 42 AND
+    result = 'success'
+ORDER BY
+	lesson DESC
+LIMIT 1
+;
+"""
+res = con.execute(progress_query)
+progress = res.fetchone()[0]
+print(progress)
