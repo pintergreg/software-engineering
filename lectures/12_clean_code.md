@@ -649,9 +649,46 @@ Table: empty activity table
 
 ## function arguments
 
-- do not use more than three 
-- > Flag arguments are ugly \[...\] loudly proclaiming that this function does more than one thing [@martin2009clean].
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="45%"}
+::: {.text-align-left}
+- do not use more than three [@martin2009clean]
+:::
+::: {.text-align-left .fragment data-fragment-index=1}
+- what if you'd need more?
+    - wrap it into an object
+:::
+::: {.text-align-left .fragment data-fragment-index=2}
+- do not use flags
+    - ["Flag arguments are ugly \[...\] loudly proclaiming that this function does more than one thing [@martin2009clean]."]{.text-smaller}
+:::
 
+:::::::::
+::::::::: {.column width="55%"}
+```python
+def build_empty_dataframe(start, end, cols):
+    records = []
+    for woy in range(start, end):
+        for dow in range(1, 8):
+            records.append([woy, dow, 0])
+    return pd.DataFrame.from_records(
+        records, columns=cols
+    )
+```
+::: {.fragment data-fragment-index=2}
+```python
+def query_progress(as_percentage: bool):
+    res = con.execute(progress_query)
+    progress = res.fetchone()[0]
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+```
+:::
+:::::::::
+::::::::::::
 
 ## no side effects
 
@@ -668,6 +705,7 @@ Table: empty activity table
 
 :::::::::
 ::::::::::::
+
 
 ## prefer exceptions to returning error codes
 
