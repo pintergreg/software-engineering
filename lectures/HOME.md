@@ -123,7 +123,6 @@ MVC-MVP-MVVM
 1. [week 5 summary](/software-engineering/slides/summary_week05.html)
 2. [interfaces](/software-engineering/slides/09_interfaces.html)
 3. [implementation planning](/software-engineering/slides/10_planning.html)
-4. [wireframing](/software-engineering/slides/11_wireframing.html)
 
 ### readings
 
@@ -132,5 +131,14 @@ MVC-MVP-MVVM
 - [Story points and estimation ](https://www.atlassian.com/agile/project-management/estimation) - by Dan Radigan 
 - [What Scrum Says About Estimates](https://www.scrum.org/resources/blog/what-scrum-says-about-estimates)
 - [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)
+
+## week 7
+
+1. [week 6 summary](/software-engineering/slides/summary_week06.html)
+2. [wireframing](/software-engineering/slides/11_wireframing.html)
+3. clean code
+
+### readings
+
 - [What is wireframing? A complete guide](https://www.uxdesigninstitute.com/blog/what-is-wireframing/) - by Louise Bruton
 - [UI Prototypes](https://www.interaction-design.org/literature/topics/prototypes)
