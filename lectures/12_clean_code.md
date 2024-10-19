@@ -625,13 +625,22 @@ Table: empty activity table
 ::::::::::::
 
 
-## use descriptive names
+## the inverse scope law of function names
 
-- a function _does_ something, so it should start with an imperative verb (imperative)
-    - e.g., `increaseSpeed`
-- should be obvious what it does
-- The Inverse Scope Law of Function Names
-    - > Robert C. Martin [The Inverse Scope Law of Function Names](https://www.informit.com/articles/article.aspx?p=1323426): The longer the scope of a function, the shorter its name should be. Functions that are called locally from a few nearby places should have long descriptive names, and the longest function names should be given to those functions that are called from just one place.
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+::: {.wide-quote}
+> **The longer the scope of a function, the shorter its name should be.** Functions that are called locally from a few nearby places should have long descriptive names, and the longest function names should be given to those functions that are called from just one place.
+>
+> -- [Robert C. Martin](https://www.informit.com/articles/article.aspx?p=1323426)
+
+:::
+:::::::::
+::::::::: {.column width="30%" .fragment}
+![](figures/name_and_scope.drawio.svg){width=300}
+:::::::::
+::::::::::::
+
 
 ## function arguments
 
