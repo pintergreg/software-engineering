@@ -3,9 +3,6 @@ import pandas as pd
 
 con = sqlite3.connect("data.db")
 
-query = f"SELECT * FROM activity WHERE user_id = {42}"
-
-
 query = """
 SELECT
     CAST(strftime('%W', timestamp) AS INTEGER) AS week_of_year,
@@ -37,10 +34,10 @@ data = (
     .sort_values(["week_of_year", "day_of_week"])
     .reset_index(drop=True)
 )
-print(data)
 pivoted = pd.pivot(
     data, index=["week_of_year"], columns=["day_of_week"], values=["count"]
 )
+print(pivoted.values)
 
 progress_query = """
 SELECT
