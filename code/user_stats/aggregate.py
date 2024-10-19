@@ -30,3 +30,11 @@ for woy in range(37, 40):
 empty = pd.DataFrame.from_records(
     records, columns=["week_of_year", "day_of_week", "count"]
 )
+
+data = (
+    pd.concat([data, empty])
+    .drop_duplicates(subset=["week_of_year", "day_of_week"], keep="first")
+    .sort_values(["week_of_year", "day_of_week"])
+    .reset_index(drop=True)
+)
+print(data)
