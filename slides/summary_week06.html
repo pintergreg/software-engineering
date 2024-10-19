@@ -28,6 +28,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -62,10 +126,403 @@ calc(100% - 1.25rem)" data-background-size="125px">
   <p class="date">gergo.pinter@uni-corvinus.hu</p>
 </section>
 
+<section id="interface-is-an-agreement"
+class="title-slide slide level1">
+<h1>interface is an agreement</h1>
+<div class="columns">
+<div class="column mt-4" style="width:55%;">
+<ul>
+<li>how a module / component will work</li>
+<li>so as long as the agreement is complied the components do not need
+to know about the internal structure/work of the other components
+<ul>
+<li>separation of concerns</li>
+<li>single responsibility principle</li>
+<li>the other component can be replaced, mocked</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><img
+data-src="figures/publicdomainvectors/business-handshake-hands.svg"
+width="500" /></p>
+</div>
+</div>
+</section>
+
+<section>
+<section id="interface-changes-should-be-communicated"
+class="title-slide slide level1">
+<h1>interface changes should be communicated</h1>
+<div class="columns mt-4">
+<div class="column" style="width:65%;">
+<div class="align-left">
+<ul>
+<li>during design / development
+<ul>
+<li>change can be necessary / allowed, but communicate towards the
+impacted teams</li>
+<li>diagrams show inner dependencies</li>
+</ul></li>
+</ul>
+</div>
+<div class="align-left fragment">
+<ul>
+<li>services announce API deprecations</li>
+<li>so as library / framework developers
+<ul>
+<li>can be a source of new issues even if downstream code is not
+changed</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:35%;">
+<p><img
+data-src="figures/publicdomainvectors/policeman-screams-into-a-megaphone.svg"
+width="225" /></p>
+</div>
+</div>
+</section>
+<section id="api-versions" class="slide level2">
+<h2>API versions</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/interface_versions.svg"
+width="475" /></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/interface_versions_gantt.svg"
+width="375" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p><code>https://developers.facebook.com/v21.0/me?fields=id,name</code></p>
+</div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unary_union(<span class="va">self</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    warnings.warn(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;The &#39;unary_union&#39; attribute is deprecated, &quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;use the &#39;union_all&#39; method instead.&quot;</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="pp">DeprecationWarning</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        stacklevel<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.union_all()</span></code></pre></div>
+</section></section>
+<section>
+<section id="implementation-planning" class="title-slide slide level1">
+<h1>implementation planning</h1>
+<ol type="1">
+<li>define goals
+<ul>
+<li>practically done with requirement analysis</li>
+</ul></li>
+<li>conduct research
+<ul>
+<li>partially done at the requirement elicitation phase</li>
+</ul></li>
+<li>map out risks</li>
+<li>schedule milestones</li>
+<li>assign responsibilities and tasks</li>
+<li>allocate resources</li>
+</ol>
+<div class="text-smaller">
+<p>based on <a
+href="https://asana.com/resources/implementation-plan">What is an
+implementation plan? 6 steps to create one</a> <span class="citation"
+data-cites="asana2024what">[1]</span></p>
+</div>
+</section>
+<section id="learning-could-be-a-task" class="slide level2">
+<h2>learning could be a task</h2>
+<div class="columns">
+<div class="column mt-1" style="width:60%;">
+<ul>
+<li>you may need to work a technology / framework / language that you
+are not familiar with</li>
+<li>that may require research
+<ul>
+<li>fail fast</li>
+<li>document findings
+<ul>
+<li>minimal workable example</li>
+</ul></li>
+</ul></li>
+<li>or you just have to learn a new codebase</li>
+<li>calculate with learning during the planning</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/complex_projects.drawio.cropped_no_people.svg"
+height="400" /></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="identify-and-prioritize-risks"
+class="title-slide slide level1">
+<h1>identify and prioritize risks</h1>
+<p>a risk is a possibility that something bad can happen</p>
+<ul>
+<li>there is risk inherent with building any piece of software</li>
+<li>whether you’re building a completely new greenfield project,</li>
+<li>or adding a new feature to an existing codebase
+<ul>
+<li>other parts cease to work</li>
+<li>the new feature alienate users</li>
+<li>data loss</li>
+</ul></li>
+<li>often difficult to prioritise which risks you should take care of
+<ul>
+<li>the probability: how likely is it that the risk will happen?</li>
+<li>and the impact: what is the negative impact if the risk does
+occur?</li>
+</ul></li>
+</ul>
+<div class="text-smaller">
+<p>based on <a href="https://riskstorming.com/">riskstorming.com</a> |
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+</div>
+</section>
+<section id="risk-storming" class="slide level2">
+<h2>risk storming</h2>
+<div class="columns">
+<div class="column mt-4" style="width:70%;">
+<ul>
+<li>visual and collaborative risk identification technique</li>
+<li>created by Simon Brown (author of C4 model)</li>
+<li>motivation: often only one person evaluated risks</li>
+<li>risk evaluation should be collaborative activity</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/user_statistics/risk_storming.excalidraw.svg"
+width="300" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <a href="https://riskstorming.com/">riskstorming.com</a> |
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+</div>
+</section>
+<section id="risk-register" class="slide level2">
+<h2>risk register</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:65%;">
+<ul>
+<li>a risk register is a document used as a risk management tool</li>
+<li>contains all identified risks with additional information
+<ul>
+<li>category, name, responsible, probability, impact, mitigation, action
+by, action when</li>
+</ul></li>
+<li>it can be displayed as a table or as a scatterplot</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="figures/borrowed/Risk%20Log%20-%20Party%20Example.svg"
+width="300" alt="by Hou710 | CC BY-SA" />
+<figcaption aria-hidden="true">by <a
+href="https://en.wikipedia.org/wiki/File:Hou710_RiskLog.svg">Hou710</a>
+| <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC
+BY-SA</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-3">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk</th>
+<th style="text-align: right;">Impact<br>(1-3)</th>
+<th style="text-align: right;">Likelihood<br>(0-10)</th>
+<th style="text-align: right;">Risk<br>(I * L)</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rust Language Changes</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">14</td>
+<td>Target a specific Rustc version</td>
+</tr>
+<tr class="even">
+<td>Missing GCC 13 upstream window</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
+<td>Merge in GCC 14 and be proactive about reviews</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section></section>
+<section id="schedule-milestones" class="title-slide slide level1">
+<h1>schedule milestones</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>visualize project milestones
+<ul>
+<li>Gantt chart</li>
+</ul></li>
+<li>keep the entire team posted</li>
+<li>pay attention to holidays
+<ul>
+<li>multiple countries in the case of an international team</li>
+</ul></li>
+<li>things won’t go as planned, so
+<ul>
+<li>add safety margin (wiggle room)</li>
+<li>e.g., an extra week before deadline for fixing bugs</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/borrowed/GanttChartAnatomy.svg"
+alt="Gantt chart from Wikipedia   public domain" />
+<figcaption aria-hidden="true">Gantt chart from <a
+href="https://commons.wikimedia.org/wiki/File:GanttChartAnatomy.svg">Wikipedia</a>
+<br> public domain</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="assign-responsibilities-and-tasks"
+class="title-slide slide level1">
+<h1>assign responsibilities and tasks</h1>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>every task you want to make done should have exactly one person
+responsible
+<ul>
+<li>no assignee – no one will do it</li>
+<li>more than one – “I though the other one was doing it”</li>
+</ul></li>
+<li>define area of responsibility
+<ul>
+<li>a task (as in scrum) should have definition of done, which specifies
+it</li>
+</ul></li>
+<li>everyone needs to know what other people are responsible for
+<ul>
+<li>scrum/kanban board can visualize it</li>
+<li>issue/ticket trackers can also work</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img data-src="figures/publicdomainvectors/scrum-task-board.svg"
+width="250" /></p>
+<p>at the end of a sprint planning, every task in the sprint backlog
+should have an assignee</p>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <span class="citation"
+data-cites="paquet2019when">[2]</span></p>
+</div>
+</section>
+
+<section>
+<section id="allocate-resources" class="title-slide slide level1">
+<h1>allocate resources</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>scrum (and agile in general) does not say anything about
+<em>how</em> to estimate (time)</li>
+<li>story points are often used instead
+<ul>
+<li>(relative) unit of effort required to fully implement a product
+backlog item</li>
+<li>e.g., 1–5,</li>
+<li>Fibonacci: 1, 2, 3, 5, 8, 13…</li>
+<li>powers of 2: 1, 2, 4, 8, 16, 32…</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/borrowed/CrispPlanningPokerDeck.jpg"
+alt="planning poker by Hkniberg   public domain" />
+<figcaption aria-hidden="true">planning poker by <a
+href="https://en.wikipedia.org/wiki/File:CrispPlanningPokerDeck.jpg">Hkniberg</a>
+<br> public domain</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>“Story points reward team members for solving problems based on
+difficulty, not time spent. This keeps team members focused on shipping
+value, not spending time <span class="citation"
+data-cites="radiganstory">[3]</span>.”</p>
+</div>
+</section>
+<section id="estimation-is-guessing" class="slide level2">
+<h2>estimation is guessing</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>many developers do not like to estimate</li>
+<li>seemingly simple task can turn out to be difficult
+<ul>
+<li>some difficulties are hard to foresee</li>
+<li>bad architectural decision
+<ul>
+<li><span class="text-smaller">“Adding manpower to a late software
+project makes it later.” – Fred Brooks</span></li>
+</ul></li>
+</ul></li>
+<li>make educated guesses instead
+<ul>
+<li>measure
+<ul>
+<li><span class="text-smaller">burn down charts, cumulative flow
+diagram</span></li>
+</ul></li>
+<li>infer from previous tasks</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img data-src="figures/publicdomainvectors/thimbles-game.svg"
+width="250" /></p>
+</div>
+</div>
+</section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" role="list">
-
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-asana2024what" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">T.
+Asana, <span>“What is an implementation plan? 6 steps to create
+one.”</span> <a href="
+                   https://asana.com/resources/implementation-plan
+                    " class="uri">
+                   https://asana.com/resources/implementation-plan
+</a>, 06-Jan-2024.</div>
+</div>
+<div id="ref-paquet2019when" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">P.
+Paquet, <span>“When everyone is responsible, no one is
+responsible.”</span> <a href="
+                   https://medium.com/@philippelyp/when-everyone-is-responsible-no-one-is-responsible-73e9a179237f
+                    " class="uri">
+                   https://medium.com/@philippelyp/when-everyone-is-responsible-no-one-is-responsible-73e9a179237f
+</a>, 07-Oct-2019.</div>
+</div>
+<div id="ref-radiganstory" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">D.
+Radigan, <span>“Story points and estimation.”</span> <a href="
+                   https://www.atlassian.com/agile/project-management/estimation
+                    " class="uri">
+                   https://www.atlassian.com/agile/project-management/estimation
+</a>.</div>
+</div>
 </div>
 </section>
     </div>
