@@ -871,6 +871,10 @@ only the comments remained, which can be read as a prose
 
 ## more bad comments
 
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="60%"}
+
 :::::: {}
 **journal comment**
 
@@ -911,6 +915,12 @@ for (i = 0; i < 10; i++) {
 modern editors can find (end display) the block endings
 :::
 ::::::
+:::::::::
+::::::::: {.column width="40%"}
+![by Oliver Widder (Geek and Poke) [CC&nbsp;BY&nbsp;3.0](https://creativecommons.org/licenses/by/3.0/)](figures/borrowed/good_comments.jpg){width=375}
+
+:::::::::
+::::::::::::
 
 
 ## Apollo 11 - Colossus 2A
