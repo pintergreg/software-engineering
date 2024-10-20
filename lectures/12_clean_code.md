@@ -988,7 +988,34 @@ re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
 
 ## documentation
 
-
+::: {.pre-475}
+```python
+def fizzbuzz(i: int) -> str:
+    """Fizzbuzz is a game for children to teach them about division.
+    It is also a common coding practice.
+    
+    Parameters
+    ----------
+    i : int
+        Input number tested against division by 3, 5 and 15.
+    
+    Returns
+    -------
+    str
+        `Fizz` if input divisible by 3, `Buzz` if divisible by 5 and `FizzBuzz` if both.
+    """
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+```
+:::
 
 
 # denoting blocks
