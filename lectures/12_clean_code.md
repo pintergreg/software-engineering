@@ -691,6 +691,47 @@ def query_progress(as_percentage: bool):
 ::::::::::::
 
 
+## function as interface
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .pre-450}
+```python {.numberLines}
+DataFrame.to_csv(
+    path_or_buf=None, *,
+    sep=',',
+    na_rep='',
+    float_format=None,
+    columns=None,
+    header=True,
+    index=True,
+    index_label=None,
+    mode='w',
+    encoding=None,
+    compression='infer',
+    quoting=None,
+    quotechar='"',
+    lineterminator=None,
+    chunksize=None,
+    date_format=None,
+    doublequote=True,
+    escapechar=None,
+    decimal='.',
+    errors='strict',
+    storage_options=None
+)
+```
+<!--```python
+DataFrame.to_csv(path_or_buf=None, *, sep=',', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression='infer', quoting=None, quotechar='"', lineterminator=None, chunksize=None, date_format=None, doublequote=True, escapechar=None, decimal='.', errors='strict', storage_options=None)
+```-->
+
+:::::::::
+::::::::: {.column width="40%" .mt-5}
+![Libreoffice Calc CSV settings dialog](figures/lo_calc_save_csv.png){width=450}
+
+:::::::::
+::::::::::::
+
+
 ## no side effects
 
 :::::::::::: {.columns}
@@ -888,6 +929,23 @@ for (i = 0; i < 10; i++) {
 modern editors can find (end display) the block endings
 :::
 ::::::
+
+
+## good comments
+
+legal comments
+~ some open source licences should be included to the beginning of the files 
+
+**informative comments**
+
+```python
+# matches for timestamps in the format of: YYYY-MM-DD HH:MM:SS
+r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}"
+```
+
+
+
+TODOs
 
 
 # denoting blocks
