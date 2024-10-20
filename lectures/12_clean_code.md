@@ -954,7 +954,7 @@ re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
 **TODOs -- good or bad?**
 
 ```python
-# TODO: this allows invalid month, day, hour, minute and secods values
+# TODO: this allows invalid month, day, hour, minute and seconds values
 re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
 ```
 
