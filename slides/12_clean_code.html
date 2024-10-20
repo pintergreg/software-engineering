@@ -1159,7 +1159,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a h
 </section>
 <section id="more-bad-comments" class="slide level2">
 <h2>more bad comments</h2>
-<div class="fragment">
+<div>
 <p><strong>journal comment</strong></p>
 <div class="sourceCode" id="cb33"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024-10-17 -- Add idiomatic coding examples </span></span>
@@ -1168,7 +1168,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a h
 <p>the version tracker keeps better journal</p>
 </div>
 </div>
-<div class="fragment">
+<div>
 <p><strong>noise comments</strong></p>
 <div class="sourceCode" id="cb34"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creates an empty dataframe</span></span>
@@ -1178,7 +1178,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a h
 <p>don’t write something that is already in the code</p>
 </div>
 </div>
-<div class="fragment">
+<div>
 <p><strong>closing brace comments</strong></p>
 <div class="sourceCode" id="cb35"><pre
 class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
@@ -1218,46 +1218,82 @@ repository</a></p>
 </section>
 <section id="good-comments" class="slide level2">
 <h2>good comments</h2>
-<dl>
-<dt>legal comments</dt>
-<dd>
-some open source licences should be included to the beginning of the
-files
-</dd>
-</dl>
+<p><strong>legal comments</strong></p>
+<p>some open source licences should be included to the beginning of the
+files</p>
 <p><strong>informative comments</strong></p>
 <div class="sourceCode" id="cb37"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># matches for timestamps in the format of: YYYY-MM-DD HH:MM:SS</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co">r&quot;\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}&quot;</span></span></code></pre></div>
-<p>TODOs</p>
+class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>timestamp <span class="op">=</span> <span class="st">&quot;2024-10-22 09:30:42&quot;</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># matches for timestamps in the format of: YYYY-MM-DD HH:MM:SS</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;\d</span><span class="sc">{4}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs"> \d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
+<div class="fragment">
+<p><strong>TODOs – good or bad?</strong></p>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: this allows invalid month, day, hour, minute and secods values</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;\d</span><span class="sc">{4}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs"> \d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
+<p><span class="text-smaller">editors can collect <code>TODO</code> (and
+<code>FIXME</code>) annotations and warn about them</span></p>
+</div>
+</section>
+<section id="documentation" class="slide level2">
+<h2>documentation</h2>
+<div class="pre-475">
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Fizzbuzz is a game for children to teach them about division.</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">    It is also a common coding practice.</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co">    i : int</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Input number tested against division by 3, 5 and 15.</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co">    str</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="co">        `Fizz` if input divisible by 3, `Buzz` if divisible by 5 and `FizzBuzz` if both.</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
+</div>
 </section></section>
 <section>
 <section id="denoting-blocks" class="title-slide slide level1">
 <h1>denoting blocks</h1>
 <div class="columns column-gapless">
 <div class="column" style="width:50;">
-<div class="sourceCode" id="cb38"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb39"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span></code></pre></div>
 <div class="sourceCode" id="cb40"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>)</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    a<span class="op">++;</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span></code></pre></div>
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    a<span class="op">++;</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span></code></pre></div>
 </div><div class="column" style="width:25%;">
 <div class="fragment" data-fragment-index="1">
-<div class="sourceCode" id="cb41"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
-<div class="sourceCode" id="cb42"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    a <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    a <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
 </div>
 </div><div class="column" style="width:25%;">
 <div class="fragment" data-fragment-index="2">
@@ -1275,24 +1311,24 @@ for i in 0..9 {
    puts i
 }
 ```-->
-<div class="sourceCode" id="cb43"><pre
-class="sourceCode go"><code class="sourceCode go"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">package</span> main</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="op">(</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;fmt&quot;</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i<span class="op">:=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span> i<span class="op">++</span> <span class="op">{</span></span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>        fmt<span class="op">.</span>Println<span class="op">(</span>i<span class="op">)</span></span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<div class="sourceCode" id="cb44"><pre
-class="sourceCode rust"><code class="sourceCode rust"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="dv">0</span><span class="op">..</span><span class="dv">9</span> <span class="op">{</span></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>        <span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> i)<span class="op">;</span></span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode go"><code class="sourceCode go"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">package</span> main</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="op">(</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;fmt&quot;</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i<span class="op">:=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span> i<span class="op">++</span> <span class="op">{</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>        fmt<span class="op">.</span>Println<span class="op">(</span>i<span class="op">)</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode rust"><code class="sourceCode rust"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="dv">0</span><span class="op">..</span><span class="dv">9</span> <span class="op">{</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>        <span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> i)<span class="op">;</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1304,23 +1340,23 @@ class="sourceCode rust"><code class="sourceCode rust"><span id="cb44-1"><a href=
 <p>parts from <a
 href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">sslKeyExchange.c</a></p>
 </div>
-<div class="sourceCode" id="cb45" data-startFrom="623"><pre
-class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 622;"><span id="cb45-623"><a href="#cb45-623"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> ReadyHash<span class="op">(&amp;</span>SSLHashSHA1<span class="op">,</span> <span class="op">&amp;</span>hashCtx<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb45-624"><a href="#cb45-624"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb45-625"><a href="#cb45-625"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>clientRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb45-626"><a href="#cb45-626"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb45-627"><a href="#cb45-627"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>serverRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb45-628"><a href="#cb45-628"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb45-629"><a href="#cb45-629"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>signedParams<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb45-630"><a href="#cb45-630"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb45-631"><a href="#cb45-631"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb45-632"><a href="#cb45-632"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>final<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>hashOut<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb45-633"><a href="#cb45-633"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span></code></pre></div>
-<div class="sourceCode" id="cb46" data-startFrom="647"><pre
-class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 646;"><span id="cb46-647"><a href="#cb46-647"></a>fail<span class="op">:</span></span>
-<span id="cb46-648"><a href="#cb46-648"></a>    SSLFreeBuffer<span class="op">(&amp;</span>signedHashes<span class="op">);</span></span>
-<span id="cb46-649"><a href="#cb46-649"></a>    SSLFreeBuffer<span class="op">(&amp;</span>hashCtx<span class="op">);</span></span>
-<span id="cb46-650"><a href="#cb46-650"></a>    <span class="cf">return</span> err<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb47" data-startFrom="623"><pre
+class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 622;"><span id="cb47-623"><a href="#cb47-623"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> ReadyHash<span class="op">(&amp;</span>SSLHashSHA1<span class="op">,</span> <span class="op">&amp;</span>hashCtx<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb47-624"><a href="#cb47-624"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb47-625"><a href="#cb47-625"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>clientRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb47-626"><a href="#cb47-626"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb47-627"><a href="#cb47-627"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>serverRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb47-628"><a href="#cb47-628"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb47-629"><a href="#cb47-629"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>signedParams<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb47-630"><a href="#cb47-630"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb47-631"><a href="#cb47-631"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb47-632"><a href="#cb47-632"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>final<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>hashOut<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb47-633"><a href="#cb47-633"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb48" data-startFrom="647"><pre
+class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 646;"><span id="cb48-647"><a href="#cb48-647"></a>fail<span class="op">:</span></span>
+<span id="cb48-648"><a href="#cb48-648"></a>    SSLFreeBuffer<span class="op">(&amp;</span>signedHashes<span class="op">);</span></span>
+<span id="cb48-649"><a href="#cb48-649"></a>    SSLFreeBuffer<span class="op">(&amp;</span>hashCtx<span class="op">);</span></span>
+<span id="cb48-650"><a href="#cb48-650"></a>    <span class="cf">return</span> err<span class="op">;</span></span></code></pre></div>
 <div class="fragment">
 <p>more about Apple’s “goto fail” fiasco (2014): <span class="citation"
 data-cites="wheeler2014apple">[6]</span>, <span class="citation"
