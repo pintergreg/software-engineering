@@ -931,6 +931,33 @@ modern editors can find (end display) the block endings
 ::::::
 
 
+## Apollo 11 - Colossus 2A
+
+``` {.numberLines startFrom="149"}
+P21VSAVE	DLOAD			# SAVE CURRENT BASE VECTOR
+			TAT
+		STOVL	P21TIME		# ..TIME
+			RATT1
+		STOVL	P21BASER	# ..POS B-29 OR B-27
+			VATT1
+		STORE	P21BASEV	# ..VEL B-7  OR B-5
+		ABVAL	SL*
+			0,2
+		STOVL	P21VEL		# /VEL/ FOR N73 DSP
+			RATT
+		UNIT	DOT
+			VATT		# U(R).(V)
+		DDV	ASIN		# U(R).U(V)
+			P21VEL
+		STORE	P21GAM		# SIN-1 U(R).U(V), -90 TO +90
+		SXA,2	SET
+			P21ORIG		# 0 = EARTH  2 = MOON
+			P21FLAG
+```
+
+[source](https://github.com/chrislgarry/Apollo-11/blob/4d15e4d9d37202847334d4c640058803ed4e782e/Comanche055/GROUND_TRACKING_DETERMINATION_PROGRAM.agc#L149-L167), [GitHub repository](https://github.com/chrislgarry/Apollo-11)
+
+
 ## good comments
 
 legal comments
