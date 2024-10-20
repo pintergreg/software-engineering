@@ -153,6 +153,8 @@ some recommendations are too specific to C-like languages
 ::::::::: {.column width="60%" .mt-5}
 this section is based on the book *Clean Code* (chapter 2) by Robert C. Martin [@martin2009clean]
 
+with own examples
+
 :::::::::
 ::::::::: {.column width="40%"}
 ![](figures/publicdomainvectors/hand-with-bottle.svg){height=300}
@@ -463,6 +465,8 @@ it also helps to search for the term
 :::::::::::: {.columns}
 ::::::::: {.column width="60%" .mt-5}
 this section is based on the book *Clean Code* (chapter 3) by Robert C. Martin [@martin2009clean]
+
+with own examples
 
 :::::::::
 ::::::::: {.column width="40%"}
@@ -780,6 +784,8 @@ print(smth["foo"])  # 2
 :::::::::::: {.columns}
 ::::::::: {.column width="60%" .mt-5}
 this section is based on the book *Clean Code* (chapter 4) by Robert C. Martin [@martin2009clean]
+
+with own examples
 
 :::::::::
 ::::::::: {.column width="40%"}
