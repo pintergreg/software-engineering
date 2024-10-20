@@ -889,7 +889,7 @@ only the comments remained, which can be read as a prose
 
 ## more bad comments
 
-:::::: {.fragment}
+:::::: {}
 **journal comment**
 
 ```python
@@ -902,7 +902,7 @@ the version tracker keeps better journal
 :::
 ::::::
 
-:::::: {.fragment}
+:::::: {}
 **noise comments**
 
 ```python
@@ -916,7 +916,7 @@ don't write something that is already in the code
 :::
 ::::::
 
-:::::: {.fragment}
+:::::: {}
 **closing brace comments**
 
 ```javascript
