@@ -960,8 +960,9 @@ P21VSAVE	DLOAD			# SAVE CURRENT BASE VECTOR
 
 ## good comments
 
-legal comments
-~ some open source licences should be included to the beginning of the files 
+**legal comments**
+
+some open source licences should be included to the beginning of the files 
 
 **informative comments**
 
