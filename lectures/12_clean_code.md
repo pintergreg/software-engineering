@@ -966,13 +966,28 @@ legal comments
 **informative comments**
 
 ```python
+import re
+
+timestamp = "2024-10-22 09:30:42"
 # matches for timestamps in the format of: YYYY-MM-DD HH:MM:SS
-r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}"
+re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
 ```
 
+::: {.fragment}
+**TODOs -- good or bad?**
+
+```python
+# TODO: this allows invalid month, day, hour, minute and secods values
+re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
+```
+
+[editors can collect `TODO` (and `FIXME`) annotations and warn about them]{.text-smaller}
+:::
 
 
-TODOs
+## documentation
+
+
 
 
 # denoting blocks
