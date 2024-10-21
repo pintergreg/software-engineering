@@ -233,6 +233,26 @@ source: [@paquet2019when]
 :::
 
 
+## dependencies
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![](figures/team_dependency_1.drawio.svg){width=450}
+:::
+::: {.fragment .fade-in data-fragment-index=1}
+![](figures/team_dependency_2.drawio.svg){width=450}
+:::
+::::::
+:::::::::
+::::::::: {.column width="50%" .fragment data-fragment-index=2}
+![](figures/borrowed/CouplingVsCohesion.svg){width=350}
+
+:::::::::
+::::::::::::
+
+
 # allocate resources
 
 :::::::::::: {.columns}
