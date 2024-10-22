@@ -1277,103 +1277,6 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a h
 <span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
 </div>
 </section></section>
-<section>
-<section id="denoting-blocks" class="title-slide slide level1">
-<h1>denoting blocks</h1>
-<div class="columns column-gapless">
-<div class="column" style="width:50;">
-<div class="sourceCode" id="cb41"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb42"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span></code></pre></div>
-<div class="sourceCode" id="cb43"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    a<span class="op">++;</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span></code></pre></div>
-</div><div class="column" style="width:25%;">
-<div class="fragment" data-fragment-index="1">
-<div class="sourceCode" id="cb44"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
-<div class="sourceCode" id="cb45"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    a <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
-</div>
-</div><div class="column" style="width:25%;">
-<div class="fragment" data-fragment-index="2">
-<!--```ruby
-a = 0
-for i in 0..9 do
-   a += 1
-   puts i
-end
-```
-```ruby
-a = 0
-for i in 0..9 {
-   a += 1
-   puts i
-}
-```-->
-<div class="sourceCode" id="cb46"><pre
-class="sourceCode go"><code class="sourceCode go"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">package</span> main</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="op">(</span></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;fmt&quot;</span></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i<span class="op">:=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span> i<span class="op">++</span> <span class="op">{</span></span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>        fmt<span class="op">.</span>Println<span class="op">(</span>i<span class="op">)</span></span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<div class="sourceCode" id="cb47"><pre
-class="sourceCode rust"><code class="sourceCode rust"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="dv">0</span><span class="op">..</span><span class="dv">9</span> <span class="op">{</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>        <span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> i)<span class="op">;</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="what-could-go-wrong" class="slide level2">
-<h2>what could go wrong?</h2>
-<div class="fragment">
-<div class="text-smaller">
-<p>parts from <a
-href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">sslKeyExchange.c</a></p>
-</div>
-<div class="sourceCode" id="cb48" data-startFrom="623"><pre
-class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 622;"><span id="cb48-623"><a href="#cb48-623"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> ReadyHash<span class="op">(&amp;</span>SSLHashSHA1<span class="op">,</span> <span class="op">&amp;</span>hashCtx<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb48-624"><a href="#cb48-624"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb48-625"><a href="#cb48-625"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>clientRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb48-626"><a href="#cb48-626"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb48-627"><a href="#cb48-627"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>serverRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb48-628"><a href="#cb48-628"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb48-629"><a href="#cb48-629"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>signedParams<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb48-630"><a href="#cb48-630"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb48-631"><a href="#cb48-631"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb48-632"><a href="#cb48-632"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>final<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>hashOut<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb48-633"><a href="#cb48-633"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span></code></pre></div>
-<div class="sourceCode" id="cb49" data-startFrom="647"><pre
-class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 646;"><span id="cb49-647"><a href="#cb49-647"></a>fail<span class="op">:</span></span>
-<span id="cb49-648"><a href="#cb49-648"></a>    SSLFreeBuffer<span class="op">(&amp;</span>signedHashes<span class="op">);</span></span>
-<span id="cb49-649"><a href="#cb49-649"></a>    SSLFreeBuffer<span class="op">(&amp;</span>hashCtx<span class="op">);</span></span>
-<span id="cb49-650"><a href="#cb49-650"></a>    <span class="cf">return</span> err<span class="op">;</span></span></code></pre></div>
-<div class="fragment">
-<p>more about Apple’s “goto fail” fiasco (2014): <span class="citation"
-data-cites="wheeler2014apple">[6]</span>, <span class="citation"
-data-cites="migues2014understanding">[7]</span></p>
-</div>
-</div>
-</section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
 <div id="refs" class="references csl-bib-body" role="list">
@@ -1414,24 +1317,6 @@ encyclopedia.”</span> <a
 href="https://en.wikipedia.org/w/index.php?title=Side_effect_(computer_science)&amp;oldid=1063806709"
 class="uri">https://en.wikipedia.org/w/index.php?title=Side_effect_(computer_science)&amp;oldid=1063806709</a>,
 2022.</div>
-</div>
-<div id="ref-wheeler2014apple" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">D.
-A. Wheeler, <span>“The apple goto fail vulnerability: Lessons
-learned.”</span> <a href="
-                    https://dwheeler.com/essays/apple-goto-fail.html
-                    " class="uri">
-                    https://dwheeler.com/essays/apple-goto-fail.html
-</a>, 23-Nov-2014.</div>
-</div>
-<div id="ref-migues2014understanding" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">S.
-Migues, <span>“Understanding the apple <span>‘goto fail;’</span>
-vulnerability.”</span> <a href="
-                    https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html
-                    " class="uri">
-                    https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html
-</a>, 25-Feb-2014.</div>
 </div>
 </div>
 </section>
