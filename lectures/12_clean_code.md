@@ -947,7 +947,7 @@ P21VSAVE	DLOAD			# SAVE CURRENT BASE VECTOR
 			P21FLAG
 ```
 
-[source](https://github.com/chrislgarry/Apollo-11/blob/4d15e4d9d37202847334d4c640058803ed4e782e/Comanche055/GROUND_TRACKING_DETERMINATION_PROGRAM.agc#L149-L167), [GitHub repository](https://github.com/chrislgarry/Apollo-11)
+[source](https://github.com/chrislgarry/Apollo-11/blob/4d15e4d9d37202847334d4c640058803ed4e782e/Comanche055/GROUND_TRACKING_DETERMINATION_PROGRAM.agc#L149-L167), [GitHub repository](https://github.com/chrislgarry/Apollo-11), more about the Apollo Guidance Computer: [@slavin2015coding]
 
 
 ## good comments
