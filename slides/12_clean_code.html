@@ -1097,7 +1097,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a h
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>        records, columns<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>, <span class="st">&quot;count&quot;</span>]</span>
 <span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fill_empty_with_activities(emty, activities):</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fill_empty_with_activities(empty, activities):</span>
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>        pd.concat([activities, empty])</span>
 <span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>        .drop_duplicates(subset<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>], keep<span class="op">=</span><span class="st">&quot;first&quot;</span>)</span>
@@ -1195,7 +1195,8 @@ class="sourceCode numberSource numberLines"><code class="sourceCode" style="coun
 <p><a
 href="https://github.com/chrislgarry/Apollo-11/blob/4d15e4d9d37202847334d4c640058803ed4e782e/Comanche055/GROUND_TRACKING_DETERMINATION_PROGRAM.agc#L149-L167">source</a>,
 <a href="https://github.com/chrislgarry/Apollo-11">GitHub
-repository</a></p>
+repository</a>, more about the Apollo Guidance Computer: <span
+class="citation" data-cites="slavin2015coding">[6]</span></p>
 </section>
 <section id="good-comments" class="slide level2">
 <h2>good comments</h2>
@@ -1317,6 +1318,15 @@ encyclopedia.”</span> <a
 href="https://en.wikipedia.org/w/index.php?title=Side_effect_(computer_science)&amp;oldid=1063806709"
 class="uri">https://en.wikipedia.org/w/index.php?title=Side_effect_(computer_science)&amp;oldid=1063806709</a>,
 2022.</div>
+</div>
+<div id="ref-slavin2015coding" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">T.
+Slavin, <span>“Coding the apollo guidance computer (AGC).”</span> <a
+href="
+                   https://kidscodecs.com/coding-the-apollo-guidance-computer-agc/
+                    " class="uri">
+                   https://kidscodecs.com/coding-the-apollo-guidance-computer-agc/
+</a>, 03-Aug-2015.</div>
 </div>
 </div>
 </section>
