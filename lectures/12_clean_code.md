@@ -834,7 +834,7 @@ def create_empty_dataframe(start_week, end_week):
         records, columns=["week_of_year", "day_of_week", "count"]
     )
 
-def fill_empty_with_activities(emty, activities):
+def fill_empty_with_activities(empty, activities):
     return (
         pd.concat([activities, empty])
         .drop_duplicates(subset=["week_of_year", "day_of_week"], keep="first")
