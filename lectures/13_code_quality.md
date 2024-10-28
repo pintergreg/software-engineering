@@ -13,9 +13,37 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
-# WTF per minute
+#
 
-![own drawing based on [Glen Lipka's](https://commadot.com/wtf-per-minute/)](figures/wtf_per_minute.drawio.svg){width=725}
+::: {.text-align-left}
+agile
+~ working software over comprehensive documentation
+
+:::
+
+::: {.mt-2 .text-align-left}
+software craftmanship
+~ not only working software, but also well-crafted software 
+
+:::
+
+:::::::::::: {.columns .mt-2  .fragment height=240}
+::::::::: {.column width="70%" .text-align-left}
+::: {.text-align-left}
+well-crafted
+~    - high quality
+     - well-designed
+     - validated and verified
+     - tested
+     - code is clean, easy to understand, **maintain**
+
+:::
+:::::::::
+::::::::: {.column width="30%"}
+
+:::::::::
+::::::::::::
+
 
 
 # code smell
@@ -182,7 +210,6 @@ if next_level < length:
 ```
 
 
-
 # denoting blocks
 
 :::::::::::: {.columns .column-gapless}
@@ -295,14 +322,307 @@ fail:
 
 ::: {.fragment}
 more about Apple's "goto fail" fiasco (2014): [@wheeler2014apple], [@migues2014understanding]
+
+false blame on `goto`, could be prevented by review and testing
 :::
 ::::::
 
 
-#
+# how to measure code quality?
 
-https://mvineetsharma.medium.com/analyzing-software-code-maintainability-index-9765896c80f9
-https://radon.readthedocs.io/en/latest/intro.html#halstead-metrics
+it is hard to objectively measure the quality of code
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- number of source lines of code (SLOC)
+    - more code, more (potential) issues
+- aligns well with code style guides
+- Halstead metrics
+- cyclomatic complexity
+- maintainability index
+- test coverage [(later)]{.text-color-lightblue}
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/worker-takes-measurements.svg){width=400}
+
+:::::::::
+::::::::::::
+
+
+# Halstead metrics
+
+Halstead's goal was to identify measurable properties of software, and the relations between them [@radon].
+
+:::::::::::: {.columns .text-smaller}
+::::::::: {.column width="50%"}
+statistically computed numbers:
+
+- $\eta_1$ = the number of distinct operators
+- $\eta_2$ = the number of distinct operands
+- $N_1$ = the total number of operators
+- $N_2$ = the total number of operands
+
+:::::::::
+::::::::: {.column width="50%"}
+some of the measures:
+
+- program vocabulary: $\eta = \eta_1 + \eta_2$
+- program length: $N = N_1 + N_2$
+- calculated program length: $\widehat{N} = \eta_1 log_2{\eta_1} + \eta2 log_2{\eta_2}$
+- volume: $V = N log_2{\eta}$
+- difficulty: $D = \frac{\eta_1}{2} \cdot \frac{N_2}{\eta_2}$
+- effort: $E = D \cdot V$
+
+:::::::::
+::::::::::::
+
+<!-- https://radon.readthedocs.io/en/latest/intro.html#halstead-metrics -->
+
+
+# cyclomatic comlexity
+
+- developed by Thomas J. McCabe in 1976
+- quantitative measure of the number of linearly independent paths through the source code
+- computed using the control-flow graph of the program
+
+defined as:
+
+$$ M = E - N + 2P $$
+
+::: {.text-smaller}
+- E: the number of edges of the graph
+- N: the number of nodes of the graph
+- P: the number of connected components
+    - for a single method, P always equals 1
+:::
+
+
+## cyclomatic comlexity -- example
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+```python
+def calculate_progress(
+    finished: int,
+    total: int,
+    as_percentage: bool
+) -> float:
+    progress = finished / total
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+```
+
+:::::::::
+::::::::: {.column width="30%"}
+::: {.text-smaller}
+activity diagram
+:::
+
+![](figures/user_statistics/progress_activity.svg){width=300}
+
+:::::::::
+::::::::: {.column width="20%" .fragment data-fragment-index=1}
+::: {.text-smaller}
+control flow
+:::
+![](figures/progress_control_flow_2.drawio.svg){width=300}
+
+:::::::::
+::::::::::::
+
+::: {.fragment data-fragment-index=1}
+$$ CC = E - N + 2 $$
+$$ CC = 4 - 4 + 2 $$
+$$ CC = 2 $$
+:::
+
+
+## cyclomatic comlexity -- 2nd example
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+```python
+def calculate_progress(
+    finished: int,
+    total: int,
+    as_percentage: bool,
+    foo: bool
+) -> float:
+    progress = finished / total
+
+    if as_percentage and foo:
+        return progress * 100
+    else:
+        return progress
+```
+
+:::::::::
+::::::::: {.column width="40%"}
+::: {.text-smaller}
+activity diagram
+:::
+![](figures/progress_foo.svg){width=300}
+
+:::::::::
+::::::::: {.column width="20%"}
+::: {.text-smaller}
+control flow
+:::
+![](figures/progress_foo_2.drawio.svg){width=300}
+
+:::::::::
+::::::::::::
+
+::: {}
+$$ CC = E - N + 2 $$
+$$ CC = 7 - 6 + 2 $$
+$$ CC = 3 $$
+:::
+
+
+## Python statements' effects on cyclomatic complexity
+
+::: {.text-smaller}
+|construct|effect|reasoning|
+|-------|--|----------------------|
+|if              |+1|An if statement is a single decision.                                             |
+|elif            |+1|The elif statement adds another decision.                                         |
+|else            |+0|The else statement does not cause a new decision. The decision is at the if.      |
+|for             |+1|There is a decision at the start of the loop.                                     |
+|while           |+1|There is a decision at the while statement.                                       |
+|except          |+1|Each except branch adds a new conditional path of execution.                      |
+|finally         |+0|The finally block is unconditionally executed.                                    |
+|with            |+1|The with statement roughly corresponds to a try/except block.                     |
+|boolean operator|+1|Every boolean operator (and, or) adds a decision point.                           |
+
+:::
+
+::: {.text-smaller}
+source: Radon [documentation](https://radon.readthedocs.io/en/latest/index.html) [@radon]
+:::
+
+<!--|assert          |+1|The assert statement internally roughly equals a conditional statement.           |
+|comprehension   |+1|A list/set/dict comprehension of generator expression is equivalent to a for loop.|-->
+
+
+## interpretation of cyclomatic complexity -- Radon
+
+|CC score|rank|risk         |
+|--------|----|-------------|
+|   1 - 5|   A|low - simple block                     |
+|  6 - 10|   B|low - well structured and stable block |
+| 11 - 20|   C|moderate - slightly complex block      |
+| 21 - 30|   D|more than moderate - more complex block|
+| 31 - 40|   E|high - complex block, alarming         |
+| 41+    |   F|very high - error-prone, unstable block|
+
+::: {.text-smaller}
+source: Radon [documentation](https://radon.readthedocs.io/en/latest/index.html) [@radon]
+:::
+
+
+# maintainability index
+
+original [@coleman1994using]:
+~ $$ MI = 171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L} $$
+
+Visual Studio derivate:
+~ $$ MI = max\left[0,100 \frac{171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L}}{171}\right] $$
+
+::: {.text-smaller .mt-2}
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="40%" .mt-2}
+- V: the Halstead volume
+- G: the total cyclomatic complexity
+- L: the number of source lines of code
+
+:::::::::
+::::::::: {.column width="30%" .text-size-1}
+
+|score  |maintainability|
+|:-----:|:-------------:|
+|0-10   |low       |
+|10-20  |moderate  |
+|20+    |high      |
+
+Table: Visual Studio
+
+:::::::::
+::::::::: {.column width="30%" .text-size-1}
+|score |maintainability|
+|:----:|:-------------:|
+|  0–10|low            |
+| 10–20|moderate       |
+| 20–30|good           |
+| 30–40|very good      |
+|40–100|excellent      |
+
+Table: based on [@sharma2024analyzing]
+
+:::::::::
+::::::::::::
+:::
+
+::: {.text-smaller .mt-2 .fragment}
+**issues**: ease of computation, language independence, understandability, explainability [@heitlager2007practical]
+
+read more in [Think Twice Before Using the "Maintainability Index"](https://avandeursen.com/2014/08/29/think-twice-before-using-the-maintainability-index/) [@vandeursen2014think]
+:::
+
+
+## maintainability index -- example
+
+```python
+def calculate_progress(finished: int, total: int, as_percentage: bool) -> float:
+    progress = finished / total
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+
+
+def calculate_progress_2(
+    finished: int, total: int, as_percentage: bool, foo: bool
+) -> float:
+    progress = finished / total
+
+    if as_percentage and foo:
+        return progress * 100
+    else:
+        return progress
+```
+
+- maintainability index for a script containing the code above is **63.71**
+- calculated with Radon
+
+
+# code chunk permanence in a codebase 
+
+<!--:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+
+:::::::::
+::::::::: {.column width="50%"}
+
+:::::::::
+::::::::::::-->
+
+![Linux codebase -- from the [Hercules](https://github.com/src-d/hercules) (Git history analyser) documentation](https://raw.githubusercontent.com/src-d/hercules/refs/heads/master/doc/linux.png){width=400}
+
+::: {.mt-2}
+- there was no need to change it, presumably it was written well in the first place
+- multiple changes in a short period indicate problems during software development [@nagappan2010change]
+:::
+
+
+# WTF per minute
+
+![own drawing based on [Glen Lipka's](https://commadot.com/wtf-per-minute/)](figures/wtf_per_minute.drawio.svg){width=725}
 
 
 # references
