@@ -330,3 +330,6 @@ figcaption {
 .column-vertical-align {
     vertical-align: top;
 }
+.table-image-margin-0 table img {
+    margin: 0;
+}
