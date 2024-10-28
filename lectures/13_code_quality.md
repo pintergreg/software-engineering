@@ -636,6 +636,8 @@ def calculate_progress_2(
 
 # go report
 
+:::::::::::: {.columns}
+::::::::: {.column width="75%" .mt-3}
 - **gofmt**: style guide
 - go_vet: reports suspicious constructs (Go specific)
 - ineffassign: detects ineffectual assignments in Go code
@@ -643,10 +645,22 @@ def calculate_progress_2(
 - license: checks whether your project has a LICENSE file
 - misspell: finds commonly misspelled English words
 
-![](figures/go report_ A+.svg){width=150}
+:::::::::
+::::::::: {.column width="25%" .text-smaller .table-image-margin-0}
+|score|grade                                    |
+|----:|:---------------------------------------:|
+| >90 |![](figures/go report_ A+.svg){width=113}|
+| >80 |![](figures/go report_ A.svg){width=100} |
+| >70 |![](figures/go report_ B.svg){width=100} |
+| >60 |![](figures/go report_ C.svg){width=100} |
+| >50 |![](figures/go report_ D.svg){width=100} |
+| >40 |![](figures/go report_ E.svg){width=100} |
+|<=40 |![](figures/go report_ F.svg){width=100} |
+
+:::::::::
+::::::::::::
 
 [Go Report Card for Gitea](https://goreportcard.com/report/code.gitea.io/gitea)
-
 
 <!--GoFmt: 0.30
 GoLint: 0.10
