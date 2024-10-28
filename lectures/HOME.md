@@ -142,3 +142,12 @@ MVC-MVP-MVVM
 
 - [What is wireframing? A complete guide](https://www.uxdesigninstitute.com/blog/what-is-wireframing/) - by Louise Bruton
 - [UI Prototypes](https://www.interaction-design.org/literature/topics/prototypes)
+
+## week 9
+
+1. code quality
+2. code review
+
+### readings
+
+- [Code Smells](https://blog.codinghorror.com/code-smells/) - by Jeff Atwood
