@@ -63,6 +63,39 @@ software rot is the degradation, deterioration, or loss of the use or performanc
 :::::::::
 ::::::::::::
 
+##
+
+- long method
+- long parameter list
+- naming
+    - notation in names
+    - inconsistent names
+    - uncommunicative names
+- comments
+- large class
+    - possible do more than on thing
+- duplicated code
+- conditional complexity
+- dead code
+- speculative generality
+- temporary field
+
+code smells between classes
+
+Alternative Classes with Different Interfaces
+
+Data Class
+
+Data Clumps
+
+Refused Bequest
+
+Indecent Exposure
+
+Feature Envy
+
+
+
 
 ## some code smells
 
@@ -599,6 +632,31 @@ def calculate_progress_2(
 
 - maintainability index for a script containing the code above is **63.71**
 - calculated with Radon
+
+
+# go report
+
+- **gofmt**: style guide
+- go_vet: reports suspicious constructs (Go specific)
+- ineffassign: detects ineffectual assignments in Go code
+- **gocyclo**: cyclomatic complexity
+- license: checks whether your project has a LICENSE file
+- misspell: finds commonly misspelled English words
+
+![](figures/go report_ A+.svg){width=150}
+
+[Go Report Card for Gitea](https://goreportcard.com/report/code.gitea.io/gitea)
+
+
+<!--GoFmt: 0.30
+GoLint: 0.10
+go_vet: 0.30
+GoCyclo: 0.10
+IneffAssign: 0.10
+Misspell: 0.05
+Staticcheck: 0.15
+ErrCehck: 0.15
+Licence: 0.00-->
 
 
 # code chunk permanence in a codebase 
