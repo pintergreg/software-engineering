@@ -1,0 +1,11 @@
+@startuml
+skin rose
+start
+:progress = finished / total;
+if (as percentage?) then (yes)
+  :return progress * 100;
+else (no)
+  :return progress;
+endif
+stop
+@enduml
