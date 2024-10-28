@@ -87,8 +87,3 @@ Feathers, M. (2004). Working Effectively with Legacy Code: p1. pp 6. Prentice Ha
 | 6.1.5   | Bugfix Release | Tue 2024-09-10 | 5     |
 
 table: KDE / Plasma 6.1 series [release schedule](https://community.kde.org/Schedules/Plasma_6)
-
-
-# wireframe
-
-## low fidelity vs. high fidelity
