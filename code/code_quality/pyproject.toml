@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "code-quality"
+version = "0.1.0"
+description = ""
+authors = ["pintergreg <pintergreg@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+radon = {extras = ["toml"], version = "^6.0.1"}
+rich = "^13.9.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
