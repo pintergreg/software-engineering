@@ -74,14 +74,31 @@ software rot is the degradation, deterioration, or loss of the use or performanc
 - comments
 - large class
     - possibly do more than on thing
+- a function / class does more than on thing
+    
+::: {.text-smaller}
+source: [@atwood2006code]
+:::
 
 
-## 
+## some code smells
 
 - duplicated code
-- dead code
+    - [Don't Repeat Yourself! (a.k.a., DRY principle) [@venners2003orthogonality]]{.text-smaller}
 - speculative generality
+    - [do not generalize the code to solve a potential future problem]{.text-smaller}
+    - [You aren't gonna need it (YAGNI)]{.text-smaller}
+    - [focus on today's problem]{.text-smaller}
+- dead code
+    - [e.g., a function that is never called]{.text-smaller}
+    - [editors denote it]{.text-smaller}
+    - [in Go unused variable is not a warning, but an error]{.text-smaller}
 - temporary field
+    - ["Watch out for objects that contain a lot of optional or unnecessary fields. If you're passing an object as a parameter to a method, make sure that you're using all of it and not cherry-picking single fields." [@atwood2006code]]{.text-smaller}
+
+::: {.text-smaller}
+source: [@atwood2006code]
+:::
 
 
 ## conditional complexity {visibility=hidden}
@@ -135,7 +152,7 @@ if is_pressure_low() or is_temperature_high():
 :::::::::
 ::::::::::::
 
-:::::: {.fragment .mt-5}
+:::::: {.fragment .mt-3}
 ```python
 if not (
     is_pressure_low()
@@ -148,8 +165,11 @@ if not (
 ::: {.text-smaller}
 - hard to understand, even if it is tested and documented
 - use nested conditions instead
+- avoid negative conditionals -- Robert C. Martin [@martin2009clean]
+    - `if (!is_raining()) {do_something();}`{.javascript}
 :::
 ::::::
+
 
 
 ## code smells between classes
@@ -168,8 +188,7 @@ Feature Envy
 
 
 
-
-## some code smells
+## more code smells
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%" .mt-5}
@@ -185,7 +204,9 @@ with own examples
 ::::::::::::
 
 
-## obsolete comment
+## comment related smells
+
+**1. obsolete comment**
 
 version *n-1* (OOP)
 
@@ -203,12 +224,14 @@ def increase(what, by):
     return what + by
 ```
 
-::: {.mt-5}
+::: {.mt-2 .text-smaller}
 these are actually noise comments, so they are bad in the first place
 :::
 
 
-## redundant comment
+## comment related smells
+
+**2. redundant comment**
 
 ```python
 # creates an empty dataframe
@@ -219,7 +242,10 @@ def create_empty_dataframe(start_week, end_week):
 redundant as it does not give new information, a form of noise comment
 :::
 
-## commented-out code
+
+## comment related smells
+
+**3. commented-out code**
 
 ```python
 def increase(what, by):
@@ -247,12 +273,6 @@ class Something:
 the version tracker will preserve it, if you might meed it sometime in the future
 :::
 
-
-## dead function, dead code
-
-## duplication
-
-## feature envy
 
 ## magic numbers
 
@@ -291,15 +311,6 @@ nicely named enumerations are inferior to base classes with abstract methods. No
 forced to implement the switch/case statement the same way each time; but the base
 classes do enforce that concrete classes have all abstract methods implemented.
 
-G29: Avoid Negative Conditionals
-Negatives are just a bit harder to understand than positives. So, when possible, condition-
-als should be expressed as positives. For example:
-if (buffer.shouldCompact())
-is preferable to
-if (!buffer.shouldNotCompact())
-
-
-Functions Should Do One Thing
 
 Encapsulate Boundary Conditions
 
