@@ -45,7 +45,6 @@ well-crafted
 ::::::::::::
 
 
-
 # code smell
 
 > a code smell is a surface indication that usually corresponds to a deeper problem
@@ -62,6 +61,7 @@ software rot is the degradation, deterioration, or loss of the use or performanc
 
 :::::::::
 ::::::::::::
+
 
 ## clean clode violations as code smells
 
@@ -165,11 +165,10 @@ if not (
 ::: {.text-smaller}
 - hard to understand, even if it is tested and documented
 - use nested conditions instead
-- avoid negative conditionals -- Robert C. Martin [@martin2009clean]
-    - `if (!is_raining()) {do_something();}`{.javascript}
+<!--- avoid negative conditionals -- Robert C. Martin [@martin2009clean]
+    - `if (!is_raining()) {do_something();}`{.javascript}-->
 :::
 ::::::
-
 
 
 ## code smells between classes
@@ -182,10 +181,16 @@ Data Clumps
 
 Refused Bequest
 
-Indecent Exposure
+## class-based smells: indecent exposure
 
-Feature Envy
+## class-based smells: feature envy
 
+![](figures/feature_envy.drawio.svg){width=500}
+
+> Methods that make extensive use of another class may belong in another class.
+> Consider moving this method to the class it is so envious of.
+>
+> -- Jeff Atwood [@atwood2006code]
 
 
 ## more code smells
@@ -303,16 +308,17 @@ def calculate_circle_area(r: float) -> float:
 :::
 
 
-## structure over convention
+<!--## structure over convention
 
-Enforce design decisions with structure over convention. Naming conventions are good,
-but they are inferior to structures that force compliance. For example, switch/cases with
-nicely named enumerations are inferior to base classes with abstract methods. No one is
-forced to implement the switch/case statement the same way each time; but the base
-classes do enforce that concrete classes have all abstract methods implemented.
+> Enforce design decisions with structure over convention.
+> Naming conventions are good, but they are inferior to structures that force compliance.
+> For example, switch/cases with nicely named enumerations are inferior to base classes with abstract methods.
+> No one is forced to implement the switch/case statement the same way each time; but the base classes do enforce that concrete classes have all abstract methods implemented.
+>
+> -- Robert C. Martin [@martin2009clean]-->
 
 
-Encapsulate Boundary Conditions
+## encapsulate boundary conditions
 
 ```python
 if level + 1 < length:
@@ -324,6 +330,8 @@ next_level = level + 1
 if next_level < length:
     do_somthing(foo, bar, next_level)
 ```
+
+also increases consistency, the condition needs to be adjusted in one place
 
 
 # denoting blocks
