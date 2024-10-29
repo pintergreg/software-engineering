@@ -79,7 +79,6 @@ software rot is the degradation, deterioration, or loss of the use or performanc
 ## 
 
 - duplicated code
-- conditional complexity
 - dead code
 - speculative generality
 - temporary field
@@ -147,7 +146,8 @@ if not (
 ```
 
 ::: {.text-smaller}
-hard to understand, even if it is tested and documented
+- hard to understand, even if it is tested and documented
+- use nested conditions instead
 :::
 ::::::
 
