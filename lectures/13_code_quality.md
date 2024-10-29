@@ -63,7 +63,7 @@ software rot is the degradation, deterioration, or loss of the use or performanc
 :::::::::
 ::::::::::::
 
-##
+## clean clode violations as code smells
 
 - long method
 - long parameter list
@@ -73,14 +73,86 @@ software rot is the degradation, deterioration, or loss of the use or performanc
     - uncommunicative names
 - comments
 - large class
-    - possible do more than on thing
+    - possibly do more than on thing
+
+
+## 
+
 - duplicated code
 - conditional complexity
 - dead code
 - speculative generality
 - temporary field
 
-code smells between classes
+
+## conditional complexity {visibility=hidden}
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+```python
+if a and b:
+    do_something()
+```
+
+:::::::::
+::::::::: {.column width="50%"}
+```python
+if a or b:
+    do_something()
+```
+
+:::::::::
+::::::::::::
+
+:::::: {.fragment .mt-5}
+```python
+if not (a or (b and not c) and (d or not f)):
+    do_something()
+```
+
+::: {.text-smaller}
+- hard to understand
+- even if it is tested and documented
+:::
+::::::
+
+
+## conditional complexity
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="50%"}
+```python
+if is_pressure_low() and is_temperature_high():
+    do_something()
+```
+
+:::::::::
+::::::::: {.column width="50%"}
+```python
+if is_pressure_low() or is_temperature_high():
+    do_something()
+```
+
+:::::::::
+::::::::::::
+
+:::::: {.fragment .mt-5}
+```python
+if not (
+    is_pressure_low()
+    or (is_temperature_high() and not is_humidity_low())
+    and (is_fall() or not is_raining())
+):
+    do_something()
+```
+
+::: {.text-smaller}
+hard to understand, even if it is tested and documented
+:::
+::::::
+
+
+## code smells between classes
 
 Alternative Classes with Different Interfaces
 
