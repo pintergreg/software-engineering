@@ -327,6 +327,12 @@ figcaption {
 .pre-475 pre {
     height: 475px;
 }
+/*.code-margin-0 pre {
+    margin: 0
+}*/
+.code-margin-top-0 .sourceCode {
+    margin-top: 0
+}
 .column-vertical-align {
     vertical-align: top;
 }
