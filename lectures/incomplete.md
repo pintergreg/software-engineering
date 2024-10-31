@@ -34,11 +34,6 @@ this chapter is based on the book _Working Efficiently with Legacy Code_ by Mich
 > -- Feathers, M. (2004). Working Effectively with Legacy Code: Part I / Chapter 2
 
 
-## Code Smells
-
-- [Code Smells](https://blog.codinghorror.com/code-smells/)
-
-
 ##  changing the software
 
 |                  | add feature | fix a bug | refactor | optimize |
