@@ -171,17 +171,55 @@ if not (
 ::::::
 
 
-## code smells between classes
+## class-based smells: alternative classes with different interfaces {visibility=hidden}
 
-Alternative Classes with Different Interfaces
+> If two classes are similar on the inside, but different on the outside, perhaps they can be modified to share a common interface [@atwood2006code].
 
-Data Class
 
-Data Clumps
+## class-based smells: data class???
 
-Refused Bequest
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+> Avoid classes that passively store data. Classes should contain data and methods to operate on that data, too [@atwood2006code].
+
+::: {.mt-3}
+- Kotlin: [Data classes﻿](https://kotlinlang.org/docs/data-classes.html)
+- Python: [PEP 557 – Data Classes](https://peps.python.org/pep-0557/)
+- Ruby: [class Data ](https://docs.ruby-lang.org/en/master/Data.html)
+
+:::
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/woman-in-predicament.svg){width=300}
+
+:::::::::
+::::::::::::
+
+
+## class-based smells: data clumps
+
+> If you always see the same data hanging around together, maybe it belongs together. Consider rolling the related data up into a larger class [@atwood2006code].
+
+
+## class-based smells: refused bequest
+
+> If you inherit from a class, but never use any of the inherited functionality, should you really be using inheritance? [@atwood2006code]
+
 
 ## class-based smells: indecent exposure
+
+::: {.wide-quote}
+> Beware of classes that unnecessarily expose their internals. [...] You should have a compelling reason for every item you make public. If you don't, hide it [@atwood2006code].
+
+:::
+
+::: {.text-smaller .mt-5}
+OOP principle: abstraction
+~    - hiding the complex reality while exposing only the necessary parts
+     - allows to focus on interactions at a higher level without needing to understand the details of the implementation
+     - achieved through abstract classes and interfaces, which define a contract for what methods an object must implement without specifying how they should be implemented
+:::
+     
 
 ## class-based smells: feature envy
 
