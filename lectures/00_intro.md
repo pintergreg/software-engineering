@@ -204,7 +204,7 @@ One should come up with recipes, cook the food, but the restaurant also needs co
 - after the construction is finished, the contractor leaves the site
 :::::::::
 ::::::::: {.column width="35%"}
-![[Wikimedia](https://commons.wikimedia.org/wiki/File:Sample_Floorplan.jpg) | public domain](figures/sample_floorplan.jpg)
+![[Wikimedia](https://commons.wikimedia.org/wiki/File:Sample_Floorplan.jpg) | public domain](figures/borrowed/sample_floorplan.jpg)
 
 :::::::::
 ::::::::::::
