@@ -25,6 +25,11 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 [^1]:
 Sometimes it can be somewhat formal.
 
+# a review process
+
+![](figures/proc3.png){width=550}
+
+
 #
 
 :::::::::::: {.columns}
