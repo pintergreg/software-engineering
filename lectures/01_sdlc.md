@@ -274,7 +274,7 @@ Although usually the customer does not know what they want, so agile usually wor
 
 :::::::::::: {.columns}
 ::::::::: {.column width="45%"}
-![simple kanban board<br>by [Jeff Lasovski](https://commons.wikimedia.org/wiki/File:Simple-kanban-board-.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)](figures/simple_kanban_board.jpg){width=700}
+![simple kanban board<br>by [Jeff Lasovski](https://commons.wikimedia.org/wiki/File:Simple-kanban-board-.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)](figures/borrowed/simple_kanban_board.jpg){width=700}
 :::::::::
 ::::::::: {.column width="55%"}
 - notes move from left to right
