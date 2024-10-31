@@ -145,7 +145,7 @@ MVC-MVP-MVVM
 
 ## week 9
 
-1. code quality
+1. [code quality](/software-engineering/slides/13_code_quality.html)
 2. code review
 
 ### readings
