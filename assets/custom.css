@@ -327,9 +327,21 @@ figcaption {
 .pre-475 pre {
     height: 475px;
 }
+/*.code-margin-0 pre {
+    margin: 0
+}*/
+.code-margin-top-0 .sourceCode {
+    margin-top: 0
+}
 .column-vertical-align {
     vertical-align: top;
 }
 .table-image-margin-0 table img {
     margin: 0;
+}
+.tooltip {
+    text-decoration-line: underline;
+    text-decoration-color: var(--r-link-color);
+    text-decoration-style: dotted; 
+    cursor: help;
 }
