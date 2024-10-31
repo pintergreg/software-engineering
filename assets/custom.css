@@ -339,3 +339,9 @@ figcaption {
 .table-image-margin-0 table img {
     margin: 0;
 }
+.tooltip {
+    text-decoration-line: underline;
+    text-decoration-color: var(--r-link-color);
+    text-decoration-style: dotted; 
+    cursor: help;
+}
