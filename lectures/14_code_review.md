@@ -27,7 +27,20 @@ Sometimes it can be somewhat formal.
 
 # a review process
 
-![](figures/proc3.png){width=550}
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="60%"}
+![](figures/proc3.png){width=500}
+
+:::::::::
+::::::::: {.column width="40%" .mt-5 .text-smaller}
+- is it understandable (clear)
+- is it clean (no code smells)
+- does it match the task?
+- does it fulfill the task?
+    - every [DoD]{.tooltip title="Definition of Done"} point covered?
+- is it possible to improve?
+:::::::::
+::::::::::::
 
 
 #
