@@ -13,6 +13,22 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
+# V model [@forsberg1991relationship]
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-3}
+- each phase has output and a _review process_
+    - errors are found at early stage
+    - decreases the risk of failure
+- testing is done in a hierarchical perspective
+
+:::::::::
+::::::::: {.column width="50%"}
+:::::: {.r-stack}
+![based on [guru99.com's image](https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png)](figures/v_model.drawio.svg){width=500}
+::::::
+:::::::::
+::::::::::::
 # 
 
 |type       |formality     |led by                           |effort  |documentation                             |
