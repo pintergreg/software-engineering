@@ -151,3 +151,4 @@ MVC-MVP-MVVM
 ### readings
 
 - [Code Smells](https://blog.codinghorror.com/code-smells/) - by Jeff Atwood
+- [How To Write Unmaintainable Code](https://github.com/Droogans/unmaintainable-code) - by Roedy Green
