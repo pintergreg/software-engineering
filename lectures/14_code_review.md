@@ -53,6 +53,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 :::::::::
 ::::::::::::
 
+
 ## architecture review
 
 :::::::::::: {.columns}
@@ -67,6 +68,47 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 ::::::::: {.column width="40%"}
 ![risk storming as a review process](figures/user_statistics/risk_storming.excalidraw.svg){width=400}
 
+:::::::::
+::::::::::::
+
+
+## code review
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+```python
+def query_progress(user_id:int) -> float:
+    # establish connection
+    con= sqlite3.connect("data.db")
+    # build query
+    progress_query = f"""
+    SELECT
+        lesson / 50.0 AS progress
+    FROM activity
+    WHERE
+        user_id = {user_id} AND
+        result = 'success'
+    ORDER BY
+        lesson DESC
+    LIMIT 1
+    ;
+    """
+    # execute query
+    res =con.execute(progress_query)
+    progress=res.fetchone()[0]
+    return progress
+```
+
+:::::::::
+::::::::: {.column width="50%" .mt-4}
+- does not respect style guide
+- does 3 things
+    - establish DB connection
+    - build query
+    - execute query
+- contains separation comments
+- hard coded divisor
+    - magic number
 :::::::::
 ::::::::::::
 
