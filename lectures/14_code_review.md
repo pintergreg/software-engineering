@@ -120,7 +120,31 @@ every work product can and _should_ be reviewed
 :::
 
 
-# you are not your code
+# code review  -- author's perspective
+
+:::::::::::: {.columns}
+::::::::: {.column width="63%"}
+- be humble
+- open to feedback
+- the goal is to deliver higher quality code, not about arguing who was right
+    - you and the reviewer are in the same side
+- you and the reviewer are not only talking about the code,
+    - you are exchanging best practices and experiences
+- you can learn from the review
+
+:::::::::
+::::::::: {.column width="37%"}
+![](figures/publicdomainvectors/programmer-at-laptop.svg){width=300}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
+
+## you are not your code
 
 :::::::::::: {.columns}
 ::::::::: {.column width="30%"}
@@ -141,8 +165,214 @@ every work product can and _should_ be reviewed
 the subject of the code review is not you, but your code
 :::
 
+::: {.text-smaller}
+based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
 
-# 
+
+# code review  -- reviewer's perspective
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-3}
+- pay attention to the way you are formulating your feedback
+    - phrasing is crucial for your feedback to be accepted
+- you and the author are in the same side
+- the goal is to deliver higher quality code, not about arguing who was right
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/detective.svg){width=300}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
+
+## use I-messages
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+formulate your feedback as expressing your personal thoughts
+
+::: {.text-smaller}
+- I suggest
+- I think
+- I would
+- I believe
+- it's hard for me to
+- for me, it seems like
+
+:::
+
+it's hard to argue against personal feelings since they are subjective
+
+:::::::::
+::::::::: {.column width="50%" .mt-2}
+
+- You-messages sound like an absolute statement
+- which will lead to a defensive stance
+- the author would argue with the reviewer instead of thinking about a change
+- so the author will be less open for the feedback
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
+
+## talk about the code, not the coder
+
+:::::::::::: {.columns}
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/programming-language.svg){width=225}
+
+:::::::::
+::::::::: {.column width="30%"}
+:::::: {.r-stack}
+![](figures/publicdomainvectors/programmer-at-laptop.svg){width=225}
+
+![](figures/cross.drawio.svg){width=225}
+::::::
+:::::::::
+::::::::::::
+
+::: {}
+wrong
+~ you hard-coded the total number of lessons into the query, which is wrong
+
+right
+~ the total number of lessons is hard-coded into the query, which may raise issues later
+:::
+
+::: {.text-smaller}
+based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
+
+## ask questions
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+- asking questions feels less like a criticism as the author can answer the question
+    - it can trigger a thought process which can lead to accepting the feedback
+    - or the author can come up with a better solution
+- by asking questions you can reveal the intention behind a certain design decision
+    - there may be a good reason for it
+    
+<!--::: {.text-smaller}
+the total number of lessons is hard-coded into the query, which may raise issues later
+:::-->
+
+:::::::::
+::::::::: {.column width="25%"}
+![](figures/publicdomainvectors/question-mark-color.svg){width=150}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
+
+## refer to the author's behavior, not their traits
+
+wrong
+~ You are sloppy when it comes to following the style guide.
+~ Can't you just configure your [IDE]{.tooltip title="integrated development environment"} properly?
+
+right
+~ I believe that you should pay more attention to the style guide.
+~ Try to enable the auto-formatting in your [IDE]{.tooltip title="integrated development environment"}.
+
+::: {.fragment .wide-quote .mt-3}
+- usually  it's not required to talk about the author at all in a code review
+- use I-messages, talk about the code or ask questions
+:::
+
+::: {.text-smaller}
+based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
+
+## OIR-rule of giving feedback
+
+Observation
+~ Describe your observations in an objective and neutral way. Refer to the behavior if you have to talk about the author. Using an I-message is often useful here.
+~ [e.g., "This method has 100 lines."]{.text-smaller}
+
+Impact
+~ Explain the impact that the observation has on you. Use I-messages.
+~ [e.g., "This makes it hard for me to grasp the essential logic of this method."]{.text-smaller}
+
+Request
+~ Use an I-message to express your wish or proposal.
+~ [e.g., "I suggest extracting the low-level-details into subroutines and give them expressive names."]{.text-smaller}
+
+::: {.text-smaller}
+source: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
+
+## three filters for feedback
+
+always ask yourself, if your feedback is true, necessary and kind
+
+[(from April Wensel [@wensel2018compassionate] via [@hauer2018code])]{.text-smaller}
+
+- is it true?
+    - [avoid statements assuming an absolute truth]{.text-smaller}
+    - [avoid the words "right", "wrong", "never", "always" and "should"]{.text-smaller}
+    - [refer to your opinion instead]{.text-smaller}
+- is it necessary?
+    - [does the ~~demanded~~ requested change make the reviewed code better]{.text-smaller}
+<!--     - [are you trying to help or boosting your ego?]{.text-smaller} -->
+<!--     - [or, for example, does it only boost your ego to reprimand someone?]{.text-smaller} -->
+- it it kind?
+
+::: {.text-smaller}
+source: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
+
+## praise
+
+- don't forget to express your appreciation if you have reviewed good code
+- praising doesn't hurt you but will motivate the author
+- however, be specific and separate the prasie from the criticism
+
+::: {.text-smaller}
+based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
+
+## looks good to me
+
+::: {.text-align-left}
+- it's okay to say: "Everything is good!"
+- no code change request is a valid outcome of a code review
+    - you don't have to find something in the code
+- a code can be not just okay, but worth to learn from it
+
+:::
+
+::: {.fragment .text-align-left}
+- however, when a reviewer too often says LGTM, it becomes fishy
+    - especially if the review code turns out to be problematic later regardless the positive feedback
+
+:::
+
+
+# review types by formality 
+
+
+
+## review types by formality -- summary
 
 |type       |formality     |led by                           |effort  |documentation                             |
 |:---------:|:------------:|:-------------------------------:|:------:|:----------------------------------------:|
@@ -153,6 +383,7 @@ the subject of the code review is not you, but your code
 
 [^1]:
 Sometimes it can be somewhat formal.
+
 
 # a review process
 
