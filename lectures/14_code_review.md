@@ -264,10 +264,6 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 - by asking questions you can reveal the intention behind a certain design decision
     - there may be a good reason for it
     
-<!--::: {.text-smaller}
-the total number of lessons is hard-coded into the query, which may raise issues later
-:::-->
-
 :::::::::
 ::::::::: {.column width="25%"}
 ![](figures/publicdomainvectors/question-mark-color.svg){width=150}
@@ -331,8 +327,6 @@ always ask yourself, if your feedback is true, necessary and kind
     - [refer to your opinion instead]{.text-smaller}
 - is it necessary?
     - [does the ~~demanded~~ requested change make the reviewed code better]{.text-smaller}
-<!--     - [are you trying to help or boosting your ego?]{.text-smaller} -->
-<!--     - [or, for example, does it only boost your ego to reprimand someone?]{.text-smaller} -->
 - it it kind?
 
 ::: {.text-smaller}
