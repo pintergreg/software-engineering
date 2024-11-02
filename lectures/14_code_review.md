@@ -113,6 +113,35 @@ def query_progress(user_id:int) -> float:
 ::::::::::::
 
 
+##
+
+::: {.r-fit-text}
+every work product can and _should_ be reviewed
+:::
+
+
+# you are not your code
+
+:::::::::::: {.columns}
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/programmer-at-laptop.svg){width=300}
+
+:::::::::
+::::::::: {.column width="20%" .mt-5}
+![](figures/not_equal.drawio.svg){width=150}
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/programming-language.svg){width=300}
+
+:::::::::
+::::::::::::
+
+::: {.r-fit-text}
+the subject of the code review is not you, but your code
+:::
+
+
 # 
 
 |type       |formality     |led by                           |effort  |documentation                             |
