@@ -29,6 +29,48 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 ::::::
 :::::::::
 ::::::::::::
+
+
+## requirement analysis review
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+![user story map](figures/user_statistics/story_map.drawio.svg){width=400}
+
+::: {.text-smaller .mt-3}
+- can be discussed / reviewed
+- even with a customer representative
+
+:::
+:::::::::
+::::::::: {.column width="15%" .mt-5}
+![](figures/double_arrow.drawio.svg){width=100}
+
+:::::::::
+::::::::: {.column width="45%"}
+![user story "reviewed" in an issue tracker](figures/user_statistics/user_story_review_2.png){width=400}
+
+:::::::::
+::::::::::::
+
+## architecture review
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+![C4 diagrams as the output of the high level design](figures/user_statistics/c4_component.excalidraw.svg){width=400}
+
+:::::::::
+::::::::: {.column width="15%" .mt-5}
+![](figures/double_arrow.drawio.svg){width=100}
+
+:::::::::
+::::::::: {.column width="40%"}
+![risk storming as a review process](figures/user_statistics/risk_storming.excalidraw.svg){width=400}
+
+:::::::::
+::::::::::::
+
+
 # 
 
 |type       |formality     |led by                           |effort  |documentation                             |
