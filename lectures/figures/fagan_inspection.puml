@@ -1,0 +1,16 @@
+@startuml
+skin rose
+start
+repeat
+
+:planning;
+:overview meeting;
+:preparation;
+:inspection meeting;
+:rework;
+
+repeat while (exit criteria met?) is (no) not (yes)
+
+:follow-up;
+stop
+@enduml
