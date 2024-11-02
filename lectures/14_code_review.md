@@ -120,6 +120,48 @@ every work product can and _should_ be reviewed
 :::
 
 
+# review types by formality 
+
+:::::::::::: {.columns}
+::::::::: {.column width="30%" .text-size-3 .mt-2}
+- informal
+- walkthrough
+- technical
+- inspection
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/impossible-geometric-shapes.svg){width=250}
+
+:::::::::
+::::::::::::
+
+
+## informal
+
+
+## walkthrough
+
+
+## technical
+
+
+## inspection
+
+
+## review types by formality -- summary
+
+|type       |formality     |led by                           |effort  |documentation                             |
+|:---------:|:------------:|:-------------------------------:|:------:|:----------------------------------------:|
+|informal   |not formal    |noone                            |minimal |undocumented                              |
+|walkthrough|not formal[^1]|authors                          |very low|normal, fault-finding                     |
+|technical  |less formal   |trained moderator, not the author|moderate|more detailed                             |
+|inspection |most formal   |trained moderator                |high    |thorough; based on  standards, checklists |
+
+[^1]:
+Sometimes it can be somewhat formal.
+
+
 # code review  -- author's perspective
 
 :::::::::::: {.columns}
@@ -360,23 +402,6 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
     - especially if the review code turns out to be problematic later regardless the positive feedback
 
 :::
-
-
-# review types by formality 
-
-
-
-## review types by formality -- summary
-
-|type       |formality     |led by                           |effort  |documentation                             |
-|:---------:|:------------:|:-------------------------------:|:------:|:----------------------------------------:|
-|informal   |not formal    |noone                            |minimal |undocumented                              |
-|walkthrough|not formal[^1]|authors                          |very low|normal, fault-finding                     |
-|technical  |less formal   |trained moderator, not the author|moderate|more detailed                             |
-|inspection |most formal   |trained moderator                |high    |thorough; based on  standards, checklists |
-
-[^1]:
-Sometimes it can be somewhat formal.
 
 
 # a review process
