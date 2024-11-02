@@ -123,7 +123,7 @@ every work product can and _should_ be reviewed
 # review types by formality 
 
 :::::::::::: {.columns}
-::::::::: {.column width="30%" .text-size-3 .mt-2}
+::::::::: {.column width="30%" .text-size-2 .mt-2}
 - informal
 - walkthrough
 - technical
@@ -139,24 +139,83 @@ every work product can and _should_ be reviewed
 
 ## informal
 
+- asking a colleague to have a look at the code
+    - they express their opinion and that's all
+    - no documentation
+    - no process
+- pair programming is also a kind of constant informal review
+
 
 ## walkthrough
+
+- not a formal process / review
+- led by the author(s)
+- the author(s) guide the participants through the work product to achieve a common understanding and to gather feedback
+- useful for higher level documents like requirement specification
+    - e.g., risk storming, sprint review
+    
+::: {.text-smaller}
+source: [What is Walkthrough in software testing?](http://tryqa.com/what-is-walkthrough-in-software-testing/) [@tryqa_walkthrough]
+:::
 
 
 ## technical
 
+- less formal review
+- led by the trained moderator or a technical expert
+- often performed as a peer review without management participation
+- issues are found by experts (e.g., architects, designers)
+- technical reviews can vary from quite informal to very formal
+    
+::: {.text-smaller}
+source: [What is Technical review in software testing?](http://tryqa.com/what-is-technical-review-in-software-testing/) [@tryqa_technical]
+:::
 
-## inspection
+
+## (Fagan) inspection [@enwiki:1060854286]
+
+:::::::::::: {.columns .column-gaplessx}
+::::::::: {.column width="85%" .text-smaller}
+<!--::: {.text-align-left .text-smaller}
+- most formal review process
+- led by the trained moderators
+    - [ends the process if exit criteria is met]{.text-smaller}
+
+:::-->
+process phases
+~ - **planning**: the inspection is planned by the moderator
+~ - **overview meeting**: the author describes the background of the [WP]{.tooltip title="work product"}
+~ - **preparation**: each inspector examines the work product to identify possible defects
+~ - **inspection meeting**: reader reads through the work product, part by part and the inspectors point out the defects
+~ - **rework**: the author makes changes to the work product according to the action plans from the inspection meeting
+~ - **follow-up**: the changes are checked to make sure everything is correct
+
+::: {.text-smallers}
+roles
+~ - **author**: created the work product being inspected
+~ - **moderator**: the leader of the inspection, who plans and coordinates it
+~ - **reader**: reads through the documents, while the other inspectors then point out defects
+~ - **recorder**: documents the defects that are found during the inspection
+~ - **inspector**: examines the work product to identify possible defects
+
+:::
+
+:::::::::
+::::::::: {.column width="15%"}
+![](figures/fagan_inspection.svg){width=150}
+
+:::::::::
+::::::::::::
 
 
 ## review types by formality -- summary
 
-|type       |formality     |led by                           |effort  |documentation                             |
-|:---------:|:------------:|:-------------------------------:|:------:|:----------------------------------------:|
-|informal   |not formal    |noone                            |minimal |undocumented                              |
-|walkthrough|not formal[^1]|authors                          |very low|normal, fault-finding                     |
-|technical  |less formal   |trained moderator, not the author|moderate|more detailed                             |
-|inspection |most formal   |trained moderator                |high    |thorough; based on  standards, checklists |
+|type       |formality     |led by                           |effort  |documentation                            |
+|:---------:|:------------:|:-------------------------------:|:------:|:---------------------------------------:|
+|informal   |not formal    |noone                            |minimal |undocumented                             |
+|walkthrough|not formal[^1]|authors                          |very low|normal, fault-finding                    |
+|technical  |less formal   |trained moderator, not the author|moderate|more detailed                            |
+|inspection |most formal   |trained moderator                |high    |thorough; based on standards, checklists |
 
 [^1]:
 Sometimes it can be somewhat formal.
