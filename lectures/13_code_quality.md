@@ -203,7 +203,16 @@ if not (
 
 ## class-based smells: refused bequest
 
+:::::::::::: {.columns}
+::::::::: {.column width="70%" .mt-5}
 > If you inherit from a class, but never use any of the inherited functionality, should you really be using inheritance? [@atwood2006code]
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/no_middleman.drawio.svg){width=250}
+
+:::::::::
+::::::::::::
 
 
 ## class-based smells: indecent exposure
