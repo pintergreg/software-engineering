@@ -512,7 +512,7 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 
 :::::::::
 ::::::::: {.column width="40%"}
-![](figures/borrowed/xkcd/git_commit_2x.png){}
+![Randall Munroe | [CC&nbsp;BY-SA&nbsp;2.5](https://creativecommons.org/licenses/by-sa/2.5/deed.en) | [source](https://xkcd.com/1296/)](figures/borrowed/xkcd/git_commit_2x.png){}
 
 :::::::::
 ::::::::::::
