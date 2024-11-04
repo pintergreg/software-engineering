@@ -494,6 +494,33 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 ::::::
 
 
+## how to write the commit message?
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="60%"}
+
+1. Separate subject from body with a blank line
+2. Limit the subject line to 50 characters
+3. Capitalize the subject line
+4. Do not end the subject line with a period
+5. Use the imperative mood in the subject line
+6. Wrap the body at 72 characters
+    - least important
+7. Use the body to explain what and why not how
+8. **Reference the issue!**
+    - [my addition for traceability]{.text-smaller}
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/borrowed/xkcd/git_commit_2x.png){}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) [@beams2014how]
+:::
+
 #
 
 :::::::::::: {.columns}
