@@ -481,6 +481,19 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 ::::::::::::
 
 
+# how can you tell if the code matches the task?
+
+:::::: {.r-stack}
+![](figures/traceability_via_commit_change.drawio.svg){width=800}
+
+![](figures/traceability_via_commit_parts.drawio.svg){width=800 .fragment data-fragment-index=1}
+
+![](figures/traceability_via_commit_message_parts.drawio.svg){width=800 .fragment data-fragment-index=2}
+
+![](figures/traceability_via_commit.drawio.svg){width=800 .fragment data-fragment-index=3}
+::::::
+
+
 #
 
 :::::::::::: {.columns}
