@@ -23,10 +23,10 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 |    4 | 2024-10-01 | UML, C4                                  | project workshop   |
 |    5 | 2024-10-08 | design patterns                          | project workshop   |
 |    6 | 2024-10-15 | interfaces, implementation planning      | project workshop   |
-|    7 | 2024-10-22 | clean clode, legacy code, review         | project workshop   |
+|    7 | 2024-10-22 | wireframing, clean clode                 | project workshop   |
 |    8 | 2024-10-29 | **school holiday**                       |                    |
-|    9 | 2024-11-05 | testing, review                          | VCS basics         |
-|   10 | 2024-11-12 | dependency management                    | project workshop   |
+|    9 | 2024-11-05 | code quality, code review                | project workshop   |
+|   10 | 2024-11-12 | testing, legacy code                     | project workshop   |
 |   11 | 2024-11-19 | CI, automatization, devops               | project workshop   |
 |   12 | 2024-11-26 | summary, course feedback                 | project workshop   |
 |   13 | 2024-12-03 | midterm                                  | project demo       |
@@ -44,7 +44,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 |    4 | 2024-10-01 | UML, C4                                  | project workshop   |
 |    5 | 2024-10-08 | design patterns                          | project workshop   |
 |    6 | 2024-10-15 | interfaces, implementation planning      | project workshop   |
-|    7 | 2024-10-22 | clean clode, legacy code, review         | project workshop   |
+|    7 | 2024-10-22 | wireframing, clean clode                 | project workshop   |
 
 :::
 
@@ -54,8 +54,8 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 | week | date       | lecture                                  | practical class    |
 |-----:|:----------:|:----------------------------------------:|:------------------:|
 |    8 | 2024-10-29 | **school holiday**                       |                    |
-|    9 | 2024-11-05 | testing, review                          | VCS basics         |
-|   10 | 2024-11-12 | dependency management                    | project workshop   |
+|    9 | 2024-11-05 | code quality, code review                | project workshop   |
+|   10 | 2024-11-12 | testing, legacy code                     | project workshop   |
 |   11 | 2024-11-19 | CI, automatization, devops               | project workshop   |
 |   12 | 2024-11-26 | summary, course feedback                 | project workshop   |
 |   13 | 2024-12-03 | midterm                                  | project demo       |
