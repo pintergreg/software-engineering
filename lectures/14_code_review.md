@@ -509,6 +509,7 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 7. Use the body to explain what and why not how
 8. **Reference the issue!**
     - [my addition for traceability]{.text-smaller}
+      ![](figures/referenced_issue.png){height=48}
 
 :::::::::
 ::::::::: {.column width="40%"}
