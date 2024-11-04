@@ -481,7 +481,7 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 ::::::::::::
 
 
-# how can you tell if the code matches the task?
+## how can you tell if the code matches the task?
 
 :::::: {.r-stack}
 ![](figures/traceability_via_commit_change.drawio.svg){width=800}
@@ -521,6 +521,46 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 ::: {.text-smaller}
 source: [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) [@beams2014how]
 :::
+
+
+# review in numbers
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+- don't review more than 200 to 400 lines of code at a time
+- don't review for more than 60 minutes at a time
+- during an inspection session, the rate should be under 500 LOC per hour
+- use informal reviews
+    - less effort, although very effective
+
+:::::::::
+::::::::: {.column width="25%"}
+![](figures/publicdomainvectors/software-testing-concept.svg){width=300}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [@smartbear_best]
+:::
+
+
+# rubber duck debugging {visibility=hidden}
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-2}
+- a method of debugging code by articulating a problem in natural language
+- originates from a story in the book _The Pragmatic Programmer_ [@hund2019pragmatic]
+- in which a programmer explains the code, line by line, to a rubber duck
+- rationale: teaching / explaining something can provide a deeper understanding
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/full-water-bathtub.svg){width=300}
+
+:::::::::
+::::::::::::
+
 
 #
 
