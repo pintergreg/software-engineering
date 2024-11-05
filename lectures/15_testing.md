@@ -124,6 +124,8 @@ in most of my examples a unit will be represented by a method
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
+`code/fizzbuzz.py`
+
 ```python
 def fizzbuzz(i: int) -> str:
     result = ""
@@ -140,7 +142,12 @@ def fizzbuzz(i: int) -> str:
 
 :::::::::
 ::::::::: {.column width="50%"}
+`code/test_fizzbuzz.py`
+
 ```python
+from fizzbuzz import fizzbuzz
+
+
 def test_fizzbuzz():
     assert fizzbuzz(3) == "Fizz"
     assert fizzbuzz(5) == "Buzz"
@@ -152,6 +159,56 @@ def test_fizzbuzz():
 
 :::::::::
 ::::::::::::
+
+
+## arrange, act, assert pattern
+
+parts of a unit test
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+arrange
+~ set up the testing environment (e.g., create objects)
+
+act
+~ call the tested unit
+
+assert
+~ compare the result of the 'act' step to the expected value
+
+:::::::::
+::::::::: {.column width="50%"}
+```python
+def test_fizzbuzz():
+    # arrange
+    test_input = 3
+    # act
+    result = fizzbuzz(test_input)
+    # assert
+    assert result == "Fizz"
+
+```
+
+:::::::::
+::::::::::::
+
+## arrange, act, assert(, annihilate) pattern
+
+parts of a unit test
+
+arrange
+~ set up the testing environment
+~ (e.g., create objects)
+
+act
+~ call the tested unit
+
+assert
+~ compare the result of the 'act' step to the expected value
+
+annihilate
+~ free resources
+~ automatic in modern languages
 
 
 # legacy code
