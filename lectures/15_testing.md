@@ -15,19 +15,24 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 # V model [@forsberg1991relationship]
 
-:::::::::::: {.columns .column-gapless}
-::::::::: {.column width="60%" .mt-3}
+:::::::::::: {.columns .column-gapless .text-smaller}
+::::::::: {.column width="50%" .mt-5}
 - each phase has output and a _review process_
     - errors are found at early stage
     - decreases the risk of failure
 - testing is done in a hierarchical perspective
 
 :::::::::
-::::::::: {.column width="40%"}
+::::::::: {.column width="50%"}
 ![](figures/v_model_unit_testing.drawio.svg){width=450}
 
 :::::::::
 ::::::::::::
+
+<!-- https://lostechies.com/content/derekgreer/uploads/2011/03/TestDrivenDevelopment_thumb_107D31DD.png -->
+
+
+
 
 
 # legacy code
