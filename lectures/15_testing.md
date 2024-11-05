@@ -229,6 +229,17 @@ annihilate
 ::::::::::::
 
 
+# test-driven development (TDD)
+
+
+## behaviour-driven development (BDD)
+
+- BDD is an extension of Test-Driven Development
+- using behaviour-driven development (BDD) can help you to turn an idea for a requirement into implemented, tested, production-ready code,
+    - as long as the requirement is specific enough that everyone knows what's going on [@north2007what]
+- BDD starts from a user story and focuses on adding the acceptance criteria
+
+
 # test coverage
 
 <!-- #F72388 -->
@@ -287,4 +298,10 @@ this chapter is based on the book _Working Efficiently with Legacy Code_ by Mich
 
 ::: {.text-smaller .mt-4}
 Feathers, M. (2004). Working Effectively with Legacy Code: p1. pp 6. Prentice Hall Professional
+:::
+
+
+# references
+
+::: {#refs}
 :::
