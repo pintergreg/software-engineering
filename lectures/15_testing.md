@@ -234,10 +234,80 @@ annihilate
 
 ## behaviour-driven development (BDD)
 
-- BDD is an extension of Test-Driven Development
-- using behaviour-driven development (BDD) can help you to turn an idea for a requirement into implemented, tested, production-ready code,
-    - as long as the requirement is specific enough that everyone knows what's going on [@north2007what]
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-3}
+- BDD is an extension of [TDD]{.tooltip title="test-driven development"}
+- using BDD can help you to turn an idea for a requirement into implemented, **tested**, production-ready code
 - BDD starts from a user story and focuses on adding the acceptance criteria
+    - which can be turned into unit tests
+
+:::::::::
+::::::::: {.column width="45%"}
+```
+Title (one line describing the story)
+
+Narrative:
+As a [role]
+I want [feature]
+So that [benefit]
+
+Acceptance Criteria: (presented as Scenarios)
+
+Scenario 1: Title
+Given [context]
+  And [some more context]...
+When  [event]
+Then  [outcome]
+  And [another outcome]...
+
+Scenario 2: ...
+```
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
+:::
+
+## acceptance criteria
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-2}
+- describes how a system should behave under certain circumstances
+    - may originate from domain experts
+- the 'rules' are written in natural language, but in a structured form
+    - easy to discuss with non-developers
+- based on the acceptance criteria multiple tests can be written
+
+:::::::::
+::::::::: {.column width="45%"}
+```
+Title (one line describing the story)
+
+Narrative:
+As a [role]
+I want [feature]
+So that [benefit]
+
+Acceptance Criteria: (presented as Scenarios)
+
+Scenario 1: Title
+Given [context]
+  And [some more context]...
+When  [event]
+Then  [outcome]
+  And [another outcome]...
+
+Scenario 2: ...
+```
+
+::: {.text-smaller}
+taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
+:::
+:::::::::
+::::::::::::
+
 
 
 # test coverage
