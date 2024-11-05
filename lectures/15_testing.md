@@ -120,6 +120,40 @@ in most of my examples a unit will be represented by a method
 :::
 
 
+## unit test example
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+```python
+def fizzbuzz(i: int) -> str:
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+```
+
+:::::::::
+::::::::: {.column width="50%"}
+```python
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(10) == "Buzz"
+    assert fizzbuzz(12) == "Fizz"
+    assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(17) == "17"
+```
+
+:::::::::
+::::::::::::
+
+
 # legacy code
 
 this chapter is based on the book _Working Efficiently with Legacy Code_ by Michael Feathers.
