@@ -219,6 +219,7 @@ annihilate
     - to give immediate feedback
 - slow elements of the software should be mocked
     - e.g., database, network connection
+- part of arrange step
 
 :::::::::
 ::::::::: {.column width="30%"}
