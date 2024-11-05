@@ -229,6 +229,26 @@ annihilate
 ::::::::::::
 
 
+# test coverage
+
+<!-- #F72388 -->
+
+
+## when unit test are not more than a measure
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%" .mt-4}
+- zombie scrum: doing something without heart, without its essence
+- if you write unit tests _just_ to increase the test coverage they loose its function
+
+:::::::::
+::::::::: {.column width="30%"}
+![by Randall Munroe<br>[CC&nbsp;BY-NC&nbsp;2.5](https://creativecommons.org/licenses/by-nc/2.5/deed.en) | [source](https://xkcd.com/2899/)](figures/borrowed/xkcd/goodharts_law_2x.png){width=300}
+
+:::::::::
+::::::::::::
+
+
 # legacy code
 
 this chapter is based on the book _Working Efficiently with Legacy Code_ by Michael Feathers.
