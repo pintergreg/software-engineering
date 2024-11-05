@@ -32,7 +32,92 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 <!-- https://lostechies.com/content/derekgreer/uploads/2011/03/TestDrivenDevelopment_thumb_107D31DD.png -->
 
 
+# what is a unit test?
 
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+- what is a unit?
+    - smallest testable part of a program
+    - usually a method
+- a unit test is another piece of code, that tests the given unit 
+
+:::::::::
+::::::::: {.column width="45%"}
+```python
+def fizzbuzz(i: int) -> str:
+    """
+    >>> fizzbuzz(3)
+    'Fizz'
+    >>> fizzbuzz(5)
+    'Buzz'
+    >>> fizzbuzz(15)
+    'FizzBuzz'
+    >>> fizzbuzz(17)
+    '17'
+    """
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+```
+
+[doctest in Python]{.text-smaller}
+:::::::::
+::::::::::::
+
+
+## what really is a unit?
+
+- defined as a **single behaviour** exhibited by the system under test
+    - usually corresponding to a requirement
+- it may imply that it is a function or a module / method or a class
+    - depending on the paradigm
+- functions / methods, modules or classes don't always correspond to units
+- "only entry points to externally-visible system behaviours define units"
+    - by Kent Beck [@beck2002test]
+
+<!-- > Unit is defined as a single behaviour exhibited by the system under test, usually corresponding to a requirement.
+> While it may imply that it is a function or a module (in procedural programming) or a method or a class (in object-oriented programming) **it does not mean functions/methods, modules or classes always correspond to units**.
+> From the system-requirements perspective only the perimeter of the system is relevant, thus **only entry points to externally-visible system behaviours define units**.
+>
+> -- Kent Beck via Wikipedia-->
+
+::: {.text-smaller}
+source: [@enwiki:1249792515]
+:::
+
+
+## unit vs integration testing
+
+::: {.wide-quote}
+> The terms 'unit test' and 'integration test' have always been rather murky, even by the slippery standards of most software terminology.
+>
+> -- [ Martin Fowler](https://martinfowler.com/articles/2021-test-shapes.html) [@fowler2021diverse]
+
+:::
+
+:::::::::::: {.columns .mt-3}
+::::::::: {.column width="40%"}
+unit test
+~ tests a single behaviour
+
+:::::::::
+::::::::: {.column width="60%"}
+integration test
+~ test a set of units, working together
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-3}
+in most of my examples a unit will be represented by a method
+:::
 
 
 # legacy code
