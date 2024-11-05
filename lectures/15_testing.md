@@ -211,6 +211,23 @@ annihilate
 ~ automatic in modern languages
 
 
+## mocking
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%" .mt-4}
+- the whole _unit test_ suite should be able to run in milliseconds
+    - to give immediate feedback
+- slow elements of the software should be mocked
+    - e.g., database, network connection
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/running-turtle.svg){width=300}
+
+:::::::::
+::::::::::::
+
+
 # legacy code
 
 this chapter is based on the book _Working Efficiently with Legacy Code_ by Michael Feathers.
