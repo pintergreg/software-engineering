@@ -471,6 +471,42 @@ def calculate_progress(
 ::::::::::::
 
 
+## red
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%" .mt-3}
+- test only one thing at a time
+- the test should be very simple
+- increase the complexity of the test cases continuously
+- mock the (external) dependencies
+    - bit later
+
+:::::::::
+::::::::: {.column width="25%"}
+![](figures/tdd_red.drawio.svg){width=250}
+
+:::::::::
+::::::::::::
+
+
+## green
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%" .mt-3}
+- use the possible simplest code to pass the test
+- it does not matter if the solution is 'ugly'
+    - but the test must pass
+- as soon as the test passes, this step is done
+    - and all of the old tests as well
+
+:::::::::
+::::::::: {.column width="25%"}
+![](figures/tdd_green.drawio.svg){width=250}
+
+:::::::::
+::::::::::::
+
+
 ## test-driven development -- fizzbuzz example
 
 :::::::::::: {.columns}
