@@ -701,6 +701,28 @@ source: Robert C. Martin, [The Transformation Priority Premise](https://blog.cle
 :::
 
 
+## coding kata
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+kata (型)
+~ set sequence of positions and movements in martial arts
+
+::: {.mt-2}
+- code/coding kata is a (relatively) simple programming task, that is meant to practised over and over again (in TDD)
+    - in different languages, different praradigms, different coding styles
+- some coding kata
+    - [codewars.com](https://www.codewars.com/kata/), [codekata.com](http://codekata.com/), etc.
+
+:::
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/japan-gate-clipart.svg){width=300}
+
+:::::::::
+::::::::::::
+
+
 # behaviour-driven development (BDD)
 
 :::::::::::: {.columns}
