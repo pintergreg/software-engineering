@@ -778,7 +778,9 @@ taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
 
 # legacy code
 
-this chapter is based on the book _Working Efficiently with Legacy Code_ by Michael Feathers.
+this chapter is based on the book _Working Efficiently with Legacy Code_
+
+by Michael Feathers [@feathers2004working]
 
 
 ## what is legacy code?
@@ -792,6 +794,10 @@ this chapter is based on the book _Working Efficiently with Legacy Code_ by Mich
 >
 > -- Michael Feathers, Working Effectively with Legacy Code: Preface [@feathers2004working]
 
+::: {.mt-2}
+- there is a change request, which results on code change
+- the test suite is like a safety net that can prevent that a code change breaks an existing function
+:::
 :::::::::
 ::::::::: {.column width="20%"}
 ![[tests mark the goal]{.text-smaller}](figures/tests_mark_the_place.drawio.svg){width=175}
@@ -814,7 +820,9 @@ the footprint, the compass and the flag figures by [Lorc](https://lorcblog.blogs
 > When we change code, we should have tests in place.
 > To put tests in place, we often have to change code.
 >
-> -- Michael Feathers, Working Effectively with Legacy Code: Part I / Chapter 2 [@feathers2004working]
+> -- Michael Feathers, Working Effectively with Legacy Code [@feathers2004working]
+>
+> (Part I / Chapter 2)
 
 
 ##  changing the software
@@ -827,7 +835,7 @@ the footprint, the compass and the flag figures by [Lorc](https://lorcblog.blogs
 | resource usage   |             |           |          | changes  |
 
 ::: {.text-smaller .mt-4}
-Michael Feathers, Working Effectively with Legacy Code: p1. pp 6. [@feathers2004working]
+Michael Feathers, Working Effectively with Legacy Code: part 1 pp 6 [@feathers2004working]
 :::
 
 
