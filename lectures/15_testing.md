@@ -1046,6 +1046,9 @@ the footprint, the compass and the flag figures by [Lorc](https://lorcblog.blogs
 > (Part I / Chapter 2)
 
 
+## refactoring
+
+
 ##  changing the software
 
 |                  | add feature | fix a bug | refactor | optimize |
