@@ -32,6 +32,33 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 <!-- https://lostechies.com/content/derekgreer/uploads/2011/03/TestDrivenDevelopment_thumb_107D31DD.png -->
 
 
+## test pyramid
+
+:::::::::::: {.columns .mt-3}
+::::::::: {.column width="50%"}
+![](figures/test_pyramid_ice_cream.drawio.svg){width=500}
+
+:::::::::
+::::::::: {.column width="50%" .fragment data-fragment-index=1}
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=2}
+![](figures/test_pyramid_no_text.drawio.svg){width=500}
+
+:::
+::: {.fragment data-fragment-index=2}
+![](figures/test_pyramid.drawio.svg){width=500}
+
+:::
+
+::::::
+:::::::::
+::::::::::::
+
+::: {.fragment data-fragment-index=2 .text-size-1}
+the turtle and rabbit figures by [Delapouite](https://delapouite.com/) under [CC&nbsp;BY&nbsp;3.0](https://creativecommons.org/licenses/by/3.0/) via [game-icons.net](https://game-icons.net)
+:::
+
+
 # what is a unit test?
 
 :::::::::::: {.columns}
