@@ -471,6 +471,208 @@ def calculate_progress(
 ::::::::::::
 
 
+## test-driven development -- fizzbuzz example
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+[fizzbuzz.py]{.text-smaller}
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1 .width-100}
+```python
+```
+:::
+::: {.fragment .current-visible data-fragment-index=1 .width-100}
+```python
+def fizzbuzz():
+    pass
+```
+:::
+::: {.fragment .current-visible data-fragment-index=2 .width-100}
+```python
+def fizzbuzz(i):
+    pass
+```
+:::
+::: {.fragment .current-visible data-fragment-index=3 .width-100}
+```python
+def fizzbuzz(i):
+    return "Fizz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=4 .width-100}
+```python
+def fizzbuzz(i):
+    return "Fizz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=5 .width-100}
+```python
+def fizzbuzz(i):
+    if i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=6 .width-100}
+```python
+def fizzbuzz(i):
+    if i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=7 .width-100}
+```python
+def fizzbuzz(i):
+    if i % 15 == 0:
+        return "FizzBuzz"
+    elif i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=8 .width-100}
+```python
+def fizzbuzz(i):
+    if i % 15 == 0:
+        return "FizzBuzz"
+    elif i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=9 .width-100}
+```python
+def fizzbuzz(i):
+    if i % 15 == 0:
+        return "FizzBuzz"
+    elif i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+    else:
+        return str(i)
+```
+:::
+::::::
+:::::::::
+::::::::: {.column width="45%"}
+[test_fizzbuzz.py]{.text-smaller}
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=4 .width-100}
+```python
+from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=4 .width-100}
+```python
+from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=5 .width-100}
+```python
+from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=6 .width-100}
+```python
+from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(15) == "FizzBuzz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=7 .width-100}
+```python
+from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(15) == "FizzBuzz"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=8 .width-100}
+```python
+from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(17) == "17"
+```
+:::
+::: {.fragment .current-visible data-fragment-index=9 .width-100}
+```python
+from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(17) == "17"
+```
+:::
+::::::
+:::::::::
+::::::::::::
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+NameError: name 'fizzbuzz' is not defined
+:::
+::: {.fragment .current-visible data-fragment-index=1}
+TypeError: fizzbuzz() takes 0 positional arguments but 1 was given
+:::
+::: {.fragment .current-visible data-fragment-index=2}
+AssertionError: assert None == 'Fizz'
+:::
+::: {.fragment .current-visible data-fragment-index=3}
+passed
+:::
+::: {.fragment .current-visible data-fragment-index=4}
+AssertionError: assert 'Fizz' == 'Buzz' (5)
+:::
+::: {.fragment .current-visible data-fragment-index=5}
+passed
+:::
+::: {.fragment .current-visible data-fragment-index=6}
+AssertionError: assert 'Fizz' == 'FizzBuzz' (15)
+:::
+::: {.fragment .current-visible data-fragment-index=7}
+passed
+:::
+::: {.fragment .current-visible data-fragment-index=8}
+AssertionError: assert None == '17' (17)
+:::
+::: {.fragment .current-visible data-fragment-index=9}
+passed
+
+[there is not much to improve on the code, except that according to the PEP8 Python style guide the 'star import' is not allowed; it should be `import fizzbuzz`]{.text-smaller}
+:::
+::::::
+
+
 ## behaviour-driven development (BDD)
 
 :::::::::::: {.columns}

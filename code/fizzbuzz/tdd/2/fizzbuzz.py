@@ -1,0 +1,2 @@
+def fizzbuzz(i):
+    pass
