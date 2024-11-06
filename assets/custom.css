@@ -129,6 +129,9 @@
 .text-small {
     font-size: small;
 }
+.text-x-small {
+    font-size: x-small;
+}
 .text-larger {
     font-size: larger;
 }
@@ -316,6 +319,9 @@ figcaption {
 }
 .pre-height-100 pre {
     height: 100% !important;
+}
+.width-100 {
+    width: 100% !important;
 }
 /*.pre-vmargin-0 pre, .pre-vmargin-0 > div {
     margin-top: 0 !important;
