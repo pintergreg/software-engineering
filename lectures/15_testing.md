@@ -256,6 +256,158 @@ annihilate
 ::::::::::::
 
 
+# how to unit test this funciton?
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+```python
+def query_progress(user_id: int) -> float:
+    # establish database connection
+    con = sqlite3.connect("data.db")
+    # build query
+    progress_query = f"""
+    SELECT
+        lesson / 50.0 AS progress
+    FROM activity
+    WHERE
+        user_id = {user_id} AND
+        result = 'success'
+    ORDER BY
+        lesson DESC
+    LIMIT 1
+    ;
+    """
+    # execute query
+    res = con.execute(progress_query)
+    progress = res.fetchone()[0]
+    return progress
+```
+
+:::::::::
+::::::::: {.column width="50%" .fragment .mt-1}
+- short answer: you can't
+- because it is not a unit
+    - it does 3 things
+- single responsibility principle makes unit testing easier
+- a 'stable' database would be needed for testing
+    - if the DB content changed, the expected value would become obsolete
+:::::::::
+::::::::::::
+
+
+## separate business logic from persistence
+
+<!-- ![hexagonal arcitectural pattern (a.k.a. ports & adapters)](figures/hexagonal_interface.drawio.svg){width=700} -->
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+architectural styles provides patterns to separate the business logic from the persistence layer
+
+unit testing usually targets the business logic
+
+:::::: {.fragment .text-smaller .mt-2}
+which was embedded into the query in the previous example
+
+```sql
+SELECT
+    lesson / 50.0 AS progress
+FROM activity
+WHERE
+    user_id = 42 AND
+    result = 'success'
+ORDER BY lesson DESC
+LIMIT 1;
+```
+::::::
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/layered_4.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/onion.drawio.svg){width=275}
+
+![](figures/hexagonal_extend.drawio.svg){width=275}
+
+:::::::::
+::::::::::::
+
+
+## separated business logic
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+```python
+def query_last_finished_lesson(
+    user_id: int
+) -> float:
+    # establish database connection
+    con = sqlite3.connect("data.db")
+    # build query
+    progress_query = f"""
+    SELECT lesson
+    FROM activity
+    WHERE
+        user_id = {user_id} AND
+        result = 'success'
+    ORDER BY lesson DESC
+    LIMIT 1;
+    """
+    # execute query
+    res = con.execute(progress_query)
+    progress = res.fetchone()[0]
+    return progress
+```
+
+:::::::::
+::::::::: {.column width="50%"}
+```python
+def calculate_progress(
+    finished: int, total: int
+) -> float:
+    return finished / total
+
+
+def calculate_user_progress(
+    user_id: int, total: int
+) -> float:
+    f = query_last_finished_lesson(user_id)
+    return calculate_progress(f, total)
+```
+
+::: {.text-smaller}
+- now, the query is only responsible for getting the last finished lesson
+    - the DB connection is still in a bit out of the place, but the testability improved
+:::
+:::::::::
+::::::::::::
+
+
+## what to test?
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+```python
+def calculate_progress(
+    finished: int,
+    total: int,
+    as_percentage: bool
+) -> float:
+    progress = finished / total
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+```
+
+:::::::::
+::::::::: {.column width="50%"}
+
+:::::::::
+::::::::::::
+
 # test-driven development (TDD)
 
 
