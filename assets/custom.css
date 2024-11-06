@@ -279,6 +279,9 @@ figcaption {
 .no-figure-top-margin img {
     margin-top: 0;
 }
+.no-margin {
+    margin: 0 !important;
+}
 .inline-block {
     display: inline-block;
 }
@@ -350,4 +353,7 @@ figcaption {
     text-decoration-color: var(--r-link-color);
     text-decoration-style: dotted; 
     cursor: help;
+}
+.va-middle {
+    vertical-align: middle;
 }
