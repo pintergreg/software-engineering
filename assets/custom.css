@@ -317,6 +317,9 @@ figcaption {
 .pre-height-100 pre {
     height: 100% !important;
 }
+.width-100 {
+    width: 100% !important;
+}
 /*.pre-vmargin-0 pre, .pre-vmargin-0 > div {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
