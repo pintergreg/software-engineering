@@ -844,10 +844,119 @@ Then Book is marked as checked out
 
 # test coverage
 
+- the percentage of the code lines 'protected' or covered by tests
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+[`code/fizzbuzz.py`]{.text-smaller}
+
+:::::: {.r-stack}
+::: {.fragment .fade-out .width-100 data-fragment-index=1}
+```{.python line-numbers="2-6,9,11" data-highlight-background="#c6ff8c"}
+def fizzbuzz(i: int) -> str:
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+```
+:::
+::: {.fragment .current-visible .width-100 data-fragment-index=1}
+```{.python line-numbers="2-9,11" data-highlight-background="#c6ff8c"}
+def fizzbuzz(i: int) -> str:
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+```
+:::
+::: {.fragment .current-visible .width-100 data-fragment-index=2}
+```{.python line-numbers="2-11" data-highlight-background="#c6ff8c"}
+def fizzbuzz(i: int) -> str:
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+```
+:::
+::::::
+:::::::::
+::::::::: {.column width="50%"}
+[`code/test_fizzbuzz.py`]{.text-smaller}
+
+:::::: {.r-stack}
+::: {.fragment .fade-out .width-100 data-fragment-index=1}
+```python
+from fizzbuzz import fizzbuzz
+
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(15) == "FizzBuzz"
+```
+:::
+::: {.fragment .current-visible .width-100 data-fragment-index=1}
+```python
+from fizzbuzz import fizzbuzz
+
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(15) == "FizzBuzz"
+```
+:::
+::: {.fragment .current-visible .width-100 data-fragment-index=2}
+```python
+from fizzbuzz import fizzbuzz
+
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(17) == "17"
+```
+:::
+:::::
+:::::::::
+::::::::::::
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+test coverage: 70%
+:::
+::: {.fragment .current-visible data-fragment-index=1}
+test coverage: 90%
+:::
+::: {.fragment .current-visible data-fragment-index=2}
+test coverage: 100%
+
+four control flow branch, all of them needs to be tested
+:::
+::::::
+
 <!-- #F72388 -->
 
 
-## when unit test are not more than a measure
+## when unit tests are not more than a measure
 
 :::::::::::: {.columns}
 ::::::::: {.column width="70%" .mt-4}
