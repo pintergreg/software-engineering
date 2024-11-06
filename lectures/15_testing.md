@@ -805,6 +805,31 @@ taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
 ::::::::::::
 
 
+## acceptance test-driven development
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%" .mt-4}
+- extends [TDD]{.tooltip title="test-driven development"} and [BDD]{.tooltip title="behaviour-driven development"}
+- instead of a unit, ATDD focuses on the acceptance criteria of the whole system
+- advocates writing acceptance tests before developers begin coding
+
+::: {.mt-3}
+test format like [BDD]{.tooltip title="behaviour-driven development"}, example from [@enwiki:1091258091]:
+
+```
+Given Book that has not been checked out
+And User who is registered on the system
+When User checks out a book
+Then Book is marked as checked out
+```
+:::
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/to-do-list.svg){width=300}
+
+:::::::::
+::::::::::::
+
 
 # test coverage
 
