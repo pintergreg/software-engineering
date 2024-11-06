@@ -289,7 +289,7 @@ The system works without any problems, but the risk of failure is getting higher
 
 :::::::::
 ::::::::: {.column width="50%"}
-![Randall Munroe | [CC BY-NC 2.5](https://creativecommons.org/licenses/by-nc/2.5/)](figures/borrowed/code_lifespan_2x.png)
+![Randall Munroe | [CC BY-NC 2.5](https://creativecommons.org/licenses/by-nc/2.5/)](figures/borrowed/xkcd/code_lifespan_2x.png)
 
 :::::::::
 ::::::::::::
