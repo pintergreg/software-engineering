@@ -450,7 +450,25 @@ def calculate_progress(
 :::::::::
 ::::::::::::
 
+
 # test-driven development (TDD)
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-5}
+- write test _before_ writing the tested code
+- without the called unit the test fill fail
+    - the called function does not exist
+- write code, that makes the test pass
+- improve the code quality
+    - e.g., make it clear and clean
+    - both the test and tested code
+
+:::::::::
+::::::::: {.column width="45%"}
+![](figures/tdd.drawio.svg){width=350}
+
+:::::::::
+::::::::::::
 
 
 ## behaviour-driven development (BDD)
