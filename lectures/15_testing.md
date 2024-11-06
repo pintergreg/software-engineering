@@ -673,7 +673,7 @@ passed
 ::::::
 
 
-## behaviour-driven development (BDD)
+# behaviour-driven development (BDD)
 
 :::::::::::: {.columns}
 ::::::::: {.column width="55%" .mt-3}
@@ -710,6 +710,11 @@ Scenario 2: ...
 ::: {.text-smaller}
 taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
 :::
+
+::: notes
+- the strict TDD does not allow more than one new test at a time
+:::
+
 
 ## acceptance criteria
 
