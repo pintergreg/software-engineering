@@ -581,7 +581,7 @@ this chapter is based on the book _Working Efficiently with Legacy Code_ by Mich
 > With tests, we can change the behavior of our code quickly and verifiably.
 > Without them, we really don’t know if our code is getting better or worse.
 >
-> -- Feathers, M. (2004). Working Effectively with Legacy Code: Preface
+> -- Michael Feathers, Working Effectively with Legacy Code: Preface [@feathers2004working]
 
 <!--- [További definíciók](https://dzone.com/articles/defining-legacy-code)
 - Legacy Code
@@ -593,7 +593,7 @@ this chapter is based on the book _Working Efficiently with Legacy Code_ by Mich
 > When we change code, we should have tests in place.
 > To put tests in place, we often have to change code.
 >
-> -- Feathers, M. (2004). Working Effectively with Legacy Code: Part I / Chapter 2
+> -- Michael Feathers, Working Effectively with Legacy Code: Part I / Chapter 2 [@feathers2004working]
 
 
 ##  changing the software
@@ -606,7 +606,7 @@ this chapter is based on the book _Working Efficiently with Legacy Code_ by Mich
 | resource usage   |             |           |          | changes  |
 
 ::: {.text-smaller .mt-4}
-Feathers, M. (2004). Working Effectively with Legacy Code: p1. pp 6. Prentice Hall Professional
+Michael Feathers, Working Effectively with Legacy Code: p1. pp 6. [@feathers2004working]
 :::
 
 
