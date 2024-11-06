@@ -783,12 +783,26 @@ this chapter is based on the book _Working Efficiently with Legacy Code_ by Mich
 
 ## what is legacy code?
 
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="80%"}
 > Code without tests is bad code.
 > It doesn’t matter how well written it is; it doesn’t matter how pretty or object-oriented or well-encapsulated it is.
 > With tests, we can change the behavior of our code quickly and verifiably.
 > Without them, we really don’t know if our code is getting better or worse.
 >
 > -- Michael Feathers, Working Effectively with Legacy Code: Preface [@feathers2004working]
+
+:::::::::
+::::::::: {.column width="20%"}
+![[tests mark the goal]{.text-smaller}](figures/tests_mark_the_place.drawio.svg){width=175}
+
+![[without tests]{.text-smaller}](figures/without_tests.drawio.svg){width=175}
+
+::: {.text-x-small}
+the footprint, the compass and the flag figures by [Lorc](https://lorcblog.blogspot.com/) under [CC&nbsp;BY&nbsp;3.0](https://creativecommons.org/licenses/by/3.0/) via [game-icons.net](https://game-icons.net)
+:::
+:::::::::
+::::::::::::
 
 <!--- [További definíciók](https://dzone.com/articles/defining-legacy-code)
 - Legacy Code

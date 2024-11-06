@@ -129,6 +129,9 @@
 .text-small {
     font-size: small;
 }
+.text-x-small {
+    font-size: x-small;
+}
 .text-larger {
     font-size: larger;
 }
