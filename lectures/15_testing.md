@@ -672,6 +672,15 @@ passed
 :::
 ::::::
 
+##
+
+> As the tests get more specific, the code gets more generic.
+>
+> -- Robert C. Martin, [The Cycles of TDD](http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html) [@martin2014cycles]
+
+![](figures/test_code_generality.drawio.svg){width=375 .mt-4}
+
+
 
 # behaviour-driven development (BDD)
 
