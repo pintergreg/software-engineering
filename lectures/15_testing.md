@@ -327,7 +327,7 @@ def query_last_finished_lesson(
     # establish database connection
     con = sqlite3.connect("data.db")
     # build query
-    progress_query = f"""
+    query = f"""
     SELECT lesson
     FROM activity
     WHERE
@@ -337,9 +337,8 @@ def query_last_finished_lesson(
     LIMIT 1;
     """
     # execute query
-    res = con.execute(progress_query)
-    progress = res.fetchone()[0]
-    return progress
+    res = con.execute(query)
+    return res.fetchone()[0]
 ```
 
 :::::::::
@@ -361,6 +360,49 @@ def calculate_user_progress(
 ::: {.text-smaller}
 - now, the query is only responsible for getting the last finished lesson
     - the DB connection is still in a bit out of the place, but the testability improved
+:::
+:::::::::
+::::::::::::
+
+
+## separated data connection
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+```python
+def query_last_finished_lesson(
+    con: sqlite3.Connection,
+    user_id: int
+) -> float:
+    # build query
+    query = f"""
+    SELECT lesson
+    FROM activity
+    WHERE
+        user_id = {user_id} AND
+        result = 'success'
+    ORDER BY lesson DESC
+    LIMIT 1;
+    """
+    # execute query
+    res = con.execute(query)
+    return res.fetchone()[0]
+```
+
+:::::::::
+::::::::: {.column width="50%"}
+```python
+def establish_database_connection(
+    path: str = "data.db"
+) -> sqlite3.Connection:
+    return sqlite3.connect(path)
+```
+
+::: {.text-smaller}
+- now, there is a function responsible for the DB connection
+    - it is easy to use a test database from the test suite and the production database in the production code
+- the test DB can store 'stable' values
+    - the expected values in the assert statements are safe
 :::
 :::::::::
 ::::::::::::
