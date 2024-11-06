@@ -238,24 +238,6 @@ annihilate
 ~ automatic in modern languages
 
 
-## mocking
-
-:::::::::::: {.columns}
-::::::::: {.column width="70%" .mt-4}
-- the whole _unit test_ suite should be able to run in milliseconds
-    - to give immediate feedback
-- slow elements of the software should be mocked
-    - e.g., database, network connection
-- part of arrange step
-
-:::::::::
-::::::::: {.column width="30%"}
-![](figures/publicdomainvectors/running-turtle.svg){width=300}
-
-:::::::::
-::::::::::::
-
-
 # how to unit test this funciton?
 
 :::::::::::: {.columns}
@@ -380,6 +362,24 @@ def calculate_user_progress(
 - now, the query is only responsible for getting the last finished lesson
     - the DB connection is still in a bit out of the place, but the testability improved
 :::
+:::::::::
+::::::::::::
+
+
+## mocking
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%" .mt-4}
+- the whole _unit test_ suite should be able to run in milliseconds
+    - to give immediate feedback
+- slow elements of the software should be mocked
+    - e.g., database, network connection
+- part of arrange step
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/running-turtle.svg){width=300}
+
 :::::::::
 ::::::::::::
 
