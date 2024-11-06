@@ -681,6 +681,25 @@ passed
 ![](figures/test_code_generality.drawio.svg){width=375 .mt-4}
 
 
+## transformation priority premise
+
+1. ({} -> nil) _from no code at all to code that employs nil_
+2. (nil -> constant)
+3. (constant -> constant+) _a simple constant to a more complex constant_
+4. (constant -> scalar) _replacing a constant with a variable or an argument_
+5. (statement -> statements) _adding more unconditional statements_
+6. (unconditional -> if) _splitting the execution path_
+7. (scalar -> array)
+8. (array -> container)
+9. (statement -> tail-recursion)
+10. (if -> while)
+11. (expression -> function) _replacing an expression with a function or algorithm_
+12. (variable -> assignment) _replacing the value of a variable_
+
+::: {.text-smaller}
+source: Robert C. Martin, [The Transformation Priority Premise](https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html) [@martin2013transformation]
+:::
+
 
 # behaviour-driven development (BDD)
 
