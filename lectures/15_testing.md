@@ -426,31 +426,6 @@ def establish_database_connection(
 ::::::::::::
 
 
-## what to test?
-
-:::::::::::: {.columns}
-::::::::: {.column width="50%"}
-```python
-def calculate_progress(
-    finished: int,
-    total: int,
-    as_percentage: bool
-) -> float:
-    progress = finished / total
-
-    if as_percentage:
-        return progress * 100
-    else:
-        return progress
-```
-
-:::::::::
-::::::::: {.column width="50%"}
-
-:::::::::
-::::::::::::
-
-
 # test-driven development (TDD)
 
 :::::::::::: {.columns}
@@ -882,6 +857,31 @@ Then Book is marked as checked out
 :::::::::
 ::::::::: {.column width="30%"}
 ![by Randall Munroe<br>[CC&nbsp;BY-NC&nbsp;2.5](https://creativecommons.org/licenses/by-nc/2.5/deed.en) | [source](https://xkcd.com/2899/)](figures/borrowed/xkcd/goodharts_law_2x.png){width=300}
+
+:::::::::
+::::::::::::
+
+
+# what to test?
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+```python
+def calculate_progress(
+    finished: int,
+    total: int,
+    as_percentage: bool
+) -> float:
+    progress = finished / total
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+```
+
+:::::::::
+::::::::: {.column width="50%"}
 
 :::::::::
 ::::::::::::
