@@ -989,11 +989,11 @@ it is hard to objectively measure the quality of code
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
 - [number of source lines of code (SLOC)]{.alpha-50}
-- style guide compliance
+- style guide compliance [-- is the code clean?]{.fragment data-fragment-index=1 .text-color-secondary}
 - [Halstead metrics]{.alpha-50}
-- cyclomatic complexity
+- cyclomatic complexity [-- is the code simple?]{.fragment data-fragment-index=1 .text-color-secondary}
 - [maintainability index]{.alpha-50}
-- test coverage
+- test coverage [-- is the code tested?]{.fragment data-fragment-index=1 .text-color-secondary}
 
 :::::::::
 ::::::::: {.column width="40%"}
@@ -1099,8 +1099,8 @@ what does this function do?
 
 ::: {.fragment .text-align-left}
 edge cases
-~ - total is less than 0
 ~ - total is 0
+~ - total is less than 0
 ~ - finished is less than 0
 ~ - finished is greater than total
 :::
