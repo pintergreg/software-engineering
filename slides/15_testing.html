@@ -1157,11 +1157,14 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a h
 <ul>
 <li><span class="alpha-50">number of source lines of code
 (SLOC)</span></li>
-<li>style guide compliance</li>
+<li>style guide compliance <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code clean?</span></li>
 <li><span class="alpha-50">Halstead metrics</span></li>
-<li>cyclomatic complexity</li>
+<li>cyclomatic complexity <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code simple?</span></li>
 <li><span class="alpha-50">maintainability index</span></li>
-<li>test coverage</li>
+<li>test coverage <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code tested?</span></li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img
@@ -1285,12 +1288,12 @@ lessons</li>
 <dt>edge cases</dt>
 <dd>
 <ul>
-<li>total is less than 0</li>
+<li>total is 0</li>
 </ul>
 </dd>
 <dd>
 <ul>
-<li>total is 0</li>
+<li>total is less than 0</li>
 </ul>
 </dd>
 <dd>
@@ -1371,10 +1374,72 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a h
 <section>
 <section id="legacy-code" class="title-slide slide level1">
 <h1>legacy code</h1>
-<p>this chapter is based on the book <em>Working Efficiently with Legacy
-Code</em></p>
-<p>by Michael Feathers <span class="citation"
-data-cites="feathers2004working">[10]</span></p>
+<div class="columns column-gapless">
+<div class="column" style="width:60%;">
+<ul>
+<li>old, inherited code</li>
+<li>difﬁcult-to-change code that we don’t understand</li>
+<li>rotten
+<ul>
+<li><span class="text-smaller">degraded, deteriorated, or lost its use
+or performance over time <span class="citation"
+data-cites="enwiki:1236668404">[10]</span></span></li>
+</ul></li>
+<li>spaghetti code
+<ul>
+<li><span class="text-smaller">“has a complex and tangled control
+structure, resulting in a program flow that is like a bowl of spaghetti,
+twisted and tangled” <span class="citation"
+data-cites="horstmann2007java">[11]</span> via <span class="citation"
+data-cites="enwiki:1245199146">[12]</span></span></li>
+</ul></li>
+</ul>
+</div><div class="column r-frame" style="width:40%;">
+<p><strong>technical debt</strong></p>
+<div class="text-smaller">
+<p>implied cost of future reworking because a solution prioritized
+short-term solution over long-term design <span class="citation"
+data-cites="beal2011technical">[13]</span> <span class="citation"
+data-cites="enwiki:1253473056">[14]</span></p>
+<dl>
+<dt><span class="text-smaller">some reasons:</span></dt>
+<dd>
+<ul>
+<li>ignoring style guides, coding standards</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>lack of test suite</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>tight coupling</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>temporary quick fixes</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>lack of documentation</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>laziness</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<!--this chapter is based on the book _Working Efficiently with Legacy Code_
+
+by Michael Feathers [@feathers2004working]-->
 </section>
 <section id="what-is-legacy-code" class="slide level2">
 <h2>what is legacy code?</h2>
@@ -1387,7 +1452,7 @@ it is. With tests, we can change the behavior of our code quickly and
 verifiably. Without them, we really don’t know if our code is getting
 better or worse.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code: Preface
-<span class="citation" data-cites="feathers2004working">[10]</span></p>
+<span class="citation" data-cites="feathers2004working">[15]</span></p>
 </blockquote>
 <div class="mt-2">
 <ul>
@@ -1427,22 +1492,76 @@ href="https://game-icons.net">game-icons.net</a></p>
 <p>When we change code, we should have tests in place. To put tests in
 place, we often have to change code.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
-class="citation" data-cites="feathers2004working">[10]</span></p>
+class="citation" data-cites="feathers2004working">[15]</span></p>
 <p>(Part I / Chapter 2)</p>
 </blockquote>
 </section>
-<section id="the-legacy-code-algorithm" class="slide level2">
-<h2>the legacy code algorithm</h2>
+<section id="the-legacy-code-change-algorithm" class="slide level2">
+<h2>the legacy code change algorithm</h2>
+<!--:::::::::::: {.columns}
+::::::::: {.column width="60%"}-->
 <ol type="1">
 <li>identify change points</li>
 <li>find test points</li>
 <li>break dependencies</li>
-<li>add tests</li>
+<li>write tests</li>
 <li>make changes and refactor</li>
 </ol>
+<!--:::::::::
+::::::::: {.column width="50%"}
+![](figures/publicdomainvectors/paperboard-flowchart.svg){width=110}
+
+:::::::::
+::::::::::::-->
+<div class="columns column-gapless fragment">
+<div class="column" style="width:50%;">
+<dl>
+<dt>when?</dt>
+<dd>
+<ul>
+<li>not for the sake of refactoring</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>along with other changes</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>leave the code cleaner than you found it</li>
+</ul>
+</dd>
+</dl>
+</div><div class="column" style="width:50%;">
+<dl>
+<dt>how?</dt>
+<dd>
+<ul>
+<li>in small, safe steps</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>understand the code you change</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>use your IDE</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>sensing, separation, mocking</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
 <div class="text-smaller">
-<p>source: <span class="citation"
-data-cites="amram2022taming">[11]</span></p>
+<p>source: Working Effectively with Legacy Code by Michael Feathers
+<span class="citation" data-cites="feathers2004working">[15]</span></p>
 </div>
 </section></section>
 <section id="changing-the-software" class="title-slide slide level1">
@@ -1490,7 +1609,7 @@ data-cites="amram2022taming">[11]</span></p>
 </table>
 <div class="text-smaller mt-4">
 <p>Michael Feathers, Working Effectively with Legacy Code: part 1 pp 6
-<span class="citation" data-cites="feathers2004working">[10]</span></p>
+<span class="citation" data-cites="feathers2004working">[15]</span></p>
 </div>
 </section>
 
@@ -1568,19 +1687,49 @@ href="https://en.wikipedia.org/w/index.php?title=Acceptance_test-driven_developm
 class="uri">https://en.wikipedia.org/w/index.php?title=Acceptance_test-driven_development&amp;oldid=1091258091</a>,
 2022.</div>
 </div>
+<div id="ref-enwiki:1236668404" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Software rot —
+<span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
+href="
+                    https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+                    " class="uri">
+                    https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+</a>, 2024.</div>
+</div>
+<div id="ref-horstmann2007java" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">C.
+S. Horstmann, <em>Java concepts for AP computer science</em>. John Wiley
+&amp; Sons, Inc., 2007.</div>
+</div>
+<div id="ref-enwiki:1245199146" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Spaghetti code —
+<span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Spaghetti_code&amp;oldid=1245199146"
+class="uri">https://en.wikipedia.org/w/index.php?title=Spaghetti_code&amp;oldid=1245199146</a>,
+2024.</div>
+</div>
+<div id="ref-beal2011technical" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">V.
+Beal, <span>“Technical debt.”</span> <a href="
+                   https://www.techopedia.com/definition/27913/technical-debt
+                    " class="uri">
+                   https://www.techopedia.com/definition/27913/technical-debt
+</a>, 21-Nov-2011.</div>
+</div>
+<div id="ref-enwiki:1253473056" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[14] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Technical debt —
+<span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Technical_debt&amp;oldid=1253473056"
+class="uri">https://en.wikipedia.org/w/index.php?title=Technical_debt&amp;oldid=1253473056</a>,
+2024.</div>
+</div>
 <div id="ref-feathers2004working" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[10] </div><div class="csl-right-inline">M.
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">M.
 Feathers, <em>Working effectively with legacy code</em>. Prentice Hall
 Professional, 2004.</div>
-</div>
-<div id="ref-amram2022taming" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[11] </div><div class="csl-right-inline">D.
-Amram, <span>“Taming the legacy beast in 5 steps — a refactoring
-algorithm.”</span> <a href="
-                   https://medium.com/similarweb-engineering/taming-the-legacy-beast-a-refactoring-algorithm-in-5-steps-f5de831c37a1
-                    " class="uri">
-                   https://medium.com/similarweb-engineering/taming-the-legacy-beast-a-refactoring-algorithm-in-5-steps-f5de831c37a1
-</a>, 14-Dec-2022.</div>
 </div>
 </div>
 </section>
