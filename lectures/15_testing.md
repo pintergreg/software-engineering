@@ -956,6 +956,27 @@ four control flow branch, all of them needs to be tested
 <!-- #F72388 -->
 
 
+## how to measure code quality?
+
+it is hard to objectively measure the quality of code
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- [number of source lines of code (SLOC)]{.alpha-50}
+- style guide compliance
+- [Halstead metrics]{.alpha-50}
+- cyclomatic complexity
+- [maintainability index]{.alpha-50}
+- test coverage
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/worker-takes-measurements.svg){width=400}
+
+:::::::::
+::::::::::::
+
+
 ## when unit tests are not more than a measure
 
 :::::::::::: {.columns}
