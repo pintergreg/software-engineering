@@ -153,5 +153,15 @@ MVC-MVP-MVVM
 - [Code Smells](https://blog.codinghorror.com/code-smells/) - by Jeff Atwood
 - [How To Write Unmaintainable Code](https://github.com/Droogans/unmaintainable-code) - by Roedy Green
 - [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) - by Philipp Hauer
-- [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/) -by Michael Lynch
+- [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/) - by Michael Lynch
     - [Part Two](https://mtlynch.io/human-code-reviews-2/)
+
+## week 10
+
+1. [testing](/software-engineering/slides/15_testing.html)
+
+### readings
+
+#### optional
+
+- [The Transformation Priority Premise](https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html) - by Robert C. Martin
