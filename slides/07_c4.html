@@ -31,6 +31,16 @@
   </style>
   <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
   <link rel="stylesheet" href="../assets/custom.css"/>
+  <!--<script src="../assets/reveal_menu/menu.js"></script>
+  <link rel="stylesheet" href="../assets/reveal_menu/menu.css"/>
+
+  <script src="../assets/verticator/verticator.js"></script>
+  <link rel="stylesheet" href="../assets/verticator/verticator.css"/>-->
+
+  <script src="../assets/reveal-drawer-0.1.2/drawer.js"></script>
+  <link rel="stylesheet" href="../assets/reveal-drawer-0.1.2/drawer.css"/>
+
+  <script src="../assets/highlight_line.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -455,6 +465,31 @@ circle and a rectange</li>
           RevealZoom
         ]
       });
+    </script>
+    <script>
+    // Reveal.destroy();
+    // Reveal.initialize({
+    //     verticator: {
+    // 		color: '#181d37',
+    // 	},
+    // 	drawer: {
+    //       toggleDrawKey: "d", // (optional) key to enable drawing, default "d"
+    //       toggleBoardKey: "t", // (optional) key to show drawing board, default "t"
+    //       colors: ["#fa1e0e", "#8ac926", "#1982c4", "#ffca3a"], // (optional) list of colors avaiable (hex color codes)
+    //       color: "#FF0000", // (optional) color of a cursor, first color from `codes` is a default
+    //       pathSize: 4, // (optional) path size in px, default 4
+    //     },
+    // 	// markdown: {
+    //  //      smartypants: true,
+    //  //    },
+    //     // plugins: [ RevealMenu, Verticator ] 
+    //     // plugins: [ RevealDrawer, RevealMenu, Verticator ] 
+    // });
+    // console.log(Reveal.hasPlugin('RevealMenu'));
+    // Reveal.getPlugin('RevealMenu');
+    // console.log(Reveal.hasPlugin('RevealMenu'));
+    // Reveal.configure({ plugins: [ RevealDrawer, RevealMenu, Verticator ] });
+    highlight_lines()
     </script>
     </body>
 </html>
