@@ -972,15 +972,15 @@ four control flow branch, all of them needs to be tested
 ::::::::::::
 
 
-# what to test?
+## what to test?
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%"}
+::::::::: {.column width="40%"}
 ```python
 def calculate_progress(
     finished: int,
     total: int,
-    as_percentage: bool
+    as_percentage: bool,
 ) -> float:
     progress = finished / total
 
@@ -991,11 +991,80 @@ def calculate_progress(
 ```
 
 :::::::::
-::::::::: {.column width="50%"}
+::::::::: {.column width="60%"}
+:::::: {.r-stack}
+::: {.width-100}
+```python
+from progress import calculate_progress
 
+
+def test_progress():
+    total = 50
+    for i in range(total + 1):
+        expected = i / total
+        actual = calculate_progress(i, total, False)
+        assert actual == expected
+
+
+def test_progress_percentage():
+    total = 50
+    for i in range(total + 1):
+        expected = i / total * 100
+        actual = calculate_progress(i, total, True)
+        assert actual == expected
+```
+:::
+::: {.fragment data-fragment-index=1}
+![](figures/cross.drawio.svg){width=500 height=325}
+:::
+::::::
 :::::::::
 ::::::::::::
 
+::: {.fragment data-fragment-index=1}
+test coverage: 100%, achievement obtained, but this is completely stupid
+:::
+
+
+## test the edge cases!
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+```python
+def calculate_progress(
+    finished: int,
+    total: int,
+    as_percentage: bool,
+) -> float:
+    progress = finished / total
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+```
+
+:::::::::
+::::::::: {.column width="60%"}
+what does this function do?
+~ - divides the number finished lessons by the total number of lessons
+~ - returns progress in the closed interval of [0, 1] or [0, 100]
+
+::: {.fragment .text-align-left}
+edge cases
+~ - total is less than 0
+~ - total is 0
+~ - finished is less than 0
+~ - finished is greater than total
+:::
+:::::::::
+::::::::::::
+
+::: {.fragment .r-frame .mt-1}
+test coverage only measures that every control flow branch is tested
+
+the point of testing is testing for the edge cases
+:::
 
 # legacy code
 
