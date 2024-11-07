@@ -1178,6 +1178,9 @@ def test_withdraw():
 ::::::::::::
 
 
+<!-- # fuzz testing (fuzzing) -->
+
+
 # legacy code
 
 this chapter is based on the book _Working Efficiently with Legacy Code_
@@ -1227,7 +1230,7 @@ the footprint, the compass and the flag figures by [Lorc](https://lorcblog.blogs
 > (Part I / Chapter 2)
 
 
-##  changing the software
+#  changing the software
 
 |                  | add feature | fix a bug | refactor | optimize |
 | ---------------- | ----------- | --------- | -------- | -------- |
