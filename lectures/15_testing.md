@@ -1116,14 +1116,14 @@ the point of testing is testing for the edge cases
 
 ## how to find edge cases
 
-- requirements
-- acceptance criteria of [BDD]{.tooltip title="behaviour-driven development"}-style scenarios
-    - extended user user stories
 - interval boundaries
+- requirements
+- defining of done
+- acceptance criteria of [BDD]{.tooltip title="behaviour-driven development"}-style scenarios
+    - [extended user user stories]{.text-smaller}
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
-
 ```
 Story: Account Holder withdraws cash
 
@@ -1132,7 +1132,17 @@ I want to withdraw cash from an ATM
 So that I can get money when the bank is closed
 ```
 
-[Acceptance Criteria:]{.text-smaller}
+:::::::::
+::::::::: {.column width="50%"}
+::: {.text-smaller}
+story example taken from [What's in a Story?](https://dannorth.net/whats-in-a-story/) [@north2007what] by Daniel Terhorst-North | CC-BY&nbsp;4.0
+:::
+:::::::::
+::::::::::::
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="50%"}
+[an acceptance criterion:]{.text-smaller}
 
 
 ```
@@ -1147,16 +1157,14 @@ Then the ATM should dispense $20
 ```
 
 :::::::::
-::::::::: {.column width="50%"}
+::::::::: {.column width="10%" .mt-5}
+![](figures/right_arrow.drawio.svg){width=100}
+
+:::::::::
+::::::::: {.column width="40%"}
+[a test function:]{.text-smaller}
+
 ```python
-def withdraw_money(account, requested):
-    if account.balance > requested:
-        account.balance -= requested
-        dispense(requested)
-    else:
-        # [...]
-
-
 def test_withdraw():
     account = Account(balance=100)
     withdraw_money(account, 20)
@@ -1164,7 +1172,6 @@ def test_withdraw():
     account = Account(balance=10)
     withdraw_money(account, 20)
     assert account.balance == 10
-    
 ```
 
 :::::::::
