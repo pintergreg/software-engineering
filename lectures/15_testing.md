@@ -482,6 +482,32 @@ def establish_database_connection(
 ::::::::::::
 
 
+## refactor
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+::: {.text-smaller}
+> Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
+>
+> -- Martin Fowler [@fowler_refactoringcom]
+
+:::
+
+- on code level
+    - [style guide, best practices, idiomatic code]{.text-smaller}
+- on architecture level
+    - [design patterns like SOLID, DRY, etc.]{.text-smaller}
+- part of day-to-day programming
+    - ['campground rule': leave the code better than you found it]{.text-smaller}
+    
+:::::::::
+::::::::: {.column width="25%"}
+![](figures/tdd_refactor.drawio.svg){width=250}
+
+:::::::::
+::::::::::::
+
+
 ## test-driven development -- fizzbuzz example
 
 :::::::::::: {.columns}
@@ -1134,9 +1160,6 @@ the footprint, the compass and the flag figures by [Lorc](https://lorcblog.blogs
 > -- Michael Feathers, Working Effectively with Legacy Code [@feathers2004working]
 >
 > (Part I / Chapter 2)
-
-
-## refactoring
 
 
 ##  changing the software
