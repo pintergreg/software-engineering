@@ -1183,9 +1183,36 @@ def test_withdraw():
 
 # legacy code
 
-this chapter is based on the book _Working Efficiently with Legacy Code_
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="60%"}
+- old, inherited code
+- difﬁcult-to-change code that we don't understand
+- rotten
+    - [degraded, deteriorated, or lost its use or performance over time [@enwiki:1236668404]]{.text-smaller}
+- spaghetti code
+    - ["has a complex and tangled control structure, resulting in a program flow that is like a bowl of spaghetti, twisted and tangled" [@horstmann2007java] via [@enwiki:1245199146]]{.text-smaller}
 
-by Michael Feathers [@feathers2004working]
+:::::::::
+::::::::: {.column width="40%" .r-frame}
+**technical debt**
+
+::: {.text-smaller}
+implied cost of future reworking because a solution prioritized short-term solution over long-term design [@beal2011technical] [@enwiki:1253473056]
+
+[some reasons:]{.text-smaller}
+~ - ignoring style guides, coding&nbsp;standards
+~ - lack of test suite
+~ - tight coupling
+~ - temporary quick fixes
+~ - lack of documentation
+~ - laziness
+:::
+:::::::::
+::::::::::::
+
+<!--this chapter is based on the book _Working Efficiently with Legacy Code_
+
+by Michael Feathers [@feathers2004working]-->
 
 
 ## what is legacy code?
@@ -1230,17 +1257,45 @@ the footprint, the compass and the flag figures by [Lorc](https://lorcblog.blogs
 > (Part I / Chapter 2)
 
 
-## the legacy code algorithm
+## the legacy code change algorithm
 
+<!--:::::::::::: {.columns}
+::::::::: {.column width="60%"}-->
 1. identify change points
 2. find test points 
 3. break dependencies
-4. add tests
+4. write tests
 5. make changes and refactor
 
+<!--:::::::::
+::::::::: {.column width="50%"}
+![](figures/publicdomainvectors/paperboard-flowchart.svg){width=110}
+
+:::::::::
+::::::::::::-->
+
+:::::::::::: {.columns .column-gapless .fragment}
+::::::::: {.column width="50%"}
+when?
+~ - not for the sake of refactoring
+~ - along with other changes
+~ - leave the code cleaner than you found it 
+:::::::::
+::::::::: {.column width="50%"}
+how?
+~ - in small, safe steps
+~ - understand the code you change
+~ - use your IDE
+~ - sensing, separation, mocking
+
+:::::::::
+::::::::::::
+
 ::: {.text-smaller}
-source: [@amram2022taming]
+source: Working Effectively with Legacy Code by Michael Feathers [@feathers2004working]
 :::
+
+
 
 
 #  changing the software
