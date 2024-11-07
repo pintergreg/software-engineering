@@ -1113,6 +1113,64 @@ test coverage only measures that every control flow branch is tested
 the point of testing is testing for the edge cases
 :::
 
+
+## how to find edge cases
+
+- requirements
+- acceptance criteria of [BDD]{.tooltip title="behaviour-driven development"}-style scenarios
+    - extended user user stories
+- interval boundaries
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+
+```
+Story: Account Holder withdraws cash
+
+As an Account Holder
+I want to withdraw cash from an ATM
+So that I can get money when the bank is closed
+```
+
+[Acceptance Criteria:]{.text-smaller}
+
+
+```
+Scenario 1: Account has sufficient funds
+Given the account balance is $100
+ And the card is valid
+ And the machine contains enough money
+When the Account Holder requests $20
+Then the ATM should dispense $20
+ And the account balance should be $80
+ And the card should be returned
+```
+
+:::::::::
+::::::::: {.column width="50%"}
+```python
+def withdraw_money(account, requested):
+    if account.balance > requested:
+        account.balance -= requested
+        dispense(requested)
+    else:
+        # [...]
+
+
+def test_withdraw():
+    account = Account(balance=100)
+    withdraw_money(account, 20)
+    assert account.balance == 80
+    account = Account(balance=10)
+    withdraw_money(account, 20)
+    assert account.balance == 10
+    
+```
+
+:::::::::
+::::::::::::
+
+
 # legacy code
 
 this chapter is based on the book _Working Efficiently with Legacy Code_
