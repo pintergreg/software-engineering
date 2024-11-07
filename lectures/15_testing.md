@@ -1230,6 +1230,19 @@ the footprint, the compass and the flag figures by [Lorc](https://lorcblog.blogs
 > (Part I / Chapter 2)
 
 
+## the legacy code algorithm
+
+1. identify change points
+2. find test points 
+3. break dependencies
+4. add tests
+5. make changes and refactor
+
+::: {.text-smaller}
+source: [@amram2022taming]
+:::
+
+
 #  changing the software
 
 |                  | add feature | fix a bug | refactor | optimize |
