@@ -1540,12 +1540,15 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a h
 <span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
+<div class="fragment" data-fragment-index="1">
+<p>this function need some value checking</p>
+</div>
 </div><div class="column" style="width:60%;">
 <dl>
 <dt>what does this function do?</dt>
 <dd>
 <ul>
-<li>divides the number finished lessons by the total number of
+<li>divides the number of finished lessons by the total number of
 lessons</li>
 </ul>
 </dd>
@@ -1555,7 +1558,7 @@ lessons</li>
 </ul>
 </dd>
 </dl>
-<div class="fragment text-align-left">
+<div class="fragment text-align-left" data-fragment-index="1">
 <dl>
 <dt>edge cases</dt>
 <dd>
@@ -1582,7 +1585,7 @@ lessons</li>
 </div>
 </div>
 </div>
-<div class="fragment r-frame mt-1">
+<div class="fragment r-frame mt-1" data-fragment-index="2">
 <p>test coverage only measures that every control flow branch is
 tested</p>
 <p>the point of testing is testing for the edge cases</p>
@@ -1838,9 +1841,21 @@ class="citation" data-cites="feathers2004working">[19]</span></p>
 </section>
 <section id="sensing" class="slide level2">
 <h2>sensing</h2>
+<blockquote>
+<p>We break dependencies to <em>sense</em> when we can’t access values
+our code computes.</p>
+<p>– Michael Feathers, Working Effectively with Legacy Code <span
+class="citation" data-cites="feathers2004working">[19]</span></p>
+</blockquote>
 </section>
 <section id="separation" class="slide level2">
 <h2>separation</h2>
+<blockquote>
+<p>We break dependencies to <em>separate</em> when we can’t even get a
+piece of code into a test harness to run.</p>
+<p>– Michael Feathers, Working Effectively with Legacy Code <span
+class="citation" data-cites="feathers2004working">[19]</span></p>
+</blockquote>
 </section></section>
 <section id="changing-the-software" class="title-slide slide level1">
 <h1>changing the software</h1>
