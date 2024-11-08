@@ -1549,16 +1549,62 @@ source: Working Effectively with Legacy Code by Michael Feathers [@feathers2004w
 
 ## sensing
 
-> We break dependencies to _sense_ when we can’t access values our code computes.
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="70%"}
+> We break dependencies to **sense** when we can’t access values our code computes.
 >
 > -- Michael Feathers, Working Effectively with Legacy Code [@feathers2004working]
+
+::: {.fragment data-fragment-index=1 .mt-4}
+e.g., misspelled function name
+:::
+:::::::::
+::::::::: {.column width="30%"}
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![function call tree](figures/dependency_tree.drawio.svg){width=300}
+:::
+::: {.fragment data-fragment-index=1}
+![broken dependency](figures/broken_dependency.drawio.svg){width=300}
+:::
+::::::
+:::::::::
+::::::::::::
 
 
 ## separation
 
-> We break dependencies to _separate_ when we can’t even get a piece of code into a test harness to run.
+> We break dependencies to **separate** when we can’t even get a piece of code into a test harness to run.
 >
 > -- Michael Feathers, Working Effectively with Legacy Code [@feathers2004working]
+
+
+## seams
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="75%" .wide-quote}
+> A seam is a place in the code that you can insert a modification in behavior.
+> [...]
+> One way to take advantage of a seam is to insert some sort of fake.
+>
+> -- tallseth via [Stackoverflow](https://stackoverflow.com/a/15336160/4737417) | CC&nbsp;BY-SA&nbsp;3.0
+
+::: {.mt-2}
+- using inheritance
+    - [subclass can do the same as parent class]{.text-smaller}
+    - [but can be extended with sensing code]{.text-smaller}
+- preprocessing seam
+- link seam
+    - [using build script, e.g., "same" class in different directory]{.text-smaller}
+
+:::
+:::::::::
+::::::::: {.column width="25%"}
+![branching control flow injecting a fake](figures/seams.drawio.svg){width=300}
+
+<!-- branching control flow for examining the behavior -->
+:::::::::
+::::::::::::
 
 
 #  changing the software
