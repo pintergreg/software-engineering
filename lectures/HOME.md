@@ -174,3 +174,11 @@ MVC-MVP-MVVM
 - [The Transformation Priority Premise](https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html) - by Robert C. Martin
 - [There is No Such Thing as a Unit Test](https://www.awwsmm.com/blog/there-is-no-such-thing-as-a-unit-test) - by Andrew Watson
 - [Why Most Unit Testing is Waste ](https://pythontest.com/strategy/why-most-unit-testing-is-waste/) - by James O Coplien
+
+## week 11
+
+1. automatization
+
+## week 12
+
+1. summary
