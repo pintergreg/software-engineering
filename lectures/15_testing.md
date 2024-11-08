@@ -16,11 +16,12 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 # V model [@forsberg1991relationship]
 
 :::::::::::: {.columns .column-gapless .text-smaller}
-::::::::: {.column width="50%" .mt-5}
+::::::::: {.column width="50%" .mt-4}
 - each phase has output and a _review process_
     - errors are found at early stage
     - decreases the risk of failure
 - testing is done in a hierarchical perspective
+- review is a testing process usually without executing the code
 
 :::::::::
 ::::::::: {.column width="50%"}
