@@ -1501,6 +1501,10 @@ source: Working Effectively with Legacy Code by Michael Feathers [@feathers2004w
 :::
 
 
+## sensing
+
+
+## separation
 
 
 #  changing the software
