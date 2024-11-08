@@ -569,6 +569,190 @@ milliseconds
 width="300" /></p>
 </div>
 </div>
+</section>
+<section id="test-doubles-mock-objet-types" class="slide level2">
+<h2>test doubles – mock objet types</h2>
+<p>there is no open standard for categories</p>
+<div class="columns">
+<div class="column mt-2" style="width:40%;">
+<ul>
+<li>dummy</li>
+<li>stub</li>
+<li>spy</li>
+<li>mock</li>
+<li>fake</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<!-- ![](figures/publicdomainvectors/software-testing-concept.svg){width=200} -->
+<!-- ![by [Leo Reynolds](https://flickr.com/photos/lwr/3365192312) | [CC&nbsp;BY-NC-SA&nbsp;2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/)](figures/borrowed/test_dummy.jpg){width=200} -->
+<figure>
+<img data-src="figures/spectrum_of_test_doubles.drawio.svg" width="400"
+alt="reproduction of figure 2 from [5]" />
+<figcaption aria-hidden="true">reproduction of figure 2 from <span
+class="citation" data-cites="seemann2007unit">[5]</span></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>these are from the book <em>xUnit test patterns: Refactoring test
+code</em> – by Gerard Meszaros <span class="citation"
+data-cites="meszaros2007xunit">[6]</span></p>
+</div>
+</section>
+<section id="test-doubles-test-dummy" class="slide level2">
+<h2>test doubles – test dummy</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:70%;">
+<div class="text-smaller">
+<blockquote>
+<p><strong>The simplest, most primitive type of test double.</strong>
+Dummies contain no implementation and are mostly used when required as
+parameter values, but not otherwise utilized. Nulls can be considered
+dummies, but real dummies are derivations of interfaces or base classes
+without any implementation at all.</p>
+<p>– Mark Seemann <span class="citation"
+data-cites="seemann2007unit">[5]</span></p>
+</blockquote>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="vs">&#39;sinatra&#39;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>get <span class="vs">&#39;/user-statistics&#39;</span> <span class="cf">do</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">{}</span><span class="at">.to_json</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="test-doubles-test-stub" class="slide level2">
+<h2>test doubles – test stub</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:58%;">
+<p>provides static input</p>
+<div class="text-smaller">
+<blockquote>
+<p>A step up from dummies, stubs are minimal implementations of
+interfaces or base classes. Methods returning void will typically
+contain no implementation at all, while methods returning values will
+typically return hard-coded values.</p>
+<p>– Mark Seemann <span class="citation"
+data-cites="seemann2007unit">[5]</span></p>
+</blockquote>
+</div>
+</div><div class="column" style="width:42%;">
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="vs">&#39;sinatra&#39;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>get <span class="vs">&#39;/user-statistics&#39;</span> <span class="cf">do</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  data <span class="kw">=</span> <span class="kw">{}</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;name&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;Marvin&#39;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="dv">42</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;registration&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;2019-10-02&#39;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;progress&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="fl">0.84</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;activity&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="kw">[</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">2</span><span class="kw">]</span>,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">4</span><span class="kw">]</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[</span><span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">0</span><span class="kw">]</span>,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[</span><span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">9</span>, <span class="dv">9</span><span class="kw">]</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">]</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="at">.to_json</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="test-doubles-test-spy" class="slide level2">
+<h2>test doubles – test spy</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:60%;">
+<div class="text-smaller">
+<blockquote>
+<p>A test spy is similar to a stub, but besides giving clients an
+instance on which to invoke members, a spy will also record which
+members were invoked so that unit tests can verify that members were
+invoked as expected.</p>
+<p>– Mark Seemann <span class="citation"
+data-cites="seemann2007unit">[5]</span></p>
+</blockquote>
+</div>
+</div><div class="column text-smaller" style="width:40%;">
+<blockquote>
+<p>One form of this might be an email service that records how many
+messages it was sent.</p>
+<p>– Martin Fowler <span class="citation"
+data-cites="fowler2006test">[7]</span></p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="test-doubles-test-fake" class="slide level2">
+<h2>test doubles – test fake</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:58%;">
+<div class="text-smaller">
+<blockquote>
+<p>A fake contains more complex implementations, typically handling
+interactions between different members of the type it’s inheriting.
+While not a complete production implementation, a fake may resemble a
+production implementation, albeit with some shortcuts.</p>
+<p>– Mark Seemann <span class="citation"
+data-cites="seemann2007unit">[5]</span></p>
+</blockquote>
+</div>
+</div><div class="column text-smaller" style="width:42%;">
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="vs">&#39;sinatra&#39;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">def</span> generate_progress</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rand</span><span class="at">.round</span>(<span class="dv">2</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="cf">def</span> generate_activity_matrix</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  result <span class="kw">=</span> <span class="kw">[]</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">1</span><span class="kw">..</span><span class="dv">4</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>_w<span class="kw">|</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    daily <span class="kw">=</span> <span class="kw">[]</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span><span class="kw">..</span><span class="dv">7</span>)<span class="at">.each</span> <span class="kw">{|</span>_d<span class="kw">|</span> daily<span class="at">.push</span> <span class="fu">rand</span>(<span class="dv">10</span>)<span class="kw">}</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    result<span class="at">.push</span> daily</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  result</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>get <span class="vs">&#39;/user-statistics&#39;</span> <span class="cf">do</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  data <span class="kw">=</span> <span class="kw">{}</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;name&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;Marvin&#39;</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="dv">42</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;registration&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;2019-10-02&#39;</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;progress&#39;</span><span class="kw">]</span> <span class="kw">=</span> generate_progress</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;activity&#39;</span><span class="kw">]</span> <span class="kw">=</span> generate_activity_matrix</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="at">.to_json</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="test-doubles-test-mock" class="slide level2">
+<h2>test doubles – test mock</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:65%;">
+<div class="text-smaller">
+<blockquote>
+<p><strong>A mock is dynamically created by a mock library</strong> (the
+others are typically produced by a test developer using code). The test
+developer never sees the actual code implementing the interface or base
+class, but can configure the mock to provide return values, expect
+particular members to be invoked, and so on. Depending on its
+configuration, a mock can behave like a dummy, a stub, or a spy.</p>
+<p>– Mark Seemann <span class="citation"
+data-cites="seemann2007unit">[5]</span></p>
+</blockquote>
+</div>
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="figures/spectrum_of_test_doubles.drawio.svg" width="400"
+alt="reproduction of figure 2 from [5]" />
+<figcaption aria-hidden="true">reproduction of figure 2 from <span
+class="citation" data-cites="seemann2007unit">[5]</span></figcaption>
+</figure>
+</div>
+</div>
 </section></section>
 <section>
 <section id="test-driven-development-tdd"
@@ -642,7 +826,7 @@ class="title-slide slide level1">
 body of code, altering its internal structure without changing its
 external behavior.</p>
 <p>– Martin Fowler <span class="citation"
-data-cites="fowler_refactoringcom">[5]</span></p>
+data-cites="fowler_refactoringcom">[8]</span></p>
 </blockquote>
 </div>
 <ul>
@@ -675,141 +859,141 @@ class="slide level2">
 <p><span class="text-smaller">fizzbuzz.py</span></p>
 <div class="r-stack">
 <div class="fragment fade-out width-100" data-fragment-index="1">
-<div class="sourceCode" id="cb11"><pre
+<div class="sourceCode" id="cb14"><pre
 class="sourceCode python"><code class="sourceCode python"></code></pre></div>
 </div>
 <div class="fragment current-visible width-100" data-fragment-index="1">
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz():</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz():</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div>
 </div>
 <div class="fragment current-visible width-100" data-fragment-index="2">
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div>
-</div>
-<div class="fragment current-visible width-100" data-fragment-index="3">
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span></code></pre></div>
-</div>
-<div class="fragment current-visible width-100" data-fragment-index="4">
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span></code></pre></div>
-</div>
-<div class="fragment current-visible width-100" data-fragment-index="5">
 <div class="sourceCode" id="cb16"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div>
 </div>
-<div class="fragment current-visible width-100" data-fragment-index="6">
+<div class="fragment current-visible width-100" data-fragment-index="3">
 <div class="sourceCode" id="cb17"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span></code></pre></div>
 </div>
-<div class="fragment current-visible width-100" data-fragment-index="7">
+<div class="fragment current-visible width-100" data-fragment-index="4">
 <div class="sourceCode" id="cb18"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span></code></pre></div>
 </div>
-<div class="fragment current-visible width-100" data-fragment-index="8">
+<div class="fragment current-visible width-100" data-fragment-index="5">
 <div class="sourceCode" id="cb19"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
 </div>
-<div class="fragment current-visible width-100" data-fragment-index="9">
+<div class="fragment current-visible width-100" data-fragment-index="6">
 <div class="sourceCode" id="cb20"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">str</span>(i)</span></code></pre></div>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="7">
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="8">
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="9">
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i):</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">str</span>(i)</span></code></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:45%;">
 <p><span class="text-smaller">test_fizzbuzz.py</span></p>
 <div class="r-stack">
 <div class="fragment fade-out width-100" data-fragment-index="4">
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span></code></pre></div>
-</div>
-<div class="fragment current-visible width-100" data-fragment-index="4">
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
-</div>
-<div class="fragment current-visible width-100" data-fragment-index="5">
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
-</div>
-<div class="fragment current-visible width-100" data-fragment-index="6">
 <div class="sourceCode" id="cb24"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span></code></pre></div>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span></code></pre></div>
 </div>
-<div class="fragment current-visible width-100" data-fragment-index="7">
+<div class="fragment current-visible width-100" data-fragment-index="4">
 <div class="sourceCode" id="cb25"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span></code></pre></div>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
 </div>
-<div class="fragment current-visible width-100" data-fragment-index="8">
+<div class="fragment current-visible width-100" data-fragment-index="5">
 <div class="sourceCode" id="cb26"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">17</span>) <span class="op">==</span> <span class="st">&quot;17&quot;</span></span></code></pre></div>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
 </div>
-<div class="fragment current-visible width-100" data-fragment-index="9">
+<div class="fragment current-visible width-100" data-fragment-index="6">
 <div class="sourceCode" id="cb27"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">17</span>) <span class="op">==</span> <span class="st">&quot;17&quot;</span></span></code></pre></div>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span></code></pre></div>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="7">
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span></code></pre></div>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="8">
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">17</span>) <span class="op">==</span> <span class="st">&quot;17&quot;</span></span></code></pre></div>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="9">
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">17</span>) <span class="op">==</span> <span class="st">&quot;17&quot;</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -858,7 +1042,7 @@ is not allowed; it should be <code>import fizzbuzz</code></span></p>
 <p>– Robert C. Martin, <a
 href="http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html">The
 Cycles of TDD</a> <span class="citation"
-data-cites="martin2014cycles">[6]</span></p>
+data-cites="martin2014cycles">[9]</span></p>
 </blockquote>
 <p><img data-src="figures/test_code_generality.drawio.svg" class="mt-4"
 width="375" /></p>
@@ -889,7 +1073,7 @@ variable</em></li>
 <p>source: Robert C. Martin, <a
 href="https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html">The
 Transformation Priority Premise</a> <span class="citation"
-data-cites="martin2013transformation">[7]</span></p>
+data-cites="martin2013transformation">[10]</span></p>
 </div>
 </section>
 <section id="coding-kata" class="slide level2">
@@ -962,7 +1146,7 @@ Scenario 2: ...</code></pre>
 </div>
 <div class="text-smaller">
 <p>taken from <span class="citation"
-data-cites="north2007what">[8]</span> by Daniel Terhorst-North | CC-BY
+data-cites="north2007what">[11]</span> by Daniel Terhorst-North | CC-BY
 4.0</p>
 </div>
 <aside class="notes">
@@ -1007,7 +1191,7 @@ Then  [outcome]
 Scenario 2: ...</code></pre>
 <div class="text-smaller">
 <p>taken from <span class="citation"
-data-cites="north2007what">[8]</span> by Daniel Terhorst-North | CC-BY
+data-cites="north2007what">[11]</span> by Daniel Terhorst-North | CC-BY
 4.0</p>
 </div>
 </div>
@@ -1029,7 +1213,7 @@ coding</li>
 <div class="mt-3">
 <p>test format like <span class="tooltip"
 title="behaviour-driven development">BDD</span>, example from <span
-class="citation" data-cites="enwiki:1091258091">[9]</span>:</p>
+class="citation" data-cites="enwiki:1091258091">[12]</span>:</p>
 <pre><code>Given Book that has not been checked out
 And User who is registered on the system
 When User checks out a book
@@ -1049,7 +1233,7 @@ width="300" /></p>
 worthless […]</p>
 <p>So how do we solve this problem? Write your Readme first.</p>
 <p>– by Tom Preston-Werner <span class="citation"
-data-cites="prestonwerner2010readme">[10]</span></p>
+data-cites="prestonwerner2010readme">[13]</span></p>
 </blockquote>
 </div>
 <div class="text-smaller">
@@ -1069,7 +1253,7 @@ down</li>
 <p>source: <a
 href="https://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme
 Driven Development</a> – by Tom Preston-Werner <span class="citation"
-data-cites="prestonwerner2010readme">[10]</span></p>
+data-cites="prestonwerner2010readme">[13]</span></p>
 </div>
 </section></section>
 <section>
@@ -1084,49 +1268,49 @@ tests</li>
 <p><span class="text-smaller"><code>code/fizzbuzz.py</code></span></p>
 <div class="r-stack">
 <div class="fragment fade-out width-100" data-fragment-index="1">
-<div class="sourceCode" id="cb31" data-line-numbers="2-6,9,11"
+<div class="sourceCode" id="cb34" data-line-numbers="2-6,9,11"
 data-highlight-background="#c6ff8c"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
 </div>
 <div class="fragment current-visible width-100" data-fragment-index="1">
-<div class="sourceCode" id="cb32" data-line-numbers="2-9,11"
+<div class="sourceCode" id="cb35" data-line-numbers="2-9,11"
 data-highlight-background="#c6ff8c"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
 </div>
 <div class="fragment current-visible width-100" data-fragment-index="2">
-<div class="sourceCode" id="cb33" data-line-numbers="2-11"
+<div class="sourceCode" id="cb36" data-line-numbers="2-11"
 data-highlight-background="#c6ff8c"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1134,34 +1318,34 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a h
 class="text-smaller"><code>code/test_fizzbuzz.py</code></span></p>
 <div class="r-stack">
 <div class="fragment fade-out width-100" data-fragment-index="1">
-<div class="sourceCode" id="cb34"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> fizzbuzz</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> fizzbuzz</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span></code></pre></div>
 </div>
 <div class="fragment current-visible width-100" data-fragment-index="1">
-<div class="sourceCode" id="cb35"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> fizzbuzz</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> fizzbuzz</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span></code></pre></div>
 </div>
 <div class="fragment current-visible width-100" data-fragment-index="2">
-<div class="sourceCode" id="cb36"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> fizzbuzz</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">17</span>) <span class="op">==</span> <span class="st">&quot;17&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> fizzbuzz</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">17</span>) <span class="op">==</span> <span class="st">&quot;17&quot;</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1237,39 +1421,39 @@ href="https://creativecommons.org/licenses/by-nc/2.5/deed.en">CC BY-NC 2.5</a>
 <h2>what to test?</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div class="sourceCode" id="cb37"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_progress(</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    finished: <span class="bu">int</span>,</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    total: <span class="bu">int</span>,</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    as_percentage: <span class="bu">bool</span>,</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    progress <span class="op">=</span> finished <span class="op">/</span> total</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> as_percentage:</span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_progress(</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    finished: <span class="bu">int</span>,</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    total: <span class="bu">int</span>,</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    as_percentage: <span class="bu">bool</span>,</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    progress <span class="op">=</span> finished <span class="op">/</span> total</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> as_percentage:</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
 </div><div class="column" style="width:60%;">
 <div class="r-stack">
 <div class="width-100">
-<div class="sourceCode" id="cb38"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> progress <span class="im">import</span> calculate_progress</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_progress():</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(total <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>        expected <span class="op">=</span> i <span class="op">/</span> total</span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>        actual <span class="op">=</span> calculate_progress(i, total, <span class="va">False</span>)</span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> actual <span class="op">==</span> expected</span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_progress_percentage():</span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(total <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>        expected <span class="op">=</span> i <span class="op">/</span> total <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>        actual <span class="op">=</span> calculate_progress(i, total, <span class="va">True</span>)</span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> actual <span class="op">==</span> expected</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> progress <span class="im">import</span> calculate_progress</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_progress():</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(total <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>        expected <span class="op">=</span> i <span class="op">/</span> total</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>        actual <span class="op">=</span> calculate_progress(i, total, <span class="va">False</span>)</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> actual <span class="op">==</span> expected</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_progress_percentage():</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(total <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>        expected <span class="op">=</span> i <span class="op">/</span> total <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>        actual <span class="op">=</span> calculate_progress(i, total, <span class="va">True</span>)</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> actual <span class="op">==</span> expected</span></code></pre></div>
 </div>
 <div class="fragment" data-fragment-index="1">
 <p><img data-src="figures/cross.drawio.svg" width="500"
@@ -1287,18 +1471,18 @@ stupid</p>
 <h2>test the edge cases!</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div class="sourceCode" id="cb39"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_progress(</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    finished: <span class="bu">int</span>,</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    total: <span class="bu">int</span>,</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    as_percentage: <span class="bu">bool</span>,</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    progress <span class="op">=</span> finished <span class="op">/</span> total</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> as_percentage:</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_progress(</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    finished: <span class="bu">int</span>,</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    total: <span class="bu">int</span>,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    as_percentage: <span class="bu">bool</span>,</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    progress <span class="op">=</span> finished <span class="op">/</span> total</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> as_percentage:</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
 </div><div class="column" style="width:60%;">
 <dl>
 <dt>what does this function do?</dt>
@@ -1370,7 +1554,7 @@ So that I can get money when the bank is closed</code></pre>
 <div class="text-smaller">
 <p>story example taken from <a
 href="https://dannorth.net/whats-in-a-story/">What’s in a Story?</a>
-<span class="citation" data-cites="north2007what">[8]</span> by Daniel
+<span class="citation" data-cites="north2007what">[11]</span> by Daniel
 Terhorst-North | CC-BY 4.0</p>
 </div>
 </div>
@@ -1390,14 +1574,14 @@ Then the ATM should dispense $20
 <p><img data-src="figures/right_arrow.drawio.svg" width="100" /></p>
 </div><div class="column" style="width:40%;">
 <p><span class="text-smaller">a test function:</span></p>
-<div class="sourceCode" id="cb42"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_withdraw():</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    account <span class="op">=</span> Account(balance<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    withdraw_money(account, <span class="dv">20</span>)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> account.balance <span class="op">==</span> <span class="dv">80</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    account <span class="op">=</span> Account(balance<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    withdraw_money(account, <span class="dv">20</span>)</span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> account.balance <span class="op">==</span> <span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_withdraw():</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    account <span class="op">=</span> Account(balance<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    withdraw_money(account, <span class="dv">20</span>)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> account.balance <span class="op">==</span> <span class="dv">80</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    account <span class="op">=</span> Account(balance<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    withdraw_money(account, <span class="dv">20</span>)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> account.balance <span class="op">==</span> <span class="dv">10</span></span></code></pre></div>
 </div>
 </div>
 <!-- # fuzz testing (fuzzing) -->
@@ -1414,15 +1598,15 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a h
 <ul>
 <li><span class="text-smaller">degraded, deteriorated, or lost its use
 or performance over time <span class="citation"
-data-cites="enwiki:1236668404">[11]</span></span></li>
+data-cites="enwiki:1236668404">[14]</span></span></li>
 </ul></li>
 <li>spaghetti code
 <ul>
 <li><span class="text-smaller">“has a complex and tangled control
 structure, resulting in a program flow that is like a bowl of spaghetti,
 twisted and tangled” <span class="citation"
-data-cites="horstmann2007java">[12]</span> via <span class="citation"
-data-cites="enwiki:1245199146">[13]</span></span></li>
+data-cites="horstmann2007java">[15]</span> via <span class="citation"
+data-cites="enwiki:1245199146">[16]</span></span></li>
 </ul></li>
 </ul>
 </div><div class="column r-frame" style="width:40%;">
@@ -1430,8 +1614,8 @@ data-cites="enwiki:1245199146">[13]</span></span></li>
 <div class="text-smaller">
 <p>implied cost of future reworking because a solution prioritized
 short-term solution over long-term design <span class="citation"
-data-cites="beal2011technical">[14]</span> <span class="citation"
-data-cites="enwiki:1253473056">[15]</span></p>
+data-cites="beal2011technical">[17]</span> <span class="citation"
+data-cites="enwiki:1253473056">[18]</span></p>
 <dl>
 <dt><span class="text-smaller">some reasons:</span></dt>
 <dd>
@@ -1483,7 +1667,7 @@ it is. With tests, we can change the behavior of our code quickly and
 verifiably. Without them, we really don’t know if our code is getting
 better or worse.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code: Preface
-<span class="citation" data-cites="feathers2004working">[16]</span></p>
+<span class="citation" data-cites="feathers2004working">[19]</span></p>
 </blockquote>
 <div class="mt-2">
 <ul>
@@ -1523,7 +1707,7 @@ href="https://game-icons.net">game-icons.net</a></p>
 <p>When we change code, we should have tests in place. To put tests in
 place, we often have to change code.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
-class="citation" data-cites="feathers2004working">[16]</span></p>
+class="citation" data-cites="feathers2004working">[19]</span></p>
 <p>(Part I / Chapter 2)</p>
 </blockquote>
 </section>
@@ -1592,7 +1776,7 @@ class="citation" data-cites="feathers2004working">[16]</span></p>
 </div>
 <div class="text-smaller">
 <p>source: Working Effectively with Legacy Code by Michael Feathers
-<span class="citation" data-cites="feathers2004working">[16]</span></p>
+<span class="citation" data-cites="feathers2004working">[19]</span></p>
 </div>
 </section></section>
 <section id="changing-the-software" class="title-slide slide level1">
@@ -1640,7 +1824,7 @@ class="citation" data-cites="feathers2004working">[16]</span></p>
 </table>
 <div class="text-smaller mt-4">
 <p>Michael Feathers, Working Effectively with Legacy Code: part 1 pp 6
-<span class="citation" data-cites="feathers2004working">[16]</span></p>
+<span class="citation" data-cites="feathers2004working">[19]</span></p>
 </div>
 </section>
 
@@ -1684,7 +1868,7 @@ before sent to the test team</li>
 <p>source: <a
 href="https://en.wikipedia.org/wiki/Smoke_testing_(software)">Smoke
 testing (software), Wikipedia</a> <span class="citation"
-data-cites="enwiki:1251780629">[17]</span></p>
+data-cites="enwiki:1251780629">[20]</span></p>
 </div>
 </div><div class="column" style="width:25%;">
 <p><img data-src="figures/publicdomainvectors/roof-chimney.svg"
@@ -1695,7 +1879,7 @@ width="250" /></p>
 <p>“The phrase smoke test comes from electronic hardware testing. You
 plug in a new board and turn on the power. If you see smoke coming from
 the board, turn off the power. You don’t have to do any more testing.
-<span class="citation" data-cites="bach2002lessons">[18]</span>”</p>
+<span class="citation" data-cites="bach2002lessons">[21]</span>”</p>
 </div>
 </section>
 <section id="rubber-duck-debugging" class="slide level2">
@@ -1707,7 +1891,7 @@ the board, turn off the power. You don’t have to do any more testing.
 language</li>
 <li>originates from a story in the book <em>The Pragmatic
 Programmer</em> <span class="citation"
-data-cites="hund2019pragmatic">[19]</span></li>
+data-cites="hund2019pragmatic">[22]</span></li>
 <li>in which a programmer explains the code, line by line, to a rubber
 duck</li>
 <li>rationale: teaching / explaining something can provide a deeper
@@ -1752,8 +1936,30 @@ Fowler, <span>“On the diverse and fantastical shapes of testing.”</span>
                    https://martinfowler.com/articles/2021-test-shapes.html
 </a>, 02-Jun-2021.</div>
 </div>
-<div id="ref-fowler_refactoringcom" class="csl-entry" role="listitem">
+<div id="ref-seemann2007unit" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[5] </div><div class="csl-right-inline">M.
+Seemann, <span>“Unit testing: Exploring the continuum of test
+doubles.”</span> <a href="
+                   https://learn.microsoft.com/en-us/archive/msdn-magazine/2007/september/unit-testing-exploring-the-continuum-of-test-doubles
+                    " class="uri">
+                   https://learn.microsoft.com/en-us/archive/msdn-magazine/2007/september/unit-testing-exploring-the-continuum-of-test-doubles
+</a>, 2007.</div>
+</div>
+<div id="ref-meszaros2007xunit" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">G.
+Meszaros, <em>xUnit test patterns: Refactoring test code</em>. Pearson
+Education, 2007.</div>
+</div>
+<div id="ref-fowler2006test" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">M.
+Fowler, <span>“Test double.”</span> <a href="
+                   https://martinfowler.com/bliki/TestDouble.html
+                    " class="uri">
+                   https://martinfowler.com/bliki/TestDouble.html
+</a>, 17-Jan-2006.</div>
+</div>
+<div id="ref-fowler_refactoringcom" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">M.
 Fowler, <span>“Refactoring.”</span> <a href="
                    https://refactoring.com/
                     " class="uri">
@@ -1761,7 +1967,7 @@ Fowler, <span>“Refactoring.”</span> <a href="
 </a>.</div>
 </div>
 <div id="ref-martin2014cycles" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">R.
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">R.
 C. Martin, <span>“The cycles of TDD.”</span> <a href="
                    http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
                     " class="uri">
@@ -1770,7 +1976,7 @@ C. Martin, <span>“The cycles of TDD.”</span> <a href="
 </div>
 <div id="ref-martin2013transformation" class="csl-entry"
 role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">R.
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">R.
 C. Martin, <span>“The transformation priority premise.”</span> <a href="
                    https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html
                     " class="uri">
@@ -1778,7 +1984,7 @@ C. Martin, <span>“The transformation priority premise.”</span> <a href="
 </a>, 27-May-2013.</div>
 </div>
 <div id="ref-north2007what" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">D.
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">D.
 Terhorst-North, <span>“What’s in a story?”</span> <a href="
                     https://dannorth.net/whats-in-a-story
                     " class="uri">
@@ -1786,7 +1992,7 @@ Terhorst-North, <span>“What’s in a story?”</span> <a href="
 </a>, 11-Feb-2007.</div>
 </div>
 <div id="ref-enwiki:1091258091" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[9] </div><div
+<div class="csl-left-margin">[12] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Acceptance
 test-driven development — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -1795,7 +2001,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Acceptance_test-driven_de
 2022.</div>
 </div>
 <div id="ref-prestonwerner2010readme" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[10] </div><div class="csl-right-inline">T.
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">T.
 Preston-Werner, <span>“Readme driven development.”</span> <a href="
                    https://tom.preston-werner.com/2010/08/23/readme-driven-development.html
                     " class="uri">
@@ -1803,7 +2009,7 @@ Preston-Werner, <span>“Readme driven development.”</span> <a href="
 </a>, 23-Aug-2010.</div>
 </div>
 <div id="ref-enwiki:1236668404" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[11] </div><div
+<div class="csl-left-margin">[14] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Software rot —
 <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
 href="
@@ -1813,12 +2019,12 @@ href="
 </a>, 2024.</div>
 </div>
 <div id="ref-horstmann2007java" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">C.
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">C.
 S. Horstmann, <em>Java concepts for AP computer science</em>. John Wiley
 &amp; Sons, Inc., 2007.</div>
 </div>
 <div id="ref-enwiki:1245199146" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div
+<div class="csl-left-margin">[16] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Spaghetti code —
 <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
 href="https://en.wikipedia.org/w/index.php?title=Spaghetti_code&amp;oldid=1245199146"
@@ -1826,7 +2032,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Spaghetti_code&amp;oldid=
 2024.</div>
 </div>
 <div id="ref-beal2011technical" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[14] </div><div class="csl-right-inline">V.
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">V.
 Beal, <span>“Technical debt.”</span> <a href="
                    https://www.techopedia.com/definition/27913/technical-debt
                     " class="uri">
@@ -1834,7 +2040,7 @@ Beal, <span>“Technical debt.”</span> <a href="
 </a>, 21-Nov-2011.</div>
 </div>
 <div id="ref-enwiki:1253473056" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div
+<div class="csl-left-margin">[18] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Technical debt —
 <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
 href="https://en.wikipedia.org/w/index.php?title=Technical_debt&amp;oldid=1253473056"
@@ -1842,12 +2048,12 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Technical_debt&amp;oldid=
 2024.</div>
 </div>
 <div id="ref-feathers2004working" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[16] </div><div class="csl-right-inline">M.
+<div class="csl-left-margin">[19] </div><div class="csl-right-inline">M.
 Feathers, <em>Working effectively with legacy code</em>. Prentice Hall
 Professional, 2004.</div>
 </div>
 <div id="ref-enwiki:1251780629" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div
+<div class="csl-left-margin">[20] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Smoke testing
 (software) — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -1856,13 +2062,13 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Smoke_testing_(software)&
 2024.</div>
 </div>
 <div id="ref-bach2002lessons" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[18] </div><div class="csl-right-inline">J.
+<div class="csl-left-margin">[21] </div><div class="csl-right-inline">J.
 Bach, B. Pettichord, and C. Kaner, <em>Lessons learned in software
 testing: A context-driven approach</em>. John Wiley &amp; Sons,
 2002.</div>
 </div>
 <div id="ref-hund2019pragmatic" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[19] </div><div class="csl-right-inline">A.
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">A.
 Hunt and D. Thomas, <em>The pragmatic programmer: From journeyman to
 master</em>, 2nd ed. Boston, MA: Addison Wesley, 2019.</div>
 </div>
