@@ -426,6 +426,177 @@ def establish_database_connection(
 ::::::::::::
 
 
+## test doubles -- mock objet types
+
+there is no open standard for categories
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%" .mt-2}
+- dummy
+- stub
+- spy
+- mock
+- fake
+
+:::::::::
+::::::::: {.column width="60%"}
+<!-- ![](figures/publicdomainvectors/software-testing-concept.svg){width=200} -->
+<!-- ![by [Leo Reynolds](https://flickr.com/photos/lwr/3365192312) | [CC&nbsp;BY-NC-SA&nbsp;2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/)](figures/borrowed/test_dummy.jpg){width=200} -->
+![reproduction of figure 2 from [@seemann2007unit]](figures/spectrum_of_test_doubles.drawio.svg){width=400}
+:::::::::
+::::::::::::
+
+
+::: {.text-smaller}
+these are from the book _xUnit test patterns: Refactoring test code_ -- by Gerard Meszaros [@meszaros2007xunit]
+:::
+
+
+## test doubles -- test dummy
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="70%"}
+::: {.text-smaller}
+> **The simplest, most primitive type of test double.**
+> Dummies contain no implementation and are mostly used when required as parameter values, but not otherwise utilized.
+> Nulls can be considered dummies, but real dummies are derivations of interfaces or base classes without any implementation at all.
+>
+> -- Mark Seemann [@seemann2007unit]
+
+:::
+:::::::::
+::::::::: {.column width="30%"}
+```ruby
+require 'sinatra'
+
+get '/user-statistics' do
+  return {}.to_json
+end
+```
+:::::::::
+::::::::::::
+
+
+## test doubles -- test stub
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="58%"}
+provides static input
+
+::: {.text-smaller}
+> A step up from dummies, stubs are minimal implementations of interfaces or base classes.
+> Methods returning void will typically contain no implementation at all, while methods returning values will typically return hard-coded values.
+>
+> -- Mark Seemann [@seemann2007unit]
+
+:::
+:::::::::
+::::::::: {.column width="42%"}
+```ruby
+require 'sinatra'
+
+get '/user-statistics' do
+  data = {}
+  data['name'] = 'Marvin'
+  data['id'] = 42
+  data['registration'] = '2019-10-02'
+  data['progress'] = 0.84
+  data['activity'] = [
+    [2, 0, 2, 3, 5, 3, 2],
+    [5, 2, 4, 4, 0, 3, 4],
+    [6, 3, 0, 6, 8, 3, 0],
+    [9, 7, 4, 7, 0, 9, 9]
+  ]
+  return data.to_json
+end
+```
+:::::::::
+::::::::::::
+
+
+## test doubles -- test spy
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="60%"}
+::: {.text-smaller}
+> A test spy is similar to a stub, but besides giving clients an instance on which to invoke members, a spy will also record which members were invoked so that unit tests can verify that members were invoked as expected.
+>
+> -- Mark Seemann [@seemann2007unit]
+
+:::
+:::::::::
+::::::::: {.column width="40%" .text-smaller}
+> One form of this might be an email service that records how many messages it was sent.
+>
+> -- Martin Fowler [@fowler2006test]
+
+:::::::::
+::::::::::::
+
+
+## test doubles -- test fake
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="58%"}
+::: {.text-smaller}
+> A fake contains more complex implementations, typically handling interactions between different members of the type it's inheriting.
+> While not a complete production implementation, a fake may resemble a production implementation, albeit with some shortcuts.
+>
+> -- Mark Seemann [@seemann2007unit]
+
+:::
+:::::::::
+::::::::: {.column width="42%" .text-smaller}
+```ruby
+require 'sinatra'
+
+def generate_progress
+  rand.round(2)
+end
+
+def generate_activity_matrix
+  result = []
+  (1..4).each do |_w|
+    daily = []
+    (1..7).each {|_d| daily.push rand(10)}
+    result.push daily
+  end
+  result
+end
+
+get '/user-statistics' do
+  data = {}
+  data['name'] = 'Marvin'
+  data['id'] = 42
+  data['registration'] = '2019-10-02'
+  data['progress'] = generate_progress
+  data['activity'] = generate_activity_matrix
+  return data.to_json
+end
+```
+:::::::::
+::::::::::::
+
+
+## test doubles -- test mock
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="65%"}
+::: {.text-smaller}
+> **A mock is dynamically created by a mock library** (the others are typically produced by a test developer using code).
+> The test developer never sees the actual code implementing the interface or base class, but can configure the mock to provide return values, expect particular members to be invoked, and so on.
+> Depending on its configuration, a mock can behave like a dummy, a stub, or a spy.
+>
+> -- Mark Seemann [@seemann2007unit]
+
+:::
+:::::::::
+::::::::: {.column width="35%"}
+![reproduction of figure 2 from [@seemann2007unit]](figures/spectrum_of_test_doubles.drawio.svg){width=400}
+:::::::::
+::::::::::::
+
+
 # test-driven development (TDD)
 
 :::::::::::: {.columns}
