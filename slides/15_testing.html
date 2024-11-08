@@ -1613,9 +1613,63 @@ class="citation" data-cites="feathers2004working">[15]</span></p>
 </div>
 </section>
 
+<section>
+<section id="testing-approaches" class="title-slide slide level1">
+<h1>testing approaches</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>black box</strong></p>
+<p><img data-src="figures/black_box.drawio.svg" width="350" /></p>
+<ul>
+<li>examining / testing the functionality without knowing the inner
+structure</li>
+<li>works at all levels: unit, integration, system, acceptance</li>
+<li>also for debugging a legacy code</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>white box</strong></p>
+<p><img data-src="figures/white_box.drawio.svg" width="225" /></p>
+<ul>
+<li>testing the internal structure as opposed to its functionality</li>
+<li>often associated to unit testing, but also works on higher levels
+(i.e., integration, system)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="smoke-testing" class="slide level2">
+<h2>smoke testing</h2>
+<div class="columns">
+<div class="column mt-2" style="width:75%;">
+<ul>
+<li>preliminary testing</li>
+<li>smoke tests are a <strong>subset of test cases</strong> that cover
+the <strong>most important functionality</strong> of a component or
+system</li>
+<li>set of tests run on each new build to verify that it is testable
+before sent to the test team</li>
+</ul>
+<div class="text-small">
+<p>source: <a
+href="https://en.wikipedia.org/wiki/Smoke_testing_(software)">Smoke
+testing (software), Wikipedia</a> <span class="citation"
+data-cites="enwiki:1251780629">[16]</span></p>
+</div>
+</div><div class="column" style="width:25%;">
+<p><img data-src="figures/publicdomainvectors/roof-chimney.svg"
+width="250" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>“The phrase smoke test comes from electronic hardware testing. You
+plug in a new board and turn on the power. If you see smoke coming from
+the board, turn off the power. You don’t have to do any more testing.
+<span class="citation" data-cites="bach2002lessons">[17]</span>”</p>
+</div>
+</section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="references csl-bib-body" role="list">
+<div id="refs" class="text-smaller references csl-bib-body" role="list">
 <div id="ref-forsberg1991relationship" class="csl-entry"
 role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
@@ -1730,6 +1784,21 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Technical_debt&amp;oldid=
 <div class="csl-left-margin">[15] </div><div class="csl-right-inline">M.
 Feathers, <em>Working effectively with legacy code</em>. Prentice Hall
 Professional, 2004.</div>
+</div>
+<div id="ref-enwiki:1251780629" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[16] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Smoke testing
+(software) — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Smoke_testing_(software)&amp;oldid=1251780629"
+class="uri">https://en.wikipedia.org/w/index.php?title=Smoke_testing_(software)&amp;oldid=1251780629</a>,
+2024.</div>
+</div>
+<div id="ref-bach2002lessons" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">J.
+Bach, B. Pettichord, and C. Kaner, <em>Lessons learned in software
+testing: A context-driven approach</em>. John Wiley &amp; Sons,
+2002.</div>
 </div>
 </div>
 </section>
