@@ -1182,8 +1182,8 @@ from fizzbuzz import fizzbuzz
 
 
 def test_fizzbuzz():
-    assert fizzbuzz(3) == "Fizz"
     assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(3) == "Fizz"
 ```
 :::
 ::: {.fragment .current-visible .width-100 data-fragment-index=1}
@@ -1192,9 +1192,9 @@ from fizzbuzz import fizzbuzz
 
 
 def test_fizzbuzz():
+    assert fizzbuzz(15) == "FizzBuzz"
     assert fizzbuzz(3) == "Fizz"
     assert fizzbuzz(5) == "Buzz"
-    assert fizzbuzz(15) == "FizzBuzz"
 ```
 :::
 ::: {.fragment .current-visible .width-100 data-fragment-index=2}
@@ -1203,9 +1203,9 @@ from fizzbuzz import fizzbuzz
 
 
 def test_fizzbuzz():
+    assert fizzbuzz(15) == "FizzBuzz"
     assert fizzbuzz(3) == "Fizz"
     assert fizzbuzz(5) == "Buzz"
-    assert fizzbuzz(15) == "FizzBuzz"
     assert fizzbuzz(17) == "17"
 ```
 :::
