@@ -1841,21 +1841,85 @@ class="citation" data-cites="feathers2004working">[19]</span></p>
 </section>
 <section id="sensing" class="slide level2">
 <h2>sensing</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:70%;">
 <blockquote>
-<p>We break dependencies to <em>sense</em> when we can’t access values
-our code computes.</p>
+<p>We break dependencies to <strong>sense</strong> when we can’t access
+values our code computes.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
 class="citation" data-cites="feathers2004working">[19]</span></p>
 </blockquote>
+<div class="fragment mt-4" data-fragment-index="1">
+<p>e.g., misspelled function name</p>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<figure>
+<img data-src="figures/dependency_tree.drawio.svg" width="300"
+alt="function call tree" />
+<figcaption aria-hidden="true">function call tree</figcaption>
+</figure>
+</div>
+<div class="fragment" data-fragment-index="1">
+<figure>
+<img data-src="figures/broken_dependency.drawio.svg" width="300"
+alt="broken dependency" />
+<figcaption aria-hidden="true">broken dependency</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="separation" class="slide level2">
 <h2>separation</h2>
 <blockquote>
-<p>We break dependencies to <em>separate</em> when we can’t even get a
-piece of code into a test harness to run.</p>
+<p>We break dependencies to <strong>separate</strong> when we can’t even
+get a piece of code into a test harness to run.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
 class="citation" data-cites="feathers2004working">[19]</span></p>
 </blockquote>
+</section>
+<section id="seams" class="slide level2">
+<h2>seams</h2>
+<div class="columns column-gapless">
+<div class="column wide-quote" style="width:75%;">
+<blockquote>
+<p>A seam is a place in the code that you can insert a modification in
+behavior. […] One way to take advantage of a seam is to insert some sort
+of fake.</p>
+<p>– tallseth via <a
+href="https://stackoverflow.com/a/15336160/4737417">Stackoverflow</a> |
+CC BY-SA 3.0</p>
+</blockquote>
+<div class="mt-2">
+<ul>
+<li>using inheritance
+<ul>
+<li><span class="text-smaller">subclass can do the same as parent
+class</span></li>
+<li><span class="text-smaller">but can be extended with sensing
+code</span></li>
+</ul></li>
+<li>preprocessing seam</li>
+<li>link seam
+<ul>
+<li><span class="text-smaller">using build script, e.g., “same” class in
+different directory</span></li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/seams.drawio.svg" width="300"
+alt="branching control flow injecting a fake" />
+<figcaption aria-hidden="true">branching control flow injecting a
+fake</figcaption>
+</figure>
+<!-- branching control flow for examining the behavior -->
+</div>
+</div>
 </section></section>
 <section id="changing-the-software" class="title-slide slide level1">
 <h1>changing the software</h1>
