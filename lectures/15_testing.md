@@ -1582,14 +1582,18 @@ e.g., misspelled function name
 ## seams
 
 :::::::::::: {.columns .column-gapless}
-::::::::: {.column width="75%" .wide-quote}
+::::::::: {.column width="75%" .wide-quote .text-smaller}
+> A seam is a place where you can alter behavior in your program without editing in that place.
+>
+> -- Michael Feathers, Working Effectively with Legacy Code: Part I / chp. 4 [@feathers2004working]
+
 > A seam is a place in the code that you can insert a modification in behavior.
 > [...]
 > One way to take advantage of a seam is to insert some sort of fake.
 >
 > -- tallseth via [Stackoverflow](https://stackoverflow.com/a/15336160/4737417) | CC&nbsp;BY-SA&nbsp;3.0
 
-::: {.mt-2}
+::: {.mt-1}
 - using inheritance
     - [subclass can do the same as parent class]{.text-smaller}
     - [but can be extended with sensing code]{.text-smaller}
