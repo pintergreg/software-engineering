@@ -1549,8 +1549,16 @@ source: Working Effectively with Legacy Code by Michael Feathers [@feathers2004w
 
 ## sensing
 
+> We break dependencies to _sense_ when we can’t access values our code computes.
+>
+> -- Michael Feathers, Working Effectively with Legacy Code [@feathers2004working]
+
 
 ## separation
+
+> We break dependencies to _separate_ when we can’t even get a piece of code into a test harness to run.
+>
+> -- Michael Feathers, Working Effectively with Legacy Code [@feathers2004working]
 
 
 #  changing the software
