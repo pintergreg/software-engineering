@@ -44,3 +44,10 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 | 6.1.5   | Bugfix Release | Tue 2024-09-10 | 5     |
 
 table: KDE / Plasma 6.1 series [release schedule](https://community.kde.org/Schedules/Plasma_6)
+
+# types
+
+- [types vs. tests](https://www.destroyallsoftware.com/talks/ideology)
+    - video ~21 min
+- [I don't need types](https://dmerej.info/blog/post/trying-mypy/)
+    - blogposzt a típusosságról
