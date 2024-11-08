@@ -977,7 +977,8 @@ def test_extract_day():
 ```
 :::::::::
 ::::::::::::
-    
+
+
 ## behaviour-driven development (BDD)
 
 :::::::::::: {.columns}
@@ -1341,7 +1342,7 @@ def calculate_progress(
 :::::::::
 ::::::::: {.column width="60%"}
 what does this function do?
-~ - divides the number finished lessons by the total number of lessons
+~ - divides the number of finished lessons by the total number of lessons
 ~ - returns progress in the closed interval of [0, 1] or [0, 100]
 
 ::: {.fragment .text-align-left}
