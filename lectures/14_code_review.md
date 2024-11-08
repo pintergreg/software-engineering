@@ -547,23 +547,6 @@ source: [@smartbear_best]
 :::
 
 
-# rubber duck debugging {visibility=hidden}
-
-:::::::::::: {.columns}
-::::::::: {.column width="60%" .mt-2}
-- a method of debugging code by articulating a problem in natural language
-- originates from a story in the book _The Pragmatic Programmer_ [@hund2019pragmatic]
-- in which a programmer explains the code, line by line, to a rubber duck
-- rationale: teaching / explaining something can provide a deeper understanding
-
-:::::::::
-::::::::: {.column width="40%"}
-![](figures/publicdomainvectors/full-water-bathtub.svg){width=300}
-
-:::::::::
-::::::::::::
-
-
 #
 
 :::::::::::: {.columns}
