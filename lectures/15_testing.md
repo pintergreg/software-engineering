@@ -936,7 +936,49 @@ kata (型)
 ::::::::::::
 
 
-# behaviour-driven development (BDD)
+# too strict TDD
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-5}
+- [TDD]{.tooltip title="test-driven development"} requires adding one test (case) at a time and then make the code pass
+- this is often unrealistic
+    - e.g., on existing codebase, in research
+- strict TDD is good for learning, practising
+    - coding kata
+- but tests are still important!
+- [what I to do is to turn experiments into tests]{.fragment data-fragment-index=1}
+:::::::::
+::::::::: {.column width="40%" .text-smaller .r-frame .fragment data-fragment-index=1}
+**experiment-driven testing**
+
+::: {.text-smaller}
+task: get day from a date string like [`Nov 08, 13:11`]{style="display: inline-block;"}
+:::
+
+1. do experiment
+
+```python
+>>> "Nov 08, 13:11"[3:5]
+' 0'
+>>> "Nov 08, 13:11"[4:6]
+'08'
+```
+2. put it to a function
+```python
+def extract_day(s: str) -> int:
+    return int(s[4:6])
+```    
+3. add test based on the experiment
+```python
+def test_extract_day():
+    actual = extract_day("Nov 08, 13:11")
+    expected = 8
+    assert actual == expected
+```
+:::::::::
+::::::::::::
+    
+## behaviour-driven development (BDD)
 
 :::::::::::: {.columns}
 ::::::::: {.column width="55%" .mt-3}
