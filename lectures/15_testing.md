@@ -1339,13 +1339,16 @@ def calculate_progress(
         return progress
 ```
 
+::: {.fragment data-fragment-index=1}
+this function need some value checking
+:::
 :::::::::
 ::::::::: {.column width="60%"}
 what does this function do?
 ~ - divides the number of finished lessons by the total number of lessons
 ~ - returns progress in the closed interval of [0, 1] or [0, 100]
 
-::: {.fragment .text-align-left}
+::: {.fragment data-fragment-index=1 .text-align-left}
 edge cases
 ~ - total is 0
 ~ - total is less than 0
@@ -1355,7 +1358,7 @@ edge cases
 :::::::::
 ::::::::::::
 
-::: {.fragment .r-frame .mt-1}
+::: {.fragment data-fragment-index=2 .r-frame .mt-1}
 test coverage only measures that every control flow branch is tested
 
 the point of testing is testing for the edge cases
