@@ -1,0 +1,942 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>implementation planning - handout</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="software engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <div class="sidebar-scrollbox"></div>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <script async src="../toc.js"></script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">handout</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="implementation-planning"><a class="header" href="#implementation-planning">implementation planning</a></h1>
+<ol>
+<li>define goals
+<ul>
+<li>practically done with requirement analysis</li>
+</ul>
+</li>
+<li>conduct research
+<ul>
+<li>partially done at the requirement elicitation phase</li>
+</ul>
+</li>
+<li>map out risks</li>
+<li>schedule milestones</li>
+<li>assign responsibilities and tasks</li>
+<li>allocate resources</li>
+</ol>
+<div class="text-smaller">
+<p>based on <a href="https://asana.com/resources/implementation-plan">What is an implementation plan? 6 steps to create
+one</a> (Asana, 2024)</p>
+</div>
+<h1 id="conduct-research"><a class="header" href="#conduct-research">conduct research</a></h1>
+<div class="columns">
+<div class="column" width="65%">
+<ul>
+<li>during the requirement analysis some data was already collected
+<ul>
+<li>regarding functional and non-functional requirements</li>
+<li>interviews, questionnaires, telemetry, etc.</li>
+</ul>
+</li>
+<li>some research may be needed to select the tools and frameworks during
+the implementation
+<ul>
+<li>do some experiments with different libraries</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="35%">
+<p><img
+src="figures/publicdomainvectors/chemist-conducting-experiments.svg"
+height="300" /></p>
+</div>
+</div>
+<h2 id="learning-could-be-a-task"><a class="header" href="#learning-could-be-a-task">learning could be a task</a></h2>
+<div class="columns">
+<div class="column mt-4" width="50%">
+<ul>
+<li>you may need to work a technology / framework / language that you are
+not familiar with</li>
+<li>or you just have to learn a new codebase</li>
+<li>calculate with learning during the planning</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p><img src="figures/complex_projects.drawio.cropped_no_people.svg"
+height="400" /></p>
+</div>
+</div>
+<h2 id="experiments"><a class="header" href="#experiments">experiments</a></h2>
+<!--:::::::::::: {.columns}
+::::::::: {.column width="77%"}-->
+<ul>
+<li>sometimes the task requires a step that you don’t want to implement
+(again) but use an existing framework instead
+<ul>
+<li>e.g., crop a profile picture to a standard size, while keeping the
+face in focus</li>
+</ul>
+</li>
+<li>then you may want to search for a suitable framework and do some
+research about how to use it</li>
+</ul>
+<!-- - this may help to measure the  -->
+<!--:::::::::
+::::::::: {.column width="23%"}
+![](figures/cropping.drawio.svg){width=250}
+&#10;:::::::::
+::::::::::::-->
+<!-- - do not invent the wheel again, use an existing framework / method -->
+<h2 id="fail-fast"><a class="header" href="#fail-fast">fail fast</a></h2>
+<p>~ indirect proof, proof of contradiction</p>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>the requirements are known</li>
+<li>try to eliminate candidates as soon as possible
+<ul>
+<li>unmaintained</li>
+<li>cannot handle certain file formats</li>
+<li>target language / version is not supported</li>
+</ul>
+</li>
+<li>then move on the next one</li>
+<li>document findings (~ decision records)</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="figures/autocrop.png" width="300"
+alt="screenshot of leblancfg/autocrop GitHub project page" />
+<figcaption aria-hidden="true">screenshot of <a
+href="https://github.com/leblancfg/autocrop">leblancfg/autocrop</a>
+GitHub project page</figcaption>
+</figure>
+</div>
+</div>
+<div class="notes">
+<p>https://en.wikipedia.org/wiki/Fail_fast_(business)</p>
+</div>
+<h2 id="minimal-workable-example"><a class="header" href="#minimal-workable-example">minimal workable example</a></h2>
+<div class="columns">
+<div class="column" width="65%">
+<ul>
+<li>when you have a promising candidate, write code to try it out in
+practice</li>
+<li>start new project<br>(for every candidate / experiment)
+<ul>
+<li>simple, clean</li>
+<li>no interference, side effects</li>
+<li>eliminate unknown variables</li>
+</ul>
+</li>
+<li>document research findings (~ decision records)</li>
+</ul>
+</div>
+<div class="column" width="35%">
+<p><img src="figures/publicdomainvectors/developer-at-work.svg"
+width="250" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>Stackoverflow guideline on <a href="https://stackoverflow.com/help/minimal-reproducible-example">How to create a Minimal, Reproducible
+Example</a></p>
+</div>
+<h1 id="identify-risks"><a class="header" href="#identify-risks">identify risks</a></h1>
+<p>a risk is a possibility that something bad can happen</p>
+<ul>
+<li>there is risk inherent with building any piece of software</li>
+<li>whether you’re building a completely new greenfield project,</li>
+<li>or adding a new feature to an existing codebase
+<ul>
+<li>other parts cease to work</li>
+<li>the new feature alienate users</li>
+<li>data loss</li>
+</ul>
+</li>
+</ul>
+<div class="text-smaller">
+<p>based on <a href="https://riskstorming.com/">riskstorming.com</a> | <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
+4.0</a></p>
+</div>
+<h2 id="prioritize-risks"><a class="header" href="#prioritize-risks">prioritize risks</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>often difficult to prioritise which risks you should take care of</li>
+<li>one way to do this is to map risks to a matrix</li>
+<li>where you evaluate
+<ul>
+<li>the probability: how likely is it that the risk will happen?</li>
+<li>and the impact: what is the negative impact if the risk does occur?</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<img src="figures/borrowed/quantifying-risk-1.png" width="350" />
+</div>
+</div>
+<div class="text-smaller">
+<p>from <a href="https://riskstorming.com/">riskstorming.com</a> | <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
+4.0</a></p>
+</div>
+<h2 id="risk-register"><a class="header" href="#risk-register">risk register</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="65%">
+<ul>
+<li>a risk register is a document used as a risk management tool</li>
+<li>contains all identified risks with additional information
+<ul>
+<li>e.g., nature of the risk, probability, impact, reference and owner,
+mitigation measures</li>
+</ul>
+</li>
+<li>it can be displayed as a table or as a scatterplot</li>
+</ul>
+</div>
+<div class="column" width="35%">
+<figure>
+<img src="figures/borrowed/Risk%20Log%20-%20Party%20Example.svg"
+width="300" alt="by Hou710 | CC BY-SA" />
+<figcaption aria-hidden="true">by <a
+href="https://en.wikipedia.org/wiki/File:Hou710_RiskLog.svg">Hou710</a>
+| <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC
+BY-SA</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-4">
+<p>source <a href="https://en.wikipedia.org/wiki/Risk_register">Wikipedia</a>
+(Wikipedia contributors, 2024b)</p>
+</div>
+<!--
+## risk register - table
+&#10;:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+**common columns**
+&#10;- category
+- name
+- responsible
+- probability
+- impact
+- mitigation
+- action by
+- action when
+&#10;:::::::::
+::::::::: {.column width="60%"}
+instance Toyota's risk register listed reputation risks caused by Prius' malfunctions but the company failed to take action
+:::::::::
+::::::::::::-->
+<h2 id="rust-gcc-example"><a class="header" href="#rust-gcc-example">Rust-GCC example</a></h2>
+<p>common columns in table-based risk registers:<br />
+category, name, responsible, probability, impact, mitigation, action by,
+action when</p>
+<div class="mt-3">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk</th>
+<th style="text-align: right;">Impact<br>(1-3)</th>
+<th style="text-align: right;">Likelihood<br>(0-10)</th>
+<th style="text-align: right;">Risk<br>(I * L)</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rust Language Changes</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">14</td>
+<td>Target a specific Rustc version</td>
+</tr>
+<tr class="even">
+<td>Missing GCC 13 upstream window</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
+<td>Merge in GCC 14 and be proactive about reviews</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://github.com/Rust-GCC/Reporting/blob/main/2022/2022-04-11-report.org">Rust-GCC /
+Reporting</a></p>
+</div>
+<h2 id="risk-storming"><a class="header" href="#risk-storming">risk storming</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<ul>
+<li>visual and collaborative risk identification technique</li>
+<li>created by Simon Brown
+<ul>
+<li>author of C4 model</li>
+</ul>
+</li>
+<li>motivation: often only one person evaluated risks
+<ul>
+<li>~ four eyes see more than two</li>
+</ul>
+</li>
+<li>risk evaluation should be collaborative activity</li>
+</ul>
+</div>
+<div class="column" width="30%">
+<img src="figures/borrowed/risk-storming-1.png" width="250" />
+</div>
+</div>
+<div class="text-smaller">
+<p>this chapter is based on <a href="https://riskstorming.com/">riskstorming.com</a> |
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+</div>
+<h2 id="steps-of-risk-storming"><a class="header" href="#steps-of-risk-storming">steps of risk storming</a></h2>
+<ol>
+<li>draw some software architecture diagrams
+<ul>
+<li>to show what you’re planning to build, at different levels of
+abstraction</li>
+<li>ideally C4</li>
+</ul>
+</li>
+<li>identify the risks individually
+<ul>
+<li>gather people in front of the diagrams,</li>
+<li>ask them to identify what they personally perceive to be risky</li>
+<li>write a summary of each risk on a separate sticky note,</li>
+<li>colour coded to represent low, medium, and high priority risks</li>
+<li>timebox this exercise (e.g. 10 minutes),</li>
+<li>do it in silence</li>
+</ul>
+</li>
+</ol>
+<div class="text-smaller">
+<p>from <a href="https://riskstorming.com/">riskstorming.com</a> | <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
+4.0</a></p>
+</div>
+<h2 id="steps-of-risk-storming-1"><a class="header" href="#steps-of-risk-storming-1">steps of risk storming</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<ol start="3">
+<li>converge the risks on the diagrams
+<ul>
+<li>ask everyone to place their sticky notes onto the diagrams,</li>
+<li>sticking them in close to the area where the risk has been
+identified</li>
+</ul>
+</li>
+<li>review and summarise the risks
+<ul>
+<li>review and summarise the output,</li>
+<li>especially focusing on risks that only one person identified,</li>
+<li>or risks where multiple people disgree on the priority</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="column" width="40%">
+<img src="figures/borrowed/risk-storming-2-cropped.png" width="250" />
+</div>
+</div>
+<div class="text-smaller">
+<p>from <a href="https://riskstorming.com/">riskstorming.com</a> | <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
+4.0</a></p>
+</div>
+<h2 id="mitigating-risks"><a class="header" href="#mitigating-risks">mitigating risks</a></h2>
+<ul>
+<li>risks are identified
+<ul>
+<li>and prioritized</li>
+</ul>
+</li>
+<li>come up with mitigation strategies
+<ul>
+<li>either to prevent the risks from happening</li>
+<li>or to take corrective action if the risk does occur</li>
+</ul>
+</li>
+<li>focus on the highest priority ones first<!--- mitigation strategies the are applicable depending upon the type of risk, including: 
+    - education
+    - writing code
+    - re-work-->
+</li>
+</ul>
+<div class="text-smaller">
+<p>from <a href="https://riskstorming.com/">riskstorming.com</a> | <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
+4.0</a></p>
+</div>
+<h2 id="mitigation-strategies"><a class="header" href="#mitigation-strategies">mitigation strategies</a></h2>
+<ul>
+<li>education
+<ul>
+<li>train the team,</li>
+<li>or hire new team members in areas where you lack experience</li>
+</ul>
+</li>
+<li>writing code
+<ul>
+<li>create prototypes, proofs of concept, walking skeletons, etc. to
+mitigate technical risks by proving that something does or doesn’t
+work</li>
+</ul>
+</li>
+<li>re-work
+<ul>
+<li>change software architecture to remove or reduce the
+probability/impact of identified risks
+<ul>
+<li>e.g. removing single points of failure,</li>
+</ul>
+</li>
+<li>upon change you should re-run the risk-storming process</li>
+</ul>
+</li>
+</ul>
+<div class="text-smaller">
+<p>from <a href="https://riskstorming.com/">riskstorming.com</a> | <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
+4.0</a></p>
+</div>
+<h2 id="walking-skeleton"><a class="header" href="#walking-skeleton">walking skeleton</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<blockquote>
+<p>A Walking Skeleton is a tiny implementation of the system that
+performs a small end-to-end function. It need not use the final
+architecture, but it should link together the main architectural
+components. The architecture and the functionality can then evolve in
+parallel.</p>
+<p>– Alistair Cockburn</p>
+</blockquote>
+</div>
+<div class="column" width="30%">
+<img src="figures/publicdomainvectors/skeleton.svg" width="275" />
+</div>
+</div>
+<div class="text-smaller">
+<p>it is a pattern intended to kick-start test driven development (later in
+the course)</p>
+<p>via <a href="https://wiki.c2.com/?WalkingSkeleton">wiki.c2.com</a></p>
+</div>
+<h2 id="risk-storming-example"><a class="header" href="#risk-storming-example">risk storming example</a></h2>
+<p><img src="figures/user_statistics/risk_storming.excalidraw.svg"
+height="550" /></p>
+<h1 id="schedule-milestones"><a class="header" href="#schedule-milestones">schedule milestones</a></h1>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>visualize project milestones
+<ul>
+<li>Gantt chart</li>
+</ul>
+</li>
+<li>keep the entire team posted</li>
+<li>pay attention to holidays
+<ul>
+<li>multiple countries in the case of an international team</li>
+</ul>
+</li>
+<li>things won’t go as planned, so
+<ul>
+<li>add safety margin (wiggle room)</li>
+<li>e.g., an extra week before deadline for fixing bugs</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="figures/borrowed/GanttChartAnatomy.svg"
+alt="Gantt chart from Wikipedia   public domain" />
+<figcaption aria-hidden="true">Gantt chart from <a
+href="https://commons.wikimedia.org/wiki/File:GanttChartAnatomy.svg">Wikipedia</a>
+<br> public domain</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="ninetyninety-rule"><a class="header" href="#ninetyninety-rule">ninety–ninety rule</a></h2>
+<blockquote>
+<p>The first 90 percent of the code accounts for the first 90 percent of
+the development time. The remaining 10 percent of the code accounts
+for the other 90 percent of the development time.</p>
+<p>– Tom Cargill, Bell Labs</p>
+</blockquote>
+<div class="text-smaller">
+<p>source: (Bentley, 1985)</p>
+</div>
+<!-- ![](figures/borrowed/estimating_time_2x.png){height=300} -->
+<h1 id="assign-responsibilities-and-tasks"><a class="header" href="#assign-responsibilities-and-tasks">assign responsibilities and tasks</a></h1>
+<div class="columns">
+<div class="column" width="65%">
+<ul>
+<li>every task you want to make done should have exactly one person
+responsible
+<ul>
+<li>no assignee – no one will do it</li>
+<li>more than one – “I though the other one was doing it”</li>
+</ul>
+</li>
+<li>define area of responsibility
+<ul>
+<li>a task (as in scrum) should have definition of done, which specifies
+it</li>
+</ul>
+</li>
+<li>everyone needs to know what other people are responsible for
+<ul>
+<li>scrum/kanban board can visualize it</li>
+<li>issue/ticket trackers can also work</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="35%">
+<p><img src="figures/publicdomainvectors/scrum-task-board.svg"
+width="250" /></p>
+<p>at the end of a sprint planning, every task in the sprint backlog should
+have an assignee</p>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: (Paquet, 2019)</p>
+</div>
+<h2 id="dependencies"><a class="header" href="#dependencies">dependencies</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<img src="figures/team_dependency_1.drawio.svg" width="450" />
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<img src="figures/team_dependency_2.drawio.svg" width="450" />
+</div>
+</div>
+</div>
+<div class="column fragment" width="50%" data-fragment-index="2">
+<img src="figures/borrowed/CouplingVsCohesion.svg" width="350" />
+</div>
+</div>
+<h1 id="allocate-resources"><a class="header" href="#allocate-resources">allocate resources</a></h1>
+<ul>
+<li>resource is anything that is available with limits
+<ul>
+<li>money, time, personnel, equipment, etc.</li>
+</ul>
+</li>
+</ul>
+<img src="figures/quality_time_cost.drawio.svg" height="250" />
+<h2 id="man-month"><a class="header" href="#man-month">man-month</a></h2>
+<div class="text-size-2 mt-1">
+<p>Man-month is a hypothetical unit of work representing the work done by
+one person in one month.</p>
+</div>
+<p>– Fred Brooks: The Mythical Man-Month (Brooks, 1974)</p>
+<div class="fragment">
+<figure>
+<img src="figures/how_developers_spend_time.svg" height="300"
+alt="how developers spend their time – based on 295 responses | own figure based on data from (Grams, 2019)" />
+<figcaption aria-hidden="true">how developers spend their time – based
+on 295 responses | own figure based on data from <span class="citation"
+data-cites="grams2019how">(Grams, 2019)</span></figcaption>
+</figure>
+</div>
+<h2 id="estimating-time-requirement-of-a-task"><a class="header" href="#estimating-time-requirement-of-a-task">estimating time requirement of a task</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>scrum (and agile in general) does not say anything about <em>how</em> to
+estimate (time)</li>
+<li>story points are often used instead
+<ul>
+<li>(relative) unit of effort required to fully implement a product
+backlog item</li>
+<li>e.g., 1–5,</li>
+<li>Fibonacci: 1, 2, 3, 5, 8, 13…</li>
+<li>powers of 2: 1, 2, 4, 8, 16, 32…</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/publicdomainvectors/time-management.svg"
+width="250" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>“Story points reward team members for solving problems based on
+difficulty, not time spent. This keeps team members focused on shipping
+value, not spending time (Radigan, n.d.).”</p>
+</div>
+<h2 id="planning-poker"><a class="header" href="#planning-poker">planning poker</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>is a consensus-based, gamified technique for estimation (in agile)</li>
+<li>product owner reads the user story</li>
+<li>members of the group make estimates by playing numbered cards
+face-down to the table, instead of speaking them aloud</li>
+<li>estimates are then discussed and high and low estimates are explained
+<ul>
+<li>repeat until estimates converge</li>
+</ul>
+</li>
+<li>by hiding the figures, the group can avoid the cognitive bias of
+anchoring
+<ul>
+<li><span class="text-smaller">where the first number spoken aloud sets
+a precedent for subsequent estimates</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="figures/borrowed/CrispPlanningPokerDeck.jpg"
+alt="by Hkniberg | public domain" />
+<figcaption aria-hidden="true">by <a
+href="https://en.wikipedia.org/wiki/File:CrispPlanningPokerDeck.jpg">Hkniberg</a>
+| public domain</figcaption>
+</figure>
+<div class="text-smaller mt-1">
+<p>zero: done | tiny: ½ | easy: 1, 2, 3 | medium: 5, 8, 13 | large: 20, 40
+| very large: 100 | ∞: huge</p>
+<p>optional cards</p>
+<ul>
+<li>? means <em>unsure</em></li>
+<li>☕ means “I need a break”<!--- card values: 0, ½, 1, 2, 3, 5, 8, 13, 20, 40, 100, and optionally a ? (unsure)
+- Fibonacci sequence: 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89-->
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: (Wikipedia contributors, 2024a)</p>
+</div>
+<h2 id="estimation-is-guessing"><a class="header" href="#estimation-is-guessing">estimation is guessing</a></h2>
+<div class="columns">
+<div class="column" width="65%">
+<ul>
+<li>many developers do not like to estimate</li>
+<li>seemingly simple task can turn out to be difficult
+<ul>
+<li>some difficulties are hard to foresee</li>
+<li>bad architectural decision
+<ul>
+<li><span class="text-smaller">“Architecture is the decisions that you
+wish you could get right early in a project.” – Ralph
+Johnson</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>make educated guesses instead
+<ul>
+<li>measure
+<ul>
+<li><span class="text-smaller">burn down charts, cumulative flow
+diagram</span></li>
+</ul>
+</li>
+<li>infer from previous tasks</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="35%">
+<img src="figures/publicdomainvectors/thimbles-game.svg" width="250" />
+</div>
+</div>
+<h2 id="brookss-law"><a class="header" href="#brookss-law">Brooks’s law</a></h2>
+<blockquote>
+<p>Adding manpower to a late software project makes it later.</p>
+</blockquote>
+<div class="columns column-gapless fragment">
+<div class="column" width="72%">
+<p>Assigning more programmers to a project running behind schedule will
+make it even later. This is because the <strong>time required for the new
+programmers to learn about the project</strong> and the <strong>increased
+communication overhead</strong> will consume an ever-increasing quantity of
+available time (Wikipedia contributors, 2024c).</p>
+</div>
+<div class="column" width="28%">
+<img src="figures/communication_overhead_eq.svg" width="200" />
+</div>
+</div>
+<div class="notes">
+<p>Furthermore, in many cases the new programmer cannot just learn about
+the project on their own, but someone should mentor them. This may be
+considered as a part of the communication overhead, it is an important
+aspect.</p>
+</div>
+<!-- ## what can be done? -->
+<!-- Brooks' law says that it is impossible to measure useful work in man-months. -->
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+line-spacing="2">
+<div id="ref-asana2024what" class="csl-entry">
+<p>Asana, T. (2024). <em>What is an implementation plan? 6 steps to create
+one</em>. <a href="
+                   https://asana.com/resources/implementation-plan
+                    " class="uri">
+https://asana.com/resources/implementation-plan
+</a>.</p>
+</div>
+<div id="ref-bentley1985programming" class="csl-entry">
+<p>Bentley, J. (1985). Programmimg pearls. <em>Commun. ACM</em>, <em>28</em>(9), 896–901.
+<a href="https://doi.org/10.1145/4284.315122">https://doi.org/10.1145/4284.315122</a></p>
+</div>
+<div id="ref-brooks1974mythical" class="csl-entry">
+<p>Brooks, F. P. (1974). The mythical man-month. <em>Datamation</em>, <em>20</em>(12),
+44–52.</p>
+</div>
+<div id="ref-grams2019how" class="csl-entry">
+<p>Grams, C. (2019). <em>How much time do developers spend actually writing
+code?</em> <a href="
+                   https://blog.tidelift.com/how-much-time-do-developers-spend-actually-writing-code
+                    " class="uri">
+https://blog.tidelift.com/how-much-time-do-developers-spend-actually-writing-code
+</a>.</p>
+</div>
+<div id="ref-paquet2019when" class="csl-entry">
+<p>Paquet, P. (2019). <em>When everyone is responsible, no one is
+responsible</em>. <a href="
+                   https://medium.com/@philippelyp/when-everyone-is-responsible-no-one-is-responsible-73e9a179237f
+                    " class="uri">
+https://medium.com/@philippelyp/when-everyone-is-responsible-no-one-is-responsible-73e9a179237f
+</a>.</p>
+</div>
+<div id="ref-radiganstory" class="csl-entry">
+<p>Radigan, D. (n.d.). <em>Story points and estimation</em>. <a href="
+                   https://www.atlassian.com/agile/project-management/estimation
+                    " class="uri">
+https://www.atlassian.com/agile/project-management/estimation
+</a>.</p>
+</div>
+<div id="ref-enwiki:1243064642" class="csl-entry">
+<p>Wikipedia contributors. (2024a). <em>Planning poker — Wikipedia, the free
+encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Planning_poker&amp;oldid=1243064642">https://en.wikipedia.org/w/index.php?title=Planning_poker&amp;oldid=1243064642</a>.</p>
+</div>
+<div id="ref-enwiki:1245973868" class="csl-entry">
+<p>Wikipedia contributors. (2024b). <em>Risk register — Wikipedia, the free
+encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Risk_register&amp;oldid=1245973868">https://en.wikipedia.org/w/index.php?title=Risk_register&amp;oldid=1245973868</a>.</p>
+</div>
+<div id="ref-enwiki:1233664045" class="csl-entry">
+<p>Wikipedia contributors. (2024c). <em>The mythical man-month — Wikipedia,
+the free encyclopedia</em>. <a href="
+                    https://en.wikipedia.org/w/index.php?title=The_Mythical_Man-Month&amp;oldid=1233664045
+                    " class="uri">
+https://en.wikipedia.org/w/index.php?title=The_Mythical_Man-Month&amp;oldid=1233664045
+</a>.</p>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/09_interfaces.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../lectures/11_wireframing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/09_interfaces.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../lectures/11_wireframing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>interfaces - handout</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="software engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <div class="sidebar-scrollbox"></div>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <script async src="../toc.js"></script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">handout</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>an interface is a shared boundary across which two or more separate
+components of a computer system (Wikipedia contributors, 2024a)</p>
+<div class="columns mt-3">
+<div class="column" width="50%">
+<figure>
+<img
+src="figures/borrowed/RJ-45_Ethernet_socket_on_Lenovo_T410_Laptop.jpg"
+width="450" alt="hardware interfaces by Pittigrilli | CC BY-SA" />
+<figcaption aria-hidden="true">hardware interfaces by <a
+href="https://en.wikipedia.org/wiki/File:RJ-45_Ethernet_socket_on_Lenovo_T410_Laptop.jpg">Pittigrilli</a>
+| <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC
+BY-SA</a></figcaption>
+</figure>
+</div>
+<div class="column" width="50%">
+<figure>
+<img src="figures/borrowed/KDE_Plasma_5.22.png" width="450"
+alt="user interface KDE Plasma 5.22 from Wikimedia CC BY-SA" />
+<figcaption aria-hidden="true">user interface KDE Plasma 5.22 from <a
+href="https://commons.wikimedia.org/wiki/File:KDE_Plasma_5.22.png">Wikimedia</a>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC
+BY-SA</a></figcaption>
+</figure>
+</div>
+</div>
+<h2 id="interface-is-an-agreement"><a class="header" href="#interface-is-an-agreement">interface is an agreement</a></h2>
+<div class="columns">
+<div class="column mt-4" width="55%">
+<ul>
+<li>how a module / component will work</li>
+<li>so as long as the agreement is complied the components do not need to
+know about the internal structure/work of the other components
+<ul>
+<li>separation of concerns</li>
+<li>single responsibility principle</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="45%">
+<p><img src="figures/publicdomainvectors/business-handshake-hands.svg"
+width="500" /></p>
+</div>
+</div>
+<h1 id=""><a class="header" href="#"></a></h1>
+<figure>
+<img src="figures/hexagonal_interface.drawio.svg" width="700"
+alt="hexagonal arcitectural pattern (a.k.a. ports &amp; adapters)" />
+<figcaption aria-hidden="true">hexagonal arcitectural pattern (a.k.a.
+ports &amp; adapters)</figcaption>
+</figure>
+<h2 id="user-statistics-example---interfaces"><a class="header" href="#user-statistics-example---interfaces">user statistics example - interfaces</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<p><img src="figures/user_statistics/component_interface.svg" alt="" /></p>
+</div>
+<div class="column" width="40%">
+<p>data sent to the UI</p>
+<p><img src="figures/user_statistics/user_data_light.svg" alt="" /></p>
+<p>specify</p>
+<ul>
+<li>the JSON schema</li>
+<li>endpoint</li>
+<li>etc.</li>
+</ul>
+</div>
+</div>
+<h2 id="user-statistics---c4-component"><a class="header" href="#user-statistics---c4-component">user statistics - C4 component</a></h2>
+<p><img src="figures/user_statistics/c4_component.excalidraw.svg"
+height="500" /></p>
+<h1 id="interface-mocking"><a class="header" href="#interface-mocking">interface mocking</a></h1>
+<ul>
+<li>an interface is a boundary where a module can be separated</li>
+<li>in the user statistics example there are two parts: a backend and a
+frontend</li>
+<li>with a well defined interface, the frontend can work regardless of the
+backends’s state
+<ul>
+<li>e.g., using a mock backend</li>
+</ul>
+</li>
+</ul>
+<div class="wide-quote fragment">
+<blockquote>
+<p>A mock, in software engineering, is a simulated object or module that
+acts as a stand-in for a real object or module (GeeksforGeeks, 2019).</p>
+<!-- Mocks are often used in testing to isolate the behavior of a particular module or component and to verify that it behaves as expected. -->
+</blockquote>
+</div>
+<h2 id="user-statistics---mock-backend"><a class="header" href="#user-statistics---mock-backend">user statistics - mock backend</a></h2>
+<div class="columns">
+<div class="column text-smaller pre-height-100" width="60%">
+<pre><code class="language-ruby">require 'sinatra'
+
+def generate_progress
+  rand.round(2)
+end
+
+def generate_activity_matrix
+  result = []
+  (1..4).each do |_w|
+    daily = []
+    (1..7).each do |_d|
+      daily.push rand(10)
+    end
+    result.push daily
+  end
+  result
+end
+
+get '/user-statistics' do
+  data = {}
+  data['name'] = 'Marvin'
+  data['id'] = 42
+  data['registration'] = '2019-10-02'
+  data['progress'] = generate_progress
+  data['activity'] = generate_activity_matrix
+  return data.to_json
+end
+</code></pre>
+</div>
+<div class="column" width="40%">
+<div class="text-smaller">
+<p><code>http://localhost:4567/user-statistics</code></p>
+</div>
+<pre><code class="language-json">{
+    "name": "Marvin",
+    "id": 42,
+    "registration": "2019-10-02",
+    "progress": 0.92,
+    "activity": [
+        [4,9,7,4,7,1,8],
+        [9,8,1,8,4,1,7],
+        [3,6,8,4,2,4,5],
+        [3,5,5,3,2,9,7]
+    ]
+}
+</code></pre>
+</div>
+</div>
+<h2 id="frontend-development"><a class="header" href="#frontend-development">frontend development</a></h2>
+<div class="columns">
+<div class="column" width="55%">
+<p>a mock backend should be enough for a frontend developer to create and
+test the user statistics view of the user interface</p>
+<pre><code class="language-json">{
+    "name": "Marvin",
+    "id": 42,
+    "registration": "2019-10-02",
+    "progress": 0.92,
+    "activity": [
+        [4,9,7,4,7,1,8],
+        [9,8,1,8,4,1,7],
+        [3,6,8,4,2,4,5],
+        [3,5,5,3,2,9,7]
+    ]
+}
+</code></pre>
+<div class="fragment mt-2">
+<p>it may be presented to the customer</p>
+<div class="text-smaller">
+<p>fast feedback, agile, and so on…</p>
+</div>
+</div>
+</div>
+<div class="column" width="45%">
+<img src="figures/user_stats.drawio.svg" width="300" />
+</div>
+</div>
+<h1 id="do-not-change-the-interface-without-notice"><a class="header" href="#do-not-change-the-interface-without-notice">do not change the interface (without notice)</a></h1>
+<div class="columns mt-4">
+<div class="column" width="50%">
+<figure>
+<img src="figures/user_statistics/user_data_light.svg"
+alt="float: 0–1" />
+<figcaption aria-hidden="true">float: 0–1</figcaption>
+</figure>
+</div>
+<div class="column" width="50%">
+<figure>
+<img src="figures/user_statistics/user_data_light_changed.svg"
+alt="integer: 0–100" />
+<figcaption aria-hidden="true">integer: 0–100</figcaption>
+</figure>
+</div>
+</div>
+<div class="mt-4">
+<p>this will break the frontend</p>
+<div class="text-smaller">
+<p>it is not just rude, but will waste the time of the other team (with
+pointless debugging)</p>
+</div>
+</div>
+<h2 id="do-no-break-the-userland"><a class="header" href="#do-no-break-the-userland">do no break the userland</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<blockquote>
+<p>the number one rule of kernel development is that “we don’t break
+users”</p>
+<p>– <a href="https://lkml.org/lkml/2017/11/21/356">Linus Torvalds</a></p>
+</blockquote>
+</div>
+<div class="column" width="50%">
+<figure>
+<img
+src="figures/borrowed/Linux%20kernel%20and%20OpenGL%20video%20games.svg"
+alt="by ScotXW | CC BY-SA 3.0" />
+<figcaption aria-hidden="true">by <a
+href="https://commons.wikimedia.org/wiki/File:Linux_kernel_and_OpenGL_video_games.svg">ScotXW</a>
+| <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA
+3.0</a></figcaption>
+</figure>
+</div>
+</div>
+<h2 id="api-changes-should-be-communicated"><a class="header" href="#api-changes-should-be-communicated">API changes should be communicated</a></h2>
+<div class="columns mt-4">
+<div class="column" width="65%">
+<div class="align-left">
+<ul>
+<li>during design / development
+<ul>
+<li>change can be necessary / allowed, but communicate towards the
+impacted teams</li>
+<li>diagrams show inner dependencies</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="align-left fragment">
+<ul>
+<li>services announce API deprecations</li>
+<li>so as library / framework developers
+<ul>
+<li>can be a source of new issues even if downstream code is not changed</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="column" width="35%">
+<p><img
+src="figures/publicdomainvectors/policeman-screams-into-a-megaphone.svg"
+width="225" /></p>
+</div>
+</div>
+<h2 id="api-versions"><a class="header" href="#api-versions">API versions</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="60%">
+<img src="figures/user_statistics/interface_versions.svg" width="475" />
+</div>
+<div class="column" width="40%">
+<p><img src="figures/user_statistics/interface_versions_gantt.svg"
+width="375" /></p>
+<div class="text-smaller">
+<ul>
+<li>2021-06-30: API v1’s end of live
+<ul>
+<li>service does not accept connections via APIv1</li>
+<li>code can be removed (no need to maintain it anymore)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><code>https://developers.facebook.com/v21.0/me?fields=id,name</code></p>
+</div>
+<h1 id="language-level"><a class="header" href="#language-level">language level</a></h1>
+<div class="text-smaller">
+<p>GeoPandas 1.0 / new deprecations: unary_union attribute is now
+deprecated and replaced by the union_all() method (#3007) allowing
+opting for a faster union algorithm for coverages (#3151)</p>
+</div>
+<div class="columns fragment">
+<div class="column pre-width-100" width="55%">
+<pre><code class="language-python">from shapely import Polygon
+import geopandas as gpd
+
+p1 = Polygon([[1, 2], [3, 2], [3, 4], [1, 4]])
+p2 = Polygon([[2, 3], [4, 3], [4, 5], [2, 5]])
+
+gpd.GeoDataFrame(geometry=[p1, p2]).unary_union
+</code></pre>
+</div>
+<div class="column text-smaller" width="45%">
+<p>DeprecationWarning: The ‘unary_union’ attribute is deprecated, use the
+‘union_all()’ method instead.</p>
+<img src="figures/unary_union.svg" height="100" />
+</div>
+</div>
+<!--:::::::::::: {.columns .fragment}
+::::::::: {.column width="80%" .text-smaller }
+`DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_all()' method instead.`
+&#10;:::::::::
+::::::::: {.column width="20%"}
+![](figures/unary_union.svg){height=100}
+&#10;:::::::::
+::::::::::::-->
+<div class="fragment">
+<pre><code class="language-python">def unary_union(self):
+    warnings.warn(
+        "The 'unary_union' attribute is deprecated, "
+        "use the 'union_all' method instead.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return self.union_all()
+</code></pre>
+<div class="text-small">
+<p>source:
+<a href="https://github.com/geopandas/geopandas/blob/f150ec0480cfbf2ad8074d210d103b4aed313f11/geopandas/array.py#L848-L855">github.com/geopandas/geopandas</a></p>
+</div>
+</div>
+<h2 id="java"><a class="header" href="#java">java</a></h2>
+<div class="text-smaller">
+<pre><code class="language-java">public class Worker {
+    /**
+     * Calculate period between versions
+     * @deprecated
+     * This method is no longer acceptable to compute time between versions.
+     * &lt;p&gt; Use {@link Utils#calculatePeriod(Machine)} instead.
+     *
+     * @param machine instance
+     * @return computed time
+     */
+    @Deprecated(since = "4.5", forRemoval = true)
+    public int calculate(Machine machine) {
+        return machine.exportVersions().size() * 10;
+    }
+}
+</code></pre>
+<p>source: (Ozler, 2019)</p>
+</div>
+<p>IDEs can parse the deprecation decorators and show to the developer
+during work</p>
+<h1 id="a-327-million-dollar-interface-miscommunication"><a class="header" href="#a-327-million-dollar-interface-miscommunication">a 327 Million Dollar interface miscommunication</a></h1>
+<p>NASA and Lockheed Martin mixed up units for the Mars Climate Orbiter
+(1999)</p>
+<div class="columns">
+<div class="column mt-1" width="60%">
+<ul>
+<li>spacecraft sent values back to Earth in <strong>Newton seconds</strong></li>
+<li>the software in the ground station read those results as <strong>pound
+seconds</strong>
+<ul>
+<li>the guidance and navigation teams was off by a factor of 4.45 times</li>
+</ul>
+</li>
+<li>this led to a miscalculated trajectory, which doomed the probe and the
+mission</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="figures/borrowed/Mars_Climate_Orbiter_2.jpg"
+alt="rendering of the Mars Climate Orbiter by NASA/JPL/Corby Waste via Wikipedia (Wikipedia contributors, 2024b)" />
+<figcaption aria-hidden="true">rendering of the Mars Climate Orbiter
+<span class="text-small">by NASA/JPL/Corby Waste via <a
+href="https://en.wikipedia.org/wiki/File:Mars_Climate_Orbiter_2.jpg">Wikipedia</a>
+<span class="citation" data-cites="enwiki:1248652445">(Wikipedia
+contributors, 2024b)</span></span></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on (Dodd, 2020), read the <a href="https://everydayastronaut.com/mars-climate-orbiter/">full
+story</a> written by
+Tim Dodd</p>
+</div>
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+line-spacing="2">
+<div id="ref-dodd2020metric" class="csl-entry">
+<p>Dodd, T. (2020). <em>Metric vs imperial units: How NASA lost a 327 million
+dollar mission to mars</em>. <a href="
+                   https://everydayastronaut.com/mars-climate-orbiter/
+                    " class="uri">
+https://everydayastronaut.com/mars-climate-orbiter/
+</a>.</p>
+</div>
+<div id="ref-geeksforgeeks2019mock" class="csl-entry">
+<p>GeeksforGeeks. (2019). <em>MOCK (introduction) – software engineering</em>.
+<a href="
+                   https://www.geeksforgeeks.org/software-engineering-mock-introduction/
+                    " class="uri">
+https://www.geeksforgeeks.org/software-engineering-mock-introduction/
+</a>.</p>
+</div>
+<div id="ref-ozler2019java" class="csl-entry">
+<p>Ozler, H. (2019). <em>Java @deprecated annotation</em>. <a href="
+                   https://www.baeldung.com/java-deprecated
+                    " class="uri">
+https://www.baeldung.com/java-deprecated
+</a>.</p>
+</div>
+<div id="ref-enwiki:1244878409" class="csl-entry">
+<p>Wikipedia contributors. (2024a). <em>Interface (computing) — Wikipedia, the
+free encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Interface_(computing)&amp;oldid=1244878409">https://en.wikipedia.org/w/index.php?title=Interface_(computing)&amp;oldid=1244878409</a>.</p>
+</div>
+<div id="ref-enwiki:1248652445" class="csl-entry">
+<p>Wikipedia contributors. (2024b). <em>Mars climate orbiter — Wikipedia, the
+free encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Mars_Climate_Orbiter&amp;oldid=1248652445">https://en.wikipedia.org/w/index.php?title=Mars_Climate_Orbiter&amp;oldid=1248652445</a>.</p>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/08_patterns.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../lectures/10_planning.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/08_patterns.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../lectures/10_planning.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

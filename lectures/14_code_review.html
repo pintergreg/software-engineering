@@ -1,0 +1,982 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>code review - handout</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="software engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <div class="sidebar-scrollbox"></div>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <script async src="../toc.js"></script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">handout</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="v-model-forsberg--mooz-1991"><a class="header" href="#v-model-forsberg--mooz-1991">V model (Forsberg &amp; Mooz, 1991)</a></h1>
+<div class="columns">
+<div class="column mt-3" width="50%">
+<ul>
+<li>each phase has output and a <em>review process</em>
+<ul>
+<li>errors are found at early stage</li>
+<li>decreases the risk of failure</li>
+</ul>
+</li>
+<li>testing is done in a hierarchical perspective</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<div class="r-stack">
+<figure>
+<img src="figures/v_model.drawio.svg" width="500"
+alt="based on guru99.com’s image" />
+<figcaption aria-hidden="true">based on <a
+href="https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png">guru99.com’s
+image</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<h2 id="requirement-analysis-review"><a class="header" href="#requirement-analysis-review">requirement analysis review</a></h2>
+<div class="columns">
+<div class="column" width="40%">
+<figure>
+<img src="figures/user_statistics/story_map.drawio.svg" width="400"
+alt="user story map" />
+<figcaption aria-hidden="true">user story map</figcaption>
+</figure>
+<div class="text-smaller mt-3">
+<ul>
+<li>can be discussed / reviewed</li>
+<li>even with a customer representative</li>
+</ul>
+</div>
+</div>
+<div class="column mt-5" width="15%">
+<img src="figures/double_arrow.drawio.svg" width="100" />
+</div>
+<div class="column" width="45%">
+<figure>
+<img src="figures/user_statistics/user_story_review_2.png" width="400"
+alt="user story “reviewed” in an issue tracker" />
+<figcaption aria-hidden="true">user story “reviewed” in an issue
+tracker</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="architecture-review"><a class="header" href="#architecture-review">architecture review</a></h2>
+<div class="columns">
+<div class="column" width="40%">
+<figure>
+<img src="figures/user_statistics/c4_component.excalidraw.svg"
+width="400" alt="C4 diagrams as the output of the high level design" />
+<figcaption aria-hidden="true">C4 diagrams as the output of the high
+level design</figcaption>
+</figure>
+</div>
+<div class="column mt-5" width="15%">
+<img src="figures/double_arrow.drawio.svg" width="100" />
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="figures/user_statistics/risk_storming.excalidraw.svg"
+width="400" alt="risk storming as a review process" />
+<figcaption aria-hidden="true">risk storming as a review
+process</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="code-review"><a class="header" href="#code-review">code review</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<pre><code class="language-python">def query_progress(user_id:int) -&gt; float:
+    # establish connection
+    con= sqlite3.connect("data.db")
+    # build query
+    progress_query = f"""
+    SELECT
+        lesson / 50.0 AS progress
+    FROM activity
+    WHERE
+        user_id = {user_id} AND
+        result = 'success'
+    ORDER BY
+        lesson DESC
+    LIMIT 1
+    ;
+    """
+    # execute query
+    res =con.execute(progress_query)
+    progress=res.fetchone()[0]
+    return progress
+</code></pre>
+</div>
+<div class="column mt-4" width="50%">
+<ul>
+<li>does not respect style guide</li>
+<li>does 3 things
+<ul>
+<li>establish DB connection</li>
+<li>build query</li>
+<li>execute query</li>
+</ul>
+</li>
+<li>contains separation comments</li>
+<li>hard coded divisor
+<ul>
+<li>magic number</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2 id=""><a class="header" href="#"></a></h2>
+<div class="r-fit-text">
+<p>every work product can and <em>should</em> be reviewed</p>
+</div>
+<h1 id="review-types-by-formality"><a class="header" href="#review-types-by-formality">review types by formality</a></h1>
+<div class="columns">
+<div class="column text-size-2 mt-2" width="30%">
+<ul>
+<li>informal</li>
+<li>walkthrough</li>
+<li>technical</li>
+<li>inspection</li>
+</ul>
+</div>
+<div class="column" width="30%">
+<p><img src="figures/publicdomainvectors/impossible-geometric-shapes.svg"
+width="250" /></p>
+</div>
+</div>
+<h2 id="informal"><a class="header" href="#informal">informal</a></h2>
+<ul>
+<li>asking a colleague to have a look at the code
+<ul>
+<li>they express their opinion and that’s all</li>
+<li>no documentation</li>
+<li>no process</li>
+</ul>
+</li>
+<li>pair programming is also a kind of constant informal review</li>
+</ul>
+<h2 id="walkthrough"><a class="header" href="#walkthrough">walkthrough</a></h2>
+<ul>
+<li>not a formal process / review</li>
+<li>led by the author(s)</li>
+<li>the author(s) guide the participants through the work product to
+achieve a common understanding and to gather feedback</li>
+<li>useful for higher level documents like requirement specification
+<ul>
+<li>e.g., risk storming, sprint review</li>
+</ul>
+</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a href="http://tryqa.com/what-is-walkthrough-in-software-testing/">What is Walkthrough in software
+testing?</a>
+(Try QA, n.d.-b)</p>
+</div>
+<h2 id="technical"><a class="header" href="#technical">technical</a></h2>
+<ul>
+<li>less formal review</li>
+<li>led by the trained moderator or a technical expert</li>
+<li>often performed as a peer review without management participation</li>
+<li>issues are found by experts (e.g., architects, designers)</li>
+<li>technical reviews can vary from quite informal to very formal</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a href="http://tryqa.com/what-is-technical-review-in-software-testing/">What is Technical review in software
+testing?</a>
+(Try QA, n.d.-a)</p>
+</div>
+<h2 id="fagan-inspection-wikipedia-contributors-2021"><a class="header" href="#fagan-inspection-wikipedia-contributors-2021">(Fagan) inspection (Wikipedia contributors, 2021)</a></h2>
+<div class="columns column-gaplessx">
+<div class="column text-smaller" width="85%">
+<!--::: {.text-align-left .text-smaller}
+- most formal review process
+- led by the trained moderators
+    - [ends the process if exit criteria is met]{.text-smaller}
+&#10;:::-->
+<p>process phases</p>
+<ul>
+<li>
+<p><strong>planning</strong>: the inspection is planned by the moderator</p>
+</li>
+<li>
+<p><strong>overview meeting</strong>: the author describes the background of the
+<span class="tooltip" title="work product">WP</span></p>
+</li>
+<li>
+<p><strong>preparation</strong>: each inspector examines the work product to identify
+possible defects</p>
+</li>
+<li>
+<p><strong>inspection meeting</strong>: reader reads through the work product, part by
+part and the inspectors point out the defects</p>
+</li>
+<li>
+<p><strong>rework</strong>: the author makes changes to the work product according to
+the action plans from the inspection meeting</p>
+</li>
+<li>
+<p><strong>follow-up</strong>: the changes are checked to make sure everything is
+correct</p>
+</li>
+</ul>
+<div class="text-smallers">
+<p>roles</p>
+<ul>
+<li>
+<p><strong>author</strong>: created the work product being inspected</p>
+</li>
+<li>
+<p><strong>moderator</strong>: the leader of the inspection, who plans and coordinates
+it</p>
+</li>
+<li>
+<p><strong>reader</strong>: reads through the documents, while the other inspectors
+then point out defects</p>
+</li>
+<li>
+<p><strong>recorder</strong>: documents the defects that are found during the
+inspection</p>
+</li>
+<li>
+<p><strong>inspector</strong>: examines the work product to identify possible defects</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="column" width="15%">
+<img src="figures/fagan_inspection.svg" width="150" />
+</div>
+</div>
+<h2 id="review-types-by-formality--summary"><a class="header" href="#review-types-by-formality--summary">review types by formality – summary</a></h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 13%" />
+<col style="width: 30%" />
+<col style="width: 7%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">type</th>
+<th style="text-align: center;">formality</th>
+<th style="text-align: center;">led by</th>
+<th style="text-align: center;">effort</th>
+<th style="text-align: center;">documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">informal</td>
+<td style="text-align: center;">not formal</td>
+<td style="text-align: center;">noone</td>
+<td style="text-align: center;">minimal</td>
+<td style="text-align: center;">undocumented</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">walkthrough</td>
+<td style="text-align: center;">not formal<a href="#fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></td>
+<td style="text-align: center;">authors</td>
+<td style="text-align: center;">very low</td>
+<td style="text-align: center;">normal, fault-finding</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">technical</td>
+<td style="text-align: center;">less formal</td>
+<td style="text-align: center;">trained moderator, not the author</td>
+<td style="text-align: center;">moderate</td>
+<td style="text-align: center;">more detailed</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">inspection</td>
+<td style="text-align: center;">most formal</td>
+<td style="text-align: center;">trained moderator</td>
+<td style="text-align: center;">high</td>
+<td style="text-align: center;">thorough; based on standards,
+checklists</td>
+</tr>
+</tbody>
+</table>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Sometimes it can be somewhat formal.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+<h1 id="code-review--authors-perspective"><a class="header" href="#code-review--authors-perspective">code review – author’s perspective</a></h1>
+<div class="columns">
+<div class="column" width="63%">
+<ul>
+<li>be humble</li>
+<li>open to feedback</li>
+<li>the goal is to deliver higher quality code, not about arguing who was
+right
+<ul>
+<li>you and the reviewer are in the same side</li>
+</ul>
+</li>
+<li>you and the reviewer are not only talking about the code,
+<ul>
+<li>you are exchanging best practices and experiences</li>
+</ul>
+</li>
+<li>you can learn from the review</li>
+</ul>
+</div>
+<div class="column" width="37%">
+<p><img src="figures/publicdomainvectors/programmer-at-laptop.svg"
+width="300" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on: <a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for
+Humans</a> (Hauer, 2018)</p>
+</div>
+<h2 id="you-are-not-your-code"><a class="header" href="#you-are-not-your-code">you are not your code</a></h2>
+<div class="columns">
+<div class="column" width="30%">
+<p><img src="figures/publicdomainvectors/programmer-at-laptop.svg"
+width="300" /></p>
+</div>
+<div class="column mt-5" width="20%">
+<img src="figures/not_equal.drawio.svg" width="150" />
+</div>
+<div class="column" width="30%">
+<p><img src="figures/publicdomainvectors/programming-language.svg"
+width="300" /></p>
+</div>
+</div>
+<div class="r-fit-text">
+<p>the subject of the code review is not you, but your code</p>
+</div>
+<div class="text-smaller">
+<p>based on: <a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for
+Humans</a> (Hauer, 2018)</p>
+</div>
+<h1 id="code-review--reviewers-perspective"><a class="header" href="#code-review--reviewers-perspective">code review – reviewer’s perspective</a></h1>
+<div class="columns">
+<div class="column mt-3" width="60%">
+<ul>
+<li>pay attention to the way you are formulating your feedback
+<ul>
+<li>phrasing is crucial for your feedback to be accepted</li>
+</ul>
+</li>
+<li>you and the author are in the same side</li>
+<li>the goal is to deliver higher quality code, not about arguing who was
+right</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<img src="figures/publicdomainvectors/detective.svg" width="300" />
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for
+Humans</a> (Hauer, 2018)</p>
+</div>
+<h2 id="use-i-messages"><a class="header" href="#use-i-messages">use I-messages</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<p>formulate your feedback as expressing your personal thoughts</p>
+<div class="text-smaller">
+<ul>
+<li>I suggest</li>
+<li>I think</li>
+<li>I would</li>
+<li>I believe</li>
+<li>it’s hard for me to</li>
+<li>for me, it seems like</li>
+</ul>
+</div>
+<p>it’s hard to argue against personal feelings since they are subjective</p>
+</div>
+<div class="column mt-2" width="50%">
+<ul>
+<li>You-messages sound like an absolute statement</li>
+<li>which will lead to a defensive stance</li>
+<li>the author would argue with the reviewer instead of thinking about a
+change</li>
+<li>so the author will be less open for the feedback</li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for
+Humans</a> (Hauer, 2018)</p>
+</div>
+<h2 id="talk-about-the-code-not-the-coder"><a class="header" href="#talk-about-the-code-not-the-coder">talk about the code, not the coder</a></h2>
+<div class="columns">
+<div class="column" width="30%">
+<p><img src="figures/publicdomainvectors/programming-language.svg"
+width="225" /></p>
+</div>
+<div class="column" width="30%">
+<div class="r-stack">
+<p><img src="figures/publicdomainvectors/programmer-at-laptop.svg"
+width="225" /></p>
+<img src="figures/cross.drawio.svg" width="225" />
+</div>
+</div>
+</div>
+<div>
+<p>wrong<br />
+you hard-coded the total number of lessons into the query, which is
+wrong</p>
+<p>right<br />
+the total number of lessons is hard-coded into the query, which may
+raise issues later</p>
+</div>
+<div class="text-smaller">
+<p>based on: <a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for
+Humans</a> (Hauer, 2018)</p>
+</div>
+<h2 id="ask-questions"><a class="header" href="#ask-questions">ask questions</a></h2>
+<div class="columns">
+<div class="column" width="75%">
+<ul>
+<li>asking questions feels less like a criticism as the author can answer
+the question
+<ul>
+<li>it can trigger a thought process which can lead to accepting the
+feedback</li>
+<li>or the author can come up with a better solution</li>
+</ul>
+</li>
+<li>by asking questions you can reveal the intention behind a certain
+design decision
+<ul>
+<li>there may be a good reason for it</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="25%">
+<p><img src="figures/publicdomainvectors/question-mark-color.svg"
+width="150" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for
+Humans</a> (Hauer, 2018)</p>
+</div>
+<h2 id="refer-to-the-authors-behavior-not-their-traits"><a class="header" href="#refer-to-the-authors-behavior-not-their-traits">refer to the author’s behavior, not their traits</a></h2>
+<p>wrong<br />
+You are sloppy when it comes to following the style guide.</p>
+<p>Can’t you just configure your <span class="tooltip"
+title="integrated development environment">IDE</span> properly?</p>
+<p>right<br />
+I believe that you should pay more attention to the style guide.</p>
+<p>Try to enable the auto-formatting in your <span class="tooltip"
+title="integrated development environment">IDE</span>.</p>
+<div class="fragment wide-quote mt-3">
+<ul>
+<li>usually it’s not required to talk about the author at all in a code
+review</li>
+<li>use I-messages, talk about the code or ask questions</li>
+</ul>
+</div>
+<div class="text-smaller">
+<p>based on: <a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for
+Humans</a> (Hauer, 2018)</p>
+</div>
+<h2 id="oir-rule-of-giving-feedback"><a class="header" href="#oir-rule-of-giving-feedback">OIR-rule of giving feedback</a></h2>
+<p>Observation<br />
+Describe your observations in an objective and neutral way. Refer to the
+behavior if you have to talk about the author. Using an I-message is
+often useful here.</p>
+<p><span class="text-smaller">e.g., “This method has 100 lines.”</span></p>
+<p>Impact<br />
+Explain the impact that the observation has on you. Use I-messages.</p>
+<p><span class="text-smaller">e.g., “This makes it hard for me to grasp the
+essential logic of this method.”</span></p>
+<p>Request<br />
+Use an I-message to express your wish or proposal.</p>
+<p><span class="text-smaller">e.g., “I suggest extracting the
+low-level-details into subroutines and give them expressive
+names.”</span></p>
+<div class="text-smaller">
+<p>source: <a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for
+Humans</a> (Hauer, 2018)</p>
+</div>
+<h2 id="three-filters-for-feedback"><a class="header" href="#three-filters-for-feedback">three filters for feedback</a></h2>
+<p>always ask yourself, if your feedback is true, necessary and kind</p>
+<p><span class="text-smaller">(from April Wensel (Wensel, 2018) via (Hauer,
+2018))</span></p>
+<ul>
+<li>is it true?
+<ul>
+<li><span class="text-smaller">avoid statements assuming an absolute
+truth</span></li>
+<li><span class="text-smaller">avoid the words “right”, “wrong”,
+“never”, “always” and “should”</span></li>
+<li><span class="text-smaller">refer to your opinion instead</span></li>
+</ul>
+</li>
+<li>is it necessary?
+<ul>
+<li><span class="text-smaller">does the <s>demanded</s> requested change
+make the reviewed code better</span></li>
+</ul>
+</li>
+<li>it it kind?</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for
+Humans</a> (Hauer, 2018)</p>
+</div>
+<h2 id="praise"><a class="header" href="#praise">praise</a></h2>
+<ul>
+<li>don’t forget to express your appreciation if you have reviewed good
+code</li>
+<li>praising doesn’t hurt you but will motivate the author</li>
+<li>however, be specific and separate the prasie from the criticism</li>
+</ul>
+<div class="text-smaller">
+<p>based on: <a href="https://phauer.com/2018/code-review-guidelines/">Code Review Guidelines for
+Humans</a> (Hauer, 2018)</p>
+</div>
+<h2 id="looks-good-to-me"><a class="header" href="#looks-good-to-me">looks good to me</a></h2>
+<div class="text-align-left">
+<ul>
+<li>it’s okay to say: “Everything is good!”</li>
+<li>no code change request is a valid outcome of a code review
+<ul>
+<li>you don’t have to find something in the code</li>
+</ul>
+</li>
+<li>a code can be not just okay, but worth to learn from it</li>
+</ul>
+</div>
+<div class="fragment text-align-left">
+<ul>
+<li>however, when a reviewer too often says LGTM, it becomes fishy
+<ul>
+<li>especially if the review code turns out to be problematic later
+regardless the positive feedback</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="a-review-process"><a class="header" href="#a-review-process">a review process</a></h1>
+<div class="columns column-gapless">
+<div class="column" width="60%">
+<img src="figures/proc3.png" width="500" />
+</div>
+<div class="column mt-5 text-smaller" width="40%">
+<ul>
+<li>is it understandable (clear)</li>
+<li>is it clean (no code smells)</li>
+<li>does it match the task?</li>
+<li>does it fulfill the task?
+<ul>
+<li>every <span class="tooltip" title="Definition of Done">DoD</span>
+point covered?</li>
+</ul>
+</li>
+<li>is it possible to improve?</li>
+</ul>
+</div>
+</div>
+<h2 id="how-can-you-tell-if-the-code-matches-the-task"><a class="header" href="#how-can-you-tell-if-the-code-matches-the-task">how can you tell if the code matches the task?</a></h2>
+<div class="r-stack">
+<p><img src="figures/traceability_via_commit_change.drawio.svg"
+width="800" /></p>
+<p><img src="figures/traceability_via_commit_parts.drawio.svg"
+class="fragment" data-fragment-index="1" width="800" /></p>
+<p><img src="figures/traceability_via_commit_message_parts.drawio.svg"
+class="fragment" data-fragment-index="2" width="800" /></p>
+<p><img src="figures/traceability_via_commit.drawio.svg" class="fragment"
+data-fragment-index="3" width="800" /></p>
+</div>
+<h2 id="how-to-write-the-commit-message"><a class="header" href="#how-to-write-the-commit-message">how to write the commit message?</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<ol>
+<li>Separate subject from body with a blank line</li>
+<li>Limit the subject line to 50 characters</li>
+<li><strong>Capitalize the subject line</strong></li>
+<li><strong>Do not end the subject line with a period</strong></li>
+<li><strong>Use the imperative mood in the subject line</strong></li>
+<li>Wrap the body at 72 characters
+<ul>
+<li>least important</li>
+</ul>
+</li>
+<li><strong>Explain what and why not how</strong></li>
+<li><strong>Reference the issue!</strong>
+<ul>
+<li><span class="text-smaller">my addition for traceability</span>
+<img src="figures/referenced_issue.png" height="48" /></li>
+<li><span class="text-smaller"><code>GH-33</code> (GitHub), <code>GL-33</code>
+(GitLab),</span></li>
+<li><span class="text-smaller">or custom identifier for a project
+(Jira, JetBrains)</span></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="figures/borrowed/xkcd/git_commit_2x.png"
+alt="Randall Munroe | CC BY-NC 2.5 | source" />
+<figcaption aria-hidden="true">Randall Munroe | <a
+href="https://creativecommons.org/licenses/by-nc/2.5/deed.en">CC BY-NC 2.5</a>
+| <a href="https://xkcd.com/1296/">source</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit
+Message</a> (Beams, 2014)</p>
+</div>
+<h1 id="review-in-numbers"><a class="header" href="#review-in-numbers">review in numbers</a></h1>
+<div class="columns">
+<div class="column" width="75%">
+<ul>
+<li>don’t review more than 200 to 400 lines of code at a time</li>
+<li>don’t review for more than 60 minutes at a time</li>
+<li>during an inspection session, the rate should be under 500 LOC per
+hour</li>
+<li>use informal reviews
+<ul>
+<li>less effort, although very effective</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="25%">
+<p><img src="figures/publicdomainvectors/software-testing-concept.svg"
+width="300" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: (Smartbear, n.d.)</p>
+</div>
+<h1 id="-1"><a class="header" href="#-1"></a></h1>
+<div class="columns">
+<div class="column text-smaller" width="60%">
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+main()
+{
+    int a,b,c;
+    int count = 1;
+    for (b=c=10;a="- FIGURE?, UMKC,XYZHello Folks,\
+    TFy!QJu ROo TNn(ROo)SLq SLq ULo+\
+    UHs UJq TNn*RPn/QPbEWS_JSWQAIJO^\
+    NBELPeHBFHT}TnALVlBLOFAkHFOuFETp\
+    HCStHAUFAgcEAelclcn^r^r\\tZvYxXy\
+    T|S~Pn SPm SOn TNn ULo0ULo#ULo-W\
+    Hq!WFs XDt!" [b+++21]; )
+    for(; a-- &gt; 64 ; )
+    putchar ( ++c=='Z' ? c = c/ 9:33^b&amp;1);
+    return 0;
+}
+</code></pre>
+<div class="fragment" data-fragment-index="1">
+<p>via <a href="https://stackoverflow.com/questions/3533348/how-does-this-code-generate-the-map-of-india">How does this code generate the map of
+India?</a></p>
+</div>
+</div>
+<div class="column text-smaller fragment" width="40%"
+data-fragment-index="1">
+<p><img src="figures/india.png" alt="" /></p>
+</div>
+</div>
+<h2 id="-2"><a class="header" href="#-2"></a></h2>
+<div class="columns">
+<div class="column text-smaller" width="60%">
+<pre><code class="language-c">#include "stdio.h"
+int main (void) {
+    int a=10, b=0, c=10;
+    char* bits ="TFy!QJu ROo TNn(ROo)SLq SLq ULo+UHs UJq TNn*R\
+    Pn/QPbEWS_JSWQAIJO^NBELPeHBFHT}TnALVlBLOFAkHFOuFETpHCStHAU\
+    FAgcEAelclcn^r^r\\tZvYxXyT|S~Pn SPm SOn TNn ULo0ULo#ULo-WH\
+    q!WFs XDt!";
+    a = bits[b];
+    while (a != 0) {
+        a = bits[b];
+        b++;
+        while (a &gt; 64) {
+            a--;
+            if (++c == 'Z') {
+                c /= 9;
+                putchar(c);
+            } else {
+                putchar(33 ^ (b &amp; 0x01));
+            }
+        }
+    }
+    return 0;
+}
+</code></pre>
+<div>
+<p><a href="https://stackoverflow.com/a/3533420/4737417">a less obfuscated version</a>
+(with explanation)<br>by
+<a href="https://stackoverflow.com/users/79566/bta">bta</a> CC BY-SA 2.5</p>
+</div>
+</div>
+<div class="column text-smaller" width="40%">
+<p><img src="figures/india_cleaner.png" alt="" /></p>
+</div>
+</div>
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+line-spacing="2">
+<div id="ref-beams2014how" class="csl-entry">
+<p>Beams, C. (2014). <em>How to write a git commit message</em>. <a href="
+                   https://cbea.ms/git-commit/
+                    " class="uri">
+https://cbea.ms/git-commit/
+</a>.</p>
+</div>
+<div id="ref-forsberg1991relationship" class="csl-entry">
+<p>Forsberg, K., &amp; Mooz, H. (1991). The relationship of system engineering
+to the project cycle. <em>Center for Systems Management</em>, <em>5333</em>.</p>
+</div>
+<div id="ref-hauer2018code" class="csl-entry">
+<p>Hauer, P. (2018). <em>Code review guidelines for humans</em>. <a href="
+                   https://phauer.com/2018/code-review-guidelines/
+                    " class="uri">
+https://phauer.com/2018/code-review-guidelines/
+</a>.</p>
+</div>
+<div id="ref-smartbear_best" class="csl-entry">
+<p>Smartbear. (n.d.). <em>Best practices for code review</em>. <a href="
+                   https://smartbear.com/learn/code-review/best-practices-for-peer-code-review
+                    " class="uri">
+https://smartbear.com/learn/code-review/best-practices-for-peer-code-review
+</a>.</p>
+</div>
+<div id="ref-tryqa_technical" class="csl-entry">
+<p>Try QA. (n.d.-a). <em>What is technical review in software testing?</em>
+<a href="
+                   http://tryqa.com/what-is-technical-review-in-software-testing
+                    " class="uri">
+http://tryqa.com/what-is-technical-review-in-software-testing
+</a>.</p>
+</div>
+<div id="ref-tryqa_walkthrough" class="csl-entry">
+<p>Try QA. (n.d.-b). <em>What is walkthrough in software testing?</em> <a href="
+                   http://tryqa.com/what-is-walkthrough-in-software-testing
+                    " class="uri">
+http://tryqa.com/what-is-walkthrough-in-software-testing
+</a>.</p>
+</div>
+<div id="ref-wensel2018compassionate" class="csl-entry">
+<p>Wensel, A. (2018). <em>Compassionate (yet candid) code reviews</em>. <a href="
+                   https://www.slideshare.net/slideshow/compassionate-yet-candid-code-reviews/113119451
+                    " class="uri">
+https://www.slideshare.net/slideshow/compassionate-yet-candid-code-reviews/113119451
+</a>.</p>
+</div>
+<div id="ref-enwiki:1060854286" class="csl-entry">
+<p>Wikipedia contributors. (2021). <em>Software inspection — Wikipedia, the
+free encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Software_inspection&amp;oldid=1060854286">https://en.wikipedia.org/w/index.php?title=Software_inspection&amp;oldid=1060854286</a>.</p>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/13_code_quality.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../lectures/15_testing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/13_code_quality.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../lectures/15_testing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,1186 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>code quality - handout</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="software engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <div class="sidebar-scrollbox"></div>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <script async src="../toc.js"></script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">handout</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id=""><a class="header" href="#"></a></h1>
+<div class="text-align-left">
+<p>agile<br />
+working software over comprehensive documentation</p>
+</div>
+<div class="mt-2 text-align-left">
+<p>software craftmanship<br />
+not only working software, but also well-crafted software</p>
+</div>
+<div class="columns mt-2 fragment" height="240">
+<div class="column text-align-left" width="70%">
+<div class="text-align-left">
+<p>well-crafted</p>
+<ul>
+<li>high quality</li>
+<li>well-designed</li>
+<li>validated and verified</li>
+<li>tested</li>
+<li>code is clean, easy to understand, <strong>maintain</strong></li>
+</ul>
+</div>
+</div>
+<div class="column" width="30%">
+</div>
+</div>
+<h1 id="code-smell"><a class="header" href="#code-smell">code smell</a></h1>
+<blockquote>
+<p>a code smell is a surface indication that usually corresponds to a
+deeper problem</p>
+<p>– Martin Flower (Fowler, 2006)</p>
+</blockquote>
+<div class="columns mt-3">
+<div class="column text-smaller" width="40%">
+<p>software rot is the degradation, deterioration, or loss of the use or
+performance of software over time (Wikipedia contributors, 2024)</p>
+</div>
+<div class="column text-smaller" width="40%">
+<p><strong>requirement smell</strong>: signs in the requirements that are not
+necessarily wrong but could be problematic (Femmer et al., 2017)</p>
+</div>
+</div>
+<h2 id="clean-clode-violations-as-code-smells"><a class="header" href="#clean-clode-violations-as-code-smells">clean clode violations as code smells</a></h2>
+<ul>
+<li>long method</li>
+<li>long parameter list</li>
+<li>naming
+<ul>
+<li>notation in names</li>
+<li>inconsistent names</li>
+<li>uncommunicative names</li>
+</ul>
+</li>
+<li>comments</li>
+<li>large class
+<ul>
+<li>possibly do more than on thing</li>
+</ul>
+</li>
+<li>a function / class does more than on thing</li>
+</ul>
+<div class="text-smaller">
+<p>source: (Atwood, 2006)</p>
+</div>
+<h2 id="some-code-smells"><a class="header" href="#some-code-smells">some code smells</a></h2>
+<ul>
+<li>duplicated code
+<ul>
+<li><span class="text-smaller">Don’t Repeat Yourself! (a.k.a., DRY
+principle) (Venners, 2003)</span></li>
+</ul>
+</li>
+<li>speculative generality
+<ul>
+<li><span class="text-smaller">do not generalize the code to solve a
+potential future problem</span></li>
+<li><span class="text-smaller">You aren’t gonna need it (YAGNI)</span></li>
+<li><span class="text-smaller">focus on today’s problem</span></li>
+</ul>
+</li>
+<li>dead code
+<ul>
+<li><span class="text-smaller">e.g., a function that is never
+called</span></li>
+<li><span class="text-smaller">editors denote it</span></li>
+<li><span class="text-smaller">in Go unused variable is not a warning,
+but an error</span></li>
+</ul>
+</li>
+<li>temporary field
+<ul>
+<li><span class="text-smaller">“Watch out for objects that contain a lot
+of optional or unnecessary fields. If you’re passing an object as a
+parameter to a method, make sure that you’re using all of it and not
+cherry-picking single fields.” (Atwood, 2006)</span></li>
+</ul>
+</li>
+</ul>
+<div class="text-smaller">
+<p>source: (Atwood, 2006)</p>
+</div>
+<h2 id="conditional-complexity"><a class="header" href="#conditional-complexity">conditional complexity</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<pre><code class="language-python">if a and b:
+    do_something()
+</code></pre>
+</div>
+<div class="column" width="50%">
+<pre><code class="language-python">if a or b:
+    do_something()
+</code></pre>
+</div>
+</div>
+<div class="fragment mt-5">
+<pre><code class="language-python">if not (a or (b and not c) and (d or not f)):
+    do_something()
+</code></pre>
+<div class="text-smaller">
+<ul>
+<li>hard to understand</li>
+<li>even if it is tested and documented</li>
+</ul>
+</div>
+</div>
+<h2 id="conditional-complexity-1"><a class="header" href="#conditional-complexity-1">conditional complexity</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="50%">
+<pre><code class="language-python">if is_pressure_low() and is_temperature_high():
+    do_something()
+</code></pre>
+</div>
+<div class="column" width="50%">
+<pre><code class="language-python">if is_pressure_low() or is_temperature_high():
+    do_something()
+</code></pre>
+</div>
+</div>
+<div class="fragment mt-3">
+<pre><code class="language-python">if not (
+    is_pressure_low()
+    or (is_temperature_high() and not is_humidity_low())
+    and (is_fall() or not is_raining())
+):
+    do_something()
+</code></pre>
+<div class="text-smaller">
+<ul>
+<li>hard to understand, even if it is tested and documented</li>
+<li>use nested conditions instead<!--- avoid negative conditionals -- Robert C. Martin [@martin2009clean]
+    - `if (!is_raining()) {do_something();}`{.javascript}-->
+</li>
+</ul>
+</div>
+</div>
+<h2 id="class-based-smells-alternative-classes-with-different-interfaces"><a class="header" href="#class-based-smells-alternative-classes-with-different-interfaces">class-based smells: alternative classes with different interfaces</a></h2>
+<blockquote>
+<p>If two classes are similar on the inside, but different on the
+outside, perhaps they can be modified to share a common interface
+(Atwood, 2006).</p>
+</blockquote>
+<h2 id="class-based-smells-data-class"><a class="header" href="#class-based-smells-data-class">class-based smells: data class???</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<blockquote>
+<p>Avoid classes that passively store data. Classes should contain data
+and methods to operate on that data, too (Atwood, 2006).</p>
+</blockquote>
+<div class="mt-3">
+<ul>
+<li>Kotlin: <a href="https://kotlinlang.org/docs/data-classes.html">Data classes﻿</a></li>
+<li>Python: <a href="https://peps.python.org/pep-0557/">PEP 557 – Data Classes</a></li>
+<li>Ruby: <a href="https://docs.ruby-lang.org/en/master/Data.html">class Data</a></li>
+</ul>
+</div>
+</div>
+<div class="column" width="30%">
+<p><img src="figures/publicdomainvectors/woman-in-predicament.svg"
+width="300" /></p>
+</div>
+</div>
+<h2 id="class-based-smells-data-clumps"><a class="header" href="#class-based-smells-data-clumps">class-based smells: data clumps</a></h2>
+<blockquote>
+<p>If you always see the same data hanging around together, maybe it
+belongs together. Consider rolling the related data up into a larger
+class (Atwood, 2006).</p>
+</blockquote>
+<h2 id="class-based-smells-refused-bequest"><a class="header" href="#class-based-smells-refused-bequest">class-based smells: refused bequest</a></h2>
+<div class="columns">
+<div class="column mt-5" width="70%">
+<blockquote>
+<p>If you inherit from a class, but never use any of the inherited
+functionality, should you really be using inheritance? (Atwood, 2006)</p>
+</blockquote>
+</div>
+<div class="column" width="30%">
+<img src="figures/no_middleman.drawio.svg" width="250" />
+</div>
+</div>
+<h2 id="class-based-smells-indecent-exposure"><a class="header" href="#class-based-smells-indecent-exposure">class-based smells: indecent exposure</a></h2>
+<div class="wide-quote">
+<blockquote>
+<p>Beware of classes that unnecessarily expose their internals. […] You
+should have a compelling reason for every item you make public. If you
+don’t, hide it (Atwood, 2006).</p>
+</blockquote>
+</div>
+<div class="text-smaller mt-5">
+<p>OOP principle: abstraction</p>
+<ul>
+<li>hiding the complex reality while exposing only the necessary parts</li>
+<li>allows to focus on interactions at a higher level without needing to
+understand the details of the implementation</li>
+<li>achieved through abstract classes and interfaces, which define a
+contract for what methods an object must implement without specifying
+how they should be implemented</li>
+</ul>
+</div>
+<h2 id="class-based-smells-feature-envy"><a class="header" href="#class-based-smells-feature-envy">class-based smells: feature envy</a></h2>
+<img src="figures/feature_envy.drawio.svg" width="500" />
+<blockquote>
+<p>Methods that make extensive use of another class may belong in another
+class. Consider moving this method to the class it is so envious of.</p>
+<p>– Jeff Atwood (Atwood, 2006)</p>
+</blockquote>
+<h2 id="more-code-smells"><a class="header" href="#more-code-smells">more code smells</a></h2>
+<div class="columns">
+<div class="column mt-5" width="60%">
+<p>this section is based on the book <em>Clean Code</em> (chapter 17) by Robert C.
+Martin (Martin, 2009)</p>
+<p>with own examples</p>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="figures/borrowed/762px-Smell_of_Tammany.png" height="300"
+alt="by Thomas Nast via Wikipedia public domain" />
+<figcaption aria-hidden="true">by Thomas Nast via <a
+href="https://commons.wikimedia.org/wiki/File:Smell_of_Tammany.png">Wikipedia</a><br>public
+domain</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="comment-related-smells"><a class="header" href="#comment-related-smells">comment related smells</a></h2>
+<p><strong>1. obsolete comment</strong></p>
+<p>version <em>n-1</em> (OOP)</p>
+<pre><code class="language-python"># increase class attribute
+def increase(self, by):
+    self.foo += by
+</code></pre>
+<p>version <em>n</em> (FP)</p>
+<pre><code class="language-python"># increase class attribute
+def increase(what, by):
+    return what + by
+</code></pre>
+<div class="mt-2 text-smaller">
+<p>these are actually noise comments, so they are bad in the first place</p>
+</div>
+<h2 id="comment-related-smells-1"><a class="header" href="#comment-related-smells-1">comment related smells</a></h2>
+<p><strong>2. redundant comment</strong></p>
+<pre><code class="language-python"># creates an empty dataframe
+def create_empty_dataframe(start_week, end_week):
+</code></pre>
+<div class="mt-5">
+<p>redundant as it does not give new information, a form of noise comment</p>
+</div>
+<h2 id="comment-related-smells-2"><a class="header" href="#comment-related-smells-2">comment related smells</a></h2>
+<p><strong>3. commented-out code</strong></p>
+<pre><code class="language-python">def increase(what, by):
+    # print(what, by)
+    return what + by
+</code></pre>
+<p>not needed, just remove it</p>
+<div class="fragment">
+<pre><code class="language-python">class Something:
+    foo = 0
+    
+    def increase(self, by):
+        self.foo += by
+    
+    def decrease(self, by):
+        self.foo -= by
+    
+    # def mutiply(self, by):
+    #     self.foo *= by
+</code></pre>
+<p>the version tracker will preserve it, if you might meed it sometime in
+the future</p>
+</div>
+<h2 id="magic-numbers"><a class="header" href="#magic-numbers">magic numbers</a></h2>
+<p>magic number is an unexplained constant in the code</p>
+<pre><code class="language-python">def calculate_circle_area(r: float) -&gt; float:
+    return r * r * 3.141592
+</code></pre>
+<div class="fragment">
+<pre><code class="language-python">PI = 3.141592
+
+def calculate_circle_area(r: float) -&gt; float:
+    return r * r * PI
+</code></pre>
+</div>
+<div class="fragment">
+<pre><code class="language-python">import math
+
+
+def calculate_circle_area(r: float) -&gt; float:
+    return r * r * math.pi
+</code></pre>
+</div>
+<!--## structure over convention
+&#10;> Enforce design decisions with structure over convention.
+> Naming conventions are good, but they are inferior to structures that force compliance.
+> For example, switch/cases with nicely named enumerations are inferior to base classes with abstract methods.
+> No one is forced to implement the switch/case statement the same way each time; but the base classes do enforce that concrete classes have all abstract methods implemented.
+>
+> -- Robert C. Martin [@martin2009clean]-->
+<h2 id="encapsulate-boundary-conditions"><a class="header" href="#encapsulate-boundary-conditions">encapsulate boundary conditions</a></h2>
+<pre><code class="language-python">if level + 1 &lt; length:
+    do_somthing(foo, bar, level + 1)
+</code></pre>
+<pre><code class="language-python">next_level = level + 1
+if next_level &lt; length:
+    do_somthing(foo, bar, next_level)
+</code></pre>
+<p>also increases consistency, the condition needs to be adjusted in one
+place</p>
+<h1 id="denoting-blocks"><a class="header" href="#denoting-blocks">denoting blocks</a></h1>
+<div class="columns column-gapless">
+<div class="column" width="50">
+<pre><code class="language-javascript">for (i = 0; i &lt; 10; i++) {
+    console.log(i);
+}
+</code></pre>
+<pre><code class="language-javascript">for (i = 0; i &lt; 10; i++)
+    console.log(i);
+</code></pre>
+<pre><code class="language-javascript">var a = 0;
+for (i = 0; i &lt; 10; i++)
+    a++;
+    console.log(i);
+</code></pre>
+</div>
+<div class="column" width="25%">
+<div class="fragment" data-fragment-index="1">
+<pre><code class="language-python">for i in range(10):
+    print(i)
+</code></pre>
+<pre><code class="language-python">a = 0
+for i in range(10):
+    a += 1
+    print(i)
+</code></pre>
+</div>
+</div>
+<div class="column" width="25%">
+<div class="fragment" data-fragment-index="2">
+<!--```ruby
+a = 0
+for i in 0..9 do
+   a += 1
+   puts i
+end
+```
+```ruby
+a = 0
+for i in 0..9 {
+   a += 1
+   puts i
+}
+```-->
+<pre><code class="language-go">package main
+ 
+import (
+    "fmt"
+)
+ 
+func main() {
+    for i:=0; i&lt;10; i++ {
+        fmt.Println(i)
+    }
+}
+</code></pre>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    for i in 0..9 {
+        println!("{}", i);
+    }
+}</code></pre></pre>
+</div>
+</div>
+</div>
+<h2 id="what-could-go-wrong"><a class="header" href="#what-could-go-wrong">what could go wrong?</a></h2>
+<div class="fragment">
+<div class="text-smaller">
+<p>parts from
+<a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">sslKeyExchange.c</a></p>
+</div>
+<pre><code class="language-c">if ((err = ReadyHash(&amp;SSLHashSHA1, &amp;hashCtx)) != 0)
+    goto fail;
+if ((err = SSLHashSHA1.update(&amp;hashCtx, &amp;clientRandom)) != 0)
+    goto fail;
+if ((err = SSLHashSHA1.update(&amp;hashCtx, &amp;serverRandom)) != 0)
+    goto fail;
+if ((err = SSLHashSHA1.update(&amp;hashCtx, &amp;signedParams)) != 0)
+    goto fail;
+    goto fail;
+if ((err = SSLHashSHA1.final(&amp;hashCtx, &amp;hashOut)) != 0)
+    goto fail;
+</code></pre>
+<pre><code class="language-c">fail:
+    SSLFreeBuffer(&amp;signedHashes);
+    SSLFreeBuffer(&amp;hashCtx);
+    return err;
+</code></pre>
+<div class="fragment">
+<p>more about Apple’s “goto fail” fiasco (2014): (Wheeler, 2014), (Migues,
+2014)</p>
+<p>false blame on <code>goto</code>, could be prevented by review and testing</p>
+</div>
+</div>
+<h1 id="how-to-measure-code-quality"><a class="header" href="#how-to-measure-code-quality">how to measure code quality?</a></h1>
+<p>it is hard to objectively measure the quality of code</p>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>number of source lines of code (SLOC)
+<ul>
+<li>more code, more (potential) issues</li>
+</ul>
+</li>
+<li>aligns well with code style guides</li>
+<li>Halstead metrics</li>
+<li>cyclomatic complexity</li>
+<li>maintainability index</li>
+<li>test coverage <span class="text-color-lightblue">(later)</span></li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/publicdomainvectors/worker-takes-measurements.svg"
+width="400" /></p>
+</div>
+</div>
+<h1 id="halstead-metrics"><a class="header" href="#halstead-metrics">Halstead metrics</a></h1>
+<p>Halstead’s goal was to identify measurable properties of software, and
+the relations between them (Radon documentation, n.d.).</p>
+<div class="columns text-smaller">
+<div class="column" width="50%">
+<p>statistically computed numbers:</p>
+<ul>
+<li>$\eta_1$ = the number of distinct operators</li>
+<li>$\eta_2$ = the number of distinct operands</li>
+<li>$N_1$ = the total number of operators</li>
+<li>$N_2$ = the total number of operands</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p>some of the measures:</p>
+<ul>
+<li>program vocabulary: $\eta = \eta_1 + \eta_2$</li>
+<li>program length: $N = N_1 + N_2$</li>
+<li>calculated program length:
+$\widehat{N} = \eta_1 log_2{\eta_1} + \eta2 log_2{\eta_2}$</li>
+<li>volume: $V = N log_2{\eta}$</li>
+<li>difficulty: $D = \frac{\eta_1}{2} \cdot \frac{N_2}{\eta_2}$</li>
+<li>effort: $E = D \cdot V$</li>
+</ul>
+</div>
+</div>
+<!-- https://radon.readthedocs.io/en/latest/intro.html#halstead-metrics -->
+<h1 id="cyclomatic-comlexity"><a class="header" href="#cyclomatic-comlexity">cyclomatic comlexity</a></h1>
+<ul>
+<li>developed by Thomas J. McCabe in 1976</li>
+<li>quantitative measure of the number of linearly independent paths
+through the source code</li>
+<li>computed using the control-flow graph of the program</li>
+</ul>
+<p>defined as:</p>
+<p>$$ M = E - N + 2P $$</p>
+<div class="text-smaller">
+<ul>
+<li>E: the number of edges of the graph</li>
+<li>N: the number of nodes of the graph</li>
+<li>P: the number of connected components
+<ul>
+<li>for a single method, P always equals 1</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="cyclomatic-comlexity--example"><a class="header" href="#cyclomatic-comlexity--example">cyclomatic comlexity – example</a></h2>
+<div class="columns">
+<div class="column" width="40%">
+<pre><code class="language-python">def calculate_progress(
+    finished: int,
+    total: int,
+    as_percentage: bool
+) -&gt; float:
+    progress = finished / total
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+</code></pre>
+</div>
+<div class="column" width="30%">
+<div class="text-smaller">
+<p>activity diagram</p>
+</div>
+<img src="figures/user_statistics/progress_activity.svg" width="300" />
+</div>
+<div class="column fragment" width="20%" data-fragment-index="1">
+<div class="text-smaller">
+<p>control flow</p>
+</div>
+<img src="figures/progress_control_flow_2.drawio.svg" width="300" />
+</div>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p>$$ CC = E - N + 2 $$ $$ CC = 4 - 4 + 2 $$ $$ CC = 2 $$</p>
+</div>
+<h2 id="cyclomatic-comlexity--2nd-example"><a class="header" href="#cyclomatic-comlexity--2nd-example">cyclomatic comlexity – 2nd example</a></h2>
+<div class="columns">
+<div class="column" width="40%">
+<pre><code class="language-python">def calculate_progress(
+    finished: int,
+    total: int,
+    as_percentage: bool,
+    foo: bool
+) -&gt; float:
+    progress = finished / total
+
+    if as_percentage and foo:
+        return progress * 100
+    else:
+        return progress
+</code></pre>
+</div>
+<div class="column" width="40%">
+<div class="text-smaller">
+<p>activity diagram</p>
+</div>
+<img src="figures/progress_foo.svg" width="300" />
+</div>
+<div class="column" width="20%">
+<div class="text-smaller">
+<p>control flow</p>
+</div>
+<img src="figures/progress_foo_2.drawio.svg" width="300" />
+</div>
+</div>
+<div>
+<p>$$ CC = E - N + 2 $$ $$ CC = 7 - 6 + 2 $$ $$ CC = 3 $$</p>
+</div>
+<h2 id="python-statements-effects-on-cyclomatic-complexity"><a class="header" href="#python-statements-effects-on-cyclomatic-complexity">Python statements’ effects on cyclomatic complexity</a></h2>
+<div class="text-smaller">
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 6%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>construct</th>
+<th>effect</th>
+<th>reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>if</td>
+<td>+1</td>
+<td>An if statement is a single decision.</td>
+</tr>
+<tr class="even">
+<td>elif</td>
+<td>+1</td>
+<td>The elif statement adds another decision.</td>
+</tr>
+<tr class="odd">
+<td>else</td>
+<td>+0</td>
+<td>The else statement does not cause a new decision. The decision is at
+the if.</td>
+</tr>
+<tr class="even">
+<td>for</td>
+<td>+1</td>
+<td>There is a decision at the start of the loop.</td>
+</tr>
+<tr class="odd">
+<td>while</td>
+<td>+1</td>
+<td>There is a decision at the while statement.</td>
+</tr>
+<tr class="even">
+<td>except</td>
+<td>+1</td>
+<td>Each except branch adds a new conditional path of execution.</td>
+</tr>
+<tr class="odd">
+<td>finally</td>
+<td>+0</td>
+<td>The finally block is unconditionally executed.</td>
+</tr>
+<tr class="even">
+<td>with</td>
+<td>+1</td>
+<td>The with statement roughly corresponds to a try/except block.</td>
+</tr>
+<tr class="odd">
+<td>boolean operator</td>
+<td>+1</td>
+<td>Every boolean operator (and, or) adds a decision point.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="text-smaller">
+<p>source: Radon
+<a href="https://radon.readthedocs.io/en/latest/index.html">documentation</a>
+(Radon documentation, n.d.)</p>
+</div>
+<!--|assert          |+1|The assert statement internally roughly equals a conditional statement.           |
+|comprehension   |+1|A list/set/dict comprehension of generator expression is equivalent to a for loop.|-->
+<h2 id="interpretation-of-cyclomatic-complexity--radon"><a class="header" href="#interpretation-of-cyclomatic-complexity--radon">interpretation of cyclomatic complexity – Radon</a></h2>
+<table>
+<thead>
+<tr class="header">
+<th>CC score</th>
+<th>rank</th>
+<th>risk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 - 5</td>
+<td>A</td>
+<td>low - simple block</td>
+</tr>
+<tr class="even">
+<td>6 - 10</td>
+<td>B</td>
+<td>low - well structured and stable block</td>
+</tr>
+<tr class="odd">
+<td>11 - 20</td>
+<td>C</td>
+<td>moderate - slightly complex block</td>
+</tr>
+<tr class="even">
+<td>21 - 30</td>
+<td>D</td>
+<td>more than moderate - more complex block</td>
+</tr>
+<tr class="odd">
+<td>31 - 40</td>
+<td>E</td>
+<td>high - complex block, alarming</td>
+</tr>
+<tr class="even">
+<td>41+</td>
+<td>F</td>
+<td>very high - error-prone, unstable block</td>
+</tr>
+</tbody>
+</table>
+<div class="text-smaller">
+<p>source: Radon
+<a href="https://radon.readthedocs.io/en/latest/index.html">documentation</a>
+(Radon documentation, n.d.)</p>
+</div>
+<h1 id="maintainability-index"><a class="header" href="#maintainability-index">maintainability index</a></h1>
+<p>original (Coleman et al., 1994):<br />
+$$ MI = 171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L} $$</p>
+<p>Visual Studio derivate:<br />
+$$ MI = max\left[0,100 \frac{171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L}}{171}\right] $$</p>
+<div class="text-smaller mt-2">
+<div class="columns column-gapless">
+<div class="column mt-2" width="40%">
+<ul>
+<li>V: the Halstead volume</li>
+<li>G: the total cyclomatic complexity</li>
+<li>L: the number of source lines of code</li>
+</ul>
+</div>
+<div class="column text-size-1" width="30%">
+<table>
+<caption>Visual Studio</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">score</th>
+<th style="text-align: center;">maintainability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0-10</td>
+<td style="text-align: center;">low</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10-20</td>
+<td style="text-align: center;">moderate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">20+</td>
+<td style="text-align: center;">high</td>
+</tr>
+</tbody>
+</table>
+<p>Visual Studio</p>
+</div>
+<div class="column text-size-1" width="30%">
+<table>
+<caption>based on <span class="citation"
+data-cites="sharma2024analyzing">(Sharma, 2024)</span></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">score</th>
+<th style="text-align: center;">maintainability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0–10</td>
+<td style="text-align: center;">low</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10–20</td>
+<td style="text-align: center;">moderate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">20–30</td>
+<td style="text-align: center;">good</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">30–40</td>
+<td style="text-align: center;">very good</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">40–100</td>
+<td style="text-align: center;">excellent</td>
+</tr>
+</tbody>
+</table>
+<p>based on (Sharma, 2024)</p>
+</div>
+</div>
+</div>
+<div class="text-smaller mt-2 fragment">
+<p><strong>issues</strong>: ease of computation, language independence,
+understandability, explainability (Heitlager et al., 2007)</p>
+<p>read more in <a href="https://avandeursen.com/2014/08/29/think-twice-before-using-the-maintainability-index/">Think Twice Before Using the “Maintainability
+Index”</a>
+(Deursen, 2014)</p>
+</div>
+<h2 id="maintainability-index--example"><a class="header" href="#maintainability-index--example">maintainability index – example</a></h2>
+<pre><code class="language-python">def calculate_progress(finished: int, total: int, as_percentage: bool) -&gt; float:
+    progress = finished / total
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+
+
+def calculate_progress_2(
+    finished: int, total: int, as_percentage: bool, foo: bool
+) -&gt; float:
+    progress = finished / total
+
+    if as_percentage and foo:
+        return progress * 100
+    else:
+        return progress
+</code></pre>
+<ul>
+<li>maintainability index for a script containing the code above is
+<strong>63.71</strong></li>
+<li>calculated with Radon</li>
+</ul>
+<h1 id="go-report"><a class="header" href="#go-report">go report</a></h1>
+<div class="columns">
+<div class="column mt-3" width="75%">
+<ul>
+<li><strong>gofmt</strong>: style guide</li>
+<li>go_vet: reports suspicious constructs (Go specific)</li>
+<li>ineffassign: detects ineffectual assignments in Go code</li>
+<li><strong>gocyclo</strong>: cyclomatic complexity</li>
+<li>license: checks whether your project has a LICENSE file</li>
+<li>misspell: finds commonly misspelled English words</li>
+</ul>
+</div>
+<div class="column text-smaller table-image-margin-0" width="25%">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">score</th>
+<th style="text-align: center;">grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">&gt;90</td>
+<td style="text-align: center;"><img src="figures/go%20report_%20A+.svg"
+width="113" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">&gt;80</td>
+<td style="text-align: center;"><img src="figures/go%20report_%20A.svg"
+width="100" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">&gt;70</td>
+<td style="text-align: center;"><img src="figures/go%20report_%20B.svg"
+width="100" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">&gt;60</td>
+<td style="text-align: center;"><img src="figures/go%20report_%20C.svg"
+width="100" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">&gt;50</td>
+<td style="text-align: center;"><img src="figures/go%20report_%20D.svg"
+width="100" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">&gt;40</td>
+<td style="text-align: center;"><img src="figures/go%20report_%20E.svg"
+width="100" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">&lt;=40</td>
+<td style="text-align: center;"><img src="figures/go%20report_%20F.svg"
+width="100" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><a href="https://goreportcard.com/report/code.gitea.io/gitea">Go Report Card for
+Gitea</a></p>
+<!--GoFmt: 0.30
+GoLint: 0.10
+go_vet: 0.30
+GoCyclo: 0.10
+IneffAssign: 0.10
+Misspell: 0.05
+Staticcheck: 0.15
+ErrCehck: 0.15
+Licence: 0.00-->
+<h1 id="code-chunk-permanence-in-a-codebase"><a class="header" href="#code-chunk-permanence-in-a-codebase">code chunk permanence in a codebase</a></h1>
+<!--:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+&#10;:::::::::
+::::::::: {.column width="50%"}
+&#10;:::::::::
+::::::::::::-->
+<figure>
+<img
+src="https://raw.githubusercontent.com/src-d/hercules/refs/heads/master/doc/linux.png"
+width="400"
+alt="Linux codebase – from the Hercules (Git history analyser) documentation" />
+<figcaption aria-hidden="true">Linux codebase – from the <a
+href="https://github.com/src-d/hercules">Hercules</a> (Git history
+analyser) documentation</figcaption>
+</figure>
+<div class="mt-2">
+<ul>
+<li>there was no need to change it, presumably it was written well in the
+first place</li>
+<li>multiple changes in a short period indicate problems during software
+development (Nagappan et al., 2010)</li>
+</ul>
+</div>
+<h1 id="wtf-per-minute"><a class="header" href="#wtf-per-minute">WTF per minute</a></h1>
+<figure>
+<img src="figures/wtf_per_minute.drawio.svg" width="725"
+alt="own drawing based on Glen Lipka’s" />
+<figcaption aria-hidden="true">own drawing based on <a
+href="https://commadot.com/wtf-per-minute/">Glen
+Lipka’s</a></figcaption>
+</figure>
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+line-spacing="2">
+<div id="ref-atwood2006code" class="csl-entry">
+<p>Atwood, J. (2006). <em>Code smells</em>. <a href="
+                   https://blog.codinghorror.com/code-smells/
+                    " class="uri">
+https://blog.codinghorror.com/code-smells/
+</a>.</p>
+</div>
+<div id="ref-coleman1994using" class="csl-entry">
+<p>Coleman, D., Ash, D., Lowther, B., &amp; Oman, P. (1994). Using metrics to
+evaluate software system maintainability. <em>Computer</em>, <em>27</em>(8), 44–49.</p>
+</div>
+<div id="ref-vandeursen2014think" class="csl-entry">
+<p>Deursen, A. van. (2014). <em>Think twice before using the “maintainability
+index”</em>. <a href="
+                   https://avandeursen.com/2014/08/29/think-twice-before-using-the-maintainability-index/
+                    " class="uri">
+https://avandeursen.com/2014/08/29/think-twice-before-using-the-maintainability-index/
+</a>.</p>
+</div>
+<div id="ref-femmer2017rapid" class="csl-entry">
+<p>Femmer, H., Fernández, D. M., Wagner, S., &amp; Eder, S. (2017). Rapid
+quality assurance with requirements smells. <em>Journal of Systems and
+Software</em>, <em>123</em>, 190–213.</p>
+</div>
+<div id="ref-fowler2006code" class="csl-entry">
+<p>Fowler, M. (2006). <em>Code smell</em>. <a href="
+                   https://martinfowler.com/bliki/CodeSmell.html
+                    " class="uri">
+https://martinfowler.com/bliki/CodeSmell.html
+</a>.</p>
+</div>
+<div id="ref-heitlager2007practical" class="csl-entry">
+<p>Heitlager, I., Kuipers, T., &amp; Visser, J. (2007). A practical model for
+measuring maintainability. <em>6th International Conference on the Quality
+of Information and Communications Technology (QUATIC 2007)</em>, 30–39.</p>
+</div>
+<div id="ref-martin2009clean" class="csl-entry">
+<p>Martin, R. C. (2009). <em>Clean code: A handbook of agile software
+craftsmanship</em>. Pearson Education.</p>
+</div>
+<div id="ref-migues2014understanding" class="csl-entry">
+<p>Migues, S. (2014). <em>Understanding the apple “goto fail;” vulnerability</em>.
+<a href="
+                    https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html
+                    " class="uri">
+https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html
+</a>.</p>
+</div>
+<div id="ref-nagappan2010change" class="csl-entry">
+<p>Nagappan, N., Zeller, A., Zimmermann, T., Herzig, K., &amp; Murphy, B.
+(2010). Change bursts as defect predictors. <em>2010 IEEE 21st
+International Symposium on Software Reliability Engineering</em>, 309–318.</p>
+</div>
+<div id="ref-radon" class="csl-entry">
+<p>Radon documentation. (n.d.). <a href="
+                   https://radon.readthedocs.io/en/latest/intro.html
+                    " class="uri">
+https://radon.readthedocs.io/en/latest/intro.html
+</a>.</p>
+</div>
+<div id="ref-sharma2024analyzing" class="csl-entry">
+<p>Sharma, V. (2024). <em>Analyzing software code — maintainability index</em>.
+<a href="
+                   https://mvineetsharma.medium.com/analyzing-software-code-maintainability-index-9765896c80f9
+                    " class="uri">
+https://mvineetsharma.medium.com/analyzing-software-code-maintainability-index-9765896c80f9
+</a>.</p>
+</div>
+<div id="ref-venners2003orthogonality" class="csl-entry">
+<p>Venners, B. (2003). <em>Orthogonality and the DRY principle</em>. <a href="
+                   https://www.artima.com/articles/orthogonality-and-the-dry-principle
+                    " class="uri">
+https://www.artima.com/articles/orthogonality-and-the-dry-principle
+</a>.</p>
+</div>
+<div id="ref-wheeler2014apple" class="csl-entry">
+<p>Wheeler, D. A. (2014). <em>The apple goto fail vulnerability: Lessons
+learned</em>. <a href="
+                    https://dwheeler.com/essays/apple-goto-fail.html
+                    " class="uri">
+https://dwheeler.com/essays/apple-goto-fail.html
+</a>.</p>
+</div>
+<div id="ref-enwiki:1236668404" class="csl-entry">
+<p>Wikipedia contributors. (2024). <em>Software rot — Wikipedia, the free
+encyclopedia</em>. <a href="
+                    https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+                    " class="uri">
+https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+</a>.</p>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/12_clean_code.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../lectures/14_code_review.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/12_clean_code.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../lectures/14_code_review.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

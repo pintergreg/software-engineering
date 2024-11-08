@@ -1,0 +1,1326 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>clean code - handout</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="software engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <div class="sidebar-scrollbox"></div>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <script async src="../toc.js"></script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">handout</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="software-design-and-architecture-stack"><a class="header" href="#software-design-and-architecture-stack">software design and architecture stack</a></h1>
+<figure>
+<img
+src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
+height="475" alt="based on Khalil Stemmel’s figure (Stemmler, 2019)" />
+<figcaption aria-hidden="true">based on Khalil Stemmel’s figure <span
+class="citation" data-cites="stemmler2019how">(Stemmler,
+2019)</span></figcaption>
+</figure>
+<h1 id="hierarchy-in-style-guides"><a class="header" href="#hierarchy-in-style-guides">hierarchy in style guides</a></h1>
+<div class="columns">
+<div class="column" width="55">
+<ul>
+<li>language level:
+<ul>
+<li>Python: <a href="https://peps.python.org/pep-0008/">PEP 8</a> or
+<a href="https://pep8.org/">pep8.org</a></li>
+<li>Ruby: <a href="https://rubystyle.guide/">Ruby Style Guide</a></li>
+<li>Rust <a href="https://doc.rust-lang.org/beta/style-guide/index.html">The Rust Style
+Guide</a></li>
+<li>etc.</li>
+</ul>
+</li>
+<li>organization level:
+<ul>
+<li><a href="https://google.github.io/styleguide/">Google Style Guides</a>
+<ul>
+<li><a href="https://google.github.io/styleguide/csharp-style.html">C# at Google Style
+Guide</a></li>
+<li><a href="https://google.github.io/styleguide/pyguide.html">Google Python Style
+Guide</a></li>
+<li><a href="https://google.github.io/styleguide/tsguide.html">Google TypeScript Style
+Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="fragment">
+<p>not just style guides, also best practices</p>
+</div>
+</div>
+<div class="column" width="45%">
+<img src="figures/style_hierarchy.drawio.svg" width="300" />
+</div>
+</div>
+<h1 id="write-idiomatic-code"><a class="header" href="#write-idiomatic-code">write idiomatic code</a></h1>
+<div class="columns">
+<div class="column" width="70">
+<div class="text-align-left">
+<ul>
+<li>a prog. language implements a prog. paradigm</li>
+<li>a paradigm defines a certain “way” of writing code
+<ul>
+<li>using different abstractions / building blocks</li>
+<li>promoting a given concept</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="fragment text-align-left">
+<ul>
+<li>some languages implements multiple paradigms</li>
+</ul>
+</div>
+<div class="fragment text-align-left">
+<ul>
+<li>and languages have their own way of doing things
+<ul>
+<li>languages have pros and cons</li>
+<li>for a given problem</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="column" width="30%">
+<p><img src="figures/publicdomainvectors/rural-road-with-signpost.svg"
+width="250" /></p>
+</div>
+</div>
+<div class="fragment mt-3">
+<p>just as in the case of natural languages, you ought to use a language
+properly</p>
+</div>
+<h2 id="write-idiomatic-code-1"><a class="header" href="#write-idiomatic-code-1">write idiomatic code</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="55">
+<pre><code class="language-javascript">for (i = 0; i &lt; 10; i++) {
+    console.log(i);
+}
+</code></pre>
+<div class="fragment" data-fragment-index="5">
+<pre><code class="language-javascript">[...Array(10).keys()].forEach(i =&gt; {
+    console.log(i);
+});
+</code></pre>
+</div>
+</div>
+<div class="column" width="20%">
+<pre><code class="language-python">i = 0
+while i &lt; 10:
+    print(i)
+    i += 1
+</code></pre>
+<div class="fragment" data-fragment-index="1">
+<pre><code class="language-python">for i in range(10):
+    print(i)
+</code></pre>
+</div>
+</div>
+<div class="column" width="25%">
+<div class="fragment" data-fragment-index="2">
+<pre><code class="language-ruby">for i in 0..9 do
+   puts i
+end
+</code></pre>
+</div>
+<div class="fragment" data-fragment-index="3">
+<pre><code class="language-ruby">(0..9).each do |i|
+    puts i
+end
+</code></pre>
+</div>
+<div class="fragment" data-fragment-index="4">
+<pre><code class="language-ruby">(0..9).each {|i| puts i}
+</code></pre>
+</div>
+</div>
+</div>
+<h1 id="clean-code"><a class="header" href="#clean-code">clean code</a></h1>
+<p>Clean Code: A Handbook of Agile Software Craftsmanship</p>
+<p>by Robert C. Martin (2009) (Martin, 2009)</p>
+<!--::: {.fragment .text-smaller}
+some recommendations are too specific to C-like languages
+:::-->
+<h1 id="meaningful-names"><a class="header" href="#meaningful-names">meaningful names</a></h1>
+<div class="columns">
+<div class="column mt-5" width="60%">
+<p>this section is based on the book <em>Clean Code</em> (chapter 2) by Robert C.
+Martin (Martin, 2009)</p>
+<p>with own examples</p>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/publicdomainvectors/hand-with-bottle.svg"
+height="300" /></p>
+</div>
+</div>
+<h2 id="use-intention-revealing-names"><a class="header" href="#use-intention-revealing-names">use intention-revealing names</a></h2>
+<div class="text-size-3">
+<pre><code class="language-c">int d; // elapsed time in days
+</code></pre>
+<div class="text-size-2 fragment" data-fragment-index="1">
+<p>the definition is only available ad the declaration</p>
+</div>
+<pre><code class="language-c">int elapsedTimeInDays;
+</code></pre>
+<div class="text-size-2 fragment" data-fragment-index="1">
+<p>the definition is available at every usage</p>
+</div>
+</div>
+<h2 id="multi-word-names"><a class="header" href="#multi-word-names">multi-word names</a></h2>
+<div class="columns">
+<div class="column" width="32">
+<p><strong>camelCase</strong></p>
+<div class="mt-4">
+<pre><code class="language-c">int elapsedTimeInDays;
+</code></pre>
+</div>
+<div class="text-smaller">
+<ul>
+<li>C (local variable)</li>
+<li>Java (variable, method)</li>
+</ul>
+</div>
+</div>
+<div class="column" width="32%">
+<p><strong>UpperCamelCase (PascalCase)</strong></p>
+<pre><code class="language-java">public class DataCollector {}
+</code></pre>
+<div class="text-smaller">
+<ul>
+<li>Java (class)</li>
+<li>Rust (Type, Enum)</li>
+</ul>
+</div>
+</div>
+<div class="column" width="32%">
+<p><strong>snake_case</strong></p>
+<div class="mt-4">
+<pre><code class="language-python">elapsed_time_in_days = 17
+</code></pre>
+</div>
+<div class="text-smaller">
+<ul>
+<li>Python</li>
+<li>Rust (variable, function)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment mt-4">
+<!-- according to a study, camelCase is faster to type but snake_case is faster to read [@sharif2010eye] -->
+<p>a study states, camelCase is faster to type but snake_case is faster to
+read (Sharif &amp; Maletic, 2010)</p>
+</div>
+<div class="fragment mt-2">
+<p>read the style guide</p>
+</div>
+<h2 id="avoid-disinformation"><a class="header" href="#avoid-disinformation">avoid disinformation</a></h2>
+<blockquote>
+<p>Do not refer to a grouping of accounts as an <code>accountList</code> unless it’s
+actually a <code>List</code> (Martin, 2009).</p>
+</blockquote>
+<div class="text-smaller">
+<p>better to use <code>accounts</code>, it does not depend on the collection name</p>
+</div>
+<div class="fragment mt-3">
+<p>inconsistent spelling is also disinformation</p>
+</div>
+<div class="fragment mt-3">
+<blockquote>
+<p>disinformative names would be the use of lower-case <code>L</code> or uppercase
+<code>O</code> (Martin, 2009)</p>
+</blockquote>
+<ul>
+<li>they can look almost like the one and zero, respectively – use the
+right font</li>
+<li>PEP8 (Python style guide) <a href="https://pep8.org/#names-to-avoid">forbids</a>
+to use them</li>
+</ul>
+</div>
+<h2 id="make-meaningful-distinctions"><a class="header" href="#make-meaningful-distinctions">make meaningful distinctions</a></h2>
+<blockquote>
+<p>It is not sufficient to add number series or noise words, even though
+the compiler is satisfied. If names must be different, then they
+should also mean something different (Martin, 2009).</p>
+</blockquote>
+<div class="text-size-2">
+<pre><code class="language-python">def calculate_distance(data: pd.DataFrame) -&gt; pd.Series:
+    # do something
+</code></pre>
+<pre><code class="language-python">def calculate_distance2(data: pd.DataFrame) -&gt; pd.Series:
+    # do something else
+</code></pre>
+<div class="fragment">
+<pre><code class="language-python">def calculate_eucledian_distance(data: pd.DataFrame) -&gt; pd.Series:
+    # ...
+</code></pre>
+<pre><code class="language-python">def calculate_levenshtein_distance(data: pd.DataFrame) -&gt; pd.Series:
+    # ...
+</code></pre>
+</div>
+</div>
+<h2 id="make-meaningful-distinctions--noise-words"><a class="header" href="#make-meaningful-distinctions--noise-words">make meaningful distinctions / noise words</a></h2>
+<blockquote>
+<p>Noise words are another meaningless distinction. Imagine that you have
+a <code>Product</code> class. If you have another called <code>ProductInfo</code> or
+<code>ProductData</code>, you have made the names different without making them
+mean anything different (Martin, 2009).</p>
+</blockquote>
+<h2 id="use-pronounceable-names"><a class="header" href="#use-pronounceable-names">use pronounceable names</a></h2>
+<blockquote>
+<p>If you can’t pronounce it, you can’t discuss it without sounding like
+an idiot (Martin, 2009).</p>
+</blockquote>
+<ul>
+<li>Should <code>etid</code> be an integer?</li>
+<li>Should <code>elapsed_time_in_days</code> be an integer?</li>
+</ul>
+<div class="fragment mt-3">
+<p>could be especially important for non-native speakers as some words are
+more difficult to pronounce</p>
+</div>
+<h2 id="use-searchable-names"><a class="header" href="#use-searchable-names">use searchable names</a></h2>
+<div class="columns">
+<div class="column mt-4" width="70%">
+<div class="wide-quote">
+<blockquote>
+<p>Single-letter names can ONLY be used as local variables inside short
+methods. The length of a name should correspond to the size of its
+scope (Martin, 2009).</p>
+</blockquote>
+</div>
+<div class="columns">
+<div class="column" width="40%">
+<p>it’s OK to do this:</p>
+<pre><code class="language-python">for i in range(10):
+    print(i)
+</code></pre>
+</div>
+<div class="column" width="60%">
+<p>it’s NOT OK in a large scope:</p>
+<pre><code class="language-c">int d; // elapsed time in days
+</code></pre>
+</div>
+</div>
+</div>
+<div class="column" width="30%">
+<img src="figures/variable_scope.drawio.svg" width="250" />
+</div>
+</div>
+<h2 id="names-for-classes-functions"><a class="header" href="#names-for-classes-functions">names for classes, functions</a></h2>
+<div class="columns mt-3">
+<div class="column" width="50%">
+<ul>
+<li>a class is a model / blueprint of <em>something</em></li>
+<li>the name should be a noun
+<ul>
+<li>e.g., <code>User</code>, <code>Activity</code></li>
+</ul>
+</li>
+<li>an object is an instance of a class
+<ul>
+<li>still a noun</li>
+<li>e.g., <code>user = User()</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<ul>
+<li>a function <em>does</em> something</li>
+<li>the name should contain a verb
+<ul>
+<li>in imperative</li>
+<li>e.g., <code>aggregate_activity</code></li>
+<li><s><code>activity_aggregation</code></s></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2 id="avoid-encodings"><a class="header" href="#avoid-encodings">avoid encodings</a></h2>
+<p>with modern IDEs it is pointless to put type or role markers into names</p>
+<div class="r-frame text-smaller">
+<p><strong>Hungarian notation</strong></p>
+<ul>
+<li>invented by Charles Simonyi at Microsoft</li>
+<li>adding a prefix to a name that gives information about type, length,
+or scope</li>
+</ul>
+<pre><code class="language-python">def fnFactorial(iNum):
+    if iNum == 1:
+        return iNum
+    else:
+        return iNum * fnFactorial(iNum - 1)
+</code></pre>
+<div class="text-small">
+<p>source: (Bhargav, 2024)</p>
+</div>
+</div>
+<div class="columns r-frame mt-1">
+<div class="column" width="50%">
+<pre><code class="language-csharp">interface IShapeArea // I is also a prefix
+{
+  void area(); 
+}
+</code></pre>
+</div>
+<div class="column" width="50%">
+<pre><code class="language-csharp">interface ShapeArea 
+{
+  void area(); 
+}
+</code></pre>
+</div>
+</div>
+<h2 id="avoid-mental-mapping"><a class="header" href="#avoid-mental-mapping">avoid mental mapping</a></h2>
+<blockquote>
+<p>Readers shouldn’t have to mentally translate your names into other
+names they already know (Martin, 2009).</p>
+</blockquote>
+<!-- CPU, USB, CLI, GUI, LED, RGB, ORM, PEP, RFC, GPS, etc... -->
+<div class="columns mt-4">
+<div class="column" width="50%">
+<img src="figures/mental_map_1.svg" width="200" />
+</div>
+<div class="column fragment" width="50%">
+<img src="figures/mental_map_2.svg" width="275" />
+</div>
+</div>
+<h2 id="dont-pun-or-use-humor"><a class="header" href="#dont-pun-or-use-humor">don’t pun or use humor</a></h2>
+<ul>
+<li>no inside jokes</li>
+<li>no colloquialisms or slang</li>
+<li>be objective and professional</li>
+</ul>
+<blockquote>
+<p>Say what you mean. Mean what you say (Martin, 2009).</p>
+</blockquote>
+<h2 id="pick-one-word-per-concept"><a class="header" href="#pick-one-word-per-concept">pick one word per concept</a></h2>
+<blockquote>
+<p>it’s confusing to have <code>fetch</code> , <code>retrieve</code>, and <code>get</code> as equivalent
+methods of different classes (Martin, 2009)</p>
+</blockquote>
+<p>it also helps to search for the term</p>
+<h2 id="add-meaningful-context"><a class="header" href="#add-meaningful-context">add meaningful context</a></h2>
+<blockquote>
+<p>Imagine that you have variables named firstName, lastName, street,
+houseNumber, city, state, and zipcode. Taken together it’s pretty
+clear that they form an address. But what if you just saw the state
+variable being used alone in a method? (Martin, 2009)</p>
+</blockquote>
+<ul>
+<li>adding a prefix?
+<ul>
+<li>e.g., <code>addrCity</code>, <code>addrStreet</code>, <code>addrState</code></li>
+</ul>
+</li>
+<li>as notations are discouraged, use an <code>Address</code> class instead to add
+context</li>
+</ul>
+<h1 id="functions"><a class="header" href="#functions">functions</a></h1>
+<div class="columns">
+<div class="column mt-5" width="60%">
+<p>this section is based on the book <em>Clean Code</em> (chapter 3) by Robert C.
+Martin (Martin, 2009)</p>
+<p>with own examples</p>
+</div>
+<div class="column" width="40%">
+<img src="figures/publicdomainvectors/cogwheel.svg" height="300" />
+</div>
+</div>
+<h2 id="functions-should-be-as-small-as-possible"><a class="header" href="#functions-should-be-as-small-as-possible">functions should be as small as possible</a></h2>
+<blockquote>
+<p>Functions should hardly ever be 20 lines long (Martin, 2009)</p>
+</blockquote>
+<ul>
+<li>shorter functions are easier to understand</li>
+</ul>
+<h2 id="do-one-thing-single-responsibility-principle"><a class="header" href="#do-one-thing-single-responsibility-principle">do one thing (single responsibility principle)</a></h2>
+<div class="columns column-gapless fragment">
+<div class="column pre-height-100" width="68%">
+<div class="text-smaller pre-height-100">
+<pre><code class="language-python">import sqlite3
+import pandas as pd
+
+con = sqlite3.connect("data.db")
+data = pd.read_sql(activity_query, con)
+
+records = []
+for woy in range(36, 40):
+    for dow in range(1, 8):
+        records.append([woy, dow, 0])
+empty = pd.DataFrame.from_records(
+    records, columns=["week_of_year", "day_of_week", "count"]
+)
+data = (
+    pd.concat([data, empty])
+    .drop_duplicates(subset=["week_of_year", "day_of_week"], keep="first")
+    .sort_values(["week_of_year", "day_of_week"])
+    .reset_index(drop=True)
+)
+activity = pd.pivot(
+    data, index=["week_of_year"], columns=["day_of_week"], values=["count"]
+).values
+res = con.execute(progress_query)
+progress = res.fetchone()[0]
+</code></pre>
+</div>
+</div>
+<div class="column" width="32%">
+<div class="text-smaller">
+<pre><code class="language-sql">SELECT
+    CAST(
+        strftime('%W', timestamp) 
+        AS INTEGER
+    ) AS week_of_year,
+    CAST(
+        strftime('%u', timestamp)
+        AS INTEGER
+    ) AS day_of_week,
+    count(*) AS count
+FROM activity
+WHERE
+    user_id = 42 AND
+    week_of_year &gt; 35 AND
+    week_of_year &lt; 40
+GROUP BY
+    week_of_year,
+    day_of_week;
+</code></pre>
+<pre><code class="language-sql">SELECT
+    lesson / 50.0 AS progress
+FROM activity
+WHERE
+    user_id = 42 AND
+    result = 'success'
+ORDER BY lesson DESC
+LIMIT 1;
+</code></pre>
+</div>
+</div>
+</div>
+<h2 id="debug-tables"><a class="header" href="#debug-tables">debug tables</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<div class="text-smaller">
+<table>
+<caption>queried user activity</caption>
+<thead>
+<tr class="header">
+<th>week_of_year</th>
+<th>day_of_week</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>36</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>38</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>39</td>
+<td>6</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>queried user activity</p>
+</div>
+<div class="text-smaller mt-5">
+<table>
+<caption>pivoted user activity table</caption>
+<thead>
+<tr class="header">
+<th>day_of_week</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>week_of_year</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>36</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>37</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>38</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>39</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>pivoted user activity table</p>
+</div>
+</div>
+<div class="column" width="50%">
+<div class="text-smaller">
+<table>
+<caption>empty activity table</caption>
+<thead>
+<tr class="header">
+<th>week_of_year</th>
+<th>day_of_week</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>36</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>36</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>36</td>
+<td>7</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>37</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td>37</td>
+<td>7</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>38</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>38</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>39</td>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>39</td>
+<td>7</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>empty activity table</p>
+</div>
+</div>
+</div>
+<h2 id="the-inverse-scope-law-of-function-names"><a class="header" href="#the-inverse-scope-law-of-function-names">the inverse scope law of function names</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<div class="wide-quote">
+<blockquote>
+<p><strong>The longer the scope of a function, the shorter its name should
+be.</strong> Functions that are called locally from a few nearby places
+should have long descriptive names, and the longest function names
+should be given to those functions that are called from just one
+place.</p>
+<p>– <a href="https://www.informit.com/articles/article.aspx?p=1323426">Robert C.
+Martin</a></p>
+</blockquote>
+</div>
+<div class="text-smaller mt-3">
+<p>“longer scope”: more general part of a code</p>
+</div>
+</div>
+<div class="column fragment" width="30%">
+<img src="figures/name_and_scope.drawio.svg" width="300" />
+</div>
+</div>
+<h2 id="function-arguments"><a class="header" href="#function-arguments">function arguments</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="45%">
+<div class="text-align-left">
+<ul>
+<li>do not use more than three (Martin, 2009)</li>
+</ul>
+</div>
+<div class="text-align-left fragment" data-fragment-index="1">
+<ul>
+<li>what if you’d need more?
+<ul>
+<li>wrap it into an object</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="text-align-left fragment" data-fragment-index="2">
+<ul>
+<li>do not use flags
+<ul>
+<li><span class="text-smaller">“Flag arguments are ugly […] loudly
+proclaiming that this function does more than one thing (Martin,
+2009).”</span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="column" width="55%">
+<pre><code class="language-python">def build_empty_dataframe(start, end, cols):
+    records = []
+    for woy in range(start, end + 1):
+        for dow in range(1, 8):
+            records.append([woy, dow, 0])
+    return pd.DataFrame.from_records(
+        records, columns=cols
+    )
+</code></pre>
+<div class="fragment" data-fragment-index="2">
+<pre><code class="language-python">def query_progress(as_percentage: bool):
+    res = con.execute(progress_query)
+    progress = res.fetchone()[0]
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+</code></pre>
+</div>
+</div>
+</div>
+<h2 id="function-as-interface"><a class="header" href="#function-as-interface">function as interface</a></h2>
+<div class="columns">
+<div class="column pre-450" width="60%">
+<pre><code class="language-python">DataFrame.to_csv(
+    path_or_buf=None, *,
+    sep=',',
+    na_rep='',
+    float_format=None,
+    columns=None,
+    header=True,
+    index=True,
+    index_label=None,
+    mode='w',
+    encoding=None,
+    compression='infer',
+    quoting=None,
+    quotechar='"',
+    lineterminator=None,
+    chunksize=None,
+    date_format=None,
+    doublequote=True,
+    escapechar=None,
+    decimal='.',
+    errors='strict',
+    storage_options=None
+)
+</code></pre>
+<!--```python
+DataFrame.to_csv(path_or_buf=None, *, sep=',', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression='infer', quoting=None, quotechar='"', lineterminator=None, chunksize=None, date_format=None, doublequote=True, escapechar=None, decimal='.', errors='strict', storage_options=None)
+```-->
+</div>
+<div class="column mt-5" width="40%">
+<figure>
+<img src="figures/lo_calc_save_csv.png" width="450"
+alt="Libreoffice Calc CSV settings dialog" />
+<figcaption aria-hidden="true">Libreoffice Calc CSV settings
+dialog</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="no-side-effects"><a class="header" href="#no-side-effects">no side effects</a></h2>
+<div class="columns">
+<div class="column wide-qoute" width="50%">
+<blockquote>
+<p>Side effects are lies. Your function promises to do one thing, but it
+also does other hidden things (Martin, 2009).</p>
+<p>– Robert C. Martin</p>
+</blockquote>
+</div>
+<div class="column text-smaller wide-qoute" width="50%">
+<blockquote>
+<p>an operation, function or expression is said to have a <strong>side effect</strong>
+if it modifies some state variable value(s) outside its local
+environment, that is to say has an observable effect besides returning
+a value (the main effect) to the invoker of the operation (Wikipedia
+contributors, 2022).</p>
+</blockquote>
+</div>
+</div>
+<h2 id="side-effect-example"><a class="header" href="#side-effect-example">side effect example</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="50%">
+<pre><code class="language-python">class Something:
+    foo = 0
+    
+    def increase(self, by):
+        self.foo += by
+    
+    def decrease(self, by):
+        self.foo -= by
+    
+something = Something()
+print(something.foo)  # 0
+something.increase(2)
+print(something.foo)  # 2
+</code></pre>
+</div>
+<div class="column fragment" width="50%">
+<pre><code class="language-python">smth = {"foo": 0}
+
+def increase(what, by):
+    return what + by
+
+def decrease(what, by):
+    return what - by
+
+print(smth["foo"])  # 0
+increase(smth["foo"], 2)  # 2
+print(smth["foo"])  # 0
+smth["foo"] = increase(smth["foo"], 2)
+print(smth["foo"])  # 2
+</code></pre>
+</div>
+</div>
+<h2 id="prefer-exceptions-to-returning-error-codes"><a class="header" href="#prefer-exceptions-to-returning-error-codes">prefer exceptions to returning error codes</a></h2>
+<ul>
+<li>in unix-like systems processes still return 0 if the execution was
+successful</li>
+<li>but returning error codes in functions are discouraged</li>
+<li><code>FileNotFoundException</code> is better than <code>ERRCODE_26375</code>
+<ul>
+<li>meaningful name</li>
+<li>no mental mapping</li>
+<li>exception handling syntactically more readable</li>
+</ul>
+</li>
+</ul>
+<h1 id="comments"><a class="header" href="#comments">comments</a></h1>
+<div class="columns">
+<div class="column mt-5" width="60%">
+<p>this section is based on the book <em>Clean Code</em> (chapter 4) by Robert C.
+Martin (Martin, 2009)</p>
+<p>with own examples</p>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/publicdomainvectors/notebook-papers.svg"
+height="300" /></p>
+</div>
+</div>
+<h2 id="separating-comments"><a class="header" href="#separating-comments">separating comments</a></h2>
+<pre><code class="language-python"># connect to the database
+con = sqlite3.connect("data.db")
+# query activity data
+data = pd.read_sql(activity_query, con)
+# create empty dataframe
+records = []
+for woy in range(36, 40):
+    for dow in range(1, 8):
+        records.append([woy, dow, 0])
+empty = pd.DataFrame.from_records(records, columns=["week_of_year", "day_of_week", "count"])
+# combine empty and sparse dataframe
+data = (
+    pd.concat([data, empty])
+    .drop_duplicates(subset=["week_of_year", "day_of_week"], keep="first")
+    .sort_values(["week_of_year", "day_of_week"])
+    .reset_index(drop=True)
+)
+# pivot dataframe
+activity = pd.pivot(
+    data, index=["week_of_year"], columns=["day_of_week"], values=["count"]
+).values
+</code></pre>
+<h2 id="separated-functions"><a class="header" href="#separated-functions">separated functions</a></h2>
+<pre><code class="language-python">def create_empty_dataframe(start_week, end_week):
+    records = []
+    for woy in range(start_week, end_week+1):
+        for dow in range(1, 8):
+            records.append([woy, dow, 0])
+    return pd.DataFrame.from_records(
+        records, columns=["week_of_year", "day_of_week", "count"]
+    )
+
+def fill_empty_with_activities(empty, activities):
+    return (
+        pd.concat([activities, empty])
+        .drop_duplicates(subset=["week_of_year", "day_of_week"], keep="first")
+        .sort_values(["week_of_year", "day_of_week"])
+        .reset_index(drop=True)
+    )
+
+def pivot_dataframe(data):
+    return pd.pivot(
+        data, index=["week_of_year"], columns=["day_of_week"], values=["count"]
+    ).values
+</code></pre>
+<div class="text-smaller">
+<p>these functions do one thing</p>
+</div>
+<h2 id="separated-functions---usage"><a class="header" href="#separated-functions---usage">separated functions - usage</a></h2>
+<pre><code class="language-python">con = sqlite3.connect("data.db")
+
+activities = pd.read_sql(activity_query, con)
+
+empty = create_empty_dataframe(36, 39)
+
+data = fill_empty_with_activities(emty, activities)
+
+activities_matrix = pivot_dataframe(data)
+</code></pre>
+<p>only the comments remained, which can be read as a prose</p>
+<h2 id="more-bad-comments"><a class="header" href="#more-bad-comments">more bad comments</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="60%">
+<div>
+<p><strong>journal comment</strong></p>
+<pre><code class="language-python"># 2024-10-17 -- Add idiomatic coding examples 
+# 2024-10-18 -- Add meaningful names section 
+</code></pre>
+<div class="text-smaller">
+<p>the version tracker keeps better journal</p>
+</div>
+</div>
+<div>
+<p><strong>noise comments</strong></p>
+<pre><code class="language-python"># creates an empty dataframe
+def create_empty_dataframe(start_week, end_week):
+    # ...
+</code></pre>
+<div class="text-smaller">
+<p>don’t write something that is already in the code</p>
+</div>
+</div>
+<div>
+<p><strong>closing brace comments</strong></p>
+<pre><code class="language-javascript">for (i = 0; i &lt; 10; i++) {
+    console.log(i);
+} // for
+</code></pre>
+<div class="text-smaller">
+<p>modern editors can find (end display) the block endings</p>
+</div>
+</div>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="figures/borrowed/geek_and_poke/good_comments.jpg" width="375"
+alt="by Oliver Widder (Geek and Poke) CC BY 3.0" />
+<figcaption aria-hidden="true">by Oliver Widder (Geek and Poke) <a
+href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></figcaption>
+</figure>
+</div>
+</div>
+<h2 id="apollo-11---colossus-2a"><a class="header" href="#apollo-11---colossus-2a">Apollo 11 - Colossus 2A</a></h2>
+<pre><code class="language-numberLines">P21VSAVE    DLOAD           # SAVE CURRENT BASE VECTOR
+            TAT
+        STOVL   P21TIME     # ..TIME
+            RATT1
+        STOVL   P21BASER    # ..POS B-29 OR B-27
+            VATT1
+        STORE   P21BASEV    # ..VEL B-7  OR B-5
+        ABVAL   SL*
+            0,2
+        STOVL   P21VEL      # /VEL/ FOR N73 DSP
+            RATT
+        UNIT    DOT
+            VATT        # U(R).(V)
+        DDV ASIN        # U(R).U(V)
+            P21VEL
+        STORE   P21GAM      # SIN-1 U(R).U(V), -90 TO +90
+        SXA,2   SET
+            P21ORIG     # 0 = EARTH  2 = MOON
+            P21FLAG
+</code></pre>
+<p><a href="https://github.com/chrislgarry/Apollo-11/blob/4d15e4d9d37202847334d4c640058803ed4e782e/Comanche055/GROUND_TRACKING_DETERMINATION_PROGRAM.agc#L149-L167">source</a>,
+<a href="https://github.com/chrislgarry/Apollo-11">GitHub repository</a>, more
+about the Apollo Guidance Computer: (Slavin, 2015)</p>
+<h2 id="good-comments"><a class="header" href="#good-comments">good comments</a></h2>
+<p><strong>legal comments</strong></p>
+<p>some open source licences should be included to the beginning of the
+files</p>
+<p><strong>informative comments</strong></p>
+<pre><code class="language-python">import re
+
+timestamp = "2024-10-22 09:30:42"
+# matches for timestamps in the format of: YYYY-MM-DD HH:MM:SS
+re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
+</code></pre>
+<div class="fragment">
+<p><strong>TODOs – good or bad?</strong></p>
+<pre><code class="language-python"># TODO: this allows invalid month, day, hour, minute and second values
+re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
+</code></pre>
+<p><span class="text-smaller">editors can collect <code>TODO</code> (and <code>FIXME</code>)
+annotations and warn about them</span></p>
+</div>
+<h2 id="documentation"><a class="header" href="#documentation">documentation</a></h2>
+<div class="pre-475">
+<pre><code class="language-python">def fizzbuzz(i: int) -&gt; str:
+    """Fizzbuzz is a game for children to teach them about division.
+    It is also a common coding practice.
+    
+    Parameters
+    ----------
+    i : int
+        Input number tested against division by 3, 5 and 15.
+    
+    Returns
+    -------
+    str
+        `Fizz` if input divisible by 3, `Buzz` if divisible by 5 and `FizzBuzz` if both.
+    """
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+</code></pre>
+</div>
+<h2 id="doctest"><a class="header" href="#doctest">doctest</a></h2>
+<div class="pre-475">
+<pre><code class="language-python">def fizzbuzz(i: int) -&gt; str:
+    """
+    &gt;&gt;&gt; fizzbuzz(3)
+    'Fizz'
+    &gt;&gt;&gt; fizzbuzz(5)
+    'Buzz'
+    &gt;&gt;&gt; fizzbuzz(12)
+    'Fizz'
+    &gt;&gt;&gt; fizzbuzz(15)
+    'FizzBuzz'
+    &gt;&gt;&gt; fizzbuzz(17)
+    '17'
+    """
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+</code></pre>
+</div>
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+line-spacing="2">
+<div id="ref-bhargav2024hungarian" class="csl-entry">
+<p>Bhargav, N. (2024). <em>Hungarian notation</em>. <a href="
+                    https://www.baeldung.com/cs/hungarian-notation
+                    " class="uri">
+https://www.baeldung.com/cs/hungarian-notation
+</a>.</p>
+</div>
+<div id="ref-martin2009clean" class="csl-entry">
+<p>Martin, R. C. (2009). <em>Clean code: A handbook of agile software
+craftsmanship</em>. Pearson Education.</p>
+</div>
+<div id="ref-sharif2010eye" class="csl-entry">
+<p>Sharif, B., &amp; Maletic, J. I. (2010). An eye tracking study on camelcase
+and under_score identifier styles. <em>2010 IEEE 18th International
+Conference on Program Comprehension</em>, 196–205.</p>
+</div>
+<div id="ref-slavin2015coding" class="csl-entry">
+<p>Slavin, T. (2015). <em>Coding the apollo guidance computer (AGC)</em>.
+<a href="
+                   https://kidscodecs.com/coding-the-apollo-guidance-computer-agc/
+                    " class="uri">
+https://kidscodecs.com/coding-the-apollo-guidance-computer-agc/
+</a>.</p>
+</div>
+<div id="ref-stemmler2019how" class="csl-entry">
+<p>Stemmler, K. (2019). <em>How to learn software design and architecture</em>.
+<a href="
+                    https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
+                    " class="uri">
+https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
+</a>.</p>
+</div>
+<div id="ref-enwiki:1063806709" class="csl-entry">
+<p>Wikipedia contributors. (2022). <em>Side effect (computer science) —
+Wikipedia, the free encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Side_effect_(computer_science)&amp;oldid=1063806709">https://en.wikipedia.org/w/index.php?title=Side_effect_(computer_science)&amp;oldid=1063806709</a>.</p>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/11_wireframing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../lectures/13_code_quality.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/11_wireframing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../lectures/13_code_quality.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

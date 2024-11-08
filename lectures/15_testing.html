@@ -1,0 +1,2084 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>testing - handout</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="software engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <div class="sidebar-scrollbox"></div>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <script async src="../toc.js"></script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">handout</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="v-model-forsberg--mooz-1991"><a class="header" href="#v-model-forsberg--mooz-1991">V model (Forsberg &amp; Mooz, 1991)</a></h1>
+<div class="columns column-gapless text-smaller">
+<div class="column mt-4" width="50%">
+<ul>
+<li>each phase has output and a <em>review process</em>
+<ul>
+<li>errors are found at early stage</li>
+<li>decreases the risk of failure</li>
+</ul>
+</li>
+<li>testing is done in a hierarchical perspective</li>
+<li>review is a testing process usually without executing the code</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<img src="figures/v_model_unit_testing.drawio.svg" width="450" />
+</div>
+</div>
+<!-- https://lostechies.com/content/derekgreer/uploads/2011/03/TestDrivenDevelopment_thumb_107D31DD.png -->
+<h2 id="test-pyramid"><a class="header" href="#test-pyramid">test pyramid</a></h2>
+<div class="columns mt-3">
+<div class="column" width="50%">
+<img src="figures/test_pyramid_ice_cream.drawio.svg" width="500" />
+</div>
+<div class="column fragment" width="50%" data-fragment-index="1">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="2">
+<img src="figures/test_pyramid_no_text.drawio.svg" width="500" />
+</div>
+<div class="fragment" data-fragment-index="2">
+<img src="figures/test_pyramid.drawio.svg" width="500" />
+</div>
+</div>
+</div>
+</div>
+<div class="fragment text-size-1" data-fragment-index="2">
+<p>the turtle and rabbit figures by <a href="https://delapouite.com/">Delapouite</a>
+under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> via
+<a href="https://game-icons.net">game-icons.net</a></p>
+</div>
+<h1 id="what-is-a-unit-test"><a class="header" href="#what-is-a-unit-test">what is a unit test?</a></h1>
+<div class="columns">
+<div class="column" width="55%">
+<ul>
+<li>what is a unit?
+<ul>
+<li>smallest testable part of a program</li>
+<li>usually a method</li>
+</ul>
+</li>
+<li>a unit test is another piece of code, that tests the given unit</li>
+</ul>
+</div>
+<div class="column" width="45%">
+<pre><code class="language-python">def fizzbuzz(i: int) -&gt; str:
+    """
+    &gt;&gt;&gt; fizzbuzz(3)
+    'Fizz'
+    &gt;&gt;&gt; fizzbuzz(5)
+    'Buzz'
+    &gt;&gt;&gt; fizzbuzz(15)
+    'FizzBuzz'
+    &gt;&gt;&gt; fizzbuzz(17)
+    '17'
+    """
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+</code></pre>
+<p><span class="text-smaller">doctest in Python</span></p>
+</div>
+</div>
+<h2 id="what-really-is-a-unit"><a class="header" href="#what-really-is-a-unit">what really is a unit?</a></h2>
+<ul>
+<li>defined as a <strong>single behaviour</strong> exhibited by the system under test
+<ul>
+<li>usually corresponding to a requirement</li>
+</ul>
+</li>
+<li>it may imply that it is a function or a module / method or a class
+<ul>
+<li>depending on the paradigm</li>
+</ul>
+</li>
+<li>functions / methods, modules or classes don’t always correspond to
+units</li>
+<li>“only entry points to externally-visible system behaviours define
+units”
+<ul>
+<li>by Kent Beck (Beck, 2002)</li>
+</ul>
+</li>
+</ul>
+<!-- > Unit is defined as a single behaviour exhibited by the system under test, usually corresponding to a requirement.
+> While it may imply that it is a function or a module (in procedural programming) or a method or a class (in object-oriented programming) **it does not mean functions/methods, modules or classes always correspond to units**.
+> From the system-requirements perspective only the perimeter of the system is relevant, thus **only entry points to externally-visible system behaviours define units**.
+>
+> -- Kent Beck via Wikipedia-->
+<div class="text-smaller">
+<p>source: (Wikipedia contributors, 2024e)</p>
+</div>
+<h2 id="unit-vs-integration-testing"><a class="header" href="#unit-vs-integration-testing">unit vs integration testing</a></h2>
+<div class="wide-quote">
+<blockquote>
+<p>The terms ‘unit test’ and ‘integration test’ have always been rather
+murky, even by the slippery standards of most software terminology.</p>
+<p>– <a href="https://martinfowler.com/articles/2021-test-shapes.html">Martin
+Fowler</a>
+(Fowler, 2021)</p>
+</blockquote>
+</div>
+<div class="columns mt-3">
+<div class="column" width="40%">
+<p>unit test<br />
+tests a single behaviour</p>
+</div>
+<div class="column" width="60%">
+<p>integration test<br />
+test a set of units, working together</p>
+</div>
+</div>
+<div class="text-smaller mt-3">
+<p>in most of my examples a unit will be represented by a method</p>
+</div>
+<h2 id="unit-test-example"><a class="header" href="#unit-test-example">unit test example</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<p><code>code/fizzbuzz.py</code></p>
+<pre><code class="language-python">def fizzbuzz(i: int) -&gt; str:
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+</code></pre>
+</div>
+<div class="column" width="50%">
+<p><code>code/test_fizzbuzz.py</code></p>
+<pre><code class="language-python">from fizzbuzz import fizzbuzz
+
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(10) == "Buzz"
+    assert fizzbuzz(12) == "Fizz"
+    assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(17) == "17"
+</code></pre>
+</div>
+</div>
+<h2 id="arrange-act-assert-pattern"><a class="header" href="#arrange-act-assert-pattern">arrange, act, assert pattern</a></h2>
+<p>parts of a unit test</p>
+<div class="columns">
+<div class="column" width="50%">
+<p>arrange<br />
+set up the testing environment (e.g., create objects)</p>
+<p>act<br />
+call the tested unit</p>
+<p>assert<br />
+compare the result of the ‘act’ step to the expected value</p>
+</div>
+<div class="column" width="50%">
+<pre><code class="language-python">def test_fizzbuzz():
+    # arrange
+    test_input = 3
+    # act
+    result = fizzbuzz(test_input)
+    # assert
+    assert result == "Fizz"
+</code></pre>
+</div>
+</div>
+<h2 id="arrange-act-assert-annihilate-pattern"><a class="header" href="#arrange-act-assert-annihilate-pattern">arrange, act, assert(, annihilate) pattern</a></h2>
+<p>parts of a unit test</p>
+<p>arrange<br />
+set up the testing environment</p>
+<p>(e.g., create objects)</p>
+<p>act<br />
+call the tested unit</p>
+<p>assert<br />
+compare the result of the ‘act’ step to the expected value</p>
+<p>annihilate<br />
+free resources</p>
+<p>automatic in modern languages</p>
+<h1 id="how-to-unit-test-this-funciton"><a class="header" href="#how-to-unit-test-this-funciton">how to unit test this funciton?</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<pre><code class="language-python">def query_progress(user_id: int) -&gt; float:
+    # establish database connection
+    con = sqlite3.connect("data.db")
+    # build query
+    progress_query = f"""
+    SELECT
+        lesson / 50.0 AS progress
+    FROM activity
+    WHERE
+        user_id = {user_id} AND
+        result = 'success'
+    ORDER BY
+        lesson DESC
+    LIMIT 1
+    ;
+    """
+    # execute query
+    res = con.execute(progress_query)
+    progress = res.fetchone()[0]
+    return progress
+</code></pre>
+</div>
+<div class="column fragment mt-1" width="50%">
+<ul>
+<li>short answer: you can’t</li>
+<li>because it is not a unit
+<ul>
+<li>it does 3 things</li>
+</ul>
+</li>
+<li>single responsibility principle makes unit testing easier</li>
+<li>a ‘stable’ database would be needed for testing
+<ul>
+<li>if the DB content changed, the expected value would become obsolete</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2 id="separate-business-logic-from-persistence"><a class="header" href="#separate-business-logic-from-persistence">separate business logic from persistence</a></h2>
+<!-- ![hexagonal arcitectural pattern (a.k.a. ports & adapters)](figures/hexagonal_interface.drawio.svg){width=700} -->
+<div class="columns">
+<div class="column" width="40%">
+<p>architectural styles provides patterns to separate the business logic
+from the persistence layer</p>
+<p>unit testing usually targets the business logic</p>
+<div class="fragment text-smaller mt-2">
+<p>which was embedded into the query in the previous example</p>
+<pre><code class="language-sql">SELECT
+    lesson / 50.0 AS progress
+FROM activity
+WHERE
+    user_id = 42 AND
+    result = 'success'
+ORDER BY lesson DESC
+LIMIT 1;
+</code></pre>
+</div>
+</div>
+<div class="column" width="30%">
+<img src="figures/layered_4.drawio.svg" width="200" />
+</div>
+<div class="column" width="30%">
+<img src="figures/onion.drawio.svg" width="275" />
+<img src="figures/hexagonal_extend.drawio.svg" width="275" />
+</div>
+</div>
+<h2 id="separated-business-logic"><a class="header" href="#separated-business-logic">separated business logic</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<pre><code class="language-python">def query_last_finished_lesson(
+    user_id: int
+) -&gt; float:
+    # establish database connection
+    con = sqlite3.connect("data.db")
+    # build query
+    query = f"""
+    SELECT lesson
+    FROM activity
+    WHERE
+        user_id = {user_id} AND
+        result = 'success'
+    ORDER BY lesson DESC
+    LIMIT 1;
+    """
+    # execute query
+    res = con.execute(query)
+    return res.fetchone()[0]
+</code></pre>
+</div>
+<div class="column" width="50%">
+<pre><code class="language-python">def calculate_progress(
+    finished: int, total: int
+) -&gt; float:
+    return finished / total
+
+
+def calculate_user_progress(
+    user_id: int, total: int
+) -&gt; float:
+    f = query_last_finished_lesson(user_id)
+    return calculate_progress(f, total)
+</code></pre>
+<div class="text-smaller">
+<ul>
+<li>now, the query is only responsible for getting the last finished
+lesson
+<ul>
+<li>the DB connection is still in a bit out of the place, but the
+testability improved</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="separated-data-connection"><a class="header" href="#separated-data-connection">separated data connection</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<pre><code class="language-python">def query_last_finished_lesson(
+    con: sqlite3.Connection,
+    user_id: int
+) -&gt; float:
+    # build query
+    query = f"""
+    SELECT lesson
+    FROM activity
+    WHERE
+        user_id = {user_id} AND
+        result = 'success'
+    ORDER BY lesson DESC
+    LIMIT 1;
+    """
+    # execute query
+    res = con.execute(query)
+    return res.fetchone()[0]
+</code></pre>
+</div>
+<div class="column" width="50%">
+<pre><code class="language-python">def establish_database_connection(
+    path: str = "data.db"
+) -&gt; sqlite3.Connection:
+    return sqlite3.connect(path)
+</code></pre>
+<div class="text-smaller">
+<ul>
+<li>now, there is a function responsible for the DB connection
+<ul>
+<li>it is easy to use a test database from the test suite and the
+production database in the production code</li>
+</ul>
+</li>
+<li>the test DB can store ‘stable’ values
+<ul>
+<li>the expected values in the assert statements are safe</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h1 id="mocking"><a class="header" href="#mocking">mocking</a></h1>
+<div class="columns">
+<div class="column mt-4" width="70%">
+<ul>
+<li>the whole <em>unit test</em> suite should be able to run in milliseconds
+<ul>
+<li>to give immediate feedback</li>
+</ul>
+</li>
+<li>slow elements of the software should be mocked
+<ul>
+<li>e.g., database, network connection</li>
+</ul>
+</li>
+<li>part of arrange step</li>
+</ul>
+</div>
+<div class="column" width="30%">
+<img src="figures/publicdomainvectors/running-turtle.svg" width="300" />
+</div>
+</div>
+<h2 id="test-doubles--mock-objet-types"><a class="header" href="#test-doubles--mock-objet-types">test doubles – mock objet types</a></h2>
+<p>there is no open standard for categories</p>
+<div class="columns">
+<div class="column mt-2" width="40%">
+<ul>
+<li>dummy</li>
+<li>stub</li>
+<li>spy</li>
+<li>mock</li>
+<li>fake</li>
+</ul>
+</div>
+<div class="column" width="60%">
+<!-- ![](figures/publicdomainvectors/software-testing-concept.svg){width=200} -->
+<!-- ![by [Leo Reynolds](https://flickr.com/photos/lwr/3365192312) | [CC&nbsp;BY-NC-SA&nbsp;2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/)](figures/borrowed/test_dummy.jpg){width=200} -->
+<figure>
+<img src="figures/spectrum_of_test_doubles.drawio.svg" width="400"
+alt="reproduction of figure 2 from (Seemann, 2007)" />
+<figcaption aria-hidden="true">reproduction of figure 2 from <span
+class="citation" data-cites="seemann2007unit">(Seemann,
+2007)</span></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>these are from the book <em>xUnit test patterns: Refactoring test code</em> –
+by Gerard Meszaros (Meszaros, 2007)</p>
+</div>
+<h2 id="test-doubles--test-dummy"><a class="header" href="#test-doubles--test-dummy">test doubles – test dummy</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="70%">
+<div class="text-smaller">
+<blockquote>
+<p><strong>The simplest, most primitive type of test double.</strong> Dummies contain
+no implementation and are mostly used when required as parameter
+values, but not otherwise utilized. Nulls can be considered dummies,
+but real dummies are derivations of interfaces or base classes without
+any implementation at all.</p>
+<p>– Mark Seemann (Seemann, 2007)</p>
+</blockquote>
+</div>
+</div>
+<div class="column" width="30%">
+<pre><code class="language-ruby">require 'sinatra'
+
+get '/user-statistics' do
+  return {}.to_json
+end
+</code></pre>
+</div>
+</div>
+<h2 id="test-doubles--test-stub"><a class="header" href="#test-doubles--test-stub">test doubles – test stub</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="58%">
+<p>provides static input</p>
+<div class="text-smaller">
+<blockquote>
+<p>A step up from dummies, stubs are minimal implementations of
+interfaces or base classes. Methods returning void will typically
+contain no implementation at all, while methods returning values will
+typically return hard-coded values.</p>
+<p>– Mark Seemann (Seemann, 2007)</p>
+</blockquote>
+</div>
+</div>
+<div class="column" width="42%">
+<pre><code class="language-ruby">require 'sinatra'
+
+get '/user-statistics' do
+  data = {}
+  data['name'] = 'Marvin'
+  data['id'] = 42
+  data['registration'] = '2019-10-02'
+  data['progress'] = 0.84
+  data['activity'] = [
+    [2, 0, 2, 3, 5, 3, 2],
+    [5, 2, 4, 4, 0, 3, 4],
+    [6, 3, 0, 6, 8, 3, 0],
+    [9, 7, 4, 7, 0, 9, 9]
+  ]
+  return data.to_json
+end
+</code></pre>
+</div>
+</div>
+<h2 id="test-doubles--test-spy"><a class="header" href="#test-doubles--test-spy">test doubles – test spy</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="60%">
+<div class="text-smaller">
+<blockquote>
+<p>A test spy is similar to a stub, but besides giving clients an
+instance on which to invoke members, a spy will also record which
+members were invoked so that unit tests can verify that members were
+invoked as expected.</p>
+<p>– Mark Seemann (Seemann, 2007)</p>
+</blockquote>
+</div>
+</div>
+<div class="column text-smaller" width="40%">
+<blockquote>
+<p>One form of this might be an email service that records how many
+messages it was sent.</p>
+<p>– Martin Fowler (Fowler, 2006)</p>
+</blockquote>
+<div class="mt-2">
+<p>or keeping track of the test user (of the learning app) and give back
+values according to the input parameter</p>
+</div>
+</div>
+</div>
+<h2 id="test-doubles--test-fake"><a class="header" href="#test-doubles--test-fake">test doubles – test fake</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="58%">
+<div class="text-smaller">
+<blockquote>
+<p>A fake contains more complex implementations, typically handling
+interactions between different members of the type it’s inheriting.
+While not a complete production implementation, a fake may resemble a
+production implementation, albeit with some shortcuts.</p>
+<p>– Mark Seemann (Seemann, 2007)</p>
+</blockquote>
+</div>
+<p>when you add logic for the test double, that might be tested as well</p>
+</div>
+<div class="column text-smaller" width="42%">
+<pre><code class="language-ruby">require 'sinatra'
+
+def generate_progress
+  rand.round(2)
+end
+
+def generate_activity_matrix
+  result = []
+  (1..4).each do |_w|
+    daily = []
+    (1..7).each {|_d| daily.push rand(10)}
+    result.push daily
+  end
+  result
+end
+
+get '/user-statistics' do
+  data = {}
+  data['name'] = 'Marvin'
+  data['id'] = 42
+  data['registration'] = '2019-10-02'
+  data['progress'] = generate_progress
+  data['activity'] = generate_activity_matrix
+  return data.to_json
+end
+</code></pre>
+</div>
+</div>
+<h2 id="test-doubles--test-mock"><a class="header" href="#test-doubles--test-mock">test doubles – test mock</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="65%">
+<div class="text-smaller">
+<blockquote>
+<p><strong>A mock is dynamically created by a mock library</strong> (the others are
+typically produced by a test developer using code). The test developer
+never sees the actual code implementing the interface or base class,
+but can configure the mock to provide return values, expect particular
+members to be invoked, and so on. Depending on its configuration, a
+mock can behave like a dummy, a stub, or a spy.</p>
+<p>– Mark Seemann (Seemann, 2007)</p>
+</blockquote>
+</div>
+</div>
+<div class="column" width="35%">
+<figure>
+<img src="figures/spectrum_of_test_doubles.drawio.svg" width="400"
+alt="reproduction of figure 2 from (Seemann, 2007)" />
+<figcaption aria-hidden="true">reproduction of figure 2 from <span
+class="citation" data-cites="seemann2007unit">(Seemann,
+2007)</span></figcaption>
+</figure>
+</div>
+</div>
+<h1 id="test-driven-development-tdd"><a class="header" href="#test-driven-development-tdd">test-driven development (TDD)</a></h1>
+<div class="columns">
+<div class="column mt-5" width="55%">
+<ul>
+<li>write test <em>before</em> writing the tested code</li>
+<li>without the called unit the test fill fail
+<ul>
+<li>the called function does not exist</li>
+</ul>
+</li>
+<li>write code, that makes the test pass</li>
+<li>improve the code quality
+<ul>
+<li>e.g., make it clear and clean</li>
+<li>both the test and tested code</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="45%">
+<img src="figures/tdd.drawio.svg" width="350" />
+</div>
+</div>
+<h2 id="red"><a class="header" href="#red">red</a></h2>
+<div class="columns">
+<div class="column mt-3" width="75%">
+<ul>
+<li>test only one thing at a time</li>
+<li>the test should be very simple</li>
+<li>increase the complexity of the test cases continuously</li>
+<li>mock the (external) dependencies
+<ul>
+<li>bit later</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="25%">
+<img src="figures/tdd_red.drawio.svg" width="250" />
+</div>
+</div>
+<h2 id="green"><a class="header" href="#green">green</a></h2>
+<div class="columns">
+<div class="column mt-3" width="75%">
+<ul>
+<li>use the possible simplest code to pass the test</li>
+<li>it does not matter if the solution is ‘ugly’
+<ul>
+<li>but the test must pass</li>
+</ul>
+</li>
+<li>as soon as the test passes, this step is done
+<ul>
+<li>and all of the old tests as well</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="25%">
+<img src="figures/tdd_green.drawio.svg" width="250" />
+</div>
+</div>
+<h2 id="refactor"><a class="header" href="#refactor">refactor</a></h2>
+<div class="columns">
+<div class="column" width="75%">
+<div class="text-smaller">
+<blockquote>
+<p>Refactoring is a disciplined technique for restructuring an existing
+body of code, altering its internal structure without changing its
+external behavior.</p>
+<p>– Martin Fowler (Fowler, n.d.)</p>
+</blockquote>
+</div>
+<ul>
+<li>on code level
+<ul>
+<li><span class="text-smaller">style guide, best practices, idiomatic
+code</span></li>
+</ul>
+</li>
+<li>on architecture level
+<ul>
+<li><span class="text-smaller">design patterns like SOLID, DRY,
+etc.</span></li>
+</ul>
+</li>
+<li>part of day-to-day programming
+<ul>
+<li><span class="text-smaller">‘campground rule’: leave the code better
+than you found it</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="25%">
+<img src="figures/tdd_refactor.drawio.svg" width="250" />
+</div>
+</div>
+<h2 id="test-driven-development--fizzbuzz-example"><a class="header" href="#test-driven-development--fizzbuzz-example">test-driven development – fizzbuzz example</a></h2>
+<div class="columns">
+<div class="column" width="55%">
+<p><span class="text-smaller">fizzbuzz.py</span></p>
+<div class="r-stack">
+<div class="fragment fade-out width-100" data-fragment-index="1">
+<pre><code class="language-python"></code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="1">
+<pre><code class="language-python">def fizzbuzz():
+    pass
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="2">
+<pre><code class="language-python">def fizzbuzz(i):
+    pass
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="3">
+<pre><code class="language-python">def fizzbuzz(i):
+    return "Fizz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="4">
+<pre><code class="language-python">def fizzbuzz(i):
+    return "Fizz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="5">
+<pre><code class="language-python">def fizzbuzz(i):
+    if i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="6">
+<pre><code class="language-python">def fizzbuzz(i):
+    if i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="7">
+<pre><code class="language-python">def fizzbuzz(i):
+    if i % 15 == 0:
+        return "FizzBuzz"
+    elif i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="8">
+<pre><code class="language-python">def fizzbuzz(i):
+    if i % 15 == 0:
+        return "FizzBuzz"
+    elif i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="9">
+<pre><code class="language-python">def fizzbuzz(i):
+    if i % 15 == 0:
+        return "FizzBuzz"
+    elif i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+    else:
+        return str(i)
+</code></pre>
+</div>
+</div>
+</div>
+<div class="column" width="45%">
+<p><span class="text-smaller">test_fizzbuzz.py</span></p>
+<div class="r-stack">
+<div class="fragment fade-out width-100" data-fragment-index="4">
+<pre><code class="language-python">from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="4">
+<pre><code class="language-python">from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="5">
+<pre><code class="language-python">from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="6">
+<pre><code class="language-python">from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(15) == "FizzBuzz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="7">
+<pre><code class="language-python">from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(15) == "FizzBuzz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="8">
+<pre><code class="language-python">from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(17) == "17"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="9">
+<pre><code class="language-python">from fizzbuzz import *
+
+def test_fizzbuzz():
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(17) == "17"
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p>NameError: name ‘fizzbuzz’ is not defined</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="1">
+<p>TypeError: fizzbuzz() takes 0 positional arguments but 1 was given</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="2">
+<p>AssertionError: assert None == ‘Fizz’</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="3">
+<p>passed</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="4">
+<p>AssertionError: assert ‘Fizz’ == ‘Buzz’ (5)</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="5">
+<p>passed</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="6">
+<p>AssertionError: assert ‘Fizz’ == ‘FizzBuzz’ (15)</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="7">
+<p>passed</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="8">
+<p>AssertionError: assert None == ‘17’ (17)</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="9">
+<p>passed</p>
+<p><span class="text-smaller">there is not much to improve on the code,
+except that according to the PEP8 Python style guide the ‘star import’
+is not allowed; it should be <code>import fizzbuzz</code></span></p>
+</div>
+</div>
+<h2 id=""><a class="header" href="#"></a></h2>
+<blockquote>
+<p>As the tests get more specific, the code gets more generic.</p>
+<p>– Robert C. Martin, <a href="http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html">The Cycles of
+TDD</a>
+(Martin, 2014)</p>
+</blockquote>
+<p><img src="figures/test_code_generality.drawio.svg" class="mt-4"
+width="375" /></p>
+<h2 id="transformation-priority-premise"><a class="header" href="#transformation-priority-premise">transformation priority premise</a></h2>
+<ol>
+<li>({} -&gt; nil) <em>from no code at all to code that employs nil</em></li>
+<li>(nil -&gt; constant)</li>
+<li>(constant -&gt; constant+) <em>a simple constant to a more complex
+constant</em></li>
+<li>(constant -&gt; scalar) <em>replacing a constant with a variable or an
+argument</em></li>
+<li>(statement -&gt; statements) <em>adding more unconditional statements</em></li>
+<li>(unconditional -&gt; if) <em>splitting the execution path</em></li>
+<li>(scalar -&gt; array)</li>
+<li>(array -&gt; container)</li>
+<li>(statement -&gt; tail-recursion)</li>
+<li>(if -&gt; while)</li>
+<li>(expression -&gt; function) <em>replacing an expression with a function
+or algorithm</em></li>
+<li>(variable -&gt; assignment) <em>replacing the value of a variable</em></li>
+</ol>
+<div class="text-smaller">
+<p>source: Robert C. Martin, <a href="https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html">The Transformation Priority
+Premise</a>
+(Martin, 2013)</p>
+</div>
+<h2 id="coding-kata"><a class="header" href="#coding-kata">coding kata</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<p>kata (型)<br />
+set sequence of positions and movements in martial arts</p>
+<div class="mt-2">
+<ul>
+<li>code/coding kata is a (relatively) simple programming task, that is
+meant to practised over and over again (in TDD)
+<ul>
+<li>in different languages, different praradigms, different coding
+styles</li>
+</ul>
+</li>
+<li>some coding kata
+<ul>
+<li><a href="https://www.codewars.com/kata/">codewars.com</a>,
+<a href="http://codekata.com/">codekata.com</a>, etc.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/publicdomainvectors/japan-gate-clipart.svg"
+width="300" /></p>
+</div>
+</div>
+<h1 id="too-strict-tdd"><a class="header" href="#too-strict-tdd">too strict TDD</a></h1>
+<div class="columns">
+<div class="column mt-5" width="60%">
+<ul>
+<li><span class="tooltip" title="test-driven development">TDD</span>
+requires adding one test (case) at a time and then make the code pass</li>
+<li>this is often unrealistic
+<ul>
+<li>e.g., on existing codebase, in research</li>
+</ul>
+</li>
+<li>strict TDD is good for learning, practising
+<ul>
+<li>coding kata</li>
+</ul>
+</li>
+<li>but tests are still important!</li>
+<li><span class="fragment" data-fragment-index="1">what I to do is to turn
+experiments into tests</span></li>
+</ul>
+</div>
+<div class="column text-smaller r-frame fragment" width="40%"
+data-fragment-index="1">
+<p><strong>experiment-driven testing</strong></p>
+<div class="text-smaller">
+<p>task: get day from a date string like
+<span style="display: inline-block;"><code>Nov 08, 13:11</code></span></p>
+</div>
+<ol>
+<li>do experiment</li>
+</ol>
+<pre><code class="language-python">&gt;&gt;&gt; "Nov 08, 13:11"[3:5]
+' 0'
+&gt;&gt;&gt; "Nov 08, 13:11"[4:6]
+'08'
+</code></pre>
+<ol start="2">
+<li>put it to a function</li>
+</ol>
+<pre><code class="language-python">def extract_day(s: str) -&gt; int:
+    return int(s[4:6])
+</code></pre>
+<ol start="3">
+<li>add test based on the experiment</li>
+</ol>
+<pre><code class="language-python">def test_extract_day():
+    actual = extract_day("Nov 08, 13:11")
+    expected = 8
+    assert actual == expected
+</code></pre>
+</div>
+</div>
+<h2 id="behaviour-driven-development-bdd"><a class="header" href="#behaviour-driven-development-bdd">behaviour-driven development (BDD)</a></h2>
+<div class="columns">
+<div class="column mt-3" width="55%">
+<ul>
+<li>BDD is an extension of <span class="tooltip"
+title="test-driven development">TDD</span></li>
+<li>using BDD can help you to turn an idea for a requirement into
+implemented, <strong>tested</strong>, production-ready code</li>
+<li>BDD starts from a user story and focuses on adding the acceptance
+criteria
+<ul>
+<li>which can be turned into unit tests</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="45%">
+<pre><code>Title (one line describing the story)
+
+Narrative:
+As a [role]
+I want [feature]
+So that [benefit]
+
+Acceptance Criteria: (presented as Scenarios)
+
+Scenario 1: Title
+Given [context]
+  And [some more context]...
+When  [event]
+Then  [outcome]
+  And [another outcome]...
+
+Scenario 2: ...
+</code></pre>
+</div>
+</div>
+<div class="text-smaller">
+<p>taken from (Terhorst-North, 2007) by Daniel Terhorst-North | CC-BY 4.0</p>
+</div>
+<div class="notes">
+<ul>
+<li>the strict TDD does not allow more than one new test at a time</li>
+</ul>
+</div>
+<h2 id="acceptance-criteria"><a class="header" href="#acceptance-criteria">acceptance criteria</a></h2>
+<div class="columns">
+<div class="column mt-2" width="55%">
+<ul>
+<li>describes how a system should behave under certain circumstances
+<ul>
+<li>may originate from domain experts</li>
+</ul>
+</li>
+<li>the ‘rules’ are written in natural language, but in a structured form
+<ul>
+<li>easy to discuss with non-developers</li>
+</ul>
+</li>
+<li>based on the acceptance criteria multiple tests can be written</li>
+</ul>
+</div>
+<div class="column" width="45%">
+<pre><code>Title (one line describing the story)
+
+Narrative:
+As a [role]
+I want [feature]
+So that [benefit]
+
+Acceptance Criteria: (presented as Scenarios)
+
+Scenario 1: Title
+Given [context]
+  And [some more context]...
+When  [event]
+Then  [outcome]
+  And [another outcome]...
+
+Scenario 2: ...
+</code></pre>
+<div class="text-smaller">
+<p>taken from (Terhorst-North, 2007) by Daniel Terhorst-North | CC-BY 4.0</p>
+</div>
+</div>
+</div>
+<h2 id="acceptance-test-driven-development"><a class="header" href="#acceptance-test-driven-development">acceptance test-driven development</a></h2>
+<div class="columns">
+<div class="column mt-4" width="70%">
+<ul>
+<li>extends <span class="tooltip"
+title="test-driven development">TDD</span> and <span class="tooltip"
+title="behaviour-driven development">BDD</span></li>
+<li>instead of a unit, ATDD focuses on the acceptance criteria of the
+whole system</li>
+<li>advocates writing acceptance tests before developers begin coding</li>
+</ul>
+<div class="mt-3">
+<p>test format like <span class="tooltip"
+title="behaviour-driven development">BDD</span>, example from (Wikipedia
+contributors, 2022):</p>
+<pre><code>Given Book that has not been checked out
+And User who is registered on the system
+When User checks out a book
+Then Book is marked as checked out
+</code></pre>
+</div>
+</div>
+<div class="column" width="30%">
+<img src="figures/publicdomainvectors/to-do-list.svg" width="300" />
+</div>
+</div>
+<h2 id="readme-driven-development"><a class="header" href="#readme-driven-development">readme driven development</a></h2>
+<div class="wide-quote">
+<blockquote>
+<p>beautifully crafted library with no documentation is damn near
+worthless […]</p>
+<p>So how do we solve this problem? Write your Readme first.</p>
+<p>– by Tom Preston-Werner (Preston-Werner, 2010)</p>
+</blockquote>
+</div>
+<div class="text-smaller">
+<p>readme ~ user manual, but brief, concise</p>
+</div>
+<div class="mt-2">
+<ul>
+<li>before you write any code or tests or behaviors or stories or anything</li>
+<li>document how a user would use the software</li>
+<li>you’ll know what you need to implement</li>
+<li>a lot simpler to have a discussion based on something written down</li>
+</ul>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme Driven
+Development</a>
+– by Tom Preston-Werner (Preston-Werner, 2010)</p>
+</div>
+<h1 id="test-coverage"><a class="header" href="#test-coverage">test coverage</a></h1>
+<ul>
+<li>the percentage of the code lines ‘protected’ or covered by tests</li>
+</ul>
+<div class="columns">
+<div class="column" width="50%">
+<p><span class="text-smaller"><code>code/fizzbuzz.py</code></span></p>
+<div class="r-stack">
+<div class="fragment fade-out width-100" data-fragment-index="1">
+<pre><code class="language-python">def fizzbuzz(i: int) -&gt; str:
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="1">
+<pre><code class="language-python">def fizzbuzz(i: int) -&gt; str:
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="2">
+<pre><code class="language-python">def fizzbuzz(i: int) -&gt; str:
+    result = ""
+    if i % 15 == 0:
+        result += "FizzBuzz"
+    elif i % 3 == 0:
+        result += "Fizz"
+    elif i % 5 == 0:
+        result += "Buzz"
+    else:
+        result = str(i)
+    return result
+</code></pre>
+</div>
+</div>
+</div>
+<div class="column" width="50%">
+<p><span class="text-smaller"><code>code/test_fizzbuzz.py</code></span></p>
+<div class="r-stack">
+<div class="fragment fade-out width-100" data-fragment-index="1">
+<pre><code class="language-python">from fizzbuzz import fizzbuzz
+
+
+def test_fizzbuzz():
+    assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(3) == "Fizz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="1">
+<pre><code class="language-python">from fizzbuzz import fizzbuzz
+
+
+def test_fizzbuzz():
+    assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+</code></pre>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="2">
+<pre><code class="language-python">from fizzbuzz import fizzbuzz
+
+
+def test_fizzbuzz():
+    assert fizzbuzz(15) == "FizzBuzz"
+    assert fizzbuzz(3) == "Fizz"
+    assert fizzbuzz(5) == "Buzz"
+    assert fizzbuzz(17) == "17"
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p>test coverage: 70%</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="1">
+<p>test coverage: 90%</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="2">
+<p>test coverage: 100%</p>
+<p>four control flow branch, all of them needs to be tested</p>
+</div>
+</div>
+<!-- #F72388 -->
+<h2 id="how-to-measure-code-quality"><a class="header" href="#how-to-measure-code-quality">how to measure code quality?</a></h2>
+<p>it is hard to objectively measure the quality of code</p>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li><span class="alpha-50">number of source lines of code (SLOC)</span></li>
+<li>style guide compliance <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code clean?</span></li>
+<li><span class="alpha-50">Halstead metrics</span></li>
+<li>cyclomatic complexity <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code simple?</span></li>
+<li><span class="alpha-50">maintainability index</span></li>
+<li>test coverage <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code tested?</span></li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/publicdomainvectors/worker-takes-measurements.svg"
+width="400" /></p>
+</div>
+</div>
+<h2 id="when-unit-tests-are-not-more-than-a-measure"><a class="header" href="#when-unit-tests-are-not-more-than-a-measure">when unit tests are not more than a measure</a></h2>
+<div class="columns">
+<div class="column mt-4" width="70%">
+<ul>
+<li>zombie scrum: doing something without heart, without its essence</li>
+<li>if you write unit tests <em>just</em> to increase the test coverage they
+loose its function
+<ul>
+<li>and collect badges: <img src="figures/code%20coverage_%2084_.svg"
+class="no-margin va-middle" width="150" />
+<img src="figures/code%20coverage_%20100_.svg"
+class="no-margin va-middle" width="150" /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="30%">
+<figure>
+<img src="figures/borrowed/xkcd/goodharts_law_2x.png" width="300"
+alt="by Randall Munroe CC BY-NC 2.5 | source" />
+<figcaption aria-hidden="true">by Randall Munroe<br><a
+href="https://creativecommons.org/licenses/by-nc/2.5/deed.en">CC BY-NC 2.5</a>
+| <a href="https://xkcd.com/2899/">source</a></figcaption>
+</figure>
+</div>
+</div>
+<h2 id="what-to-test"><a class="header" href="#what-to-test">what to test?</a></h2>
+<div class="columns">
+<div class="column" width="40%">
+<pre><code class="language-python">def calculate_progress(
+    finished: int,
+    total: int,
+    as_percentage: bool,
+) -&gt; float:
+    progress = finished / total
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+</code></pre>
+</div>
+<div class="column" width="60%">
+<div class="r-stack">
+<div class="width-100">
+<pre><code class="language-python">from progress import calculate_progress
+
+
+def test_progress():
+    total = 50
+    for i in range(total + 1):
+        expected = i / total
+        actual = calculate_progress(i, total, False)
+        assert actual == expected
+
+
+def test_progress_percentage():
+    total = 50
+    for i in range(total + 1):
+        expected = i / total * 100
+        actual = calculate_progress(i, total, True)
+        assert actual == expected
+</code></pre>
+</div>
+<div class="fragment" data-fragment-index="1">
+<img src="figures/cross.drawio.svg" width="500" height="325" />
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p>test coverage: 100%, achievement obtained, but this is completely stupid</p>
+</div>
+<h2 id="test-the-edge-cases"><a class="header" href="#test-the-edge-cases">test the edge cases!</a></h2>
+<div class="columns">
+<div class="column" width="40%">
+<pre><code class="language-python">def calculate_progress(
+    finished: int,
+    total: int,
+    as_percentage: bool,
+) -&gt; float:
+    progress = finished / total
+
+    if as_percentage:
+        return progress * 100
+    else:
+        return progress
+</code></pre>
+<div class="fragment" data-fragment-index="1">
+<p>this function need some value checking</p>
+</div>
+</div>
+<div class="column" width="60%">
+<p>what does this function do?</p>
+<ul>
+<li>
+<p>divides the number of finished lessons by the total number of lessons</p>
+</li>
+<li>
+<p>returns progress in the closed interval of [0, 1] or [0, 100]</p>
+</li>
+</ul>
+<div class="fragment text-align-left" data-fragment-index="1">
+<p>edge cases</p>
+<ul>
+<li>
+<p>total is 0</p>
+</li>
+<li>
+<p>total is less than 0</p>
+</li>
+<li>
+<p>finished is less than 0</p>
+</li>
+<li>
+<p>finished is greater than total</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment r-frame mt-1" data-fragment-index="2">
+<p>test coverage only measures that every control flow branch is tested</p>
+<p>the point of testing is testing for the edge cases</p>
+</div>
+<h2 id="how-to-find-edge-cases"><a class="header" href="#how-to-find-edge-cases">how to find edge cases</a></h2>
+<ul>
+<li>interval boundaries</li>
+<li>requirements</li>
+<li>defining of done</li>
+<li>acceptance criteria of <span class="tooltip"
+title="behaviour-driven development">BDD</span>-style scenarios
+<ul>
+<li><span class="text-smaller">extended user user stories</span></li>
+</ul>
+</li>
+</ul>
+<div class="columns">
+<div class="column" width="50%">
+<pre><code>Story: Account Holder withdraws cash
+
+As an Account Holder
+I want to withdraw cash from an ATM
+So that I can get money when the bank is closed
+</code></pre>
+</div>
+<div class="column" width="50%">
+<div class="text-smaller">
+<p>story example taken from <a href="https://dannorth.net/whats-in-a-story/">What’s in a
+Story?</a> (Terhorst-North, 2007)
+by Daniel Terhorst-North | CC-BY 4.0</p>
+</div>
+</div>
+</div>
+<div class="columns column-gapless">
+<div class="column" width="50%">
+<p><span class="text-smaller">an acceptance criterion:</span></p>
+<pre><code>Scenario 1: Account has sufficient funds
+Given the account balance is $100
+ And the card is valid
+ And the machine contains enough money
+When the Account Holder requests $20
+Then the ATM should dispense $20
+ And the account balance should be $80
+ And the card should be returned
+</code></pre>
+</div>
+<div class="column mt-5" width="10%">
+<img src="figures/right_arrow.drawio.svg" width="100" />
+</div>
+<div class="column" width="40%">
+<p><span class="text-smaller">a test function:</span></p>
+<pre><code class="language-python">def test_withdraw():
+    account = Account(balance=100)
+    withdraw_money(account, 20)
+    assert account.balance == 80
+    account = Account(balance=10)
+    withdraw_money(account, 20)
+    assert account.balance == 10
+</code></pre>
+</div>
+</div>
+<!-- # fuzz testing (fuzzing) -->
+<h1 id="legacy-code"><a class="header" href="#legacy-code">legacy code</a></h1>
+<div class="columns column-gapless">
+<div class="column" width="60%">
+<ul>
+<li>old, inherited code</li>
+<li>difﬁcult-to-change code that we don’t understand</li>
+<li>rotten
+<ul>
+<li><span class="text-smaller">degraded, deteriorated, or lost its use
+or performance over time (Wikipedia contributors, 2024b)</span></li>
+</ul>
+</li>
+<li>spaghetti code
+<ul>
+<li><span class="text-smaller">“has a complex and tangled control
+structure, resulting in a program flow that is like a bowl of
+spaghetti, twisted and tangled” (Horstmann, 2007) via (Wikipedia
+contributors, 2024c)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column r-frame" width="40%">
+<p><strong>technical debt</strong></p>
+<div class="text-smaller">
+<p>implied cost of future reworking because a solution prioritized
+short-term solution over long-term design (Beal, 2011) (Wikipedia
+contributors, 2024d)</p>
+<p><span class="text-smaller">some reasons:</span></p>
+<ul>
+<li>
+<p>ignoring style guides, coding standards</p>
+</li>
+<li>
+<p>lack of test suite</p>
+</li>
+<li>
+<p>tight coupling</p>
+</li>
+<li>
+<p>temporary quick fixes</p>
+</li>
+<li>
+<p>lack of documentation</p>
+</li>
+<li>
+<p>laziness</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!--this chapter is based on the book _Working Efficiently with Legacy Code_
+&#10;by Michael Feathers [@feathers2004working]-->
+<h2 id="what-is-legacy-code"><a class="header" href="#what-is-legacy-code">what is legacy code?</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="80%">
+<blockquote>
+<p>Code without tests is bad code. It doesn’t matter how well written it
+is; it doesn’t matter how pretty or object-oriented or
+well-encapsulated it is. With tests, we can change the behavior of our
+code quickly and verifiably. Without them, we really don’t know if our
+code is getting better or worse.</p>
+<p>– Michael Feathers, Working Effectively with Legacy Code: Preface
+(Feathers, 2004)</p>
+</blockquote>
+<div class="mt-2">
+<ul>
+<li>there is a change request, which results on code change</li>
+<li>the test suite is like a safety net that can prevent that a code
+change breaks an existing function</li>
+</ul>
+</div>
+</div>
+<div class="column" width="20%">
+<figure>
+<img src="figures/tests_mark_the_place.drawio.svg" width="175"
+alt="tests mark the goal" />
+<figcaption aria-hidden="true"><span class="text-smaller">tests mark the
+goal</span></figcaption>
+</figure>
+<figure>
+<img src="figures/without_tests.drawio.svg" width="175"
+alt="without tests" />
+<figcaption aria-hidden="true"><span class="text-smaller">without
+tests</span></figcaption>
+</figure>
+<div class="text-x-small">
+<p>the footprint, the compass and the flag figures by
+<a href="https://lorcblog.blogspot.com/">Lorc</a> under
+<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> via
+<a href="https://game-icons.net">game-icons.net</a></p>
+</div>
+</div>
+</div>
+<!--- [További definíciók](https://dzone.com/articles/defining-legacy-code)
+- Legacy Code
+    - [What are the key points of Working Effectively with Legacy Code?](http://programmers.stackexchange.com/questions/122014/what-are-the-key-points-of-working-effectively-with-legacy-code)-->
+<h2 id="the-legacy-code-dilemma"><a class="header" href="#the-legacy-code-dilemma">the legacy code dilemma</a></h2>
+<blockquote>
+<p>When we change code, we should have tests in place. To put tests in
+place, we often have to change code.</p>
+<p>– Michael Feathers, Working Effectively with Legacy Code (Feathers,
+2004)</p>
+<p>(Part I / Chapter 2)</p>
+</blockquote>
+<h2 id="the-legacy-code-change-algorithm"><a class="header" href="#the-legacy-code-change-algorithm">the legacy code change algorithm</a></h2>
+<!--:::::::::::: {.columns}
+::::::::: {.column width="60%"}-->
+<ol>
+<li>identify change points</li>
+<li>find test points</li>
+<li>break dependencies</li>
+<li>write tests</li>
+<li>make changes and refactor</li>
+</ol>
+<!--:::::::::
+::::::::: {.column width="50%"}
+![](figures/publicdomainvectors/paperboard-flowchart.svg){width=110}
+&#10;:::::::::
+::::::::::::-->
+<div class="columns column-gapless fragment">
+<div class="column" width="50%">
+<p>when?</p>
+<ul>
+<li>
+<p>not for the sake of refactoring</p>
+</li>
+<li>
+<p>along with other changes</p>
+</li>
+<li>
+<p>leave the code cleaner than you found it</p>
+</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p>how?</p>
+<ul>
+<li>
+<p>in small, safe steps</p>
+</li>
+<li>
+<p>understand the code you change</p>
+</li>
+<li>
+<p>use your IDE</p>
+</li>
+<li>
+<p>sensing, separation, mocking</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: Working Effectively with Legacy Code by Michael Feathers
+(Feathers, 2004)</p>
+</div>
+<h2 id="sensing"><a class="header" href="#sensing">sensing</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="70%">
+<blockquote>
+<p>We break dependencies to <strong>sense</strong> when we can’t access values our
+code computes.</p>
+<p>– Michael Feathers, Working Effectively with Legacy Code (Feathers,
+2004)</p>
+</blockquote>
+<div class="fragment mt-4" data-fragment-index="1">
+<p>e.g., misspelled function name</p>
+</div>
+</div>
+<div class="column" width="30%">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<figure>
+<img src="figures/dependency_tree.drawio.svg" width="300"
+alt="function call tree" />
+<figcaption aria-hidden="true">function call tree</figcaption>
+</figure>
+</div>
+<div class="fragment" data-fragment-index="1">
+<figure>
+<img src="figures/broken_dependency.drawio.svg" width="300"
+alt="broken dependency" />
+<figcaption aria-hidden="true">broken dependency</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<h2 id="separation"><a class="header" href="#separation">separation</a></h2>
+<blockquote>
+<p>We break dependencies to <strong>separate</strong> when we can’t even get a piece
+of code into a test harness to run.</p>
+<p>– Michael Feathers, Working Effectively with Legacy Code (Feathers,
+2004)</p>
+</blockquote>
+<h2 id="seams"><a class="header" href="#seams">seams</a></h2>
+<div class="columns column-gapless">
+<div class="column wide-quote text-smaller" width="75%">
+<blockquote>
+<p>A seam is a place where you can alter behavior in your program without
+editing in that place.</p>
+<p>– Michael Feathers, Working Effectively with Legacy Code: Part I /
+chp. 4 (Feathers, 2004)</p>
+</blockquote>
+<blockquote>
+<p>A seam is a place in the code that you can insert a modification in
+behavior. […] One way to take advantage of a seam is to insert some
+sort of fake.</p>
+<p>– tallseth via
+<a href="https://stackoverflow.com/a/15336160/4737417">Stackoverflow</a> |
+CC BY-SA 3.0</p>
+</blockquote>
+<div class="mt-1">
+<ul>
+<li>using inheritance
+<ul>
+<li><span class="text-smaller">subclass can do the same as parent
+class</span></li>
+<li><span class="text-smaller">but can be extended with sensing
+code</span></li>
+</ul>
+</li>
+<li>preprocessing seam</li>
+<li>link seam
+<ul>
+<li><span class="text-smaller">using build script, e.g., “same” class in
+different directory</span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="column" width="25%">
+<figure>
+<img src="figures/seams.drawio.svg" width="300"
+alt="branching control flow injecting a fake" />
+<figcaption aria-hidden="true">branching control flow injecting a
+fake</figcaption>
+</figure>
+<!-- branching control flow for examining the behavior -->
+</div>
+</div>
+<h1 id="changing-the-software"><a class="header" href="#changing-the-software">changing the software</a></h1>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>add feature</th>
+<th>fix a bug</th>
+<th>refactor</th>
+<th>optimize</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>structure</td>
+<td>changes</td>
+<td>changes</td>
+<td>changes</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>new funcionality</td>
+<td>changes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>functionality</td>
+<td></td>
+<td>changes</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>resource usage</td>
+<td></td>
+<td></td>
+<td></td>
+<td>changes</td>
+</tr>
+</tbody>
+</table>
+<div class="text-smaller mt-4">
+<p>Michael Feathers, Working Effectively with Legacy Code: part 1 pp 6
+(Feathers, 2004)</p>
+</div>
+<h1 id="testing-approaches"><a class="header" href="#testing-approaches">testing approaches</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<p><strong>black box</strong></p>
+<img src="figures/black_box.drawio.svg" width="350" />
+<ul>
+<li>examining / testing the functionality without knowing the inner
+structure</li>
+<li>works at all levels: unit, integration, system, acceptance</li>
+<li>also for debugging a legacy code</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p><strong>white box</strong></p>
+<img src="figures/white_box.drawio.svg" width="225" />
+<ul>
+<li>testing the internal structure as opposed to its functionality</li>
+<li>often associated to unit testing, but also works on higher levels
+(i.e., integration, system)</li>
+</ul>
+</div>
+</div>
+<h2 id="smoke-testing"><a class="header" href="#smoke-testing">smoke testing</a></h2>
+<div class="columns">
+<div class="column mt-2" width="75%">
+<ul>
+<li>preliminary testing</li>
+<li>smoke tests are a <strong>subset of test cases</strong> that cover the <strong>most
+important functionality</strong> of a component or system</li>
+<li>set of tests run on each new build to verify that it is testable
+before sent to the test team</li>
+</ul>
+<div class="text-small">
+<p>source: <a href="https://en.wikipedia.org/wiki/Smoke_testing_(software)">Smoke testing (software),
+Wikipedia</a>
+(Wikipedia contributors, 2024a)</p>
+</div>
+</div>
+<div class="column" width="25%">
+<img src="figures/publicdomainvectors/roof-chimney.svg" width="250" />
+</div>
+</div>
+<div class="text-smaller">
+<p>“The phrase smoke test comes from electronic hardware testing. You plug
+in a new board and turn on the power. If you see smoke coming from the
+board, turn off the power. You don’t have to do any more testing. (Bach
+et al., 2002)”</p>
+</div>
+<h2 id="rubber-duck-debugging"><a class="header" href="#rubber-duck-debugging">rubber duck debugging</a></h2>
+<div class="columns">
+<div class="column mt-1" width="60%">
+<ul>
+<li>a method of debugging code by articulating a problem in natural
+language</li>
+<li>originates from a story in the book <em>The Pragmatic Programmer</em> (Hunt &amp;
+Thomas, 2019)</li>
+<li>in which a programmer explains the code, line by line, to a rubber
+duck</li>
+<li>rationale: teaching / explaining something can provide a deeper
+understanding</li>
+<li>also for reviewing</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/publicdomainvectors/full-water-bathtub.svg"
+width="300" /></p>
+</div>
+</div>
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+<div id="refs"
+class="text-smaller references csl-bib-body hanging-indent"
+line-spacing="2">
+<div id="ref-bach2002lessons" class="csl-entry">
+<p>Bach, J., Pettichord, B., &amp; Kaner, C. (2002). <em>Lessons learned in
+software testing: A context-driven approach</em>. John Wiley &amp; Sons.</p>
+</div>
+<div id="ref-beal2011technical" class="csl-entry">
+<p>Beal, V. (2011). <em>Technical debt</em>. <a href="
+                   https://www.techopedia.com/definition/27913/technical-debt
+                    " class="uri">
+https://www.techopedia.com/definition/27913/technical-debt
+</a>.</p>
+</div>
+<div id="ref-beck2002test" class="csl-entry">
+<p>Beck, K. (2002). <em>Test driven development: By example</em>. Addison-Wesley
+Professional.</p>
+</div>
+<div id="ref-feathers2004working" class="csl-entry">
+<p>Feathers, M. (2004). <em>Working effectively with legacy code</em>. Prentice
+Hall Professional.</p>
+</div>
+<div id="ref-forsberg1991relationship" class="csl-entry">
+<p>Forsberg, K., &amp; Mooz, H. (1991). The relationship of system engineering
+to the project cycle. <em>Center for Systems Management</em>, <em>5333</em>.</p>
+</div>
+<div id="ref-fowler_refactoringcom" class="csl-entry">
+<p>Fowler, M. (n.d.). <em>Refactoring</em>. <a href="
+                   https://refactoring.com/
+                    " class="uri">
+https://refactoring.com/
+</a>.</p>
+</div>
+<div id="ref-fowler2006test" class="csl-entry">
+<p>Fowler, M. (2006). <em>Test double</em>. <a href="
+                   https://martinfowler.com/bliki/TestDouble.html
+                    " class="uri">
+https://martinfowler.com/bliki/TestDouble.html
+</a>.</p>
+</div>
+<div id="ref-fowler2021diverse" class="csl-entry">
+<p>Fowler, M. (2021). <em>On the diverse and fantastical shapes of testing</em>.
+<a href="
+                   https://martinfowler.com/articles/2021-test-shapes.html
+                    " class="uri">
+https://martinfowler.com/articles/2021-test-shapes.html
+</a>.</p>
+</div>
+<div id="ref-horstmann2007java" class="csl-entry">
+<p>Horstmann, C. S. (2007). <em>Java concepts for AP computer science</em>. John
+Wiley &amp; Sons, Inc.</p>
+</div>
+<div id="ref-hund2019pragmatic" class="csl-entry">
+<p>Hunt, A., &amp; Thomas, D. (2019). <em>The pragmatic programmer: From
+journeyman to master</em> (2nd ed.). Addison Wesley.</p>
+</div>
+<div id="ref-martin2013transformation" class="csl-entry">
+<p>Martin, R. C. (2013). <em>The transformation priority premise</em>. <a href="
+                   https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html
+                    " class="uri">
+https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html
+</a>.</p>
+</div>
+<div id="ref-martin2014cycles" class="csl-entry">
+<p>Martin, R. C. (2014). <em>The cycles of TDD</em>. <a href="
+                   http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
+                    " class="uri">
+http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
+</a>.</p>
+</div>
+<div id="ref-meszaros2007xunit" class="csl-entry">
+<p>Meszaros, G. (2007). <em>xUnit test patterns: Refactoring test code</em>.
+Pearson Education.</p>
+</div>
+<div id="ref-prestonwerner2010readme" class="csl-entry">
+<p>Preston-Werner, T. (2010). <em>Readme driven development</em>. <a href="
+                   https://tom.preston-werner.com/2010/08/23/readme-driven-development.html
+                    " class="uri">
+https://tom.preston-werner.com/2010/08/23/readme-driven-development.html
+</a>.</p>
+</div>
+<div id="ref-seemann2007unit" class="csl-entry">
+<p>Seemann, M. (2007). <em>Unit testing: Exploring the continuum of test
+doubles</em>. <a href="
+                   https://learn.microsoft.com/en-us/archive/msdn-magazine/2007/september/unit-testing-exploring-the-continuum-of-test-doubles
+                    " class="uri">
+https://learn.microsoft.com/en-us/archive/msdn-magazine/2007/september/unit-testing-exploring-the-continuum-of-test-doubles
+</a>.</p>
+</div>
+<div id="ref-north2007what" class="csl-entry">
+<p>Terhorst-North, D. (2007). <em>What’s in a story?</em> <a href="
+                    https://dannorth.net/whats-in-a-story
+                    " class="uri">
+https://dannorth.net/whats-in-a-story
+</a>.</p>
+</div>
+<div id="ref-enwiki:1091258091" class="csl-entry">
+<p>Wikipedia contributors. (2022). <em>Acceptance test-driven development —
+Wikipedia, the free encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Acceptance_test-driven_development&amp;oldid=1091258091">https://en.wikipedia.org/w/index.php?title=Acceptance_test-driven_development&amp;oldid=1091258091</a>.</p>
+</div>
+<div id="ref-enwiki:1251780629" class="csl-entry">
+<p>Wikipedia contributors. (2024a). <em>Smoke testing (software) — Wikipedia,
+the free encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Smoke_testing_(software)&amp;oldid=1251780629">https://en.wikipedia.org/w/index.php?title=Smoke_testing_(software)&amp;oldid=1251780629</a>.</p>
+</div>
+<div id="ref-enwiki:1236668404" class="csl-entry">
+<p>Wikipedia contributors. (2024b). <em>Software rot — Wikipedia, the free
+encyclopedia</em>. <a href="
+                    https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+                    " class="uri">
+https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+</a>.</p>
+</div>
+<div id="ref-enwiki:1245199146" class="csl-entry">
+<p>Wikipedia contributors. (2024c). <em>Spaghetti code — Wikipedia, the free
+encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Spaghetti_code&amp;oldid=1245199146">https://en.wikipedia.org/w/index.php?title=Spaghetti_code&amp;oldid=1245199146</a>.</p>
+</div>
+<div id="ref-enwiki:1253473056" class="csl-entry">
+<p>Wikipedia contributors. (2024d). <em>Technical debt — Wikipedia, the free
+encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Technical_debt&amp;oldid=1253473056">https://en.wikipedia.org/w/index.php?title=Technical_debt&amp;oldid=1253473056</a>.</p>
+</div>
+<div id="ref-enwiki:1249792515" class="csl-entry">
+<p>Wikipedia contributors. (2024e). <em>Unit testing — Wikipedia, the free
+encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Unit_testing&amp;oldid=1249792515">https://en.wikipedia.org/w/index.php?title=Unit_testing&amp;oldid=1249792515</a>.</p>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/14_code_review.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/14_code_review.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

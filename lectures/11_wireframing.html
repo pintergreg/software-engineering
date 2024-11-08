@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>C4 - handout</title>
+        <title>wireframing - handout</title>
 
 
         <!-- Custom HTML head -->
@@ -155,205 +155,229 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="what-is-the-issue-with-uml"><a class="header" href="#what-is-the-issue-with-uml">what is the issue with UML?</a></h1>
-<ul>
-<li>closely connected with OOP</li>
-<li>propagates object-oriented modelling
-<ul>
-<li>however the design should not consider the implementation</li>
-</ul>
-</li>
-</ul>
-<h1 id="c4-model"><a class="header" href="#c4-model">C4 model</a></h1>
-<ul>
-<li>hierarchical set of software architecture diagrams
-<ul>
-<li>different levels of abstraction for different audience</li>
-</ul>
-</li>
-<li>has four levels:
-<ul>
-<li>context, containers, components and code</li>
-</ul>
-</li>
-<li>popularized by Simon Brown</li>
-</ul>
-<div class="text-smaller mt-3">
-<p>this chapter is based on <a href="https://c4model.com/">c4model.com</a></p>
-</div>
-<h1 id="level-1-system-context-diagram"><a class="header" href="#level-1-system-context-diagram">Level 1: System Context diagram</a></h1>
-<ul>
-<li>high level relation with other systems or users</li>
-<li>similar to use case diagram</li>
-<li>technologies, protocols and other low-level details are not important</li>
-<li>understandable for non-technical people</li>
-</ul>
-<blockquote>
-<p>Shows the software system you are building and how it fits into the
-world in terms of the people who use it and the other software systems
-it interacts with.</p>
-<p>Simon Brown - <a href="https://www.infoq.com/articles/C4-architecture-model/">The C4 Model for Software
-Architecture</a></p>
-</blockquote>
-<h2 id="system-context-example"><a class="header" href="#system-context-example">system context example</a></h2>
-<figure>
-<img src="figures/borrowed/c4/SystemContext.png" height="550"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-<h2 id="notation"><a class="header" href="#notation">notation</a></h2>
-<figure>
-<img src="figures/borrowed/c4/SystemContext-key.png"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-<h1 id="level-2-container-diagram"><a class="header" href="#level-2-container-diagram">Level 2: Container diagram</a></h1>
-<blockquote>
-<p>Zooms into the software system, and shows the containers
-(applications, data stores, microservices, etc.) that make up that
-software system. Technology decisions are also a key part of this
-diagram.</p>
-<p>Simon Brown - <a href="https://www.infoq.com/articles/C4-architecture-model/">The C4 Model for Software
-Architecture</a></p>
-</blockquote>
-<h2 id="container-example"><a class="header" href="#container-example">container example</a></h2>
-<figure>
-<img src="figures/borrowed/c4/Containers.png" height="550"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-<h2 id="notation-1"><a class="header" href="#notation-1">notation</a></h2>
-<figure>
-<img src="figures/borrowed/c4/Containers-key.png"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-<h1 id="level-3-component-diagram"><a class="header" href="#level-3-component-diagram">Level 3: Component diagram</a></h1>
-<blockquote>
-<p>Zooms into an individual container to show the components inside it.
-These components should map to real abstractions (e.g., a grouping of
-code) in your codebase.</p>
-<p>Simon Brown - <a href="https://www.infoq.com/articles/C4-architecture-model/">The C4 Model for Software
-Architecture</a></p>
-</blockquote>
-<h2 id="component-example"><a class="header" href="#component-example">component example</a></h2>
-<figure>
-<img src="figures/borrowed/c4/Components.png" height="550"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-<h2 id="notation-2"><a class="header" href="#notation-2">notation</a></h2>
-<figure>
-<img src="figures/borrowed/c4/Components-key.png"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-<h1 id="level-4-code"><a class="header" href="#level-4-code">Level 4: Code</a></h1>
-<blockquote>
-<p>Finally, if you really want or need to, you can zoom into an
-individual component to show how that component is implemented.</p>
-<p>Simon Brown - <a href="https://www.infoq.com/articles/C4-architecture-model/">The C4 Model for Software
-Architecture</a></p>
-</blockquote>
-<h2 id="code-example"><a class="header" href="#code-example">code example</a></h2>
-<figure>
-<img src="figures/borrowed/c4/MainframeBankingSystemFacade.png"
-height="500" alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-<h1 id="additional-diagrams-in-c4-model"><a class="header" href="#additional-diagrams-in-c4-model">additional diagrams in C4 model</a></h1>
-<ul>
-<li>system landscape diagram
-<ul>
-<li>even broader environment than the system context diagram</li>
-</ul>
-</li>
-<li>dynamic diagram
-<ul>
-<li>based on the UML communication and sequence diagrams</li>
-</ul>
-</li>
-<li>deployment diagram
-<ul>
-<li>based on the UML deployment diagram<!--    - audience: technical people inside and outside of the software development team
-      - software architects, developers, infrastructure architects, and operations/support staff-->
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="system-landscape-diagram"><a class="header" href="#system-landscape-diagram">system landscape diagram</a></h2>
-<figure>
-<img src="figures/borrowed/c4/SystemLandscape.png" height="550"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-<h2 id="dynamic-diagram-collaboration-style"><a class="header" href="#dynamic-diagram-collaboration-style">dynamic diagram (collaboration style)</a></h2>
-<figure>
-<img src="figures/borrowed/c4/SignIn.png" height="550"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-<h2 id="dynamic-diagram-sequence"><a class="header" href="#dynamic-diagram-sequence">dynamic diagram (sequence)</a></h2>
-<figure>
-<img src="figures/borrowed/c4/bigbankplc-SignIn-sequence.png"
-height="550" alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-<h2 id="deployment-diagram"><a class="header" href="#deployment-diagram">deployment diagram</a></h2>
+                        <h1 id="wireframe"><a class="header" href="#wireframe">wireframe</a></h1>
 <div class="columns">
-<div class="column text-smaller" width="40%">
+<div class="column mt-2" width="70">
 <ul>
-<li>s where an instance of a software system is running e.g.,
-<ul>
-<li>physical infrastructure (e.g. a physical server or device)</li>
-<li>virtualised infrastructure,</li>
-<li>containerised infrastructure (e.g. a Docker container),</li>
-<li>an execution environment (e.g. a database server, Java EE
-web/application server, Microsoft IIS), etc.</li>
+<li>a wireframe is an outline / blueprint / concept art of a webpage or
+application</li>
+<li>can be hand drawn on paper or built out digitally</li>
+<li>provides visual understanding of page structure, layout, user flow,
+functionality and intended behaviours</li>
+<li>presented to stakeholders before the interface is coded</li>
 </ul>
-</li>
-<li>deployment nodes can be nested</li>
-</ul>
+<div class="text-smaller">
+<p>source: (Bruton, 2022)</p>
 </div>
-<div class="column" width="60%">
-<figure>
-<img src="figures/borrowed/c4/LiveDeployment.png"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</div>
-</div>
-<h1 id="summary"><a class="header" href="#summary">summary</a></h1>
-<blockquote>
-<p>overview first, zoom and filter, then details on demand</p>
-<p>– Ben Shneiderman</p>
-</blockquote>
-<h1 id="suggested-software"><a class="header" href="#suggested-software">suggested software</a></h1>
-<div class="columns">
-<div class="column" width="70%">
-<ul>
-<li><a href="https://docs.google.com/drawings">Google Drawings</a>
-<ul>
-<li>it does not have a person shape though, but can be constucted from a
-circle and a rectange</li>
-</ul>
-</li>
-<li>Visio</li>
-</ul>
 </div>
 <div class="column" width="30%">
-<p><img src="figures/c4_drawings_person_shape.png" alt="" /></p>
+<img src="figures/user_stats.drawio.svg" width="250" />
+</div>
+</div>
+<!--https://www.uxdesigninstitute.com/blog/what-is-wireframing/
+https://www.figma.com/resource-library/what-is-wireframing/-->
+<h1 id="wireframing"><a class="header" href="#wireframing">wireframing</a></h1>
+<div class="columns">
+<div class="column mt-2" width="65">
+<ul>
+<li>responsibility of the UI/UX designers</li>
+<li>occurs during the exploratory design phase
+<ul>
+<li>experimenting</li>
+</ul>
+</li>
+<li>iterative process</li>
+<li>iterations are presented to the stakeholders to gain feedback</li>
+<li>some professional tools: <a href="https://www.figma.com/">Figma</a>,
+<a href="https://balsamiq.com/">Balsamiq</a>, <a href="https://www.sketch.com/">Sketch</a></li>
+</ul>
+</div>
+<div class="column" width="35%">
+<p><img src="figures/publicdomainvectors/designer-workspace.svg"
+width="275" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on: (Bruton, 2022)</p>
+</div>
+<h2 id="design-prototyping"><a class="header" href="#design-prototyping">design prototyping</a></h2>
+<figure>
+<img src="figures/borrowed/td-design-thinking-non-linear-process.webp"
+height="475"
+alt="Interaction Design Foundation (Interaction Design Foundation, 2019) | CC BY-SA 4.0" />
+<figcaption aria-hidden="true">Interaction Design Foundation <span
+class="citation" data-cites="ixdf2019what">(Interaction Design
+Foundation, 2019)</span> | <a
+href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
+4.0</a></figcaption>
+</figure>
+<h1 id="types-of-wireframes"><a class="header" href="#types-of-wireframes">types of wireframes</a></h1>
+<div class="columns">
+<div class="column" width="33">
+<figure>
+<img src="figures/user_statistics/wireframe_lofi.drawio.svg" width="250"
+alt="low-fidelity" />
+<figcaption aria-hidden="true">low-fidelity</figcaption>
+</figure>
+</div>
+<div class="column" width="33">
+<figure>
+<img src="figures/user_stats.drawio.svg" width="250"
+alt="mid-fidelity" />
+<figcaption aria-hidden="true">mid-fidelity</figcaption>
+</figure>
+</div>
+<div class="column" width="33">
+<figure>
+<img src="figures/user_statistics/wireframe_hifi.drawio.svg" width="250"
+alt="high-fidelity" />
+<figcaption aria-hidden="true">high-fidelity</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="low-fidelity-wireframe"><a class="header" href="#low-fidelity-wireframe">low-fidelity wireframe</a></h2>
+<div class="columns">
+<div class="column mt-2" width="70">
+<ul>
+<li>first sketch</li>
+<li>simple</li>
+<li>rough visual representations of a webpage or application</li>
+<li>don’t consider scale or pixel accuracy</li>
+<li>don’t include actual content, typography, colors
+<ul>
+<li>image: boxes with an X</li>
+<li>text: scrible</li>
+</ul>
+</li>
+<li>might be hard to undersand</li>
+</ul>
+<div class="text-smaller">
+<p>source: (Bruton, 2022)</p>
+</div>
+</div>
+<div class="column" width="30%">
+<p><img src="figures/user_statistics/wireframe_lofi.drawio.svg"
+width="250" /></p>
+</div>
+</div>
+<h2 id="mid-fidelity-wireframe"><a class="header" href="#mid-fidelity-wireframe">mid-fidelity wireframe</a></h2>
+<div class="columns">
+<div class="column mt-2" width="70">
+<ul>
+<li>provides more precise representations of the layout</li>
+<li>for exploring design ideas, establishing spacing and buttons, and user
+flow</li>
+<li>still don’t include images, typography or detailed content
+<ul>
+<li>but show more details regarding components and features</li>
+</ul>
+</li>
+<li>no colors, grayscale</li>
+<li>usually made with digital tool</li>
+</ul>
+<div class="text-smaller">
+<p>source: (Bruton, 2022)</p>
+</div>
+</div>
+<div class="column" width="30%">
+<figure>
+<img src="figures/user_stats.drawio.svg" width="250"
+alt="mid-fidelity" />
+<figcaption aria-hidden="true">mid-fidelity</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="hi-fidelity-wireframe"><a class="header" href="#hi-fidelity-wireframe">hi-fidelity wireframe</a></h2>
+<div class="columns">
+<div class="column mt-2" width="70">
+<ul>
+<li>exploring complex concepts, finalising design</li>
+<li>provides pixel-specific layouts</li>
+<li>usually have actual images and written content</li>
+<li>created using a digital tool</li>
+<li>feature actual typography, detailed features, design elements (logos)
+and menu systems</li>
+<li>may presented as initial prototypes
+<ul>
+<li>interactive, clickable</li>
+</ul>
+</li>
+</ul>
+<div class="text-smaller">
+<p>source: (Bruton, 2022)</p>
+</div>
+</div>
+<div class="column" width="30%">
+<figure>
+<img src="figures/user_statistics/wireframe_hifi.drawio.svg" width="250"
+alt="high-fidelity" />
+<figcaption aria-hidden="true">high-fidelity</figcaption>
+</figure>
+</div>
+</div>
+<!-- ## prototype -->
+<h1 id="wireframe-map"><a class="header" href="#wireframe-map">wireframe map</a></h1>
+<p><img src="figures/user_statistics/wireframe_map_2.drawio.svg"
+height="500" /></p>
+<div class="text-smaller">
+<p>shows user flow, ~ user story map flow</p>
+</div>
+<h1 id="sitemap"><a class="header" href="#sitemap">sitemap</a></h1>
+<div class="columns">
+<div class="column" width="25">
+<ul>
+<li>similar to a wireframe map but for web sites</li>
+<li>for design, documentation</li>
+<li>also for machine processing
+<ul>
+<li>for web scrawlers</li>
+<li>sitemap.xml</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="75%">
+<img src="figures/sitemap_wbs.svg" width="600" />
+</div>
+</div>
+<h2 id="sitemap-as-wireframe-map"><a class="header" href="#sitemap-as-wireframe-map">sitemap as wireframe map</a></h2>
+<img src="figures/sitemap_wireframe.drawio.svg" height="550" />
+<h1 id="some-free-tools"><a class="header" href="#some-free-tools">some free tools</a></h1>
+<ul>
+<li><a href="https://docs.google.com/drawings">Google Drawings</a></li>
+<li><a href="https://app.diagrams.net/">draw.io</a></li>
+<li><a href="https://quant-ux.com/">Quant-UX</a>
+<ul>
+<li>open source (self-hosted) or free as a service</li>
+</ul>
+</li>
+<li><a href="https://wireframe.cc/">wireframe.cc</a>
+<ul>
+<li>only public and no export in free plan</li>
+</ul>
+</li>
+<li><a href="https://www.figma.com/">Figma</a>
+<ul>
+<li>has a limited free plan</li>
+</ul>
+</li>
+</ul>
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+line-spacing="2">
+<div id="ref-bruton2022what" class="csl-entry">
+<p>Bruton, L. (2022). <em>What is wireframing? A complete guide</em>. <a href="
+                   https://www.uxdesigninstitute.com/blog/what-is-wireframing/
+                    " class="uri">
+https://www.uxdesigninstitute.com/blog/what-is-wireframing/
+</a>.</p>
+</div>
+<div id="ref-ixdf2019what" class="csl-entry">
+<p>Interaction Design Foundation. (2019). <em>What are prototypes?</em> <a href="
+                   https://www.interaction-design.org/literature/topics/prototypes
+                    " class="uri">
+https://www.interaction-design.org/literature/topics/prototypes
+</a>.</p>
 </div>
 </div>
 
@@ -361,11 +385,11 @@ circle and a rectange</li>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../lectures/06_uml.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../lectures/10_planning.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../lectures/08_patterns.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../lectures/12_clean_code.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -375,11 +399,11 @@ circle and a rectange</li>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../lectures/06_uml.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../lectures/10_planning.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../lectures/08_patterns.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../lectures/12_clean_code.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

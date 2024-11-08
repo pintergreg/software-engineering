@@ -1,0 +1,1441 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>design patterns - handout</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="software engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/custom-mdbook.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <div class="sidebar-scrollbox"></div>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <script async src="../toc.js"></script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">handout</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <img src="figures/sdlc_2.drawio.svg" width="900" />
+<h1 id="software-design-and-architecture-stack"><a class="header" href="#software-design-and-architecture-stack">software design and architecture stack</a></h1>
+<figure>
+<img
+src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
+height="475" alt="based on Khalil Stemmel’s figure (Stemmler, 2019)" />
+<figcaption aria-hidden="true">based on Khalil Stemmel’s figure <span
+class="citation" data-cites="stemmler2019how">(Stemmler,
+2019)</span></figcaption>
+</figure>
+<h1 id="gang-of-four-gof-design-patterns"><a class="header" href="#gang-of-four-gof-design-patterns">gang of four (GoF) design patterns</a></h1>
+<ul>
+<li>GoF: Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides</li>
+<li>23 common software design patterns
+<ul>
+<li>published in “Design Patterns: Elements of Reusable Object-Oriented
+Software” (1994) (Gamma et al., 1994)</li>
+</ul>
+</li>
+<li>provides solutions to common design problems</li>
+<li>categorized into three main groups
+<ol>
+<li>creational</li>
+<li>structural</li>
+<li>behavioral</li>
+</ol>
+</li>
+</ul>
+<h2 id="the-23-gof-design-patterns"><a class="header" href="#the-23-gof-design-patterns">the 23 (GoF) design patterns</a></h2>
+<div class="columns">
+<div class="column" width="30%">
+<p><strong>creational</strong></p>
+<ul>
+<li>Factory Method</li>
+<li>Abstract Factory</li>
+<li>Builder</li>
+<li>Prototype</li>
+<li>Singleton</li>
+</ul>
+</div>
+<div class="column" width="30%">
+<p><strong>structural</strong></p>
+<ul>
+<li>Adapter</li>
+<li>Bridge</li>
+<li>Composite</li>
+<li>Decorator</li>
+<li>Facade</li>
+<li>Flyweight</li>
+<li>Proxy</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><strong>behavioral</strong></p>
+<ul>
+<li>Chain of Responsibility</li>
+<li>Command</li>
+<li>Interpreter</li>
+<li>Iterator</li>
+<li>Mediator</li>
+<li>Memento</li>
+<li>Observer</li>
+<li>State</li>
+<li>Strategy</li>
+<li>Template Method</li>
+<li>Visitor</li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>read about the design patterns in details, for example at
+<a href="https://refactoring.guru/design-patterns/catalog">refactoring.guru</a></p>
+</div>
+<h2 id="bridge-pattern-structural"><a class="header" href="#bridge-pattern-structural">bridge pattern (structural)</a></h2>
+<img src="figures/gof/bridge_pre.svg" height="175" />
+<div class="r-stack fragment" data-fragment-index="1">
+<div class="fragment fade-out" data-fragment-index="2">
+<img src="figures/gof/bridge.svg" height="200" />
+</div>
+<div class="fragment" data-fragment-index="2">
+<img src="figures/gof/bridge_2.svg" height="225" />
+</div>
+</div>
+<h2 id="gof-design-patterns-in-functional-programming"><a class="header" href="#gof-design-patterns-in-functional-programming">GoF design patterns in functional programming</a></h2>
+<table>
+<thead>
+<tr class="header">
+<th>OO pattern</th>
+<th>FP pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>factory pattern</td>
+<td>function</td>
+</tr>
+<tr class="even">
+<td>strategy pattern</td>
+<td>function</td>
+</tr>
+<tr class="odd">
+<td>decorator pattern</td>
+<td>function</td>
+</tr>
+<tr class="even">
+<td>visitor pattern</td>
+<td>function</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>Peter Norvig <a href="http://www.norvig.com/design-patterns/">demonstrated</a> that
+16 out of the 23 patterns are simplified or eliminated by language
+features in Lisp or Dylan (1998) (Norvig, 1998)</p>
+<p><a href="https://fsharpforfunandprofit.com/fppatterns/">more about</a> it from
+Scott Wlaschin (Wlaschin, 2014)</p>
+<h1 id="you-arent-gonna-need-it-yagni"><a class="header" href="#you-arent-gonna-need-it-yagni">You aren’t gonna need it (YAGNI)</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>states that a programmer should not add functionality until deemed
+necessary</li>
+<li>principle originates from extreme programming (XP)</li>
+</ul>
+<div class="wide-quote mt-3">
+<blockquote>
+<p>Always implement things when you actually need them, never when you
+just foresee that you need them.</p>
+<p>– <a href="https://ronjeffries.com/xprog/articles/practices/pracnotneed/">Ron
+Jeffries</a></p>
+</blockquote>
+</div>
+</div>
+<div class="column text-size-1" width="55%">
+<div class="r-frame">
+<p><strong>extreme programming</strong></p>
+<ul>
+<li>advocates frequent releases in short development cycles</li>
+<li>intended to improve productivity and introduce checkpoints at which
+new customer requirements can be adopted</li>
+<li>features
+<ul>
+<li>programming in pairs,</li>
+<li>doing extensive code review,</li>
+<li>unit testing of all code,</li>
+<li>not programming features until they are actually needed,</li>
+<li>flat management structure</li>
+</ul>
+</li>
+<li>considered a type of agile software development</li>
+</ul>
+</div>
+</div>
+</div>
+<h1 id="coupling"><a class="header" href="#coupling">coupling</a></h1>
+<div class="columns">
+<div class="column mt-5" width="55%">
+<ul>
+<li>the degree of interdependence between software modules</li>
+<li>coupling is usually contrasted with cohesion
+<ul>
+<li>low coupling often correlates with high cohesion, and vice versa</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="45%">
+<figure>
+<img src="figures/borrowed/CouplingVsCohesion.svg"
+alt="from Wikimedia | public domain" />
+<figcaption aria-hidden="true">from <a
+href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia</a>
+| public domain</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-2">
+<p>source
+<a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
+(Wikipedia contributors, 2024a)</p>
+</div>
+<h1 id="solid-principles"><a class="header" href="#solid-principles">SOLID principles</a></h1>
+<blockquote>
+<p>SOLID is a mnemonic acronym for five design principles intended to
+make object-oriented designs more understandable, flexible, and
+maintainable (Wikipedia contributors, 2024d)</p>
+</blockquote>
+<ul>
+<li>single responsibility principle</li>
+<li>open-closed principle</li>
+<li>Liskov substitution principle</li>
+<li>interface segregation principle</li>
+<li>dependency inversion principle</li>
+</ul>
+<div class="mt-3">
+<ul>
+<li>introduced by Robert C. Martin
+<ul>
+<li>in his 2000 paper <a href="https://web.archive.org/web/20150906155800/http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf"><em>Design Principles and Design
+Patterns</em></a>
+about software rot</li>
+</ul>
+</li>
+<li>the SOLID acronym was coined around 2004 by Michael Feathers</li>
+</ul>
+</div>
+<div class="notes">
+<ul>
+<li>https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/</li>
+<li>https://devopedia.org/solid-design-principles#Merson-2020</li>
+</ul>
+</div>
+<h2 id="single-responsibility-principle"><a class="header" href="#single-responsibility-principle">single responsibility principle</a></h2>
+<blockquote>
+<p>a class should do one thing and therefore it should have only a single
+reason to change</p>
+</blockquote>
+<div class="columns">
+<div class="column text-smaller" width="50%">
+<p>Unix philosophy</p>
+<p>Make each program do one thing well. To do a new job, build afresh
+rather than complicate old programs by adding new “features”.</p>
+</div>
+<div class="column text-smaller" width="50%">
+<p>advantages</p>
+<ul>
+<li>testing is easier
+<ul>
+<li>fewer test cases required</li>
+</ul>
+</li>
+<li>less dependencies
+<ul>
+<li>to other modules or classes</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2 id="open-closed-principle"><a class="header" href="#open-closed-principle">open-closed principle</a></h2>
+<blockquote>
+<p>classes should be open for extension and closed to modification</p>
+</blockquote>
+<div class="columns">
+<div class="column" width="50%">
+<p><img src="figures/solid/open_closed_pre.svg" alt="" /></p>
+</div>
+<div class="column pre-width-100 text-smaller" width="50%">
+<pre><code class="language-python">class Shape:
+    pass
+
+
+class Square(Shape):
+    def __init__(self, width: float):
+        self.width = width
+
+class Circle(Shape):
+    def __init__(self, radius: float):
+        self.radius = radius
+
+class AreaCalculator:
+
+    def sum(self, shapes: list[Shape]) -&gt; float:
+        result = 0
+        for shape in shapes:
+            if isinstance(shape, Square):
+                result += shape.width**2
+            elif isinstance(shape, Circle):
+                result += shape.radius**2 * math.pi
+
+        return round(result, 2)
+</code></pre>
+</div>
+</div>
+<div class="text-smaller">
+<p>example based on (Oloruntoba &amp; Walia, 2024)</p>
+</div>
+<h2 id="open-closed-principle-1"><a class="header" href="#open-closed-principle-1">open-closed principle</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<p><img src="figures/solid/open_closed.svg" alt="" /></p>
+</div>
+<div class="column text-smaller" width="50%">
+<pre><code class="language-python">class Shape:
+    pass
+
+class AreaInterface:
+    def area(shape: Shape) -&gt; float:
+        pass
+
+class Square(Shape, AreaInterface):
+    def __init__(self, width: float):
+        self.width = width
+
+    def area(self) -&gt; float:
+        return self.width**2
+
+class Circle(Shape, AreaInterface):
+    def __init__(self, radius: float):
+        self.radius = radius
+
+    def area(self) -&gt; float:
+        return round(self.radius**2 * math.pi, 2)
+
+class AreaCalculator:
+    def sum(self, shapes: list[Shape]) -&gt; float:
+        return sum([i.area() for i in shapes])
+</code></pre>
+</div>
+</div>
+<div class="text-smaller">
+<p>example based on (Oloruntoba &amp; Walia, 2024)</p>
+</div>
+<h2 id="liskov-substitution-principle"><a class="header" href="#liskov-substitution-principle">Liskov substitution principle</a></h2>
+<blockquote>
+<p>if class A is a subtype of class B, B should be able to replaced with
+A without disrupting the behavior of the program (Millington, 2019)</p>
+</blockquote>
+<div class="text-smaller mt-3">
+<ul>
+<li>named after Barbara Liskov</li>
+<li>presented first in 1987 (Liskov, 1987)</li>
+<li>circle-ellipse problem / square–rectangle problem
+<ul>
+<li>existence of the circle–ellipse problem is used to criticize
+object-oriented programming (Wikipedia contributors, 2023)</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="liskov-substitution-principle---example"><a class="header" href="#liskov-substitution-principle---example">Liskov substitution principle - example</a></h2>
+<div class="columns">
+<div class="column pre-width-100" width="50%">
+<pre><code class="language-python">class Rectangle:
+
+    def __init__(self, width: int, height: int):
+        self.__width = width
+        self.__height = height
+
+    def setWidth(self, width: int):
+        self.__width = width
+
+    def setHeight(self, height: int):
+        self.__height = height
+
+    def getWidth(self):
+        return self.__width
+
+    def getHeight(self):
+        return self.__height
+
+    def getArea(self):
+        return self.__width * self.__height
+</code></pre>
+</div>
+<div class="column" width="50%">
+<pre><code class="language-python">class Square(Rectangle):
+
+    def __init__(self, width: int):
+        super().setWidth(width)
+        super().setHeight(width)
+
+    def setWidth(self, width: int):
+        super().setWidth(width)
+        super().setHeight(width)
+
+    def setHeight(self, height: int):
+        super().setWidth(height)
+        super().setHeight(height)
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; r = Rectangle(2, 3)
+&gt;&gt;&gt; print(r.getArea())
+6
+
+&gt;&gt;&gt; s = Square(2)
+&gt;&gt;&gt; print(s.getArea())
+4
+</code></pre>
+</div>
+</div>
+<div class="text-smaller">
+<p>code is based on (Erinç, 2020)</p>
+</div>
+<h2 id="liskov-substitution-principle---example-1"><a class="header" href="#liskov-substitution-principle---example-1">Liskov substitution principle - example</a></h2>
+<pre><code class="language-python">def getAreaTest(r: Rectangle):
+    width = r.getWidth()  # width is 2
+    r.setHeight(10)
+    return f"Expected area of {width * 10}, got {r.getArea()}"
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; r = Rectangle(2, 3)
+&gt;&gt;&gt; print(r.getArea())
+6
+
+&gt;&gt;&gt; s = Square(2)
+&gt;&gt;&gt; print(s.getArea())
+4
+
+&gt;&gt;&gt; print(getAreaTest(r))  # rectangle
+Expected area of 20, got 20
+
+&gt;&gt;&gt; print(getAreaTest(s))  # square
+Expected area of 20, got 100
+</code></pre>
+<p>this example violates the Liskov substitution principle</p>
+<div class="text-smaller">
+<p>code is based on (Erinç, 2020)</p>
+</div>
+<h2 id="interface-segregation-principle"><a class="header" href="#interface-segregation-principle">interface segregation principle</a></h2>
+<blockquote>
+<p>states that many client-specific interfaces are better than one
+general-purpose interface. Clients should not be forced to implement a
+function they do no need.</p>
+</blockquote>
+<div class="columns">
+<div class="column" width="50%">
+<img src="figures/solid/interface_segregation_pre.svg" height="275" />
+</div>
+<div class="column fragment" width="50%">
+<img src="figures/solid/interface_segregation.svg" height="275" />
+</div>
+</div>
+<div class="text-smaller">
+<p>example based on (Oloruntoba &amp; Walia, 2024)</p>
+</div>
+<h2 id="dependency-inversion-principle"><a class="header" href="#dependency-inversion-principle">dependency inversion principle</a></h2>
+<blockquote>
+<p>Dependency inversion principle says that modules should depend upon
+interfaces or abstract classes, not concrete classes. It’s an
+inversion because implementations depend upon abstractions and not the
+other way round. (Millington, 2019)</p>
+</blockquote>
+<img src="figures/solid/dependency_inversion.svg" height="300" />
+<div class="text-smaller">
+<p>increases reusability</p>
+</div>
+<h1 id="hollywood-principle-inversion-of-control"><a class="header" href="#hollywood-principle-inversion-of-control">hollywood principle (inversion of control)</a></h1>
+<blockquote>
+<p>don’t call us, we’ll call you</p>
+</blockquote>
+<ul>
+<li>for control flow management</li>
+<li>IoC shifts control from the application to an outside framework</li>
+<li>promotes a more modular design by decoupling components
+<ul>
+<li>however, adding an IoC framework can increase complexity
+<ul>
+<li>with a significant learning curve for those unfamiliar with the
+concept</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g., Spring Framework, ASP.NET Core</li>
+</ul>
+<div class="text-smaller">
+<p>based on (Stec, 2024)</p>
+</div>
+<h1 id="topologies"><a class="header" href="#topologies">topologies</a></h1>
+<div class="columns">
+<div class="column" width="60%">
+<p>Object-oriented design (OOD) is the process of planning a system of
+interacting objects to solve a software problem (Wikipedia contributors,
+2024c).</p>
+<div class="fragment" data-fragment-index="1">
+<p>control flow? structure?</p>
+<figure>
+<img src="figures/legacy_structure.drawio.svg" width="400"
+alt="historically grown architecture based on (Woltmann, 2023)" />
+<figcaption aria-hidden="true">historically grown architecture<br>based
+on <span class="citation" data-cites="woltmann2023hexagonal">(Woltmann,
+2023)</span></figcaption>
+</figure>
+</div>
+<!--
+::: {.fragment data-fragment-index=1 .mt-2}
+![](figures/message_bus.drawio.svg){width=200 .m-0}
+&#10;![](figures/server_client.drawio.svg){width=200 .m-0}
+:::-->
+</div>
+<div class="column fragment" width="40%" data-fragment-index="2">
+<!-- ![](figures/message_bus.drawio.svg){width=200 .m-0} -->
+<img src="figures/server_client.drawio.svg" class="m-0" width="200" />
+<img src="figures/layered_gray.drawio.svg" class="m-0" width="200" />
+<!--![](figures/layered.drawio.svg){width=175 .m-0}-->
+<figure>
+<img src="figures/hexagonal_gray.drawio.svg" class="m-0" width="175"
+alt="based on Cth027’s figure | CC BY-SA" />
+<figcaption aria-hidden="true"><span class="text-small">based on <a
+href="https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg">Cth027’s
+figure</a> | CC BY-SA</span></figcaption>
+</figure>
+<!-- ![](figures/onion_gray.drawio.svg){width=175 .m-0} -->
+</div>
+</div>
+<h2 id="serverclient-architecture"><a class="header" href="#serverclient-architecture">server/client architecture</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>consists of two parts
+<ul>
+<li>client and server</li>
+</ul>
+</li>
+<li>distributed</li>
+<li>always the client initiates a connection to the server</li>
+<li>while the server process always waits for requests from any client</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<img src="figures/server_client.drawio.svg" width="325" />
+</div>
+</div>
+<h2 id="message-bus"><a class="header" href="#message-bus">message bus</a></h2>
+<div class="columns">
+<div class="column mt-2" width="50%">
+<ul>
+<li>shared communication channel that connects multiple components or
+services</li>
+<li>simple, extensible</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<img src="figures/message_bus.drawio.svg" width="325" />
+<div class="fragment">
+<figure>
+<img src="figures/can_bus.drawio.svg" width="325" alt="CAN bus" />
+<figcaption aria-hidden="true">CAN bus</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<h2 id="message-bus-types"><a class="header" href="#message-bus-types">message bus types</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<p><strong>models</strong></p>
+<ul>
+<li>publish-subscribe model
+<ul>
+<li>messages are published to a specific topic, and all subscribed
+receivers receive those messages</li>
+<li>one to many</li>
+</ul>
+</li>
+<li>point-to-point model
+<ul>
+<li>messages are sent directly from a sender to a specific receiver,
+ensuring that only that recipient processes the message</li>
+<li>one to one</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column fragment" width="50%">
+<p><strong>delivery guaranties</strong></p>
+<ul>
+<li>at most once
+<ul>
+<li>push based</li>
+<li>no retries</li>
+</ul>
+</li>
+<li>at least once
+<ul>
+<li>delivery confirmation</li>
+<li>(typically) pull based</li>
+</ul>
+</li>
+<li>exactly once
+<ul>
+<li>at least once, extended by guarantee that there will be no
+duplicates</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on (Okeyo, 2023) and (Inc., 2022)</p>
+</div>
+<div class="notes">
+<p>https://www.inngest.com/blog/message-bus-vs-queues</p>
+</div>
+<h2 id="layered"><a class="header" href="#layered">layered</a></h2>
+<p>number of layers in a layered architecture is not set to a specific
+number</p>
+<div class="columns">
+<div class="column" width="65%">
+<ul>
+<li>presentation layer (a.k.a. UI layer, view layer)
+<ul>
+<li>responsible for user interactions with the software system</li>
+</ul>
+</li>
+<li>application layer (a.k.a. service layer)
+<ul>
+<li>aspects related to accomplishing functional requirements</li>
+</ul>
+</li>
+<li>business (logic) layer
+<ul>
+<li>responsible for algorithms, and programming components</li>
+</ul>
+</li>
+<li>data access layer (a.k.a. persistence layer)
+<ul>
+<li>responsible for handling data, databases</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="35%">
+<img src="figures/layered_4.drawio.svg" height="400" />
+</div>
+</div>
+<h2 id="layered---properties"><a class="header" href="#layered---properties">layered - properties</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<p><strong>advantages</strong></p>
+<ul>
+<li>simple and easy to learn and implement</li>
+<li>reduced dependency because the function of each layer is separate from
+the other layers</li>
+<li>testing is easier because of the separated components
+<ul>
+<li>components can be tested individually</li>
+</ul>
+</li>
+<li>cost overheads are fairly low</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p><strong>disadvantages</strong></p>
+<ul>
+<li>scalability is difficult
+<ul>
+<li>not well-suited for large projects</li>
+</ul>
+</li>
+<li>can be difficult to maintain
+<ul>
+<li>a change in a single layer can affect the entire system because it
+operates as a single unit</li>
+</ul>
+</li>
+<li>a layer depends on the layer above it</li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on (baeldung, 2021)</p>
+</div>
+<h2 id="onion-architecture"><a class="header" href="#onion-architecture">onion architecture</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>popularized by Jeffrey Palermo</li>
+<li>code can depend on layers more central, but code cannot depend on
+layers further out from the core
+<ul>
+<li>all coupling is toward the center</li>
+</ul>
+</li>
+<li>the database is not the center, it is external
+<ul>
+<li>the data model is in focus, whereas in layered data is the
+foundation</li>
+</ul>
+</li>
+<li>relies on the dependency inversion principle</li>
+<li>appropriate for long-lived business applications
+<ul>
+<li>also applications with complex behavior</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<img src="figures/onion.drawio.svg" width="350" />
+</div>
+</div>
+<div class="text-smaller">
+<p>based on (Palermo, 2008)</p>
+</div>
+<div class="notes">
+<ul>
+<li><a href="https://softwareengineering.stackexchange.com/questions/319747/onion-architecture-vs-3-layered-architecture">onion vs
+layered</a></li>
+</ul>
+</div>
+<h2 id="hexagonal---motivation"><a class="header" href="#hexagonal---motivation">hexagonal - motivation</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>invented by Alistair Cockburn (Cockburn, 2010)</li>
+<li>application should be equally controllable by users, other
+applications, or automated tests
+<ul>
+<li>for the business logic, it makes no difference whether it is invoked
+from a user interface, a REST API, or a test framework</li>
+</ul>
+</li>
+<li>infrastructure modernization should be possible without changing the
+business logic <!-- - easy to mock --></li>
+</ul>
+</div>
+<div class="column" width="40%">
+<!-- ![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300} -->
+<img src="figures/hexagonal_extend.drawio.svg" width="325" />
+</div>
+</div>
+<div class="text-smaller">
+<p>based on (Woltmann, 2023)</p>
+</div>
+<h2 id="hexagonal-ports--adapters"><a class="header" href="#hexagonal-ports--adapters">hexagonal (ports &amp; adapters)</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<p>advantages</p>
+<ul>
+<li>modifiability</li>
+<li>isolates responsibilities</li>
+<li>once the ports are defined, the work on the components can be divided
+among developers</li>
+</ul>
+<p>disadvantages</p>
+<ul>
+<li>the effort of port-adapter implementation is non-negligible</li>
+<li>for smaller applications, the extra effort is not worth it</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<!-- ![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300} -->
+<img src="figures/hexagonal_extend.drawio.svg" width="325" />
+<div class="fragment text-smaller">
+<ul>
+<li>hexagonal architecture does not specify what is inside the application
+hexagon</li>
+<li>represents a single design decision:
+<ul>
+<li>wrap your application in an API and put tests around it</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on (Woltmann, 2023)</p>
+</div>
+<h2 id="hexagonal-vs-layered"><a class="header" href="#hexagonal-vs-layered">hexagonal vs. layered</a></h2>
+<!--
+- hexagonal architecture does not specify what is inside the application hexagon
+- represents a single design decision:
+    - wrap your application in an API and put tests around it
+-->
+<div class="columns">
+<div class="column" width="50%">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<img src="figures/hexagonal.drawio.svg" width="350" />
+</div>
+<div class="fragment" data-fragment-index="1">
+<img src="figures/hexagonal_extend.drawio.svg" width="350" />
+</div>
+</div>
+</div>
+<div class="column" width="50%">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<img src="figures/wide_layered.drawio.svg" width="350" />
+</div>
+<div class="fragment" data-fragment-index="1">
+<img src="figures/extend_layered.drawio.svg" width="350" />
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p>can be extend without changing the business logic</p>
+</div>
+<div class="text-smaller fragment" data-fragment-index="2">
+<p>it is very similar to the onion and (the clean architecture (Martin,
+2012))</p>
+</div>
+<div class="text-smaller">
+<p>based on (Woltmann, 2023)</p>
+</div>
+<h1 id="model-view-controller-wikipedia-contributors-2024b"><a class="header" href="#model-view-controller-wikipedia-contributors-2024b">Model-View-Controller (Wikipedia contributors, 2024b)</a></h1>
+<div class="columns">
+<div class="column" width="55%">
+<ul>
+<li>architectural pattern</li>
+<li>MVC pattern was implemented as early as 1974 in the Smalltalk project</li>
+</ul>
+<div class="text-smaller mt-2">
+<ul>
+<li>view is responsible for rendering UI</li>
+<li>controller responds to the user input and performs interactions on the
+data model</li>
+<li>model is responsible for managing the data</li>
+</ul>
+</div>
+<div class="text-smaller mt-2">
+<ul>
+<li>the view and the model are tightly coupled</li>
+<li>view is monolithic and usually couples tightly with the UI framework
+<ul>
+<li>unit testing the view becomes difficult</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="column" width="45%">
+<img src="figures/mvc.drawio.svg" width="300" />
+<!--::: {.text-smaller}
+- view is responsible for rendering UI
+- controller responds to the user input and performs interactions on the data model
+- model is responsible for managing the data
+:::-->
+</div>
+</div>
+<h2 id="mvc---mvp---mvvm"><a class="header" href="#mvc---mvp---mvvm">MVC - MVP - MVVM</a></h2>
+<div class="columns">
+<div class="column" width="30%">
+<img src="figures/mvc.drawio.svg" width="300" />
+<div class="text-smaller">
+<p>ASP.NET, Django (Python), Ruby on Rails, Laravel (PHP)</p>
+</div>
+</div>
+<div class="column" width="30%">
+<img src="figures/mvp.drawio.svg" width="300" />
+<div class="text-smaller">
+<p>Windows Forms, Java Swing</p>
+</div>
+</div>
+<div class="column" width="30%">
+<img src="figures/mvvm.drawio.svg" width="300" />
+<div class="text-smaller">
+<p>WPF, AngularJS</p>
+</div>
+</div>
+</div>
+<div class="text-smaller">
+<p>figures based on (Pedamkar, 2023)</p>
+</div>
+<div class="text-smaller">
+<p>other alternatives: <a href="https://blog.ircmaxell.com/2014/11/alternatives-to-mvc.html">Alternatives To
+MVC</a> - by
+Anthony Ferrara</p>
+</div>
+<h1 id="user-statistics-example"><a class="header" href="#user-statistics-example">user statistics example</a></h1>
+<div class="columns">
+<div class="column pre-width-100" width="55%">
+<p><code>as a user I want to see my activity to see my progress</code></p>
+<p>display user statistics including</p>
+<ul>
+<li>username</li>
+<li>profile image</li>
+<li>registration date</li>
+<li>progress in course</li>
+<li>daily activity in the current month</li>
+</ul>
+</div>
+<div class="column" width="45%">
+<img src="figures/user_stats.drawio.svg" width="300" />
+</div>
+</div>
+<h2 id="architecture-v1"><a class="header" href="#architecture-v1">architecture v1</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<p><img src="figures/user_statistics/component_1.svg" alt="" /></p>
+</div>
+<div class="column" width="40%">
+<p>send everything to the UI</p>
+<p><img src="figures/user_statistics/user_data_full.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="architecture-v1---class"><a class="header" href="#architecture-v1---class">architecture v1 - class</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<img src="figures/user_statistics/class_1.svg" width="600" />
+</div>
+<div class="column mt-5 fragment" width="30%">
+<p>in this case the UI has to calculate the daily activity</p>
+<div class="fragment">
+<ul>
+<li>tight coupling</li>
+<li>single responsibility principle violated</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="architecture-v2"><a class="header" href="#architecture-v2">architecture v2</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<p><img src="figures/user_statistics/component_2.svg" alt="" /></p>
+</div>
+<div class="column" width="40%">
+<p>send only the aggregated data</p>
+<p><img src="figures/user_statistics/user_data_light.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="architecture-v2---class"><a class="header" href="#architecture-v2---class">architecture v2 - class</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<img src="figures/user_statistics/class_2.svg" width="600" />
+</div>
+<div class="column mt-5" width="30%">
+<p>data collector still has the whole user data but that aligns with its
+purpose</p>
+<p>data aggregator calculates everything and the UI only displays it</p>
+</div>
+</div>
+<h2 id="architecture-v21---class"><a class="header" href="#architecture-v21---class">architecture v2.1 - class</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<img src="figures/user_statistics/class_3.svg" width="600" />
+</div>
+<div class="column mt-2" width="30%">
+<p><img src="figures/user_statistics/server_client.drawio.svg"
+height="100" /></p>
+<p>UI might be on a client</p>
+<p>different code base, different language</p>
+</div>
+</div>
+<h2 id="architecture-v3"><a class="header" href="#architecture-v3">architecture v3</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<p><img src="figures/user_statistics/component_3.svg" alt="" /></p>
+</div>
+<div class="column" width="40%">
+<p>make the database aggregate the data</p>
+<p><img src="figures/user_statistics/user_data_light.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="architecture-v3---sql"><a class="header" href="#architecture-v3---sql">architecture v3 - SQL</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="35%">
+<p><img src="figures/user_statistics/component_3.svg" alt="" /></p>
+</div>
+<div class="column pre-width-100" width="65%">
+<p><span class="text-smaller">for the activity matrix:</span></p>
+<pre><code class="language-sql">SELECT
+    CAST(strftime('%W', timestamp) AS INTEGER) AS week_of_year,
+    CAST(strftime('%u', timestamp) AS INTEGER) AS day_of_week,
+    count(*) AS count
+FROM activity
+WHERE
+    user_id = 42 AND
+    week_of_year &gt; 35 AND
+    week_of_year &lt; 40
+GROUP BY
+    week_of_year,
+    day_of_week
+;
+</code></pre>
+</div>
+</div>
+<h2 id="architecture-v3---sql-1"><a class="header" href="#architecture-v3---sql-1">architecture v3 - SQL</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img src="figures/user_statistics/component_3.svg" alt="" /></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p><img src="figures/user_statistics/sequence.svg" alt="" /></p>
+</div>
+</div>
+</div>
+<div class="column pre-width-100" width="50%">
+<p><span class="text-smaller">for the progress:</span></p>
+<pre><code class="language-sql">SELECT
+    lesson / 50.0 AS progress
+FROM activity
+WHERE
+    user_id = 42 AND
+    result = 'success'
+ORDER BY
+    lesson DESC
+LIMIT 1;
+</code></pre>
+</div>
+</div>
+<h2 id="architecture-v3---issues"><a class="header" href="#architecture-v3---issues">architecture v3 - issues</a></h2>
+<ul>
+<li>hard dependency on database
+<ul>
+<li>business logic in persistence layer</li>
+<li>code depends on the SQL dialect
+<ul>
+<li>can be mitigated with an object-relational mapping (ORM) framework
+but that would also be a dependency</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>may not suitable for complex aggregations
+<ul>
+<li>stored functions just increase dependency</li>
+</ul>
+</li>
+<li>harder to unit test</li>
+</ul>
+<div class="fragment text-color-secondary">
+<p>on the other hand, most of these are present in all the three
+architectures!</p>
+</div>
+<h1 id="record-architecture-decisions"><a class="header" href="#record-architecture-decisions">record architecture decisions</a></h1>
+<div class="text-small">
+<p>in each architecture decision record, write these sections:</p>
+</div>
+<pre><code class="language-markdown"># Title
+
+## Status
+
+What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.?
+
+## Context
+
+What is the issue that we're seeing that is motivating this decision or change?
+
+## Decision
+
+What is the change that we're proposing and/or doing?
+
+## Consequences
+
+What becomes easier or more difficult to do because of this change?
+</code></pre>
+<div class="text-small">
+<p>ADR template by Michael Nygard from <a href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions">Documenting architecture
+decisions</a></p>
+</div>
+<div class="notes">
+<p>You can use <a href="https://github.com/npryce/adr-tools">adr-tools</a> to manage
+the markdown based (Nygard stlye) the ADR files.</p>
+</div>
+<h2 id="why-write-ards"><a class="header" href="#why-write-ards">why write ARDs?</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="80%">
+<ul>
+<li>they’re not for you, they’re for the future you
+<ul>
+<li>ADRs capture the decision at the time it’s being made
+<ul>
+<li>on a meeting, on Slack, Teams, Zoom, etc.</li>
+<li>like a structured memo</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>they’re not for you, they’re for your peers
+<ul>
+<li>ADRs help your teammates understand why the feature is built the way
+it is and not built some other way
+<ul>
+<li>alternatives considered and pros/cons within the ADRs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>they’re not for you, they’re for your future peers
+<ul>
+<li>writing down decisions help communicate to your current teammates,
+but also those who will join later</li>
+<li>it is an asynchronous way of communication, no need for a Zoom call,
+which reduces interruption</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="20%">
+<p><img src="figures/publicdomainvectors/shelves-with-office-folders.svg" alt="" /></p>
+</div>
+</div>
+<div class="text-smaller mt-1">
+<p>based on <a href="https://github.blog/2020-08-13-why-write-adrs/">Why Write
+ADRs</a> by Eli Perkins</p>
+</div>
+<h1 id="references"><a class="header" href="#references">references</a></h1>
+<div id="refs"
+class="text-smaller references csl-bib-body hanging-indent"
+line-spacing="2">
+<div id="ref-baeldung20214layered" class="csl-entry">
+<p>baeldung. (2021). <em>Layered architecture</em>. <a href="
+                    https://www.baeldung.com/cs/layered-architecture
+                    " class="uri">
+https://www.baeldung.com/cs/layered-architecture
+</a>.</p>
+</div>
+<div id="ref-cockburn2010hexagonal" class="csl-entry">
+<p>Cockburn, A. (2010). <em>Hexagonal architecture</em>. <a href="
+                   https://alistair.cockburn.us/hexagonal-architecture/
+                    " class="uri">
+https://alistair.cockburn.us/hexagonal-architecture/
+</a>.</p>
+</div>
+<div id="ref-erinc2020solid" class="csl-entry">
+<p>Erinç, Y. K. (2020). <em>The SOLID principles of object-oriented
+programming explained in plain english</em>. <a href="
+                https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
+                    " class="uri">
+https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
+</a>.</p>
+</div>
+<div id="ref-gamma1994design" class="csl-entry">
+<p>Gamma, E., Helm, R., Johnson, R., &amp; Vlissides, J. (1994). <em>Design
+patterns: Elements of reusable object-oriented software</em>. Pearson
+Education. <a href="https://books.google.hu/books?id=6oHuKQe3TjQC">https://books.google.hu/books?id=6oHuKQe3TjQC</a></p>
+</div>
+<div id="ref-inngest2022message" class="csl-entry">
+<p>Inc., I. (2022). <em>Message queue vs message bus: The practical
+differences</em>. <a href="
+                    https://www.inngest.com/blog/message-bus-vs-queues
+                    " class="uri">
+https://www.inngest.com/blog/message-bus-vs-queues
+</a>.</p>
+</div>
+<div id="ref-liskov1987data" class="csl-entry">
+<p>Liskov, B. (1987). Keynote address - data abstraction and hierarchy.
+<em>SIGPLAN Not.</em>, <em>23</em>(5), 17–34. <a href="https://doi.org/10.1145/62139.62141">https://doi.org/10.1145/62139.62141</a></p>
+</div>
+<div id="ref-martin2012clean" class="csl-entry">
+<p>Martin, R. C. (2012). <em>The clean architecture</em>. <a href="
+                   https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+                    " class="uri">
+https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+</a>.</p>
+</div>
+<div id="ref-millington2019solid" class="csl-entry">
+<p>Millington, S. (2019). <em>A solid guide to SOLID principles</em>. <a href="
+                    https://www.baeldung.com/solid-principles
+                    " class="uri">
+https://www.baeldung.com/solid-principles
+</a>.</p>
+</div>
+<div id="ref-norvig1998design" class="csl-entry">
+<p>Norvig, P. (1998). <em>Design patterns in dynamic languages</em>. <a href="
+                    http://www.norvig.com/design-patterns/
+                    " class="uri">
+http://www.norvig.com/design-patterns/
+</a>.</p>
+</div>
+<div id="ref-okeyo2023beginners" class="csl-entry">
+<p>Okeyo, B. (2023). <em>A beginners guide to understanding message bus
+architecture</em>. <a href="
+                    https://dev.to/billy_de_cartel/a-beginners-guide-to-understanding-message-bus-architecture-22ec
+                    " class="uri">
+https://dev.to/billy_de_cartel/a-beginners-guide-to-understanding-message-bus-architecture-22ec
+</a>.</p>
+</div>
+<div id="ref-oloruntoba2024solid" class="csl-entry">
+<p>Oloruntoba, S., &amp; Walia, A. S. (2024). <em>SOLID: The first 5 principles of
+object oriented design</em>. <a href="
+                    https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+                    " class="uri">
+https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+</a>.</p>
+</div>
+<div id="ref-palermo2008onion" class="csl-entry">
+<p>Palermo, J. (2008). <em>The onion architecture : Part 1</em>. <a href="
+                    https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
+                    " class="uri">
+https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
+</a>.</p>
+</div>
+<div id="ref-pedamkar2023mvc" class="csl-entry">
+<p>Pedamkar, P. (2023). <em>MVC vs MVP vs MVVM</em>. <a href="
+                   https://www.educba.com/mvc-vs-mvp-vs-mvvm/
+                    " class="uri">
+https://www.educba.com/mvc-vs-mvp-vs-mvvm/
+</a>.</p>
+</div>
+<div id="ref-stec2024inversion" class="csl-entry">
+<p>Stec, A. (2024). <em>Inversion of control</em>. <a href="
+                    https://www.baeldung.com/cs/ioc
+                    " class="uri">
+https://www.baeldung.com/cs/ioc
+</a>.</p>
+</div>
+<div id="ref-stemmler2019how" class="csl-entry">
+<p>Stemmler, K. (2019). <em>How to learn software design and architecture</em>.
+<a href="
+                    https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
+                    " class="uri">
+https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
+</a>.</p>
+</div>
+<div id="ref-enwiki:1165573623" class="csl-entry">
+<p>Wikipedia contributors. (2023). <em>Circle–ellipse problem — Wikipedia, the
+free encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Circle%E2%80%93ellipse_problem&amp;oldid=1165573623">https://en.wikipedia.org/w/index.php?title=Circle%E2%80%93ellipse_problem&amp;oldid=1165573623</a>.</p>
+</div>
+<div id="ref-enwiki:1245630908" class="csl-entry">
+<p>Wikipedia contributors. (2024a). <em>Coupling (computer programming) —
+Wikipedia, the free encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908">https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908</a>.</p>
+</div>
+<div id="ref-enwiki:1244967192" class="csl-entry">
+<p>Wikipedia contributors. (2024b). <em>Model–view–controller — Wikipedia, the
+free encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;oldid=1244967192">https://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%93controller&amp;oldid=1244967192</a>.</p>
+</div>
+<div id="ref-enwiki:1230588445" class="csl-entry">
+<p>Wikipedia contributors. (2024c). <em>Object-oriented analysis and design —
+Wikipedia, the free encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Object-oriented_analysis_and_design&amp;oldid=1230588445">https://en.wikipedia.org/w/index.php?title=Object-oriented_analysis_and_design&amp;oldid=1230588445</a>.</p>
+</div>
+<div id="ref-enwiki:1237710587" class="csl-entry">
+<p>Wikipedia contributors. (2024d). <em>SOLID — Wikipedia, the free
+encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=SOLID&amp;oldid=1237710587">https://en.wikipedia.org/w/index.php?title=SOLID&amp;oldid=1237710587</a>.</p>
+</div>
+<div id="ref-wlaschin2014functional" class="csl-entry">
+<p>Wlaschin, S. (2014). <em>Functional programming design patterns</em>. <a href="
+                    https://fsharpforfunandprofit.com/fppatterns/
+                    " class="uri">
+https://fsharpforfunandprofit.com/fppatterns/
+</a>.</p>
+</div>
+<div id="ref-woltmann2023hexagonal" class="csl-entry">
+<p>Woltmann, S. (2023). <em>Hexagonal architecture</em>. <a href="
+                    https://www.happycoders.eu/software-craftsmanship/hexagonal-architecture/
+                    " class="uri">
+https://www.happycoders.eu/software-craftsmanship/hexagonal-architecture/
+</a>.</p>
+</div>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lectures/07_c4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../lectures/09_interfaces.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lectures/07_c4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../lectures/09_interfaces.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
