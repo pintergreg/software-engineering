@@ -1312,7 +1312,54 @@ Michael Feathers, Working Effectively with Legacy Code: part 1 pp 6 [@feathers20
 :::
 
 
+# testing approaches
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+**black box**
+
+![](figures/black_box.drawio.svg){width=350}
+
+- examining / testing the functionality without knowing the inner structure
+- works at all levels: unit, integration, system, acceptance
+- also for debugging a legacy code
+
+:::::::::
+::::::::: {.column width="50%"}
+**white box**
+
+![](figures/white_box.drawio.svg){width=225}
+
+- testing the internal structure as opposed to its functionality
+- often associated to unit testing, but also works on higher levels (i.e., integration, system)
+
+:::::::::
+::::::::::::
+
+
+## smoke testing
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%" .mt-2}
+- preliminary testing
+- smoke tests are a **subset of test cases** that cover the **most important functionality** of a component or system
+- set of tests run on each new build to verify that it is testable before sent to the test team
+
+::: {.text-small}
+source: [Smoke testing (software), Wikipedia](https://en.wikipedia.org/wiki/Smoke_testing_(software)) [@enwiki:1251780629]
+:::
+:::::::::
+::::::::: {.column width="25%"}
+![](figures/publicdomainvectors/roof-chimney.svg){width=250}
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+"The phrase smoke test comes from electronic hardware testing. You plug in a new board and turn on the power. If you see smoke coming from the board, turn off the power. You don't have to do any more testing. [@bach2002lessons]"
+:::
+
+
 # references
 
-::: {#refs}
+::: {#refs .text-smaller}
 :::
