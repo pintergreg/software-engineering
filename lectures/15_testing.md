@@ -868,6 +868,35 @@ Then Book is marked as checked out
 ::::::::::::
 
 
+## readme driven development
+
+::: {.wide-quote}
+> beautifully crafted library with no documentation is damn near worthless
+> [...]
+>
+> So how do we solve this problem?
+> Write your Readme first.
+>
+> -- by Tom Preston-Werner [@prestonwerner2010readme]
+
+:::
+
+::: {.text-smaller}
+readme ~ user manual, but brief, concise
+:::
+
+::: {.mt-2}
+- before you write any code or tests or behaviors or stories or anything
+- document how a user would use the software
+- you'll know what you need to implement
+- a lot simpler to have a discussion based on something written down
+:::
+
+::: {.text-smaller}
+source: [Readme Driven Development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html) -- by Tom Preston-Werner [@prestonwerner2010readme]
+:::
+
+
 # test coverage
 
 - the percentage of the code lines 'protected' or covered by tests
