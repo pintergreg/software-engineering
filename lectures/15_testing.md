@@ -530,6 +530,9 @@ end
 >
 > -- Martin Fowler [@fowler2006test]
 
+::: {.mt-2}
+or keeping track of the test user (of the learning app) and give back values according to the input parameter
+:::
 :::::::::
 ::::::::::::
 
@@ -545,6 +548,8 @@ end
 > -- Mark Seemann [@seemann2007unit]
 
 :::
+
+when you add logic for the test double, that might be tested as well
 :::::::::
 ::::::::: {.column width="42%" .text-smaller}
 ```ruby
