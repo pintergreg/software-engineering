@@ -427,7 +427,7 @@ def establish_database_connection(
 ::::::::::::
 
 
-## test doubles -- mock objet types
+## test doubles -- mock object types
 
 there is no open standard for categories
 
@@ -446,7 +446,6 @@ there is no open standard for categories
 ![reproduction of figure 2 from [@seemann2007unit]](figures/spectrum_of_test_doubles.drawio.svg){width=400}
 :::::::::
 ::::::::::::
-
 
 ::: {.text-smaller}
 these are from the book _xUnit test patterns: Refactoring test code_ -- by Gerard Meszaros [@meszaros2007xunit]
