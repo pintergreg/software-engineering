@@ -10,6 +10,12 @@ end
 
 FileUtils.remove_file "summary_full.md", force=true
 
+File.open("summary_full.md", "a") do |fp|
+    File.readlines("summary_header.md").each do |line|
+        fp.write line
+    end
+end
+
 summaries = collect_summaries
 summaries.each do |summary|
     preamble = false
