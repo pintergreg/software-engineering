@@ -13,7 +13,22 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
+# interruption
+
+
+# continuous integration
+
+
+## build script
+
+example: [build script](https://github.com/pintergreg/software-engineering/blob/main/.github/workflows/main.yaml){target="_blank"} of the course website
+
+
+# continuous deployment
+
+
 # versioning
+
 
 ## semantic versioning
 
@@ -54,14 +69,14 @@ optional reading: [Why I don't like SemVer anymore](https://snarky.ca/why-i-dont
 
 - "*CalVer* is a versioning convention based on your project's release calendar, instead of arbitrary numbers."
 - YYYY.MINOR.MICRO
-- [website](https://calver.org)
+- [calver.org](https://calver.org)
 
 
 ## ZeroVer: 0-based versioning
 
 - "Your software's major version should never exceed the first and most important number in computing: zero."
 - e.g.: **0.4.1**
-- [website](https://0ver.org)
+- [0ver.org](https://0ver.org)
 
 
 ## Fibonacci releases
