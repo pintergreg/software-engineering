@@ -35,6 +35,6 @@ end
 
 File.open("summary_full.md", "a") do |fp|
     fp.write "# references\n\n"
-    fp.write "::: {#refs}\n"
+    fp.write "::: {#refs .text-smaller}\n"
     fp.write ":::\n"
 end
