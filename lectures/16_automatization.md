@@ -17,10 +17,49 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 ## semantic versioning
 
-![](https://jontejada.com/blog/assets/semver02.png)
+:::::::::::: {.columns .column-gaplexss}
+::::::::: {.column width="50%"}
+![](figures/semver.drawio.svg){width=500}
 
-- [website](https://semver.org)
-- [Why I don't like SemVer anymore](https://snarky.ca/why-i-dont-like-semver/)
+:::::::::
+::::::::: {.column width="50%" .text-medium .mt-3}
+<!--alpha
+~ incomplete feature-wise, external release is uncommon for proprietary software
+~ whitebox testing
+
+beta
+~ the software is feature-complete but contains several known or unknown bugs
+~ blackbox testing
+
+rc
+~ release candidate, the version will be released if "no" bugs are found
+~ highest level testing-->
+
+- **alpha**: incomplete feature-wise, external release is uncommon for proprietary software
+    - whitebox testing
+
+- **beta**: the software is feature-complete but contains several known or unknown bugs
+    - blackbox testing
+
+- **rc**: release candidate, final touches
+    - highest level testing
+:::::::::
+::::::::::::
+
+::: {.mt-1}
+1. **major** version when you make incompatible [API]{.tooltip title="application programming interface"} changes
+    - [a way of communicating changes]{.text-smaller}
+2. **minor** version when you add functionality in a backward compatible manner
+3. **patch** version when you make backward compatible bug fixes
+
+::: {.text-smaller}
+additional labels for pre-release and build metadata are available as extensions to the `major.minor.patch` format | from [semver.org](https://semver.org)
+:::
+:::
+
+::: notes
+optional reading: [Why I don't like SemVer anymore](https://snarky.ca/why-i-dont-like-semver/)
+:::
 
 
 ## calendar versioning
@@ -37,7 +76,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 - [website](https://0ver.org)
 
 
-# Fibonacci releases
+## Fibonacci releases
 
 | version | type           | release date   | delta |
 |:-------:|----------------|----------------|------:|
