@@ -168,6 +168,7 @@ MVC-MVP-MVVM
 - [The Cycles of TDD](http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html) - by Robert C. Martin
 - [Arrange-Act-Assert](https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/)
 - [Readme Driven Development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html) - by Tom Preston-Werner
+- [Defining Legacy Code](https://dzone.com/articles/defining-legacy-code) - by Eli Lopian
 
 #### optional
 
