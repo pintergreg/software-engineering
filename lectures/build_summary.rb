@@ -1,10 +1,13 @@
 require "fileutils"
 
-inputs = []
-Dir.glob('./summary_week*.md') do |x|
-    inputs.push x
+def collect_summaries()
+    result = []
+    Dir.glob('./summary_week*.md') do |x|
+        result.push x
+    end
+    return result.sort
 end
-inputs.sort!
+
 
 FileUtils.remove_file "summary_full.md", force=true
 preamble = false
