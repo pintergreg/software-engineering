@@ -15,6 +15,17 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 # interruption
 
+##
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+
+:::::::::
+::::::::: {.column width="50%"}
+![&#169; [Ash Lamb](https://ashlamb.com/)<br>used with the author's permission](figures/borrowed/quick_call.jpg){width=350}
+
+:::::::::
+::::::::::::
 
 # continuous integration
 
