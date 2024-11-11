@@ -15,6 +15,9 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 # interruption
 
+- the code is one thing, the logic behind it is another
+
+
 ##
 
 :::::::::::: {.columns}
@@ -78,16 +81,34 @@ optional reading: [Why I don't like SemVer anymore](https://snarky.ca/why-i-dont
 
 ## calendar versioning
 
-- "*CalVer* is a versioning convention based on your project's release calendar, instead of arbitrary numbers."
-- YYYY.MINOR.MICRO
-- [calver.org](https://calver.org)
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/calver.drawio.svg){width=450}
+
+:::::::::
+::::::::: {.column width="50%" .mt-4}
+format examples:
+
+- YYYY.MINOR.PATCH
+    - [micro is used instead of patch]{.text-smaller}
+- YYYY.MM.MINOR.PATCH
+:::::::::
+::::::::::::
+
+"*CalVer* is a versioning convention based on your project's release calendar, instead of arbitrary numbers." | [calver.org](https://calver.org)
 
 
 ## ZeroVer: 0-based versioning
 
-- "Your software's major version should never exceed the first and most important number in computing: zero."
+"Your software's major version should never exceed the first and most important number in computing: zero." | [0ver.org](https://0ver.org)
+
 - e.g.: **0.4.1**
-- [0ver.org](https://0ver.org)
+- popular among open source software projects
+    - [some may reach 1.0.0 eventually]{.text-smaller}
+
+::: {.text-smaller .mt-2}
+[[semver]{.tooltip title="semantic versioning"}](https://semver.org): "If your software is being used in production, it should probably already be 1.0.0." 
+:::
 
 
 ## Fibonacci releases
