@@ -32,3 +32,9 @@ summaries.each do |summary|
         preamble = !preamble if line.strip == "---"
     end
 end
+
+File.open("summary_full.md", "a") do |fp|
+    fp.write "# references\n\n"
+    fp.write "::: {#refs}\n"
+    fp.write ":::\n"
+end
