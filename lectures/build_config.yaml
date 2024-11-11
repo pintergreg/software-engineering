@@ -10,3 +10,4 @@ exclude:
     - README
     - SUMMARY
     - HOME
+    - summary_header
