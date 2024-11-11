@@ -178,7 +178,8 @@ MVC-MVP-MVVM
 
 ## week 11
 
-1. automatization
+1. [week 10 summary](/software-engineering/slides/summary_week10.html)
+2. automatization
 
 ## week 12
 
