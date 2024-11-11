@@ -23,18 +23,6 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 :::::::::
 ::::::::: {.column width="50%" .text-medium .mt-3}
-<!--alpha
-~ incomplete feature-wise, external release is uncommon for proprietary software
-~ whitebox testing
-
-beta
-~ the software is feature-complete but contains several known or unknown bugs
-~ blackbox testing
-
-rc
-~ release candidate, the version will be released if "no" bugs are found
-~ highest level testing-->
-
 - **alpha**: incomplete feature-wise, external release is uncommon for proprietary software
     - whitebox testing
 
