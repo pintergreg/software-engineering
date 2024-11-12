@@ -43,9 +43,13 @@ def write_references()
     end
 end
 
-if $PROGRAM_NAME == __FILE__
+def generate_full_summary()
     FileUtils.remove_file "summary_full.md", force=true
     write_header
     write_content
     write_references
+end
+
+if $PROGRAM_NAME == __FILE__
+    generate_full_summary
 end
