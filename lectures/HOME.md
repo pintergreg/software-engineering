@@ -181,6 +181,10 @@ MVC-MVP-MVVM
 1. [week 10 summary](/software-engineering/slides/summary_week10.html)
 2. automatization
 
+### readings
+
+- [The Cost of Interruption for Software Developers](https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/) - by Steven To
+
 ## week 12
 
 1. summary
