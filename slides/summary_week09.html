@@ -136,11 +136,219 @@ calc(100% - 1.25rem)" data-background-size="125px">
   <p class="date">gergo.pinter@uni-corvinus.hu</p>
 </section>
 
+<section id="code-quality" class="title-slide slide level1">
+<h1>code quality</h1>
+<div class="text-align-left">
+<dl>
+<dt>agile</dt>
+<dd>
+working software over comprehensive documentation
+</dd>
+</dl>
+</div>
+<div class="mt-1 text-align-left">
+<dl>
+<dt>software craftmanship</dt>
+<dd>
+not only working software, but also well-crafted software
+</dd>
+</dl>
+</div>
+<div class="columns mt-1">
+<div class="column text-align-left" style="width:70%;">
+<dl>
+<dt>well-crafted</dt>
+<dd>
+<ul>
+<li>high quality</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>well-designed</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>validated and verified</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>tested</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>code is clean, easy to understand and maintain</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+
+<section>
+<section id="code-smell" class="title-slide slide level1">
+<h1>code smell</h1>
+<blockquote>
+<p>a code smell is a surface indication that usually corresponds to a
+deeper problem</p>
+<p>– Martin Flower <span class="citation"
+data-cites="fowler2006code">[1]</span></p>
+</blockquote>
+<div class="columns mt-3">
+<div class="column text-smaller" style="width:40%;">
+<p>software rot is the degradation, deterioration, or loss of the use or
+performance of software over time <span class="citation"
+data-cites="enwiki:1236668404">[2]</span></p>
+</div><div class="column text-smaller" style="width:40%;">
+<p><strong>requirement smell</strong>: signs in the requirements that
+are not necessarily wrong but could be problematic <span
+class="citation" data-cites="femmer2017rapid">[3]</span></p>
+</div>
+</div>
+</section>
+<section id="clean-clode-violations-as-code-smells"
+class="slide level2">
+<h2>clean clode violations as code smells</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>long method</li>
+<li>long parameter list</li>
+<li>naming
+<ul>
+<li>notation in names</li>
+<li>inconsistent names</li>
+<li>uncommunicative names</li>
+</ul></li>
+<li>comments</li>
+<li>large class
+<ul>
+<li>possibly do more than one thing</li>
+</ul></li>
+<li>a function / class does more than one thing</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>magic number</li>
+<li>duplicated code</li>
+<li>speculative generality</li>
+<li>dead code</li>
+<li>too complexity comditions</li>
+<li>feature envy</li>
+<li>bad comment
+<ul>
+<li>obsolete, redundant (noise), commented-out code</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <span class="citation"
+data-cites="atwood2006code">[4]</span>, <span class="citation"
+data-cites="martin2009clean">[5]</span></p>
+</div>
+</section></section>
+<section>
+<section id="how-to-measure-code-quality"
+class="title-slide slide level1">
+<h1>how to measure code quality?</h1>
+<p>it is hard to objectively measure the quality of code</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><span class="alpha-50">number of source lines of code
+(SLOC)</span></li>
+<li>style guide compliance <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code clean?</span></li>
+<li><span class="alpha-50">Halstead metrics</span></li>
+<li>cyclomatic complexity <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code simple?</span></li>
+<li><span class="alpha-50">maintainability index</span></li>
+<li>test coverage <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code tested?</span></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img
+data-src="figures/publicdomainvectors/worker-takes-measurements.svg"
+width="400" /></p>
+</div>
+</div>
+</section>
+<section id="cyclomatic-comlexity" class="slide level2">
+<h2>cyclomatic comlexity</h2>
+<ul>
+<li>developed by Thomas J. McCabe in 1976</li>
+<li>quantitative measure of the number of linearly independent paths
+through the source code</li>
+<li>computed using the control-flow graph of the program</li>
+</ul>
+<p>defined as:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>E</mi><mo>−</mo><mi>N</mi><mo>+</mo><mn>2</mn><mi>P</mi></mrow><annotation encoding="application/x-tex"> M = E - N + 2P </annotation></semantics></math></p>
+<div class="text-smaller">
+<ul>
+<li>E: the number of edges of the graph</li>
+<li>N: the number of nodes of the graph</li>
+<li>P: the number of connected components
+<ul>
+<li>for a single method, P always equals 1</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="cyclomatic-comlexity-example" class="slide level2">
+<h2>cyclomatic comlexity – example</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_progress(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    finished: <span class="bu">int</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    total: <span class="bu">int</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    as_percentage: <span class="bu">bool</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    foo: <span class="bu">bool</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    progress <span class="op">=</span> finished <span class="op">/</span> total</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> as_percentage <span class="kw">and</span> foo:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
+</div><div class="column" style="width:40%;">
+<div class="text-smaller">
+<p>activity diagram</p>
+</div>
+<p><img data-src="figures/progress_foo.svg" width="300" /></p>
+</div><div class="column" style="width:20%;">
+<div class="text-smaller">
+<p>control flow</p>
+</div>
+<p><img data-src="figures/progress_foo_2.drawio.svg" width="300" /></p>
+</div>
+</div>
+<div>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><mo>=</mo><mi>E</mi><mo>−</mo><mi>N</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex"> CC = E - N + 2 </annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><mo>=</mo><mn>7</mn><mo>−</mo><mn>6</mn><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex"> CC = 7 - 6 + 2 </annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex"> CC = 3 </annotation></semantics></math></p>
+</div>
+</section></section>
+<section id="wtf-per-minute" class="title-slide slide level1">
+<h1>WTF per minute</h1>
+<figure>
+<img data-src="figures/wtf_per_minute.drawio.svg" width="725"
+alt="own drawing based on Glen Lipka’s" />
+<figcaption aria-hidden="true">own drawing based on <a
+href="https://commadot.com/wtf-per-minute/">Glen
+Lipka’s</a></figcaption>
+</figure>
+</section>
+
 <section>
 <section id="v-model-forsberg1991relationship"
 class="title-slide slide level1">
 <h1>V model <span class="citation"
-data-cites="forsberg1991relationship">[1]</span></h1>
+data-cites="forsberg1991relationship">[6]</span></h1>
 <div class="columns">
 <div class="column mt-3" style="width:50%;">
 <ul>
@@ -217,27 +425,27 @@ process</figcaption>
 <h2>code review</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> query_progress(user_id:<span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># establish connection</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    con<span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;data.db&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># build query</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    progress_query <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    SELECT</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">        lesson / 50.0 AS progress</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">    FROM activity</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">    WHERE</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">        user_id = </span><span class="sc">{</span>user_id<span class="sc">}</span><span class="ss"> AND</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">        result = &#39;success&#39;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">    ORDER BY</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">        lesson DESC</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">    LIMIT 1</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">    ;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">    &quot;&quot;&quot;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># execute query</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span>con.execute(progress_query)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    progress<span class="op">=</span>res.fetchone()[<span class="dv">0</span>]</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> progress</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> query_progress(user_id:<span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># establish connection</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    con<span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;data.db&quot;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># build query</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    progress_query <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    SELECT</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ss">        lesson / 50.0 AS progress</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">    FROM activity</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ss">    WHERE</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">        user_id = </span><span class="sc">{</span>user_id<span class="sc">}</span><span class="ss"> AND</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">        result = &#39;success&#39;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">    ORDER BY</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">        lesson DESC</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ss">    LIMIT 1</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ss">    ;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">    &quot;&quot;&quot;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># execute query</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span>con.execute(progress_query)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    progress<span class="op">=</span>res.fetchone()[<span class="dv">0</span>]</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> progress</span></code></pre></div>
 </div><div class="column mt-4" style="width:50%;">
 <ul>
 <li>does not respect style guide</li>
@@ -344,7 +552,7 @@ was right
 <p>source: <a
 href="https://phauer.com/2018/code-review-guidelines/">Code Review
 Guidelines for Humans</a> <span class="citation"
-data-cites="hauer2018code">[2]</span></p>
+data-cites="hauer2018code">[7]</span></p>
 </div>
 </section>
 
@@ -378,22 +586,59 @@ the current work product)</span></li>
 <p>source: <a
 href="https://phauer.com/2018/code-review-guidelines/">Code Review
 Guidelines for Humans</a> <span class="citation"
-data-cites="hauer2018code">[2]</span></p>
+data-cites="hauer2018code">[7]</span></p>
 </div>
 </section>
 
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
 <div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-fowler2006code" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">M.
+Fowler, <span>“Code smell.”</span> <a href="
+                   https://martinfowler.com/bliki/CodeSmell.html
+                    " class="uri">
+                   https://martinfowler.com/bliki/CodeSmell.html
+</a>, 09-Feb-2006.</div>
+</div>
+<div id="ref-enwiki:1236668404" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Software rot —
+<span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
+href="
+                    https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+                    " class="uri">
+                    https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+</a>, 2024.</div>
+</div>
+<div id="ref-femmer2017rapid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">H.
+Femmer, D. M. Fernández, S. Wagner, and S. Eder, <span>“Rapid quality
+assurance with requirements smells,”</span> <em>Journal of Systems and
+Software</em>, vol. 123, pp. 190–213, 2017.</div>
+</div>
+<div id="ref-atwood2006code" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">J.
+Atwood, <span>“Code smells.”</span> <a href="
+                   https://blog.codinghorror.com/code-smells/
+                    " class="uri">
+                   https://blog.codinghorror.com/code-smells/
+</a>, 18-May-2006.</div>
+</div>
+<div id="ref-martin2009clean" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">R.
+C. Martin, <em>Clean code: A handbook of agile software
+craftsmanship</em>. Pearson Education, 2009.</div>
+</div>
 <div id="ref-forsberg1991relationship" class="csl-entry"
 role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">K.
 Forsberg and H. Mooz, <span>“The relationship of system engineering to
 the project cycle,”</span> <em>Center for Systems Management</em>, vol.
 5333, 1991.</div>
 </div>
 <div id="ref-hauer2018code" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">P.
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">P.
 Hauer, <span>“Code review guidelines for humans.”</span> <a href="
                    https://phauer.com/2018/code-review-guidelines/
                     " class="uri">
