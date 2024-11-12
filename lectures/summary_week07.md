@@ -1,5 +1,5 @@
 ---
-title: week 4 summary 
+title: week 7 summary 
 author: Gergő Pintér, PhD
 date: gergo.pinter@uni-corvinus.hu
 lang: en-US
