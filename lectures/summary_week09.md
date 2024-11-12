@@ -13,6 +13,170 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
+# code quality
+
+::: {.text-align-left}
+agile
+~ working software over comprehensive documentation
+
+:::
+
+::: {.mt-1 .text-align-left}
+software craftmanship
+~ not only working software, but also well-crafted software 
+
+:::
+
+:::::::::::: {.columns .mt-1}
+::::::::: {.column width="70%" .text-align-left}
+well-crafted
+~ - high quality
+~ - well-designed
+~ - validated and verified
+~ - tested
+~ - code is clean, easy to understand and maintain
+
+:::::::::
+::::::::::::
+
+
+# code smell
+
+> a code smell is a surface indication that usually corresponds to a deeper problem
+>
+> -- Martin Flower [@fowler2006code]
+
+
+:::::::::::: {.columns .mt-3}
+::::::::: {.column width="40%" .text-smaller}
+software rot is the degradation, deterioration, or loss of the use or performance of software over time [@enwiki:1236668404]
+:::::::::
+::::::::: {.column width="40%" .text-smaller}
+**requirement smell**: signs in the requirements that are not necessarily wrong but could be problematic [@femmer2017rapid]
+
+:::::::::
+::::::::::::
+
+
+## clean clode violations as code smells
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- long method
+- long parameter list
+- naming
+    - notation in names
+    - inconsistent names
+    - uncommunicative names
+- comments
+- large class
+    - possibly do more than one thing
+- a function / class does more than one thing
+:::::::::
+::::::::: {.column width="50%"}
+- magic number
+- duplicated code
+- speculative generality
+- dead code
+- too complexity comditions
+- feature envy
+- bad comment
+    - obsolete, redundant (noise), commented-out code
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [@atwood2006code],  [@martin2009clean]
+:::
+
+
+# how to measure code quality?
+
+it is hard to objectively measure the quality of code
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- [number of source lines of code (SLOC)]{.alpha-50}
+- style guide compliance [-- is the code clean?]{.fragment data-fragment-index=1 .text-color-secondary}
+- [Halstead metrics]{.alpha-50}
+- cyclomatic complexity [-- is the code simple?]{.fragment data-fragment-index=1 .text-color-secondary}
+- [maintainability index]{.alpha-50}
+- test coverage [-- is the code tested?]{.fragment data-fragment-index=1 .text-color-secondary}
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/worker-takes-measurements.svg){width=400}
+
+:::::::::
+::::::::::::
+
+
+## cyclomatic comlexity
+
+- developed by Thomas J. McCabe in 1976
+- quantitative measure of the number of linearly independent paths through the source code
+- computed using the control-flow graph of the program
+
+defined as:
+
+$$ M = E - N + 2P $$
+
+::: {.text-smaller}
+- E: the number of edges of the graph
+- N: the number of nodes of the graph
+- P: the number of connected components
+    - for a single method, P always equals 1
+:::
+
+
+## cyclomatic comlexity -- example
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+```python
+def calculate_progress(
+    finished: int,
+    total: int,
+    as_percentage: bool,
+    foo: bool
+) -> float:
+    progress = finished / total
+
+    if as_percentage and foo:
+        return progress * 100
+    else:
+        return progress
+```
+
+:::::::::
+::::::::: {.column width="40%"}
+::: {.text-smaller}
+activity diagram
+:::
+![](figures/progress_foo.svg){width=300}
+
+:::::::::
+::::::::: {.column width="20%"}
+::: {.text-smaller}
+control flow
+:::
+![](figures/progress_foo_2.drawio.svg){width=300}
+
+:::::::::
+::::::::::::
+
+::: {}
+$$ CC = E - N + 2 $$
+$$ CC = 7 - 6 + 2 $$
+$$ CC = 3 $$
+:::
+
+
+# WTF per minute
+
+![own drawing based on [Glen Lipka's](https://commadot.com/wtf-per-minute/)](figures/wtf_per_minute.drawio.svg){width=725}
+
+
 # V model [@forsberg1991relationship]
 
 :::::::::::: {.columns}
