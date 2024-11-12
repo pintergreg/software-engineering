@@ -85,12 +85,18 @@ administrator, course planner
 ## level 3: component diagram
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%"}
-
+::::::::: {.column width="60%"}
+- decomposition of each container to identify the major structural building blocks and their interactions
+- shows how a container is made up of a number of "components" 
+  - what these components are, 
+  - what they are responsibilities for, and
+  - what also shows technology / implementation details
+- roughly equivalent with the UML component diagram
 
 :::::::::
-::::::::: {.column width="50%"}
-![](figures/user_statistics/c4_component.excalidraw.svg){width=400}
+::::::::: {.column width="40%"}
+![the example shows the components of only one feature, so incomplete](figures/user_statistics/c4_component.excalidraw.svg){width=400}
+
 :::::::::
 ::::::::::::
 
