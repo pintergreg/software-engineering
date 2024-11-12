@@ -1,4 +1,4 @@
-load "build_summary"
+load "build_summary.rb"
 
 inputs = [
     "00_intro.md",
