@@ -1,0 +1,2684 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>summary</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+  <!--<script src="../assets/reveal_menu/menu.js"></script>
+  <link rel="stylesheet" href="../assets/reveal_menu/menu.css"/>
+
+  <script src="../assets/verticator/verticator.js"></script>
+  <link rel="stylesheet" href="../assets/verticator/verticator.css"/>-->
+
+  <script src="../assets/reveal-drawer-0.1.2/drawer.js"></script>
+  <link rel="stylesheet" href="../assets/reveal-drawer-0.1.2/drawer.css"/>
+
+  <script src="../assets/highlight_line.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">summary</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section id="program-is-like-a-recipe" class="title-slide slide level1">
+<h1>program is like a recipe</h1>
+<div class="columns">
+<div class="column column-align-left" style="width:60%;">
+<ul>
+<li>executing a program is following a recipe</li>
+<li>programming is like creating a recipe</li>
+</ul>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>software development is like running a restaurant
+<ul>
+<li>come up with recipes,</li>
+<li>cook the food,</li>
+<li>ingredient logistics and preparation,</li>
+<li>food serving,</li>
+<li>marketing,</li>
+<li>cleaning</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img
+data-src="figures/publicdomainvectors/a-cook-is-preparing-a-meal.svg"
+width="250" /></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p><img
+data-src="figures/publicdomainvectors/restaurant-table-publicdomainvectors.org.svg"
+width="250" /></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="software-development-often-compared-to-house-building"
+class="title-slide slide level1">
+<h1>software development often compared to house building</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>because it is an engineering discipline</li>
+<li>but software does not have to obey the laws of physics</li>
+<li>software design should focus only on the data structures and the
+connection between the modules
+<ul>
+<li>not the implementation details<br>(e.g., hardware)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="r-stack">
+<p><img
+data-src="figures/publicdomainvectors/architect-engineer-developing-a-construction-of-house.svg"
+width="250" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="software-development-is-more-like-gardening"
+class="title-slide slide level1">
+<h1>software development is more like gardening</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>a garden might be planned</li>
+<li>external factors influence the result
+<ul>
+<li>weather, pests</li>
+</ul></li>
+<li>garden needs constant care to bloom</li>
+<li>sometimes also experimentation
+<ul>
+<li>methods, tools</li>
+</ul></li>
+<li>garden is like an art (with function)</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="r-stack">
+<p><img
+data-src="figures/publicdomainvectors/gardener-watering-with-a-hose.svg"
+width="250" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="software-growth" class="title-slide slide level1">
+<h1>software growth</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>number of lines of code is increasing
+<ul>
+<li>which increases complexity</li>
+</ul></li>
+<li>“every line of code written comes at a price: maintenance” <span
+class="citation" data-cites="tef2016write">[1]</span>
+<ul>
+<li>larger garden, more gardening</li>
+</ul></li>
+<li>software development processes to handle the complexity</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="r-stack">
+<p><img
+data-src="figures/publicdomainvectors/idea-of-success-achievement.svg"
+width="250" /></p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<section id="evolution-of-software-life-cycle-models-incomplete"
+class="title-slide slide level1">
+<h1>evolution of software life cycle models (incomplete)</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>software life cycle models
+<ul>
+<li>waterfall
+<ul>
+<li>improved waterfall</li>
+</ul></li>
+<li>V model</li>
+<li>iterative</li>
+<li>agile</li>
+</ul></li>
+<li>regarding to change management</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img
+data-src="figures/publicdomainvectors/mobile-phones-evolution.svg"
+width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+<section id="waterfall-model" class="slide level2">
+<h2>waterfall model</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>sequential, rigid model
+<ul>
+<li>(originally) not possible to step back to a previous phase</li>
+</ul></li>
+<li>testing is after the implementation, errors are found late in the
+process</li>
+<li>not possible to make changes during the development</li>
+<li>could take years</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="figures/waterfall.svg" width="500" /></p>
+<p><img data-src="figures/waterfall_modified.svg" class="fragment"
+width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+<section id="v-model" class="slide level2">
+<h2>V model</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>still rigid</li>
+<li>each phase has output and a review process
+<ul>
+<li>errors are found at early stage</li>
+<li>decreases the risk of failure</li>
+</ul></li>
+<li>large to small: testing is done in a hierarchical perspective</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="figures/v_model.drawio.svg" width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+<section id="iterative-model" class="slide level2">
+<h2>iterative model</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>software is built incrementally,
+<ul>
+<li>with each iteration adding new features or refining existing
+ones</li>
+</ul></li>
+<li>possible to get feedback after each iteration</li>
+<li>can be rigid within an iteration</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="figures/iterative.drawio.svg" width="500" /></p>
+</div>
+</div>
+</div>
+</section>
+<section id="agile-model" class="slide level2">
+<h2>agile model</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>continuous collaboration and fast response to change, while the
+iterative model takes a more gradual approach, building up the final
+product over multiple iterations</li>
+<li>scrum is an agile methodology</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="figures/agile.drawio.svg" width="500" /></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="scrum-team" class="title-slide slide level1">
+<h1>scrum team</h1>
+<ul>
+<li>optimally 3 to 9 people</li>
+<li>cross-functional</li>
+<li>self-organizing</li>
+</ul>
+</section>
+<section id="roles" class="slide level2">
+<h2>roles</h2>
+<ul>
+<li>scrum master
+<ul>
+<li>responsible establishing scrum as defined in <a
+href="/software-engineering/slides/02_scrum.html">the Scrum Guide</a>
+<ul>
+<li>by helping everyone understand the theory and practice, both within
+the scrum team and the organization</li>
+</ul></li>
+<li>responsible for the scrum team’s effectiveness</li>
+</ul></li>
+<li>product owner
+<ul>
+<li>responsible for maximizing the value of the product resulting from
+the work of the scrum team</li>
+<li>also responsible for effective product backlog management</li>
+</ul></li>
+<li>developers</li>
+</ul>
+</section></section>
+<section id="sprint-planning" class="title-slide slide level1">
+<h1>sprint planning</h1>
+<ul>
+<li>initiates the sprint</li>
+<li>maximum of eight hours for a one-month sprint</li>
+<li>define a sprint goal
+<ul>
+<li>definition of done</li>
+</ul></li>
+<li>it is up to the developers how to turn product backlog items into
+increments</li>
+</ul>
+<p><img data-src="figures/scrum_sprint_planning.drawio.svg"
+height="300" /></p>
+</section>
+
+<section id="sprint" class="title-slide slide level1">
+<h1>sprint</h1>
+<ul>
+<li>1-4 week long</li>
+<li>considered a short project</li>
+<li>turns backlog items into increments</li>
+<li>includes daily scrum</li>
+</ul>
+<p><img data-src="figures/scrum_sprint_standup.drawio.svg"
+height="300" /></p>
+</section>
+
+<section id="sprint-review" class="title-slide slide level1">
+<h1>sprint review</h1>
+<ul>
+<li>scrum team presents the their work to the stakeholders
+<ul>
+<li>increment is evaluated</li>
+</ul></li>
+<li>the attendees collaborate on what to do next</li>
+<li>maximum of four hours for a one-month sprint</li>
+</ul>
+<p><img data-src="figures/scrum_sprint_review.drawio.svg"
+height="300" /></p>
+</section>
+
+<section id="sprint-retrospective" class="title-slide slide level1">
+<h1>sprint retrospective</h1>
+<ul>
+<li>concludes the sprint</li>
+<li>maximum of three hours for a one-month sprint</li>
+<li>the scrum team discusses what went well/bad, what problems
+encountered</li>
+</ul>
+<p><img data-src="figures/scrum_sprint_retrospective.drawio.svg"
+height="300" /></p>
+</section>
+
+<section id="kanban" class="title-slide slide level1">
+<h1>kanban</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>uses a visual workflow</li>
+<li>pull-based system
+<ul>
+<li>no task in the workflow without request</li>
+</ul></li>
+<li>uses columns for states of the product</li>
+<li>defines conditions when to move a task between columns</li>
+<li>conditions flow
+<ul>
+<li>no iterations (sprints)</li>
+<li>no roles</li>
+</ul></li>
+<li>encourages to improve the workflow</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/kanban.drawio.svg" /></p>
+</div>
+</div>
+</section>
+
+<section>
+<section id="steps-of-requirement-analysis"
+class="title-slide slide level1">
+<h1>steps of requirement analysis</h1>
+<div class="mt-2">
+<figure>
+<img data-src="figures/requirement_analysis_steps.drawio.svg"
+height="75" alt="based on [2]" />
+<figcaption aria-hidden="true">based on <span class="citation"
+data-cites="krysik2023sdlc">[2]</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="functional-and-non-functional-requirements"
+class="slide level2">
+<h2>functional and non-functional requirements</h2>
+<div class="columns">
+<div class="column mt-4" style="width:65%;">
+<ul>
+<li>functional requirements define<br> <strong>what</strong> a system is
+supposed to do</li>
+<li>non-functional requirements define<br> <strong>how</strong> a system
+is supposed to operate
+<ul>
+<li>e.g., legal requirements (GDPR)</li>
+</ul></li>
+</ul>
+<!--::: {.text-smaller}
+source: [@enwiki:1245895117]
+:::-->
+</div><div class="column" style="width:35%;">
+<p><img data-src="figures/publicdomainvectors/cogwheel.svg"
+height="250" /></p>
+</div>
+</div>
+</section></section>
+<section id="minimum-viable-product" class="title-slide slide level1">
+<h1>minimum viable product</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img
+data-src="figures/publicdomainvectors/blue-saloon-car-wheels.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/blue-saloon-car-body.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/blue-saloon-car.svg"
+height="150" /></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/children-bicycle.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/red-scooter-motorbike.svg"
+height="150" /></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/blue-saloon-car.svg"
+height="150" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <a
+href="https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp">Making
+sense of MVP (Minimum Viable Product)</a> by Henrik Kniberg</p>
+</div>
+</section>
+
+<section id="what-is-a-user-story" class="title-slide slide level1">
+<h1>what is a user story?</h1>
+<div>
+<ul>
+<li>a popular tool in requirements analysis, particularly in agile
+software development methodologies</li>
+<li>simple description of a software feature
+<ul>
+<li>from the perspective of the end user or customer</li>
+</ul></li>
+<li>and are often accompanied by acceptance criteria (BDD),
+<ul>
+<li>which define the conditions that must be met to be considered
+complete</li>
+</ul></li>
+</ul>
+</div>
+<div class="mt-4">
+<p>as a <code>[type of user]</code>, I want to
+<code>[action/function]</code> in order to
+<code>[benefit/value]</code></p>
+</div>
+</section>
+
+<section id="behaviour-driven-development"
+class="title-slide slide level1">
+<h1>behaviour-driven development</h1>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>BDD starts from a user story and<br>focuses on adding acceptance
+criteria</li>
+<li>extends user stories how the software should react in some with
+scenarios (conditions)</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<pre><code>Title (one line describing the story)
+
+Narrative:
+As a [role]
+I want [feature]
+So that [benefit]
+
+Acceptance Criteria:
+(presented as Scenarios)
+
+Scenario 1: Title
+Given [context]
+  And [some more context]...
+When  [event]
+Then  [outcome]
+  And [another outcome]...
+
+Scenario 2: ...</code></pre>
+</div>
+</div>
+</section>
+
+<section>
+<section id="user-story-mapping" class="title-slide slide level1">
+<h1>user story mapping</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>performed in workshops including
+<ul>
+<li>users,</li>
+<li>(UI) designers,</li>
+<li>developers,</li>
+<li>testers,</li>
+<li>and stakeholders</li>
+</ul></li>
+<li>build a shared understanding of the product and a common
+language</li>
+<li>living document</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/user_story_map.drawio.svg" /></p>
+</div>
+</div>
+</section>
+<section id="user-story-mapping-mistakes" class="slide level2">
+<h2>user story mapping mistakes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/usm_too_many_details.drawio.svg"
+height="450" /></p>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<div class="fragment">
+<p><img data-src="figures/usm_whole_story_first.drawio.svg"
+height="450" /></p>
+</div>
+<div class="fragment">
+<p><img data-src="figures/usm_whole_story_first_verbs.drawio.svg"
+height="450" /></p>
+</div>
+<div class="fragment">
+<p><img data-src="figures/usm_whole_story_first_extra.drawio.svg"
+height="450" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-smaller">
+<p>more from Jeff Patton: <a
+href="https://jpattonassociates.com/5-story-mapping-mistakes/">5 story
+mapping mistakes</a></p>
+</div>
+</section></section>
+<section id="wireframe" class="title-slide slide level1">
+<h1>wireframe</h1>
+<div class="columns">
+<div class="column mt-2" style="width:70;">
+<ul>
+<li>a wireframe is an outline / blueprint / concept art of a webpage or
+application</li>
+<li>can be hand drawn on paper or built out digitally</li>
+<li>provides visual understanding of page structure, layout, user flow,
+functionality and intended behaviours</li>
+<li>presented to stakeholders before the interface is coded</li>
+</ul>
+<div class="text-smaller">
+<p>source: <span class="citation"
+data-cites="bruton2022what">[3]</span></p>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/user_stats.drawio.svg" width="250" /></p>
+</div>
+</div>
+</section>
+
+<section id="types-of-wireframes" class="title-slide slide level1">
+<h1>types of wireframes</h1>
+<div class="columns">
+<div class="column" style="width:33;">
+<figure>
+<img data-src="figures/user_statistics/wireframe_lofi.drawio.svg"
+width="250" alt="low-fidelity" />
+<figcaption aria-hidden="true">low-fidelity</figcaption>
+</figure>
+</div><div class="column" style="width:33;">
+<figure>
+<img data-src="figures/user_stats.drawio.svg" width="250"
+alt="mid-fidelity" />
+<figcaption aria-hidden="true">mid-fidelity</figcaption>
+</figure>
+</div><div class="column" style="width:33;">
+<figure>
+<img data-src="figures/user_statistics/wireframe_hifi.drawio.svg"
+width="250" alt="high-fidelity" />
+<figcaption aria-hidden="true">high-fidelity</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="wireframe-map" class="title-slide slide level1">
+<h1>wireframe map</h1>
+<p><img data-src="figures/user_statistics/wireframe_map_2.drawio.svg"
+height="500" /></p>
+<div class="text-smaller">
+<p>shows user flow, ~ user story map flow</p>
+</div>
+</section>
+
+<section id="wireframing" class="title-slide slide level1">
+<h1>wireframing</h1>
+<div class="columns column-gapless">
+<div class="column mt-2" style="width:65;">
+<ul>
+<li>responsibility of the UI/UX designers</li>
+<li>occurs during the exploratory design phase
+<ul>
+<li>experimenting</li>
+</ul></li>
+<li>iterative process</li>
+<li>iterations are presented to the stakeholders to gain feedback</li>
+<li>some professional tools: <a href="https://www.figma.com/">Figma</a>,
+<a href="https://balsamiq.com/">Balsamiq</a>, <a
+href="https://www.sketch.com/">Sketch</a>
+<ul>
+<li><span class="text-smaller">any drawing/diagramming tool can be used
+for the low or mid fidelity wireframes</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<figure>
+<img
+data-src="figures/borrowed/td-design-thinking-non-linear-process.webp"
+width="300" alt="Interaction Design Foundation [4] | CC BY-SA 4.0" />
+<figcaption aria-hidden="true">Interaction Design Foundation <span
+class="citation" data-cites="ixdf2019what">[4]</span> | <a
+href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
+4.0</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on: <span class="citation"
+data-cites="bruton2022what">[3]</span></p>
+</div>
+</section>
+
+<section id="software-design-and-architecture-stack"
+class="title-slide slide level1">
+<h1>software design and architecture stack</h1>
+<figure>
+<img
+data-src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
+height="475" alt="based on Khalil Stemmel’s figure [5]" />
+<figcaption aria-hidden="true">based on Khalil Stemmel’s figure <span
+class="citation" data-cites="stemmler2019how">[5]</span></figcaption>
+</figure>
+</section>
+
+<section>
+<section id="gang-of-four-gof-design-patterns"
+class="title-slide slide level1">
+<h1>gang of four (GoF) design patterns</h1>
+<ul>
+<li>GoF: Erich Gamma, Richard Helm, Ralph Johnson, and John
+Vlissides</li>
+<li>23 common software design patterns
+<ul>
+<li>published in “Design Patterns: Elements of Reusable Object-Oriented
+Software” (1994) <span class="citation"
+data-cites="gamma1994design">[6]</span></li>
+</ul></li>
+<li>provides solutions to common design problems</li>
+<li>categorized into three main groups
+<ol type="1">
+<li>creational</li>
+<li>structural</li>
+<li>behavioral</li>
+</ol></li>
+</ul>
+<div class="text-smaller">
+<p>read about the design patterns in details, for example at <a
+href="https://refactoring.guru/design-patterns/catalog">refactoring.guru</a></p>
+</div>
+</section>
+<section id="gof-design-patterns-in-functional-programming"
+class="slide level2">
+<h2>GoF design patterns in functional programming</h2>
+<table>
+<thead>
+<tr class="header">
+<th>OO pattern</th>
+<th>FP pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>factory pattern</td>
+<td>function</td>
+</tr>
+<tr class="even">
+<td>strategy pattern</td>
+<td>function</td>
+</tr>
+<tr class="odd">
+<td>decorator pattern</td>
+<td>function</td>
+</tr>
+<tr class="even">
+<td>visitor pattern</td>
+<td>function</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>Peter Norvig <a
+href="http://www.norvig.com/design-patterns/">demonstrated</a> that 16
+out of the 23 patterns are simplified or eliminated by language features
+in Lisp or Dylan (1998) <span class="citation"
+data-cites="norvig1998design">[7]</span></p>
+<p><a href="https://fsharpforfunandprofit.com/fppatterns/">more
+about</a> it from Scott Wlaschin <span class="citation"
+data-cites="wlaschin2014functional">[8]</span></p>
+</section></section>
+<section id="solid-principles" class="title-slide slide level1">
+<h1>SOLID principles</h1>
+<p><span class="text-smaller">SOLID is a mnemonic acronym for five
+design principles intended to make object-oriented designs more
+understandable, flexible, and maintainable <span class="citation"
+data-cites="enwiki:1237710587">[9]</span></span></p>
+<dl>
+<dt>single responsibility principle</dt>
+<dd>
+<span class="text-smaller">a class should do one thing and therefore it
+should have only a single reason to change</span>
+</dd>
+<dt>open-closed principle</dt>
+<dd>
+<span class="text-smaller">classes should be open for extension and
+closed to modification</span>
+</dd>
+<dt>Liskov substitution principle</dt>
+<dd>
+<span class="text-smaller">if class A is a subtype of class B, B should
+be able to replaced with A without disrupting the behavior of the
+program</span>
+</dd>
+<dt>interface segregation principle</dt>
+<dd>
+<span class="text-smaller">many client-specific interfaces are better
+than one general-purpose interface. Clients should not be forced to
+implement a function they do no need.</span>
+</dd>
+<dt>dependency inversion principle</dt>
+<dd>
+<span class="text-smaller">modules should depend upon interfaces or
+abstract classes, not concrete classes. It’s an inversion because
+implementations depend upon abstractions and not the other way
+round</span>
+</dd>
+</dl>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="millington2019solid">[10]</span>, <span class="citation"
+data-cites="oloruntoba2024solid">[11]</span></p>
+</div>
+</section>
+
+<section id="coupling" class="title-slide slide level1">
+<h1>coupling</h1>
+<div class="columns">
+<div class="column mt-5" style="width:55%;">
+<ul>
+<li>the degree of interdependence between software modules</li>
+<li>coupling is usually contrasted with cohesion
+<ul>
+<li>low coupling often correlates with high cohesion, and vice
+versa</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/borrowed/CouplingVsCohesion.svg"
+alt="from Wikimedia | public domain" />
+<figcaption aria-hidden="true">from <a
+href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia</a>
+| public domain</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-2">
+<p>source <a
+href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
+<span class="citation" data-cites="enwiki:1245630908">[12]</span></p>
+</div>
+</section>
+
+<section id="architectural-styles-topologies"
+class="title-slide slide level1">
+<h1>architectural styles / topologies</h1>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="figures/server_client.drawio.svg" width="250" /></p>
+<p><img data-src="figures/message_bus.drawio.svg" width="250" /></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="figures/layered_4.drawio.svg" width="200" /></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="figures/onion.drawio.svg" width="250" /></p>
+<p><img data-src="figures/hexagonal_extend.drawio.svg"
+width="250" /></p>
+</div>
+</div>
+</section>
+
+<section id="architectural-patterns" class="title-slide slide level1">
+<h1>architectural patterns</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<figure>
+<img data-src="figures/mvc.drawio.svg" width="300" alt="MVC" />
+<figcaption aria-hidden="true">MVC</figcaption>
+</figure>
+<div class="text-smaller">
+<p>ASP.NET, Django (Python), Ruby on Rails, Laravel (PHP)</p>
+</div>
+</div><div class="column" style="width:30%;">
+<figure>
+<img data-src="figures/mvp.drawio.svg" width="300" alt="MVP" />
+<figcaption aria-hidden="true">MVP</figcaption>
+</figure>
+<div class="text-smaller">
+<p>Windows Forms, Java Swing</p>
+</div>
+</div><div class="column" style="width:30%;">
+<figure>
+<img data-src="figures/mvvm.drawio.svg" width="300" alt="MVVM" />
+<figcaption aria-hidden="true">MVVM</figcaption>
+</figure>
+<div class="text-smaller">
+<p>WPF, AngularJS</p>
+</div>
+</div>
+</div>
+<div class="text-smaller mt-2">
+<ul>
+<li>view is responsible for rendering UI</li>
+<li>controller responds to the user input (in MVC) and performs
+interactions on the data model</li>
+<li>model is responsible for managing the data</li>
+</ul>
+</div>
+</section>
+
+<section id="interface-is-an-agreement"
+class="title-slide slide level1">
+<h1>interface is an agreement</h1>
+<div class="columns">
+<div class="column mt-4" style="width:55%;">
+<ul>
+<li>how a module / component will work</li>
+<li>so as long as the agreement is complied the components do not need
+to know about the internal structure/work of the other components
+<ul>
+<li>separation of concerns</li>
+<li>single responsibility principle</li>
+<li>the other component can be replaced, mocked</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><img
+data-src="figures/publicdomainvectors/business-handshake-hands.svg"
+width="500" /></p>
+</div>
+</div>
+</section>
+
+<section>
+<section id="interface-changes-should-be-communicated"
+class="title-slide slide level1">
+<h1>interface changes should be communicated</h1>
+<div class="columns mt-4">
+<div class="column" style="width:65%;">
+<div class="align-left">
+<ul>
+<li>during design / development
+<ul>
+<li>change can be necessary / allowed, but communicate towards the
+impacted teams</li>
+<li>diagrams show inner dependencies</li>
+</ul></li>
+</ul>
+</div>
+<div class="align-left fragment">
+<ul>
+<li>services announce API deprecations</li>
+<li>so as library / framework developers
+<ul>
+<li>can be a source of new issues even if downstream code is not
+changed</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:35%;">
+<p><img
+data-src="figures/publicdomainvectors/policeman-screams-into-a-megaphone.svg"
+width="225" /></p>
+</div>
+</div>
+</section>
+<section id="api-versions" class="slide level2">
+<h2>API versions</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/interface_versions.svg"
+width="475" /></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/interface_versions_gantt.svg"
+width="375" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p><code>https://developers.facebook.com/v21.0/me?fields=id,name</code></p>
+</div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unary_union(<span class="va">self</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    warnings.warn(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;The &#39;unary_union&#39; attribute is deprecated, &quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;use the &#39;union_all&#39; method instead.&quot;</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="pp">DeprecationWarning</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        stacklevel<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.union_all()</span></code></pre></div>
+</section></section>
+<section>
+<section id="implementation-planning" class="title-slide slide level1">
+<h1>implementation planning</h1>
+<ol type="1">
+<li>define goals
+<ul>
+<li>practically done with requirement analysis</li>
+</ul></li>
+<li>conduct research
+<ul>
+<li>partially done at the requirement elicitation phase</li>
+</ul></li>
+<li>map out risks</li>
+<li>schedule milestones</li>
+<li>assign responsibilities and tasks</li>
+<li>allocate resources</li>
+</ol>
+<div class="text-smaller">
+<p>based on <a
+href="https://asana.com/resources/implementation-plan">What is an
+implementation plan? 6 steps to create one</a> <span class="citation"
+data-cites="asana2024what">[13]</span></p>
+</div>
+</section>
+<section id="learning-could-be-a-task" class="slide level2">
+<h2>learning could be a task</h2>
+<div class="columns">
+<div class="column mt-1" style="width:60%;">
+<ul>
+<li>you may need to work a technology / framework / language that you
+are not familiar with</li>
+<li>that may require research
+<ul>
+<li>fail fast</li>
+<li>document findings
+<ul>
+<li>minimal workable example</li>
+</ul></li>
+</ul></li>
+<li>or you just have to learn a new codebase</li>
+<li>calculate with learning during the planning</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/complex_projects.drawio.cropped_no_people.svg"
+height="400" /></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="identify-and-prioritize-risks"
+class="title-slide slide level1">
+<h1>identify and prioritize risks</h1>
+<p>a risk is a possibility that something bad can happen</p>
+<ul>
+<li>there is risk inherent with building any piece of software</li>
+<li>whether you’re building a completely new greenfield project,</li>
+<li>or adding a new feature to an existing codebase
+<ul>
+<li>other parts cease to work</li>
+<li>the new feature alienate users</li>
+<li>data loss</li>
+</ul></li>
+<li>often difficult to prioritise which risks you should take care of
+<ul>
+<li>the probability: how likely is it that the risk will happen?</li>
+<li>and the impact: what is the negative impact if the risk does
+occur?</li>
+</ul></li>
+</ul>
+<div class="text-smaller">
+<p>based on <a href="https://riskstorming.com/">riskstorming.com</a> |
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+</div>
+</section>
+<section id="risk-storming" class="slide level2">
+<h2>risk storming</h2>
+<div class="columns">
+<div class="column mt-4" style="width:70%;">
+<ul>
+<li>visual and collaborative risk identification technique</li>
+<li>created by Simon Brown (author of C4 model)</li>
+<li>motivation: often only one person evaluated risks</li>
+<li>risk evaluation should be collaborative activity</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/user_statistics/risk_storming.excalidraw.svg"
+width="300" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <a href="https://riskstorming.com/">riskstorming.com</a> |
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+</div>
+</section>
+<section id="risk-register" class="slide level2">
+<h2>risk register</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:65%;">
+<ul>
+<li>a risk register is a document used as a risk management tool</li>
+<li>contains all identified risks with additional information
+<ul>
+<li>category, name, responsible, probability, impact, mitigation, action
+by, action when</li>
+</ul></li>
+<li>it can be displayed as a table or as a scatterplot</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="figures/borrowed/Risk%20Log%20-%20Party%20Example.svg"
+width="300" alt="by Hou710 | CC BY-SA" />
+<figcaption aria-hidden="true">by <a
+href="https://en.wikipedia.org/wiki/File:Hou710_RiskLog.svg">Hou710</a>
+| <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC
+BY-SA</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-3">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk</th>
+<th style="text-align: right;">Impact<br>(1-3)</th>
+<th style="text-align: right;">Likelihood<br>(0-10)</th>
+<th style="text-align: right;">Risk<br>(I * L)</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rust Language Changes</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">14</td>
+<td>Target a specific Rustc version</td>
+</tr>
+<tr class="even">
+<td>Missing GCC 13 upstream window</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
+<td>Merge in GCC 14 and be proactive about reviews</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section></section>
+<section id="schedule-milestones" class="title-slide slide level1">
+<h1>schedule milestones</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>visualize project milestones
+<ul>
+<li>Gantt chart</li>
+</ul></li>
+<li>keep the entire team posted</li>
+<li>pay attention to holidays
+<ul>
+<li>multiple countries in the case of an international team</li>
+</ul></li>
+<li>things won’t go as planned, so
+<ul>
+<li>add safety margin (wiggle room)</li>
+<li>e.g., an extra week before deadline for fixing bugs</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/borrowed/GanttChartAnatomy.svg"
+alt="Gantt chart from Wikipedia   public domain" />
+<figcaption aria-hidden="true">Gantt chart from <a
+href="https://commons.wikimedia.org/wiki/File:GanttChartAnatomy.svg">Wikipedia</a>
+<br> public domain</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section>
+<section id="assign-responsibilities-and-tasks"
+class="title-slide slide level1">
+<h1>assign responsibilities and tasks</h1>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>every task you want to make done should have exactly one person
+responsible
+<ul>
+<li>no assignee – no one will do it</li>
+<li>more than one – “I though the other one was doing it”</li>
+</ul></li>
+<li>define area of responsibility
+<ul>
+<li>a task (as in scrum) should have definition of done, which specifies
+it</li>
+</ul></li>
+<li>everyone needs to know what other people are responsible for
+<ul>
+<li>scrum/kanban board can visualize it</li>
+<li>issue/ticket trackers can also work</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img data-src="figures/publicdomainvectors/scrum-task-board.svg"
+width="250" /></p>
+<p>at the end of a sprint planning, every task in the sprint backlog
+should have an assignee</p>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <span class="citation"
+data-cites="paquet2019when">[14]</span></p>
+</div>
+</section>
+<section id="dependencies" class="slide level2">
+<h2>dependencies</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img data-src="figures/team_dependency_1.drawio.svg"
+width="450" /></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<p><img data-src="figures/team_dependency_2.drawio.svg"
+width="450" /></p>
+</div>
+</div>
+</div><div class="column fragment" data-fragment-index="2"
+style="width:50%;">
+<p><img data-src="figures/borrowed/CouplingVsCohesion.svg"
+width="350" /></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="allocate-resources" class="title-slide slide level1">
+<h1>allocate resources</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>scrum (and agile in general) does not say anything about
+<em>how</em> to estimate (time)</li>
+<li>story points are often used instead
+<ul>
+<li>(relative) unit of effort required to fully implement a product
+backlog item</li>
+<li>e.g., 1–5,</li>
+<li>Fibonacci: 1, 2, 3, 5, 8, 13…</li>
+<li>powers of 2: 1, 2, 4, 8, 16, 32…</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/borrowed/CrispPlanningPokerDeck.jpg"
+alt="planning poker by Hkniberg   public domain" />
+<figcaption aria-hidden="true">planning poker by <a
+href="https://en.wikipedia.org/wiki/File:CrispPlanningPokerDeck.jpg">Hkniberg</a>
+<br> public domain</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>“Story points reward team members for solving problems based on
+difficulty, not time spent. This keeps team members focused on shipping
+value, not spending time <span class="citation"
+data-cites="radiganstory">[15]</span>.”</p>
+</div>
+</section>
+<section id="estimation-is-guessing" class="slide level2">
+<h2>estimation is guessing</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>many developers do not like to estimate</li>
+<li>seemingly simple task can turn out to be difficult
+<ul>
+<li>some difficulties are hard to foresee</li>
+<li>bad architectural decision
+<ul>
+<li><span class="text-smaller">“Adding manpower to a late software
+project makes it later.” – Fred Brooks</span></li>
+</ul></li>
+</ul></li>
+<li>make educated guesses instead
+<ul>
+<li>measure
+<ul>
+<li><span class="text-smaller">burn down charts, cumulative flow
+diagram</span></li>
+</ul></li>
+<li>infer from previous tasks</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img data-src="figures/publicdomainvectors/thimbles-game.svg"
+width="250" /></p>
+</div>
+</div>
+</section></section>
+<section id="code-quality" class="title-slide slide level1">
+<h1>code quality</h1>
+<div class="text-align-left">
+<dl>
+<dt>agile</dt>
+<dd>
+working software over comprehensive documentation
+</dd>
+</dl>
+</div>
+<div class="mt-1 text-align-left">
+<dl>
+<dt>software craftmanship</dt>
+<dd>
+not only working software, but also well-crafted software
+</dd>
+</dl>
+</div>
+<div class="columns mt-1">
+<div class="column text-align-left" style="width:70%;">
+<dl>
+<dt>well-crafted</dt>
+<dd>
+<ul>
+<li>high quality</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>well-designed</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>validated and verified</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>tested</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>code is clean, easy to understand and maintain</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+
+<section>
+<section id="code-smell" class="title-slide slide level1">
+<h1>code smell</h1>
+<blockquote>
+<p>a code smell is a surface indication that usually corresponds to a
+deeper problem</p>
+<p>– Martin Flower <span class="citation"
+data-cites="fowler2006code">[16]</span></p>
+</blockquote>
+<div class="columns mt-3">
+<div class="column text-smaller" style="width:40%;">
+<p>software rot is the degradation, deterioration, or loss of the use or
+performance of software over time <span class="citation"
+data-cites="enwiki:1236668404">[17]</span></p>
+</div><div class="column text-smaller" style="width:40%;">
+<p><strong>requirement smell</strong>: signs in the requirements that
+are not necessarily wrong but could be problematic <span
+class="citation" data-cites="femmer2017rapid">[18]</span></p>
+</div>
+</div>
+</section>
+<section id="clean-clode-violations-as-code-smells"
+class="slide level2">
+<h2>clean clode violations as code smells</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>long method</li>
+<li>long parameter list</li>
+<li>naming
+<ul>
+<li>notation in names</li>
+<li>inconsistent names</li>
+<li>uncommunicative names</li>
+</ul></li>
+<li>comments</li>
+<li>large class
+<ul>
+<li>possibly do more than one thing</li>
+</ul></li>
+<li>a function / class does more than one thing</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>magic number</li>
+<li>duplicated code</li>
+<li>speculative generality</li>
+<li>dead code</li>
+<li>too complexity comditions</li>
+<li>feature envy</li>
+<li>bad comment
+<ul>
+<li>obsolete, redundant (noise), commented-out code</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <span class="citation"
+data-cites="atwood2006code">[19]</span>, <span class="citation"
+data-cites="martin2009clean">[20]</span></p>
+</div>
+</section></section>
+<section>
+<section id="how-to-measure-code-quality"
+class="title-slide slide level1">
+<h1>how to measure code quality?</h1>
+<p>it is hard to objectively measure the quality of code</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><span class="alpha-50">number of source lines of code
+(SLOC)</span></li>
+<li>style guide compliance <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code clean?</span></li>
+<li><span class="alpha-50">Halstead metrics</span></li>
+<li>cyclomatic complexity <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code simple?</span></li>
+<li><span class="alpha-50">maintainability index</span></li>
+<li>test coverage <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code tested?</span></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img
+data-src="figures/publicdomainvectors/worker-takes-measurements.svg"
+width="400" /></p>
+</div>
+</div>
+</section>
+<section id="cyclomatic-comlexity" class="slide level2">
+<h2>cyclomatic comlexity</h2>
+<ul>
+<li>developed by Thomas J. McCabe in 1976</li>
+<li>quantitative measure of the number of linearly independent paths
+through the source code</li>
+<li>computed using the control-flow graph of the program</li>
+</ul>
+<p>defined as:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>E</mi><mo>−</mo><mi>N</mi><mo>+</mo><mn>2</mn><mi>P</mi></mrow><annotation encoding="application/x-tex"> M = E - N + 2P </annotation></semantics></math></p>
+<div class="text-smaller">
+<ul>
+<li>E: the number of edges of the graph</li>
+<li>N: the number of nodes of the graph</li>
+<li>P: the number of connected components
+<ul>
+<li>for a single method, P always equals 1</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="cyclomatic-comlexity-example" class="slide level2">
+<h2>cyclomatic comlexity – example</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_progress(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    finished: <span class="bu">int</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    total: <span class="bu">int</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    as_percentage: <span class="bu">bool</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    foo: <span class="bu">bool</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    progress <span class="op">=</span> finished <span class="op">/</span> total</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> as_percentage <span class="kw">and</span> foo:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
+</div><div class="column" style="width:40%;">
+<div class="text-smaller">
+<p>activity diagram</p>
+</div>
+<p><img data-src="figures/progress_foo.svg" width="300" /></p>
+</div><div class="column" style="width:20%;">
+<div class="text-smaller">
+<p>control flow</p>
+</div>
+<p><img data-src="figures/progress_foo_2.drawio.svg" width="300" /></p>
+</div>
+</div>
+<div>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><mo>=</mo><mi>E</mi><mo>−</mo><mi>N</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex"> CC = E - N + 2 </annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><mo>=</mo><mn>7</mn><mo>−</mo><mn>6</mn><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex"> CC = 7 - 6 + 2 </annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex"> CC = 3 </annotation></semantics></math></p>
+</div>
+</section></section>
+<section id="wtf-per-minute" class="title-slide slide level1">
+<h1>WTF per minute</h1>
+<figure>
+<img data-src="figures/wtf_per_minute.drawio.svg" width="725"
+alt="own drawing based on Glen Lipka’s" />
+<figcaption aria-hidden="true">own drawing based on <a
+href="https://commadot.com/wtf-per-minute/">Glen
+Lipka’s</a></figcaption>
+</figure>
+</section>
+
+<section>
+<section id="v-model-forsberg1991relationship"
+class="title-slide slide level1">
+<h1>V model <span class="citation"
+data-cites="forsberg1991relationship">[21]</span></h1>
+<div class="columns">
+<div class="column mt-3" style="width:50%;">
+<ul>
+<li>each phase has output and a <em>review process</em>
+<ul>
+<li>errors are found at early stage</li>
+<li>decreases the risk of failure</li>
+</ul></li>
+<li>testing is done in a hierarchical perspective</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<figure>
+<img data-src="figures/v_model.drawio.svg" width="500"
+alt="based on guru99.com’s image" />
+<figcaption aria-hidden="true">based on <a
+href="https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png">guru99.com’s
+image</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="requirement-analysis-review" class="slide level2">
+<h2>requirement analysis review</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/user_statistics/story_map.drawio.svg" width="400"
+alt="user story map" />
+<figcaption aria-hidden="true">user story map</figcaption>
+</figure>
+<div class="text-smaller mt-3">
+<ul>
+<li>can be discussed / reviewed</li>
+<li>even with a customer representative</li>
+</ul>
+</div>
+</div><div class="column mt-5" style="width:15%;">
+<p><img data-src="figures/double_arrow.drawio.svg" width="100" /></p>
+</div><div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/user_statistics/user_story_review_2.png"
+width="400" alt="user story “reviewed” in an issue tracker" />
+<figcaption aria-hidden="true">user story “reviewed” in an issue
+tracker</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="architecture-review" class="slide level2">
+<h2>architecture review</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/user_statistics/c4_component.excalidraw.svg"
+width="400" alt="C4 diagrams as the output of the high level design" />
+<figcaption aria-hidden="true">C4 diagrams as the output of the high
+level design</figcaption>
+</figure>
+</div><div class="column mt-5" style="width:15%;">
+<p><img data-src="figures/double_arrow.drawio.svg" width="100" /></p>
+</div><div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/user_statistics/risk_storming.excalidraw.svg"
+width="400" alt="risk storming as a review process" />
+<figcaption aria-hidden="true">risk storming as a review
+process</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="code-review" class="slide level2">
+<h2>code review</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> query_progress(user_id:<span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># establish connection</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    con<span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;data.db&quot;</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># build query</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    progress_query <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    SELECT</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">        lesson / 50.0 AS progress</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ss">    FROM activity</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ss">    WHERE</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ss">        user_id = </span><span class="sc">{</span>user_id<span class="sc">}</span><span class="ss"> AND</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ss">        result = &#39;success&#39;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ss">    ORDER BY</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ss">        lesson DESC</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ss">    LIMIT 1</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ss">    ;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ss">    &quot;&quot;&quot;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># execute query</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span>con.execute(progress_query)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    progress<span class="op">=</span>res.fetchone()[<span class="dv">0</span>]</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> progress</span></code></pre></div>
+</div><div class="column mt-4" style="width:50%;">
+<ul>
+<li>does not respect style guide</li>
+<li>does 3 things
+<ul>
+<li>establish DB connection</li>
+<li>build query</li>
+<li>execute query</li>
+</ul></li>
+<li>contains separation comments</li>
+<li>hard coded divisor
+<ul>
+<li>magic number</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>every work product can and <em>should</em> be reviewed</p>
+</div>
+</section></section>
+<section id="review-types-by-formality"
+class="title-slide slide level1">
+<h1>review types by formality</h1>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 13%" />
+<col style="width: 31%" />
+<col style="width: 7%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">type</th>
+<th style="text-align: center;">formality</th>
+<th style="text-align: center;">led by</th>
+<th style="text-align: center;">effort</th>
+<th style="text-align: center;">documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">informal</td>
+<td style="text-align: center;">not formal</td>
+<td style="text-align: center;">noone</td>
+<td style="text-align: center;">minimal</td>
+<td style="text-align: center;">undocumented</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">walkthrough</td>
+<td style="text-align: center;">not formal<a href="#/fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></td>
+<td style="text-align: center;">authors</td>
+<td style="text-align: center;">very low</td>
+<td style="text-align: center;">normal, fault-finding</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">technical</td>
+<td style="text-align: center;">less formal</td>
+<td style="text-align: center;">trained moderator, not the author</td>
+<td style="text-align: center;">moderate</td>
+<td style="text-align: center;">more detailed</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">inspection</td>
+<td style="text-align: center;">most formal</td>
+<td style="text-align: center;">trained moderator</td>
+<td style="text-align: center;">high</td>
+<td style="text-align: center;">thorough; based on standards,
+checklists</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section id="review-authors-perspective"
+class="title-slide slide level1">
+<h1>review – author’s perspective</h1>
+<ul>
+<li>be humble
+<ul>
+<li>mind that everybody’s code can be improved</li>
+<li>you are not perfect, accept that you will make mistakes</li>
+</ul></li>
+<li>open to feedback</li>
+<li>you are not your code</li>
+<li>the goal is to deliver higher quality code, not about arguing who
+was right
+<ul>
+<li>you and the reviewer are in the same side</li>
+</ul></li>
+<li>you and the reviewer are not only talking about the code,
+<ul>
+<li>you are exchanging best practices and experiences</li>
+</ul></li>
+<li>you can learn from the review</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a
+href="https://phauer.com/2018/code-review-guidelines/">Code Review
+Guidelines for Humans</a> <span class="citation"
+data-cites="hauer2018code">[22]</span></p>
+</div>
+</section>
+
+<section id="review-reviewers-perspective"
+class="title-slide slide level1">
+<h1>review – reviewer’s perspective</h1>
+<ul>
+<li>use I-messages</li>
+<li>talk about the code, not the coder</li>
+<li>ask questions instead of making statements</li>
+<li>refer to the behavior, not the traits of the author</li>
+<li>accept that there are different solutions</li>
+<li>respect and trust the author</li>
+<li>mind the OIR-rule of giving feedback
+<ul>
+<li><span class="text-smaller">observation, impact, request</span></li>
+</ul></li>
+<li>before giving feedback, ask yourself:
+<ul>
+<li><span class="text-smaller">is it true? (opinion !=
+truth)</span></li>
+<li><span class="text-smaller">is it necessary? (avoid nagging, focus on
+the current work product)</span></li>
+<li><span class="text-smaller">is it kind? (no shaming)</span></li>
+</ul></li>
+<li>be humble; you are not perfect and you can also improve</li>
+<li>it’s fine to say: Everything is good!</li>
+<li>don’t forget to praise</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a
+href="https://phauer.com/2018/code-review-guidelines/">Code Review
+Guidelines for Humans</a> <span class="citation"
+data-cites="hauer2018code">[22]</span></p>
+</div>
+</section>
+
+<section>
+<section id="v-model-forsberg1991relationship-1"
+class="title-slide slide level1">
+<h1>V model <span class="citation"
+data-cites="forsberg1991relationship">[21]</span></h1>
+<div class="columns column-gapless text-smaller">
+<div class="column mt-4" style="width:50%;">
+<ul>
+<li>each phase has output and a <em>review process</em>
+<ul>
+<li>errors are found at early stage</li>
+<li>decreases the risk of failure</li>
+</ul></li>
+<li>testing is done in a hierarchical perspective</li>
+<li>review is a testing process usually without executing the code</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/v_model_unit_testing.drawio.svg"
+width="450" /></p>
+</div>
+</div>
+</section>
+<section id="test-pyramid" class="slide level2">
+<h2>test pyramid</h2>
+<div class="columns mt-3">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/test_pyramid_ice_cream.drawio.svg"
+width="500" /></p>
+</div><div class="column fragment" data-fragment-index="1"
+style="width:50%;">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="2">
+<p><img data-src="figures/test_pyramid_no_text.drawio.svg"
+width="500" /></p>
+</div>
+<div class="fragment" data-fragment-index="2">
+<p><img data-src="figures/test_pyramid.drawio.svg" width="500" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment text-size-1" data-fragment-index="2">
+<p>the turtle and rabbit figures by <a
+href="https://delapouite.com/">Delapouite</a> under <a
+href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> via <a
+href="https://game-icons.net">game-icons.net</a></p>
+</div>
+</section></section>
+<section>
+<section id="what-is-a-unit" class="title-slide slide level1">
+<h1>what is a unit?</h1>
+<ul>
+<li>defined as a <strong>single behaviour</strong> exhibited by the
+system under test
+<ul>
+<li>usually corresponding to a requirement</li>
+</ul></li>
+<li>often corresponds to a function or a module / method or a class
+<ul>
+<li>depending on the paradigm</li>
+<li>often, but not always</li>
+</ul></li>
+<li>“only entry points to externally-visible system behaviours define
+units”
+<ul>
+<li>by Kent Beck <span class="citation"
+data-cites="beck2002test">[23]</span></li>
+</ul></li>
+</ul>
+<div class="mt-3">
+<p>a unit test is another piece of code, that tests the given unit</p>
+</div>
+</section>
+<section id="arrange-act-assert-annihilate-pattern"
+class="slide level2">
+<h2>arrange, act, assert(, annihilate) pattern</h2>
+<p>parts of a unit test</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<dl>
+<dt>arrange</dt>
+<dd>
+set up the testing environment (e.g., create objects)
+</dd>
+<dt>act</dt>
+<dd>
+call the tested unit
+</dd>
+<dt>assert</dt>
+<dd>
+compare the result of the ‘act’ step to the expected value
+</dd>
+<dt>(annihilate)</dt>
+<dd>
+free resources
+</dd>
+<dd>
+automatic in modern languages
+</dd>
+</dl>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># arrange</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    test_input <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># act</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> fizzbuzz(test_input)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># assert</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> result <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span></code></pre></div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="mocking" class="title-slide slide level1">
+<h1>mocking</h1>
+<div class="columns">
+<div class="column mt-4" style="width:70%;">
+<ul>
+<li>the whole <em>unit test</em> suite should be able to run in
+milliseconds
+<ul>
+<li>to give immediate feedback</li>
+</ul></li>
+<li>slow elements of the software should be mocked
+<ul>
+<li>e.g., database, network connection</li>
+</ul></li>
+<li>part of arrange step</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/running-turtle.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="test-doubles-mock-object-types" class="slide level2">
+<h2>test doubles – mock object types</h2>
+<p>there is no open standard for categories</p>
+<div class="columns">
+<div class="column mt-2" style="width:40%;">
+<ul>
+<li>dummy</li>
+<li>stub</li>
+<li>spy</li>
+<li>mock</li>
+<li>fake</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<figure>
+<img data-src="figures/spectrum_of_test_doubles.drawio.svg" width="400"
+alt="reproduction of figure 2 from [24]" />
+<figcaption aria-hidden="true">reproduction of figure 2 from <span
+class="citation" data-cites="seemann2007unit">[24]</span></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>these are from the book <em>xUnit test patterns: Refactoring test
+code</em> – by Gerard Meszaros <span class="citation"
+data-cites="meszaros2007xunit">[25]</span></p>
+</div>
+</section></section>
+<section>
+<section id="test-driven-development-tdd"
+class="title-slide slide level1">
+<h1>test-driven development (TDD)</h1>
+<div class="columns">
+<div class="column mt-5" style="width:55%;">
+<ul>
+<li>write test <em>before</em> writing the tested code</li>
+<li>without the called unit the test fill fail
+<ul>
+<li>the called function does not exist</li>
+</ul></li>
+<li>write code, that makes the test pass</li>
+<li>improve the code quality
+<ul>
+<li>e.g., make it clear and clean</li>
+<li>both the test and tested code</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><img data-src="figures/tdd.drawio.svg" width="350" /></p>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>As the tests get more specific, the code gets more generic.</p>
+<p>– Robert C. Martin, <a
+href="http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html">The
+Cycles of TDD</a> <span class="citation"
+data-cites="martin2014cycles">[26]</span></p>
+</blockquote>
+<p><img data-src="figures/test_code_generality.drawio.svg" class="mt-4"
+width="375" /></p>
+</section></section>
+<section>
+<section id="test-coverage" class="title-slide slide level1">
+<h1>test coverage</h1>
+<ul>
+<li>the percentage of the code lines ‘protected’ or covered by
+tests</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="text-smaller"><code>code/fizzbuzz.py</code></span></p>
+<div class="r-stack">
+<div class="fragment fade-out width-100" data-fragment-index="1">
+<div class="sourceCode" id="cb6" data-line-numbers="2-6,9,11"
+data-highlight-background="#c6ff8c"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="1">
+<div class="sourceCode" id="cb7" data-line-numbers="2-9,11"
+data-highlight-background="#c6ff8c"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="2">
+<div class="sourceCode" id="cb8" data-line-numbers="2-11"
+data-highlight-background="#c6ff8c"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span
+class="text-smaller"><code>code/test_fizzbuzz.py</code></span></p>
+<div class="r-stack">
+<div class="fragment fade-out width-100" data-fragment-index="1">
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> fizzbuzz</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span></code></pre></div>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="1">
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> fizzbuzz</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span></code></pre></div>
+</div>
+<div class="fragment current-visible width-100" data-fragment-index="2">
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fizzbuzz <span class="im">import</span> fizzbuzz</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fizzbuzz():</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">15</span>) <span class="op">==</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">3</span>) <span class="op">==</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">5</span>) <span class="op">==</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> fizzbuzz(<span class="dv">17</span>) <span class="op">==</span> <span class="st">&quot;17&quot;</span></span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p>test coverage: 70%</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="1">
+<p>test coverage: 90%</p>
+</div>
+<div class="fragment current-visible" data-fragment-index="2">
+<p>test coverage: 100%</p>
+<p>four control flow branch, all of them needs to be tested</p>
+</div>
+</div>
+<!-- #F72388 -->
+</section>
+<section id="how-to-measure-code-quality-1" class="slide level2">
+<h2>how to measure code quality?</h2>
+<p>it is hard to objectively measure the quality of code</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><span class="alpha-50">number of source lines of code
+(SLOC)</span></li>
+<li>style guide compliance <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code clean?</span></li>
+<li><span class="alpha-50">Halstead metrics</span></li>
+<li>cyclomatic complexity <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code simple?</span></li>
+<li><span class="alpha-50">maintainability index</span></li>
+<li>test coverage <span class="fragment text-color-secondary"
+data-fragment-index="1">– is the code tested?</span></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img
+data-src="figures/publicdomainvectors/worker-takes-measurements.svg"
+width="400" /></p>
+</div>
+</div>
+</section>
+<section id="what-to-test---the-edge-cases" class="slide level2">
+<h2>what to test - the edge cases</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_progress(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    finished: <span class="bu">int</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    total: <span class="bu">int</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    as_percentage: <span class="bu">bool</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    progress <span class="op">=</span> finished <span class="op">/</span> total</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> as_percentage:</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
+<div class="fragment" data-fragment-index="1">
+<p>this function need some value checking</p>
+</div>
+</div><div class="column" style="width:60%;">
+<dl>
+<dt>what does this function do?</dt>
+<dd>
+<ul>
+<li>divides the number of finished lessons by the total number of
+lessons</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>returns progress in the closed interval of [0, 1] or [0, 100]</li>
+</ul>
+</dd>
+</dl>
+<div class="fragment text-align-left" data-fragment-index="1">
+<dl>
+<dt>edge cases</dt>
+<dd>
+<ul>
+<li>total is 0</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>total is less than 0</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>finished is less than 0</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>finished is greater than total</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="fragment r-frame mt-1" data-fragment-index="2">
+<p>test coverage only measures that every control flow branch is
+tested</p>
+<p>the point of testing is testing for the edge cases</p>
+</div>
+</section></section>
+<section id="changing-the-software" class="title-slide slide level1">
+<h1>changing the software</h1>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>add feature</th>
+<th>fix a bug</th>
+<th>refactor</th>
+<th>optimize</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>structure</td>
+<td>changes</td>
+<td>changes</td>
+<td>changes</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>new funcionality</td>
+<td>changes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>functionality</td>
+<td></td>
+<td>changes</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>resource usage</td>
+<td></td>
+<td></td>
+<td></td>
+<td>changes</td>
+</tr>
+</tbody>
+</table>
+<div class="text-smaller mt-4">
+<p>Michael Feathers, Working Effectively with Legacy Code: part 1 pp 6
+<span class="citation" data-cites="feathers2004working">[27]</span></p>
+</div>
+</section>
+
+<section id="testing-approaches" class="title-slide slide level1">
+<h1>testing approaches</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>black box</strong></p>
+<p><img data-src="figures/black_box.drawio.svg" width="350" /></p>
+<ul>
+<li>examining / testing the functionality without knowing the inner
+structure</li>
+<li>works at all levels: unit, integration, system, acceptance</li>
+<li>also for debugging a legacy code</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>white box</strong></p>
+<p><img data-src="figures/white_box.drawio.svg" width="225" /></p>
+<ul>
+<li>testing the internal structure as opposed to its functionality</li>
+<li>often associated to unit testing, but also works on higher levels
+(i.e., integration, system)</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="text-smaller references csl-bib-body" role="list">
+<div id="ref-tef2016write" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div
+class="csl-right-inline">tef, <span>“Write code that is easy to delete,
+not easy to extend.”</span> <a href="
+                    https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to
+                    " class="uri">
+                    https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to
+</a>, 13-Feb-2016.</div>
+</div>
+<div id="ref-krysik2023sdlc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">A.
+Krysik, <span>“SDLC guide: Requirement analysis in software
+engineering.”</span> <a href="
+                    https://stratoflow.com/requirements-analysis
+                    " class="uri">
+                    https://stratoflow.com/requirements-analysis
+</a>, 24-Nov-2023.</div>
+</div>
+<div id="ref-bruton2022what" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">L.
+Bruton, <span>“What is wireframing? A complete guide.”</span> <a href="
+                   https://www.uxdesigninstitute.com/blog/what-is-wireframing/
+                    " class="uri">
+                   https://www.uxdesigninstitute.com/blog/what-is-wireframing/
+</a>, 08-Sep-2022.</div>
+</div>
+<div id="ref-ixdf2019what" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div
+class="csl-right-inline">Interaction Design Foundation, <span>“What are
+prototypes?”</span> <a href="
+                   https://www.interaction-design.org/literature/topics/prototypes
+                    " class="uri">
+                   https://www.interaction-design.org/literature/topics/prototypes
+</a>, 17-Oct-2019.</div>
+</div>
+<div id="ref-stemmler2019how" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">K.
+Stemmler, <span>“How to learn software design and architecture.”</span>
+<a href="
+                    https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
+                    " class="uri">
+                    https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
+</a>, 28-Sep-2019.</div>
+</div>
+<div id="ref-gamma1994design" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">E.
+Gamma, R. Helm, R. Johnson, and J. Vlissides, <em><a
+href="https://books.google.hu/books?id=6oHuKQe3TjQC">Design patterns:
+Elements of reusable object-oriented software</a></em>. Pearson
+Education, 1994.</div>
+</div>
+<div id="ref-norvig1998design" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">P.
+Norvig, <span>“Design patterns in dynamic languages.”</span> <a href="
+                    http://www.norvig.com/design-patterns/
+                    " class="uri">
+                    http://www.norvig.com/design-patterns/
+</a>, 17-Mar-1998.</div>
+</div>
+<div id="ref-wlaschin2014functional" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">S.
+Wlaschin, <span>“Functional programming design patterns.”</span> <a
+href="
+                    https://fsharpforfunandprofit.com/fppatterns/
+                    " class="uri">
+                    https://fsharpforfunandprofit.com/fppatterns/
+</a>, Dec-2014.</div>
+</div>
+<div id="ref-enwiki:1237710587" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“SOLID —
+<span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=SOLID&amp;oldid=1237710587"
+class="uri">https://en.wikipedia.org/w/index.php?title=SOLID&amp;oldid=1237710587</a>,
+2024.</div>
+</div>
+<div id="ref-millington2019solid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">S.
+Millington, <span>“A solid guide to SOLID principles.”</span> <a href="
+                    https://www.baeldung.com/solid-principles
+                    " class="uri">
+                    https://www.baeldung.com/solid-principles
+</a>, 05-Feb-2019.</div>
+</div>
+<div id="ref-oloruntoba2024solid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">S.
+Oloruntoba and A. S. Walia, <span>“SOLID: The first 5 principles of
+object oriented design.”</span> <a href="
+                    https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+                    " class="uri">
+                    https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+</a>, 23-Apr-2024.</div>
+</div>
+<div id="ref-enwiki:1245630908" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Coupling
+(computer programming) — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908"
+class="uri">https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908</a>,
+2024.</div>
+</div>
+<div id="ref-asana2024what" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">T.
+Asana, <span>“What is an implementation plan? 6 steps to create
+one.”</span> <a href="
+                   https://asana.com/resources/implementation-plan
+                    " class="uri">
+                   https://asana.com/resources/implementation-plan
+</a>, 06-Jan-2024.</div>
+</div>
+<div id="ref-paquet2019when" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">P.
+Paquet, <span>“When everyone is responsible, no one is
+responsible.”</span> <a href="
+                   https://medium.com/@philippelyp/when-everyone-is-responsible-no-one-is-responsible-73e9a179237f
+                    " class="uri">
+                   https://medium.com/@philippelyp/when-everyone-is-responsible-no-one-is-responsible-73e9a179237f
+</a>, 07-Oct-2019.</div>
+</div>
+<div id="ref-radiganstory" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">D.
+Radigan, <span>“Story points and estimation.”</span> <a href="
+                   https://www.atlassian.com/agile/project-management/estimation
+                    " class="uri">
+                   https://www.atlassian.com/agile/project-management/estimation
+</a>.</div>
+</div>
+<div id="ref-fowler2006code" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">M.
+Fowler, <span>“Code smell.”</span> <a href="
+                   https://martinfowler.com/bliki/CodeSmell.html
+                    " class="uri">
+                   https://martinfowler.com/bliki/CodeSmell.html
+</a>, 09-Feb-2006.</div>
+</div>
+<div id="ref-enwiki:1236668404" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[17] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Software rot —
+<span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
+href="
+                    https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+                    " class="uri">
+                    https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
+</a>, 2024.</div>
+</div>
+<div id="ref-femmer2017rapid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">H.
+Femmer, D. M. Fernández, S. Wagner, and S. Eder, <span>“Rapid quality
+assurance with requirements smells,”</span> <em>Journal of Systems and
+Software</em>, vol. 123, pp. 190–213, 2017.</div>
+</div>
+<div id="ref-atwood2006code" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[19] </div><div class="csl-right-inline">J.
+Atwood, <span>“Code smells.”</span> <a href="
+                   https://blog.codinghorror.com/code-smells/
+                    " class="uri">
+                   https://blog.codinghorror.com/code-smells/
+</a>, 18-May-2006.</div>
+</div>
+<div id="ref-martin2009clean" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[20] </div><div class="csl-right-inline">R.
+C. Martin, <em>Clean code: A handbook of agile software
+craftsmanship</em>. Pearson Education, 2009.</div>
+</div>
+<div id="ref-forsberg1991relationship" class="csl-entry"
+role="listitem">
+<div class="csl-left-margin">[21] </div><div class="csl-right-inline">K.
+Forsberg and H. Mooz, <span>“The relationship of system engineering to
+the project cycle,”</span> <em>Center for Systems Management</em>, vol.
+5333, 1991.</div>
+</div>
+<div id="ref-hauer2018code" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">P.
+Hauer, <span>“Code review guidelines for humans.”</span> <a href="
+                   https://phauer.com/2018/code-review-guidelines/
+                    " class="uri">
+                   https://phauer.com/2018/code-review-guidelines/
+</a>, 31-Jul-2018.</div>
+</div>
+<div id="ref-beck2002test" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[23] </div><div class="csl-right-inline">K.
+Beck, <em>Test driven development: By example</em>. Addison-Wesley
+Professional, 2002.</div>
+</div>
+<div id="ref-seemann2007unit" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[24] </div><div class="csl-right-inline">M.
+Seemann, <span>“Unit testing: Exploring the continuum of test
+doubles.”</span> <a href="
+                   https://learn.microsoft.com/en-us/archive/msdn-magazine/2007/september/unit-testing-exploring-the-continuum-of-test-doubles
+                    " class="uri">
+                   https://learn.microsoft.com/en-us/archive/msdn-magazine/2007/september/unit-testing-exploring-the-continuum-of-test-doubles
+</a>, 2007.</div>
+</div>
+<div id="ref-meszaros2007xunit" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[25] </div><div class="csl-right-inline">G.
+Meszaros, <em>xUnit test patterns: Refactoring test code</em>. Pearson
+Education, 2007.</div>
+</div>
+<div id="ref-martin2014cycles" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[26] </div><div class="csl-right-inline">R.
+C. Martin, <span>“The cycles of TDD.”</span> <a href="
+                   http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
+                    " class="uri">
+                   http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
+</a>, 17-Dec-2014.</div>
+</div>
+<div id="ref-feathers2004working" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[27] </div><div class="csl-right-inline">M.
+Feathers, <em>Working effectively with legacy code</em>. Prentice Hall
+Professional, 2004.</div>
+</div>
+</div>
+</section>
+
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Sometimes it can be somewhat formal.<a href="#/fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    // Reveal.destroy();
+    // Reveal.initialize({
+    //     verticator: {
+    // 		color: '#181d37',
+    // 	},
+    // 	drawer: {
+    //       toggleDrawKey: "d", // (optional) key to enable drawing, default "d"
+    //       toggleBoardKey: "t", // (optional) key to show drawing board, default "t"
+    //       colors: ["#fa1e0e", "#8ac926", "#1982c4", "#ffca3a"], // (optional) list of colors avaiable (hex color codes)
+    //       color: "#FF0000", // (optional) color of a cursor, first color from `codes` is a default
+    //       pathSize: 4, // (optional) path size in px, default 4
+    //     },
+    // 	// markdown: {
+    //  //      smartypants: true,
+    //  //    },
+    //     // plugins: [ RevealMenu, Verticator ] 
+    //     // plugins: [ RevealDrawer, RevealMenu, Verticator ] 
+    // });
+    // console.log(Reveal.hasPlugin('RevealMenu'));
+    // Reveal.getPlugin('RevealMenu');
+    // console.log(Reveal.hasPlugin('RevealMenu'));
+    // Reveal.configure({ plugins: [ RevealDrawer, RevealMenu, Verticator ] });
+    highlight_lines()
+    </script>
+    </body>
+</html>

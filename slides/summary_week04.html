@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>week 4 summary</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+  <!--<script src="../assets/reveal_menu/menu.js"></script>
+  <link rel="stylesheet" href="../assets/reveal_menu/menu.css"/>
+
+  <script src="../assets/verticator/verticator.js"></script>
+  <link rel="stylesheet" href="../assets/verticator/verticator.css"/>-->
+
+  <script src="../assets/reveal-drawer-0.1.2/drawer.js"></script>
+  <link rel="stylesheet" href="../assets/reveal-drawer-0.1.2/drawer.css"/>
+
+  <script src="../assets/highlight_line.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">week 4 summary</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section id="wireframe" class="title-slide slide level1">
+<h1>wireframe</h1>
+<div class="columns">
+<div class="column mt-2" style="width:70;">
+<ul>
+<li>a wireframe is an outline / blueprint / concept art of a webpage or
+application</li>
+<li>can be hand drawn on paper or built out digitally</li>
+<li>provides visual understanding of page structure, layout, user flow,
+functionality and intended behaviours</li>
+<li>presented to stakeholders before the interface is coded</li>
+</ul>
+<div class="text-smaller">
+<p>source: <span class="citation"
+data-cites="bruton2022what">[1]</span></p>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/user_stats.drawio.svg" width="250" /></p>
+</div>
+</div>
+</section>
+
+<section id="types-of-wireframes" class="title-slide slide level1">
+<h1>types of wireframes</h1>
+<div class="columns">
+<div class="column" style="width:33;">
+<figure>
+<img data-src="figures/user_statistics/wireframe_lofi.drawio.svg"
+width="250" alt="low-fidelity" />
+<figcaption aria-hidden="true">low-fidelity</figcaption>
+</figure>
+</div><div class="column" style="width:33;">
+<figure>
+<img data-src="figures/user_stats.drawio.svg" width="250"
+alt="mid-fidelity" />
+<figcaption aria-hidden="true">mid-fidelity</figcaption>
+</figure>
+</div><div class="column" style="width:33;">
+<figure>
+<img data-src="figures/user_statistics/wireframe_hifi.drawio.svg"
+width="250" alt="high-fidelity" />
+<figcaption aria-hidden="true">high-fidelity</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="wireframe-map" class="title-slide slide level1">
+<h1>wireframe map</h1>
+<p><img data-src="figures/user_statistics/wireframe_map_2.drawio.svg"
+height="500" /></p>
+<div class="text-smaller">
+<p>shows user flow, ~ user story map flow</p>
+</div>
+</section>
+
+<section id="wireframing" class="title-slide slide level1">
+<h1>wireframing</h1>
+<div class="columns column-gapless">
+<div class="column mt-2" style="width:65;">
+<ul>
+<li>responsibility of the UI/UX designers</li>
+<li>occurs during the exploratory design phase
+<ul>
+<li>experimenting</li>
+</ul></li>
+<li>iterative process</li>
+<li>iterations are presented to the stakeholders to gain feedback</li>
+<li>some professional tools: <a href="https://www.figma.com/">Figma</a>,
+<a href="https://balsamiq.com/">Balsamiq</a>, <a
+href="https://www.sketch.com/">Sketch</a>
+<ul>
+<li><span class="text-smaller">any drawing/diagramming tool can be used
+for the low or mid fidelity wireframes</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<figure>
+<img
+data-src="figures/borrowed/td-design-thinking-non-linear-process.webp"
+width="300" alt="Interaction Design Foundation [2] | CC BY-SA 4.0" />
+<figcaption aria-hidden="true">Interaction Design Foundation <span
+class="citation" data-cites="ixdf2019what">[2]</span> | <a
+href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
+4.0</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on: <span class="citation"
+data-cites="bruton2022what">[1]</span></p>
+</div>
+</section>
+
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-bruton2022what" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">L.
+Bruton, <span>“What is wireframing? A complete guide.”</span> <a href="
+                   https://www.uxdesigninstitute.com/blog/what-is-wireframing/
+                    " class="uri">
+                   https://www.uxdesigninstitute.com/blog/what-is-wireframing/
+</a>, 08-Sep-2022.</div>
+</div>
+<div id="ref-ixdf2019what" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div
+class="csl-right-inline">Interaction Design Foundation, <span>“What are
+prototypes?”</span> <a href="
+                   https://www.interaction-design.org/literature/topics/prototypes
+                    " class="uri">
+                   https://www.interaction-design.org/literature/topics/prototypes
+</a>, 17-Oct-2019.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    // Reveal.destroy();
+    // Reveal.initialize({
+    //     verticator: {
+    // 		color: '#181d37',
+    // 	},
+    // 	drawer: {
+    //       toggleDrawKey: "d", // (optional) key to enable drawing, default "d"
+    //       toggleBoardKey: "t", // (optional) key to show drawing board, default "t"
+    //       colors: ["#fa1e0e", "#8ac926", "#1982c4", "#ffca3a"], // (optional) list of colors avaiable (hex color codes)
+    //       color: "#FF0000", // (optional) color of a cursor, first color from `codes` is a default
+    //       pathSize: 4, // (optional) path size in px, default 4
+    //     },
+    // 	// markdown: {
+    //  //      smartypants: true,
+    //  //    },
+    //     // plugins: [ RevealMenu, Verticator ] 
+    //     // plugins: [ RevealDrawer, RevealMenu, Verticator ] 
+    // });
+    // console.log(Reveal.hasPlugin('RevealMenu'));
+    // Reveal.getPlugin('RevealMenu');
+    // console.log(Reveal.hasPlugin('RevealMenu'));
+    // Reveal.configure({ plugins: [ RevealDrawer, RevealMenu, Verticator ] });
+    highlight_lines()
+    </script>
+    </body>
+</html>
