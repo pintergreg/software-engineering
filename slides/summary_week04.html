@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Gergő Pintér, PhD">
-  <title>C4 model</title>
+  <title>week 4 summary</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,7 +28,26 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
   <link rel="stylesheet" href="../assets/custom.css"/>
   <!--<script src="../assets/reveal_menu/menu.js"></script>
@@ -48,7 +67,7 @@
 
 <section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
 calc(100% - 1.25rem)" data-background-size="125px">
-  <h1 class="title">C4 model</h1>
+  <h1 class="title">week 4 summary</h1>
   <p class="author">Gergő Pintér, PhD</p>
   <p class="date">gergo.pinter@uni-corvinus.hu</p>
 </section>
@@ -65,8 +84,13 @@ class="title-slide slide level1">
 </ul>
 </section>
 
+<section>
 <section id="c4-model" class="title-slide slide level1">
 <h1>C4 model</h1>
+<blockquote>
+<p>overview first, zoom and filter, then details on demand</p>
+<p>– Ben Shneiderman</p>
+</blockquote>
 <ul>
 <li>hierarchical set of software architecture diagrams
 <ul>
@@ -78,229 +102,81 @@ class="title-slide slide level1">
 </ul></li>
 <li>popularized by Simon Brown</li>
 </ul>
-<div class="text-smaller mt-3">
+<div class="text-smaller mt-2">
 <p>this chapter is based on <a
 href="https://c4model.com/">c4model.com</a></p>
 </div>
 </section>
-
-<section>
-<section id="level-1-system-context-diagram"
-class="title-slide slide level1">
-<h1>Level 1: System Context diagram</h1>
+<section id="level-1-system-context-diagram" class="slide level2">
+<h2>level 1: system context diagram</h2>
+<div class="columns">
+<div class="column mt-4" style="width:50%;">
 <ul>
-<li>high level relation with other systems or users</li>
+<li>shows how the software fits into the world
+<ul>
+<li><span class="text-smaller">who use it</span></li>
+<li><span class="text-smaller">what other software does it
+interacts</span></li>
+</ul></li>
+<li>high diagram
+<ul>
+<li><span class="text-smaller">technologies, protocols and other
+low-level details are not important</span></li>
+</ul></li>
 <li>similar to use case diagram</li>
-<li>technologies, protocols and other low-level details are not
-important</li>
 <li>understandable for non-technical people</li>
 </ul>
-<blockquote>
-<p>Shows the software system you are building and how it fits into the
-world in terms of the people who use it and the other software systems
-it interacts with.</p>
-<p>Simon Brown - <a
-href="https://www.infoq.com/articles/C4-architecture-model/">The C4
-Model for Software Architecture</a></p>
-</blockquote>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/c4_system_context.drawio.svg"
+width="400" /></p>
+</div>
+</div>
 </section>
-<section id="system-context-example" class="slide level2">
-<h2>system context example</h2>
-<figure>
-<img data-src="figures/borrowed/c4/SystemContext.png" height="550"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</section>
-<section id="notation" class="slide level2">
-<h2>notation</h2>
-<figure>
-<img data-src="figures/borrowed/c4/SystemContext-key.png"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</section></section>
-<section>
-<section id="level-2-container-diagram"
-class="title-slide slide level1">
-<h1>Level 2: Container diagram</h1>
-<blockquote>
-<p>Zooms into the software system, and shows the containers
-(applications, data stores, microservices, etc.) that make up that
-software system. Technology decisions are also a key part of this
-diagram.</p>
-<p>Simon Brown - <a
-href="https://www.infoq.com/articles/C4-architecture-model/">The C4
-Model for Software Architecture</a></p>
-</blockquote>
-</section>
-<section id="container-example" class="slide level2">
-<h2>container example</h2>
-<figure>
-<img data-src="figures/borrowed/c4/Containers.png" height="550"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</section>
-<section id="notation-1" class="slide level2">
-<h2>notation</h2>
-<figure>
-<img data-src="figures/borrowed/c4/Containers-key.png"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</section></section>
-<section>
-<section id="level-3-component-diagram"
-class="title-slide slide level1">
-<h1>Level 3: Component diagram</h1>
-<blockquote>
-<p>Zooms into an individual container to show the components inside it.
-These components should map to real abstractions (e.g., a grouping of
-code) in your codebase.</p>
-<p>Simon Brown - <a
-href="https://www.infoq.com/articles/C4-architecture-model/">The C4
-Model for Software Architecture</a></p>
-</blockquote>
-</section>
-<section id="component-example" class="slide level2">
-<h2>component example</h2>
-<figure>
-<img data-src="figures/borrowed/c4/Components.png" height="550"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</section>
-<section id="notation-2" class="slide level2">
-<h2>notation</h2>
-<figure>
-<img data-src="figures/borrowed/c4/Components-key.png"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</section></section>
-<section>
-<section id="level-4-code" class="title-slide slide level1">
-<h1>Level 4: Code</h1>
-<blockquote>
-<p>Finally, if you really want or need to, you can zoom into an
-individual component to show how that component is implemented.</p>
-<p>Simon Brown - <a
-href="https://www.infoq.com/articles/C4-architecture-model/">The C4
-Model for Software Architecture</a></p>
-</blockquote>
-</section>
-<section id="code-example" class="slide level2">
-<h2>code example</h2>
-<figure>
-<img data-src="figures/borrowed/c4/MainframeBankingSystemFacade.png"
-height="500" alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</section></section>
-<section>
-<section id="additional-diagrams-in-c4-model"
-class="title-slide slide level1">
-<h1>additional diagrams in C4 model</h1>
+<section id="level-2-container-diagram" class="slide level2">
+<h2>level 2: container diagram</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:50%;">
 <ul>
-<li>system landscape diagram
+<li>zooms into the software system</li>
+<li>shows the containers that make up that software system
 <ul>
-<li>even broader environment than the system context diagram</li>
+<li><span class="text-smaller">applications, data stores, microservices,
+etc.</span></li>
 </ul></li>
-<li>dynamic diagram
+<li>technology decisions are also a key part of this diagram
 <ul>
-<li>based on the UML communication and sequence diagrams</li>
-</ul></li>
-<li>deployment diagram
-<ul>
-<li>based on the UML deployment diagram
-<!--    - audience: technical people inside and outside of the software development team
-      - software architects, developers, infrastructure architects, and operations/support staff--></li>
+<li><span class="text-smaller">what database management system to use,
+e.g., PostgreSQL</span></li>
+<li><span class="text-smaller">what e-mail service to use, e.g.,
+Mailchimp</span></li>
+<li><span class="text-smaller">what language to use</span></li>
+<li><span class="text-smaller">what UI framework to use</span></li>
 </ul></li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/c4_contianer.drawio.svg"
+width="400" /></p>
+</div>
+</div>
 </section>
-<section id="system-landscape-diagram" class="slide level2">
-<h2>system landscape diagram</h2>
-<figure>
-<img data-src="figures/borrowed/c4/SystemLandscape.png" height="550"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</section>
-<section id="dynamic-diagram-collaboration-style" class="slide level2">
-<h2>dynamic diagram (collaboration style)</h2>
-<figure>
-<img data-src="figures/borrowed/c4/SignIn.png" height="550"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</section>
-<section id="dynamic-diagram-sequence" class="slide level2">
-<h2>dynamic diagram (sequence)</h2>
-<figure>
-<img data-src="figures/borrowed/c4/bigbankplc-SignIn-sequence.png"
-height="550" alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</section>
-<section id="deployment-diagram" class="slide level2">
-<h2>deployment diagram</h2>
+<section id="level-3-component-diagram" class="slide level2">
+<h2>level 3: component diagram</h2>
 <div class="columns">
-<div class="column text-smaller" style="width:40%;">
-<ul>
-<li>shows where an instance of a software system is running e.g.,
-<ul>
-<li>physical infrastructure (e.g. a physical server or device)</li>
-<li>virtualised infrastructure,</li>
-<li>containerised infrastructure (e.g. a Docker container),</li>
-<li>an execution environment (e.g. a database server, Java EE
-web/application server, Microsoft IIS), etc.</li>
-</ul></li>
-<li>deployment nodes can be nested</li>
-</ul>
-</div><div class="column" style="width:60%;">
-<figure>
-<img data-src="figures/borrowed/c4/LiveDeployment.png"
-alt="from c4model.com | CC-BY" />
-<figcaption aria-hidden="true">from <a
-href="https://c4model.com/">c4model.com</a> | CC-BY</figcaption>
-</figure>
-</div>
-</div>
-</section></section>
-<section id="summary" class="title-slide slide level1">
-<h1>summary</h1>
-<blockquote>
-<p>overview first, zoom and filter, then details on demand</p>
-<p>– Ben Shneiderman</p>
-</blockquote>
-</section>
+<div class="column" style="width:50%;">
 
-<section id="suggested-software" class="title-slide slide level1">
-<h1>suggested software</h1>
-<div class="columns">
-<div class="column" style="width:70%;">
-<ul>
-<li><a href="https://docs.google.com/drawings">Google Drawings</a>
-<ul>
-<li>it does not have a person shape though, but can be constucted from a
-circle and a rectange</li>
-</ul></li>
-<li>Visio</li>
-</ul>
-</div><div class="column" style="width:30%;">
-<p><img data-src="figures/c4_drawings_person_shape.png" /></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/c4_component.excalidraw.svg"
+width="400" /></p>
 </div>
+</div>
+</section>
+<section id="level-4-code" class="slide level2">
+<h2>level 4: code</h2>
+</section></section>
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" role="list">
+
 </div>
 </section>
     </div>

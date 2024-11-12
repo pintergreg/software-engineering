@@ -650,6 +650,107 @@ href="https://jpattonassociates.com/5-story-mapping-mistakes/">5 story
 mapping mistakes</a></p>
 </div>
 </section></section>
+<section id="what-is-the-issue-with-uml"
+class="title-slide slide level1">
+<h1>what is the issue with UML?</h1>
+<ul>
+<li>closely connected with OOP</li>
+<li>propagates object-oriented modelling
+<ul>
+<li>however the design should not consider the implementation</li>
+</ul></li>
+</ul>
+</section>
+
+<section>
+<section id="c4-model" class="title-slide slide level1">
+<h1>C4 model</h1>
+<blockquote>
+<p>overview first, zoom and filter, then details on demand</p>
+<p>– Ben Shneiderman</p>
+</blockquote>
+<ul>
+<li>hierarchical set of software architecture diagrams
+<ul>
+<li>different levels of abstraction for different audience</li>
+</ul></li>
+<li>has four levels:
+<ul>
+<li>context, containers, components and code</li>
+</ul></li>
+<li>popularized by Simon Brown</li>
+</ul>
+<div class="text-smaller mt-2">
+<p>this chapter is based on <a
+href="https://c4model.com/">c4model.com</a></p>
+</div>
+</section>
+<section id="level-1-system-context-diagram" class="slide level2">
+<h2>level 1: system context diagram</h2>
+<div class="columns">
+<div class="column mt-4" style="width:50%;">
+<ul>
+<li>shows how the software fits into the world
+<ul>
+<li><span class="text-smaller">who use it</span></li>
+<li><span class="text-smaller">what other software does it
+interacts</span></li>
+</ul></li>
+<li>high diagram
+<ul>
+<li><span class="text-smaller">technologies, protocols and other
+low-level details are not important</span></li>
+</ul></li>
+<li>similar to use case diagram</li>
+<li>understandable for non-technical people</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/c4_system_context.drawio.svg"
+width="400" /></p>
+</div>
+</div>
+</section>
+<section id="level-2-container-diagram" class="slide level2">
+<h2>level 2: container diagram</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:50%;">
+<ul>
+<li>zooms into the software system</li>
+<li>shows the containers that make up that software system
+<ul>
+<li><span class="text-smaller">applications, data stores, microservices,
+etc.</span></li>
+</ul></li>
+<li>technology decisions are also a key part of this diagram
+<ul>
+<li><span class="text-smaller">what database management system to use,
+e.g., PostgreSQL</span></li>
+<li><span class="text-smaller">what e-mail service to use, e.g.,
+Mailchimp</span></li>
+<li><span class="text-smaller">what language to use</span></li>
+<li><span class="text-smaller">what UI framework to use</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/c4_contianer.drawio.svg"
+width="400" /></p>
+</div>
+</div>
+</section>
+<section id="level-3-component-diagram" class="slide level2">
+<h2>level 3: component diagram</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/user_statistics/c4_component.excalidraw.svg"
+width="400" /></p>
+</div>
+</div>
+</section>
+<section id="level-4-code" class="slide level2">
+<h2>level 4: code</h2>
+</section></section>
 <section id="software-design-and-architecture-stack"
 class="title-slide slide level1">
 <h1>software design and architecture stack</h1>
