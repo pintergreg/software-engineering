@@ -46,8 +46,8 @@ not just style guides, also best practices
 
 # write idiomatic code
 
-:::::::::::: {.columns}
-::::::::: {.column width="70"}
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="70" .mt-1}
 ::: {.text-align-left}
 - a prog. language implements a prog. paradigm
 - a paradigm defines a certain "way" of writing code
@@ -59,8 +59,7 @@ not just style guides, also best practices
 :::
 ::: {.fragment .text-align-left}
 - and languages have their own way of doing things
-    - languages have pros and cons
-    - for a given problem
+    - languages have pros and cons for a given problem
 :::
 :::::::::
 ::::::::: {.column width="30%"}
