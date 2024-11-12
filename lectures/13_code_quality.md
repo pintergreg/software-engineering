@@ -73,8 +73,8 @@ software rot is the degradation, deterioration, or loss of the use or performanc
     - uncommunicative names
 - comments
 - large class
-    - possibly do more than on thing
-- a function / class does more than on thing
+    - possibly do more than one thing
+- a function / class does more than one thing
     
 ::: {.text-smaller}
 source: [@atwood2006code]
