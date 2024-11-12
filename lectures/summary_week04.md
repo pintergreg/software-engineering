@@ -32,29 +32,6 @@ source: [@bruton2022what]
 ::::::::::::
 
 
-# wireframing
-
-:::::::::::: {.columns .column-gapless}
-::::::::: {.column width="65" .mt-2}
-- responsibility of the UI/UX designers
-- occurs during the exploratory design phase
-    - experimenting
-- iterative process
-- iterations are presented to the stakeholders to gain feedback
-- some professional tools: [Figma](https://www.figma.com/), [Balsamiq](https://balsamiq.com/), [Sketch](https://www.sketch.com/)
-  - [any drawing/diagramming tool can be used for the low or mid fidelity wireframes]{.text-smaller}
-:::::::::
-::::::::: {.column width="35%"}
-![Interaction Design Foundation [@ixdf2019what] | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/td-design-thinking-non-linear-process.webp){width=300}
-
-:::::::::
-::::::::::::
-
-::: {.text-smaller}
-based on: [@bruton2022what]
-:::
-
-
 # types of wireframes
 
 :::::::::::: {.columns}
@@ -76,6 +53,29 @@ based on: [@bruton2022what]
 
 ::: {.text-smaller}
 shows user flow, ~ user story map flow 
+:::
+
+
+# wireframing
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="65" .mt-2}
+- responsibility of the UI/UX designers
+- occurs during the exploratory design phase
+    - experimenting
+- iterative process
+- iterations are presented to the stakeholders to gain feedback
+- some professional tools: [Figma](https://www.figma.com/), [Balsamiq](https://balsamiq.com/), [Sketch](https://www.sketch.com/)
+  - [any drawing/diagramming tool can be used for the low or mid fidelity wireframes]{.text-smaller}
+:::::::::
+::::::::: {.column width="35%"}
+![Interaction Design Foundation [@ixdf2019what] | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/td-design-thinking-non-linear-process.webp){width=300}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+based on: [@bruton2022what]
 :::
 
 
