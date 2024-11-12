@@ -97,6 +97,21 @@ administrator, course planner
 
 ## level 4: code
 
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- optional level of detail 
+- ideally this diagram would be automatically generated
+- if you really want or need to, you can zoom into an individual component
+  - but show only those attributes and methods that really needed for the storytelling
+- UML class diagram can be used
+
+:::::::::
+::::::::: {.column width="40%"}
+![this may be too much](figures/user_statistics/class_3.svg){width=400}
+
+:::::::::
+::::::::::::
+
 
 # references
 
