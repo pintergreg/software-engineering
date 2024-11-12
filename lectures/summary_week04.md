@@ -40,7 +40,7 @@ this chapter is based on [c4model.com](https://c4model.com/)
 ## level 1: system context diagram
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%" .mt-4}
+::::::::: {.column width="60%" .mt-2}
 - shows how the software fits into the world
   - [who use it]{.text-smaller}
   - [what other software does it interacts]{.text-smaller}
@@ -48,9 +48,16 @@ this chapter is based on [c4model.com](https://c4model.com/)
   - [technologies, protocols and other low-level details are not important]{.text-smaller}
 - similar to use case diagram
 - understandable for non-technical people
+
 :::::::::
-::::::::: {.column width="50%"}
+::::::::: {.column width="40%"}
 ![](figures/user_statistics/c4_system_context.drawio.svg){width=400}
+
+::: {.text-smaller}
+other possible users:
+
+administrator, course planner
+:::
 :::::::::
 ::::::::::::
 
