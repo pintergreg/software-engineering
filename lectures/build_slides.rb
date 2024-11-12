@@ -1,3 +1,5 @@
+load "build_summary"
+
 inputs = [
     "00_intro.md",
     "01_sdlc.md",
@@ -20,6 +22,8 @@ inputs = [
 Dir.glob('./summary_week*.md') do |x|
     inputs.push x
 end
+generate_full_summary
+inputs.push "summary_full.md"
 inputs.each do |x|
     `ruby build.rb -m #{x}`
 end
