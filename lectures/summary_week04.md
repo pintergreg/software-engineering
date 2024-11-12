@@ -15,9 +15,18 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 # what is the issue with UML?
 
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-4}
 - closely connected with OOP
 - propagates object-oriented modelling
     - however the design should not consider the implementation
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/paper-documents.svg){width=300}
+
+:::::::::
+::::::::::::
 
     
 # C4 model
