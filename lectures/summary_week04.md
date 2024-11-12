@@ -13,48 +13,6 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
-# wireframe
-
-:::::::::::: {.columns}
-::::::::: {.column width="70" .mt-2}
-- a wireframe is an outline / blueprint / concept art of a webpage or application
-- can be hand drawn on paper or built out digitally
-- provides visual understanding of page structure, layout, user flow, functionality and intended behaviours
-- presented to stakeholders before the interface is coded
-
-::: {.text-smaller}
-source: [@bruton2022what]
-:::
-:::::::::
-::::::::: {.column width="30%"}
-![](figures/user_stats.drawio.svg){width=250}
-:::::::::
-::::::::::::
-
-
-# types of wireframes
-
-:::::::::::: {.columns}
-::::::::: {.column width="33"}
-![low-fidelity](figures/user_statistics/wireframe_lofi.drawio.svg){width=250}
-:::::::::
-::::::::: {.column width="33"}
-![mid-fidelity](figures/user_stats.drawio.svg){width=250}
-:::::::::
-::::::::: {.column width="33"}
-![high-fidelity](figures/user_statistics/wireframe_hifi.drawio.svg){width=250}
-:::::::::
-::::::::::::
-
-
-# wireframe map
-
-![](figures/user_statistics/wireframe_map_2.drawio.svg){height=500}
-
-::: {.text-smaller}
-shows user flow, ~ user story map flow 
-:::
-
 
 # wireframing
 
@@ -76,6 +34,49 @@ shows user flow, ~ user story map flow
 
 ::: {.text-smaller}
 based on: [@bruton2022what]
+:::
+
+
+## wireframe
+
+:::::::::::: {.columns}
+::::::::: {.column width="70" .mt-2}
+- a wireframe is an outline / blueprint / concept art of a webpage or application
+- can be hand drawn on paper or built out digitally
+- provides visual understanding of page structure, layout, user flow, functionality and intended behaviours
+- presented to stakeholders before the interface is coded
+
+::: {.text-smaller}
+source: [@bruton2022what]
+:::
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/user_stats.drawio.svg){width=250}
+:::::::::
+::::::::::::
+
+
+## types of wireframes
+
+:::::::::::: {.columns}
+::::::::: {.column width="33"}
+![low-fidelity](figures/user_statistics/wireframe_lofi.drawio.svg){width=250}
+:::::::::
+::::::::: {.column width="33"}
+![mid-fidelity](figures/user_stats.drawio.svg){width=250}
+:::::::::
+::::::::: {.column width="33"}
+![high-fidelity](figures/user_statistics/wireframe_hifi.drawio.svg){width=250}
+:::::::::
+::::::::::::
+
+
+## wireframe map
+
+![](figures/user_statistics/wireframe_map_2.drawio.svg){height=500}
+
+::: {.text-smaller}
+shows user flow, ~ user story map flow 
 :::
 
 
