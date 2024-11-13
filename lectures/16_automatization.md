@@ -13,6 +13,75 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
+# what to automatize?
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .text-align-left}
+::: {.r-fit-text}
+everything
+:::
+
+more precisely, **repetitve tasks** | scripting: writing relatively short and simple code to automatize an otherwise manual process
+
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg){width=300}
+
+:::::::::
+::::::::::::
+
+
+## in a software development context
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-2}
+- style guide compliance
+- code smell finding
+- code quality measurement
+- review
+- building
+- testing
+- deployment
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg){width=300}
+
+:::::::::
+::::::::::::
+
+
+## linting
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+- a linter in modern editors behaves like a spell checker in a word processor
+    - gives immediate feedback on syntax errors, styling issues or bad practices
+- traditionally linters were developed for languages, then linter plugins for editors
+    - so language support in editors were not evident
+    - Language Server Protocol (LSP) was developed (originally at Microsoft), providing a common interface for linters
+
+:::::::::
+::::::::: {.column width="25%"}
+![](figures/publicdomainvectors/app-development-concept.svg){width=300}
+
+:::::::::
+::::::::::::
+
+
+## auto formatting
+
+- there are automatic code formatters for more and more languages
+    - that can reformat the source code to align with the style guide
+- usually triggered by saving the file
+- usually configurable to align with organization / project specific rules
+- some examples:
+    - Python: [ruff](https://docs.astral.sh/ruff/formatter/) (among others)
+    - Ruby: [rubocop](https://rubocop.org/)
+    - Go: [gofmt](https://pkg.go.dev/cmd/gofmt)
+    
+
 # interruption
 
 :::::::::::: {.columns}
