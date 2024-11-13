@@ -72,6 +72,150 @@ calc(100% - 1.25rem)" data-background-size="125px">
   <p class="date">gergo.pinter@uni-corvinus.hu</p>
 </section>
 
+<section>
+<section id="unified-modeling-language"
+class="title-slide slide level1">
+<h1>unified modeling language</h1>
+<div class="columns">
+<div class="column mt-4" style="width:60%;">
+<ul>
+<li>UML 2.0 released in 2005
+<ul>
+<li>latest revision in 2017</li>
+</ul></li>
+<li>ISO/IEC 19501 standard</li>
+<li>designed to be a complete language of software modelling</li>
+<li>UML 2 has 14 diagrams in two categories: structure and behavior</li>
+</ul>
+<div class="fragment">
+<p>most software developer do not use UML (in a formal way), but hand
+drawn sketches which often include UML elements <span class="citation"
+data-cites="baltes2014sketches">[1]</span></p>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/uml/diagrams.svg" /></p>
+</div>
+</div>
+</section>
+<section id="use-case-diagram" class="slide level2">
+<h2>use case diagram</h2>
+<div class="columns">
+<div class="column mt-5" style="width:60%;">
+<ul>
+<li>depicts the interactions between system users (actors) and the
+system itself</li>
+<li>used to specify the functional requirements</li>
+<li>provides a high-level view
+<ul>
+<li>helping stakeholders to understand the system’s functionality</li>
+</ul></li>
+<li>it’s purpose is similar to the user story</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/social_media_platform/usecase_3.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="class-diagram" class="slide level2">
+<h2>class diagram</h2>
+<div class="columns">
+<div class="column mt-5" style="width:50%;">
+<ul>
+<li>describes the structure of a system by its classes
+<ul>
+<li>their attributes, methods, and the relationships among them</li>
+</ul></li>
+<li>main building block of the object-oriented modeling</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/uml/class_example_2.svg" width="450" /></p>
+</div>
+</div>
+</section>
+<section id="object-diagram" class="slide level2">
+<h2>object diagram</h2>
+<ul>
+<li>special case of a class diagram</li>
+<li>graphical representation of the objects and their
+relationships<br><strong>at a specific moment in time</strong></li>
+<li>provides a snapshot of the system’s structure</li>
+<li>does not show anything architecturally different to class
+diagram</li>
+</ul>
+<p><img data-src="figures/uml/object_class.svg" height="250" /></p>
+</section>
+<section id="component-diagram" class="slide level2">
+<h2>component diagram</h2>
+<ul>
+<li>depicts the component structure and relations</li>
+<li>highlighting the interfaces</li>
+</ul>
+<div class="mt-2">
+<p><img data-src="figures/uml/component.svg" height="275" /></p>
+</div>
+</section>
+<section id="state-diagram" class="slide level2">
+<h2>state diagram</h2>
+<div class="columns">
+<div class="column mt-5" style="width:50%;">
+<ul>
+<li>a visual representation of the states a system or an object can be
+in also the transitions between those states</li>
+<li>models the dynamic behavior of the system, capturing how it responds
+to different events over time</li>
+<li>shows the system’s life cycle</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/uml/stopwatch_state_commented.svg"
+width="350" /></p>
+</div>
+</div>
+</section>
+<section id="activity-diagram" class="slide level2">
+<h2>activity diagram</h2>
+<div class="columns">
+<div class="column mt-4" style="width:60%;">
+<ul>
+<li>graphical representations of workflows</li>
+<li>similar to flowcharts
+<ul>
+<li>but uses UML notation</li>
+<li>and can visualize parallel processing</li>
+<li>has more features</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:20%;">
+<figure>
+<img data-src="figures/uml/power.drawio.svg" height="300"
+alt="flowchart" />
+<figcaption aria-hidden="true">flowchart</figcaption>
+</figure>
+</div><div class="column" style="width:20%;">
+<figure>
+<img data-src="figures/uml/activity.svg" height="300"
+alt="activity (UML)" />
+<figcaption aria-hidden="true">activity (UML)</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="sequence-diagram" class="slide level2">
+<h2>sequence diagram</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="figures/uml/sequence.svg" /></p>
+</div><div class="column mt-3" style="width:40%;">
+<ul>
+<li>shows process interactions arranged in time sequence</li>
+<li>depicts the processes and objects involved and the sequence of
+messages exchanged</li>
+<li>instead of the inner parts of a system, message exchange between
+software systems can be depicted</li>
+</ul>
+</div>
+</div>
+</section></section>
 <section id="what-is-the-issue-with-uml"
 class="title-slide slide level1">
 <h1>what is the issue with UML?</h1>
@@ -222,8 +366,13 @@ alt="this may be too much" />
 </section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" role="list">
-
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-baltes2014sketches" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">S.
+Baltes and S. Diehl, <span>“Sketches and diagrams in practice,”</span>
+in <em>Proceedings of the 22nd ACM SIGSOFT international symposium on
+foundations of software engineering</em>, 2014, pp. 530–541.</div>
+</div>
 </div>
 </section>
     </div>

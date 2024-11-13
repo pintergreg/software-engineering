@@ -650,6 +650,150 @@ href="https://jpattonassociates.com/5-story-mapping-mistakes/">5 story
 mapping mistakes</a></p>
 </div>
 </section></section>
+<section>
+<section id="unified-modeling-language"
+class="title-slide slide level1">
+<h1>unified modeling language</h1>
+<div class="columns">
+<div class="column mt-4" style="width:60%;">
+<ul>
+<li>UML 2.0 released in 2005
+<ul>
+<li>latest revision in 2017</li>
+</ul></li>
+<li>ISO/IEC 19501 standard</li>
+<li>designed to be a complete language of software modelling</li>
+<li>UML 2 has 14 diagrams in two categories: structure and behavior</li>
+</ul>
+<div class="fragment">
+<p>most software developer do not use UML (in a formal way), but hand
+drawn sketches which often include UML elements <span class="citation"
+data-cites="baltes2014sketches">[3]</span></p>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/uml/diagrams.svg" /></p>
+</div>
+</div>
+</section>
+<section id="use-case-diagram" class="slide level2">
+<h2>use case diagram</h2>
+<div class="columns">
+<div class="column mt-5" style="width:60%;">
+<ul>
+<li>depicts the interactions between system users (actors) and the
+system itself</li>
+<li>used to specify the functional requirements</li>
+<li>provides a high-level view
+<ul>
+<li>helping stakeholders to understand the system’s functionality</li>
+</ul></li>
+<li>it’s purpose is similar to the user story</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/social_media_platform/usecase_3.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="class-diagram" class="slide level2">
+<h2>class diagram</h2>
+<div class="columns">
+<div class="column mt-5" style="width:50%;">
+<ul>
+<li>describes the structure of a system by its classes
+<ul>
+<li>their attributes, methods, and the relationships among them</li>
+</ul></li>
+<li>main building block of the object-oriented modeling</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/uml/class_example_2.svg" width="450" /></p>
+</div>
+</div>
+</section>
+<section id="object-diagram" class="slide level2">
+<h2>object diagram</h2>
+<ul>
+<li>special case of a class diagram</li>
+<li>graphical representation of the objects and their
+relationships<br><strong>at a specific moment in time</strong></li>
+<li>provides a snapshot of the system’s structure</li>
+<li>does not show anything architecturally different to class
+diagram</li>
+</ul>
+<p><img data-src="figures/uml/object_class.svg" height="250" /></p>
+</section>
+<section id="component-diagram" class="slide level2">
+<h2>component diagram</h2>
+<ul>
+<li>depicts the component structure and relations</li>
+<li>highlighting the interfaces</li>
+</ul>
+<div class="mt-2">
+<p><img data-src="figures/uml/component.svg" height="275" /></p>
+</div>
+</section>
+<section id="state-diagram" class="slide level2">
+<h2>state diagram</h2>
+<div class="columns">
+<div class="column mt-5" style="width:50%;">
+<ul>
+<li>a visual representation of the states a system or an object can be
+in also the transitions between those states</li>
+<li>models the dynamic behavior of the system, capturing how it responds
+to different events over time</li>
+<li>shows the system’s life cycle</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/uml/stopwatch_state_commented.svg"
+width="350" /></p>
+</div>
+</div>
+</section>
+<section id="activity-diagram" class="slide level2">
+<h2>activity diagram</h2>
+<div class="columns">
+<div class="column mt-4" style="width:60%;">
+<ul>
+<li>graphical representations of workflows</li>
+<li>similar to flowcharts
+<ul>
+<li>but uses UML notation</li>
+<li>and can visualize parallel processing</li>
+<li>has more features</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:20%;">
+<figure>
+<img data-src="figures/uml/power.drawio.svg" height="300"
+alt="flowchart" />
+<figcaption aria-hidden="true">flowchart</figcaption>
+</figure>
+</div><div class="column" style="width:20%;">
+<figure>
+<img data-src="figures/uml/activity.svg" height="300"
+alt="activity (UML)" />
+<figcaption aria-hidden="true">activity (UML)</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="sequence-diagram" class="slide level2">
+<h2>sequence diagram</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="figures/uml/sequence.svg" /></p>
+</div><div class="column mt-3" style="width:40%;">
+<ul>
+<li>shows process interactions arranged in time sequence</li>
+<li>depicts the processes and objects involved and the sequence of
+messages exchanged</li>
+<li>instead of the inner parts of a system, message exchange between
+software systems can be depicted</li>
+</ul>
+</div>
+</div>
+</section></section>
 <section id="what-is-the-issue-with-uml"
 class="title-slide slide level1">
 <h1>what is the issue with UML?</h1>
@@ -804,9 +948,9 @@ class="title-slide slide level1">
 <figure>
 <img
 data-src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
-height="475" alt="based on Khalil Stemmel’s figure [3]" />
+height="475" alt="based on Khalil Stemmel’s figure [4]" />
 <figcaption aria-hidden="true">based on Khalil Stemmel’s figure <span
-class="citation" data-cites="stemmler2019how">[3]</span></figcaption>
+class="citation" data-cites="stemmler2019how">[4]</span></figcaption>
 </figure>
 </section>
 
@@ -821,7 +965,7 @@ Vlissides</li>
 <ul>
 <li>published in “Design Patterns: Elements of Reusable Object-Oriented
 Software” (1994) <span class="citation"
-data-cites="gamma1994design">[4]</span></li>
+data-cites="gamma1994design">[5]</span></li>
 </ul></li>
 <li>provides solutions to common design problems</li>
 <li>categorized into three main groups
@@ -873,17 +1017,17 @@ class="slide level2">
 href="http://www.norvig.com/design-patterns/">demonstrated</a> that 16
 out of the 23 patterns are simplified or eliminated by language features
 in Lisp or Dylan (1998) <span class="citation"
-data-cites="norvig1998design">[5]</span></p>
+data-cites="norvig1998design">[6]</span></p>
 <p><a href="https://fsharpforfunandprofit.com/fppatterns/">more
 about</a> it from Scott Wlaschin <span class="citation"
-data-cites="wlaschin2014functional">[6]</span></p>
+data-cites="wlaschin2014functional">[7]</span></p>
 </section></section>
 <section id="solid-principles" class="title-slide slide level1">
 <h1>SOLID principles</h1>
 <p><span class="text-smaller">SOLID is a mnemonic acronym for five
 design principles intended to make object-oriented designs more
 understandable, flexible, and maintainable <span class="citation"
-data-cites="enwiki:1237710587">[7]</span></span></p>
+data-cites="enwiki:1237710587">[8]</span></span></p>
 <dl>
 <dt>single responsibility principle</dt>
 <dd>
@@ -917,8 +1061,8 @@ round</span>
 </dl>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="millington2019solid">[8]</span>, <span class="citation"
-data-cites="oloruntoba2024solid">[9]</span></p>
+data-cites="millington2019solid">[9]</span>, <span class="citation"
+data-cites="oloruntoba2024solid">[10]</span></p>
 </div>
 </section>
 
@@ -947,7 +1091,7 @@ href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia<
 <div class="text-smaller mt-2">
 <p>source <a
 href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
-<span class="citation" data-cites="enwiki:1245630908">[10]</span></p>
+<span class="citation" data-cites="enwiki:1245630908">[11]</span></p>
 </div>
 </section>
 
@@ -1108,7 +1252,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 <p>based on <a
 href="https://asana.com/resources/implementation-plan">What is an
 implementation plan? 6 steps to create one</a> <span class="citation"
-data-cites="asana2024what">[11]</span></p>
+data-cites="asana2024what">[12]</span></p>
 </div>
 </section>
 <section id="learning-could-be-a-task" class="slide level2">
@@ -1307,7 +1451,7 @@ should have an assignee</p>
 </div>
 <div class="text-smaller">
 <p>source: <span class="citation"
-data-cites="paquet2019when">[12]</span></p>
+data-cites="paquet2019when">[13]</span></p>
 </div>
 </section>
 <section id="dependencies" class="slide level2">
@@ -1362,7 +1506,7 @@ href="https://en.wikipedia.org/wiki/File:CrispPlanningPokerDeck.jpg">Hkniberg</a
 <p>“Story points reward team members for solving problems based on
 difficulty, not time spent. This keeps team members focused on shipping
 value, not spending time <span class="citation"
-data-cites="radiganstory">[13]</span>.”</p>
+data-cites="radiganstory">[14]</span>.”</p>
 </div>
 </section>
 <section id="estimation-is-guessing" class="slide level2">
@@ -1421,9 +1565,9 @@ for the low or mid fidelity wireframes</span></li>
 <figure>
 <img
 data-src="figures/borrowed/td-design-thinking-non-linear-process.webp"
-width="300" alt="Interaction Design Foundation [14] | CC BY-SA 4.0" />
+width="300" alt="Interaction Design Foundation [15] | CC BY-SA 4.0" />
 <figcaption aria-hidden="true">Interaction Design Foundation <span
-class="citation" data-cites="ixdf2019what">[14]</span> | <a
+class="citation" data-cites="ixdf2019what">[15]</span> | <a
 href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
 4.0</a></figcaption>
 </figure>
@@ -1431,7 +1575,7 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
 </div>
 <div class="text-smaller">
 <p>based on: <span class="citation"
-data-cites="bruton2022what">[15]</span></p>
+data-cites="bruton2022what">[16]</span></p>
 </div>
 </section>
 <section id="wireframe" class="slide level2">
@@ -1448,7 +1592,7 @@ functionality and intended behaviours</li>
 </ul>
 <div class="text-smaller">
 <p>source: <span class="citation"
-data-cites="bruton2022what">[15]</span></p>
+data-cites="bruton2022what">[16]</span></p>
 </div>
 </div><div class="column" style="width:30%;">
 <p><img data-src="figures/user_stats.drawio.svg" width="250" /></p>
@@ -1494,9 +1638,9 @@ class="title-slide slide level1">
 <figure>
 <img
 data-src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
-height="475" alt="based on Khalil Stemmel’s figure [3]" />
+height="475" alt="based on Khalil Stemmel’s figure [4]" />
 <figcaption aria-hidden="true">based on Khalil Stemmel’s figure <span
-class="citation" data-cites="stemmler2019how">[3]</span></figcaption>
+class="citation" data-cites="stemmler2019how">[4]</span></figcaption>
 </figure>
 </section>
 <section id="hierarchy-in-style-guides" class="slide level2">
@@ -1578,7 +1722,7 @@ properly</p>
 <section id="clean-code-meaningful-names-martin2009clean"
 class="title-slide slide level1">
 <h1>clean code / meaningful names <span class="citation"
-data-cites="martin2009clean">[16]</span></h1>
+data-cites="martin2009clean">[17]</span></h1>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
@@ -1641,12 +1785,12 @@ height="300" /></p>
 <section id="clean-code-functions-martin2009clean"
 class="title-slide slide level1">
 <h1>clean code / functions <span class="citation"
-data-cites="martin2009clean">[16]</span></h1>
+data-cites="martin2009clean">[17]</span></h1>
 <div class="columns">
 <div class="column" style="width:70%;">
 <ul>
 <li>“Functions should hardly ever be 20 lines long” <span
-class="citation" data-cites="martin2009clean">[16]</span>
+class="citation" data-cites="martin2009clean">[17]</span>
 <ul>
 <li>shorter functions are easier to understand</li>
 </ul></li>
@@ -1668,7 +1812,7 @@ height="300" /></p>
 <section id="clean-code-comments-martin2009clean"
 class="title-slide slide level1">
 <h1>clean code / comments <span class="citation"
-data-cites="martin2009clean">[16]</span></h1>
+data-cites="martin2009clean">[17]</span></h1>
 <div class="columns column-gapless">
 <div class="column" style="width:60%;">
 <p><strong>avoid</strong></p>
@@ -1756,17 +1900,17 @@ not only working software, but also well-crafted software
 <p>a code smell is a surface indication that usually corresponds to a
 deeper problem</p>
 <p>– Martin Flower <span class="citation"
-data-cites="fowler2006code">[17]</span></p>
+data-cites="fowler2006code">[18]</span></p>
 </blockquote>
 <div class="columns mt-3">
 <div class="column text-smaller" style="width:40%;">
 <p>software rot is the degradation, deterioration, or loss of the use or
 performance of software over time <span class="citation"
-data-cites="enwiki:1236668404">[18]</span></p>
+data-cites="enwiki:1236668404">[19]</span></p>
 </div><div class="column text-smaller" style="width:40%;">
 <p><strong>requirement smell</strong>: signs in the requirements that
 are not necessarily wrong but could be problematic <span
-class="citation" data-cites="femmer2017rapid">[19]</span></p>
+class="citation" data-cites="femmer2017rapid">[20]</span></p>
 </div>
 </div>
 </section>
@@ -1808,8 +1952,8 @@ class="slide level2">
 </div>
 <div class="text-smaller">
 <p>source: <span class="citation"
-data-cites="atwood2006code">[20]</span>, <span class="citation"
-data-cites="martin2009clean">[16]</span></p>
+data-cites="atwood2006code">[21]</span>, <span class="citation"
+data-cites="martin2009clean">[17]</span></p>
 </div>
 </section></section>
 <section>
@@ -1909,7 +2053,7 @@ Lipka’s</a></figcaption>
 <section id="v-model-forsberg1991relationship"
 class="title-slide slide level1">
 <h1>V model <span class="citation"
-data-cites="forsberg1991relationship">[21]</span></h1>
+data-cites="forsberg1991relationship">[22]</span></h1>
 <div class="columns">
 <div class="column mt-3" style="width:50%;">
 <ul>
@@ -2113,7 +2257,7 @@ was right
 <p>source: <a
 href="https://phauer.com/2018/code-review-guidelines/">Code Review
 Guidelines for Humans</a> <span class="citation"
-data-cites="hauer2018code">[22]</span></p>
+data-cites="hauer2018code">[23]</span></p>
 </div>
 </section>
 
@@ -2147,7 +2291,7 @@ the current work product)</span></li>
 <p>source: <a
 href="https://phauer.com/2018/code-review-guidelines/">Code Review
 Guidelines for Humans</a> <span class="citation"
-data-cites="hauer2018code">[22]</span></p>
+data-cites="hauer2018code">[23]</span></p>
 </div>
 </section>
 
@@ -2155,7 +2299,7 @@ data-cites="hauer2018code">[22]</span></p>
 <section id="v-model-forsberg1991relationship-1"
 class="title-slide slide level1">
 <h1>V model <span class="citation"
-data-cites="forsberg1991relationship">[21]</span></h1>
+data-cites="forsberg1991relationship">[22]</span></h1>
 <div class="columns column-gapless text-smaller">
 <div class="column mt-4" style="width:50%;">
 <ul>
@@ -2217,7 +2361,7 @@ system under test
 units”
 <ul>
 <li>by Kent Beck <span class="citation"
-data-cites="beck2002test">[23]</span></li>
+data-cites="beck2002test">[24]</span></li>
 </ul></li>
 </ul>
 <div class="mt-3">
@@ -2301,16 +2445,16 @@ width="300" /></p>
 </div><div class="column" style="width:60%;">
 <figure>
 <img data-src="figures/spectrum_of_test_doubles.drawio.svg" width="400"
-alt="reproduction of figure 2 from [24]" />
+alt="reproduction of figure 2 from [25]" />
 <figcaption aria-hidden="true">reproduction of figure 2 from <span
-class="citation" data-cites="seemann2007unit">[24]</span></figcaption>
+class="citation" data-cites="seemann2007unit">[25]</span></figcaption>
 </figure>
 </div>
 </div>
 <div class="text-smaller">
 <p>these are from the book <em>xUnit test patterns: Refactoring test
 code</em> – by Gerard Meszaros <span class="citation"
-data-cites="meszaros2007xunit">[25]</span></p>
+data-cites="meszaros2007xunit">[26]</span></p>
 </div>
 </section></section>
 <section>
@@ -2344,7 +2488,7 @@ class="title-slide slide level1">
 <p>– Robert C. Martin, <a
 href="http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html">The
 Cycles of TDD</a> <span class="citation"
-data-cites="martin2014cycles">[26]</span></p>
+data-cites="martin2014cycles">[27]</span></p>
 </blockquote>
 <p><img data-src="figures/test_code_generality.drawio.svg" class="mt-4"
 width="375" /></p>
@@ -2593,7 +2737,7 @@ tested</p>
 </table>
 <div class="text-smaller mt-4">
 <p>Michael Feathers, Working Effectively with Legacy Code: part 1 pp 6
-<span class="citation" data-cites="feathers2004working">[27]</span></p>
+<span class="citation" data-cites="feathers2004working">[28]</span></p>
 </div>
 </section>
 
@@ -2642,8 +2786,14 @@ engineering.”</span> <a href="
                     https://stratoflow.com/requirements-analysis
 </a>, 24-Nov-2023.</div>
 </div>
+<div id="ref-baltes2014sketches" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">S.
+Baltes and S. Diehl, <span>“Sketches and diagrams in practice,”</span>
+in <em>Proceedings of the 22nd ACM SIGSOFT international symposium on
+foundations of software engineering</em>, 2014, pp. 530–541.</div>
+</div>
 <div id="ref-stemmler2019how" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">K.
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">K.
 Stemmler, <span>“How to learn software design and architecture.”</span>
 <a href="
                     https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
@@ -2652,14 +2802,14 @@ Stemmler, <span>“How to learn software design and architecture.”</span>
 </a>, 28-Sep-2019.</div>
 </div>
 <div id="ref-gamma1994design" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">E.
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">E.
 Gamma, R. Helm, R. Johnson, and J. Vlissides, <em><a
 href="https://books.google.hu/books?id=6oHuKQe3TjQC">Design patterns:
 Elements of reusable object-oriented software</a></em>. Pearson
 Education, 1994.</div>
 </div>
 <div id="ref-norvig1998design" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">P.
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">P.
 Norvig, <span>“Design patterns in dynamic languages.”</span> <a href="
                     http://www.norvig.com/design-patterns/
                     " class="uri">
@@ -2667,7 +2817,7 @@ Norvig, <span>“Design patterns in dynamic languages.”</span> <a href="
 </a>, 17-Mar-1998.</div>
 </div>
 <div id="ref-wlaschin2014functional" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">S.
 Wlaschin, <span>“Functional programming design patterns.”</span> <a
 href="
                     https://fsharpforfunandprofit.com/fppatterns/
@@ -2676,7 +2826,7 @@ href="
 </a>, Dec-2014.</div>
 </div>
 <div id="ref-enwiki:1237710587" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div
+<div class="csl-left-margin">[8] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“SOLID —
 <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
 href="https://en.wikipedia.org/w/index.php?title=SOLID&amp;oldid=1237710587"
@@ -2684,7 +2834,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=SOLID&amp;oldid=123771058
 2024.</div>
 </div>
 <div id="ref-millington2019solid" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">S.
 Millington, <span>“A solid guide to SOLID principles.”</span> <a href="
                     https://www.baeldung.com/solid-principles
                     " class="uri">
@@ -2692,7 +2842,7 @@ Millington, <span>“A solid guide to SOLID principles.”</span> <a href="
 </a>, 05-Feb-2019.</div>
 </div>
 <div id="ref-oloruntoba2024solid" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[9] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">S.
 Oloruntoba and A. S. Walia, <span>“SOLID: The first 5 principles of
 object oriented design.”</span> <a href="
                     https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
@@ -2701,7 +2851,7 @@ object oriented design.”</span> <a href="
 </a>, 23-Apr-2024.</div>
 </div>
 <div id="ref-enwiki:1245630908" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[10] </div><div
+<div class="csl-left-margin">[11] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Coupling
 (computer programming) — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -2710,7 +2860,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Coupling_(computer_progra
 2024.</div>
 </div>
 <div id="ref-asana2024what" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[11] </div><div class="csl-right-inline">T.
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">T.
 Asana, <span>“What is an implementation plan? 6 steps to create
 one.”</span> <a href="
                    https://asana.com/resources/implementation-plan
@@ -2719,7 +2869,7 @@ one.”</span> <a href="
 </a>, 06-Jan-2024.</div>
 </div>
 <div id="ref-paquet2019when" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">P.
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">P.
 Paquet, <span>“When everyone is responsible, no one is
 responsible.”</span> <a href="
                    https://medium.com/@philippelyp/when-everyone-is-responsible-no-one-is-responsible-73e9a179237f
@@ -2728,7 +2878,7 @@ responsible.”</span> <a href="
 </a>, 07-Oct-2019.</div>
 </div>
 <div id="ref-radiganstory" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">D.
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">D.
 Radigan, <span>“Story points and estimation.”</span> <a href="
                    https://www.atlassian.com/agile/project-management/estimation
                     " class="uri">
@@ -2736,7 +2886,7 @@ Radigan, <span>“Story points and estimation.”</span> <a href="
 </a>.</div>
 </div>
 <div id="ref-ixdf2019what" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[14] </div><div
+<div class="csl-left-margin">[15] </div><div
 class="csl-right-inline">Interaction Design Foundation, <span>“What are
 prototypes?”</span> <a href="
                    https://www.interaction-design.org/literature/topics/prototypes
@@ -2745,7 +2895,7 @@ prototypes?”</span> <a href="
 </a>, 17-Oct-2019.</div>
 </div>
 <div id="ref-bruton2022what" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div class="csl-right-inline">L.
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">L.
 Bruton, <span>“What is wireframing? A complete guide.”</span> <a href="
                    https://www.uxdesigninstitute.com/blog/what-is-wireframing/
                     " class="uri">
@@ -2753,12 +2903,12 @@ Bruton, <span>“What is wireframing? A complete guide.”</span> <a href="
 </a>, 08-Sep-2022.</div>
 </div>
 <div id="ref-martin2009clean" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[16] </div><div class="csl-right-inline">R.
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">R.
 C. Martin, <em>Clean code: A handbook of agile software
 craftsmanship</em>. Pearson Education, 2009.</div>
 </div>
 <div id="ref-fowler2006code" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">M.
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">M.
 Fowler, <span>“Code smell.”</span> <a href="
                    https://martinfowler.com/bliki/CodeSmell.html
                     " class="uri">
@@ -2766,7 +2916,7 @@ Fowler, <span>“Code smell.”</span> <a href="
 </a>, 09-Feb-2006.</div>
 </div>
 <div id="ref-enwiki:1236668404" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[18] </div><div
+<div class="csl-left-margin">[19] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Software rot —
 <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
 href="
@@ -2776,13 +2926,13 @@ href="
 </a>, 2024.</div>
 </div>
 <div id="ref-femmer2017rapid" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[19] </div><div class="csl-right-inline">H.
+<div class="csl-left-margin">[20] </div><div class="csl-right-inline">H.
 Femmer, D. M. Fernández, S. Wagner, and S. Eder, <span>“Rapid quality
 assurance with requirements smells,”</span> <em>Journal of Systems and
 Software</em>, vol. 123, pp. 190–213, 2017.</div>
 </div>
 <div id="ref-atwood2006code" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[20] </div><div class="csl-right-inline">J.
+<div class="csl-left-margin">[21] </div><div class="csl-right-inline">J.
 Atwood, <span>“Code smells.”</span> <a href="
                    https://blog.codinghorror.com/code-smells/
                     " class="uri">
@@ -2791,13 +2941,13 @@ Atwood, <span>“Code smells.”</span> <a href="
 </div>
 <div id="ref-forsberg1991relationship" class="csl-entry"
 role="listitem">
-<div class="csl-left-margin">[21] </div><div class="csl-right-inline">K.
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">K.
 Forsberg and H. Mooz, <span>“The relationship of system engineering to
 the project cycle,”</span> <em>Center for Systems Management</em>, vol.
 5333, 1991.</div>
 </div>
 <div id="ref-hauer2018code" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[22] </div><div class="csl-right-inline">P.
+<div class="csl-left-margin">[23] </div><div class="csl-right-inline">P.
 Hauer, <span>“Code review guidelines for humans.”</span> <a href="
                    https://phauer.com/2018/code-review-guidelines/
                     " class="uri">
@@ -2805,12 +2955,12 @@ Hauer, <span>“Code review guidelines for humans.”</span> <a href="
 </a>, 31-Jul-2018.</div>
 </div>
 <div id="ref-beck2002test" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[23] </div><div class="csl-right-inline">K.
+<div class="csl-left-margin">[24] </div><div class="csl-right-inline">K.
 Beck, <em>Test driven development: By example</em>. Addison-Wesley
 Professional, 2002.</div>
 </div>
 <div id="ref-seemann2007unit" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[24] </div><div class="csl-right-inline">M.
+<div class="csl-left-margin">[25] </div><div class="csl-right-inline">M.
 Seemann, <span>“Unit testing: Exploring the continuum of test
 doubles.”</span> <a href="
                    https://learn.microsoft.com/en-us/archive/msdn-magazine/2007/september/unit-testing-exploring-the-continuum-of-test-doubles
@@ -2819,12 +2969,12 @@ doubles.”</span> <a href="
 </a>, 2007.</div>
 </div>
 <div id="ref-meszaros2007xunit" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[25] </div><div class="csl-right-inline">G.
+<div class="csl-left-margin">[26] </div><div class="csl-right-inline">G.
 Meszaros, <em>xUnit test patterns: Refactoring test code</em>. Pearson
 Education, 2007.</div>
 </div>
 <div id="ref-martin2014cycles" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[26] </div><div class="csl-right-inline">R.
+<div class="csl-left-margin">[27] </div><div class="csl-right-inline">R.
 C. Martin, <span>“The cycles of TDD.”</span> <a href="
                    http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
                     " class="uri">
@@ -2832,7 +2982,7 @@ C. Martin, <span>“The cycles of TDD.”</span> <a href="
 </a>, 17-Dec-2014.</div>
 </div>
 <div id="ref-feathers2004working" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[27] </div><div class="csl-right-inline">M.
+<div class="csl-left-margin">[28] </div><div class="csl-right-inline">M.
 Feathers, <em>Working effectively with legacy code</em>. Prentice Hall
 Professional, 2004.</div>
 </div>
