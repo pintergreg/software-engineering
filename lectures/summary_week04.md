@@ -13,6 +13,132 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
+# unified modeling language
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-4}
+- UML 2.0 released in 2005
+    - latest revision in 2017
+- ISO/IEC 19501 standard
+- designed to be a complete language of software modelling
+- UML 2 has 14 diagrams in two categories: structure and behavior
+
+::: {.fragment}
+most software developer do not use UML (in a formal way), but hand drawn sketches which often include UML elements [@baltes2014sketches]
+:::
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/uml/diagrams.svg)
+
+:::::::::
+::::::::::::
+
+
+## use case diagram
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-5}
+- depicts the interactions between system users (actors) and the system itself
+- used to specify the functional requirements
+- provides a high-level view
+    - helping stakeholders to understand the system's functionality
+- it's purpose is similar to the user story
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/social_media_platform/usecase_3.svg){width=300}
+
+:::::::::
+::::::::::::
+
+
+## class diagram
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-5}
+- describes the structure of a system by its classes
+    - their attributes, methods, and the relationships among them 
+- main building block of the object-oriented modeling
+
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/uml/class_example_2.svg){width=450}
+
+:::::::::
+::::::::::::
+
+
+## object diagram
+
+- special case of a class diagram
+- graphical representation of the objects and their relationships<br>**at a specific moment in time**
+- provides a snapshot of the system's structure
+- does not show anything architecturally different to class diagram
+
+![](figures/uml/object_class.svg){height=250}
+
+
+## component diagram
+
+- depicts the component structure and relations
+- highlighting the interfaces
+
+::: {.mt-2}
+![](figures/uml/component.svg){height=275}
+:::
+
+
+## state diagram
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-5}
+- a visual representation of the states a system or an object can be in
+    also the transitions between those states
+- models the dynamic behavior of the system, capturing how it responds to different events over time
+- shows the system's life cycle
+
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/uml/stopwatch_state_commented.svg){width=350}
+
+:::::::::
+::::::::::::
+
+
+## activity diagram
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-4}
+- graphical representations of workflows
+- similar to flowcharts
+    - but uses UML notation
+    - and can visualize parallel processing
+    - has more features
+
+:::::::::
+::::::::: {.column width="20%"}
+![flowchart](figures/uml/power.drawio.svg){height=300}
+:::::::::
+::::::::: {.column width="20%"}
+![activity (UML)](figures/uml/activity.svg){height=300}
+:::::::::
+::::::::::::
+
+
+## sequence diagram
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+![](figures/uml/sequence.svg)
+:::::::::
+::::::::: {.column width="40%" .mt-3}
+- shows process interactions arranged in time sequence
+- depicts the processes and objects involved and the sequence of messages exchanged
+- instead of the inner parts of a system, message exchange between software systems can be depicted
+:::::::::
+::::::::::::
+
+
 # what is the issue with UML?
 
 :::::::::::: {.columns}
