@@ -35,6 +35,13 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 - the greatest "enemy" of a developer is interruption
 - the code is one thing, the logic behind it is another
+    - takes time to understand
+- context switching is costly
+    - switching between tasks
+    - that is why it is advisable to define small tasks during the sprint planning
+        - 1--4 hours, but ideally closer to 1
+        - preventing interruption
+<!--     - [also withing a OS / CPU]{.text-smaller} -->
 
 
 ## the cost of interruption
