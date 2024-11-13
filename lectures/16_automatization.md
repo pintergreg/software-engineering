@@ -112,6 +112,39 @@ that is why I previously said that trust in your IDE
 :::
 
 
+# version control systems
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-2}
+- scrum development team
+- multiple task on the sprint backlog
+- developers start to work on different tasks
+    - the time to complete a task varies
+- work items need to be merged to the common code base / repository
+- version control systems are used to solve this issue
+:::::::::
+
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/scrum-task-board.svg){width=150}
+
+:::::::::::: {.columns}
+::::::::: {.column width="33%"}
+![](figures/publicdomainvectors/developer-at-work.svg){width=150}
+
+:::::::::
+::::::::: {.column width="33%"}
+![](figures/publicdomainvectors/workplace-rpogrammer.svg){width=150}
+
+:::::::::
+::::::::: {.column width="33%"}
+![](figures/publicdomainvectors/programming-vector.svg){width=150}
+
+:::::::::
+::::::::::::
+:::::::::
+::::::::::::
+
+
 # interruption
 
 :::::::::::: {.columns}
