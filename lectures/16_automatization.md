@@ -58,6 +58,7 @@ more precisely, **repetitve tasks** | scripting: writing relatively short and si
 ::::::::: {.column width="75%"}
 - a linter in modern editors behaves like a spell checker in a word processor
     - gives immediate feedback on syntax errors, styling issues or bad practices
+- can detect some code smells
 - traditionally linters were developed for languages, then linter plugins for editors
     - so language support in editors were not evident
     - Language Server Protocol (LSP) was developed (originally at Microsoft), providing a common interface for linters
@@ -81,6 +82,35 @@ more precisely, **repetitve tasks** | scripting: writing relatively short and si
     - Ruby: [rubocop](https://rubocop.org/)
     - Go: [gofmt](https://pkg.go.dev/cmd/gofmt)
     
+
+## well configured editor
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+- can help keeping the feedback loop fast
+    - auto formatter
+    - linter
+    - running test
+- decrease cost
+    - immediate feedback
+    - less refactoring (later), less review finding
+    - developers can focus on non-automatable tasks
+
+:::::::::
+::::::::: {.column width="25%" .mt-2}
+![](figures/publicdomainvectors/programming-language.svg){width=300}
+
+:::::::::
+::::::::::::
+
+::: {.fragment .mt-3}
+importance of personal preferences!
+:::
+
+::: notes
+that is why I previously said that trust in your IDE
+:::
+
 
 # interruption
 
