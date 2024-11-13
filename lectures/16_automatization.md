@@ -17,8 +17,27 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 - the code is one thing, the logic behind it is another
 
+https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/
 
-##
+<!-- the greatest "enemy" of a developer is interruption -->
+
+
+## interruption
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![](figures/borrowed/ProgrammerInterrupted.webp){style="width: 375px; height: 555px; object-fit: cover; object-position: 100% 0;"}
+:::
+::: {.fragment .current-visible data-fragment-index=1}
+![](figures/borrowed/ProgrammerInterrupted.webp){style="width: 375px; height: 410px; object-fit: cover; object-position: 100% -555px;"}
+:::
+::: {.fragment .current-visible data-fragment-index=2}
+![](figures/borrowed/ProgrammerInterrupted.webp){style="width: 375px; height: 410px; object-fit: cover; object-position: 100% -965px;"}
+:::
+::::::
+
+
+## the cost of interruption
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
@@ -42,6 +61,8 @@ example: [build script](https://github.com/pintergreg/software-engineering/blob/
 
 
 # versioning
+
+- a software is identified by a version number
 
 
 ## semantic versioning
