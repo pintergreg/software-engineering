@@ -15,15 +15,6 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 # interruption
 
-- the code is one thing, the logic behind it is another
-
-https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/
-
-<!-- the greatest "enemy" of a developer is interruption -->
-
-
-## interruption
-
 :::::::::::: {.columns}
 ::::::::: {.column width="33%"}
 ![](figures/borrowed/ProgrammerInterrupted.webp){style="width: 300px; height: 430px; object-fit: cover; object-position: 100% 0;"}
@@ -40,17 +31,62 @@ https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developer
 ::::::::::::
 
 
+## interruption
+
+- the greatest "enemy" of a developer is interruption
+- the code is one thing, the logic behind it is another
+
+
 ## the cost of interruption
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%"}
+::::::::: {.column width="60%" .mt-3}
+- according to a study, the average lost time per major interruption is **23 minutes** [@mark2008cost]
+    - for developers, it could be far worse
+- "getting back to the exact state of mind you were at right before an interruption is nearly impossible" [@to2018cost]
+- planned and unplanned interruptions
 
 :::::::::
-::::::::: {.column width="50%"}
+::::::::: {.column width="40%"}
 ![&#169; [Ash Lamb](https://ashlamb.com/)<br>used with the author's permission](figures/borrowed/quick_call.jpg){width=350}
 
 :::::::::
 ::::::::::::
+
+::: {.text-smaller}
+source: [The Cost of Interruption for Software Developers](https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/) -- by Steven To [@to2018cost]
+:::
+
+
+## planned and unplanned interruptions
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="50%"}
+**unplanned**
+
+- someone asks about something or to do something
+    - usually a small task
+        - informal review, advice, etc.
+- mitigation
+    - wear headphones (in open offices)
+    - notify in advance
+:::::::::
+::::::::: {.column width="50%" .fragment}
+**planned**
+
+- meetings, including standup
+- standup is usually the first thing in a workday, not to divide the work time until lunch
+- a wrongly placed meeting can be even worse than an unplanned interruption
+    - [you have to keep in mind that you have a meeting, cannot start anyting serious]{.text-smaller}
+- mitigation
+    - [schedule small, easy tasks before meeting]{.text-smaller}
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [The Cost of Interruption for Software Developers](https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/) -- by Steven To [@to2018cost]
+:::
+
 
 # continuous integration
 
