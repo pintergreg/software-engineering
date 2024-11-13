@@ -24,17 +24,20 @@ https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developer
 
 ## interruption
 
-:::::: {.r-stack}
-::: {.fragment .fade-out data-fragment-index=1}
-![](figures/borrowed/ProgrammerInterrupted.webp){style="width: 375px; height: 555px; object-fit: cover; object-position: 100% 0;"}
-:::
-::: {.fragment .current-visible data-fragment-index=1}
-![](figures/borrowed/ProgrammerInterrupted.webp){style="width: 375px; height: 410px; object-fit: cover; object-position: 100% -555px;"}
-:::
-::: {.fragment .current-visible data-fragment-index=2}
-![](figures/borrowed/ProgrammerInterrupted.webp){style="width: 375px; height: 410px; object-fit: cover; object-position: 100% -965px;"}
-:::
-::::::
+:::::::::::: {.columns}
+::::::::: {.column width="33%"}
+![](figures/borrowed/ProgrammerInterrupted.webp){style="width: 300px; height: 430px; object-fit: cover; object-position: 100% 0;"}
+
+:::::::::
+::::::::: {.column width="33%" .fragment}
+![](figures/borrowed/ProgrammerInterrupted.webp){style="width: 300px; height: 323px; object-fit: cover; object-position: 100% -430px;"}
+
+:::::::::
+::::::::: {.column width="33%" .fragment}
+![](figures/borrowed/ProgrammerInterrupted.webp){style="width: 300px; height: 350px; object-fit: cover; object-position: 100% -751px;"}
+
+:::::::::
+::::::::::::
 
 
 ## the cost of interruption
