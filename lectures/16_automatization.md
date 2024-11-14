@@ -276,7 +276,6 @@ example: **git**, mercurial
 :::::::::
 ::::::::::::
 
-
 ::: {.text-smaller}
 the figures are based on [Version control concepts and best practices](https://homes.cs.washington.edu/~mernst/advice/version-control.html) - by Michael Ernst [@ernst2012version]
 :::
@@ -298,6 +297,10 @@ the figures are based on [Version control concepts and best practices](https://h
 ::::::::::::-->
 
 
+## continuous integration environment
+
+![](figures/ci_environment.drawio.svg){width=700}
+
 ::: notes
 What happens here is that the developer pushes a change to the version control server, which can  be(depends on the configuration) a trigger.
 Based on the trigger the CI environment start a runner.
@@ -314,18 +317,32 @@ If the build (and tests) succeeded, notification are usually only sent if the pr
 :::
 
 
-## continuous integration environment
+## build script
 
-![](figures/ci_environment.drawio.svg){width=700}
+:::::::::::: {.columns}
+::::::::: {.column width="65%" .mt-4}
+- traditionally called build script
+- responsible not only for building the software
+- but also for running tests, generating reports
+- and even for packaging the software
 
-::: notes
-The trigger can be also be a scheduler, so a build / test running can be executed without explicit change of a new push.
-:::
+:::::::::
+::::::::: {.column width="35%"}
+![](figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg){width=300}
+
+:::::::::
+::::::::::::
+
+example: [build script](https://github.com/pintergreg/software-engineering/blob/main/.github/workflows/main.yaml){target="_blank"} of the course website
 
 
 ## scheduled build
 
 ![](figures/ci_environment_schedule.drawio.svg){width=700}
+
+::: notes
+The trigger can be also be a scheduler, so a build / test running can be executed without explicit change of a new push.
+:::
 
 
 ## nightly build
@@ -347,26 +364,6 @@ The trigger can be also be a scheduler, so a build / test running can be execute
 ::: notes
 also known as daily build
 :::
-
-
-## build script
-
-:::::::::::: {.columns}
-::::::::: {.column width="65%" .mt-4}
-- traditionally called build script
-- responsible not only for building the software
-- but also for running tests, generating reports
-- and even for packaging the software
-
-:::::::::
-::::::::: {.column width="35%"}
-![](figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg){width=300}
-
-:::::::::
-::::::::::::
-
-
-example: [build script](https://github.com/pintergreg/software-engineering/blob/main/.github/workflows/main.yaml){target="_blank"} of the course website
 
 
 # continuous deployment
