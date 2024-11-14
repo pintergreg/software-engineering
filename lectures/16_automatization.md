@@ -257,6 +257,31 @@ the figures are based on Figure 2.5 of the [TortoiseSVN documentation](https://t
 :::
 
 
+## centralized vs. distributed version control system
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![centralized](figures/vcs_centralized.drawio.svg){width=400}
+
+::: {.text-align-left .text-smaller .mt-3}
+example: subversion
+:::
+:::::::::
+::::::::: {.column width="50%"}
+![distributed](figures/vcs_distributed.drawio.svg){width=400}
+
+::: {.text-align-left .text-smaller .mt-3}
+example: **git**, mercurial
+:::
+:::::::::
+::::::::::::
+
+
+::: {.text-smaller}
+the figures are based on [Version control concepts and best practices](https://homes.cs.washington.edu/~mernst/advice/version-control.html) - by Michael Ernst [@ernst2012version]
+:::
+
+
 # continuous integration (CI)
 
 <!--:::::::::::: {.columns}
