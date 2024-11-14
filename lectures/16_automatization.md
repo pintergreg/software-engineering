@@ -324,10 +324,14 @@ example: [build script](https://github.com/pintergreg/software-engineering/blob/
 ::::::::: {.column width="55%"}
 - software [dev]{.text-color-secondary}elopment + IT [op]{.text-color-secondary}eration[s]{.text-color-secondary}
     - [collaboration]{.text-smaller}
-- agile mindset, set of practices
+- agile mindset, set of principles [@gitlab2022four]
+    - [automation of the [SDLC]{.tooltip title="software development lifecycle"}]{.text-smaller}
+    - [collaboration and communication]{.text-smaller}
+    - [continuous improvement]{.text-smaller}
+    - [focus on user needs with short feedback loops]{.text-smaller}
 - relies on automatization, [CI]{.tooltip title="continuous integration"} and [CD]{.tooltip title="continuous deployment"}
 - to build, test and release better software
-    -[ frequently, reliably, rapidly]{.text-smaller}
+    - [frequently, reliably, rapidly]{.text-smaller}
 
 :::::::::
 ::::::::: {.column width="45%"}
@@ -335,6 +339,10 @@ example: [build script](https://github.com/pintergreg/software-engineering/blob/
 
 :::::::::
 ::::::::::::
+
+::: {.text-smaller .mt-2}
+further reading: [11 DevOps Principles and Practices to Master: Pro Advice](https://roadmap.sh/devops/principles) - by Fernando Doglio
+:::
 
 
 # versioning
