@@ -227,12 +227,77 @@ source: [The Cost of Interruption for Software Developers](https://www.brightdev
 :::
 
 
-# continuous integration
+# continuous integration (CI)
 
 ![](figures/ci.drawio.svg){width=625}
 
+::: notes
+What happens here is that the developer pushes a change to the version control server, which can  be(depends on the configuration) a trigger.
+Based on the trigger the CI environment start a runner.
+A runner can be, for example, a linux instance running in a virtual machine or in a container.
+In the newly started environment, the changes are fetched.
+Considering git as a version control system, fetching means clone and checkout operations.
+As the CI environment is "empty", in a sense that it does not contain any of the software code, the code repository has to be cloned every time.
+Then, the right version, defined by the trigger should be selected using the `git checkout` command.
+After the software version to be tested is available, the build script should be executed.
+Optionally with static code analysis, tests, and so on, then the reports are generated.
+
+If the build or the tests did not succeed a notification is sent to the developer(s), and any other stakeholder who are subscribed.
+If the build (and tests) succeeded, notification are usually only sent if the previous build failed, preventing unnecessary noise.
+:::
+
+
+## continuous integration environment
+
+![](figures/ci_environment.drawio.svg){width=700}
+
+::: notes
+The trigger can be also be a scheduler, so a build / test running can be executed without explicit change of a new push.
+:::
+
+
+## scheduled build
+
+![](figures/ci_environment_schedule.drawio.svg){width=700}
+
+
+## nightly build
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-2}
+- scheduled build during night time
+- typically includes a smoke test
+- building a the latest version of a software, on a daily basis
+- originally scheduled to night time because for large software a full build (with all tests) could take hours
+
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/publicdomainvectors/city-night-landscape.svg){width=300}
+
+:::::::::
+::::::::::::
+
+::: notes
+also known as daily build
+:::
+
 
 ## build script
+
+:::::::::::: {.columns}
+::::::::: {.column width="65%" .mt-4}
+- traditionally called build script
+- responsible not only for building the software
+- but also for running tests, generating reports
+- and even for packaging the software
+
+:::::::::
+::::::::: {.column width="35%"}
+![](figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg){width=300}
+
+:::::::::
+::::::::::::
+
 
 example: [build script](https://github.com/pintergreg/software-engineering/blob/main/.github/workflows/main.yaml){target="_blank"} of the course website
 
