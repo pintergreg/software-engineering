@@ -229,6 +229,8 @@ source: [The Cost of Interruption for Software Developers](https://www.brightdev
 
 # continuous integration
 
+![](figures/ci.drawio.svg){width=625}
+
 
 ## build script
 
