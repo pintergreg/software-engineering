@@ -145,6 +145,118 @@ that is why I previously said that trust in your IDE
 ::::::::::::
 
 
+## file sharing issue
+
+:::::::::::: {.columns}
+::::::::: {.column width="25%"}
+![read the same file](figures/vcs_read.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![make changes](figures/vcs_change.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![Arthur writes first](figures/vcs_write.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![Ford overwrites with his version](figures/vcs_overwrite.drawio.svg){width=200}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+the figures are based on Figure 2.2 of the [TortoiseSVN documentation](https://tortoisesvn.net/docs/release/TortoiseSVN_en/help-onepage.html)
+:::
+
+
+## lock-modify-unlock solution
+
+:::::::::::: {.columns}
+::::::::: {.column width="25%"}
+![lock before read](figures/vcs_lock.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![cannot read while locked](figures/vcs_locked.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![writes and unlock](figures/vcs_unlock.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![Ford locks and reads](figures/vcs_relock.drawio.svg){width=200}
+
+:::::::::
+::::::::::::
+
+::: {.text-align-left .mt-3 .fragment}
+one developer can edit a file at the same time -- not very effective
+:::
+
+::: {.text-smaller}
+the figures are based on Figure 2.3 of the [TortoiseSVN documentation](https://tortoisesvn.net/docs/release/TortoiseSVN_en/help-onepage.html)
+:::
+
+
+## copy-modify-merge solution
+
+:::::::::::: {.columns}
+::::::::: {.column width="25%"}
+![lock before read](figures/vcs_read.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![make changes](figures/vcs_change.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![Arthur writes first](figures/vcs_write.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![Ford cannot write due to the change](figures/vcs_cannotwrite.drawio.svg){width=200}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+the figures are based on Figure 2.4 of the [TortoiseSVN documentation](https://tortoisesvn.net/docs/release/TortoiseSVN_en/help-onepage.html)
+:::
+
+
+## copy-modify-merge solution #2
+
+:::::::::::: {.columns}
+::::::::: {.column width="25%"}
+![compare the latest to his own](figures/vcs_compare.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![merged the changes](figures/vcs_merged.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![publish merged](figures/vcs_publish_merged.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="25%"}
+![changes shared](figures/vcs_changes_shared.drawio.svg){width=200}
+
+:::::::::
+::::::::::::
+
+::: {.text-align-left .mt-3 .fragment}
+example: **git**, mercurial
+:::
+
+::: {.text-smaller}
+the figures are based on Figure 2.5 of the [TortoiseSVN documentation](https://tortoisesvn.net/docs/release/TortoiseSVN_en/help-onepage.html)
+:::
+
+
 # interruption
 
 :::::::::::: {.columns}
