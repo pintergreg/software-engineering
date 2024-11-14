@@ -229,7 +229,19 @@ source: [The Cost of Interruption for Software Developers](https://www.brightdev
 
 # continuous integration (CI)
 
+<!--:::::::::::: {.columns}
+::::::::: {.column width="70%"}-->
 ![](figures/ci.drawio.svg){width=625}
+
+<!--:::::::::
+::::::::: {.column width="30%" .text-smaller}
+- extreme programming
+- agile
+- immediate feedback
+
+:::::::::
+::::::::::::-->
+
 
 ::: notes
 What happens here is that the developer pushes a change to the version control server, which can  be(depends on the configuration) a trigger.
@@ -305,6 +317,26 @@ example: [build script](https://github.com/pintergreg/software-engineering/blob/
 # continuous deployment
 
 
+## devops
+
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="55%"}
+- software [dev]{.text-color-secondary}elopment + IT [op]{.text-color-secondary}eration[s]{.text-color-secondary}
+    - [collaboration]{.text-smaller}
+- agile mindset, set of practices
+- relies on automatization, [CI]{.tooltip title="continuous integration"} and [CD]{.tooltip title="continuous deployment"}
+- to build, test and release better software
+    -[ frequently, reliably, rapidly]{.text-smaller}
+
+:::::::::
+::::::::: {.column width="45%"}
+![by [Kharnagy](https://commons.wikimedia.org/wiki/File:Devops-toolchain.svg) | [CC&nbsp;BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)](figures/borrowed/Devops-toolchain.svg){width=400}
+
+:::::::::
+::::::::::::
+
+
 # versioning
 
 - a software is identified by a version number
@@ -312,7 +344,7 @@ example: [build script](https://github.com/pintergreg/software-engineering/blob/
 
 ## semantic versioning
 
-:::::::::::: {.columns .column-gaplexss}
+:::::::::::: {.columns}
 ::::::::: {.column width="50%"}
 ![](figures/semver.drawio.svg){width=500}
 
