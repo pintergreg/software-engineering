@@ -179,7 +179,7 @@ MVC-MVP-MVVM
 ## week 11
 
 1. [week 10 summary](/software-engineering/slides/summary_week10.html)
-2. automatization
+2. [automatization](/software-engineering/slides/16_automatization.html)
 
 ### readings
 
