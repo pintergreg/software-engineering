@@ -369,8 +369,9 @@ also known as daily build
 # continuous deployment
 
 :::::::::::: {.columns}
-::::::::: {.column width="65%"}
-
+::::::::: {.column width="65%" .mt-2}
+- continuous integration ensures everyone integrates their code to the mainline [@fowler2024continuous]
+- "Continuous Deployment means the product is automatically released to production whenever it passes all the automated tests in the deployment pipeline." -- Martin Fowler [@fowler2024continuous]
 
 :::::::::
 ::::::::: {.column width="35%"}
@@ -409,8 +410,8 @@ also known as daily build
 :::::::::
 ::::::::::::
 
-## devops
 
+## devops
 
 :::::::::::: {.columns .column-gapless}
 ::::::::: {.column width="55%"}
