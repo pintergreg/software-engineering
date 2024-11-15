@@ -123,3 +123,139 @@ markmap:
     - unit testing of all code
     - not programming features until they are actually needed
     - flat management structure
+
+## requirement analysis
+
+- understanding what software is supposed to do
+- avoid costly mistakes early
+- enhanced product quality
+- better risk management
+- steps
+    - stakeholder identification
+        - not just the customers
+        - end user (groups)
+    - elicitation of requirements
+        - interviews
+        - questionnaires
+        - user observation
+            - telemetry
+    - documentation of requirements
+        - for who
+            - future self
+            - colleagues
+            - every stakeholder of the project
+        - how
+            - searchable
+            - version tracked
+            - traceable
+                - who wrote / edited / approved it
+    - analysis and negotiation
+        - reviewing the documented requirements
+        - make sure they are realistic and its implications are understood
+    - validation and verification
+        - validation
+            - confirming the requirements actually meet the stakeholders' needs
+            - are we building the right thing?
+        - verification
+            - making sure the requirements are documented correctly and consistently
+            - are we building the thing right?
+- requirement smells
+    - indicate something not necessarily wrong but potentially problematic
+    - subjective language
+    - ambiguous adverbs and adjectives
+    - non-verifiable terms
+- functional requirements
+    - features
+- non-functional requirements
+    - quality goals
+    - quality of service requirements
+- user story
+    - simple description of a feature
+    - from the user's perspective
+    - often accompanied by acceptance criteria
+        - define the conditions that must be met to be considered complete
+
+### user story mapping
+
+- performed in workshops
+- build a shared understanding
+- user story map
+    - three levels
+        - activities
+            - big thing that users do
+            - has multiple steps
+            - not always has a precise workflow
+            - has roles
+        - steps
+        - details
+    - zooms from an overview to details 
+    - multiple interations
+        - living document
+        - versions
+    - backbone
+    - skeleton
+
+    
+## modelling
+
+### unified modelling language
+
+- structural diagrams
+    - class
+        - describes the structure of a system
+        - main building block of the object-oriented modeling
+    - object
+        - represents the objects and their relationships at a specific moment
+        - snapshot
+        - does not show anything architecturally different to class diagram
+    - component
+        - depicts the component structure and relations
+        - highlights the interfaces
+- behavior diagrams
+    - use case
+        - depicts the interactions between system users
+        - high-level view
+        - similar to a user story
+        - helping stakeholders to understand the system's functionality
+    - activity
+        - represents workflows
+        - similar to flowchart
+        - parallel processing
+        - swimlanes
+    - state machine
+        - shows the states of a system
+        - shows transitions between states
+        - shows the system's life cycle
+    - sequence
+        - process interactions arranged in time sequence
+        - shows objects
+        - message exchange between software systems
+    - timing
+        - chronological order of events
+        - useful in real-time systems
+        - more like for documentation rather than modelling
+
+### C4
+
+- hierarchical set of software architecture diagrams
+- has four levels
+    - context
+        - how the software fits into the world
+        - who use the software
+        - what other software interacts with
+        - similar to use case diagram
+        - understandable for non-technical people
+    - containers
+        - zooms into the software system, shows its parts
+        - technology decisions are a key part
+    - components
+        - decomposition of each container
+        - shows components, their interactions and responsibilities
+        - also shows technology / implementation details
+        - roughly equivalent with the UML component diagram
+    - code
+        - optional level of detail
+        - ideally automatically generated
+        - if required, it can zoom into an individual component
+        - but show only those attributes and methods that really needed for the storytelling
+        - UML class diagram can be used
