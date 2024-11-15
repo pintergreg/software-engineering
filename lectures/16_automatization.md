@@ -324,6 +324,7 @@ If the build (and tests) succeeded, notification are usually only sent if the pr
 - traditionally called build script
 - responsible not only for building the software
 - but also for running tests, generating reports
+    - code coverage
 - and even for packaging the software
 
 :::::::::
