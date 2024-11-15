@@ -503,6 +503,17 @@ just decrease the work by automatizing trivial tasks
 ::::::::::::
 
 
+## automatized review -- example
+
+- [CI]{.tooltip title="continuous integration"} services integrated into the code hosting / developer platforms
+- code changes can ba annotated by automatized review findings
+    -  [usually at a pull request level]{.text-smaller}
+- a bit slower feedback than running static analysis or test locally
+
+::: {.mt-3}
+![source: [go-gitea/gitea at GitHub, pull request #31768](https://github.com/go-gitea/gitea/pull/31768/files)](figures/github_automated_review.png){width=850}
+:::
+
 
 # interruption
 
