@@ -384,7 +384,9 @@ also known as daily build
 
 ![](figures/cd_environment_schedule.drawio.svg){width=700}
 
-same triggers as in a [CI]{.tooltip title="continuous integration"} environment (not just scheduled)
+- extension of a continuous integration environment
+- deployment is another stage in the _build script_
+- same triggers as in a [CI]{.tooltip title="continuous integration"} environment (not just the scheduler)
 
 
 ## blue–green deployment [@enwiki:1249842339]
