@@ -393,6 +393,8 @@ also known as daily build
 
 ![](figures/blue_green_deployment_v2.drawio.svg){width=700}
 
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="70%"}
 ::: {.text-smaller}
 - two servers are maintained ("blue" and "green")
 - at a given time, only one server is handling public request
@@ -400,7 +402,12 @@ also known as daily build
 - changes applied to the non-live server and verified
 - when verified, the non-live server is swapped with the live server
 :::
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/test_pyramid_manual.drawio.svg){width=200 .no-margin}
 
+:::::::::
+::::::::::::
 
 ## devops
 
