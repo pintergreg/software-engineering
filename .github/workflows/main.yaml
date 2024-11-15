@@ -39,6 +39,10 @@ jobs:
                   ruby build.rb
                   mdbook build
 
+            - name: compile mindmap
+              run: |
+                  npx markmap-cli -o lectures/mindmap.html --offline --no-open lectures/mindmap.md
+
             - name: copy slides
               run: |
                   mkdir -p book/slides/figures
