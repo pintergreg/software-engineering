@@ -368,6 +368,17 @@ also known as daily build
 
 # continuous deployment
 
+:::::::::::: {.columns}
+::::::::: {.column width="65%"}
+
+
+:::::::::
+::::::::: {.column width="35%"}
+![](figures/publicdomainvectors/industrial-conveyor-belt.svg){width=300}
+
+:::::::::
+::::::::::::
+
 
 ## devops
 
