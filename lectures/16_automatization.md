@@ -398,6 +398,7 @@ also known as daily build
 ::::::::: {.column width="70%"}
 ::: {.text-smaller}
 - two servers are maintained ("blue" and "green")
+    - [expensive]{.text-smaller}
 - at a given time, only one server is handling public request
 - the other can be accessed only from a private network
 - changes applied to the non-live server and verified
@@ -409,6 +410,40 @@ also known as daily build
 
 :::::::::
 ::::::::::::
+
+
+## shadow deployment
+
+![](figures/shadow_deployment.drawio.svg){width=650}
+
+- two servers are maintained ("live" and "shadow")
+- for testing the performance and stability requirements
+    - on success, the release can be deployed to the live server as well
+- specialized strategy, complex and (relatively) expensive to set up
+
+
+## canary deployment
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- deployment in an incremental fashion
+- starts with a small number of users
+- and continues until 100% is reached
+- allows to test updates in live environment
+    - on small groups of users
+    - before deploying to many users
+    - may involve telemetry
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/canary_deployment.drawio.svg){width=400}
+
+:::::::::
+::::::::::::
+
+::: {.fragment .mt-2}
+**A/B testing** is more of a testing approach than a deployment technique, but it works similarly to canary deployment.
+It involves reviewing two versions of updates in small set of users to identify which version perform better. [@kazim2023what]
+:::
 
 
 ## devops
