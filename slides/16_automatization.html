@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>automatization</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.1.0//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+  <!--<script src="../assets/reveal_menu/menu.js"></script>
+  <link rel="stylesheet" href="../assets/reveal_menu/menu.css"/>
+
+  <script src="../assets/verticator/verticator.js"></script>
+  <link rel="stylesheet" href="../assets/verticator/verticator.css"/>-->
+
+  <script src="../assets/reveal-drawer-0.1.2/drawer.js"></script>
+  <link rel="stylesheet" href="../assets/reveal-drawer-0.1.2/drawer.css"/>
+
+  <script src="../assets/highlight_line.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">automatization</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section>
+<section id="what-to-automatize" class="title-slide slide level1">
+<h1>what to automatize?</h1>
+<div class="columns">
+<div class="column text-align-left" style="width:60%;">
+<div class="r-fit-text">
+<p>everything</p>
+</div>
+<p>more precisely, <strong>repetitve tasks</strong> | scripting: writing
+relatively short and simple code to automatize an otherwise manual
+process</p>
+</div><div class="column" style="width:40%;">
+<p><img
+data-src="figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="in-a-software-development-context" class="slide level2">
+<h2>in a software development context</h2>
+<div class="columns">
+<div class="column mt-2" style="width:60%;">
+<ul>
+<li>style guide compliance</li>
+<li>code smell finding</li>
+<li>code quality measurement</li>
+<li>review</li>
+<li>building</li>
+<li>testing</li>
+<li>deployment</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img
+data-src="figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="linting" class="slide level2">
+<h2>linting</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ul>
+<li>a linter in modern editors behaves like a spell checker in a word
+processor
+<ul>
+<li>gives immediate feedback on syntax errors, styling issues or bad
+practices</li>
+</ul></li>
+<li>can detect some code smells</li>
+<li>traditionally linters were developed for languages, then linter
+plugins for editors
+<ul>
+<li>so language support in editors were not evident</li>
+<li>Language Server Protocol (LSP) was developed (originally at
+Microsoft), providing a common interface for linters</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:25%;">
+<p><img
+data-src="figures/publicdomainvectors/app-development-concept.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="auto-formatting" class="slide level2">
+<h2>auto formatting</h2>
+<ul>
+<li>there are automatic code formatters for more and more languages
+<ul>
+<li>that can reformat the source code to align with the style guide</li>
+</ul></li>
+<li>usually triggered by saving the file</li>
+<li>usually configurable to align with organization / project specific
+rules</li>
+<li>some examples:
+<ul>
+<li>Python: <a href="https://docs.astral.sh/ruff/formatter/">ruff</a>
+(among others)</li>
+<li>Ruby: <a href="https://rubocop.org/">rubocop</a></li>
+<li>Go: <a href="https://pkg.go.dev/cmd/gofmt">gofmt</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="well-configured-editor" class="slide level2">
+<h2>well configured editor</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ul>
+<li>can help keeping the feedback loop fast
+<ul>
+<li>auto formatter</li>
+<li>linter</li>
+<li>running test</li>
+</ul></li>
+<li>decrease cost
+<ul>
+<li>immediate feedback</li>
+<li>less refactoring (later), less review finding</li>
+<li>developers can focus on non-automatable tasks</li>
+</ul></li>
+</ul>
+</div><div class="column mt-2" style="width:25%;">
+<p><img data-src="figures/publicdomainvectors/programming-language.svg"
+width="300" /></p>
+</div>
+</div>
+<div class="fragment mt-3">
+<p>importance of personal preferences!</p>
+</div>
+<aside class="notes">
+<p>that is why I previously said that trust in your IDE</p>
+</aside>
+</section></section>
+<section>
+<section id="version-control-systems" class="title-slide slide level1">
+<h1>version control systems</h1>
+<div class="columns">
+<div class="column mt-2" style="width:55%;">
+<ul>
+<li>scrum development team</li>
+<li>multiple task on the sprint backlog</li>
+<li>developers start to work on different tasks
+<ul>
+<li>the time to complete a task varies</li>
+</ul></li>
+<li>work items need to be merged to the common code base /
+repository</li>
+<li>version control systems are used to solve this issue</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/publicdomainvectors/scrum-task-board.svg"
+width="150" /></p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="figures/publicdomainvectors/developer-at-work.svg"
+width="150" /></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="figures/publicdomainvectors/workplace-rpogrammer.svg"
+width="150" /></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="figures/publicdomainvectors/programming-vector.svg"
+width="150" /></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="file-sharing-issue" class="slide level2">
+<h2>file sharing issue</h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_read.drawio.svg" width="200"
+alt="read the same file" />
+<figcaption aria-hidden="true">read the same file</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_change.drawio.svg" width="200"
+alt="make changes" />
+<figcaption aria-hidden="true">make changes</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_write.drawio.svg" width="200"
+alt="Arthur writes first" />
+<figcaption aria-hidden="true">Arthur writes first</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_overwrite.drawio.svg" width="200"
+alt="Ford overwrites with his version" />
+<figcaption aria-hidden="true">Ford overwrites with his
+version</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>the figures are based on Figure 2.2 of the <a
+href="https://tortoisesvn.net/docs/release/TortoiseSVN_en/help-onepage.html">TortoiseSVN
+documentation</a></p>
+</div>
+</section>
+<section id="lock-modify-unlock-solution" class="slide level2">
+<h2>lock-modify-unlock solution</h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_lock.drawio.svg" width="200"
+alt="lock before read" />
+<figcaption aria-hidden="true">lock before read</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_locked.drawio.svg" width="200"
+alt="cannot read while locked" />
+<figcaption aria-hidden="true">cannot read while locked</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_unlock.drawio.svg" width="200"
+alt="writes and unlock" />
+<figcaption aria-hidden="true">writes and unlock</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_relock.drawio.svg" width="200"
+alt="Ford locks and reads" />
+<figcaption aria-hidden="true">Ford locks and reads</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-align-left mt-3 fragment">
+<p>one developer can edit a file at the same time – not very
+effective</p>
+</div>
+<div class="text-smaller">
+<p>the figures are based on Figure 2.3 of the <a
+href="https://tortoisesvn.net/docs/release/TortoiseSVN_en/help-onepage.html">TortoiseSVN
+documentation</a></p>
+</div>
+</section>
+<section id="copy-modify-merge-solution" class="slide level2">
+<h2>copy-modify-merge solution</h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_read.drawio.svg" width="200"
+alt="lock before read" />
+<figcaption aria-hidden="true">lock before read</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_change.drawio.svg" width="200"
+alt="make changes" />
+<figcaption aria-hidden="true">make changes</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_write.drawio.svg" width="200"
+alt="Arthur writes first" />
+<figcaption aria-hidden="true">Arthur writes first</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_cannotwrite.drawio.svg" width="200"
+alt="Ford cannot write due to the change" />
+<figcaption aria-hidden="true">Ford cannot write due to the
+change</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>the figures are based on Figure 2.4 of the <a
+href="https://tortoisesvn.net/docs/release/TortoiseSVN_en/help-onepage.html">TortoiseSVN
+documentation</a></p>
+</div>
+</section>
+<section id="copy-modify-merge-solution-2" class="slide level2">
+<h2>copy-modify-merge solution #2</h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_compare.drawio.svg" width="200"
+alt="compare the latest to his own" />
+<figcaption aria-hidden="true">compare the latest to his
+own</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_merged.drawio.svg" width="200"
+alt="merged the changes" />
+<figcaption aria-hidden="true">merged the changes</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_publish_merged.drawio.svg" width="200"
+alt="publish merged" />
+<figcaption aria-hidden="true">publish merged</figcaption>
+</figure>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/vcs_changes_shared.drawio.svg" width="200"
+alt="changes shared" />
+<figcaption aria-hidden="true">changes shared</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-align-left mt-3 fragment">
+<p>example: <strong>git</strong>, mercurial</p>
+</div>
+<div class="text-smaller">
+<p>the figures are based on Figure 2.5 of the <a
+href="https://tortoisesvn.net/docs/release/TortoiseSVN_en/help-onepage.html">TortoiseSVN
+documentation</a></p>
+</div>
+</section>
+<section id="centralized-vs.-distributed-version-control-system"
+class="slide level2">
+<h2>centralized vs. distributed version control system</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<figure>
+<img data-src="figures/vcs_centralized.drawio.svg" width="400"
+alt="centralized" />
+<figcaption aria-hidden="true">centralized</figcaption>
+</figure>
+<div class="text-align-left text-smaller mt-3">
+<p>example: subversion</p>
+</div>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="figures/vcs_distributed.drawio.svg" width="400"
+alt="distributed" />
+<figcaption aria-hidden="true">distributed</figcaption>
+</figure>
+<div class="text-align-left text-smaller mt-3">
+<p>example: <strong>git</strong>, mercurial</p>
+</div>
+</div>
+</div>
+<div class="text-smaller">
+<p>the figures are based on <a
+href="https://homes.cs.washington.edu/~mernst/advice/version-control.html">Version
+control concepts and best practices</a> - by Michael Ernst <span
+class="citation" data-cites="ernst2012version">[1]</span></p>
+</div>
+</section></section>
+<section>
+<section id="continuous-integration-ci"
+class="title-slide slide level1">
+<h1>continuous integration (CI)</h1>
+<!--:::::::::::: {.columns}
+::::::::: {.column width="70%"}-->
+<p><img data-src="figures/ci.drawio.svg" width="625" /></p>
+<!--:::::::::
+::::::::: {.column width="30%" .text-smaller}
+- extreme programming
+- agile
+- immediate feedback
+
+:::::::::
+::::::::::::-->
+</section>
+<section id="continuous-integration-environment" class="slide level2">
+<h2>continuous integration environment</h2>
+<p><img data-src="figures/ci_environment.drawio.svg" width="700" /></p>
+<aside class="notes">
+<p>What happens here is that the developer pushes a change to the
+version control server, which can be(depends on the configuration) a
+trigger. Based on the trigger the CI environment start a runner. A
+runner can be, for example, a linux instance running in a virtual
+machine or in a container. In the newly started environment, the changes
+are fetched. Considering git as a version control system, fetching means
+clone and checkout operations. As the CI environment is “empty”, in a
+sense that it does not contain any of the software code, the code
+repository has to be cloned every time. Then, the right version, defined
+by the trigger should be selected using the <code>git checkout</code>
+command. After the software version to be tested is available, the build
+script should be executed. Optionally with static code analysis, tests,
+and so on, then the reports are generated.</p>
+<p>If the build or the tests did not succeed a notification is sent to
+the developer(s), and any other stakeholder who are subscribed. If the
+build (and tests) succeeded, notification are usually only sent if the
+previous build failed, preventing unnecessary noise.</p>
+</aside>
+</section>
+<section id="build-script" class="slide level2">
+<h2>build script</h2>
+<div class="columns">
+<div class="column mt-4" style="width:65%;">
+<ul>
+<li>traditionally called build script</li>
+<li>responsible not only for building the software</li>
+<li>but also for running tests, generating reports</li>
+<li>and even for packaging the software</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img
+data-src="figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg"
+width="300" /></p>
+</div>
+</div>
+<p>example: <a
+href="https://github.com/pintergreg/software-engineering/blob/main/.github/workflows/main.yaml"
+target="_blank">build script</a> of the course website</p>
+</section>
+<section id="scheduled-build" class="slide level2">
+<h2>scheduled build</h2>
+<p><img data-src="figures/ci_environment_schedule.drawio.svg"
+width="700" /></p>
+<aside class="notes">
+<p>The trigger can be also be a scheduler, so a build / test running can
+be executed without explicit change of a new push.</p>
+</aside>
+</section>
+<section id="nightly-build" class="slide level2">
+<h2>nightly build</h2>
+<div class="columns">
+<div class="column mt-2" style="width:50%;">
+<ul>
+<li>scheduled build during night time</li>
+<li>typically includes a smoke test</li>
+<li>building a the latest version of a software, on a daily basis</li>
+<li>originally scheduled to night time because for large software a full
+build (with all tests) could take hours</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/publicdomainvectors/city-night-landscape.svg"
+width="300" /></p>
+</div>
+</div>
+<aside class="notes">
+<p>also known as daily build</p>
+</aside>
+</section></section>
+<section>
+<section id="continuous-deployment" class="title-slide slide level1">
+<h1>continuous deployment</h1>
+<div class="columns">
+<div class="column mt-2" style="width:65%;">
+<ul>
+<li>continuous integration ensures everyone integrates their code to the
+mainline <span class="citation"
+data-cites="fowler2024continuous">[2]</span></li>
+<li>“Continuous Deployment means the product is automatically released
+to production whenever it passes all the automated tests in the
+deployment pipeline.” – Martin Fowler <span class="citation"
+data-cites="fowler2024continuous">[2]</span></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img
+data-src="figures/publicdomainvectors/industrial-conveyor-belt.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="continuous-deployment-environment" class="slide level2">
+<h2>continuous deployment environment</h2>
+<p><img data-src="figures/cd_environment_schedule.drawio.svg"
+width="700" /></p>
+<ul>
+<li>extension of a continuous integration environment</li>
+<li>deployment is another stage in the <em>build script</em></li>
+<li>same triggers as in a <span class="tooltip"
+title="continuous integration">CI</span> environment (not just the
+scheduler)</li>
+</ul>
+</section>
+<section id="bluegreen-deployment-enwiki1249842339"
+class="slide level2">
+<h2>blue–green deployment <span class="citation"
+data-cites="enwiki:1249842339">[3]</span></h2>
+<p><img data-src="figures/blue_green_deployment_v2.drawio.svg"
+width="700" /></p>
+<div class="columns column-gapless">
+<div class="column" style="width:70%;">
+<div class="text-smaller">
+<ul>
+<li>two servers are maintained (“blue” and “green”)
+<ul>
+<li><span class="text-smaller">expensive</span></li>
+</ul></li>
+<li>at a given time, only one server is handling public request</li>
+<li>the other can be accessed only from a private network</li>
+<li>changes applied to the non-live server and verified</li>
+<li>when verified, the non-live server is swapped with the live
+server</li>
+</ul>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/test_pyramid_manual.drawio.svg"
+class="no-margin" width="200" /></p>
+</div>
+</div>
+</section>
+<section id="shadow-deployment" class="slide level2">
+<h2>shadow deployment</h2>
+<p><img data-src="figures/shadow_deployment.drawio.svg"
+width="650" /></p>
+<ul>
+<li>two servers are maintained (“live” and “shadow”)</li>
+<li>for testing the performance and stability requirements
+<ul>
+<li>on success, the release can be deployed to the live server as
+well</li>
+</ul></li>
+<li>specialized strategy, complex and (relatively) expensive to set
+up</li>
+</ul>
+</section>
+<section id="canary-deployment" class="slide level2">
+<h2>canary deployment</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>deployment in an incremental fashion</li>
+<li>starts with a small number of users</li>
+<li>and continues until 100% is reached</li>
+<li>allows to test updates in live environment
+<ul>
+<li>on small groups of users</li>
+<li>before deploying to many users</li>
+<li>may involve telemetry</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/canary_deployment.drawio.svg"
+width="400" /></p>
+</div>
+</div>
+<div class="fragment mt-2">
+<p><strong>A/B testing</strong> is more of a testing approach than a
+deployment technique, but it works similarly to canary deployment. It
+involves reviewing two versions of updates in small set of users to
+identify which version perform better. <span class="citation"
+data-cites="kazim2023what">[4]</span></p>
+</div>
+</section>
+<section id="devops" class="slide level2">
+<h2>devops</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:55%;">
+<ul>
+<li>software <span class="text-color-secondary">dev</span>elopment + IT
+<span class="text-color-secondary">op</span>eration<span
+class="text-color-secondary">s</span>
+<ul>
+<li><span class="text-smaller">collaboration</span></li>
+</ul></li>
+<li>agile mindset, set of principles <span class="citation"
+data-cites="gitlab2022four">[5]</span>
+<ul>
+<li><span class="text-smaller">automation of the <span class="tooltip"
+title="software development lifecycle">SDLC</span></span></li>
+<li><span class="text-smaller">collaboration and
+communication</span></li>
+<li><span class="text-smaller">continuous improvement</span></li>
+<li><span class="text-smaller">focus on user needs with short feedback
+loops</span></li>
+</ul></li>
+<li>relies on automatization, <span class="tooltip"
+title="continuous integration">CI</span> and <span class="tooltip"
+title="continuous deployment">CD</span></li>
+<li>to build, test and release better software
+<ul>
+<li><span class="text-smaller">frequently, reliably, rapidly</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/borrowed/Devops-toolchain.svg" width="400"
+alt="by Kharnagy | CC BY-SA" />
+<figcaption aria-hidden="true">by <a
+href="https://commons.wikimedia.org/wiki/File:Devops-toolchain.svg">Kharnagy</a>
+| <a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-2">
+<p>further reading: <a href="https://roadmap.sh/devops/principles">11
+DevOps Principles and Practices to Master: Pro Advice</a> - by Fernando
+Doglio</p>
+</div>
+</section></section>
+<section id="what-tools-to-use" class="title-slide slide level1">
+<h1>what tools to use?</h1>
+<div class="columns">
+<div class="column" style="width:75%;">
+<div class="text-smaller">
+<ul>
+<li><span class="tooltip" title="continuous integration">CI</span> and
+<span class="tooltip" title="continuous deployment">CD</span> became a
+fundamental part of software development
+<ul>
+<li>got integrated into services like GitHub, GitLab, BitBucket,
+JetBrains Space</li>
+</ul></li>
+<li>some solutions:
+<ul>
+<li>Jenkins
+<ul>
+<li>open source, self hosted</li>
+</ul></li>
+<li>GitHub Actions
+<ul>
+<li>integrated to code hosting, free options</li>
+<li>example: <a
+href="https://github.com/pintergreg/software-engineering/actions">course
+repository</a></li>
+</ul></li>
+<li>GitLab Pipelines
+<ul>
+<li>integrated to code hosting, free options</li>
+</ul></li>
+<li>Travis CI
+<ul>
+<li>free for open source projects</li>
+</ul></li>
+<li>Circle CI
+<ul>
+<li>free options</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:25%;">
+<figure>
+<img data-src="figures/borrowed/Jenkins_logo.svg" width="75"
+alt="Jenkins" />
+<figcaption aria-hidden="true">Jenkins</figcaption>
+</figure>
+<figure>
+<img data-src="figures/borrowed/Font_Awesome_5_brands_github.svg"
+height="60" alt="GitHub Actions" />
+<figcaption aria-hidden="true">GitHub Actions</figcaption>
+</figure>
+<figure>
+<img data-src="figures/borrowed/GitLab_icon.svg" height="50"
+alt="GitLab Pipelines" />
+<figcaption aria-hidden="true">GitLab Pipelines</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-small mt-2">
+<ul>
+<li><a
+href="https://commons.wikimedia.org/wiki/File:Jenkins_logo.svg">Jenkins
+logo</a> – The Jenkins project <a
+href="http://jenkins-ci.org/">http://jenkins-ci.org/</a> | <a
+href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA</a></li>
+<li><a
+href="https://commons.wikimedia.org/wiki/File:GitLab_icon.svg">GitHub
+icon</a> – Font Awesome Free 5.4.1 by @fontawesome - <a
+href="https://fontawesome.com">https://fontawesome.com</a> | <a
+href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY</a></li>
+<li><a
+href="https://commons.wikimedia.org/wiki/File:GitLab_icon.svg">GitLab
+icon</a> by 292Jacob | <a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a></li>
+</ul>
+</div>
+</section>
+
+<section>
+<section id="automatized-review" class="title-slide slide level1">
+<h1>automatized review</h1>
+<div class="columns">
+<div class="column mt-2" style="width:65%;">
+<ul>
+<li>using <span class="tooltip" title="continuous integration">CI</span>
+environment</li>
+<li>do static code analysis
+<ul>
+<li>analyzing the code without execution</li>
+<li>searching for syntax errors, styling issues, bad practices or code
+smells</li>
+</ul></li>
+<li>run test suite</li>
+<li>generate review report from the findings</li>
+</ul>
+<div class="fragment mt-2">
+<div class="text-color-secondary">
+<p>should not replace human reviewing</p>
+</div>
+<div class="text-smaller">
+<p>just decrease the work by automatizing trivial tasks</p>
+</div>
+</div>
+</div><div class="column" style="width:35%;">
+<p><img data-src="figures/publicdomainvectors/machine-learning.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="automatized-review-example" class="slide level2">
+<h2>automatized review – example</h2>
+<ul>
+<li><span class="tooltip" title="continuous integration">CI</span>
+services integrated into the code hosting / developer platforms</li>
+<li>code changes can ba annotated by automatized review findings
+<ul>
+<li><span class="text-smaller">usually at a pull request
+level</span></li>
+</ul></li>
+<li>a bit slower feedback than running static analysis or test
+locally</li>
+</ul>
+<div class="mt-3">
+<figure>
+<img data-src="figures/github_automated_review.png" width="850"
+alt="source: go-gitea/gitea at GitHub, pull request #31768" />
+<figcaption aria-hidden="true">source: <a
+href="https://github.com/go-gitea/gitea/pull/31768/files">go-gitea/gitea
+at GitHub, pull request #31768</a></figcaption>
+</figure>
+</div>
+</section></section>
+<section>
+<section id="interruption" class="title-slide slide level1">
+<h1>interruption</h1>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="figures/borrowed/ProgrammerInterrupted.webp"
+style="width: 300px; height: 430px; object-fit: cover; object-position: 100% 0;" /></p>
+</div><div class="column fragment" style="width:33%;">
+<p><img data-src="figures/borrowed/ProgrammerInterrupted.webp"
+style="width: 300px; height: 323px; object-fit: cover; object-position: 100% -430px;" /></p>
+</div><div class="column fragment" style="width:33%;">
+<p><img data-src="figures/borrowed/ProgrammerInterrupted.webp"
+style="width: 300px; height: 350px; object-fit: cover; object-position: 100% -751px;" /></p>
+</div>
+</div>
+</section>
+<section id="interruption-1" class="slide level2">
+<h2>interruption</h2>
+<ul>
+<li>the greatest “enemy” of a developer is interruption</li>
+<li>the code is one thing, the logic behind it is another
+<ul>
+<li>takes time to understand</li>
+</ul></li>
+<li>context switching is costly
+<ul>
+<li>switching between tasks</li>
+<li>that is why it is advisable to define small tasks during the sprint
+planning
+<ul>
+<li>1–4 hours, but ideally closer to 1</li>
+<li>preventing interruption
+<!--     - [also withing a OS / CPU]{.text-smaller} --></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="the-cost-of-interruption" class="slide level2">
+<h2>the cost of interruption</h2>
+<div class="columns">
+<div class="column mt-3" style="width:60%;">
+<ul>
+<li>according to a study, the average lost time per major interruption
+is <strong>23 minutes</strong> <span class="citation"
+data-cites="mark2008cost">[6]</span>
+<ul>
+<li>for developers, it could be far worse</li>
+</ul></li>
+<li>“getting back to the exact state of mind you were at right before an
+interruption is nearly impossible” <span class="citation"
+data-cites="to2018cost">[7]</span></li>
+<li>planned and unplanned interruptions</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/borrowed/quick_call.jpg" width="350"
+alt="© Ash Lamb used with the author’s permission" />
+<figcaption aria-hidden="true">© <a href="https://ashlamb.com/">Ash
+Lamb</a><br>used with the author’s permission</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The
+Cost of Interruption for Software Developers</a> – by Steven To <span
+class="citation" data-cites="to2018cost">[7]</span></p>
+</div>
+</section>
+<section id="planned-and-unplanned-interruptions" class="slide level2">
+<h2>planned and unplanned interruptions</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:50%;">
+<p><strong>unplanned</strong></p>
+<ul>
+<li>someone asks about something or to do something
+<ul>
+<li>usually a small task
+<ul>
+<li>informal review, advice, etc.</li>
+</ul></li>
+</ul></li>
+<li>mitigation
+<ul>
+<li>wear headphones (in open offices)</li>
+<li>notify in advance</li>
+</ul></li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<p><strong>planned</strong></p>
+<ul>
+<li>meetings, including standup</li>
+<li>standup is usually the first thing in a workday, not to divide the
+work time until lunch</li>
+<li>a wrongly placed meeting can be even worse than an unplanned
+interruption
+<ul>
+<li><span class="text-smaller">you have to keep in mind that you have a
+meeting, cannot start anyting serious</span></li>
+</ul></li>
+<li>mitigation
+<ul>
+<li><span class="text-smaller">schedule small, easy tasks before
+meeting</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The
+Cost of Interruption for Software Developers</a> – by Steven To <span
+class="citation" data-cites="to2018cost">[7]</span></p>
+</div>
+</section></section>
+<section>
+<section id="release-versioning" class="title-slide slide level1">
+<h1>release versioning</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>a software release is identified by a version number</li>
+<li>often seen as an arbitrary number</li>
+</ul>
+<div class="text-smaller mt-5">
+<p>pre-releases</p>
+<ul>
+<li><strong>alpha</strong>: incomplete feature-wise, external release is
+uncommon for proprietary software
+<ul>
+<li>whitebox testing</li>
+</ul></li>
+<li><strong>beta</strong>: the software is feature-complete but contains
+several known or unknown bugs
+<ul>
+<li>blackbox testing</li>
+</ul></li>
+<li><strong>rc</strong>: release candidate, final touches
+<ul>
+<li>highest level testing</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column text-smaller" style="width:51%;">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img
+data-src="figures/publicdomainvectors/businessman-running-to-finish.svg"
+width="300" /></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>odd number for development (4.1), even for stable (4.2)</li>
+<li>Chromium: 131.0.6778.69</li>
+<li>after GNOME 3.38, the “3.” was dropped and GNOME 40 vas released
+<ul>
+<li><span class="text-smaller">Java 1.6, 1.7, <del>1.8</del>, 8, 9,
+10…</span></li>
+</ul></li>
+<li>Linux 5.19, 6.0
+<ul>
+<li><span class="text-smaller">“So, as is hopefully clear to everybody,
+the major version number change is more about me running out of fingers
+and toes than it is about any big fundamental changes.” – <a
+href="https://lkml.iu.edu/hypermail/linux/kernel/2210.0/00685.html">Linux
+Torvalds</a></span></li>
+</ul></li>
+<li>since version 3, TeX has used an idiosyncratic version numbering
+system <span class="citation"
+data-cites="enwiki:1253226188"><strong>enwiki:1253226188?</strong></span>
+<ul>
+<li><span class="text-smaller">where updates have been indicated by
+adding an extra digit at the end of the decimal, so that the version
+number asymptotically approaches π</span></li>
+<li><span class="text-smaller">last version is 3.141592653 (released in
+2021)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="semantic-versioning" class="slide level2">
+<h2>semantic versioning</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/semver.drawio.svg" width="500" /></p>
+</div><!--::::::::: {.column width="50%" .text-medium .mt-3}
+- **alpha**: incomplete feature-wise, external release is uncommon for proprietary software
+    - whitebox testing
+
+- **beta**: the software is feature-complete but contains several known or unknown bugs
+    - blackbox testing
+
+- **rc**: release candidate, final touches
+    - highest level testing
+:::::::::-->
+</div>
+<div class="mt-1">
+<ol type="1">
+<li><strong>major</strong> version when you make incompatible <span
+class="tooltip" title="application programming interface">API</span>
+changes
+<ul>
+<li><span class="text-smaller">a way of communicating
+changes</span></li>
+</ul></li>
+<li><strong>minor</strong> version when you add functionality in a
+backward compatible manner</li>
+<li><strong>patch</strong> version when you make backward compatible bug
+fixes</li>
+</ol>
+<div class="text-smaller">
+<p>additional labels for pre-release and build metadata are available as
+extensions to the <code>major.minor.patch</code> format | from <a
+href="https://semver.org">semver.org</a></p>
+</div>
+</div>
+<aside class="notes">
+<p>optional reading: <a
+href="https://snarky.ca/why-i-dont-like-semver/">Why I don’t like SemVer
+anymore</a></p>
+</aside>
+</section>
+<section id="calendar-versioning" class="slide level2">
+<h2>calendar versioning</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/calver.drawio.svg" width="450" /></p>
+</div><div class="column mt-4" style="width:50%;">
+<p>format examples:</p>
+<ul>
+<li>YYYY.MINOR.PATCH
+<ul>
+<li><span class="text-smaller">micro is used instead of
+patch</span></li>
+</ul></li>
+<li>YYYY.MM.MINOR.PATCH</li>
+</ul>
+</div>
+</div>
+<p>“<em>CalVer</em> is a versioning convention based on your project’s
+release calendar, instead of arbitrary numbers.” | <a
+href="https://calver.org">calver.org</a></p>
+</section>
+<section id="zerover-0-based-versioning" class="slide level2">
+<h2>ZeroVer: 0-based versioning</h2>
+<p>“Your software’s major version should never exceed the first and most
+important number in computing: zero.” | <a
+href="https://0ver.org">0ver.org</a></p>
+<ul>
+<li>e.g.: <strong>0.4.1</strong></li>
+<li>popular among open source software projects
+<ul>
+<li><span class="text-smaller">some may reach 1.0.0
+eventually</span></li>
+</ul></li>
+</ul>
+<div class="text-smaller mt-2">
+<p><a href="https://semver.org"><span class="tooltip"
+title="semantic versioning">semver</span></a>: “If your software is
+being used in production, it should probably already be 1.0.0.”</p>
+</div>
+</section>
+<section id="fibonacci-releases" class="slide level2">
+<h2>Fibonacci releases</h2>
+<table>
+<caption>KDE / Plasma 6.1 series <a
+href="https://community.kde.org/Schedules/Plasma_6">release
+schedule</a></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">version</th>
+<th>type</th>
+<th>release date</th>
+<th style="text-align: right;">delta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">6.1.0</td>
+<td>Release</td>
+<td>Tue 2024-06-18</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6.1.1</td>
+<td>Bugfix Release</td>
+<td>Tue 2024-06-25</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6.1.2</td>
+<td>Bugfix Release</td>
+<td>Tue 2024-07-02</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6.1.3</td>
+<td>Bugfix Release</td>
+<td>Tue 2024-07-16</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6.1.4</td>
+<td>Bugfix Release</td>
+<td>Tue 2024-08-06</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6.1.5</td>
+<td>Bugfix Release</td>
+<td>Tue 2024-09-10</td>
+<td style="text-align: right;">5</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-ernst2012version" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">M.
+Ernst, <span>“Version control concepts and best practices.”</span> <a
+href="
+                  https://homes.cs.washington.edu/~mernst/advice/version-control.html
+                    " class="uri">
+                  https://homes.cs.washington.edu/~mernst/advice/version-control.html
+</a>, Sep-2012.</div>
+</div>
+<div id="ref-fowler2024continuous" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">M.
+Fowler, <span>“Continuous integration.”</span> <a href="
+                   https://martinfowler.com/articles/continuousIntegration.html
+                    " class="uri">
+                   https://martinfowler.com/articles/continuousIntegration.html
+</a>, 18-Jan-2024.</div>
+</div>
+<div id="ref-enwiki:1249842339" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Blue–green
+deployment — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Blue%E2%80%93green_deployment&amp;oldid=1249842339"
+class="uri">https://en.wikipedia.org/w/index.php?title=Blue%E2%80%93green_deployment&amp;oldid=1249842339</a>,
+2024.</div>
+</div>
+<div id="ref-kazim2023what" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">W.
+Kazim, <span>“What is software deployment? Process and best
+practices.”</span> <a href="
+                   https://learn.g2.com/software-deployment
+                    " class="uri">
+                   https://learn.g2.com/software-deployment
+</a>, 31-May-2023.</div>
+</div>
+<div id="ref-gitlab2022four" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div
+class="csl-right-inline">GitLab, <span>“4 must-know DevOps
+principles.”</span> <a href="
+                  https://about.gitlab.com/blog/2022/02/11/4-must-know-devops-principles
+                    " class="uri">
+                  https://about.gitlab.com/blog/2022/02/11/4-must-know-devops-principles
+</a>, 11-Feb-2022.</div>
+</div>
+<div id="ref-mark2008cost" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">G.
+Mark, D. Gudith, and U. Klocke, <span>“The cost of interrupted work:
+More speed and stress,”</span> in <em>Proceedings of the SIGCHI
+conference on human factors in computing systems</em>, 2008, pp.
+107–110.</div>
+</div>
+<div id="ref-to2018cost" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">S.
+To, <span>“The cost of interruption for software developers.”</span> <a
+href="
+                   https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers
+                    " class="uri">
+                   https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers
+</a>, 03-May-2018.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.1.0//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.1.0//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.1.0//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    // Reveal.destroy();
+    // Reveal.initialize({
+    //     verticator: {
+    // 		color: '#181d37',
+    // 	},
+    // 	drawer: {
+    //       toggleDrawKey: "d", // (optional) key to enable drawing, default "d"
+    //       toggleBoardKey: "t", // (optional) key to show drawing board, default "t"
+    //       colors: ["#fa1e0e", "#8ac926", "#1982c4", "#ffca3a"], // (optional) list of colors avaiable (hex color codes)
+    //       color: "#FF0000", // (optional) color of a cursor, first color from `codes` is a default
+    //       pathSize: 4, // (optional) path size in px, default 4
+    //     },
+    // 	// markdown: {
+    //  //      smartypants: true,
+    //  //    },
+    //     // plugins: [ RevealMenu, Verticator ] 
+    //     // plugins: [ RevealDrawer, RevealMenu, Verticator ] 
+    // });
+    // console.log(Reveal.hasPlugin('RevealMenu'));
+    // Reveal.getPlugin('RevealMenu');
+    // console.log(Reveal.hasPlugin('RevealMenu'));
+    // Reveal.configure({ plugins: [ RevealDrawer, RevealMenu, Verticator ] });
+    highlight_lines()
+    </script>
+    </body>
+</html>
