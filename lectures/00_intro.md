@@ -259,10 +259,16 @@ There are two types of software rot: dormant rot and active rot.
 ::::::::: {.column width="50%"}
 **dormant rot**: the software in question is not changed, but as the environment evolves, it eventually becomes dysfunctional
 
-:::::::::
-::::::::: {.column width="50%" .fragment}
-![Muni metro San Francisco<br>photo by [Albert](https://www.flickr.com/photos/24208255@N07/2751036689/) [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)](figures/borrowed/muni_metro.jpg)
+::: {.fragment data-fragment-index=2 .mt-3}
+![](figures/publicdomainvectors/floppy-disks.svg){width=200}
 
+:::
+:::::::::
+::::::::: {.column width="50%"}
+::: {.fragment data-fragment-index=1}
+![Muni metro San Francisco<br>photo by [Albert](https://www.flickr.com/photos/24208255@N07/2751036689/) [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)](figures/borrowed/muni_metro.jpg){width=450}
+
+:::
 :::::::::
 ::::::::::::
 
