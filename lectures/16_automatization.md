@@ -632,9 +632,45 @@ source: [The Cost of Interruption for Software Developers](https://www.brightdev
 :::
 
 
-# versioning
+# release versioning
 
-- a software is identified by a version number
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- a software release is identified by a version number
+- often seen as an arbitrary number
+
+::: {.text-smaller .mt-5}
+pre-releases
+
+- **alpha**: incomplete feature-wise, external release is uncommon for proprietary software
+    - whitebox testing
+
+- **beta**: the software is feature-complete but contains several known or unknown bugs
+    - blackbox testing
+
+- **rc**: release candidate, final touches
+    - highest level testing
+:::
+:::::::::
+::::::::: {.column width="51%" .text-smaller}
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![](figures/publicdomainvectors/businessman-running-to-finish.svg){width=300}
+:::
+::: {.fragment data-fragment-index=1}
+- odd number for development (4.1), even for stable (4.2)
+- Chromium: 131.0.6778.69
+- after GNOME 3.38, the "3." was dropped and GNOME 40 vas released
+    - [Java 1.6, 1.7, ~~1.8~~, 8, 9, 10...]{.text-smaller}
+- Linux 5.19, 6.0
+    - ["So, as is hopefully clear to everybody, the major version number change is more about me running out of fingers and toes than it is about any big fundamental changes." -- [Linux Torvalds](https://lkml.iu.edu/hypermail/linux/kernel/2210.0/00685.html)]{.text-smaller}
+- since version 3, TeX has used an idiosyncratic version numbering system [@enwiki:1253226188]
+    - [where updates have been indicated by adding an extra digit at the end of the decimal, so that the version number asymptotically approaches π]{.text-smaller}
+    - [last version is 3.141592653 (released in 2021)]{.text-smaller}
+:::
+::::::
+:::::::::
+::::::::::::
 
 
 ## semantic versioning
@@ -644,7 +680,7 @@ source: [The Cost of Interruption for Software Developers](https://www.brightdev
 ![](figures/semver.drawio.svg){width=500}
 
 :::::::::
-::::::::: {.column width="50%" .text-medium .mt-3}
+<!--::::::::: {.column width="50%" .text-medium .mt-3}
 - **alpha**: incomplete feature-wise, external release is uncommon for proprietary software
     - whitebox testing
 
@@ -653,7 +689,7 @@ source: [The Cost of Interruption for Software Developers](https://www.brightdev
 
 - **rc**: release candidate, final touches
     - highest level testing
-:::::::::
+:::::::::-->
 ::::::::::::
 
 ::: {.mt-1}
