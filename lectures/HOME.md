@@ -185,6 +185,7 @@ MVC-MVP-MVVM
 
 - [The Cost of Interruption for Software Developers](https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/) - by Steven To
 - [Version control concepts and best practices](https://homes.cs.washington.edu/~mernst/advice/version-control.html) - by Michael Ernst
+- [Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html) - by Martin Fowler
 - [11 DevOps Principles and Practices to Master: Pro Advice](https://roadmap.sh/devops/principles) - by Fernando Doglio
 
 ## week 12
