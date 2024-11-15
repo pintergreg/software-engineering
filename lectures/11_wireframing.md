@@ -192,3 +192,11 @@ shows user flow, ~ user story map flow
 
 ::: {#refs}
 :::
+
+::: {.mt-5}
+[more about UX design]{.text-size-2}
+
+- [How to Create a Wireframe Map](https://blog.hubspot.com/website/wireframe-map) - by Maddy Osman
+- [UI Prototypes](https://www.interaction-design.org/literature/topics/prototypes)
+- [Practical training for creating more usable products](https://balsamiq.com/learn/) - by balsamiq
+:::

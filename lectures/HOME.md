@@ -142,6 +142,7 @@ MVC-MVP-MVVM
 
 - [What is wireframing? A complete guide](https://www.uxdesigninstitute.com/blog/what-is-wireframing/) - by Louise Bruton
 - [UI Prototypes](https://www.interaction-design.org/literature/topics/prototypes)
+- [Practical training for creating more usable products](https://balsamiq.com/learn/) - by balsamiq
 
 ## week 9
 
