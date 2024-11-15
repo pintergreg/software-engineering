@@ -481,9 +481,20 @@ further reading: [11 DevOps Principles and Practices to Master: Pro Advice](http
 :::::::::::: {.columns}
 ::::::::: {.column width="65%" .mt-2}
 - using [CI]{.tooltip title="continuous integration"} environment
-- static code analysis
-- 
+- do static code analysis
+    - analyzing the code without execution
+    - searching for syntax errors, styling issues, bad practices or code smells
+- run test suite
+- generate review report from the findings
 
+::: {.fragment .mt-2}
+::: {.text-color-secondary}
+should not replace human reviewing
+:::
+::: {.text-smaller}
+just decrease the work by automatizing trivial tasks 
+:::
+:::
 :::::::::
 ::::::::: {.column width="35%"}
 ![](figures/publicdomainvectors/machine-learning.svg){width=300}
