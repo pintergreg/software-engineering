@@ -450,6 +450,7 @@ further reading: [11 DevOps Principles and Practices to Master: Pro Advice](http
         - open source, self hosted
     - GitHub Actions
         - integrated to code hosting, free options
+        - example: [course repository](https://github.com/pintergreg/software-engineering/actions)
     - GitLab Pipelines
         - integrated to code hosting, free options
     - Travis CI
