@@ -380,6 +380,19 @@ also known as daily build
 ::::::::::::
 
 
+## blue–green deployment [@enwiki:1249842339]
+
+![](figures/blue_green_deployment_v2.drawio.svg){width=700}
+
+::: {.text-smaller}
+- two servers are maintained ("blue" and "green")
+- at a given time, only one server is handling public request
+- the other can be accessed only from a private network
+- changes applied to the non-live server and verified
+- when verified, the non-live server is swapped with the live server
+:::
+
+
 ## devops
 
 
