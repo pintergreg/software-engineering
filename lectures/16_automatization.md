@@ -476,6 +476,23 @@ further reading: [11 DevOps Principles and Practices to Master: Pro Advice](http
 :::
 
 
+# automatized review
+
+:::::::::::: {.columns}
+::::::::: {.column width="65%" .mt-2}
+- using [CI]{.tooltip title="continuous integration"} environment
+- static code analysis
+- 
+
+:::::::::
+::::::::: {.column width="35%"}
+![](figures/publicdomainvectors/machine-learning.svg){width=300}
+
+:::::::::
+::::::::::::
+
+
+
 # interruption
 
 :::::::::::: {.columns}
