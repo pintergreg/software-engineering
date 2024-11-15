@@ -179,7 +179,7 @@ this chapter is based on [c4model.com](https://c4model.com/)
 - shows how the software fits into the world
   - [who use it]{.text-smaller}
   - [what other software does it interacts]{.text-smaller}
-- high diagram
+- high level diagram
   - [technologies, protocols and other low-level details are not important]{.text-smaller}
 - similar to use case diagram
 - understandable for non-technical people
