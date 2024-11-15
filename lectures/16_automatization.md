@@ -380,6 +380,13 @@ also known as daily build
 ::::::::::::
 
 
+## continuous deployment environment
+
+![](figures/cd_environment_schedule.drawio.svg){width=700}
+
+same triggers as in a [CI]{.tooltip title="continuous integration"} environment (not just scheduled)
+
+
 ## blue–green deployment [@enwiki:1249842339]
 
 ![](figures/blue_green_deployment_v2.drawio.svg){width=700}
