@@ -437,6 +437,43 @@ further reading: [11 DevOps Principles and Practices to Master: Pro Advice](http
 :::
 
 
+# what tools to use?
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+::: {.text-smaller}
+- [CI]{.tooltip title="continuous integration"} and [CD]{.tooltip title="continuous deployment"} became a fundamental part of software development
+    - got integrated into services like GitHub, GitLab, BitBucket, JetBrains Space
+- some solutions:
+    - Jenkins
+        - open source, self hosted
+    - GitHub Actions
+        - integrated to code hosting, free options
+    - GitLab Pipelines
+        - integrated to code hosting, free options
+    - Travis CI
+        - free for open source projects
+    - Circle CI
+        - free options
+:::
+:::::::::
+::::::::: {.column width="25%"}
+![Jenkins](figures/borrowed/Jenkins_logo.svg){width=75}
+
+![GitHub Actions](figures/borrowed/Font_Awesome_5_brands_github.svg){height=60}
+
+![GitLab Pipelines](figures/borrowed/GitLab_icon.svg){height=50}
+
+:::::::::
+::::::::::::
+
+::: {.text-small .mt-2}
+- [Jenkins logo](https://commons.wikimedia.org/wiki/File:Jenkins_logo.svg) -- The Jenkins project [http://jenkins-ci.org/](http://jenkins-ci.org/) | [CC&nbsp;BY-SA](https://creativecommons.org/licenses/by-sa/3.0/deed.en)
+- [GitHub icon](https://commons.wikimedia.org/wiki/File:GitLab_icon.svg) -- Font Awesome Free 5.4.1 by \@fontawesome - [https://fontawesome.com](https://fontawesome.com) | [CC&nbsp;BY](https://creativecommons.org/licenses/by/4.0/deed.en)
+- [GitLab icon](https://commons.wikimedia.org/wiki/File:GitLab_icon.svg) by 292Jacob | [CC&nbsp;BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+:::
+
+
 # interruption
 
 :::::::::::: {.columns}
