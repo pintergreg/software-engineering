@@ -303,4 +303,122 @@ markmap:
     - API level
     - code level
 
+### architecture decision record
+
+- capture the decision
+- helps to understand why the feature is built in a way and not some other way
+- form of communication
+    - for the future you
+    - for colleagues
+    - asynchronous way of communication
+
 ## design patterns
+
+- programming paradigms
+    - structural
+    - procedural
+    - object oriented
+    - functional
+- paradigm principles
+    - object oriented
+        - inheritance
+        - abstraction
+        - encapsulation
+        - polymorphism
+    - functional
+        - immutability
+        - lambda
+        - structural pattern matching
+        - algebraic data structures
+- design principles
+    - SOLID
+        - single responsibility principle
+            - do one thing
+        - open-closed principle
+            - classes should be open for extension and closed to modification
+        - Liskov substitution principle
+            - classes should be able to substituted by subclasses without disrupting the behavior
+        - interface segregation principle
+            - client-specific interfaces are better than one general-purpose interface
+            - clients should not be forced to implement a function they do no need
+        - dependency inversion principle
+            - modules should depend on interfaces (or abstract classes), not concrete classes
+    - DRY
+        - don't repeat yourself
+    - YAGNI
+        - you aren't gonna need it
+        - originates from extreme programming
+        - do not add functionality until needed
+- design patterns
+    - gang of four (OOP)
+        - 23 common software design patterns
+        - solutions to common OOP design problems
+        - three categories
+            - creational
+            - structural
+            - behavioral
+    - functional
+        - filter-map-reduce
+        - monad
+- architectural principles
+    - coupling and cohesion
+        - coupling is the degree of interdependence between software modules
+        - low coupling often correlates with high cohesion
+    - dependencies
+    - boundaries
+- architectural styles
+    - client-server
+        - client initiates a connection to the server
+        - distributed
+    - message-bus
+        - shared communication channe
+        - connects multiple components
+        - simple
+        - models
+            - publish-subscribe model
+                - one to many
+            - point-to-point model
+                - one to one
+        - delivery guarantee
+            - at most once
+            - at least once
+            - exactly once
+    - layered
+        - simple
+        - easy to implement
+        - separated components
+            - helps testing
+        - difficult to scale
+        - can be difficult to maintain
+        - a layer depends on the layer above it
+    - onion
+        - code can depend on layers more central
+        - coupling towards the center
+        - database is not the center, it is external
+        - relies on the dependency inversion principle
+    - clean architecture
+        - similar to onion
+        - different terminology
+    - hexagonal
+        - ports and adapters
+        - isolates responsibilities
+        - focus on interface definition
+        - inner structure is not defined 
+        - extra effort for port-adapter implementation
+- architectural patterns
+    - model-view-controller
+        - view is responsible for rendering UI
+        - controller handles the user input and performs interactions on the data model
+        - model is responsible for managing the data
+        - view is monolithic
+        - view and the model are tightly coupled
+        - multiple views
+    - model-view-presenter
+        - desktop
+        - one view
+        - view hamdles input
+    - model-view-viewmodel
+        - multiple views
+        - view hamdles input
+        - removes coupling between view and model
+<!--     - domain-driven design -->
