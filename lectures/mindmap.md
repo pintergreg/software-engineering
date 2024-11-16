@@ -3,7 +3,7 @@ title: software engineering
 markmap:
   colorFreezeLevel: 3
   initialExpandLevel: 2
-# markmap -o mindmap.html --offline --no-open  mindmap.md
+# markmap -o mindmap.html --offline --no-open mindmap.md
 ---
 
 ## SDLC
@@ -290,3 +290,17 @@ markmap:
         - detailed design elements (logos)
 - wireframe map
     - shows user flow
+
+### interface
+
+- like an agreement
+- shared boundary across two or more components
+- a boundary where a module can be separated
+- separation of concerns
+- hides inner details
+- communicate change
+    - between teams during design
+    - API level
+    - code level
+
+## design patterns
