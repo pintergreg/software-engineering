@@ -196,7 +196,7 @@ markmap:
     - skeleton
 
     
-## modelling
+## design
 
 ### unified modelling language
 
@@ -259,3 +259,34 @@ markmap:
         - if required, it can zoom into an individual component
         - but show only those attributes and methods that really needed for the storytelling
         - UML class diagram can be used
+
+### wireframing
+
+- UI/UX designers' responsibility
+- iterative process
+    - presented to the stakeholders
+    - feedback
+- wireframe
+    - outline / blueprint / concept art
+    - visual understanding 
+        - structure, layout, user flow, functionality and intended behaviours
+    - low fidelity
+        - first sketch
+        - simple
+        - don't include actual content
+        - don't consider scale or pixel accuracy
+        - can be hand-drawn
+    - mid fidelity
+        - more details
+        - usually no images, typography
+        - no colors, grayscale
+        - usually made with digital tool
+    - high fidelity
+        - finalising the design
+            - can be an initial prototype
+        - created using a digital tool
+        - pixel-specific layouts
+        - has actual typography, 
+        - detailed design elements (logos)
+- wireframe map
+    - shows user flow
