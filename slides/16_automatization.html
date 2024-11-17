@@ -842,19 +842,20 @@ at GitHub, pull request #31768</a></figcaption>
 <section id="vulnerability-alerts" class="slide level2">
 <h2>vulnerability alerts</h2>
 <div class="columns">
-<div class="column mt-3" style="width:65%;">
+<div class="column mt-1" style="width:65%;">
 <ul>
 <li>Common Vulnerabilities and Exposures (CVE)
 <ul>
 <li>a dictionary of common names (i.e., CVE Identifiers) for publicly
 known information security vulnerabilities <span class="citation"
 data-cites="enwiki:1256072917">[6]</span></li>
+<li>Apple’s “goto fail” issue is officially called CVE-2014-1266</li>
 </ul></li>
 <li>GitHub <a
 href="https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide">Dependabot</a>
 <ul>
 <li>uses package manager</li>
-<li>e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), pip
+<li>e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry
 (Python)</li>
 <li>checks dependencies for vulnerabilities</li>
 </ul></li>
@@ -893,6 +894,31 @@ class="sourceCode toml"><code class="sourceCode toml"><span id="cb1-1"><a href="
 <aside class="notes">
 <p>GitLab also has a similar solution</p>
 </aside>
+</section>
+<section id="dependencies" class="slide level2">
+<h2>dependencies</h2>
+<div class="columns">
+<div class="column mt-4" style="width:60%;">
+<ul>
+<li>choose carefully the software packages / components your software
+will depend on</li>
+<li>use well maintained software modules</li>
+<li>unmaintained modules have potential vulnerabilities</li>
+<li>aim for loose coupling regarding the dependency
+<ul>
+<li>makes it easier to replace if needed</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/borrowed/xkcd/dependency_2x.png" width="350"
+alt="Dependency by Randall Munroe | CC BY-NC 2.5" />
+<figcaption aria-hidden="true"><a
+href="https://xkcd.com/2347/">Dependency</a> by Randall Munroe | <a
+href="https://creativecommons.org/licenses/by-nc/2.5/">CC BY-NC 2.5</a></figcaption>
+</figure>
+</div>
+</div>
 </section></section>
 <section>
 <section id="interruption" class="title-slide slide level1">
