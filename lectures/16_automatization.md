@@ -554,9 +554,10 @@ just decrease the work by automatizing trivial tasks
 ## vulnerability alerts
 
 :::::::::::: {.columns}
-::::::::: {.column width="65%" .mt-3}
+::::::::: {.column width="65%" .mt-1}
 - Common Vulnerabilities and Exposures (CVE)
     - a dictionary of common names (i.e., CVE Identifiers) for publicly known information security vulnerabilities [@enwiki:1256072917]
+    - Apple's "goto fail" issue is officially called CVE-2014-1266
 - GitHub [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
     - uses package manager
     - e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), pip (Python)
