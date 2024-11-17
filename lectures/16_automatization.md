@@ -560,7 +560,7 @@ just decrease the work by automatizing trivial tasks
     - Apple's "goto fail" issue is officially called CVE-2014-1266
 - GitHub [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
     - uses package manager
-    - e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), pip (Python)
+    - e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry (Python)
     - checks dependencies for vulnerabilities
 
 :::::::::
@@ -600,6 +600,23 @@ Python dependencies managed by poetry
 ::: notes
 GitLab also has a similar solution
 :::
+
+
+## dependencies
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-4}
+- choose carefully the software packages / components your software will depend on
+- use well maintained software modules
+- unmaintained modules have potential vulnerabilities
+- aim for loose coupling regarding the dependency
+    - makes it easier to replace if needed
+:::::::::
+::::::::: {.column width="40%"}
+![[Dependency](https://xkcd.com/2347/) by Randall Munroe | [CC&nbsp;BY-NC&nbsp;2.5](https://creativecommons.org/licenses/by-nc/2.5/)](figures/borrowed/xkcd/dependency_2x.png){width=350}
+
+:::::::::
+::::::::::::
 
 
 # interruption
