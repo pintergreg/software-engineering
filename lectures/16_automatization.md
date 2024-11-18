@@ -818,9 +818,10 @@ table: KDE / Plasma 6.1 series [release schedule](https://community.kde.org/Sche
     - takes time to understand
 - context switching is costly
     - switching between tasks
-    - that is why it is advisable to define small tasks during the sprint planning
-        - 1--4 hours, but ideally closer to 1
-        - preventing interruption
+- that is why it is advisable to define small tasks during the sprint planning
+    - 1--4 hours, but ideally closer to 1
+    - preventing interruption
+    - a programmer probably get one uninterrupted 2-hour session in a day [@parnin2013programmer]
 <!--     - [also withing a OS / CPU]{.text-smaller} -->
 
 
@@ -829,9 +830,10 @@ table: KDE / Plasma 6.1 series [release schedule](https://community.kde.org/Sche
 :::::::::::: {.columns}
 ::::::::: {.column width="60%" .mt-3}
 - according to a study, the average lost time per major interruption is **23 minutes** [@mark2008cost]
-    - for developers, it could be far worse
+    - for developers, it could be worse
+    - according to another study it is at least 15 minutes [@parnin2013programmer]
 - "getting back to the exact state of mind you were at right before an interruption is nearly impossible" [@to2018cost]
-- planned and unplanned interruptions
+- interruptions can be planned and unplanned
 
 :::::::::
 ::::::::: {.column width="40%"}
@@ -874,6 +876,39 @@ source: [The Cost of Interruption for Software Developers](https://www.brightdev
 source: [The Cost of Interruption for Software Developers](https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/) -- by Steven To [@to2018cost]
 :::
 
+
+## techniques to minimize context switching
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="50%"}
+- time blocking
+    - divide workday into blocks
+- time batching
+    - do similar tasks in a batch
+- prioritize tasks
+- tackle the biggest task first in the morning
+- turn off notifications
+- adopt asynchronous communication
+    - e-mail, documentation, [ADR]{.tooltip title="architecture decision record"}
+
+::: {.text-smaller}
+source: [The high price of context switching for developers & ways to avoid it](https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/) [@pande2021high]
+:::
+
+:::::::::
+::::::::: {.column width="50%"}
+![ideal, very bad, much better schedule](figures/time_blocking.drawio.svg){width=400}
+:::::::::
+::::::::::::
+
+<!--- "eat the frog" 
+    - frog is a metaphor for the biggest and most important task-->
+
+<!--
+## pomodoro technique
+
+::: {}
+:::-->
 
 # references
 
