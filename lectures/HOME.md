@@ -184,11 +184,13 @@ MVC-MVP-MVVM
 
 ### readings
 
-- [The Cost of Interruption for Software Developers](https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/) - by Steven To
 - [Version control concepts and best practices](https://homes.cs.washington.edu/~mernst/advice/version-control.html) - by Michael Ernst
 - [Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html) - by Martin Fowler
 - [What Is Software Deployment? Process and Best Practices](https://learn.g2.com/software-deployment) - by Washija Kazim 
 - [11 DevOps Principles and Practices to Master: Pro Advice](https://roadmap.sh/devops/principles) - by Fernando Doglio
+- [The Cost of Interruption for Software Developers](https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/) - by Steven To
+- [The high price of context switching for developers & ways to avoid it](https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/) - by Nitin Pande
+- [Programmer Interrupted ](http://blog.ninlabs.com/2013/01/programmer-interrupted/) - by Chris Parnin
 
 #### optional
 - [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model) - by Vincent Driessen
