@@ -190,6 +190,11 @@ MVC-MVP-MVVM
 - [What Is Software Deployment? Process and Best Practices](https://learn.g2.com/software-deployment) - by Washija Kazim 
 - [11 DevOps Principles and Practices to Master: Pro Advice](https://roadmap.sh/devops/principles) - by Fernando Doglio
 
+#### optional
+- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model) - by Vincent Driessen
+    - a criticism: [A succesful Git branching model considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful) - by Jussi Judin
+- a [comparison of branching strategies](https://dev.to/scottshipp/war-of-the-git-flows-3ec2) - by Scott Shipp
+
 ## week 12
 
 1. summary
