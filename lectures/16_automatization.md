@@ -950,5 +950,5 @@ source: [The high price of context switching for developers & ways to avoid it](
 
 # references
 
-::: {#refs}
+::: {#refs .text-smaller}
 :::
