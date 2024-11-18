@@ -671,6 +671,44 @@ Also, think over depending on a huge package (with multiple dependencies itself)
 :::
 
 
+# daily work
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+- select a task from backlog
+- read and understand it
+- create a feature branch
+
+![](figures/daily_work_1.drawio.svg){width=600}
+:::
+::: {.fragment .current-visible data-fragment-index=1}
+- write code, possibly using [TDD]{.tooltip title="test-driven development"}
+- local unit testing, checks
+- open a pull request (initiate merge)
+
+![](figures/daily_work_2.drawio.svg){width=600}
+:::
+::: {.fragment .current-visible data-fragment-index=2}
+- pull requests used to manage review
+- trigger for  [CI]{.tooltip title="continuous integration"} to run automated tests, static code analysis, generate reports, etc.
+- while your work is reviewed, start working on another task / review other's work
+
+![](figures/daily_work_3.drawio.svg){width=600}
+:::
+::: {.fragment .current-visible data-fragment-index=3}
+- if everything is fine, the task is done
+- eventually the change will be in production at the end users
+- as a part of a release
+    - a release can group together multiple changes
+    - then, scrum start a new iteration, or kanban continues as always
+- using some kind of deployment strategy
+
+
+![](figures/daily_work_4b.drawio.svg){width=600}
+:::
+:::::
+
+
 # release versioning
 
 :::::::::::: {.columns}
