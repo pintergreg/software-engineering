@@ -464,6 +464,65 @@ href="https://homes.cs.washington.edu/~mernst/advice/version-control.html">Versi
 control concepts and best practices</a> - by Michael Ernst <span
 class="citation" data-cites="ernst2012version">[1]</span></p>
 </div>
+</section>
+<section id="feature-branching" class="slide level2">
+<h2>feature branching</h2>
+<p><img data-src="figures/branching.svg" width="625" /></p>
+<div class="columns">
+<div class="column text-smaller" style="width:50%;">
+<ul>
+<li>copy-modify-merge version tracking gave a viable solution for
+parallel development
+<ul>
+<li><span class="text-smaller">but separating the “workspace” is still
+beneficial</span></li>
+</ul></li>
+<li>each developed feature has its own branch, which is merged to the
+mainline after completion</li>
+</ul>
+</div><div class="column text-smaller" style="width:50%;">
+<p>when to make a commit?</p>
+<ol type="1">
+<li>when you completed a unit of work</li>
+<li>when you have changes you may want to undo</li>
+</ol>
+<div class="text-smaller">
+<p>source: <a
+href="https://dev.to/gonedark/when-to-make-a-git-commit">When to make a
+Git Commit</a> <span class="citation"
+data-cites="mccreary2017when">[2]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="branching-strategies" class="slide level2">
+<h2>branching strategies</h2>
+<ul>
+<li>branching is more than just separating workspace, work-in-progress
+code from released
+<ul>
+<li>also for managing stable (released) versions</li>
+<li>and bugfixing though multiple versions</li>
+</ul></li>
+</ul>
+<div class="r-frame border-color-lightblue text-align-left mt-2">
+<ul>
+<li><a href="https://nvie.com/posts/a-successful-git-branching-model">A
+successful Git branching model</a> <span class="citation"
+data-cites="driessen2010successful">[3]</span>
+<ul>
+<li>introduced in 2010</li>
+<li>a criticism: <a
+href="https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful">A
+succesful Git branching model considered harmful</a> <span
+class="citation" data-cites="judin2016succesful">[4]</span></li>
+</ul></li>
+<li>a <a
+href="https://dev.to/scottshipp/war-of-the-git-flows-3ec2">comparison of
+branching strategies</a> <span class="citation"
+data-cites="shipp2019war">[5]</span></li>
+</ul>
+</div>
 </section></section>
 <section>
 <section id="continuous-integration-ci"
@@ -564,11 +623,11 @@ width="300" /></p>
 <ul>
 <li>continuous integration ensures everyone integrates their code to the
 mainline <span class="citation"
-data-cites="fowler2024continuous">[2]</span></li>
+data-cites="fowler2024continuous">[6]</span></li>
 <li>“Continuous Deployment means the product is automatically released
 to production whenever it passes all the automated tests in the
 deployment pipeline.” – Martin Fowler <span class="citation"
-data-cites="fowler2024continuous">[2]</span></li>
+data-cites="fowler2024continuous">[6]</span></li>
 </ul>
 </div><div class="column" style="width:35%;">
 <p><img
@@ -592,7 +651,7 @@ scheduler)</li>
 <section id="bluegreen-deployment-enwiki1249842339"
 class="slide level2">
 <h2>blue–green deployment <span class="citation"
-data-cites="enwiki:1249842339">[3]</span></h2>
+data-cites="enwiki:1249842339">[7]</span></h2>
 <p><img data-src="figures/blue_green_deployment_v2.drawio.svg"
 width="700" /></p>
 <div class="columns column-gapless">
@@ -656,7 +715,7 @@ width="400" /></p>
 deployment technique, but it works similarly to canary deployment. It
 involves reviewing two versions of updates in small set of users to
 identify which version perform better. <span class="citation"
-data-cites="kazim2023what">[4]</span></p>
+data-cites="kazim2023what">[8]</span></p>
 </div>
 </section>
 <section id="devops" class="slide level2">
@@ -671,7 +730,7 @@ class="text-color-secondary">s</span>
 <li><span class="text-smaller">collaboration</span></li>
 </ul></li>
 <li>agile mindset, set of principles <span class="citation"
-data-cites="gitlab2022four">[5]</span>
+data-cites="gitlab2022four">[9]</span>
 <ul>
 <li><span class="text-smaller">automation of the <span class="tooltip"
 title="software development lifecycle">SDLC</span></span></li>
@@ -848,7 +907,7 @@ at GitHub, pull request #31768</a></figcaption>
 <ul>
 <li>a dictionary of common names (i.e., CVE Identifiers) for publicly
 known information security vulnerabilities <span class="citation"
-data-cites="enwiki:1256072917">[6]</span></li>
+data-cites="enwiki:1256072917">[10]</span></li>
 <li>Apple’s “goto fail” issue is officially called CVE-2014-1266</li>
 </ul></li>
 <li>GitHub <a
@@ -919,6 +978,16 @@ href="https://creativecommons.org/licenses/by-nc/2.5/">CC BY-NC 2.5</a></figca
 </figure>
 </div>
 </div>
+<aside class="notes">
+<p>I always advocate that do not reinvent the wheel. If there is a
+common task, it is probably better to use a library that already
+implements the function. On the other hand, always be careful which
+package you depend on. Unmaintained modules have potential
+vulnerabilities. Aim for loose coupling regarding the dependency, which
+makes it easier to replace if needed. Also, think over depending on a
+huge package (with multiple dependencies itself) for just a single
+function.</p>
+</aside>
 </section></section>
 <section>
 <section id="interruption" class="title-slide slide level1">
@@ -964,13 +1033,13 @@ planning
 <ul>
 <li>according to a study, the average lost time per major interruption
 is <strong>23 minutes</strong> <span class="citation"
-data-cites="mark2008cost">[7]</span>
+data-cites="mark2008cost">[11]</span>
 <ul>
 <li>for developers, it could be far worse</li>
 </ul></li>
 <li>“getting back to the exact state of mind you were at right before an
 interruption is nearly impossible” <span class="citation"
-data-cites="to2018cost">[8]</span></li>
+data-cites="to2018cost">[12]</span></li>
 <li>planned and unplanned interruptions</li>
 </ul>
 </div><div class="column" style="width:40%;">
@@ -986,7 +1055,7 @@ Lamb</a><br>used with the author’s permission</figcaption>
 <p>source: <a
 href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The
 Cost of Interruption for Software Developers</a> – by Steven To <span
-class="citation" data-cites="to2018cost">[8]</span></p>
+class="citation" data-cites="to2018cost">[12]</span></p>
 </div>
 </section>
 <section id="planned-and-unplanned-interruptions" class="slide level2">
@@ -1032,7 +1101,7 @@ meeting</span></li>
 <p>source: <a
 href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The
 Cost of Interruption for Software Developers</a> – by Steven To <span
-class="citation" data-cites="to2018cost">[8]</span></p>
+class="citation" data-cites="to2018cost">[12]</span></p>
 </div>
 </section></section>
 <section>
@@ -1088,7 +1157,7 @@ href="https://lkml.iu.edu/hypermail/linux/kernel/2210.0/00685.html">Linux
 Torvalds</a></span></li>
 </ul></li>
 <li>since version 3, TeX has used an idiosyncratic version numbering
-system <span class="citation" data-cites="enwiki:1253226188">[9]</span>
+system <span class="citation" data-cites="enwiki:1253226188">[13]</span>
 <ul>
 <li><span class="text-smaller">where updates have been indicated by
 adding an extra digit at the end of the decimal, so that the version
@@ -1250,8 +1319,41 @@ href="
                   https://homes.cs.washington.edu/~mernst/advice/version-control.html
 </a>, Sep-2012.</div>
 </div>
+<div id="ref-mccreary2017when" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J.
+McCreary, <span>“When to make a git commit.”</span> <a href="
+                   https://dev.to/gonedark/when-to-make-a-git-commit
+                    " class="uri">
+                   https://dev.to/gonedark/when-to-make-a-git-commit
+</a>, 11-Jan-2017.</div>
+</div>
+<div id="ref-driessen2010successful" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">V.
+Driessen, <span>“A successful git branching model.”</span> <a href="
+                   https://nvie.com/posts/a-successful-git-branching-model
+                    " class="uri">
+                   https://nvie.com/posts/a-successful-git-branching-model
+</a>, 05-Jan-2010.</div>
+</div>
+<div id="ref-judin2016succesful" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">J.
+Judin, <span>“A succesful git branching model considered
+harmful.”</span> <a href="
+                   https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful
+                    " class="uri">
+                   https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful
+</a>, 07-Feb-2016.</div>
+</div>
+<div id="ref-shipp2019war" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">S.
+Shipp, <span>“War of the git flows.”</span> <a href="
+                   https://dev.to/scottshipp/war-of-the-git-flows-3ec2
+                    " class="uri">
+                   https://dev.to/scottshipp/war-of-the-git-flows-3ec2
+</a>, 10-Sep-2019.</div>
+</div>
 <div id="ref-fowler2024continuous" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">M.
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">M.
 Fowler, <span>“Continuous integration.”</span> <a href="
                    https://martinfowler.com/articles/continuousIntegration.html
                     " class="uri">
@@ -1259,7 +1361,7 @@ Fowler, <span>“Continuous integration.”</span> <a href="
 </a>, 18-Jan-2024.</div>
 </div>
 <div id="ref-enwiki:1249842339" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div
+<div class="csl-left-margin">[7] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Blue–green
 deployment — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -1268,7 +1370,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Blue%E2%80%93green_deploy
 2024.</div>
 </div>
 <div id="ref-kazim2023what" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">W.
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">W.
 Kazim, <span>“What is software deployment? Process and best
 practices.”</span> <a href="
                    https://learn.g2.com/software-deployment
@@ -1277,7 +1379,7 @@ practices.”</span> <a href="
 </a>, 31-May-2023.</div>
 </div>
 <div id="ref-gitlab2022four" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div
+<div class="csl-left-margin">[9] </div><div
 class="csl-right-inline">GitLab, <span>“4 must-know DevOps
 principles.”</span> <a href="
                   https://about.gitlab.com/blog/2022/02/11/4-must-know-devops-principles
@@ -1286,7 +1388,7 @@ principles.”</span> <a href="
 </a>, 11-Feb-2022.</div>
 </div>
 <div id="ref-enwiki:1256072917" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div
+<div class="csl-left-margin">[10] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Common
 vulnerabilities and exposures — <span>Wikipedia</span><span>,</span> the
 free encyclopedia.”</span> <a
@@ -1295,14 +1397,14 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Common_Vulnerabilities_an
 2024.</div>
 </div>
 <div id="ref-mark2008cost" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">G.
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">G.
 Mark, D. Gudith, and U. Klocke, <span>“The cost of interrupted work:
 More speed and stress,”</span> in <em>Proceedings of the SIGCHI
 conference on human factors in computing systems</em>, 2008, pp.
 107–110.</div>
 </div>
 <div id="ref-to2018cost" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">S.
 To, <span>“The cost of interruption for software developers.”</span> <a
 href="
                    https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers
@@ -1311,7 +1413,7 @@ href="
 </a>, 03-May-2018.</div>
 </div>
 <div id="ref-enwiki:1253226188" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[9] </div><div
+<div class="csl-left-margin">[13] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“TeX —
 <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
 href="https://en.wikipedia.org/w/index.php?title=TeX&amp;oldid=1253226188"
