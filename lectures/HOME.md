@@ -196,6 +196,7 @@ MVC-MVP-MVVM
 - [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model) - by Vincent Driessen
     - a criticism: [A succesful Git branching model considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful) - by Jussi Judin
 - a [comparison of branching strategies](https://dev.to/scottshipp/war-of-the-git-flows-3ec2) - by Scott Shipp
+- [Why I don't like SemVer anymore](https://snarky.ca/why-i-dont-like-semver/) - by Brett Cannon
 
 ## week 12
 
