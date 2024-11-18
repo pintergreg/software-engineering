@@ -292,7 +292,10 @@ figcaption {
     border-color: var(--r-main-color); 
 }
 .border-color-secondary {
-    border-color: var(--r-links-color) !important; 
+    border-color: var(--r-link-color) !important; 
+}
+.border-color-lightblue {
+    border-color: #bee4fd !important; 
 }
 
 .svg-invert {
