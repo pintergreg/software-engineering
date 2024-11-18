@@ -1232,13 +1232,15 @@ style="width: 300px; height: 350px; object-fit: cover; object-position: 100% -75
 <li>context switching is costly
 <ul>
 <li>switching between tasks</li>
+</ul></li>
 <li>that is why it is advisable to define small tasks during the sprint
 planning
 <ul>
 <li>1–4 hours, but ideally closer to 1</li>
-<li>preventing interruption
+<li>preventing interruption</li>
+<li>a programmer probably get one uninterrupted 2-hour session in a day
+<span class="citation" data-cites="parnin2013programmer">[12]</span>
 <!--     - [also withing a OS / CPU]{.text-smaller} --></li>
-</ul></li>
 </ul></li>
 </ul>
 </section>
@@ -1249,14 +1251,16 @@ planning
 <ul>
 <li>according to a study, the average lost time per major interruption
 is <strong>23 minutes</strong> <span class="citation"
-data-cites="mark2008cost">[12]</span>
+data-cites="mark2008cost">[13]</span>
 <ul>
-<li>for developers, it could be far worse</li>
+<li>for developers, it could be worse</li>
+<li>according to another study it is at least 15 minutes <span
+class="citation" data-cites="parnin2013programmer">[12]</span></li>
 </ul></li>
 <li>“getting back to the exact state of mind you were at right before an
 interruption is nearly impossible” <span class="citation"
-data-cites="to2018cost">[13]</span></li>
-<li>planned and unplanned interruptions</li>
+data-cites="to2018cost">[14]</span></li>
+<li>interruptions can be planned and unplanned</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <figure>
@@ -1271,7 +1275,7 @@ Lamb</a><br>used with the author’s permission</figcaption>
 <p>source: <a
 href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The
 Cost of Interruption for Software Developers</a> – by Steven To <span
-class="citation" data-cites="to2018cost">[13]</span></p>
+class="citation" data-cites="to2018cost">[14]</span></p>
 </div>
 </section>
 <section id="planned-and-unplanned-interruptions" class="slide level2">
@@ -1317,8 +1321,54 @@ meeting</span></li>
 <p>source: <a
 href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The
 Cost of Interruption for Software Developers</a> – by Steven To <span
-class="citation" data-cites="to2018cost">[13]</span></p>
+class="citation" data-cites="to2018cost">[14]</span></p>
 </div>
+</section>
+<section id="techniques-to-minimize-context-switching"
+class="slide level2">
+<h2>techniques to minimize context switching</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:50%;">
+<ul>
+<li>time blocking
+<ul>
+<li>divide workday into blocks</li>
+</ul></li>
+<li>time batching
+<ul>
+<li>do similar tasks in a batch</li>
+</ul></li>
+<li>prioritize tasks</li>
+<li>tackle the biggest task first in the morning</li>
+<li>turn off notifications</li>
+<li>adopt asynchronous communication
+<ul>
+<li>e-mail, documentation, <span class="tooltip"
+title="architecture decision record">ADR</span></li>
+</ul></li>
+</ul>
+<div class="text-smaller">
+<p>source: <a
+href="https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/">The
+high price of context switching for developers &amp; ways to avoid
+it</a> <span class="citation" data-cites="pande2021high">[15]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="figures/time_blocking.drawio.svg" width="400"
+alt="ideal, very bad, much better schedule" />
+<figcaption aria-hidden="true">ideal, very bad, much better
+schedule</figcaption>
+</figure>
+</div>
+</div>
+<!--- "eat the frog" 
+    - frog is a metaphor for the biggest and most important task-->
+<!--
+## pomodoro technique
+
+::: {}
+:::-->
 </section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
@@ -1417,21 +1467,36 @@ href="https://en.wikipedia.org/w/index.php?title=TeX&amp;oldid=1253226188"
 class="uri">https://en.wikipedia.org/w/index.php?title=TeX&amp;oldid=1253226188</a>,
 2024.</div>
 </div>
+<div id="ref-parnin2013programmer" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">C.
+Parnin, <span>“Programmer, interrupted,”</span> in <em>2013 IEEE
+symposium on visual languages and human centric computing</em>, 2013,
+pp. 171–172.</div>
+</div>
 <div id="ref-mark2008cost" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">G.
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">G.
 Mark, D. Gudith, and U. Klocke, <span>“The cost of interrupted work:
 More speed and stress,”</span> in <em>Proceedings of the SIGCHI
 conference on human factors in computing systems</em>, 2008, pp.
 107–110.</div>
 </div>
 <div id="ref-to2018cost" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">S.
 To, <span>“The cost of interruption for software developers.”</span> <a
 href="
                    https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers
                     " class="uri">
                    https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers
 </a>, 03-May-2018.</div>
+</div>
+<div id="ref-pande2021high" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">N.
+Pande, <span>“The high price of context switching for developers &amp;
+ways to avoid it.”</span> <a href="
+                   https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/
+                    " class="uri">
+                   https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/
+</a>, 23-Apr-2021.</div>
 </div>
 </div>
 </section>
