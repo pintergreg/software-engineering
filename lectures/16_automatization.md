@@ -281,6 +281,43 @@ the figures are based on [Version control concepts and best practices](https://h
 :::
 
 
+## feature branching
+
+![](figures/branching.svg){width=625}
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .text-smaller}
+- copy-modify-merge version tracking gave a viable solution for parallel development
+    - [but separating the "workspace" is still beneficial]{.text-smaller}
+- each developed feature has its own branch, which is merged to the mainline after completion
+:::::::::
+::::::::: {.column width="50%" .text-smaller}
+when to make a commit?
+
+1. when you completed a unit of work
+2. when you have changes you may want to undo
+
+::: {.text-smaller}
+source: [When to make a Git Commit ](https://dev.to/gonedark/when-to-make-a-git-commit) [@mccreary2017when]
+:::
+:::::::::
+::::::::::::
+
+
+## branching strategies
+
+- branching is more than just separating workspace, work-in-progress code from released
+    - also for managing stable (released) versions
+    - and bugfixing though multiple versions
+
+::: {.r-frame .border-color-lightblue .text-align-left .mt-2}
+- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model) [@driessen2010successful]
+    - introduced in 2010
+    - a criticism: [A succesful Git branching model considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful) [@judin2016succesful]
+- a [comparison of branching strategies](https://dev.to/scottshipp/war-of-the-git-flows-3ec2) [@shipp2019war]
+:::
+
+
 # continuous integration (CI)
 
 <!--:::::::::::: {.columns}
@@ -617,6 +654,15 @@ GitLab also has a similar solution
 
 :::::::::
 ::::::::::::
+
+::: notes
+I always advocate that do not reinvent the wheel.
+If there is a common task, it is probably better to use a library that already implements the function.
+On the other hand, always be careful which package you depend on.
+Unmaintained modules have potential vulnerabilities.
+Aim for loose coupling regarding the dependency, which makes it easier to replace if needed.
+Also, think over depending on a huge package (with multiple dependencies itself) for just a single function.
+:::
 
 
 # interruption
