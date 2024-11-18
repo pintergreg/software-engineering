@@ -320,18 +320,24 @@ source: [When to make a Git Commit ](https://dev.to/gonedark/when-to-make-a-git-
 
 # continuous integration (CI)
 
-<!--:::::::::::: {.columns}
-::::::::: {.column width="70%"}-->
+::: {.text-smaller}
+> Continuous Integration is a software development practice where each member of a team merges their changes into a codebase together with their colleagues changes at least daily. 
+>
+> -- Martin Fowler [@fowler2024continuous]
+
+:::
+
+- emerged from extreme programming
+- considered an agile approach
+- gives immediate feedback
+    - the integration (merging) will fail if two branches are not compatible
+    - and build the integrated software
+- also gives opportunity to do testing on the built software...
+
+
+## continuous integration
+
 ![](figures/ci.drawio.svg){width=625}
-
-<!--:::::::::
-::::::::: {.column width="30%" .text-smaller}
-- extreme programming
-- agile
-- immediate feedback
-
-:::::::::
-::::::::::::-->
 
 
 ## continuous integration environment
