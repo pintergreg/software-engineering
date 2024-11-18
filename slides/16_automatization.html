@@ -1002,6 +1002,54 @@ huge package (with multiple dependencies itself) for just a single
 function.</p>
 </aside>
 </section></section>
+<section id="daily-work" class="title-slide slide level1">
+<h1>daily work</h1>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<ul>
+<li>select a task from backlog</li>
+<li>read and understand it</li>
+<li>create a feature branch</li>
+</ul>
+<p><img data-src="figures/daily_work_1.drawio.svg" width="600" /></p>
+</div>
+<div class="fragment current-visible" data-fragment-index="1">
+<ul>
+<li>write code, possibly using <span class="tooltip"
+title="test-driven development">TDD</span></li>
+<li>local unit testing, checks</li>
+<li>open a pull request (initiate merge)</li>
+</ul>
+<p><img data-src="figures/daily_work_2.drawio.svg" width="600" /></p>
+</div>
+<div class="fragment current-visible" data-fragment-index="2">
+<ul>
+<li>pull requests used to manage review</li>
+<li>trigger for <span class="tooltip"
+title="continuous integration">CI</span> to run automated tests, static
+code analysis, generate reports, etc.</li>
+<li>while your work is reviewed, start working on another task / review
+other’s work</li>
+</ul>
+<p><img data-src="figures/daily_work_3.drawio.svg" width="600" /></p>
+</div>
+<div class="fragment current-visible" data-fragment-index="3">
+<ul>
+<li>if everything is fine, the task is done</li>
+<li>eventually the change will be in production at the end users</li>
+<li>as a part of a release
+<ul>
+<li>a release can group together multiple changes</li>
+<li>then, scrum start a new iteration, or kanban continues as
+always</li>
+</ul></li>
+<li>using some kind of deployment strategy</li>
+</ul>
+<p><img data-src="figures/daily_work_4b.drawio.svg" width="600" /></p>
+</div>
+</div>
+</section>
+
 <section>
 <section id="release-versioning" class="title-slide slide level1">
 <h1>release versioning</h1>
