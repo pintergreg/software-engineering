@@ -205,7 +205,7 @@ the figures are based on Figure 2.3 of the [TortoiseSVN documentation](https://t
 
 :::::::::::: {.columns}
 ::::::::: {.column width="25%"}
-![lock before read](figures/vcs_read.drawio.svg){width=200}
+![read the same file](figures/vcs_read.drawio.svg){width=200}
 
 :::::::::
 ::::::::: {.column width="25%"}
