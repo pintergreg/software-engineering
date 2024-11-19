@@ -2870,6 +2870,11 @@ alt="feature branching" />
 <section id="continuous-integration-environment" class="slide level2">
 <h2>continuous integration environment</h2>
 <p><img data-src="figures/ci_environment.drawio.svg" width="700" /></p>
+<ul>
+<li>scheduled build</li>
+<li>nightly build: scheduled build during night time because for large
+software a full build (with all tests) could take hours</li>
+</ul>
 </section>
 <section id="build-script" class="slide level2">
 <h2>build script</h2>
@@ -2890,13 +2895,6 @@ data-src="figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg"
 width="300" /></p>
 </div>
 </div>
-</section>
-<section id="scheduled-build" class="slide level2">
-<h2>scheduled build</h2>
-<p><img data-src="figures/ci_environment_schedule.drawio.svg"
-width="700" /></p>
-<p>nightly build: scheduled build during night time because for large
-software a full build (with all tests) could take hours</p>
 </section></section>
 <section>
 <section id="continuous-deployment-cd" class="title-slide slide level1">
@@ -3037,7 +3035,6 @@ Doglio</p>
 </div>
 </section>
 
-<section>
 <section id="automatized-review" class="title-slide slide level1">
 <h1>automatized review</h1>
 <div class="columns">
@@ -3047,11 +3044,19 @@ Doglio</p>
 environment</li>
 <li>do static code analysis
 <ul>
-<li>analyzing the code without execution</li>
-<li>searching for syntax errors, styling issues, bad practices or code
-smells</li>
+<li><span class="text-smaller">analyzing the code without
+execution</span></li>
+<li><span class="text-smaller">searching for syntax errors, styling
+issues, bad practices or code smells</span></li>
 </ul></li>
 <li>run test suite</li>
+<li>vulnerability alerts
+<ul>
+<li><span class="text-smaller">uses package manager’s dependency info to
+checks for vulnerabilities (<span class="tooltip"
+title="Common Vulnerabilities and Exposures">CVE</span>) among
+dependencies</span></li>
+</ul></li>
 <li>generate review report from the findings</li>
 </ul>
 <div class="fragment mt-2">
@@ -3068,62 +3073,7 @@ width="300" /></p>
 </div>
 </div>
 </section>
-<section id="vulnerability-alerts" class="slide level2">
-<h2>vulnerability alerts</h2>
-<div class="columns">
-<div class="column mt-1" style="width:65%;">
-<ul>
-<li>Common Vulnerabilities and Exposures (CVE)
-<ul>
-<li>a dictionary of common names (i.e., CVE Identifiers) for publicly
-known information security vulnerabilities <span class="citation"
-data-cites="enwiki:1256072917">[33]</span></li>
-<li>Apple’s “goto fail” issue is officially called CVE-2014-1266</li>
-</ul></li>
-<li>GitHub <a
-href="https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide">Dependabot</a>
-<ul>
-<li>uses package manager</li>
-<li>e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry
-(Python)</li>
-<li>checks dependencies for vulnerabilities</li>
-</ul></li>
-</ul>
-</div><div class="column text-smaller" style="width:35%;">
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode toml"><code class="sourceCode toml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.poetry.dependencies]</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">python</span> <span class="op">=</span> <span class="st">&quot;^3.12&quot;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dt">numpy</span> <span class="op">=</span> <span class="st">&quot;^1.26.3&quot;</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="dt">pandas</span> <span class="op">=</span> <span class="st">&quot;^2.2&quot;</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="dt">geopandas</span> <span class="op">=</span> <span class="st">&quot;^1.0&quot;</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="dt">networkx</span> <span class="op">=</span> <span class="st">&quot;^3.2.1&quot;</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="dt">osmnx</span> <span class="op">=</span> <span class="st">&quot;^1.6.0&quot;</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="dt">matplotlib</span> <span class="op">=</span> <span class="st">&quot;^3.8.2&quot;</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="dt">seaborn</span> <span class="op">=</span> <span class="st">&quot;^0.13.0&quot;</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="dt">contextily</span> <span class="op">=</span> <span class="st">&quot;^1.3.0&quot;</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="dt">opencv-python</span> <span class="op">=</span> <span class="st">&quot;^4.9.0&quot;</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="dt">pyaml</span> <span class="op">=</span> <span class="st">&quot;^23.9.7&quot;</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="dt">pyogrio</span> <span class="op">=</span> <span class="st">&quot;^0.7&quot;</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="dt">pyarrow</span> <span class="op">=</span> <span class="st">&quot;^15.0.0&quot;</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="dt">scipy</span> <span class="op">=</span> <span class="st">&quot;^1.12.0&quot;</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="dt">haversine</span> <span class="op">=</span> <span class="st">&quot;^2.8.1&quot;</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="dt">mapclassify</span> <span class="op">=</span> <span class="st">&quot;^2.6.1&quot;</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="dt">openpyxl</span> <span class="op">=</span> <span class="st">&quot;^3.1.2&quot;</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="dt">ecomplexity</span> <span class="op">=</span> <span class="st">&quot;^0.5.2&quot;</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="dt">structlog</span> <span class="op">=</span> <span class="st">&quot;^24.1.0&quot;</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="dt">h3</span> <span class="op">=</span> <span class="st">&quot;^3.7.7&quot;</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="dt">pandarallel</span> <span class="op">=</span> <span class="st">&quot;^1.6.5&quot;</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="dt">jinja2</span> <span class="op">=</span> <span class="st">&quot;^3.1.4&quot;</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="dt">tabulate</span> <span class="op">=</span> <span class="st">&quot;^0.9.0&quot;</span></span></code></pre></div>
-<div class="text-smaller">
-<p>Python dependencies managed by poetry</p>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>GitLab also has a similar solution</p>
-</aside>
-</section></section>
+
 <section>
 <section id="semantic-versioning" class="title-slide slide level1">
 <h1>semantic versioning</h1>
@@ -3221,17 +3171,17 @@ style="width: 300px; height: 350px; object-fit: cover; object-position: 100% -75
 <ul>
 <li><span class="text-smaller">“getting back to the exact state of mind
 you were at right before an interruption is nearly impossible” <span
-class="citation" data-cites="to2018cost">[34]</span></span></li>
+class="citation" data-cites="to2018cost">[33]</span></span></li>
 </ul></li>
 <li>according to a study, the average lost time per major interruption
 is <strong>23 minutes</strong> <span class="citation"
-data-cites="mark2008cost">[35]</span>
+data-cites="mark2008cost">[34]</span>
 <ul>
 <li><span class="text-smaller">for developers, it could be
 worse</span></li>
 <li><span class="text-smaller">according to another study it is at least
 15 minutes <span class="citation"
-data-cites="parnin2013programmer">[36]</span></span></li>
+data-cites="parnin2013programmer">[35]</span></span></li>
 </ul></li>
 <li>define small tasks during the sprint planning to preventing
 interruption
@@ -3240,7 +3190,7 @@ interruption
 1</span></li>
 <li><span class="text-smaller">a programmer probably get one
 uninterrupted 2-hour session in a day <span class="citation"
-data-cites="parnin2013programmer">[36]</span></span></li>
+data-cites="parnin2013programmer">[35]</span></span></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:35%;">
@@ -3256,7 +3206,7 @@ Lamb</a><br>used with the author’s permission</figcaption>
 <p>source: <a
 href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The
 Cost of Interruption for Software Developers</a> – by Steven To <span
-class="citation" data-cites="to2018cost">[34]</span></p>
+class="citation" data-cites="to2018cost">[33]</span></p>
 </div>
 </section>
 <section id="planned-and-unplanned-interruptions" class="slide level2">
@@ -3302,7 +3252,7 @@ meeting</span></li>
 <p>source: <a
 href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The
 Cost of Interruption for Software Developers</a> – by Steven To <span
-class="citation" data-cites="to2018cost">[34]</span></p>
+class="citation" data-cites="to2018cost">[33]</span></p>
 </div>
 </section>
 <section id="techniques-to-minimize-context-switching"
@@ -3332,7 +3282,7 @@ title="architecture decision record">ADR</span></li>
 <p>source: <a
 href="https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/">The
 high price of context switching for developers &amp; ways to avoid
-it</a> <span class="citation" data-cites="pande2021high">[37]</span></p>
+it</a> <span class="citation" data-cites="pande2021high">[36]</span></p>
 </div>
 </div><div class="column" style="width:50%;">
 <figure>
@@ -3600,17 +3550,8 @@ principles.”</span> <a href="
                   https://about.gitlab.com/blog/2022/02/11/4-must-know-devops-principles
 </a>, 11-Feb-2022.</div>
 </div>
-<div id="ref-enwiki:1256072917" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[33] </div><div
-class="csl-right-inline">Wikipedia contributors, <span>“Common
-vulnerabilities and exposures — <span>Wikipedia</span><span>,</span> the
-free encyclopedia.”</span> <a
-href="https://en.wikipedia.org/w/index.php?title=Common_Vulnerabilities_and_Exposures&amp;oldid=1256072917"
-class="uri">https://en.wikipedia.org/w/index.php?title=Common_Vulnerabilities_and_Exposures&amp;oldid=1256072917</a>,
-2024.</div>
-</div>
 <div id="ref-to2018cost" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[34] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[33] </div><div class="csl-right-inline">S.
 To, <span>“The cost of interruption for software developers.”</span> <a
 href="
                    https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers
@@ -3619,20 +3560,20 @@ href="
 </a>, 03-May-2018.</div>
 </div>
 <div id="ref-mark2008cost" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[35] </div><div class="csl-right-inline">G.
+<div class="csl-left-margin">[34] </div><div class="csl-right-inline">G.
 Mark, D. Gudith, and U. Klocke, <span>“The cost of interrupted work:
 More speed and stress,”</span> in <em>Proceedings of the SIGCHI
 conference on human factors in computing systems</em>, 2008, pp.
 107–110.</div>
 </div>
 <div id="ref-parnin2013programmer" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[36] </div><div class="csl-right-inline">C.
+<div class="csl-left-margin">[35] </div><div class="csl-right-inline">C.
 Parnin, <span>“Programmer, interrupted,”</span> in <em>2013 IEEE
 symposium on visual languages and human centric computing</em>, 2013,
 pp. 171–172.</div>
 </div>
 <div id="ref-pande2021high" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[37] </div><div class="csl-right-inline">N.
+<div class="csl-left-margin">[36] </div><div class="csl-right-inline">N.
 Pande, <span>“The high price of context switching for developers &amp;
 ways to avoid it.”</span> <a href="
                    https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/
