@@ -2765,6 +2765,585 @@ structure</li>
 </div>
 </section>
 
+<section id="what-to-automatize" class="title-slide slide level1">
+<h1>what to automatize?</h1>
+<div class="columns">
+<div class="column text-align-left" style="width:60%;">
+<p><em>repetitve tasks</em> of</p>
+<ul>
+<li>style guide compliance</li>
+<li>code smell finding</li>
+<li>code quality measurement</li>
+<li>review</li>
+<li>building</li>
+<li>testing</li>
+<li>deployment</li>
+</ul>
+<div class="text-smaller">
+<p>scripting: writing relatively short and simple code to automatize an
+otherwise manual process</p>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img
+data-src="figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+
+<section id="local-automatization-based-on-the-code-editor"
+class="title-slide slide level1">
+<h1>local automatization based on the code editor</h1>
+<div class="columns text-smaller">
+<div class="column" style="width:50%;">
+<p><strong>linting</strong></p>
+<ul>
+<li>a linter in modern editors behaves like a spell checker in a word
+processor
+<ul>
+<li>gives immediate feedback on syntax errors, styling issues or bad
+practices</li>
+</ul></li>
+<li>can detect some code smells</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>code formatting</strong></p>
+<ul>
+<li>reformat the source code to align with the style guide</li>
+<li>there are code formatters for many languages</li>
+<li>usually triggered by saving the file</li>
+</ul>
+</div>
+</div>
+<div class="columns mt-2">
+<div class="column mt-2" style="width:75%;">
+<ul>
+<li>needs a well configured editor (personal preferences)</li>
+<li>can help keeping the feedback loop fast</li>
+<li>decrease cost</li>
+<li>developers can focus on non-automatable tasks</li>
+</ul>
+</div><div class="column" style="width:25%;">
+<p><img data-src="figures/publicdomainvectors/programming-language.svg"
+width="250" /></p>
+</div>
+</div>
+</section>
+
+<section>
+<section id="continuous-integration-ci"
+class="title-slide slide level1">
+<h1>continuous integration (CI)</h1>
+<div class="text-smaller">
+<blockquote>
+<p>Continuous Integration is a software development practice where each
+member of a team merges their changes into a codebase together with
+their colleagues changes at least daily.</p>
+<p>– Martin Fowler <span class="citation"
+data-cites="fowler2024continuous">[29]</span></p>
+</blockquote>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="text-smaller">
+<ul>
+<li>emerged from extreme programming</li>
+<li>considered an agile approach</li>
+<li>gives immediate feedback
+<ul>
+<li>the integration (merging) will fail if two branches are not
+compatible</li>
+<li>and build the integrated software</li>
+</ul></li>
+<li>also gives opportunity to do testing on the built software…</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="figures/branching.svg" width="625"
+alt="feature branching" />
+<figcaption aria-hidden="true">feature branching</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="continuous-integration-environment" class="slide level2">
+<h2>continuous integration environment</h2>
+<p><img data-src="figures/ci_environment.drawio.svg" width="700" /></p>
+</section>
+<section id="build-script" class="slide level2">
+<h2>build script</h2>
+<div class="columns">
+<div class="column mt-4" style="width:65%;">
+<ul>
+<li>traditionally called build script</li>
+<li>responsible not only for building the software</li>
+<li>but also for running tests, generating reports
+<ul>
+<li>code coverage</li>
+</ul></li>
+<li>and even for packaging the software</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img
+data-src="figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="scheduled-build" class="slide level2">
+<h2>scheduled build</h2>
+<p><img data-src="figures/ci_environment_schedule.drawio.svg"
+width="700" /></p>
+<p>nightly build: scheduled build during night time because for large
+software a full build (with all tests) could take hours</p>
+</section></section>
+<section>
+<section id="continuous-deployment-cd" class="title-slide slide level1">
+<h1>continuous deployment (CD)</h1>
+<p><img data-src="figures/cd_environment_schedule.drawio.svg"
+width="700" /></p>
+<div class="text-smaller">
+<ul>
+<li>“Continuous Deployment means the product is automatically released
+to production whenever it passes all the automated tests in the
+deployment pipeline.” – Martin Fowler <span class="citation"
+data-cites="fowler2024continuous">[29]</span></li>
+<li>CD environment extension of a <span class="tooltip"
+title="continuous integration">CI</span> environment
+<ul>
+<li>triggers are the same</li>
+<li>deployment is another stage in the <em>build script</em></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="bluegreen-deployment-enwiki1249842339"
+class="slide level2">
+<h2>blue–green deployment <span class="citation"
+data-cites="enwiki:1249842339">[30]</span></h2>
+<p><img data-src="figures/blue_green_deployment_v2.drawio.svg"
+width="700" /></p>
+<div class="columns column-gapless">
+<div class="column" style="width:70%;">
+<div class="text-smaller">
+<ul>
+<li>two servers are maintained (“blue” and “green”)
+<ul>
+<li><span class="text-smaller">expensive</span></li>
+</ul></li>
+<li>at a given time, only one server is handling public request</li>
+<li>the other can be accessed only from a private network</li>
+<li>changes applied to the non-live server and verified</li>
+<li>when verified, the non-live server is swapped with the live
+server</li>
+</ul>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/test_pyramid_manual.drawio.svg"
+class="no-margin" width="200" /></p>
+</div>
+</div>
+</section>
+<section id="shadow-deployment" class="slide level2">
+<h2>shadow deployment</h2>
+<p><img data-src="figures/shadow_deployment.drawio.svg"
+width="650" /></p>
+<ul>
+<li>two servers are maintained (“live” and “shadow”)</li>
+<li>for testing the performance and stability requirements
+<ul>
+<li>on success, the release can be deployed to the live server as
+well</li>
+</ul></li>
+<li>specialized strategy, complex and (relatively) expensive to set
+up</li>
+</ul>
+</section>
+<section id="canary-deployment" class="slide level2">
+<h2>canary deployment</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>deployment in an incremental fashion</li>
+<li>starts with a small number of users</li>
+<li>and continues until 100% is reached</li>
+<li>allows to test updates in live environment
+<ul>
+<li>on small groups of users</li>
+<li>before deploying to many users</li>
+<li>may involve telemetry</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/canary_deployment.drawio.svg"
+width="400" /></p>
+</div>
+</div>
+<div class="fragment mt-2">
+<p><strong>A/B testing</strong> is more of a testing approach than a
+deployment technique, but it works similarly to canary deployment. It
+involves reviewing two versions of updates in small set of users to
+identify which version perform better. <span class="citation"
+data-cites="kazim2023what">[31]</span></p>
+</div>
+</section></section>
+<section id="devops" class="title-slide slide level1">
+<h1>devops</h1>
+<div class="columns column-gapless">
+<div class="column" style="width:55%;">
+<ul>
+<li>software <span class="text-color-secondary">dev</span>elopment + IT
+<span class="text-color-secondary">op</span>eration<span
+class="text-color-secondary">s</span>
+<ul>
+<li><span class="text-smaller">collaboration</span></li>
+</ul></li>
+<li>who is responsible for what?</li>
+<li>agile mindset, set of principles <span class="citation"
+data-cites="gitlab2022four">[32]</span>
+<ul>
+<li><span class="text-smaller">automation of the <span class="tooltip"
+title="software development lifecycle">SDLC</span></span></li>
+<li><span class="text-smaller">collaboration and
+communication</span></li>
+<li><span class="text-smaller">continuous improvement</span></li>
+<li><span class="text-smaller">focus on user needs with short feedback
+loops</span></li>
+</ul></li>
+<li>relies on automatization, <span class="tooltip"
+title="continuous integration">CI</span> and <span class="tooltip"
+title="continuous deployment">CD</span></li>
+<li>to build, test and release better software
+<ul>
+<li><span class="text-smaller">frequently, reliably, rapidly</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/borrowed/Devops-toolchain.svg" width="400"
+alt="by Kharnagy | CC BY-SA" />
+<figcaption aria-hidden="true">by <a
+href="https://commons.wikimedia.org/wiki/File:Devops-toolchain.svg">Kharnagy</a>
+| <a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-2">
+<p>further reading: <a href="https://roadmap.sh/devops/principles">11
+DevOps Principles and Practices to Master: Pro Advice</a> - by Fernando
+Doglio</p>
+</div>
+</section>
+
+<section>
+<section id="automatized-review" class="title-slide slide level1">
+<h1>automatized review</h1>
+<div class="columns">
+<div class="column mt-2" style="width:65%;">
+<ul>
+<li>using <span class="tooltip" title="continuous integration">CI</span>
+environment</li>
+<li>do static code analysis
+<ul>
+<li>analyzing the code without execution</li>
+<li>searching for syntax errors, styling issues, bad practices or code
+smells</li>
+</ul></li>
+<li>run test suite</li>
+<li>generate review report from the findings</li>
+</ul>
+<div class="fragment mt-2">
+<div class="text-color-secondary">
+<p>should not replace human reviewing</p>
+</div>
+<div class="text-smaller">
+<p>just decrease the work by automatizing trivial tasks</p>
+</div>
+</div>
+</div><div class="column" style="width:35%;">
+<p><img data-src="figures/publicdomainvectors/machine-learning.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="vulnerability-alerts" class="slide level2">
+<h2>vulnerability alerts</h2>
+<div class="columns">
+<div class="column mt-1" style="width:65%;">
+<ul>
+<li>Common Vulnerabilities and Exposures (CVE)
+<ul>
+<li>a dictionary of common names (i.e., CVE Identifiers) for publicly
+known information security vulnerabilities <span class="citation"
+data-cites="enwiki:1256072917">[33]</span></li>
+<li>Apple’s “goto fail” issue is officially called CVE-2014-1266</li>
+</ul></li>
+<li>GitHub <a
+href="https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide">Dependabot</a>
+<ul>
+<li>uses package manager</li>
+<li>e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry
+(Python)</li>
+<li>checks dependencies for vulnerabilities</li>
+</ul></li>
+</ul>
+</div><div class="column text-smaller" style="width:35%;">
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.poetry.dependencies]</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">python</span> <span class="op">=</span> <span class="st">&quot;^3.12&quot;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dt">numpy</span> <span class="op">=</span> <span class="st">&quot;^1.26.3&quot;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="dt">pandas</span> <span class="op">=</span> <span class="st">&quot;^2.2&quot;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="dt">geopandas</span> <span class="op">=</span> <span class="st">&quot;^1.0&quot;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="dt">networkx</span> <span class="op">=</span> <span class="st">&quot;^3.2.1&quot;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="dt">osmnx</span> <span class="op">=</span> <span class="st">&quot;^1.6.0&quot;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="dt">matplotlib</span> <span class="op">=</span> <span class="st">&quot;^3.8.2&quot;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="dt">seaborn</span> <span class="op">=</span> <span class="st">&quot;^0.13.0&quot;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="dt">contextily</span> <span class="op">=</span> <span class="st">&quot;^1.3.0&quot;</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="dt">opencv-python</span> <span class="op">=</span> <span class="st">&quot;^4.9.0&quot;</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="dt">pyaml</span> <span class="op">=</span> <span class="st">&quot;^23.9.7&quot;</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="dt">pyogrio</span> <span class="op">=</span> <span class="st">&quot;^0.7&quot;</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="dt">pyarrow</span> <span class="op">=</span> <span class="st">&quot;^15.0.0&quot;</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="dt">scipy</span> <span class="op">=</span> <span class="st">&quot;^1.12.0&quot;</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="dt">haversine</span> <span class="op">=</span> <span class="st">&quot;^2.8.1&quot;</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="dt">mapclassify</span> <span class="op">=</span> <span class="st">&quot;^2.6.1&quot;</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="dt">openpyxl</span> <span class="op">=</span> <span class="st">&quot;^3.1.2&quot;</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="dt">ecomplexity</span> <span class="op">=</span> <span class="st">&quot;^0.5.2&quot;</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="dt">structlog</span> <span class="op">=</span> <span class="st">&quot;^24.1.0&quot;</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="dt">h3</span> <span class="op">=</span> <span class="st">&quot;^3.7.7&quot;</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="dt">pandarallel</span> <span class="op">=</span> <span class="st">&quot;^1.6.5&quot;</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="dt">jinja2</span> <span class="op">=</span> <span class="st">&quot;^3.1.4&quot;</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="dt">tabulate</span> <span class="op">=</span> <span class="st">&quot;^0.9.0&quot;</span></span></code></pre></div>
+<div class="text-smaller">
+<p>Python dependencies managed by poetry</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>GitLab also has a similar solution</p>
+</aside>
+</section></section>
+<section>
+<section id="semantic-versioning" class="title-slide slide level1">
+<h1>semantic versioning</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/semver.drawio.svg" width="500" /></p>
+</div><div class="column text-medium mt-3" style="width:50%;">
+<ul>
+<li><strong>alpha</strong>: incomplete feature-wise, external release is
+uncommon for proprietary software
+<ul>
+<li>whitebox testing</li>
+</ul></li>
+<li><strong>beta</strong>: the software is feature-complete but contains
+several known or unknown bugs
+<ul>
+<li>blackbox testing</li>
+</ul></li>
+<li><strong>rc</strong>: release candidate, final touches
+<ul>
+<li>highest level testing</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="mt-1">
+<ol type="1">
+<li><strong>major</strong> version when you make incompatible <span
+class="tooltip" title="application programming interface">API</span>
+changes
+<ul>
+<li><span class="text-smaller">a way of communicating
+changes</span></li>
+</ul></li>
+<li><strong>minor</strong> version when you add functionality in a
+backward compatible manner</li>
+<li><strong>patch</strong> version when you make backward compatible bug
+fixes</li>
+</ol>
+<div class="text-smaller">
+<p>additional labels for pre-release and build metadata are available as
+extensions to the <code>major.minor.patch</code> format | from <a
+href="https://semver.org">semver.org</a></p>
+</div>
+</div>
+<aside class="notes">
+<p>optional reading: <a
+href="https://snarky.ca/why-i-dont-like-semver/">Why I don’t like SemVer
+anymore</a></p>
+</aside>
+</section>
+<section id="calendar-versioning" class="slide level2">
+<h2>calendar versioning</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/calver.drawio.svg" width="450" /></p>
+</div><div class="column mt-4" style="width:50%;">
+<p>format examples:</p>
+<ul>
+<li>YYYY.MINOR.PATCH
+<ul>
+<li><span class="text-smaller">micro is used instead of
+patch</span></li>
+</ul></li>
+<li>YYYY.MM.MINOR.PATCH</li>
+</ul>
+</div>
+</div>
+<p>“<em>CalVer</em> is a versioning convention based on your project’s
+release calendar, instead of arbitrary numbers.” | <a
+href="https://calver.org">calver.org</a></p>
+</section></section>
+<section>
+<section id="interruption" class="title-slide slide level1">
+<h1>interruption</h1>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="figures/borrowed/ProgrammerInterrupted.webp"
+style="width: 300px; height: 430px; object-fit: cover; object-position: 100% 0;" /></p>
+</div><div class="column fragment" style="width:33%;">
+<p><img data-src="figures/borrowed/ProgrammerInterrupted.webp"
+style="width: 300px; height: 323px; object-fit: cover; object-position: 100% -430px;" /></p>
+</div><div class="column fragment" style="width:33%;">
+<p><img data-src="figures/borrowed/ProgrammerInterrupted.webp"
+style="width: 300px; height: 350px; object-fit: cover; object-position: 100% -751px;" /></p>
+</div>
+</div>
+</section>
+<section id="the-cost-of-interruption" class="slide level2">
+<h2>the cost of interruption</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>the greatest “enemy” of a developer is interruption
+<ul>
+<li><span class="text-smaller">“getting back to the exact state of mind
+you were at right before an interruption is nearly impossible” <span
+class="citation" data-cites="to2018cost">[34]</span></span></li>
+</ul></li>
+<li>according to a study, the average lost time per major interruption
+is <strong>23 minutes</strong> <span class="citation"
+data-cites="mark2008cost">[35]</span>
+<ul>
+<li><span class="text-smaller">for developers, it could be
+worse</span></li>
+<li><span class="text-smaller">according to another study it is at least
+15 minutes <span class="citation"
+data-cites="parnin2013programmer">[36]</span></span></li>
+</ul></li>
+<li>define small tasks during the sprint planning to preventing
+interruption
+<ul>
+<li><span class="text-smaller">1–4 hours, but ideally closer to
+1</span></li>
+<li><span class="text-smaller">a programmer probably get one
+uninterrupted 2-hour session in a day <span class="citation"
+data-cites="parnin2013programmer">[36]</span></span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="figures/borrowed/quick_call.jpg" width="350"
+alt="© Ash Lamb used with the author’s permission" />
+<figcaption aria-hidden="true">© <a href="https://ashlamb.com/">Ash
+Lamb</a><br>used with the author’s permission</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The
+Cost of Interruption for Software Developers</a> – by Steven To <span
+class="citation" data-cites="to2018cost">[34]</span></p>
+</div>
+</section>
+<section id="planned-and-unplanned-interruptions" class="slide level2">
+<h2>planned and unplanned interruptions</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:50%;">
+<p><strong>unplanned</strong></p>
+<ul>
+<li>someone asks about something or to do something
+<ul>
+<li>usually a small task
+<ul>
+<li>informal review, advice, etc.</li>
+</ul></li>
+</ul></li>
+<li>mitigation
+<ul>
+<li>wear headphones (in open offices)</li>
+<li>notify in advance</li>
+</ul></li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<p><strong>planned</strong></p>
+<ul>
+<li>meetings, including standup</li>
+<li>standup is usually the first thing in a workday, not to divide the
+work time until lunch</li>
+<li>a wrongly placed meeting can be even worse than an unplanned
+interruption
+<ul>
+<li><span class="text-smaller">you have to keep in mind that you have a
+meeting, cannot start anyting serious</span></li>
+</ul></li>
+<li>mitigation
+<ul>
+<li><span class="text-smaller">schedule small, easy tasks before
+meeting</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The
+Cost of Interruption for Software Developers</a> – by Steven To <span
+class="citation" data-cites="to2018cost">[34]</span></p>
+</div>
+</section>
+<section id="techniques-to-minimize-context-switching"
+class="slide level2">
+<h2>techniques to minimize context switching</h2>
+<div class="columns column-gapless">
+<div class="column" style="width:50%;">
+<ul>
+<li>time blocking
+<ul>
+<li>divide workday into blocks</li>
+</ul></li>
+<li>time batching
+<ul>
+<li>do similar tasks in a batch</li>
+</ul></li>
+<li>prioritize tasks</li>
+<li>tackle the biggest task first in the morning</li>
+<li>turn off notifications</li>
+<li>adopt asynchronous communication
+<ul>
+<li>e-mail, documentation, <span class="tooltip"
+title="architecture decision record">ADR</span></li>
+</ul></li>
+</ul>
+<div class="text-smaller">
+<p>source: <a
+href="https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/">The
+high price of context switching for developers &amp; ways to avoid
+it</a> <span class="citation" data-cites="pande2021high">[37]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="figures/time_blocking.drawio.svg" width="400"
+alt="ideal, very bad, much better schedule" />
+<figcaption aria-hidden="true">ideal, very bad, much better
+schedule</figcaption>
+</figure>
+</div>
+</div>
+</section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
 <div id="refs" class="text-smaller references csl-bib-body" role="list">
@@ -2985,6 +3564,81 @@ C. Martin, <span>“The cycles of TDD.”</span> <a href="
 <div class="csl-left-margin">[28] </div><div class="csl-right-inline">M.
 Feathers, <em>Working effectively with legacy code</em>. Prentice Hall
 Professional, 2004.</div>
+</div>
+<div id="ref-fowler2024continuous" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[29] </div><div class="csl-right-inline">M.
+Fowler, <span>“Continuous integration.”</span> <a href="
+                   https://martinfowler.com/articles/continuousIntegration.html
+                    " class="uri">
+                   https://martinfowler.com/articles/continuousIntegration.html
+</a>, 18-Jan-2024.</div>
+</div>
+<div id="ref-enwiki:1249842339" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[30] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Blue–green
+deployment — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Blue%E2%80%93green_deployment&amp;oldid=1249842339"
+class="uri">https://en.wikipedia.org/w/index.php?title=Blue%E2%80%93green_deployment&amp;oldid=1249842339</a>,
+2024.</div>
+</div>
+<div id="ref-kazim2023what" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[31] </div><div class="csl-right-inline">W.
+Kazim, <span>“What is software deployment? Process and best
+practices.”</span> <a href="
+                   https://learn.g2.com/software-deployment
+                    " class="uri">
+                   https://learn.g2.com/software-deployment
+</a>, 31-May-2023.</div>
+</div>
+<div id="ref-gitlab2022four" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[32] </div><div
+class="csl-right-inline">GitLab, <span>“4 must-know DevOps
+principles.”</span> <a href="
+                  https://about.gitlab.com/blog/2022/02/11/4-must-know-devops-principles
+                    " class="uri">
+                  https://about.gitlab.com/blog/2022/02/11/4-must-know-devops-principles
+</a>, 11-Feb-2022.</div>
+</div>
+<div id="ref-enwiki:1256072917" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[33] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Common
+vulnerabilities and exposures — <span>Wikipedia</span><span>,</span> the
+free encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Common_Vulnerabilities_and_Exposures&amp;oldid=1256072917"
+class="uri">https://en.wikipedia.org/w/index.php?title=Common_Vulnerabilities_and_Exposures&amp;oldid=1256072917</a>,
+2024.</div>
+</div>
+<div id="ref-to2018cost" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[34] </div><div class="csl-right-inline">S.
+To, <span>“The cost of interruption for software developers.”</span> <a
+href="
+                   https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers
+                    " class="uri">
+                   https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers
+</a>, 03-May-2018.</div>
+</div>
+<div id="ref-mark2008cost" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[35] </div><div class="csl-right-inline">G.
+Mark, D. Gudith, and U. Klocke, <span>“The cost of interrupted work:
+More speed and stress,”</span> in <em>Proceedings of the SIGCHI
+conference on human factors in computing systems</em>, 2008, pp.
+107–110.</div>
+</div>
+<div id="ref-parnin2013programmer" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[36] </div><div class="csl-right-inline">C.
+Parnin, <span>“Programmer, interrupted,”</span> in <em>2013 IEEE
+symposium on visual languages and human centric computing</em>, 2013,
+pp. 171–172.</div>
+</div>
+<div id="ref-pande2021high" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[37] </div><div class="csl-right-inline">N.
+Pande, <span>“The high price of context switching for developers &amp;
+ways to avoid it.”</span> <a href="
+                   https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/
+                    " class="uri">
+                   https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/
+</a>, 23-Apr-2021.</div>
 </div>
 </div>
 </section>
