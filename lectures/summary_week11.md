@@ -101,6 +101,9 @@ scripting: writing relatively short and simple code to automatize an otherwise m
 
 ![](figures/ci_environment.drawio.svg){width=700}
 
+- scheduled build
+- nightly build: scheduled build during night time because for large software a full build (with all tests) could take hours
+
 
 ## build script
 
@@ -118,13 +121,6 @@ scripting: writing relatively short and simple code to automatize an otherwise m
 
 :::::::::
 ::::::::::::
-
-
-## scheduled build
-
-![](figures/ci_environment_schedule.drawio.svg){width=700}
-
-nightly build: scheduled build during night time because for large software a full build (with all tests) could take hours
 
 
 # continuous deployment (CD)
@@ -228,9 +224,11 @@ further reading: [11 DevOps Principles and Practices to Master: Pro Advice](http
 ::::::::: {.column width="65%" .mt-2}
 - using [CI]{.tooltip title="continuous integration"} environment
 - do static code analysis
-    - analyzing the code without execution
-    - searching for syntax errors, styling issues, bad practices or code smells
+    - [analyzing the code without execution]{.text-smaller}
+    - [searching for syntax errors, styling issues, bad practices or code smells]{.text-smaller}
 - run test suite
+- vulnerability alerts
+    - [uses package manager's dependency info to checks for vulnerabilities ([CVE]{.tooltip title="Common Vulnerabilities and Exposures"}) among dependencies]{.text-smaller}
 - generate review report from the findings
 
 ::: {.fragment .mt-2}
@@ -247,57 +245,6 @@ just decrease the work by automatizing trivial tasks
 
 :::::::::
 ::::::::::::
-
-
-## vulnerability alerts
-
-:::::::::::: {.columns}
-::::::::: {.column width="65%" .mt-1}
-- Common Vulnerabilities and Exposures (CVE)
-    - a dictionary of common names (i.e., CVE Identifiers) for publicly known information security vulnerabilities [@enwiki:1256072917]
-    - Apple's "goto fail" issue is officially called CVE-2014-1266
-- GitHub [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
-    - uses package manager
-    - e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry (Python)
-    - checks dependencies for vulnerabilities
-
-:::::::::
-::::::::: {.column width="35%" .text-smaller}
-```toml
-[tool.poetry.dependencies]
-python = "^3.12"
-numpy = "^1.26.3"
-pandas = "^2.2"
-geopandas = "^1.0"
-networkx = "^3.2.1"
-osmnx = "^1.6.0"
-matplotlib = "^3.8.2"
-seaborn = "^0.13.0"
-contextily = "^1.3.0"
-opencv-python = "^4.9.0"
-pyaml = "^23.9.7"
-pyogrio = "^0.7"
-pyarrow = "^15.0.0"
-scipy = "^1.12.0"
-haversine = "^2.8.1"
-mapclassify = "^2.6.1"
-openpyxl = "^3.1.2"
-ecomplexity = "^0.5.2"
-structlog = "^24.1.0"
-h3 = "^3.7.7"
-pandarallel = "^1.6.5"
-jinja2 = "^3.1.4"
-tabulate = "^0.9.0"
-```
-::: {.text-smaller}
-Python dependencies managed by poetry
-:::
-:::::::::
-::::::::::::
-
-::: notes
-GitLab also has a similar solution
-:::
 
 
 # semantic versioning
