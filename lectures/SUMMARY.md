@@ -17,3 +17,4 @@
 [code quality](lectures/13_code_quality.md)
 [code review](lectures/14_code_review.md)
 [testing](lectures/15_testing.md)
+[automatization](lectures/16_automatization.md)
