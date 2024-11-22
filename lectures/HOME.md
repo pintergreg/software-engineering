@@ -200,4 +200,4 @@ MVC-MVP-MVVM
 
 ## week 12
 
-1. summary
+1. [summary](/software-engineering/slides/summary_full.html)
