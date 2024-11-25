@@ -1034,6 +1034,40 @@ markmap:
     - turn off notifications
     - asynchronous communication
 
+## version control
+
+- file sharing issue
+    - lock-modify-unlock
+        - locks edited file
+        - one developer can edit a file at the same time
+    - copy-modify-merge
+        - checks if file was changes
+        - compares and merges
+- centralized
+    - one remote repository
+    - limited working copy
+- distributed
+    - full local repository
+        - serves as backup
+    - compares the local repository to the remote
+- feature branching
+    - each developed feature has its own branch
+    - merged to the mainline after completion
+    - multiple different branching strategies
+        - to maintain multiple versions of the software
+- when to make a commit?
+    - when you completed a unit of work
+    - when you have changes you may want to undo
+- how to write the commit message?
+    1. Separate subject from body with a blank line
+    2. Limit the subject line to 50 characters
+    3. **Capitalize the subject line**
+    4. **Do not end the subject line with a period**
+    5. **Use the imperative mood in the subject line**
+    6. Wrap the body at 72 characters
+        - least important
+    7. **Explain what and why not how**
+    8. **Reference the issue!**
 
 <!--
 - structure
