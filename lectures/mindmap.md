@@ -31,6 +31,19 @@ markmap:
 - possible to get feedback after each iteration
 - can be rigid within an iteration
 
+### extreme programming
+
+- advocates frequent releases in short development cycles
+- intended to improve productivity
+- introduced checkpoints when new requirements can be adopted
+- features
+    - programming in pairs
+    - doing extensive code review
+    - unit testing of all code
+    - not programming features until they are actually needed
+    - flat management structure
+- considered a type of agile software development
+
 ### agile
 
 #### manifesto
