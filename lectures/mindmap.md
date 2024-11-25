@@ -349,6 +349,8 @@ markmap:
         - you aren't gonna need it
         - originates from extreme programming
         - do not add functionality until needed
+    - KISS
+        - keep it stupidly simple
 - design patterns
     - gang of four (OOP)
         - 23 common software design patterns
