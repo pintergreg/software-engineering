@@ -889,3 +889,155 @@ markmap:
         - changes resource usage
 - technical debt
     - implied cost of future reworking because a solution prioritized short-term solution over long-term design
+
+## automatization
+
+- what?
+    - every repetitive tasks
+    - style guide compliance
+    - code smell finding
+    - code quality measurement
+    - review
+    - building
+    - testing
+    - deployment
+- why?
+    - workload reduction
+    - developers could focus on non-automatable tasks
+- editor level
+    - linter
+        - like a spell checker
+        - gives immediate feedback on syntax errors, styling issues or bad practices
+        - can detect some code smells
+    - auto formatting
+        - reformat the source code
+        - usually triggered by saving the file
+    - configuration
+    - personal preference
+
+### continuous integration and deployment
+
+- emerged from extreme programming
+- an agile approach
+- gives immediate feedback
+    - merge branches
+    - build the software
+    - do testing on the software
+    - analyze the code
+    - generate reports
+        - feedback to stakeholders
+        - decreases interruption
+- build script
+    - not only for building the software
+    - running tests
+    - generating reports 
+        - test coverage
+        - static code analysis
+        - release
+            - identified by a version number
+                - often seen as an arbitrary number
+                - pre-releases
+                    - alpha
+                        - incomplete
+                        - whitebox testing
+                    - beta
+                        - feature-complete
+                        - contains bugs
+                        - mostly blackbox testing
+                    - release candidate
+                        - final touches 
+                        - highest level of testing
+                - semantic versioning
+                    - major
+                        - incompatible API changes
+                    - minor
+                        - add functionality in a backward compatible manner
+                    - patch
+                        - backward compatible bug fix
+                - calendar versioning
+                    - based on release date
+                    - YYYY.MINOR.PATCH
+                    - YYYY.MM.MINOR.PATCH
+        - packaging the software
+        - deploying
+    - trigger
+        - push
+        - pull request
+        - scheduled / time based
+            - nightly build
+                - building a the latest version of a software, on a daily basis
+                - a full build with tests could take hours on a large software
+        - manual
+- deployment strategies
+    - blue-green
+        - two servers
+            - one for production
+            - one for internal manual testing
+            - cost
+        - after testing the servers are swaped
+    - shadow
+        - two servers
+            - cost
+        - testing the performance and stability requirements
+            - traffic channeled through the shadow server 
+    - canary
+        - incremental deployment
+        - allows to test updates in live environment
+            - on small groups of users before deploying to many users
+        - may involve telemetry
+    - A/B testing
+        - similar to canary deployment
+        - two versions of updates in small set of users to identify which version perform better
+- devops
+    - collaboration
+        - software **dev**elopers
+            - writes (unit) tests
+        - IT **op**eration**s**
+            - maintains build script and CI/CD server
+    - agile mindset and set of principles
+        - collaboration and communication
+        - continuous improvement
+        - automation of the SDLC
+        - short feedback loops
+    - relies on automatization, CI and CD
+- automatized review
+    - using CI environment
+    - do static code analysis
+    - run test suite
+    - generate review report from the findings
+    - not to replace human reviewing
+
+### interruption
+
+- greatest "enemy" of a developer
+- takes time to understand the code
+- context switching is expensive
+- define small tasks during the sprint planning
+    - e.g., 1 hour 
+    - one uninterrupted 2-hour session in a day
+- average lost time per major interruption is 23 minutes
+- unplanned interruption
+    - someone asks about something or to do something 
+    - wear headphones
+    - notification in advance
+- planned interruption
+    - meeting
+    - wrongly placed meeting can be worse than an unplanned interruption
+    - schedule small, easy tasks before meeting
+- mitigation
+    - time blocking 
+    - time batching
+    - prioritize tasks
+    - tackle the biggest task first in the morning
+    - turn off notifications
+    - asynchronous communication
+
+
+<!--
+- structure
+    - version tracking
+        - best practices
+            - syncronize often
+            - small changes
+            - merge often
+            - independent tasks-->
