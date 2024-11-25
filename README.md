@@ -2,8 +2,8 @@
 
 ## copyrighted materials
 
-- the [how to run short & effective meetings](lectures/borrowed/how_to_run_short_and_effective_meetings.jpg) comic is by [Sam Lau](https://www.samlau.xyz/about), and used with the author's permission
-- the [let's hop on a quick call](lectures/borrowed/quick_call.jpg) comic is by [Ash Lamb](https://ashlamb.com/), and used with the author's permission
+- the [how to run short & effective meetings](lectures/figures/borrowed/how_to_run_short_and_effective_meetings.jpg) comic is by [Sam Lau](https://www.samlau.xyz/about), and used with the author's permission
+- the [let's hop on a quick call](lectures/figures/borrowed/quick_call.jpg) comic is by [Ash Lamb](https://ashlamb.com/), and used with the author's permission
 
 ## acknowledgements
 
