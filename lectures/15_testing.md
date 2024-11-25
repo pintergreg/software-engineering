@@ -607,7 +607,7 @@ end
 :::::::::::: {.columns}
 ::::::::: {.column width="55%" .mt-5}
 - write test _before_ writing the tested code
-- without the called unit the test fill fail
+- without the called unit the test will fail
     - the called function does not exist
 - write code, that makes the test pass
 - improve the code quality
@@ -946,7 +946,7 @@ kata (型)
 - strict TDD is good for learning, practising
     - coding kata
 - but tests are still important!
-- [what I to do is to turn experiments into tests]{.fragment data-fragment-index=1}
+- [what I do is to turn experiments into tests]{.fragment data-fragment-index=1}
 :::::::::
 ::::::::: {.column width="40%" .text-smaller .r-frame .fragment data-fragment-index=1}
 **experiment-driven testing**
