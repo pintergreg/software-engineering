@@ -16,6 +16,7 @@
 
 - [pandoc](https://pandoc.org/)
 - [mdbook](https://github.com/rust-lang/mdBook)
+- [markmap](https://github.com/markmap/markmap)
 
 ### included into this repo
 
