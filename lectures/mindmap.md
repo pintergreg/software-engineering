@@ -748,98 +748,114 @@ markmap:
 
 ## testing
 
-- unit testing
-    - unit
-        - smallest testable part of a program
-        - a single behaviour exhibited by the system under test
-        - often, but not always a method
-    - unit test
-        - piece of code that tests a unit
-        - AAA(A) Rule
-            - arrange
-                - set up the testing environment 
-                - handle dependencies
-            - act
-                - call the tested unit 
-            - assert
-                - compare expected vs. actual
-            - (annihilate)
-                - free resource
-                - automatic in modern languages
-    - should be fast
-        - whole unit test suite should be able to run in milliseconds
-        - immediate feedback
-        - slow elements should be mocked
-    - safety net
-- mocking
-    - test doubles
-        - dummy
-            - simplest, most primitive type of test double
-            - null
-        - stub
-            - provides static input
-        - spy
-            - similar to stub
-            - gives back values according to the caller
-        - fake
-            - more complex implementations
-            - resembles a production implementation
-            - not a complete production implementation
-        - mock
-            - dynamically created by a mock library
-            - can behave like a dummy, a stub, or a spy
-- test-driven development
-    - write test before writing the tested code
-    - TDD cycle
-        - red
-            - write a test that fails
-            - test only one thing at a time
-            - should be very simple
-            - increase the complexity continuously
-        - green
-            - make it pass
-            - use the possible simplest code
-                - can be ugly
-            - other tests should also pass
-        - refactor
-            - improve code quality
-            - code level
-                - style guide
-                - best practices
-            - architecture level
-                - design patterns, principles
-            - part of day-to-day programming
-                - campground rule
-                    - leave the code better than you found it
-    - "As the tests get more specific, the code gets more generic."
-    - transformation priority premise
-        - preventing getting stuck
-    - coding kata
-        - simple programming task, that is meant to practised over and over again
-    - turning experiments into test
-- behaviour-driven development
-    - is an extension of TDD
-    - can help to turn a requirement into implemented, tested, production-ready code
-    - adding the acceptance criteria to a user story
-        - which can be turned into unit tests
+### unit testing
+
+- unit
+    - smallest testable part of a program
+    - a single behaviour exhibited by the system under test
+    - often, but not always a method
+- unit test
+    - piece of code that tests a unit
+    - AAA(A) Rule
+        - arrange
+            - set up the testing environment 
+            - handle dependencies
+        - act
+            - call the tested unit 
+        - assert
+            - compare expected vs. actual
+        - (annihilate)
+            - free resource
+            - automatic in modern languages
+- should be fast
+    - whole unit test suite should be able to run in milliseconds
+    - immediate feedback
+    - slow elements should be mocked
+- safety net
+
+### mocking
+
+- test doubles
+    - dummy
+        - simplest, most primitive type of test double
+        - null
+    - stub
+        - provides static input
+    - spy
+        - similar to stub
+        - gives back values according to the caller
+    - fake
+        - more complex implementations
+        - resembles a production implementation
+        - not a complete production implementation
+    - mock
+        - dynamically created by a mock library
+        - can behave like a dummy, a stub, or a spy
+
+### test-driven development
+
+- write test before writing the tested code
+- TDD cycle
+    - red
+        - write a test that fails
+        - test only one thing at a time
+        - should be very simple
+        - increase the complexity continuously
+    - green
+        - make it pass
+        - use the possible simplest code
+            - can be ugly
+        - other tests should also pass
+    - refactor
+        - improve code quality
+        - code level
+            - style guide
+            - best practices
+        - architecture level
+            - design patterns, principles
+        - part of day-to-day programming
+            - campground rule
+                - leave the code better than you found it
+- "As the tests get more specific, the code gets more generic."
+- transformation priority premise
+    - preventing getting stuck
+- coding kata
+    - simple programming task, that is meant to practised over and over again
+- turning experiments into test
+    
+### behaviour-driven development
+
+- is an extension of TDD
+- can help to turn a requirement into implemented, tested, production-ready code
+- adding the acceptance criteria to a user story
+    - which can be turned into unit tests
+- acceptance criteria
+    - describes system behavior under certain circumstances 
+    - written in natural language, but in a structured form
+
+### acceptance test-driven development
+
+- extends TDD and BDD
+- focuses on the acceptance criteria of the whole system
+    - instead of a unit
+- writing acceptance tests before coding
+
+### readme driven development
+
+- document how a user would use the software
+- before writing any code or tests
+
+### test coverage
+
+- the percentage of the code lines ‘protected’ or covered by tests
+- test the edge cases
+    - interval boundaries
+    - requirements
+    - defining of done
     - acceptance criteria
-        - describes system behavior under certain circumstances 
-        - written in natural language, but in a structured form
-- acceptance test-driven development
-    - extends TDD and BDD
-    - focuses on the acceptance criteria of the whole system
-        - instead of a unit
-    - writing acceptance tests before coding
-- readme driven development
-    - document how a user would use the software
-    - before writing any code or tests
-- test coverage
-    - the percentage of the code lines ‘protected’ or covered by tests
-    - test the edge cases
-        - interval boundaries
-        - requirements
-        - defining of done
-        - acceptance criteria
+
+### testing approaches
+
 - blackbox testing
     - testing the functionality without knowing the inner structure
 - whitebox testing
