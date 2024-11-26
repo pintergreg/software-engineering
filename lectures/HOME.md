@@ -85,7 +85,8 @@ C4 model
 
 ## week 5
 
-1. [design patterns](/software-engineering/slides/08_patterns.html)
+1. [week 4 summary](/software-engineering/slides/summary_week04.html)
+2. [design patterns](/software-engineering/slides/08_patterns.html)
 
 ### readings
 
@@ -146,8 +147,9 @@ MVC-MVP-MVVM
 
 ## week 9
 
-1. [code quality](/software-engineering/slides/13_code_quality.html)
-2. [code review](/software-engineering/slides/14_code_review.html)
+1. [week 7 summary](/software-engineering/slides/summary_week07.html)
+2. [code quality](/software-engineering/slides/13_code_quality.html)
+3. [code review](/software-engineering/slides/14_code_review.html)
 
 ### readings
 
@@ -159,7 +161,8 @@ MVC-MVP-MVVM
 
 ## week 10
 
-1. [testing](/software-engineering/slides/15_testing.html)
+1. [week 9 summary](/software-engineering/slides/summary_week09.html)
+2. [testing](/software-engineering/slides/15_testing.html)
 
 ### readings
 
