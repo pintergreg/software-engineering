@@ -187,26 +187,24 @@ markmap:
     - from the user's perspective
     - often accompanied by acceptance criteria
         - define the conditions that must be met to be considered complete
-
-### user story mapping
-
-- performed in workshops
-- build a shared understanding
-- user story map
-    - three levels
-        - activities
-            - big thing that users do
-            - has multiple steps
-            - not always has a precise workflow
-            - has roles
-        - steps
-        - details
-    - zooms from an overview to details 
-    - multiple interations
-        - living document
-        - versions
-    - backbone
-    - skeleton
+- user story mapping
+    - performed in workshops
+    - build a shared understanding
+    - user story map
+        - three levels
+            - activities
+                - big thing that users do
+                - has multiple steps
+                - not always has a precise workflow
+                - has roles
+            - steps
+            - details
+        - zooms from an overview to details 
+        - multiple interations
+            - living document
+            - versions
+        - backbone
+        - skeleton
 
     
 ## design
