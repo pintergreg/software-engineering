@@ -921,30 +921,37 @@ markmap:
 
 ## automatization
 
-- what?
-    - every repetitive tasks
-    - style guide compliance
-    - code smell finding
-    - code quality measurement
-    - review
-    - building
-    - testing
-    - deployment
-- why?
-    - workload reduction
-    - developers could focus on non-automatable tasks
-- editor level
-    - linter
-        - like a spell checker
-        - gives immediate feedback on syntax errors, styling issues or bad practices
-        - can detect some code smells
-    - auto formatting
-        - reformat the source code
-        - usually triggered by saving the file
-    - configuration
-    - personal preference
+### what?
 
-### continuous integration and deployment
+- every repetitive tasks
+- style guide compliance
+- code smell finding
+- code quality measurement
+- review
+- building
+- testing
+- deployment
+    
+### why?
+
+- workload reduction
+- developers could focus on non-automatable tasks
+
+### how?
+
+#### editor level
+
+- linter
+    - like a spell checker
+    - gives immediate feedback on syntax errors, styling issues or bad practices
+    - can detect some code smells
+- auto formatting
+    - reformat the source code
+    - usually triggered by saving the file
+- configuration
+- personal preference
+
+#### continuous integration and deployment
 
 - emerged from extreme programming
 - an agile approach
@@ -962,33 +969,33 @@ markmap:
     - generating reports 
         - test coverage
         - static code analysis
-        - release
-            - identified by a version number
-                - often seen as an arbitrary number
-                - pre-releases
-                    - alpha
-                        - incomplete
-                        - whitebox testing
-                    - beta
-                        - feature-complete
-                        - contains bugs
-                        - mostly blackbox testing
-                    - release candidate
-                        - final touches 
-                        - highest level of testing
-                - semantic versioning
-                    - major
-                        - incompatible API changes
-                    - minor
-                        - add functionality in a backward compatible manner
-                    - patch
-                        - backward compatible bug fix
-                - calendar versioning
-                    - based on release date
-                    - YYYY.MINOR.PATCH
-                    - YYYY.MM.MINOR.PATCH
-        - packaging the software
-        - deploying
+    - release
+        - identified by a version number
+            - often seen as an arbitrary number
+            - pre-releases
+                - alpha
+                    - incomplete
+                    - whitebox testing
+                - beta
+                    - feature-complete
+                    - contains bugs
+                    - mostly blackbox testing
+                - release candidate
+                    - final touches 
+                    - highest level of testing
+            - semantic versioning
+                - major
+                    - incompatible API changes
+                - minor
+                    - add functionality in a backward compatible manner
+                - patch
+                    - backward compatible bug fix
+            - calendar versioning
+                - based on release date
+                - YYYY.MINOR.PATCH
+                - YYYY.MM.MINOR.PATCH
+    - packaging the software
+    - deploying
     - trigger
         - push
         - pull request
