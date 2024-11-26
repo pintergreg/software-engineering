@@ -644,6 +644,22 @@ Python dependencies managed by poetry
 GitLab also has a similar solution
 :::
 
+## dependabot example
+
+![warning on GitHub](figures/dependabot.png){width=875}
+
+
+```
+remote: Resolving deltas: 100% (5/5), completed with 4 local objects.
+remote: 
+remote: GitHub found 1 vulnerability on pintergreg/software-engineering's default branch (1 high). To find out more, visit:
+remote:      https://github.com/pintergreg/software-engineering/security/dependabot/1
+```
+
+::: {.text-smaller}
+command line warning during git push
+:::
+
 
 ## dependencies
 
