@@ -43,6 +43,12 @@ jobs:
               run: |
                   npx markmap-cli -o lectures/mindmap.html --offline --no-open lectures/mindmap.md
 
+            - name: build mock exam
+              run: |
+                  cd lectures
+                  ruby build_mock_exam.rb
+                  cd ..
+
             - name: copy slides
               run: |
                   mkdir -p book/slides/figures
