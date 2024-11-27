@@ -205,3 +205,4 @@ MVC-MVP-MVVM
 
 1. [summary](/software-engineering/slides/summary_full.html)
 2. [mindmap](/software-engineering/slides/mindmap.html)
+3. [mock exam](/software-engineering/slides/mock_exam.html)
