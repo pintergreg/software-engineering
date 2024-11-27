@@ -5,7 +5,7 @@ html = %{<!DOCTYPE html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>mock exam</title>
-        <script src="../assets/quizdown/quizdown.js"></script>
+        <script src="../assets/quizdown-0.6.0/quizdown.js"></script>
         <script>quizdown.init();</script>
     </head>
     <body>
