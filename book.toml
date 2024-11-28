@@ -9,6 +9,7 @@ description = "software engineering"
 edition = "2021"
 
 [output.html]
+site-url = "https://pintergreg.github.io/software-engineering/"
 mathjax-support = true
 # additional-js = ["quizdown/quizdown.js", "quizdown/quizdown-init.js"]
 additional-css = ["assets/custom-mdbook.css"]

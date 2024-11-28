@@ -2,8 +2,8 @@
 
 ## week 1
 
-1. [intro, software architecture](/software-engineering/slides/00_intro.html)
-2. [software development life cycles](/software-engineering/slides/01_sdlc.html)
+1. [intro, software architecture](/slides/00_intro.html)
+2. [software development life cycles](/slides/01_sdlc.html)
 
 ### readings
 
@@ -15,14 +15,14 @@
 
 ## week 2
 
-1. [week 1 summary](/software-engineering/slides/summary_week01.html)
-2. [scrum](/software-engineering/slides/02_scrum.html)
-2. [kanban](/software-engineering/slides/03_kanban.html)
+1. [week 1 summary](/slides/summary_week01.html)
+2. [scrum](/slides/02_scrum.html)
+2. [kanban](/slides/03_kanban.html)
 
 ### readings
 
 scrum
-~ - [The Scrum Guide](/software-engineering/resources/2020-Scrum-Guide-US.pdf)
+~ - [The Scrum Guide](/resources/2020-Scrum-Guide-US.pdf)
 
 zombie scrum
 
@@ -30,14 +30,14 @@ zombie scrum
      - [The Rise Of Zombie Scrum](https://medium.com/the-liberators/the-rise-of-zombie-scrum-cd98741015d5)
 
 kanban
-~ - [the Kanban Guide](/software-engineering/resources/Kanban-Guide-2020-12.pdf)
+~ - [the Kanban Guide](/resources/Kanban-Guide-2020-12.pdf)
 
 ## week 3
 
-1. [week 2 summary](/software-engineering/slides/summary_week02.html)
-2. [requirement analysis](/software-engineering/slides/04_requirement_analysis.html)
-3. [user story mapping](/software-engineering/slides/05_user_story_mapping.html)
-4. [project assignment](/software-engineering/slides/project.html)
+1. [week 2 summary](/slides/summary_week02.html)
+2. [requirement analysis](/slides/04_requirement_analysis.html)
+3. [user story mapping](/slides/05_user_story_mapping.html)
+4. [project assignment](/slides/project.html)
 
 ### readings
 
@@ -54,7 +54,7 @@ user story mapping
           - [Five common story mapping mistakes](https://jpattonassociates.com/5-story-mapping-mistakes/) - by Jeff Patton
      - [The Ultimate Guide to User Story Mapping](https://www.easyagile.com/blog/the-ultimate-guide-to-user-story-maps/) - by Nick Muldoon
      - [Mapping User Stories in Agile](https://www.nngroup.com/articles/user-story-mapping/) - by Anna Kaley
-     - [Quickstart Guide to User Story Mapping](/software-engineering/resources/quickstart-guide-to-user-story-mapping.pdf)
+     - [Quickstart Guide to User Story Mapping](/resources/quickstart-guide-to-user-story-mapping.pdf)
 
 #### optional
 
@@ -63,9 +63,9 @@ user story mapping
      
 ## week 4
 
-1. [week 3 summary](/software-engineering/slides/summary_week03.html)
-2. [UML](/software-engineering/slides/06_uml.html)
-3. [C4](/software-engineering/slides/07_c4.html)
+1. [week 3 summary](/slides/summary_week03.html)
+2. [UML](/slides/06_uml.html)
+3. [C4](/slides/07_c4.html)
 
 #### readings
 
@@ -85,8 +85,8 @@ C4 model
 
 ## week 5
 
-1. [week 4 summary](/software-engineering/slides/summary_week04.html)
-2. [design patterns](/software-engineering/slides/08_patterns.html)
+1. [week 4 summary](/slides/summary_week04.html)
+2. [design patterns](/slides/08_patterns.html)
 
 ### readings
 
@@ -121,9 +121,9 @@ MVC-MVP-MVVM
 
 ## week 6
 
-1. [week 5 summary](/software-engineering/slides/summary_week05.html)
-2. [interfaces](/software-engineering/slides/09_interfaces.html)
-3. [implementation planning](/software-engineering/slides/10_planning.html)
+1. [week 5 summary](/slides/summary_week05.html)
+2. [interfaces](/slides/09_interfaces.html)
+3. [implementation planning](/slides/10_planning.html)
 
 ### readings
 
@@ -135,9 +135,9 @@ MVC-MVP-MVVM
 
 ## week 7
 
-1. [week 6 summary](/software-engineering/slides/summary_week06.html)
-2. [wireframing](/software-engineering/slides/11_wireframing.html)
-3. [clean code](/software-engineering/slides/12_clean_code.html)
+1. [week 6 summary](/slides/summary_week06.html)
+2. [wireframing](/slides/11_wireframing.html)
+3. [clean code](/slides/12_clean_code.html)
 
 ### readings
 
@@ -147,9 +147,9 @@ MVC-MVP-MVVM
 
 ## week 9
 
-1. [week 7 summary](/software-engineering/slides/summary_week07.html)
-2. [code quality](/software-engineering/slides/13_code_quality.html)
-3. [code review](/software-engineering/slides/14_code_review.html)
+1. [week 7 summary](/slides/summary_week07.html)
+2. [code quality](/slides/13_code_quality.html)
+3. [code review](/slides/14_code_review.html)
 
 ### readings
 
@@ -161,8 +161,8 @@ MVC-MVP-MVVM
 
 ## week 10
 
-1. [week 9 summary](/software-engineering/slides/summary_week09.html)
-2. [testing](/software-engineering/slides/15_testing.html)
+1. [week 9 summary](/slides/summary_week09.html)
+2. [testing](/slides/15_testing.html)
 
 ### readings
 
@@ -182,8 +182,8 @@ MVC-MVP-MVVM
 
 ## week 11
 
-1. [week 10 summary](/software-engineering/slides/summary_week10.html)
-2. [automatization](/software-engineering/slides/16_automatization.html)
+1. [week 10 summary](/slides/summary_week10.html)
+2. [automatization](/slides/16_automatization.html)
 
 ### readings
 
@@ -203,6 +203,6 @@ MVC-MVP-MVVM
 
 ## week 12
 
-1. [summary](/software-engineering/slides/summary_full.html)
-2. [mindmap](/software-engineering/slides/mindmap.html)
-3. [mock exam](/software-engineering/slides/mock_exam.html)
+1. [summary](/slides/summary_full.html)
+2. [mindmap](/slides/mindmap.html)
+3. [mock exam](/slides/mock_exam.html)
