@@ -259,10 +259,18 @@ There are two types of software rot: dormant rot and active rot.
 ::::::::: {.column width="50%"}
 **dormant rot**: the software in question is not changed, but as the environment evolves, it eventually becomes dysfunctional
 
-::: {.fragment data-fragment-index=2 .mt-3}
+:::::: {.fragment data-fragment-index=1 .mt-3}
+::::: {.columns}
+:::: {.column width="50%" .text-smaller}
+Muni metro's control software is still loaded from floppy disks [@harding2024san]
+
+::::
+:::: {.column width="50%"}
 ![](figures/publicdomainvectors/floppy-disks.svg){width=200}
 
-:::
+::::
+:::::
+::::::
 :::::::::
 ::::::::: {.column width="50%"}
 ::: {.fragment data-fragment-index=1}
@@ -271,6 +279,7 @@ There are two types of software rot: dormant rot and active rot.
 :::
 :::::::::
 ::::::::::::
+
 
 ::: notes
 Environment change can be either software or hardware.
