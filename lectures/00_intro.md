@@ -398,7 +398,7 @@ From [/manifesto.softwarecraftsmanship.org](https://manifesto.softwarecraftsmans
 :::
 :::::::::
 ::::::::: {.column width="50%"}
-![Increasing functionality implemented by software, reproduction of Figure 2.5 of [@firesmith2008method]](figures/increasing_functionality_by_software.drawio.svg){width=500}
+![Increasing functionality implemented by software, reproduction of Figure 2.5 of [@firesmith2008method]](figures/increasing_functionality_by_software.drawio.svg)
 
 :::::::::
 ::::::::::::
@@ -406,6 +406,27 @@ From [/manifesto.softwarecraftsmanship.org](https://manifesto.softwarecraftsmans
 ::: notes
 
 :::
+
+## software growth cont.
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-1}
+- 1981, GM was using microprocessor-based engine controls executing about 50 000 lines of code
+- even low-end cars now (*2009*) have 30 to 50 electronic control units (ECUs)
+    - that means these cars "execute" tens of millions of lines of software code that control everything from your brakes to your radio volume
+- for hybrids, the amount of software required for engine control is almost double that of a standard car 
+
+::: {.text-smaller}
+source: [This Car Runs on Code](https://spectrum.ieee.org/this-car-runs-on-code) [@charette2009this]
+
+:::
+:::::::::
+::::::::: {.column width="45%"}
+![electronics systems of total car cost [@charette2021how]](figures/es_as_total_car_cost.drawio.svg)
+
+:::::::::
+::::::::::::
+
 
 ## the more, the better?
 
