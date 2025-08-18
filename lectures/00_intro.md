@@ -15,51 +15,51 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 # schedule {visibility=hidden}
 
-| week | date       | lecture                                  | practical class    |
-|-----:|:----------:|:----------------------------------------:|:------------------:|
-|    1 | 2024-09-10 | intro, software architecture, SDLC       |                    |
-|    2 | 2024-09-17 | scrum, kanban                            |                    |
-|    3 | 2024-09-24 | requirement analysis, user story mapping | project assignment |
-|    4 | 2024-10-01 | UML, C4                                  | project workshop   |
-|    5 | 2024-10-08 | design patterns                          | project workshop   |
-|    6 | 2024-10-15 | interfaces, implementation planning      | project workshop   |
-|    7 | 2024-10-22 | wireframing, clean clode                 | project workshop   |
-|    8 | 2024-10-29 | **school holiday**                       |                    |
-|    9 | 2024-11-05 | code quality, code review                | project workshop   |
-|   10 | 2024-11-12 | testing, legacy code                     | project workshop   |
-|   11 | 2024-11-19 | CI, automatization, devops               | project workshop   |
-|   12 | 2024-11-26 | summary, course feedback                 | project workshop   |
-|   13 | 2024-12-03 | midterm                                  | project demo       |
-|   14 | 2024-12-10 | no planned lecture                       |                    |
+|week| date       | lecture                                  | practical class       |
+|---:|-----------:|:----------------------------------------:|:---------------------:|
+|  1 | 2025-09-17 | intro, software architecture, SDLC       | project assignment    |
+|  2 | 2025-09-24 | scrum, kanban                            | project workshop      |
+|  3 | 2025-10-01 | requirement analysis, user story mapping | project workshop      |
+|  4 | 2025-10-08 | UML, C4                                  | project workshop      |
+|  5 | 2025-10-15 | design patterns                          | project workshop      |
+|  6 | 2025-10-22 | interfaces, implementation planning      | **req. analysis demo**|
+|  7 | 2025-10-29 | **school holiday**                       |                       |
+|  8 | 2025-11-05 | wireframing, clean clode                 | project workshop      |
+|  9 | 2025-11-12 | code quality, code review                | project workshop      |
+| 10 | 2025-11-19 | testing, legacy code                     | project workshop      |
+| 11 | 2025-11-26 | CI, automatization, devops               | project workshop      |
+| 12 | 2025-12-03 | summary, course feedback                 | project workshop      |
+| 13 | 2025-12-10 | **midterm**                              | **design demo**       |
+| 14 | 2025-12-17 | no planned lecture                       |                       |
 
 
 # schedule {.exclude-header}
 
 ::: {.exclude}
-| week | date       | lecture                                  | practical class    |
-|-----:|:----------:|:----------------------------------------:|:------------------:|
-|    1 | 2024-09-10 | intro, software architecture, SDLC       |                    |
-|    2 | 2024-09-17 | scrum, kanban                            |                    |
-|    3 | 2024-09-24 | requirement analysis, user story mapping | project assignment |
-|    4 | 2024-10-01 | UML, C4                                  | project workshop   |
-|    5 | 2024-10-08 | design patterns                          | project workshop   |
-|    6 | 2024-10-15 | interfaces, implementation planning      | project workshop   |
-|    7 | 2024-10-22 | wireframing, clean clode                 | project workshop   |
+|week| date       | lecture                                  | practical class       |
+|---:|-----------:|:----------------------------------------:|:---------------------:|
+|  1 | 2025-09-17 | intro, software architecture, SDLC       | project assignment    |
+|  2 | 2025-09-24 | scrum, kanban                            | project workshop      |
+|  3 | 2025-10-01 | requirement analysis, user story mapping | project workshop      |
+|  4 | 2025-10-08 | UML, C4                                  | project workshop      |
+|  5 | 2025-10-15 | design patterns                          | project workshop      |
+|  6 | 2025-10-22 | interfaces, implementation planning      | **req. analysis demo**|
+|  7 | 2025-10-29 | **school holiday**                       |                       |
 
 :::
 
 ## schedule {.exclude-header}
 
 ::: {.exclude}
-| week | date       | lecture                                  | practical class    |
-|-----:|:----------:|:----------------------------------------:|:------------------:|
-|    8 | 2024-10-29 | **school holiday**                       |                    |
-|    9 | 2024-11-05 | code quality, code review                | project workshop   |
-|   10 | 2024-11-12 | testing, legacy code                     | project workshop   |
-|   11 | 2024-11-19 | CI, automatization, devops               | project workshop   |
-|   12 | 2024-11-26 | summary, course feedback                 | project workshop   |
-|   13 | 2024-12-03 | midterm                                  | project demo       |
-|   14 | 2024-12-10 | no planned lecture                       |                    |
+|week| date       | lecture                                  | practical class       |
+|---:|-----------:|:----------------------------------------:|:---------------------:|
+|  8 | 2025-11-05 | wireframing, clean clode                 | project workshop      |
+|  9 | 2025-11-12 | code quality, code review                | project workshop      |
+| 10 | 2025-11-19 | testing, legacy code                     | project workshop      |
+| 11 | 2025-11-26 | CI, automatization, devops               | project workshop      |
+| 12 | 2025-12-03 | summary, course feedback                 | project workshop      |
+| 13 | 2025-12-10 | **midterm**                              | **design demo**       |
+| 14 | 2025-12-17 | no planned lecture                       |                       |
 
 :::
 
@@ -68,7 +68,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 :::::::::::: {.columns}
 ::::::::: {.column width="60%" .mt-3}
 - available online in two formats
-    - hangout
+    - handout
     - presentation
 - [pintergreg.github.io/software-engineering](https://pintergreg.github.io/software-engineering/)
 
