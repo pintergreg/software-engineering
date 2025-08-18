@@ -781,11 +781,65 @@ href="https://manifesto.softwarecraftsmanship.org/">/manifesto.softwarecraftsman
 <section>
 <section id="software-growth" class="title-slide slide level1">
 <h1>software growth</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="wide-quote mt-4">
+<blockquote>
 <p>24 million lines of code – operational and support – needed for the
-F-35 to be fully operational</p>
+F-35 to be fully operational; when the program started, the estimated
+number of lines of code required was closer to 15 million</p>
+<p>– Robert N. Charette, F-35 Program Continues to Struggle with
+Software <span class="citation"
+data-cites="charette2012f35">[5]</span></p>
+</blockquote>
+</div>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="figures/increasing_functionality_by_software.drawio.svg"
+alt="Increasing functionality implemented by software, reproduction of Figure 2.5 of [6]" />
+<figcaption aria-hidden="true">Increasing functionality implemented by
+software, reproduction of Figure 2.5 of <span class="citation"
+data-cites="firesmith2008method">[6]</span></figcaption>
+</figure>
+</div>
+</div>
 <aside class="notes">
 
 </aside>
+</section>
+<section id="software-growth-cont." class="slide level2">
+<h2>software growth cont.</h2>
+<div class="columns">
+<div class="column mt-1" style="width:55%;">
+<ul>
+<li>1981, GM was using microprocessor-based engine controls executing
+about 50 000 lines of code</li>
+<li>even low-end cars now (<em>2009</em>) have 30 to 50 electronic
+control units (ECUs)
+<ul>
+<li>that means these cars “execute” tens of millions of lines of
+software code that control everything from your brakes to your radio
+volume</li>
+</ul></li>
+<li>for hybrids, the amount of software required for engine control is
+almost double that of a standard car</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a
+href="https://spectrum.ieee.org/this-car-runs-on-code">This Car Runs on
+Code</a> <span class="citation"
+data-cites="charette2009this">[7]</span></p>
+</div>
+</div><div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/es_as_total_car_cost.drawio.svg"
+alt="electronics systems of total car cost [8]" />
+<figcaption aria-hidden="true">electronics systems of total car cost
+<span class="citation"
+data-cites="charette2021how">[8]</span></figcaption>
+</figure>
+</div>
+</div>
 </section>
 <section id="the-more-the-better" class="slide level2">
 <h2>the more, the better?</h2>
@@ -819,6 +873,16 @@ increases complexity.</p>
 </section>
 <section id="keep-it-simple" class="slide level2">
 <h2>keep it simple</h2>
+<div class="wide-quote">
+<blockquote>
+<p>We don’t add stuff “just because we can”. We need to have a damn good
+reason for it.</p>
+<p>– <a
+href="https://lore.kernel.org/all/CAHk-=wiGk+1eNy4Vk6QsEgM=Ru3jE40qrDwgq_CSKgqwLgMdRg@mail.gmail.com/">Linus
+Torvalds</a></p>
+</blockquote>
+</div>
+<div class="wide-quote fragment mt-1">
 <blockquote>
 <p>A designer knows he has achieved perfection not when there is nothing
 left to add, but when there is nothing left to take away.</p>
@@ -826,12 +890,13 @@ left to add, but when there is nothing left to take away.</p>
 href="https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry">Antoine
 de Saint-Exupéry</a></p>
 </blockquote>
-<div class="fragment">
+</div>
+<div class="fragment mt-2">
 <ul>
 <li>KISS, an acronym for “Keep it simple, stupid!”
 <ul>
 <li>a variations: keep it stupidly simple</li>
-<li>the term was popular in the 70s</li>
+<li>the acronym was popular in the 70s</li>
 </ul></li>
 </ul>
 </div>
@@ -1086,6 +1151,37 @@ will for years,”</span> <em>Ars Technica</em>. <a href="
                     " class="uri">
                     https://www.wired.com/story/san-francisco-muni-trains-floppy-disks
 </a>, 11-Apr-2024.</div>
+</div>
+<div id="ref-charette2012f35" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">R.
+N. Charette, <span>“F-35 program continues to struggle with
+software.”</span> <a href="
+                   https://spectrum.ieee.org/f35-program-continues-to-struggle-with-software
+                    " class="uri">
+                   https://spectrum.ieee.org/f35-program-continues-to-struggle-with-software
+</a>, 19-Sep-2012.</div>
+</div>
+<div id="ref-firesmith2008method" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">D.
+G. Firesmith, P. Capell, D. Falkenthal, C. B. Hammons, D. T. Latimer IV,
+and T. Merendino, <em>The method framework for engineering system
+architectures</em>. Auerbach Publications, 2008.</div>
+</div>
+<div id="ref-charette2009this" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">R.
+N. Charette, <span>“This car runs on code.”</span> <a href="
+                   https://spectrum.ieee.org/this-car-runs-on-code
+                    " class="uri">
+                   https://spectrum.ieee.org/this-car-runs-on-code
+</a>, 01-Feb-2009.</div>
+</div>
+<div id="ref-charette2021how" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">R.
+N. Charette, <span>“How software is eating the car.”</span> <a href="
+                   https://spectrum.ieee.org/meerkat-substation-security
+                    " class="uri">
+                   https://spectrum.ieee.org/meerkat-substation-security
+</a>, 07-Jun-2021.</div>
 </div>
 </div>
 </section>
