@@ -388,7 +388,20 @@ From [/manifesto.softwarecraftsmanship.org](https://manifesto.softwarecraftsmans
 
 # software growth
 
-24 million lines of code -- operational and support -- needed for the F-35 to be fully operational
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+::: {.wide-quote .mt-4}
+> 24 million lines of code -- operational and support -- needed for the F-35 to be fully operational; when the program started, the estimated number of lines of code required was closer to 15 million
+>
+> -- Robert N. Charette, F-35 Program Continues to Struggle with Software [@charette2012f35]
+
+:::
+:::::::::
+::::::::: {.column width="50%"}
+![Increasing functionality implemented by software, reproduction of Figure 2.5 of [@firesmith2008method]](figures/increasing_functionality_by_software.drawio.svg){width=500}
+
+:::::::::
+::::::::::::
 
 ::: notes
 
