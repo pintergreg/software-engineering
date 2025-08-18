@@ -433,14 +433,24 @@ It requires more resources, but at the same time it also increases complexity.
 
 ## keep it simple
 
+::: {.wide-quote}
+> We don't add stuff "just because we can". We need to have a damn good reason for it. 
+>
+> -- [Linus Torvalds](https://lore.kernel.org/all/CAHk-=wiGk+1eNy4Vk6QsEgM=Ru3jE40qrDwgq_CSKgqwLgMdRg@mail.gmail.com/)
+
+:::
+
+::: {.wide-quote .fragment .mt-1}
 > A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.
 >
 > -- [Antoine de Saint-Exupéry](https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry)
 
-::: {.fragment}
+:::
+
+::: {.fragment .mt-2}
 - KISS, an acronym for "Keep it simple, stupid!"
     - a variations: keep it stupidly simple
-    - the term was popular in the 70s
+    - the acronym was popular in the 70s
 :::
 
 ::: notes
