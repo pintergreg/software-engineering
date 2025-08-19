@@ -89,7 +89,7 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
 - continuous collaboration and fast response to change, while the iterative model takes a more gradual approach, building up the final product over multiple iterations
-- scrum is an agile methodology
+- SCRUM is an agile methodology
 
 :::::::::
 ::::::::: {.column width="50%"}
@@ -252,10 +252,5 @@ Some general examples are:
 Kanban is widespread in software development.
 The major code hosting solutions (GitHub, GitLab, Bitbucket, Gitea) all have some board functionalities.
 :::
-
-# SCUM + kanban = scrumban
-
-- SCRUM and kanban can coexist
-- quite new methodology
 
 # references

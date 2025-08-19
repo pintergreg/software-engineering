@@ -184,6 +184,8 @@ It does not matter what kind of charts are used as long as they enable a shared 
 
 # scrumban
 
+SCRUM and kanBAN can coexist
+
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
 Scrum contributes to scrumban:
