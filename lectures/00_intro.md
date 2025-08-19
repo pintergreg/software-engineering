@@ -223,22 +223,24 @@ a software does not have to obey the laws of physics
 
 # software development is like gardening
 
-:::::::::::: {.columns .fragment}
-::::::::: {.column width="55%"}
-- a garden needs to be taken care of constantly
-- without attention the garden will decay
-<!-- - external factors like weather, pests, weeds can influence the garden -->
-:::::::::
-::::::::: {.column width="45%"}
-- maintenance is part of software development
-- software rots
-<!-- - change in user requirements, but importantly the external dependencies such as frameworks, libraries, etc. can affect the software -->
-:::::::::
-::::::::::::
-
-::: {.text-smaller .mt-5}
+::: {.text-smaller}
 based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
 :::
+
+:::::::::::: {.columns .fragment}
+::::::::: {.column width="37%" .mt-4}
+- a garden needs to be taken care of constantly
+- without attention the garden will decay
+:::::::::
+::::::::: {.column width="35%" .mt-4}
+- maintenance is part of software development
+- software rots
+:::::::::
+::::::::: {.column width="28%"}
+![](figures/publicdomainvectors/gardener-watering-with-a-hose.svg)
+
+:::::::::
+::::::::::::
 
 ::: notes
 Another famous metaphor is the gardening.
@@ -321,28 +323,32 @@ Also, the documentation needs to be updated. Both documentations actually since 
 
 ## software development is like gardening - cont.
 
-:::::::::::: {.columns}
-::::::::: {.column width="55%"}
-<!-- - a garden needs to be taken care of constantly -->
-<!-- - without attention the garden will decay -->
-- external factors like weather, pests, weeds can influence the garden
-:::::::::
-::::::::: {.column width="45%"}
-<!-- - maintenance is part of software development -->
-<!-- - software rots -->
-- change in user requirements, and the external dependencies such as frameworks, libraries, etc. can affect the software
-:::::::::
-::::::::::::
-
-::: {.text-smaller .mt-5}
+::: {.text-smaller}
 based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
 :::
+
+:::::::::::: {.columns .mt-3}
+::::::::: {.column width="50%"}
+- external factors like weather, pests, weeds can influence the garden
+:::::::::
+::::::::: {.column width="50%"}
+- change in user requirements, and the external dependencies such as frameworks, libraries, etc. can affect the software
+:::::::::
+<!-- ::::::::: {.column width="20%"} -->
+
+<!-- ::::::::: -->
+::::::::::::
+
 
 ::: notes
 Another similarity to gardening is that external factors can influence the software.
 :::
 
 ## software development is like gardening - cont. {.exclude-header}
+
+::: {.text-smaller}
+based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
+:::
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
@@ -358,9 +364,6 @@ Another similarity to gardening is that external factors can influence the softw
 :::::::::
 ::::::::::::
 
-::: {.text-smaller}
-based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
-:::
 
 # software craftmanship
 
