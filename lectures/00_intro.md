@@ -628,7 +628,7 @@ The current level of software complexity is not manageable without allowing many
 :::
 
 
-## Layered Architechture
+<!--## Layered Architechture
 
 ![](figures/borrowed/Linux kernel and OpenGL video games.svg){height=450}
 
@@ -665,7 +665,7 @@ The current level of software complexity is not manageable without allowing many
 ::::::::: {.column width="50%"}
 ![](figures/server_client.drawio.svg){width=325}
 :::::::::
-::::::::::::
+::::::::::::-->
 
 
 # references
