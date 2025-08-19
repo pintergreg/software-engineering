@@ -439,24 +439,25 @@ floor bathroom</li>
 several times</li>
 </ul>
 <h1 id="software-development-is-like-gardening"><a class="header" href="#software-development-is-like-gardening">software development is like gardening</a></h1>
+<div class="text-smaller">
+<p>based on Software Architecture Metaphors by Lisa Stähli (Stähli, 2021)</p>
+</div>
 <div class="columns fragment">
-<div class="column" width="55%">
+<div class="column mt-4" width="37%">
 <ul>
 <li>a garden needs to be taken care of constantly</li>
-<li>without attention the garden will decay<!-- - external factors like weather, pests, weeds can influence the garden -->
-</li>
+<li>without attention the garden will decay</li>
 </ul>
 </div>
-<div class="column" width="45%">
+<div class="column mt-4" width="35%">
 <ul>
 <li>maintenance is part of software development</li>
-<li>software rots<!-- - change in user requirements, but importantly the external dependencies such as frameworks, libraries, etc. can affect the software -->
-</li>
+<li>software rots</li>
 </ul>
 </div>
+<div class="column" width="28%">
+<p><img src="figures/publicdomainvectors/gardener-watering-with-a-hose.svg" alt="" /></p>
 </div>
-<div class="text-smaller mt-5">
-<p>based on Software Architecture Metaphors by Lisa Stähli (Stähli, 2021)</p>
 </div>
 <div class="notes">
 <p>Another famous metaphor is the gardening. The most important aspect of
@@ -546,29 +547,30 @@ that should contain information about the system for the developers and
 a user documentation (manual) for the operators of the system.</p>
 </div>
 <h2 id="software-development-is-like-gardening---cont"><a class="header" href="#software-development-is-like-gardening---cont">software development is like gardening - cont.</a></h2>
-<div class="columns">
-<div class="column" width="55%">
-<!-- - a garden needs to be taken care of constantly -->
-<!-- - without attention the garden will decay -->
+<div class="text-smaller">
+<p>based on Software Architecture Metaphors by Lisa Stähli (Stähli, 2021)</p>
+</div>
+<div class="columns mt-3">
+<div class="column" width="50%">
 <ul>
 <li>external factors like weather, pests, weeds can influence the garden</li>
 </ul>
 </div>
-<div class="column" width="45%">
-<!-- - maintenance is part of software development -->
-<!-- - software rots -->
+<div class="column" width="50%">
 <ul>
 <li>change in user requirements, and the external dependencies such as
 frameworks, libraries, etc. can affect the software</li>
 </ul>
 </div>
-</div>
-<div class="text-smaller mt-5">
-<p>based on Software Architecture Metaphors by Lisa Stähli (Stähli, 2021)</p>
+<!-- ::::::::: {.column width="20%"} -->
+<!-- ::::::::: -->
 </div>
 <div class="notes">
 <p>Another similarity to gardening is that external factors can influence
 the software.</p>
+</div>
+<div class="text-smaller">
+<p>based on Software Architecture Metaphors by Lisa Stähli (Stähli, 2021)</p>
 </div>
 <div class="columns">
 <div class="column" width="50%">
@@ -596,9 +598,6 @@ craftmanship (later)</li>
 </ul>
 </div>
 </div>
-<div class="text-smaller">
-<p>based on Software Architecture Metaphors by Lisa Stähli (Stähli, 2021)</p>
-</div>
 <h1 id="software-craftmanship"><a class="header" href="#software-craftmanship">software craftmanship</a></h1>
 <div class="text-smaller">
 <p>As aspiring Software Craftsmen we are raising the bar of professional
@@ -625,6 +624,7 @@ form, but only in its entirety through this notice.</p>
 <a href="https://manifesto.softwarecraftsmanship.org/">/manifesto.softwarecraftsmanship.org</a>.</p>
 </div>
 <h1 id="software-growth"><a class="header" href="#software-growth">software growth</a></h1>
+<h2 id="software-growth--cont"><a class="header" href="#software-growth--cont">software growth – cont.</a></h2>
 <div class="columns">
 <div class="column" width="50%">
 <div class="wide-quote mt-4">
@@ -650,27 +650,28 @@ data-cites="firesmith2008method">(Firesmith et al.,
 </div>
 <div class="notes">
 </div>
-<h2 id="software-growth-cont"><a class="header" href="#software-growth-cont">software growth cont.</a></h2>
+<h2 id="software-growth--car-industry"><a class="header" href="#software-growth--car-industry">software growth – car industry</a></h2>
 <div class="columns">
-<div class="column mt-1" width="55%">
+<div class="column" width="55%">
 <ul>
 <li>1981, GM was using microprocessor-based engine controls executing
-about 50 000 lines of code</li>
-<li>even low-end cars now (<em>2009</em>) have 30 to 50 electronic control units
-(ECUs)
+about 50 000 lines of code (Charette, 2009)</li>
+<li>even low-end cars now [<em>2009</em>] have 30 to 50 electronic control
+units (ECUs)
 <ul>
 <li>that means these cars “execute” tens of millions of lines of
 software code that control everything from your brakes to your radio
-volume</li>
+volume (Charette, 2009)</li>
 </ul>
 </li>
+<li>in a modern car [<em>2023</em>], you can expect to find 50 to over 100 ECUs
+(Walker, 2023)</li>
 <li>for hybrids, the amount of software required for engine control is
-almost double that of a standard car</li>
+almost double that of a standard car (Charette, 2009)</li>
 </ul>
-<div class="text-smaller">
-<p>source: <a href="https://spectrum.ieee.org/this-car-runs-on-code">This Car Runs on
-Code</a> (Charette, 2009)</p>
-</div>
+<!--::: {.text-smaller}
+source: [This Car Runs on Code](https://spectrum.ieee.org/this-car-runs-on-code) [@charette2009this]
+&#10;:::-->
 </div>
 <div class="column" width="45%">
 <figure>
@@ -721,7 +722,8 @@ Torvalds</a></p>
 <p>A designer knows he has achieved perfection not when there is nothing
 left to add, but when there is nothing left to take away.</p>
 <p>– <a href="https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry">Antoine de
-Saint-Exupéry</a></p>
+Saint-Exupéry</a>
+(29 June 1900 – 31 July 1944)</p>
 </blockquote>
 </div>
 <div class="fragment mt-2">
@@ -739,6 +741,13 @@ Saint-Exupéry</a></p>
 <p>The design, the code should be kept as simple as possible. When you want
 to simplify a design, keep only those parts that are absolutely
 necessary to get the job done.</p>
+<p>And it is nothing new. There is a concept in philosophy, called Occam’s
+razor, which is the problem-solving principle that recommends searching
+for explanations constructed with the smallest possible set of elements.
+Attributed to William of Ockham, a 14th-century English philosopher and
+theologian. The principle is sometimes paraphrased as “of two competing
+theories, the simpler explanation of an entity is to be preferred.”
+(Wikipedia contributors, 2025)</p>
 </div>
 <h2 id="linux-58--800000-new-lines-of-code"><a class="header" href="#linux-58--800000-new-lines-of-code">Linux 5.8 – 800,000 new lines of code</a></h2>
 <div class="text-smaller">
@@ -769,7 +778,7 @@ to be one of our biggest releases of all time</p>
 </ul>
 <h1 id="version-control"><a class="header" href="#version-control">version control</a></h1>
 <div class="columns">
-<div class="column" width="55%">
+<div class="column mt-4" width="55%">
 <ul>
 <li>version control (a.k.a. revision control) is system for recording and
 managing changes made in files</li>
@@ -784,11 +793,11 @@ realising it</li>
 </div>
 <div class="column" width="45%">
 <figure>
-<img src="figures/borrowed/custom_version_control.png"
-alt="Simon Mutch | CC BY-SA 3.0" />
-<figcaption aria-hidden="true">Simon Mutch | <a
-href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA
-3.0</a></figcaption>
+<img src="figures/intuitive_version_tracking.svg"
+alt="custom versioning using folders and files, based on Simon Mutch’s original" />
+<figcaption aria-hidden="true">custom versioning using folders and
+files, based on Simon Mutch’s <a
+href="http://smutch.github.io/VersionControlTutorial/pages/0-intro.html">original</a></figcaption>
 </figure>
 </div>
 </div>
@@ -959,6 +968,13 @@ https://www.wired.com/story/san-francisco-muni-trains-floppy-disks
 https://medium.com/decoding-tech/software-architecture-metaphors-90992e9be5f4
 </a>.</p>
 </div>
+<div id="ref-walker2023how" class="csl-entry">
+<p>Walker, T. (2023). <em>How many computers are in a car?</em> <a href="
+                   https://tradecarhub.com/car-technology/how-many-computers-are-in-a-car/
+                    " class="uri">
+https://tradecarhub.com/car-technology/how-many-computers-are-in-a-car/
+</a>.</p>
+</div>
 <div id="ref-enwiki:1233276268" class="csl-entry">
 <p>Wikipedia contributors. (2024a). <em>Computer program — Wikipedia, the free
 encyclopedia</em>. <a href="
@@ -974,6 +990,11 @@ encyclopedia</em>. <a href="
                     " class="uri">
 https://en.wikipedia.org/w/index.php?title=Software_rot&amp;oldid=1236668404
 </a>.</p>
+</div>
+<div id="ref-enwiki:1305790618" class="csl-entry">
+<p>Wikipedia contributors. (2025). <em>Occam’s razor — Wikipedia, the free
+encyclopedia</em>.
+<a href="https://en.wikipedia.org/w/index.php?title=Occam%27s_razor&amp;oldid=1305790618">https://en.wikipedia.org/w/index.php?title=Occam%27s_razor&amp;oldid=1305790618</a>.</p>
 </div>
 </div>
 

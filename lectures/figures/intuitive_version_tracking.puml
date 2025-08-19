@@ -1,0 +1,19 @@
+@startsalt
+{
+scale 2
+{T
+ + a_paper
+ ++ article-bu.tex       | <color:darkred><&arrow-thick-left> revision
+ ++ article-bu_1.tex     | <color:darkred><&arrow-thick-left> revision
+ ++ article-bu_2.tex     | <color:darkred><&arrow-thick-left> revision
+ ++ article.tex          | <color:darkred><&arrow-thick-left> revision
+ ++ final_proof
+ +++ article.tex         | <color:darkred><&arrow-thick-left> final
+ ++ response
+ +++ article.tex         | <color:darkred><&arrow-thick-left> revision
+ +++ refs_response.tex
+ ++ submitted
+ +++ article.tex         | <color:darkred><&arrow-thick-left> revision
+}
+}
+@endsalt

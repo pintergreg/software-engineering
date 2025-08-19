@@ -572,24 +572,25 @@ several times</li>
 <section id="software-development-is-like-gardening"
 class="title-slide slide level1">
 <h1>software development is like gardening</h1>
-<div class="columns fragment">
-<div class="column" style="width:55%;">
-<ul>
-<li>a garden needs to be taken care of constantly</li>
-<li>without attention the garden will decay
-<!-- - external factors like weather, pests, weeds can influence the garden --></li>
-</ul>
-</div><div class="column" style="width:45%;">
-<ul>
-<li>maintenance is part of software development</li>
-<li>software rots
-<!-- - change in user requirements, but importantly the external dependencies such as frameworks, libraries, etc. can affect the software --></li>
-</ul>
-</div>
-</div>
-<div class="text-smaller mt-5">
+<div class="text-smaller">
 <p>based on Software Architecture Metaphors by Lisa Stähli <span
 class="citation" data-cites="stahli2021software">[2]</span></p>
+</div>
+<div class="columns fragment">
+<div class="column mt-4" style="width:37%;">
+<ul>
+<li>a garden needs to be taken care of constantly</li>
+<li>without attention the garden will decay</li>
+</ul>
+</div><div class="column mt-4" style="width:35%;">
+<ul>
+<li>maintenance is part of software development</li>
+<li>software rots</li>
+</ul>
+</div><div class="column" style="width:28%;">
+<p><img
+data-src="figures/publicdomainvectors/gardener-watering-with-a-hose.svg" /></p>
+</div>
 </div>
 <aside class="notes">
 <p>Another famous metaphor is the gardening. The most important aspect
@@ -687,26 +688,22 @@ a user documentation (manual) for the operators of the system.</p>
 <section id="software-development-is-like-gardening---cont."
 class="slide level2">
 <h2>software development is like gardening - cont.</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<!-- - a garden needs to be taken care of constantly -->
-<!-- - without attention the garden will decay -->
+<div class="text-smaller">
+<p>based on Software Architecture Metaphors by Lisa Stähli <span
+class="citation" data-cites="stahli2021software">[2]</span></p>
+</div>
+<div class="columns mt-3">
+<div class="column" style="width:50%;">
 <ul>
 <li>external factors like weather, pests, weeds can influence the
 garden</li>
 </ul>
-</div><div class="column" style="width:45%;">
-<!-- - maintenance is part of software development -->
-<!-- - software rots -->
+</div><div class="column" style="width:50%;">
 <ul>
 <li>change in user requirements, and the external dependencies such as
 frameworks, libraries, etc. can affect the software</li>
 </ul>
-</div>
-</div>
-<div class="text-smaller mt-5">
-<p>based on Software Architecture Metaphors by Lisa Stähli <span
-class="citation" data-cites="stahli2021software">[2]</span></p>
+</div><!-- ::::::::: {.column width="20%"} --><!-- ::::::::: -->
 </div>
 <aside class="notes">
 <p>Another similarity to gardening is that external factors can
@@ -717,6 +714,10 @@ influence the software.</p>
 class="slide level2 exclude-header">
 <h2 class="exclude-header">software development is like gardening -
 cont.</h2>
+<div class="text-smaller">
+<p>based on Software Architecture Metaphors by Lisa Stähli <span
+class="citation" data-cites="stahli2021software">[2]</span></p>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -741,10 +742,6 @@ craftmanship (later)</li>
 </ul></li>
 </ul>
 </div>
-</div>
-<div class="text-smaller">
-<p>based on Software Architecture Metaphors by Lisa Stähli <span
-class="citation" data-cites="stahli2021software">[2]</span></p>
 </div>
 </section></section>
 <section id="software-craftmanship" class="title-slide slide level1">
@@ -781,6 +778,10 @@ href="https://manifesto.softwarecraftsmanship.org/">/manifesto.softwarecraftsman
 <section>
 <section id="software-growth" class="title-slide slide level1">
 <h1>software growth</h1>
+
+</section>
+<section id="software-growth-cont." class="slide level2">
+<h2>software growth – cont.</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="wide-quote mt-4">
@@ -807,36 +808,40 @@ data-cites="firesmith2008method">[6]</span></figcaption>
 
 </aside>
 </section>
-<section id="software-growth-cont." class="slide level2">
-<h2>software growth cont.</h2>
+<section id="software-growth-car-industry" class="slide level2">
+<h2>software growth – car industry</h2>
 <div class="columns">
-<div class="column mt-1" style="width:55%;">
+<div class="column" style="width:55%;">
 <ul>
 <li>1981, GM was using microprocessor-based engine controls executing
-about 50 000 lines of code</li>
-<li>even low-end cars now (<em>2009</em>) have 30 to 50 electronic
+about 50 000 lines of code <span class="citation"
+data-cites="charette2009this">[7]</span></li>
+<li>even low-end cars now [<em>2009</em>] have 30 to 50 electronic
 control units (ECUs)
 <ul>
 <li>that means these cars “execute” tens of millions of lines of
 software code that control everything from your brakes to your radio
-volume</li>
+volume <span class="citation"
+data-cites="charette2009this">[7]</span></li>
 </ul></li>
+<li>in a modern car [<em>2023</em>], you can expect to find 50 to over
+100 ECUs <span class="citation"
+data-cites="walker2023how">[8]</span></li>
 <li>for hybrids, the amount of software required for engine control is
-almost double that of a standard car</li>
+almost double that of a standard car <span class="citation"
+data-cites="charette2009this">[7]</span></li>
 </ul>
-<div class="text-smaller">
-<p>source: <a
-href="https://spectrum.ieee.org/this-car-runs-on-code">This Car Runs on
-Code</a> <span class="citation"
-data-cites="charette2009this">[7]</span></p>
-</div>
+<!--::: {.text-smaller}
+source: [This Car Runs on Code](https://spectrum.ieee.org/this-car-runs-on-code) [@charette2009this]
+
+:::-->
 </div><div class="column" style="width:45%;">
 <figure>
 <img data-src="figures/es_as_total_car_cost.drawio.svg"
-alt="electronics systems of total car cost [8]" />
+alt="electronics systems of total car cost [9]" />
 <figcaption aria-hidden="true">electronics systems of total car cost
 <span class="citation"
-data-cites="charette2021how">[8]</span></figcaption>
+data-cites="charette2021how">[9]</span></figcaption>
 </figure>
 </div>
 </div>
@@ -888,7 +893,7 @@ Torvalds</a></p>
 left to add, but when there is nothing left to take away.</p>
 <p>– <a
 href="https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry">Antoine
-de Saint-Exupéry</a></p>
+de Saint-Exupéry</a> (29 June 1900 – 31 July 1944)</p>
 </blockquote>
 </div>
 <div class="fragment mt-2">
@@ -905,6 +910,14 @@ de Saint-Exupéry</a></p>
 <p>The design, the code should be kept as simple as possible. When you
 want to simplify a design, keep only those parts that are absolutely
 necessary to get the job done.</p>
+<p>And it is nothing new. There is a concept in philosophy, called
+Occam’s razor, which is the problem-solving principle that recommends
+searching for explanations constructed with the smallest possible set of
+elements. Attributed to William of Ockham, a 14th-century English
+philosopher and theologian. The principle is sometimes paraphrased as
+“of two competing theories, the simpler explanation of an entity is to
+be preferred.” <span class="citation"
+data-cites="enwiki:1305790618">[10]</span></p>
 </aside>
 </section>
 <section id="linux-5.8-800000-new-lines-of-code" class="slide level2">
@@ -937,7 +950,7 @@ out… 5.8 looks to be one of our biggest releases of all time</p>
 <section id="version-control" class="title-slide slide level1">
 <h1>version control</h1>
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column mt-4" style="width:55%;">
 <ul>
 <li>version control (a.k.a. revision control) is system for recording
 and managing changes made in files</li>
@@ -951,11 +964,11 @@ realising it</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <figure>
-<img data-src="figures/borrowed/custom_version_control.png"
-alt="Simon Mutch | CC BY-SA 3.0" />
-<figcaption aria-hidden="true">Simon Mutch | <a
-href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA
-3.0</a></figcaption>
+<img data-src="figures/intuitive_version_tracking.svg"
+alt="custom versioning using folders and files, based on Simon Mutch’s original" />
+<figcaption aria-hidden="true">custom versioning using folders and
+files, based on Simon Mutch’s <a
+href="http://smutch.github.io/VersionControlTutorial/pages/0-intro.html">original</a></figcaption>
 </figure>
 </div>
 </div>
@@ -1175,13 +1188,29 @@ N. Charette, <span>“This car runs on code.”</span> <a href="
                    https://spectrum.ieee.org/this-car-runs-on-code
 </a>, 01-Feb-2009.</div>
 </div>
+<div id="ref-walker2023how" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">T.
+Walker, <span>“How many computers are in a car?”</span> <a href="
+                   https://tradecarhub.com/car-technology/how-many-computers-are-in-a-car/
+                    " class="uri">
+                   https://tradecarhub.com/car-technology/how-many-computers-are-in-a-car/
+</a>, 23-Sep-2023.</div>
+</div>
 <div id="ref-charette2021how" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">R.
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">R.
 N. Charette, <span>“How software is eating the car.”</span> <a href="
                    https://spectrum.ieee.org/meerkat-substation-security
                     " class="uri">
                    https://spectrum.ieee.org/meerkat-substation-security
 </a>, 07-Jun-2021.</div>
+</div>
+<div id="ref-enwiki:1305790618" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Occam’s razor —
+<span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Occam%27s_razor&amp;oldid=1305790618"
+class="uri">https://en.wikipedia.org/w/index.php?title=Occam%27s_razor&amp;oldid=1305790618</a>,
+2025.</div>
 </div>
 </div>
 </section>
