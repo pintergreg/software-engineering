@@ -127,105 +127,40 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 There are also twelve principles behind the Agile Manifesto, that provides some more detailed interpretation for the values. 
 :::
 
-## 1. Principle behind the Agile Manifesto
 
-> Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+## Principles behind the Agile Manifesto
 
-. . .
+1. Our highest priority is to satisfy the customer through **early and continuous delivery of valuable software**.
+2. Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
+    - [a feedback is something that represent value, so change requests should be welcomed]{.text-smaller}
+    - [from a users' perspective: small changes are easier to adapt, than drastic restructurings]{.text-smaller}
+3. **Deliver working software frequently**, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+    - [significant seep-up compared to the waterfall]{.text-smaller}
+4. Business people and developers must work together daily throughout the project.
+5. Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
+6. The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
 
+::: notes
 > Release early. Release often. And listen to your customers.
 >
 > Eric S. Raymond: The Cathedral and the Bazaar (1997)
 
-::: notes
-The "release early, release often mantra" is quite widespread, but I rarely see the "listen to your customers" part.
 One of the main principle of agile is to collaborate with the customer, who should be involved into the development. Show them the software as soon as possible and ask for feedback.
 Feedback means there will be change requests.
 :::
 
-## 2. Principle behind the Agile Manifesto
 
-> Welcome changing requirements, even late in development. <span class=".fragment">Agile processes harness change for the customer's competitive advantage.<span>
->
-> <cite>[Principles behind the Agile Manifesto](https://agilemanifesto.org/principles.html)</cite>
+## Principles behind the Agile Manifesto
 
-::: notes
-A feedback is something that represent value, so change requests should be welcomed.
-Satisfing the customer is good for the business.
-:::
-
-## 3. Principle behind the Agile Manifesto
-
-> Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
-
-::: notes
-This is a significant seep-up compared to the waterfall, where it could even take years while the customer sees something in action.
-And if you consider this as a users' perspective, small changes are easier to adapt, than drastic restructurings which are comparable to learn a completely new software.
-:::
-
-## 4. Principle behind the Agile Manifesto
-
-> Business people and developers must work together daily throughout the project.
-
-::: notes
-Polarization is not good.
-There should not be sides, business people and developers must not consider the other foes.
-They work together for the same goal.
-:::
-
-## 5. Principle behind the Agile Manifesto
-
-> Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
-
-## 6. Principle behind the Agile Manifesto
-
-> The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
-
-::: notes
-While it is not untrue. I consider it outdated from some aspect.
-:::
-
-## 7. Principle behind the Agile Manifesto
-
-> Working software is the primary measure of progress.
-
-::: notes
-:::
-
-## 8. Principle behind the Agile Manifesto
-
-> Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
-
-::: notes
-:::
-
-## 9. Principle behind the Agile Manifesto
-
-> Continuous attention to technical excellence and good design enhances agility.
-
-::: notes
-:::
-
-## 10. Principle behind the Agile Manifesto
-
-> Simplicity--the art of maximizing the amount of work not done--is essential.
-
-::: notes
-:::
-
-## 11. Principle behind the Agile Manifesto
-
-> The best architectures, requirements, and designs emerge from self-organizing teams.
-
-::: notes
-:::
-
-## 12. Principle behind the Agile Manifesto
-
-> At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
-
-::: notes
-:::
+7. **Working software is the primary measure of progress.**
+8. Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+9. Continuous attention to technical excellence and good design enhances agility.
+10. **Simplicity--the art of maximizing the amount of work not done--is essential.**
+    - [see KISS]{.text-smaller}
+11. The best architectures, requirements, and designs emerge from **self-organizing teams**.
+    - [self-organizing teams are a key element of SCRUM]{.text-smaller}
+12. At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
+    - [retrospectives in SCRUM]{.text-smaller}
 
 # manifesto for software craftsmanship
 
