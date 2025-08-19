@@ -466,7 +466,7 @@ It requires more resources, but at the same time it also increases complexity.
 ::: {.wide-quote .fragment .mt-1}
 > A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.
 >
-> -- [Antoine de Saint-Exupéry](https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry)
+> -- [Antoine de Saint-Exupéry](https://en.wikiquote.org/wiki/Antoine_de_Saint_Exup%C3%A9ry) (29 June 1900 – 31 July 1944)
 
 :::
 
@@ -481,6 +481,11 @@ It requires more resources, but at the same time it also increases complexity.
 
 The design, the code should be kept as simple as possible.
 When you want to simplify a design, keep only those parts that are absolutely necessary to get the job done.
+
+And it is nothing new.
+There is a concept in philosophy, called Occam's razor, which is the problem-solving principle that recommends searching for explanations constructed with the smallest possible set of elements.
+Attributed to William of Ockham, a 14th-century English philosopher and theologian.
+The principle is sometimes paraphrased as "of two competing theories, the simpler explanation of an entity is to be preferred." [@enwiki:1305790618]
 :::
 
 
