@@ -407,19 +407,21 @@ From [/manifesto.softwarecraftsmanship.org](https://manifesto.softwarecraftsmans
 
 :::
 
-## software growth cont.
+## software growth -- car industry
 
 :::::::::::: {.columns}
-::::::::: {.column width="55%" .mt-1}
-- 1981, GM was using microprocessor-based engine controls executing about 50 000 lines of code
-- even low-end cars now (*2009*) have 30 to 50 electronic control units (ECUs)
-    - that means these cars "execute" tens of millions of lines of software code that control everything from your brakes to your radio volume
-- for hybrids, the amount of software required for engine control is almost double that of a standard car 
+::::::::: {.column width="55%"}
+- 1981, GM was using microprocessor-based engine controls executing about 50 000 lines of code [@charette2009this]
+- even low-end cars now [*2009*] have 30 to 50 electronic control units (ECUs)
+    - that means these cars "execute" tens of millions of lines of software code that control everything from your brakes to your radio volume [@charette2009this]
+- in a modern car [*2023*], you can expect to find 50 to over 100 ECUs [@walker2023how]
+- for hybrids, the amount of software required for engine control is almost double that of a standard car [@charette2009this]
 
-::: {.text-smaller}
+<!--::: {.text-smaller}
 source: [This Car Runs on Code](https://spectrum.ieee.org/this-car-runs-on-code) [@charette2009this]
 
-:::
+:::-->
+
 :::::::::
 ::::::::: {.column width="45%"}
 ![electronics systems of total car cost [@charette2021how]](figures/es_as_total_car_cost.drawio.svg)
