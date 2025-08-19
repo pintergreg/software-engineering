@@ -828,6 +828,32 @@ and the source files for papers.</p>
 Google Docs or Microsoft Word also provides some level of version
 control.</p>
 </div>
+<h2 id="benefits-of-version-control-systems"><a class="header" href="#benefits-of-version-control-systems">benefits of version control systems</a></h2>
+<ul>
+<li>generate backups</li>
+<li>separates experiments from the working version
+<ul>
+<li>branching</li>
+</ul>
+</li>
+<li>keep history and track changes
+<ul>
+<li>traceability</li>
+</ul>
+</li>
+<li>foster collaboration and contribution
+<ul>
+<li>team work</li>
+</ul>
+</li>
+</ul>
+<p>The current level of software complexity is not manageable without
+allowing many people to work on the same code base, and the separation
+of the development versions from the production one.</p>
+<div class="mt-3">
+<p><strong>later on the course</strong>: the types and operation of version control
+systems</p>
+</div>
 <h1 id="project-complexity"><a class="header" href="#project-complexity">project complexity</a></h1>
 <div class="r-stack">
 <div class="fragment">
@@ -881,47 +907,35 @@ shape a system, where significant is measured by cost of change.</p>
 <p><a href="https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture">Introduction to Software
 Architecture</a></p>
 </div>
-<h2 id="layered-architechture"><a class="header" href="#layered-architechture">Layered Architechture</a></h2>
-<p><img
-src="figures/borrowed/Linux%20kernel%20and%20OpenGL%20video%20games.svg"
-height="450" /></p>
-<ul>
-<li><a href="http://serena-yeoh.blogspot.com/2013/06/layered-architecture-for-net.html">Layered Architecture:
-Introduction</a></li>
-<li><a href="http://serena-yeoh.blogspot.com/2014/01/layered-architecture-components.html">Layered Architecture: Component
-Interactions</a></li>
-</ul>
-<h2 id="message-bus"><a class="header" href="#message-bus">message bus</a></h2>
-<div class="columns">
-<div class="column mt-2" width="50%">
-<ul>
-<li>shared communication channel that connects multiple components or
-services</li>
-<li>simple, extensible</li>
-</ul>
-</div>
-<div class="column" width="50%">
-<img src="figures/message_bus.drawio.svg" width="325" />
-</div>
-</div>
-<h2 id="serverclient-architecture"><a class="header" href="#serverclient-architecture">server/client architecture</a></h2>
-<div class="columns">
-<div class="column" width="50%">
-<ul>
-<li>consists of two parts
-<ul>
-<li>client and server</li>
-</ul>
-</li>
-<li>distributed</li>
-<li>always the client initiates a connection to the server</li>
-<li>while the server process always waits for requests from any client</li>
-</ul>
-</div>
-<div class="column" width="50%">
-<img src="figures/server_client.drawio.svg" width="325" />
-</div>
-</div>
+<!--## Layered Architechture
+&#10;![](figures/borrowed/Linux kernel and OpenGL video games.svg){height=450}
+&#10;- [Layered Architecture: Introduction](http://serena-yeoh.blogspot.com/2013/06/layered-architecture-for-net.html)
+- [Layered Architecture: Component Interactions](http://serena-yeoh.blogspot.com/2014/01/layered-architecture-components.html)
+&#10;
+## message bus
+&#10;:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-2}
+&#10;- shared communication channel that connects multiple components or services
+- simple, extensible
+&#10;:::::::::
+::::::::: {.column width="50%"}
+![](figures/message_bus.drawio.svg){width=325}
+&#10;:::::::::
+::::::::::::
+&#10;
+## server/client architecture
+&#10;:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- consists of two parts
+    - client and server
+- distributed
+- always the client initiates a connection to the server
+- while the server process always waits for requests from any client
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/server_client.drawio.svg){width=325}
+:::::::::
+::::::::::::-->
 <h1 id="references"><a class="header" href="#references">references</a></h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 line-spacing="2">
