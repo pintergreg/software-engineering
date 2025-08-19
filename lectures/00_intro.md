@@ -552,6 +552,23 @@ Many services have some kind of version control built in.
 For example Google Docs or Microsoft Word also provides some level of version control.
 :::
 
+
+## benefits of version control systems
+
+- generate backups
+- separates experiments from the working version
+    - branching
+- keep history and track changes
+    - traceability
+- foster collaboration and contribution
+    - team work
+
+The current level of software complexity is not manageable without allowing many people to work on the same code base, and the separation of the development versions from the production one.
+    
+::: {.mt-3}
+**later on the course**: the types and operation of version control systems
+:::
+
 # project complexity
 
 :::::: {.r-stack}
