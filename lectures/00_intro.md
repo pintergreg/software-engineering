@@ -391,6 +391,9 @@ From [/manifesto.softwarecraftsmanship.org](https://manifesto.softwarecraftsmans
 
 # software growth
 
+
+## software growth -- cont.
+
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
 ::: {.wide-quote .mt-4}
@@ -510,14 +513,14 @@ The principle is sometimes paraphrased as "of two competing theories, the simple
 # version control
 
 :::::::::::: {.columns}
-::::::::: {.column width="55%"}
+::::::::: {.column width="55%" .mt-4}
 - version control (a.k.a. revision control) is system for recording and managing changes made in files
 - commonly used to manage source code
     - however, it can be used to tracking changes to any kind of files
 - people often employ their own version control system, without realising it
 :::::::::
 ::::::::: {.column width="45%"}
-![Simon Mutch | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)](figures/borrowed/custom_version_control.png)
+![custom versioning using folders and files, based on Simon Mutch's [original](http://smutch.github.io/VersionControlTutorial/pages/0-intro.html)](figures/intuitive_version_tracking.svg)
 
 :::::::::
 ::::::::::::
