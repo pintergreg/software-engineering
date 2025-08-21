@@ -447,7 +447,7 @@ source: [www.folklore.org](https://www.folklore.org/Negative_2000_Lines_Of_Code.
 - in 1982, some managers of the Lisa team decided to track each developer's weekly code output
     - [developers had to report every Friday the number of LOC they wrote that week]{.text-smaller}
 - Bill Atkinson was working on optimizing Quickdraw's region calculation at that time, and he had completely rewritten the region engine using a simpler, more general algorithm, which got almost **six times faster**
-    - [as a by-product, the rewrite also about 2000 LOC]{.fragment data-fragment-index=1 .text-smaller}
+    - [as a by-product, the rewrite saved about 2000 LOC]{.fragment data-fragment-index=1 .text-smaller}
 - [that week's output, in terms of lines, was -2000]{.fragment data-fragment-index=1}
 
 :::::::::
