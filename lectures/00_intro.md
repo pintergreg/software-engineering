@@ -19,7 +19,7 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 - provide a shared terminology to be able to work seamlessly with software developers
 - introduce the fundamentals of modern software development methodologies and life cycle models
     - with a focusing in detail on Scrum and Kanban
-- introduce **requirements analysis** and **software architecture**
+- introduce **requirements analysis** and **software modelling**
     - both in theory and in practice
 - provide an insight to code quality, code review, testing and automation
 
