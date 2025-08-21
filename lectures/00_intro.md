@@ -365,30 +365,6 @@ based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
 ::::::::::::
 
 
-# software craftmanship
-
-::: {.text-smaller}
-As aspiring Software Craftsmen we are raising the bar of professional software development by practicing it and helping others learn the craft. Through this work we have come to value:
-:::
-
-- Not only working software, but also **well-crafted software**
-- Not only responding to change, but also **steadily adding value**
-- Not only individuals and interactions, but also **a community of professionals**
-- Not only customer collaboration, but also **productive partnerships**
-
-::: {.text-smaller .mt-4}
-That is, in pursuit of the items on the left we have found the items on the right to be indispensable.
-:::
-
-::: {.text-size-1}
-© 2009, the undersigned.
-This statement may be freely copied in any form, but only in its entirety through this notice.
-:::
-
-::: notes
-From [/manifesto.softwarecraftsmanship.org](https://manifesto.softwarecraftsmanship.org/).
-:::
-
 # software growth
 
 
