@@ -87,6 +87,7 @@ The practical classes are workshops in which the students work in teams on the p
     - handout
     - presentation
 - [pintergreg.github.io/software-engineering](https://pintergreg.github.io/software-engineering/)
+- also uploaded to Moodle as PDFs
 
 :::::::::
 ::::::::: {.column width="40%"}
