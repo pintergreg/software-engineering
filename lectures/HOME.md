@@ -54,6 +54,7 @@ user story mapping
           - [Five common story mapping mistakes](https://jpattonassociates.com/5-story-mapping-mistakes/) - by Jeff Patton
      - [The Ultimate Guide to User Story Mapping](https://www.easyagile.com/blog/the-ultimate-guide-to-user-story-maps/) - by Nick Muldoon
      - [Mapping User Stories in Agile](https://www.nngroup.com/articles/user-story-mapping/) - by Anna Kaley
+     - [A Guide to User Story Mapping: Templates and Examples (How to Map User Stories)](https://plan.io/blog/user-story-mapping/) by Jory MacKay
      - [Quickstart Guide to User Story Mapping](resources/quickstart-guide-to-user-story-mapping.pdf)
 
 #### optional
