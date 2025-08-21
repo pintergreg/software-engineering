@@ -13,6 +13,22 @@ showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.1.0/"
 ---
 
+# goal of this course
+
+- provide a common foundation in software engineering for students from various backgrounds
+- provide a shared terminology to be able to work seamlessly with software developers
+- introduce the fundamentals of modern software development methodologies and life cycle models
+    - with a focusing in detail on Scrum and Kanban
+- introduce **requirements analysis** and **software architecture**
+    - both in theory and in practice
+- provide an insight to code quality, code review, testing and automation
+
+<!--During the practical classes, the students explore and document the requirements of a software system.
+Then, during the second half of the semester, they design its architecture.
+For requirements analysis, the course applies user story mapping in accordance with the agile principles.
+For the software design, the course uses the C4 model, which is a set of hierarchical diagrams describing the architecture of a software system.
+The practical classes are workshops in which the students work in teams on the project assignment under an instructor's guidance.-->
+
 # schedule {visibility=hidden}
 
 |week| date       | lecture                                  | practical class       |
