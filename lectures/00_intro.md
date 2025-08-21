@@ -384,6 +384,12 @@ based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
 
 # software growth
 
+## why does software grow?
+
+::: {.fragment .r-fit-text}
+because we want<br> more and more functionality
+:::
+
 
 ## software growth -- cont.
 
