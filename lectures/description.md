@@ -8,3 +8,16 @@ For requirements analysis, the course applies user story mapping in accordance w
 For the software design, the course uses the C4 model, which is a set of hierarchical diagrams describing the architecture of a software system.
 The practical classes are workshops in which the students work in teams on the project assignment under an instructor's guidance.
 The During the second half of the semester, lectures also cover topics such as code quality, code review, testing and automation.
+
+## subject outline
+
+1. software architecture, SDLC
+2. scrum, kanban
+3. requirement analysis, user story mapping
+4. UML, C4
+5. design patterns
+6. interfaces, implementation planning
+7. wireframing, clean clode
+8. code quality, code review
+9. testing, working with legacy code
+10. CI, automatization, devops
