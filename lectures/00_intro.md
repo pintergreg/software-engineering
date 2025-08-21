@@ -436,6 +436,29 @@ source: [This Car Runs on Code](https://spectrum.ieee.org/this-car-runs-on-code)
 ::::::::::::
 
 
+# measuring code lines?
+
+::: {.text-smaller}
+source: [www.folklore.org](https://www.folklore.org/Negative_2000_Lines_Of_Code.html) by Andy Hertzfeld | [CC-BY-NC](https://creativecommons.org/licenses/by-nc/1.0/)
+:::
+
+:::::::::::: {.columns}
+::::::::: {.column width="65%"}
+- in 1982, some managers of the Lisa team decided to track each developer's weekly code output
+    - [developers had to report every Friday the number of LOC they wrote that week]{.text-smaller}
+- Bill Atkinson was working on optimizing Quickdraw's region calculation at that time, and he had completely rewritten the region engine using a simpler, more general algorithm, which got almost **six times faster**
+    - [as a by-product, the rewrite also about 2000 LOC]{.fragment data-fragment-index=1 .text-smaller}
+- [that week's output, in terms of lines, was -2000]{.fragment data-fragment-index=1}
+
+:::::::::
+::::::::: {.column width="35%"}
+![Apple's Lisa-1 Computer, released in 19 January 1973, photo by [Timothy Colegrove](https://commons.wikimedia.org/wiki/File:Apple-lisa-1.jpg) <br> [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)](figures/borrowed/Apple-lisa-1.jpg)
+
+[Quickdraw: 2D graphics library]{.text-smaller}
+:::::::::
+::::::::::::
+
+
 ## the more, the better?
 
 > if we wish to count lines of code, we should not regard them as "lines produced" but as "lines spent"
