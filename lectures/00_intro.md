@@ -556,7 +556,7 @@ For example Google Docs or Microsoft Word also provides some level of version co
 
 - generate backups
 - separates experiments from the working version
-    - branching
+    - branching, deployment strategies (much later in the course)
 - keep history and track changes
     - traceability
 - foster collaboration and contribution
