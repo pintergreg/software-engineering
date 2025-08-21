@@ -21,3 +21,35 @@ A szemeszter második felében az előadások olyan témákat is érintenek, min
 8. kódminőség, kód ellenőrzés review
 9. tesztelés, munka örökölt kóddal
 10. CI, automatizáció, devops
+
+## tanulási eredmények
+
+### képességek
+
+- szoftverfejlesztési módszertanok történeti áttekintésben
+- scrum és kanban módszertanok ismerete
+- a rendszerkövetelmények fogalma és szerepe,
+- a rendszerkövetelmények modellezési technikái (user story mapping)
+- probléma és tématerület elemzési technikák
+- rendszertervezés C4 modell segítségével
+- kódminőség, tesztelés, automatizálás fontossága
+
+### tudás
+
+A tárgy sikeres elvégzése után a hallgatók képesek lesznek:
+
+- bemutatni a legfontosabb szoftverfejlesztési módszertanokat
+- kutatómunkát végezni a rendszerkövetelmények hatékony megismerésére és megértésére
+- alkalmazni a követelményspecifikáláshoz használható user story mapping módszert
+- elkészíteni egy adott szoftver architektúráját C4 modell segítségével
+- elvégezni a megvalósíthatóság legfontosabb vizsgálatait
+
+### attitűd
+
+- helyes kommunikáció a fejlesztési projektek résztvevőivel és az érintett szereplőkkel (stakeholders)
+- hatékony, megoldásra törekvő együttműködés a rendszer programozóival és tesztelőivel
+
+### autonómia és felelősségvállalás
+
+- a hallgató képes lesz részt venni korszerű módszertanokra alapozott információs rendszer fejlesztési projektekben akár csapattagként, akár - megfelelő tapasztalatszerzés után - kisebb projektek vagy részprojektek vezetőjeként
+- képes felelős döntéseket hozni tervezési és kivitelezési kérdésekben
