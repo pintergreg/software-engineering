@@ -922,31 +922,6 @@ craftmanship (later)</li>
 </ul>
 </div>
 </div>
-<h1 id="software-craftmanship"><a class="header" href="#software-craftmanship">software craftmanship</a></h1>
-<div class="text-smaller">
-<p>As aspiring Software Craftsmen we are raising the bar of professional
-software development by practicing it and helping others learn the
-craft. Through this work we have come to value:</p>
-</div>
-<ul>
-<li>Not only working software, but also <strong>well-crafted software</strong></li>
-<li>Not only responding to change, but also <strong>steadily adding value</strong></li>
-<li>Not only individuals and interactions, but also <strong>a community of
-professionals</strong></li>
-<li>Not only customer collaboration, but also <strong>productive partnerships</strong></li>
-</ul>
-<div class="text-smaller mt-4">
-<p>That is, in pursuit of the items on the left we have found the items on
-the right to be indispensable.</p>
-</div>
-<div class="text-size-1">
-<p>© 2009, the undersigned. This statement may be freely copied in any
-form, but only in its entirety through this notice.</p>
-</div>
-<div class="notes">
-<p>From
-<a href="https://manifesto.softwarecraftsmanship.org/">/manifesto.softwarecraftsmanship.org</a>.</p>
-</div>
 <h1 id="software-growth"><a class="header" href="#software-growth">software growth</a></h1>
 <h2 id="software-growth--cont"><a class="header" href="#software-growth--cont">software growth – cont.</a></h2>
 <div class="columns">
@@ -1005,6 +980,49 @@ alt="electronics systems of total car cost (Charette, 2021)" />
 <span class="citation" data-cites="charette2021how">(Charette,
 2021)</span></figcaption>
 </figure>
+</div>
+</div>
+<h1 id="measuring-code-lines"><a class="header" href="#measuring-code-lines">measuring code lines?</a></h1>
+<div class="text-smaller">
+<p>source:
+<a href="https://www.folklore.org/Negative_2000_Lines_Of_Code.html">www.folklore.org</a>
+by Andy Hertzfeld |
+<a href="https://creativecommons.org/licenses/by-nc/1.0/">CC-BY-NC</a></p>
+</div>
+<div class="columns">
+<div class="column" width="65%">
+<ul>
+<li>in 1982, some managers of the Lisa team decided to track each
+developer’s weekly code output
+<ul>
+<li><span class="text-smaller">developers had to report every Friday the
+number of LOC they wrote that week</span></li>
+</ul>
+</li>
+<li>Bill Atkinson was working on optimizing Quickdraw’s region calculation
+at that time, and he had completely rewritten the region engine using
+a simpler, more general algorithm, which got almost <strong>six times
+faster</strong>
+<ul>
+<li><span class="fragment text-smaller" data-fragment-index="1">as a
+by-product, the rewrite saved about 2000 LOC</span></li>
+</ul>
+</li>
+<li><span class="fragment" data-fragment-index="1">that week’s output, in
+terms of lines, was -2000</span></li>
+</ul>
+</div>
+<div class="column" width="35%">
+<figure>
+<img src="lectures/figures/borrowed/Apple-lisa-1.jpg"
+alt="Apple’s Lisa-1 Computer, released in 19 January 1973, photo by Timothy Colegrove   CC-BY-SA" />
+<figcaption aria-hidden="true">Apple’s Lisa-1 Computer, released in 19
+January 1973, photo by <a
+href="https://commons.wikimedia.org/wiki/File:Apple-lisa-1.jpg">Timothy
+Colegrove</a> <br> <a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA</a></figcaption>
+</figure>
+<p><span class="text-smaller">Quickdraw: 2D graphics library</span></p>
 </div>
 </div>
 <h2 id="the-more-the-better"><a class="header" href="#the-more-the-better">the more, the better?</a></h2>
@@ -1157,7 +1175,7 @@ control.</p>
 <li>generate backups</li>
 <li>separates experiments from the working version
 <ul>
-<li>branching</li>
+<li>branching, deployment strategies (much later in the course)</li>
 </ul>
 </li>
 <li>keep history and track changes
@@ -1547,30 +1565,36 @@ effective, then tunes and adjusts its behavior accordingly.
 </ul>
 </li>
 </ol>
-<h1 id="manifesto-for-software-craftsmanship"><a class="header" href="#manifesto-for-software-craftsmanship">manifesto for software craftsmanship</a></h1>
-<div class="wide-quote">
-<blockquote>
+<h1 id="software-craftmanship"><a class="header" href="#software-craftmanship">software craftmanship</a></h1>
+<div class="text-smaller">
 <p>As aspiring Software Craftsmen we are raising the bar of professional
 software development by practicing it and helping others learn the
 craft. Through this work we have come to value:</p>
+</div>
 <ul>
 <li>Not only working software, but also <strong>well-crafted software</strong></li>
 <li>Not only responding to change, but also <strong>steadily adding value</strong></li>
 <li>Not only individuals and interactions, but also <strong>a community of
 professionals</strong></li>
-<li>Not only customer collaboration, but also <strong>productive
-partnerships</strong></li>
+<li>Not only customer collaboration, but also <strong>productive partnerships</strong></li>
 </ul>
-<p>That is, in pursuit of the items on the left we have found the items
-on the right to be indispensable.</p>
-</blockquote>
+<div class="text-smaller mt-4">
+<p>That is, in pursuit of the items on the left we have found the items on
+the right to be indispensable.</p>
+</div>
+<div class="text-size-1">
+<p>© 2009, the undersigned. This statement may be freely copied in any
+form, but only in its entirety through this notice.</p>
+</div>
+<div class="notes">
+<p>From
+<a href="https://manifesto.softwarecraftsmanship.org/">/manifesto.softwarecraftsmanship.org</a>.</p>
 </div>
 <div class="notes">
 <p>This reads like an answer to the agile manifesto. The working software
 is good, but should well-crafted, which aligns with the ninth agile
 principle: “Continuous attention to technical excellence and good design
 enhances agility.”</p>
-<!-- Accepting change requests is okay, but the change should improve the software. -->
 </div>
 <!--## subway map to agile practices
 &#10;![](borrowed/subway_map_to_agile_practices.svg)-->

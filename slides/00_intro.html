@@ -744,37 +744,6 @@ craftmanship (later)</li>
 </div>
 </div>
 </section></section>
-<section id="software-craftmanship" class="title-slide slide level1">
-<h1>software craftmanship</h1>
-<div class="text-smaller">
-<p>As aspiring Software Craftsmen we are raising the bar of professional
-software development by practicing it and helping others learn the
-craft. Through this work we have come to value:</p>
-</div>
-<ul>
-<li>Not only working software, but also <strong>well-crafted
-software</strong></li>
-<li>Not only responding to change, but also <strong>steadily adding
-value</strong></li>
-<li>Not only individuals and interactions, but also <strong>a community
-of professionals</strong></li>
-<li>Not only customer collaboration, but also <strong>productive
-partnerships</strong></li>
-</ul>
-<div class="text-smaller mt-4">
-<p>That is, in pursuit of the items on the left we have found the items
-on the right to be indispensable.</p>
-</div>
-<div class="text-size-1">
-<p>© 2009, the undersigned. This statement may be freely copied in any
-form, but only in its entirety through this notice.</p>
-</div>
-<aside class="notes">
-<p>From <a
-href="https://manifesto.softwarecraftsmanship.org/">/manifesto.softwarecraftsmanship.org</a>.</p>
-</aside>
-</section>
-
 <section>
 <section id="software-growth" class="title-slide slide level1">
 <h1>software growth</h1>
@@ -843,6 +812,49 @@ alt="electronics systems of total car cost [9]" />
 <span class="citation"
 data-cites="charette2021how">[9]</span></figcaption>
 </figure>
+</div>
+</div>
+</section></section>
+<section>
+<section id="measuring-code-lines" class="title-slide slide level1">
+<h1>measuring code lines?</h1>
+<div class="text-smaller">
+<p>source: <a
+href="https://www.folklore.org/Negative_2000_Lines_Of_Code.html">www.folklore.org</a>
+by Andy Hertzfeld | <a
+href="https://creativecommons.org/licenses/by-nc/1.0/">CC-BY-NC</a></p>
+</div>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>in 1982, some managers of the Lisa team decided to track each
+developer’s weekly code output
+<ul>
+<li><span class="text-smaller">developers had to report every Friday the
+number of LOC they wrote that week</span></li>
+</ul></li>
+<li>Bill Atkinson was working on optimizing Quickdraw’s region
+calculation at that time, and he had completely rewritten the region
+engine using a simpler, more general algorithm, which got almost
+<strong>six times faster</strong>
+<ul>
+<li><span class="fragment text-smaller" data-fragment-index="1">as a
+by-product, the rewrite saved about 2000 LOC</span></li>
+</ul></li>
+<li><span class="fragment" data-fragment-index="1">that week’s output,
+in terms of lines, was -2000</span></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<figure>
+<img data-src="figures/borrowed/Apple-lisa-1.jpg"
+alt="Apple’s Lisa-1 Computer, released in 19 January 1973, photo by Timothy Colegrove   CC-BY-SA" />
+<figcaption aria-hidden="true">Apple’s Lisa-1 Computer, released in 19
+January 1973, photo by <a
+href="https://commons.wikimedia.org/wiki/File:Apple-lisa-1.jpg">Timothy
+Colegrove</a> <br> <a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA</a></figcaption>
+</figure>
+<p><span class="text-smaller">Quickdraw: 2D graphics library</span></p>
 </div>
 </div>
 </section>
@@ -1010,7 +1022,7 @@ control.</p>
 <li>generate backups</li>
 <li>separates experiments from the working version
 <ul>
-<li>branching</li>
+<li>branching, deployment strategies (much later in the course)</li>
 </ul></li>
 <li>keep history and track changes
 <ul>
