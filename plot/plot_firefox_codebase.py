@@ -21,6 +21,8 @@ versions["lines"] = result.values()
 versions["lines"] = round(versions["lines"] / 1000000, 2)
 
 fig, ax = plt.subplots(figsize=(6, 5), layout="constrained", dpi=150)
+ax.set_facecolor("none")
+fig.set_facecolor("none")
 sns.barplot(
     versions.sort_values("date", ascending=True),
     x="date",
@@ -48,9 +50,6 @@ for patch, ver in zip(
 ax.set_ylabel("million lines of code", fontsize=14)
 ax.set_xlabel("")
 
-
-# xlabels = ["{:,.2f}".format(x) + "K" for x in g.get_xticks() / 1000]
-# g.set_xticklabels(xlabels)
 fig.autofmt_xdate()
 for i in ["png", "svg"]:
     fig.savefig(f"firefox_codebase_growth.{i}")
