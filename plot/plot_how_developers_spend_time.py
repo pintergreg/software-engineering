@@ -1,6 +1,14 @@
 import squarify
 import json
 import matplotlib.pyplot as plt
+import yaml
+import matplotlib as mpl
+
+mpl.rcParams["svg.hashsalt"] = "42"
+
+with open("plotting_config.yaml", "r") as fp:
+    config = yaml.safe_load(fp)
+
 
 labels = [
     "writing new code or improving existing code",
@@ -39,7 +47,8 @@ height = 100
 # with open("out.json", "w") as fp:
 #     json.dump(rects, fp, indent=1)
 
-fig, ax = plt.subplots(figsize=(6, 5), layout="constrained")
+fig, ax = plt.subplots(figsize=(6, 5), layout="constrained", dpi=150)
+fig.set_facecolor("none")
 ax.set_aspect(1 / 1.2)
 squarify.plot(
     sizes,
@@ -51,4 +60,5 @@ squarify.plot(
 )
 ax.invert_yaxis()
 # ax.axis("off")
-fig.savefig("out.png")
+for i in config["formats"]:
+    fig.savefig(f"how_developers_spend_time.{i}", metadata=config["metadata"][i])
