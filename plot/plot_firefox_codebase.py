@@ -2,6 +2,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 import yaml
+import matplotlib as mpl
+
+mpl.rcParams["svg.hashsalt"] = "42"
 
 with open("plotting_config.yaml", "r") as fp:
     config = yaml.safe_load(fp)
