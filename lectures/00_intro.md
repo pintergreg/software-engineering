@@ -384,6 +384,24 @@ based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
 
 # software growth
 
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- number of lines of code is increasing
+
+
+
+:::::::::
+::::::::: {.column width="50%"}
+![growth of Firefox codebase](figures/firefox_codebase_growth.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+further [codebase growth infographic](https://informationisbeautiful.net/visualizations/million-lines-of-code/)
+:::
+
+
 ## why does software grow?
 
 ::: {.fragment .r-fit-text}
@@ -391,7 +409,7 @@ because we want<br> more and more functionality
 :::
 
 
-## software growth -- cont.
+## software growth -- aircrafts
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
@@ -531,7 +549,11 @@ The principle is sometimes paraphrased as "of two competing theories, the simple
     - proper documentation
 - changes cannot break the software
     - rigorous and automated testing
-    
+
+::: {.text-smaller .mt-2}
+a more technical read: [Why Linux’s biggest ever kernel release is really no big deal](https://www.linux.com/news/why-linuxs-biggest-ever-kernel-release-is-really-no-big-deal/)
+:::
+
 # version control
 
 :::::::::::: {.columns}
