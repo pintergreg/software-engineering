@@ -25,7 +25,7 @@ sizes = [32, 23, 19, 12, 9, 4]
 # the values will range from x to x + width and y to y + height
 x = 0.0
 y = 0.0
-width = 120
+width = 100
 height = 100
 
 # values = sizes
@@ -38,7 +38,8 @@ height = 100
 # values = squarify.normalize_sizes(values, width, height)
 #
 # # returns a list of rectangles
-# rects = squarify.squarify(values, x, y, width, height)
+rects = squarify.squarify(sizes, x, y, width, height)
+print(rects)
 #
 # # padded rectangles will probably visualize better for certain cases
 # padded_rects = squarify.padded_squarify(values, x, y, width, height)
@@ -55,10 +56,13 @@ squarify.plot(
     norm_x=100,
     norm_y=100,
     color=colors,
-    label=sizes,
+    # label=sizes,
     ax=ax,
 )
 ax.invert_yaxis()
+
+for pos, s in zip([(5, 5), (5, 64), (60, 5), (60, 48), (60, 75), (90, 75)], sizes):
+    ax.text(pos[0], pos[1], s, ha="left", va="top", fontsize=32, fontweight="bold")
 # ax.axis("off")
 for i in config["formats"]:
     fig.savefig(f"how_developers_spend_time.{i}", metadata=config["metadata"][i])
