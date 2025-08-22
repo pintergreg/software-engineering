@@ -1114,8 +1114,140 @@ of the development versions from the production one.</p>
 version control systems</p>
 </div>
 </section></section>
-<section id="project-complexity" class="title-slide slide level1">
-<h1>project complexity</h1>
+<section>
+<section id="complexity" class="title-slide slide level1">
+<h1>complexity</h1>
+<div class="columns">
+<div class="column mt-5" style="width:70%;">
+<ul>
+<li>more functions mean more lines of code</li>
+<li>more lines of code increases the complexity
+<ul>
+<li>and the cost of maintenance</li>
+</ul></li>
+</ul>
+<!--::: {.r-fit-text .mt-2 .fragment}
+how can we deal with the complexity?
+:::-->
+<!-- - software development processes to handle the complexity -->
+</div><div class="column" style="width:30%;">
+<p><img
+data-src="figures/publicdomainvectors/idea-of-success-achievement.svg" /></p>
+</div>
+</div>
+</section>
+<section id="complexity-classes" class="slide level2">
+<h2>complexity classes</h2>
+<div class="text-smaller">
+<blockquote>
+<p>There are known knowns; there are things we know we know. We also
+know there are known unknowns; that is to say we know there are some
+things we do not know. But there are also unknown unknowns – there are
+things we do not know we don’t know.</p>
+<p>– Donald Rumsfel</p>
+</blockquote>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">complexity class</th>
+<th>known</th>
+<th>unknown</th>
+<th>knowns</th>
+<th>unknowns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">simple</td>
+<td>✓</td>
+<td>x</td>
+<td>✓</td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">complicated</td>
+<td>✓</td>
+<td>x</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">complex</td>
+<td>x</td>
+<td>✓</td>
+<td>✓</td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chaotic</td>
+<td>x</td>
+<td>✓</td>
+<td>x</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p><span class="text-smaller">source: <span class="citation"
+data-cites="bykovski2020simple"><strong>bykovski2020simple?</strong></span></span></p>
+</section>
+<section id="complexity-classes-1" class="slide level2">
+<h2>complexity classes</h2>
+<p><span class="text-smaller">from Michael Bykovski’s essay <span
+class="citation"
+data-cites="bykovski2020simple"><strong>bykovski2020simple?</strong></span></span></p>
+<ul>
+<li>in a simple system, we know the knowns, everything is predictable,
+it’s easy to understand the system</li>
+<li>in a complicated system, we know the knowns and unknowns
+<ul>
+<li>it requires analysis to know the unknowns, but the system is
+measurable</li>
+<li>it is the province of engineers, surgeons, intelligence analysts,
+lawyers, and other experts <span class="citation"
+data-cites="enwiki:1300921689"><strong>enwiki:1300921689?</strong></span></li>
+</ul></li>
+<li>in a complex system, the knowns are unknown to us, but we are aware
+of our uncertainty</li>
+<li>a chaotic system is a system of unknown unknowns</li>
+</ul>
+</section>
+<section id="project-complexity-cynefin-framework" class="slide level2">
+<h2>project complexity – Cynefin framework</h2>
+<div class="columns">
+<div class="column text-smaller mt-4" style="width:45%;">
+<ul>
+<li>Cynefin framework is a conceptual framework used to aid
+decision-making
+<ul>
+<li>cynefin (/kəˈnɛvɪn/ kuh-NEV-in) is a Welsh word for ‘habitat’</li>
+<li>created by Dave Snowden</li>
+</ul></li>
+<li>defines five decision-making contexts or “domains”
+<ul>
+<li><span class="text-smaller">clear (aka simple)</span></li>
+<li><span class="text-smaller">complicated</span></li>
+<li><span class="text-smaller">complex</span></li>
+<li><span class="text-smaller">chaotic</span></li>
+<li><span class="text-smaller">confusion (or disorder)</span></li>
+</ul></li>
+<li>you can read more on <a
+href="https://en.wikipedia.org/wiki/Cynefin_framework">Wikipedia</a></li>
+</ul>
+</div><div class="column" style="width:55%;">
+<figure>
+<img data-src="figures/borrowed/wikipedia/Cynefin_framework_2022.jpg"
+alt="diagram of the Cynefin Framework by Thomas B. Cox | CC-BY-SA" />
+<figcaption aria-hidden="true">diagram of the Cynefin Framework<br>by <a
+href="https://en.wikipedia.org/wiki/File:Cynefin_framework_2022.jpg">Thomas
+B. Cox</a> | <a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA</a></figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="project-complexity" class="slide level2">
+<h2>project complexity</h2>
 <div class="r-stack">
 <div class="exclude">
 <p><img data-src="figures/complex_projects.drawio.cropped_no_people.svg"
@@ -1129,8 +1261,7 @@ style="width:55.0%" /></p>
 <aside class="notes">
 
 </aside>
-</section>
-
+</section></section>
 <section>
 <section id="what-is-software-architecture"
 class="title-slide slide level1">
