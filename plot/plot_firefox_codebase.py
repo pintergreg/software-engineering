@@ -51,8 +51,13 @@ for patch, ver in zip(
         fontweight="bold",
     )
 
-ax.set_ylabel("million lines of code", fontsize=14)
+ax.set_ylabel("million lines of code", fontsize=14, fontweight="bold")
+ax.set_yticks(ax.get_yticks())
+ax.set_yticklabels(ax.get_yticklabels(), weight="bold")
 ax.set_xlabel("")
+ax.set_ylim([0, 53])
+ax.set_xticks(ax.get_xticks())
+ax.set_xticklabels(ax.get_xticklabels(), weight="bold")
 
 fig.autofmt_xdate()
 for i in config["formats"]:
