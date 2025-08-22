@@ -618,7 +618,84 @@ The current level of software complexity is not manageable without allowing many
 **later on the course**: the types and operation of version control systems
 :::
 
-# project complexity
+# complexity
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%" .mt-5}
+- more functions mean more lines of code
+- more lines of code increases the complexity
+    - and the cost of maintenance
+    
+<!--::: {.r-fit-text .mt-2 .fragment}
+how can we deal with the complexity?
+:::-->
+
+<!-- - software development processes to handle the complexity -->
+
+
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/idea-of-success-achievement.svg)
+
+:::::::::
+::::::::::::
+
+## complexity classes
+
+::: {.text-smaller}
+> There are known knowns; there are things we know we know. We also know there are known unknowns; that is to say we know there are some things we do not know. But there are also unknown unknowns -- there are things we do not know we don't know.
+>
+> -- Donald Rumsfel
+
+:::
+
+| complexity class | known | unknown | knowns | unknowns |
+|:-----------------|-------|---------|--------|----------|
+| simple           | ✓     | x       | ✓      | x        |
+| complicated      | ✓     | x       | ✓      | ✓        |
+| complex          | x     | ✓       | ✓      | x        |
+| chaotic          | x     | ✓       | x      | ✓        |
+
+[source: [@bykovski2020simple]]{.text-smaller}
+
+
+## complexity classes
+
+[from Michael Bykovski's essay [@bykovski2020simple]]{.text-smaller}
+
+- in a simple system, we know the knowns, everything is predictable, it's easy to understand the system
+- in a complicated system, we know the knowns and unknowns
+    - it requires analysis to know the unknowns, but the system is measurable
+    - it is the province of engineers, surgeons, intelligence analysts, lawyers, and other experts [@enwiki:1300921689]
+- in a complex system, the knowns are unknown to us, but we are aware of our uncertainty
+- a chaotic system is a system of unknown unknowns
+
+
+## project complexity -- Cynefin framework
+
+:::::::::::: {.columns}
+::::::::: {.column width="45%" .text-smaller .mt-4}
+- Cynefin framework is a conceptual framework used to aid decision-making
+    - cynefin (/kəˈnɛvɪn/ kuh-NEV-in) is a Welsh word for 'habitat'
+    - created by Dave Snowden
+- defines five decision-making contexts or "domains"
+    - [clear (aka simple)]{.text-smaller}
+    - [complicated]{.text-smaller}
+    - [complex]{.text-smaller}
+    - [chaotic]{.text-smaller}
+    - [confusion (or disorder)]{.text-smaller}
+- you can read more on [Wikipedia](https://en.wikipedia.org/wiki/Cynefin_framework)
+    
+:::::::::
+::::::::: {.column width="55%"}
+![diagram of the Cynefin Framework<br>by [Thomas B. Cox](https://en.wikipedia.org/wiki/File:Cynefin_framework_2022.jpg) | [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)](figures/borrowed/wikipedia/Cynefin_framework_2022.jpg)
+
+:::::::::
+::::::::::::
+
+
+## project complexity
 
 :::::: {.r-stack}
 ::: {.exclude}
@@ -631,6 +708,7 @@ The current level of software complexity is not manageable without allowing many
 
 ::: notes
 :::
+
 
 # what is software architecture?
 
