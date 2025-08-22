@@ -56,4 +56,7 @@ ax.set_xlabel("")
 
 fig.autofmt_xdate()
 for i in config["formats"]:
-    fig.savefig(f"firefox_codebase_growth.{i}", metadata=config["metadata"][i])
+    fig.savefig(
+        f"../lectures/figures/firefox_codebase_growth.{i}",
+        metadata=config["metadata"][i],
+    )
