@@ -44,9 +44,9 @@ ax.invert_yaxis()
 legend = ax.legend(
     handles=legend_elements,
     ncols=1,
-    fontsize=8,
+    fontsize=12,
     loc="upper right",
-    bbox_to_anchor=(1.575, 1),
+    bbox_to_anchor=(1.9375, 1),
 )
 legend.get_frame().set_alpha(None)
 
