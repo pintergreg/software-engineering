@@ -728,6 +728,15 @@ how can we deal with the complexity?
 >
 > -- Grady Booch
 
+## 
+
+> Architecture is the decisions that you wish you could get right early in a project.
+>
+> -- Ralph Johnson
+
+. . . 
+
+to do that, you need to know all the unknowns, so you need **requirements analysis**, and **learning** the new/unknown technology
 
 # topologies
 
