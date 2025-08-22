@@ -1,0 +1,15 @@
+formats:
+    - png
+    - svg
+metadata:
+    png:
+        Author: "Gergő Pintér"
+        CreationDate: null
+        Copyright: "CC BY 4.0"
+    pdf:
+        Author: "Gergő Pintér"
+        CreationDate: null
+    svg:
+        Creator: "Gergő Pintér"
+        Date: null
+        Rights: "CC BY 4.0"

@@ -1,6 +1,10 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import yaml
+
+with open("plotting_config.yaml", "r") as fp:
+    config = yaml.safe_load(fp)
 
 versions = pd.read_csv("data/firefox/firefox_versions.csv", nrows=11)
 versions["date"] = pd.to_datetime(versions["date"], format="%Y-%m-%d")
@@ -51,5 +55,5 @@ ax.set_ylabel("million lines of code", fontsize=14)
 ax.set_xlabel("")
 
 fig.autofmt_xdate()
-for i in ["png", "svg"]:
-    fig.savefig(f"firefox_codebase_growth.{i}")
+for i in config["formats"]:
+    fig.savefig(f"firefox_codebase_growth.{i}", metadata=config["metadata"][i])
