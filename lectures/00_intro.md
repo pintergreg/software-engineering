@@ -23,11 +23,16 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
     - both in theory and in practice
 - provide an insight to code quality, code review, testing and automation
 
-<!--During the practical classes, the students explore and document the requirements of a software system.
-Then, during the second half of the semester, they design its architecture.
-For requirements analysis, the course applies user story mapping in accordance with the agile principles.
-For the software design, the course uses the C4 model, which is a set of hierarchical diagrams describing the architecture of a software system.
-The practical classes are workshops in which the students work in teams on the project assignment under an instructor's guidance.-->
+
+## practise
+
+- during the practical classes, the students explore and document the requirements of a software system
+    - using **user story mapping** in accordance with the agile principles
+- then, during the second half of the semester, they design its architecture
+    - using the **C4 model**, which is a set of hierarchical diagrams describing the architecture of a software system
+- the practical classes are **workshops** in which the **students work in teams**
+    - under an instructor's guidance
+
 
 # schedule {visibility=hidden}
 
