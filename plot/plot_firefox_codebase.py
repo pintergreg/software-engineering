@@ -21,18 +21,30 @@ versions["lines"] = result.values()
 versions["lines"] = round(versions["lines"] / 1000000, 2)
 
 fig, ax = plt.subplots(figsize=(6, 5), layout="constrained", dpi=150)
-# ax.bar(list(result.keys()), list(result.values()))
 sns.barplot(
     versions.sort_values("date", ascending=True),
     x="date",
     y="lines",
     ax=ax,
-    # color="#DAE8FC",
     color="#FFE6CC",
 )
-for patch in ax.patches:
-    # patch.set_edgecolor("#6C8EBF")
+for patch, ver in zip(
+    ax.patches, versions.sort_values("date", ascending=True)["release"]
+):
     patch.set_edgecolor("#D79B00")
+    patch.get_x()
+    ax.text(
+        patch.get_x() + patch.get_width() / 2,
+        2,
+        f"Firefox {ver}",
+        ha="center",
+        va="bottom",
+        rotation=90,
+        color="#D79B00",
+        fontsize=12,
+        fontweight="bold",
+    )
+
 ax.set_ylabel("million lines of code", fontsize=14)
 ax.set_xlabel("")
 
