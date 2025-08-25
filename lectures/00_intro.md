@@ -387,23 +387,63 @@ based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
 ::::::::::::
 
 
-# software growth
+# how big are softwares?
+
+software is often measured by the source lines of code
+
+<!--- Vanilla Music Player for Android (1.3.2): 48 thousand lines of code (LOC)
+- VLC for Android (3.6.5): 264 thousand LOC-->
+<!--- Joplin 3.3.13 (note taking app): 1 million lines of code
+    - sync capabilities-->
+
+|app                                 |version   |LOC (million)|
+|:-----------------------------------|---------:|------------:|
+|Vanilla Music Player for Android    |     1.3.2|        0.048|
+|VLC for Android                     |     3.6.5|        0.265|
+|Telegram for Android (messaging app)|   11.14.1|        6.6  |
+|GCC (compiler)                      |      15.1|       15    |
+|Firefox (web browser)               |       142|       45    |
+|Windows [@quill2024how]             |        10|       50    |
+|Linux (kernel)                      |      6.16|       40    |
+
+:::{.text-smaller}
+measurements made with [tokei](https://github.com/XAMPPRocky/tokei), the whole repo is counted
+:::
+
+::: notes
+Microsoft does not disclose the actual value, the codebase size of Windows is only a estimation [@quill2024how]. 
+:::
+
+## software growth
+
+number of lines of code is increasing
+
+<!--- Windows 10: 50 million (estimated) [@quill2024how]
+    - 3 million for the kernel
+- Linux 6.16 (kernel): 40 million [LOC]{.tooltip title="lines of code"}
+    - [18.8 million C code lines]{.text-smaller}
+    - [2.8 M C comment and 3.6 M blank lines]{.text-smaller}
+    - monolithic architecture
+
+::: {.fragment}
+- web browser (Firefox): 45+ million [LOC]{.tooltip title="lines of code"}
+    - [a modern browser has the complexity of an OS]{.text-smaller}
+- compiler (GCC): 15+ million [LOC]{.tooltip title="lines of code"}
+:::-->
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%"}
-- number of lines of code is increasing
-
-
-
-:::::::::
 ::::::::: {.column width="50%"}
 ![growth of Firefox codebase](figures/firefox_codebase_growth.svg)
 
 :::::::::
+::::::::: {.column width="50%" .fragment}
+![growth of GCC codebase](figures/gcc_codebase_growth.svg)
+
+:::::::::
 ::::::::::::
 
-::: {.text-smaller}
-further [codebase growth infographic](https://informationisbeautiful.net/visualizations/million-lines-of-code/)
+::: {.text-smaller .mt-2}
+[infographic](https://informationisbeautiful.net/visualizations/million-lines-of-code/) about codebase growth
 :::
 
 
@@ -412,6 +452,8 @@ further [codebase growth infographic](https://informationisbeautiful.net/visuali
 ::: {.fragment .r-fit-text}
 because we want<br> more and more functionality
 :::
+
+<!-- Linux kernel is estimated to have over 450k functions (v5.7) according to project lead developer Greg Kroah-Hartman  -->
 
 
 ## software growth -- aircrafts
