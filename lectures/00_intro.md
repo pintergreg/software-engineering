@@ -92,11 +92,12 @@ requirements analysis (35%) + design (35%) + midterm (30%)
 :::
 
 :::::::::::: {.columns .mt-4}
-::::::::: {.column width="60%"}
+::::::::: {.column width="60%" .mt-2}
 - requirements analysis, software design: **team work**
 - midterm: **individual**
     - Moodle test
     - 50 random multiple-choice questions
+- each part should reach the minimum (>50%)
 
 :::::::::
 ::::::::: {.column width="40%"}
