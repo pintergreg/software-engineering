@@ -855,46 +855,6 @@ based on: [Introduction to Software Architecture](https://www.codeproject.com/Ar
 to do that, you need to know all the unknowns, so you need **requirements analysis**, and **learning** the new/unknown technology
 
 
-<!--## Layered Architechture
-
-![](figures/borrowed/Linux kernel and OpenGL video games.svg){height=450}
-
-- [Layered Architecture: Introduction](http://serena-yeoh.blogspot.com/2013/06/layered-architecture-for-net.html)
-- [Layered Architecture: Component Interactions](http://serena-yeoh.blogspot.com/2014/01/layered-architecture-components.html)
-
-
-## message bus
-
-:::::::::::: {.columns}
-::::::::: {.column width="50%" .mt-2}
-
-- shared communication channel that connects multiple components or services
-- simple, extensible
-
-:::::::::
-::::::::: {.column width="50%"}
-![](figures/message_bus.drawio.svg){width=325}
-
-:::::::::
-::::::::::::
-
-
-## server/client architecture
-
-:::::::::::: {.columns}
-::::::::: {.column width="50%"}
-- consists of two parts
-    - client and server
-- distributed
-- always the client initiates a connection to the server
-- while the server process always waits for requests from any client
-:::::::::
-::::::::: {.column width="50%"}
-![](figures/server_client.drawio.svg){width=325}
-:::::::::
-::::::::::::-->
-
-
 # references
 
 ::: {#refs}
