@@ -84,6 +84,35 @@ revealjs-url: "../assets/reveal.js-5.1.0/"
 
 :::
 
+
+# evaluation
+
+::: {.r-fit-text}
+requirements analysis (35%) + design (35%) + midterm (30%)
+:::
+
+:::::::::::: {.columns .mt-4}
+::::::::: {.column width="60%"}
+- requirements analysis, software design: **team work**
+- midterm: **individual**
+    - Moodle test
+    - 50 random multiple-choice questions
+
+:::::::::
+::::::::: {.column width="40%"}
+
+|score (%)|grade|
+|--------:|:---:|
+|    0-50 |  1  |
+|   51-66 |  2  |
+|   67-76 |  3  |
+|   77-86 |  4  |
+|  87-100 |  5  |
+
+:::::::::
+::::::::::::
+
+
 # materials {.exclude}
 
 :::::::::::: {.columns}
