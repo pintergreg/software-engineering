@@ -674,12 +674,29 @@ how can we deal with the complexity?
 
 <!-- - software development processes to handle the complexity -->
 
-
-
 :::::::::
 ::::::::: {.column width="30%"}
 ![](figures/publicdomainvectors/idea-of-success-achievement.svg)
 
+:::::::::
+::::::::::::
+
+
+## 
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![[Dependency](https://xkcd.com/2347/) by Randall Munroe | [CC&nbsp;BY-NC&nbsp;2.5](https://creativecommons.org/licenses/by-nc/2.5/)](figures/borrowed/xkcd/dependency_2x.png){width=350}
+
+:::::::::
+::::::::: {.column width="50%" .fragment}
+![you can optimize to two of them](figures/quality_time_cost.drawio.svg)
+
+[if you want to deliver product fast, and the developer time is expensive, reuse components]{.text-smaller}
+
+::: {.fragment}
+is it possible to decrease the dependency stack?
+:::
 :::::::::
 ::::::::::::
 
