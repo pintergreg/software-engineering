@@ -210,56 +210,5 @@ Can waterfall work? Yes, it can, if the customer exactly knows what they want an
 
 Although usually the customer does not know what they want, so agile usually work better.
 
-# SCRUM
-
-![](figures/scrum_sprint.drawio.svg)
-
-# kanban
-
-:::::::::::: {.columns}
-::::::::: {.column width="45%"}
-![simple kanban board<br>by [Jeff Lasovski](https://commons.wikimedia.org/wiki/File:Simple-kanban-board-.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)](figures/borrowed/simple_kanban_board.jpg){width=700}
-:::::::::
-::::::::: {.column width="55%"}
-- notes move from left to right
-- order denote priority
-- allways process the right- and topmost one to finish it ASAP
-- tool-dependent but a note can indicate:
-    - who's responsible
-    - how much effort to do it
-    - etc.
-
-:::::::::
-::::::::::::
-
-::: notes
-The word "*kanban*" roughly means board in Japanese (signboard or billboard, actually).
-
-:::
-
-## kanban for job hunting
-
-![](figures/job_hunting_kanban.drawio.svg)
-
-::: notes
-Kanban is a general technique, you can use it for household chores, for job applications (e.g., backlog, application sent, interview, done, declined).
-A whiteboard can be used or there a many different software for the task.
-Some general examples are:
-- Trello (https://trello.com/),
-   - free and paid plans
-- Taiga (https://taiga.io/).
-   - open source, self-hosted, cloud based free and paid plans
-- WeKan (https://wekan.github.io/)
-   - open source, self-hosted
-:::
-
-## kanban in software development
-
-![](figures/kanban.drawio.svg)
-
-::: notes
-Kanban is widespread in software development.
-The major code hosting solutions (GitHub, GitLab, Bitbucket, Gitea) all have some board functionalities.
-:::
 
 # references
