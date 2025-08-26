@@ -688,7 +688,7 @@ how can we deal with the complexity?
 ::: {.text-smaller}
 > There are known knowns; there are things we know we know. We also know there are known unknowns; that is to say we know there are some things we do not know. But there are also unknown unknowns -- there are things we do not know we don't know.
 >
-> -- Donald Rumsfel
+> -- Donald Rumsfeld (13th & 21st United States Secretary of Defense)
 
 :::
 
@@ -770,6 +770,80 @@ how can we deal with the complexity?
 >
 > -- Grady Booch
 
+## so, architecture
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-3}
+- represents design decisions
+- shared understanding
+- [the architecture decisions<br>have to be recorded]{.fragment data-fragment-index=1}
+
+<!-- ![](figures/publicdomainvectors/man-at-crossroads.svg) -->
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .fragment data-fragment-index=1}
+#### architechture decision record
+
+```markdown
+# Title
+
+## Status
+
+What is the status, such as proposed, accepted,
+rejected, deprecated, superseded, etc.?
+
+## Context
+
+What is the issue that we're seeing that is
+motivating this decision or change?
+
+## Decision
+
+What is the change that we're proposing and/or doing?
+
+## Consequences
+
+What becomes easier or more difficult to do
+because of this change?
+```
+
+::: {.text-small}
+ADR template by Michael Nygard from [Documenting architecture decisions](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions)
+:::
+
+:::::::::
+::::::::::::
+
+
+## what are these decisions?
+
+::: {.text-smaller}
+topologies, for example
+:::
+
+:::::::::::: {.columns}
+::::::::: {.column width="30%"}
+![](figures/server_client.drawio.svg)
+
+![](figures/message_bus.drawio.svg)
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/layered_4.drawio.svg)
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/onion.drawio.svg)
+
+![](figures/hexagonal_extend.drawio.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-small}
+based on: [Introduction to Software Architecture](https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture)
+:::
+
 ## 
 
 > Architecture is the decisions that you wish you could get right early in a project.
@@ -779,31 +853,6 @@ how can we deal with the complexity?
 . . . 
 
 to do that, you need to know all the unknowns, so you need **requirements analysis**, and **learning** the new/unknown technology
-
-# topologies
-
-:::::::::::: {.columns}
-::::::::: {.column width="33%"}
-![](figures/server_client.drawio.svg){width=250}
-
-![](figures/message_bus.drawio.svg){width=250}
-
-:::::::::
-::::::::: {.column width="33%"}
-![](figures/layered_4.drawio.svg){width=200}
-
-:::::::::
-::::::::: {.column width="33%"}
-![](figures/onion.drawio.svg){width=250}
-
-![](figures/hexagonal_extend.drawio.svg){width=250}
-
-:::::::::
-::::::::::::
-
-::: {.text-smaller}
-[Introduction to Software Architecture](https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture)
-:::
 
 
 <!--## Layered Architechture
