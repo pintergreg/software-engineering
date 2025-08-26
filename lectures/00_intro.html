@@ -683,7 +683,7 @@ craftmanship (later)</li>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Windows <span class="citation"
-data-cites="quill2024how">(<strong>quill2024how?</strong>)</span></td>
+data-cites="quill2024how">(Quill, 2024)</span></td>
 <td style="text-align: right;">10</td>
 <td style="text-align: right;">50</td>
 </tr>
@@ -700,7 +700,7 @@ whole repo is counted</p>
 </div>
 <div class="notes">
 <p>Microsoft does not disclose the actual value, the codebase size of
-Windows is only a estimation (<strong>quill2024how?</strong>).</p>
+Windows is only a estimation (Quill, 2024).</p>
 </div>
 <h2 id="software-growth"><a class="header" href="#software-growth">software growth</a></h2>
 <p>number of lines of code is increasing</p>
@@ -1038,6 +1038,31 @@ how can we deal with the complexity?
 <p><img src="figures/publicdomainvectors/idea-of-success-achievement.svg" alt="" /></p>
 </div>
 </div>
+<h2 id=""><a class="header" href="#"></a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<figure>
+<img src="figures/borrowed/xkcd/dependency_2x.png" width="350"
+alt="Dependency by Randall Munroe | CC BY-NC 2.5" />
+<figcaption aria-hidden="true"><a
+href="https://xkcd.com/2347/">Dependency</a> by Randall Munroe | <a
+href="https://creativecommons.org/licenses/by-nc/2.5/">CC BY-NC 2.5</a></figcaption>
+</figure>
+</div>
+<div class="column fragment" width="50%">
+<figure>
+<img src="figures/quality_time_cost.drawio.svg"
+alt="you can optimize to two of them" />
+<figcaption aria-hidden="true">you can optimize to two of
+them</figcaption>
+</figure>
+<p><span class="text-smaller">if you want to deliver product fast, and the
+developer time is expensive, reuse components</span></p>
+<div class="fragment">
+<p>is it possible to decrease the dependency stack?</p>
+</div>
+</div>
+</div>
 <h2 id="complexity-classes"><a class="header" href="#complexity-classes">complexity classes</a></h2>
 <div class="text-smaller">
 <blockquote>
@@ -1045,7 +1070,7 @@ how can we deal with the complexity?
 there are known unknowns; that is to say we know there are some things
 we do not know. But there are also unknown unknowns – there are things
 we do not know we don’t know.</p>
-<p>– Donald Rumsfel</p>
+<p>– Donald Rumsfeld (13th &amp; 21st United States Secretary of Defense)</p>
 </blockquote>
 </div>
 <table>
@@ -1160,7 +1185,7 @@ highest-level breakdown of a system into its parts; the other,
 decisions that are hard to change.</p>
 <p>– Martin Fowler - Patterns of Enterprise Application Architecture</p>
 </blockquote>
-<h2 id=""><a class="header" href="#"></a></h2>
+<h2 id="-1"><a class="header" href="#-1"></a></h2>
 <blockquote>
 <p>In most successful software projects, the expert developers working on
 that project have a shared understanding of the system design. This
@@ -1171,14 +1196,76 @@ composed of smaller components, but the architecture only includes the
 components and interfaces that are understood by all the developers.</p>
 <p>Ralph Johnson, XP mailing list</p>
 </blockquote>
-<h2 id="-1"><a class="header" href="#-1"></a></h2>
+<h2 id="-2"><a class="header" href="#-2"></a></h2>
 <blockquote>
 <p>All architecture is design but not all design is architecture.
 Architecture represents the significant <strong>design decisions</strong> that
 shape a system, where significant is measured by cost of change.</p>
 <p>– Grady Booch</p>
 </blockquote>
-<h2 id="-2"><a class="header" href="#-2"></a></h2>
+<h2 id="so-architecture"><a class="header" href="#so-architecture">so, architecture</a></h2>
+<div class="columns">
+<div class="column mt-3" width="50%">
+<ul>
+<li>represents design decisions</li>
+<li>shared understanding</li>
+<li><span class="fragment" data-fragment-index="1">the architecture
+decisions<br>have to be recorded</span></li>
+</ul>
+<!-- ![](figures/publicdomainvectors/man-at-crossroads.svg) -->
+</div>
+<div class="column text-smaller fragment" width="50%"
+data-fragment-index="1">
+<h4 id="architechture-decision-record"><a class="header" href="#architechture-decision-record">architechture decision record</a></h4>
+<pre><code class="language-markdown"># Title
+
+## Status
+
+What is the status, such as proposed, accepted,
+rejected, deprecated, superseded, etc.?
+
+## Context
+
+What is the issue that we're seeing that is
+motivating this decision or change?
+
+## Decision
+
+What is the change that we're proposing and/or doing?
+
+## Consequences
+
+What becomes easier or more difficult to do
+because of this change?
+</code></pre>
+<div class="text-small">
+<p>ADR template by Michael Nygard from <a href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions">Documenting architecture
+decisions</a></p>
+</div>
+</div>
+</div>
+<h2 id="what-are-these-decisions"><a class="header" href="#what-are-these-decisions">what are these decisions?</a></h2>
+<div class="text-smaller">
+<p>topologies, for example</p>
+</div>
+<div class="columns">
+<div class="column" width="30%">
+<p><img src="figures/server_client.drawio.svg" alt="" /></p>
+<p><img src="figures/message_bus.drawio.svg" alt="" /></p>
+</div>
+<div class="column" width="30%">
+<p><img src="figures/layered_4.drawio.svg" alt="" /></p>
+</div>
+<div class="column" width="30%">
+<p><img src="figures/onion.drawio.svg" alt="" /></p>
+<p><img src="figures/hexagonal_extend.drawio.svg" alt="" /></p>
+</div>
+</div>
+<div class="text-small">
+<p>based on: <a href="https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture">Introduction to Software
+Architecture</a></p>
+</div>
+<h2 id="-3"><a class="header" href="#-3"></a></h2>
 <blockquote>
 <p>Architecture is the decisions that you wish you could get right early
 in a project.</p>
@@ -1187,53 +1274,6 @@ in a project.</p>
 <p>. . .</p>
 <p>to do that, you need to know all the unknowns, so you need
 <strong>requirements analysis</strong>, and <strong>learning</strong> the new/unknown technology</p>
-<h1 id="topologies"><a class="header" href="#topologies">topologies</a></h1>
-<div class="columns">
-<div class="column" width="33%">
-<img src="figures/server_client.drawio.svg" width="250" />
-<img src="figures/message_bus.drawio.svg" width="250" />
-</div>
-<div class="column" width="33%">
-<img src="figures/layered_4.drawio.svg" width="200" />
-</div>
-<div class="column" width="33%">
-<img src="figures/onion.drawio.svg" width="250" />
-<img src="figures/hexagonal_extend.drawio.svg" width="250" />
-</div>
-</div>
-<div class="text-smaller">
-<p><a href="https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture">Introduction to Software
-Architecture</a></p>
-</div>
-<!--## Layered Architechture
-&#10;![](figures/borrowed/Linux kernel and OpenGL video games.svg){height=450}
-&#10;- [Layered Architecture: Introduction](http://serena-yeoh.blogspot.com/2013/06/layered-architecture-for-net.html)
-- [Layered Architecture: Component Interactions](http://serena-yeoh.blogspot.com/2014/01/layered-architecture-components.html)
-&#10;
-## message bus
-&#10;:::::::::::: {.columns}
-::::::::: {.column width="50%" .mt-2}
-&#10;- shared communication channel that connects multiple components or services
-- simple, extensible
-&#10;:::::::::
-::::::::: {.column width="50%"}
-![](figures/message_bus.drawio.svg){width=325}
-&#10;:::::::::
-::::::::::::
-&#10;
-## server/client architecture
-&#10;:::::::::::: {.columns}
-::::::::: {.column width="50%"}
-- consists of two parts
-    - client and server
-- distributed
-- always the client initiates a connection to the server
-- while the server process always waits for requests from any client
-:::::::::
-::::::::: {.column width="50%"}
-![](figures/server_client.drawio.svg){width=325}
-:::::::::
-::::::::::::-->
 <h1 id="references"><a class="header" href="#references">references</a></h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 line-spacing="2">
@@ -1278,6 +1318,13 @@ disks—and will for years. In <em>Ars Technica</em>. <a href="
                     https://www.wired.com/story/san-francisco-muni-trains-floppy-disks
                     " class="uri">
 https://www.wired.com/story/san-francisco-muni-trains-floppy-disks
+</a>.</p>
+</div>
+<div id="ref-quill2024how" class="csl-entry">
+<p>Quill, H. (2024). <em>How many lines of code in windows 10?</em> <a href="
+                   https://techcult.com/how-many-lines-of-code-in-windows-10/
+                    " class="uri">
+https://techcult.com/how-many-lines-of-code-in-windows-10/
 </a>.</p>
 </div>
 <div id="ref-stahli2021software" class="csl-entry">
