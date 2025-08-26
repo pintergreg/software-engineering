@@ -10,5 +10,5 @@ title-slide-attributes:
     data-background-position: 1.25rem calc(100% - 1.25rem)
 slideNumber: "true"
 showSlideNumber: "print"
-revealjs-url: "../assets/reveal.js-5.1.0/"
+revealjs-url: "../assets/reveal.js-5.2.1/"
 ---

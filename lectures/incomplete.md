@@ -7,7 +7,7 @@ title-slide-attributes:
     data-background-color: "#181d37"
 slideNumber: "true"
 showSlideNumber: "print"
-revealjs-url: "../assets/reveal.js-5.1.0/"
+revealjs-url: "../assets/reveal.js-5.2.1/"
 ---
 
 # types
