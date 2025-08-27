@@ -21,6 +21,5 @@
 ### included into this repo
 
 - [reveal.js 5.2.1](https://github.com/hakimel/reveal.js)
-- [reveal.js verticator plugin 1.2.6](https://github.com/Martinomagnifico/reveal.js-verticator)
 - ieee.csl and apa.csl files are from https://github.com/citation-style-language/styles repository and licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
 - [quizdown 0.6.0](https://github.com/bonartm/quizdown-js)
