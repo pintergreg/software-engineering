@@ -83,27 +83,35 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 :::::::::
 ::::::::::::
 
+
 ## extreme programming
 
-:::::::::::: {.columns}
-::::::::: {.column width="50%" .text-smaller}
 - advocates frequent releases in short development cycles
 - intended to improve productivity and introduce checkpoints at which new customer requirements can be adopted
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
 - features
     - programming in pairs,
     - doing extensive code review,
     - unit testing of all code,
     - not programming features until they are actually needed,
     - flat management structure
-- considered a type of agile software development
 
 :::::::::
 ::::::::: {.column width="50%"}
-![](figures/extreme_programming.drawio.svg){width=750}
+![[based on [@yerukala2023what]]{.text-smaller}](figures/extreme_programming.drawio.svg){height=200 data-preview-image="figures/extreme_programming_white.drawio.svg"}
 
 :::::::::
 ::::::::::::
 
+:::{.text-align-left}
+- considered a type of agile software development
+:::
+
+:::{.text-smaller .mt-2}
+spike is a task for exploring or answering questions, not delivering a product
+:::
 
 # agile model
 
