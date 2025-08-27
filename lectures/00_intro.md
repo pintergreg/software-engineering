@@ -436,8 +436,10 @@ software is often measured by the source lines of code
 |Windows [@quill2024how]             |        10|       50    |
 |Linux (kernel)                      |      6.16|       40    |
 
-:::{.text-smaller}
-measurements made with [tokei](https://github.com/XAMPPRocky/tokei), the whole repo is counted
+table: [measurements made with [tokei](https://github.com/XAMPPRocky/tokei), the whole repo is counted]{.text-smaller}
+
+:::{.text-smaller .mt-3}
+further read [about size of software](https://interestingengineering.com/lists/whats-the-biggest-software-package-by-lines-of-code) by Christopher McFadden
 :::
 
 ::: notes
@@ -786,6 +788,10 @@ is it possible to decrease the dependency stack?
 
 ## project complexity
 
+:::{.text-smaller}
+Stacey matrix [@stacey2007strategic]
+:::
+
 :::::: {.r-stack}
 ::: {.exclude}
 ![](figures/complex_projects.drawio.cropped_no_people.svg){width=55%}
@@ -904,5 +910,5 @@ to do that, you need to know all the unknowns, so you need **requirements analys
 
 # references
 
-::: {#refs}
+::: {#refs .text-smaller}
 :::

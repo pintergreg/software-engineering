@@ -12,6 +12,7 @@
 - [Practical Tips on Software Architecture Design, Part One](https://medium.com/@mbue/practical-tips-on-software-architecture-design-part-one-1c6bb0167157) - by Marco Bürckel
 - [Practical Tips on Software Architecture Design, Part Two](https://medium.com/@mbue/practical-tips-on-software-architecture-design-part-two-37c2b61d7b6d) - by Marco Bürckel
 - [Why Write ADRs](https://github.blog/engineering/why-write-adrs/) - by Eli Perkins
+- [Stacey matrix](https://www.praxisframework.org/en/library/stacey-matrix)
 
 ## week 2
 
