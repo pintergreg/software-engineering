@@ -22,6 +22,9 @@
 
 ### readings
 
+extreme programming
+~ - [What is Extreme Programming - XP Practices](https://mindmajix.com/what-is-extreme-programming) by Madhuri Yerukala
+
 scrum
 ~ - [The Scrum Guide](resources/2020-Scrum-Guide-US.pdf)
 
