@@ -15,8 +15,8 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 # the project
 
-An event organizer company entrusts your software development company to create a drone show choreography designer software.
-They have just bought 256 drones and they want to be able to do smaller-scale drone shows on parties, birthdays and weddings.
+An event organizer company entrusts your software development company to create a choreography designer software for drone shows.
+They have just bought 512 drones and they want to be able to do smaller-scale drone shows on parties, birthdays, and weddings.
 
 The software should be able to manage the position of every drone in a given space in respect of the time.
 Every drone is capable of switch on RGB LEDs with a given light intensity.
@@ -29,8 +29,21 @@ Your task is to design this software.
 
 ## drone show example
 
-[Dragon Boat Show with 1500 drones in Shenzhen, China](https://www.youtube.com/watch?v=3G1KBu6H6BM)
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+![Drone Show at Sydney (2023) by Leoxiong | [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)](figures/borrowed/wikipedia/drone_show_at_sydney_2023.jpg)
 
+:::::::::
+::::::::: {.column width="40%" .text-smaller .mt-1}
+
+from YouTube
+
+- [Dragon Boat Show with 1500 drones in Shenzhen, China](https://www.youtube.com/watch?v=3G1KBu6H6BM)
+- [How Drone Shows Work](https://www.youtube.com/watch?v=7fKfBb7x9WQ)
+    - by Julius Moorman
+
+:::::::::
+::::::::::::
 
 # contents
 
@@ -92,7 +105,7 @@ Your task is to design this software.
     - what functions would you need
 - identify dependencies between the functions / modules
 - plan sprints with usable increments
-- deadline: **3 December 2024** (week 13)
+- deadline: **10 December 2025** (week 13)
     - when the team also presents the design as a presentation
 - practical classes are workshops
     - possible feedback from the instructor
@@ -126,9 +139,9 @@ Your task is to design this software.
         - I would like to see the evolution of your design
 - and the presentation
 
-you should the submit these by 3 December 2024 via Moodle,
-when you also present your work
+you have to submit these by 10 December 2025 via Moodle,<br>when you also present your work
 
+it is enough to upload it by one person from each team
 
 # presentation
 
