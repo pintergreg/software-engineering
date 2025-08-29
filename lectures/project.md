@@ -47,9 +47,10 @@ from YouTube
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
+- the client company wants to design and operate the show
 - the software has to focus on the choreography design, not the software running on the drone
-- you can assume that there is a software from the drone manufacturer
-    - which is an external "component" of the software system
+- you can assume that there is a software from the drone manufacturer, which deals with the hardware level
+    - it is an external "component" of the software system
 
 :::::::::
 ::::::::: {.column width="40%"}
@@ -61,7 +62,7 @@ from YouTube
 [How Drone Shows Work](https://www.youtube.com/watch?v=7fKfBb7x9WQ) by Julius Moorman
     
 
-# contents
+# contents -- outline
 
 - introduction
     - what the software is -- practically the project assignment
@@ -89,7 +90,7 @@ from YouTube
 - flowcharts
 - first 3 level of C4
 - also static and dynamic models of the software
-    - UML
+    - 4th level / UML
 - UI mockups
 
 :::::::::
@@ -102,15 +103,18 @@ from YouTube
 
 ## diagrams details
 
-- create a user story map in details for one role's set of features
+> overview first, zoom and filter, then details on demand
+>
+> -- Ben Shneiderman
+
+::: {.mt-2}
+- create a **user story map** in details for one role's set of features
     - for example the choreography design
 - you don't have to detail every single role
     - but give an overview of the system
     - illustrate the every roles and the connections between them
 
-> overview first, zoom and filter, then details on demand
->
-> -- Ben Shneiderman
+:::
 
     
 ## work in agile methodology
