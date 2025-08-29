@@ -35,15 +35,31 @@ Your task is to design this software.
 
 :::::::::
 ::::::::: {.column width="40%" .text-smaller .mt-1}
-
 from YouTube
 
 - [Dragon Boat Show with 1500 drones in Shenzhen, China](https://www.youtube.com/watch?v=3G1KBu6H6BM)
-- [How Drone Shows Work](https://www.youtube.com/watch?v=7fKfBb7x9WQ)
-    - by Julius Moorman
 
 :::::::::
 ::::::::::::
+
+
+## choreography design in focus
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- the software has to focus on the choreography design, not the software running on the drone
+- you can assume that there is a software from the drone manufacturer
+    - which is an external "component" of the software system
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/choreographer/viewport.drawio.svg)
+
+:::::::::
+::::::::::::
+
+[How Drone Shows Work](https://www.youtube.com/watch?v=7fKfBb7x9WQ) by Julius Moorman
+    
 
 # contents
 
