@@ -188,14 +188,10 @@ li.fragment.visible.current-fragment {
     margin-bottom: 4px;
 }
 figcaption {
-/*     font-size: 1.25rem; */
     font-size: smaller;
 }
 .slide-menu-button {
     top: 30px !important;
-}
-.left {
-    left: 0;
 }
 .column-gapless {
     column-gap: 0 !important;
@@ -218,7 +214,6 @@ figcaption {
 .border-color-lightblue {
     border-color: #bee4fd !important;
 }
-
 .svg-invert {
     filter: invert(100%);
 }
@@ -232,9 +227,6 @@ figcaption {
 }
 .wide-quote blockquote p {
     line-height: 1.2;
-}
-.r-stack-only-grid {
-    grid-area: 1/1;
 }
 .column-align-left{
     text-align:left;
@@ -252,24 +244,14 @@ figcaption {
 .width-100 {
     width: 100% !important;
 }
-/*.pre-vmargin-0 pre, .pre-vmargin-0 > div {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}*/
 .pre-450 pre {
     height: 450px;
 }
 .pre-475 pre {
     height: 475px;
 }
-/*.code-margin-0 pre {
-    margin: 0
-}*/
 .code-margin-top-0 .sourceCode {
     margin-top: 0
-}
-.column-vertical-align {
-    vertical-align: top;
 }
 .table-image-margin-0 table img {
     margin: 0;
