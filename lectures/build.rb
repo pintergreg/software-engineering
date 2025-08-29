@@ -36,7 +36,7 @@ if options["embed_resources"]
 end
 arguments += " --standalone"
 arguments += " --slide-level 2"
-arguments += " --css #{options["assets"]}/custom.css"
+arguments += " --css #{options["assets"]}/custom.css --css #{options["assets"]}/helpers.css"
 if options["citeproc"]
   arguments += " --citeproc --csl #{options["csl"]}"
 end

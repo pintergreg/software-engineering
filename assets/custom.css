@@ -120,67 +120,6 @@
 .text-white {
     color: white;
 }
-.text-align-left {
-    text-align: left;
-}
-.text-smaller {
-    font-size: smaller;
-}
-.text-small {
-    font-size: small;
-}
-.text-medium {
-    font-size: medium;
-}
-.text-x-small {
-    font-size: x-small;
-}
-.text-larger {
-    font-size: larger;
-}
-.text-size-5 {
-    font-size: 5rem;
-}
-.text-size-4 {
-    font-size: 4rem;
-}
-.text-size-3 {
-    font-size: 3rem;
-}
-.text-size-2 {
-    font-size: 2rem;
-}
-.text-size-1 {
-    font-size: 1rem;
-}
-
-.mt-8 {
-    margin-top: 8rem;
-}
-.mt-7 {
-    margin-top: 7rem;
-}
-.mt-6 {
-    margin-top: 6rem;
-}
-.mt-5 {
-    margin-top: 5rem;
-}
-.mt-4 {
-    margin-top: 4rem;
-}
-.mt-3 {
-    margin-top: 3rem;
-}
-.mt-2 {
-    margin-top: 2rem;
-}
-.mt-1 {
-    margin-top: 1rem;
-}
-.m-0 {
-    margin: 0 !important;
-}
 #references {
     font-size: 1.15rem;
 }
@@ -255,23 +194,8 @@ figcaption {
 .slide-menu-button {
     top: 30px !important;
 }
-.alpha-50 {
-    opacity: 0.5;
-}
-.alpha-100 {
-    opacity: 1;
-}
 .left {
     left: 0;
-}
-.position-absolute {
-    position: absolute;
-}
-.float-left {
-    float: left;
-}
-.float-right {
-    float: right;
 }
 .column-gapless {
     column-gap: 0 !important;
@@ -285,17 +209,14 @@ figcaption {
 .no-margin {
     margin: 0 !important;
 }
-.inline-block {
-    display: inline-block;
-}
 .border-color-primary {
-    border-color: var(--r-main-color); 
+    border-color: var(--r-main-color);
 }
 .border-color-secondary {
-    border-color: var(--r-link-color) !important; 
+    border-color: var(--r-link-color) !important;
 }
 .border-color-lightblue {
-    border-color: #bee4fd !important; 
+    border-color: #bee4fd !important;
 }
 
 .svg-invert {
@@ -309,7 +230,6 @@ figcaption {
     margin: 0;
     padding: 0;
 }
-
 .wide-quote blockquote p {
     line-height: 1.2;
 }
@@ -357,7 +277,7 @@ figcaption {
 .tooltip {
     text-decoration-line: underline;
     text-decoration-color: var(--r-link-color);
-    text-decoration-style: dotted; 
+    text-decoration-style: dotted;
     cursor: help;
 }
 .va-middle {
