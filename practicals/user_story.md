@@ -63,7 +63,7 @@ The task is to design this software.
 
 :::
 
-## requirements
+# requirements
 
 - "per user basis"
     - might indicate user management
@@ -79,3 +79,22 @@ The task is to design this software.
     - "word can appear in multiple group"
         - one to many connection!
 
+## questions
+
+- which platforms should be supported?
+- what does 'per user basis' mean?
+- who and how creates the cards?
+- what is the teaching language?
+    - only one language supported?
+- does the front side of a card contain only a word/expression?
+    - any additional info like word class
+- does the back side of a card contain only a meaning?
+    - any additional comments or connected words
+
+# possible architecture
+
+![offline application, a simple case](../lectures/figures/simple_case.drawio.svg)
+
+## possible architecture 2
+
+![service-based application, a more complex case](../lectures/figures/complicated_case.drawio.svg)
