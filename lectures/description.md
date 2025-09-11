@@ -52,5 +52,5 @@ After successfully completing the course, students will be able to:
 
 ### autonomy and responsibilities
 
-- Students will be able to participate in information system development projects based on modern methodologies, either as team members or, after gaining sufficient experience, as leaders of smaller projects or sub-projects.
-- They will be able to make responsible decisions on planning and implementation issues.
+- students will be able to participate in information system development projects based on modern methodologies, either as team members or, after gaining sufficient experience, as leaders of smaller projects or sub-projects
+- they will be able to make responsible decisions on planning and implementation issues
