@@ -1,0 +1,44 @@
+@startwbs
+scale 2
+skin rose
+
++ flashcard app
+++ payment
++++ free
++++ one-time
+++++ app store manages it
++++ subscription model
+++++ in-app puchase / payment handling
++++++ needs service/library
+++ offline app
++++ Android
++++ iOS
++++ common
+++++ start game by selecting group
+++++ keep statistics
+++++ is there a learning mode and a practise mode?
++++++ practise mode displays card more often if they are swiped left
+++++++ a right swipe after a left swipe decreases the repetition value?
+++ server-client
++++ server
+++++ who owns/runs the server?
+++++ who is responsible for downtimes?
++++ client
+++++ Android
+++++ iOS
+++++ see offline common
+++ word database
++++ who maintains it
++++ how it is provided to the developer company
++++ in what format it is provided to the developer company
++++ API
+++++ accessed from the app
++++ UI
+++++ manage cards
++++++ create, read, update, delete
++++++ sort into groups
++++++ card group management
++++++ are card groups depend on subscription plan
+++++ user management for the card manager role?
+++++ subscriber/user management?
+@endwbs
