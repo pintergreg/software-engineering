@@ -32,10 +32,11 @@ The task is to design this software.
 > 2. The use can swipe left to indicate that they do not know the word, or
 > 3. swipe to right indicating the they know the word well.
 >
-> The app should count the swipes and keep statistics. A word with more left swipes should appear more often.
+> The app should count the swipes and keep statistics.
 > And one more thing: the statistics should be tracked per user basis.
 
 :::
+<!-- A word with more left swipes should appear more often. -->
 
 # requirements analysis
 
@@ -58,12 +59,22 @@ The task is to design this software.
 > 2. The use can swipe left to indicate that they do not know the word, or
 > 3. swipe to right indicating the they know the word well.
 >
-> The app should [**count the swipes and keep statistics**]{.background-color-lightblue}. A [**word with more left swipes should appear more often**]{.background-color-lightblue}.
+> The app should [**count the swipes and keep statistics**]{.background-color-lightblue}.
 > And one more thing: the [**statistics should be tracked per user basis**]{.background-color-lightblue}.
 
 :::
+<!-- > A [**word with more left swipes should appear more often**]{.background-color-lightblue}. -->
 
-# requirements
+# let's collect the requirements
+
+::: {.r-fit-text .mt-3}
+[open PlantUML editor](https://editor.plantuml.com/uml/SoWkIImgAKygvYfEJin9LJ3YAixEp5CeoYzEvUBILaZBIIpEI4uiIb58B2ZWud98pKi1gGK0)
+
+with a Work Breakdown Structure (WBS) diagram skeleton
+
+:::
+
+# questions
 
 - "per user basis"
     - might indicate user management
@@ -78,8 +89,10 @@ The task is to design this software.
     - remove from group
     - "word can appear in multiple group"
         - one to many connection!
-
-## questions
+- "keeps statistics"
+    - for what purpose? only to display it, or for the repetition mechanics?
+        
+## additional questions
 
 - which platforms should be supported?
 - what does 'per user basis' mean?
@@ -131,3 +144,10 @@ these are just some considerations, the customer needs to decide
 ::: {.text-color-secondary .mt-2}
 these are just some considerations, the customer needs to decide
 :::
+
+# think over every possibility
+
+- it is acceptable to provide alternatives for the customer
+    - they often don't even know what they want
+- to provide the alternatives, you have to think them over
+    - it is also necessary for the price estimation
