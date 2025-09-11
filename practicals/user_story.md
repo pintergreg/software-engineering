@@ -40,10 +40,19 @@ The task is to design this software.
 
 # requirements analysis
 
+:::::::::::: {.columns}
+::::::::: {.column width="70%" .mt-4}
 - starts with understanding the task
     - read, reread, and reflect on it
 - collect every detail, specifically the ambiguous parts
 - take notes, maybe draw
+
+:::::::::
+::::::::: {.column width="30%"}
+![](../lectures/figures/mental_map.drawio.svg)
+
+:::::::::
+::::::::::::
 
 ## the user story
 
