@@ -90,11 +90,44 @@ The task is to design this software.
     - any additional info like word class
 - does the back side of a card contain only a meaning?
     - any additional comments or connected words
+- price of the application?
+    - subscription model / one time payment / free
 
 # possible architecture
 
 ![offline application, a simple case](../lectures/figures/simple_case.drawio.svg)
 
-## possible architecture 2
+## evaluation
+
+- simple
+    - it can contain advanced features like detailed statistics for the user, but it is stored on the device
+    - telemetry is possible to add if the customer require some statistics above what the app store provide
+- the application package contains everything
+    - including the word database
+- does not depend on internet collection
+
+::: {.text-color-secondary .mt-2}
+these are just some considerations, the customer needs to decide
+:::
+
+# possible architecture 2
 
 ![service-based application, a more complicated case](../lectures/figures/complicated_case.drawio.svg)
+
+## evaluation
+
+- more complicated, it consists of two different software
+    - the server need to run constantly otherwise the application may be unusable
+        - depends on the implementation
+- can support subscription model
+    - needs payment handling, which complicates things further
+- the application package can still contain the word database
+    - but the available word packages can be controlled based on the subscription plan
+- it may depend on internet collection
+    - for authentication/authorization
+    - for account syncronization
+    - *subscription* 
+
+::: {.text-color-secondary .mt-2}
+these are just some considerations, the customer needs to decide
+:::
