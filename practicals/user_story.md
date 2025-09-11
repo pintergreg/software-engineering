@@ -97,4 +97,4 @@ The task is to design this software.
 
 ## possible architecture 2
 
-![service-based application, a more complex case](../lectures/figures/complicated_case.drawio.svg)
+![service-based application, a more complicated case](../lectures/figures/complicated_case.drawio.svg)
