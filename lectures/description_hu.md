@@ -3,6 +3,7 @@ Célja egy közös terminológia kialakítása, amely lehetővé teszi az üzlet
 A kurzus bemutatja a modern szoftverfejlesztési módszertanok és szoftver életciklus-modellek alapjait, különös figyelmet fordítva a Scrum és a Kanban módszerekre.
 A kurzus elméleti és gyakorlati szempontból is foglalkozik a követelményelemzéssel és a szoftver architektúra tervezésével.
 A gyakorlati órákon a hallgatók kidolgozzák és dokumentálják egy szoftverrendszer követelményeit.
+
 Ezt követően, a szemeszter második felében megtervezik a rendszer architektúráját.
 A követelményelemzéshez a kurzus az agilis elveknek megfelelően a user story mapping nevű módszert alkalmazza.
 A szoftvertervezéshez a kurzus a C4 modellt használja, amely egy szoftverrendszer architektúráját hierarchikusan leíró diagramok készlet.
@@ -11,8 +12,8 @@ A szemeszter második felében az előadások olyan témákat is érintenek, min
 
 ## tantárgy tematikája
 
-1. szoftverarchitektúra, szoftver életciklus-modellek
-2. scrum, kanban
+1. szoftverarchitektúra
+2. szoftver életciklus-modellek, scrum, kanban
 3. követelményelemzés, user story mapping
 4. UML, C4
 5. tervezési mintázatok (design patterns)
