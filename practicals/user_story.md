@@ -48,18 +48,18 @@ The task is to design this software.
 
 ::: {.wide-quote}
 > We would like you to create a flashcard app for smartphones.
-> Just the **usual stuff**: it shows cards and then if needed it shows the other side of the card with the meaning.
+> Just the [**usual stuff**]{.background-color-lightblue}: it shows cards and then if needed it shows the other side of the card with the meaning.
 >
-> Oh, and words should be in **groups**. A **word can appear in multiple groups**.
-> The user **selects a group** to practice. Then, the app shows a card with the word (or expression) in the target language.
+> Oh, and words should be in [**groups**]{.background-color-lightblue}. A [**word can appear in multiple groups**]{.background-color-lightblue}.
+> The user [**selects a group**]{.background-color-lightblue} to practice. Then, the app shows a card with the word (or expression) in the target language.
 > The user can do 3 things:
 >
 > 1. Tap the card to show its other side, both sides should be shown at the same time,
 > 2. The use can swipe left to indicate that they do not know the word, or
 > 3. swipe to right indicating the they know the word well.
 >
-> The app should **count the swipes and keep statistics**. A **word with more left swipes should appear more often**.
-> And one more thing: the **statistics should be tracked per user basis**.
+> The app should [**count the swipes and keep statistics**]{.background-color-lightblue}. A [**word with more left swipes should appear more often**]{.background-color-lightblue}.
+> And one more thing: the [**statistics should be tracked per user basis**]{.background-color-lightblue}.
 
 :::
 
