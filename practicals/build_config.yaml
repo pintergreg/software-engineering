@@ -1,0 +1,10 @@
+embed_resources: false
+bibliography: ["../lectures/references.bib"]
+citeproc: true
+csl: "../assets/ieee.csl"
+mathml: true
+assets: "../assets"
+exclude:
+    - README
+    - SUMMARY
+    - HOME
