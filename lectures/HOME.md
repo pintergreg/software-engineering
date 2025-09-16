@@ -19,7 +19,8 @@
 
 1. [week 1 summary](slides/summary_week01.html)
 2. [scrum](slides/02_scrum.html)
-2. [kanban](slides/03_kanban.html)
+3. [kanban](slides/03_kanban.html)
+4. [sample task](slides/02_user_story.html)
 
 ### readings
 
