@@ -186,12 +186,49 @@ these are just some considerations, the customer needs to decide
 these are just some considerations, the customer needs to decide
 :::
 
+# customer wants telemetry
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .text-smaller}
+![](../lectures/figures/telemetry_v1.drawio.svg)
+
+- app is like in scenario 1
+- but we need to run a server for the telemetry
+- at least the communication is one directional
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .fragment}
+![](../lectures/figures/telemetry_v2.drawio.svg)
+
+- like architecture 1, we only build the app
+- telemetry is outsourced the a 3rd party service
+    - not our responsibility!
+
+:::::::::
+::::::::::::
+
+# database transfer
+
+- cutomer is a language association, probably doesn't have technical expertise
+    - they'll probably send an excel file in e-mail
+- can we load the into an app?
+    - of course
+- do we want to do that?
+    - not necessarily
+    
+## database transfer
+
+![standardizing input](../lectures/figures/etl.drawio.svg)
+
+
 # think over every possibility
 
 - it is acceptable to provide alternatives for the customer
     - they often don't even know what they want
 - to provide the alternatives, you have to think them over
     - it is also necessary for the price estimation
+- start with bird's eye view
+    - then focus on the details more and more
 
 # references
 
