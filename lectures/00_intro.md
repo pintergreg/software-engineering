@@ -782,6 +782,27 @@ is it possible to decrease the dependency stack?
 :::::::::
 ::::::::::::
 
+## is it possible to decrease the dependency stack?
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/dep_labelled.drawio.svg)
+
+:::::::::
+::::::::: {.column width="50%" .fragment}
+![what if you don't actually use everything from a dependency? why don't you reimplement it?](figures/dep_inner.drawio.svg)
+
+:::::::::
+::::::::::::
+
+:::::: {.fragment}
+::: {.r-fit-text}
+choose your dependencies wisely
+:::
+
+which is actually an architecture decision
+::::::
+
 ## complexity classes
 
 ::: {.text-smaller}
