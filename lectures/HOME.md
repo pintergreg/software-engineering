@@ -4,6 +4,7 @@
 
 1. [intro, software architecture](slides/00_intro.html)
 2. [software development life cycles](slides/01_sdlc.html)
+4. [project assignment](slides/01_project_assignment.html)
 
 ### readings
 
