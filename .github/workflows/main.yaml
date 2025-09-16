@@ -55,6 +55,7 @@ jobs:
                   mkdir -p book/slides/assets
                   cp -r lectures/figures/* book/slides/figures/
                   cp -r lectures/*.html book/slides/
+                  cp -r practicals/*.html book/slides/
                   cp -r assets/* book/assets/
 
             - name: deploy
