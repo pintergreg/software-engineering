@@ -31,7 +31,7 @@ Your task is to design this software.
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
-![Drone Show at Sydney (2023) by Leoxiong | [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)](figures/borrowed/wikipedia/drone_show_at_sydney_2023.jpg)
+![Drone Show at Sydney (2023) by Leoxiong | [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)](../lectures/figures/borrowed/wikipedia/drone_show_at_sydney_2023.jpg)
 
 :::::::::
 ::::::::: {.column width="40%" .text-smaller .mt-1}
@@ -54,7 +54,7 @@ from YouTube
 
 :::::::::
 ::::::::: {.column width="40%"}
-![](figures/choreographer/viewport.drawio.svg)
+![](../lectures/figures/choreographer/viewport.drawio.svg)
 
 :::::::::
 ::::::::::::
@@ -95,7 +95,7 @@ from YouTube
 
 :::::::::
 ::::::::: {.column width="30%"}
-![](figures/publicdomainvectors/paperboard-flowchart.svg){height=300}
+![](../lectures/figures/publicdomainvectors/paperboard-flowchart.svg){height=300}
 
 :::::::::
 ::::::::::::
@@ -133,7 +133,7 @@ from YouTube
 
 :::::::::
 ::::::::: {.column width="35%"}
-![](figures/publicdomainvectors/business-ideas-development.svg)
+![](../lectures/figures/publicdomainvectors/business-ideas-development.svg)
 
 :::::::::
 ::::::::::::
