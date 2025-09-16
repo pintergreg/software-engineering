@@ -3,8 +3,7 @@
 ## week 1
 
 1. [intro, software architecture](slides/00_intro.html)
-2. [software development life cycles](slides/01_sdlc.html)
-4. [project assignment](slides/01_project_assignment.html)
+2. [project assignment](slides/01_project_assignment.html)
 
 ### readings
 
@@ -19,9 +18,10 @@
 ## week 2
 
 1. [week 1 summary](slides/summary_week01.html)
-2. [scrum](slides/02_scrum.html)
-3. [kanban](slides/03_kanban.html)
-4. [sample task](slides/02_user_story.html)
+2. [software development life cycles](slides/01_sdlc.html)
+3. [scrum](slides/02_scrum.html)
+4. [kanban](slides/03_kanban.html)
+5. [sample task](slides/02_user_story.html)
 
 ### readings
 
