@@ -133,6 +133,8 @@ requirements analysis (35%) + design (35%) + midterm (30%)
 
 # tools
 
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
 - diagram drawing: 
     - [draw.io](https://app.diagrams.net/)
     - [Google Drawings](https://docs.google.com/drawings)
@@ -143,9 +145,13 @@ requirements analysis (35%) + design (35%) + midterm (30%)
     - [Trello](https://trello.com/)
 - code hosting / task management
     - [GitHub](https://github.com/)
-    
-::: notes
-:::
+
+:::::::::
+::::::::: {.column width="30%" .exclude}
+![](figures/publicdomainvectors/tools-in-hand.svg)
+
+:::::::::
+:::::::::::: 
     
 # program vs. software
 
