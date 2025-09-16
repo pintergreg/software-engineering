@@ -803,7 +803,37 @@ choose your dependencies wisely
 which is actually an architecture decision
 ::::::
 
-## complexity classes
+## reimplementation costs
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+[estimation by the Linux Foundation [@linuxfoundation2008linux]]{.text-smaller}
+
+- Linux kernel (2008) 6.8 million LOC
+- COnstructive COst MOdel (COCOMO) for cost estimation
+- using 2008 US salaries: $1.4 billion
+- development effort estimation exceeds 7500 Person-Years
+
+::: {}
+Linux 6.16 (released 2025-08-07) has about 40 million LOC
+:::
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .mt-2}
+|years of coding|avg. lines per day|lines per year|
+|:-------------:|-----------------:|-------------:|
+|           1-5 |              100 |       25,000 |
+|          5-10 |               80 |       20,000 |
+|         10-15 |               60 |       15,000 |
+|         15-20 |               40 |       10,000 |
+|           20+ |               20 |        5,000 |
+
+table: how much code does a developer write? [@mcenery2020how]
+
+:::::::::
+::::::::::::
+
+# complexity classes
 
 ::: {.text-smaller}
 > There are known knowns; there are things we know we know. We also know there are known unknowns; that is to say we know there are some things we do not know. But there are also unknown unknowns -- there are things we do not know we don't know.
