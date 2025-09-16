@@ -474,9 +474,9 @@ work</strong></li>
 </div>
 </section>
 
-<section id="materials" class="title-slide slide level1 exclude">
-<h1 class="exclude">materials</h1>
-<div class="columns">
+<section id="materials" class="title-slide slide level1 exclude-header">
+<h1 class="exclude-header">materials</h1>
+<div class="columns exclude">
 <div class="column mt-3" style="width:60%;">
 <ul>
 <li>available online in two formats
@@ -496,6 +496,8 @@ href="https://pintergreg.github.io/software-engineering/">pintergreg.github.io/s
 
 <section id="tools" class="title-slide slide level1">
 <h1>tools</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
 <ul>
 <li>diagram drawing:
 <ul>
@@ -516,9 +518,10 @@ href="https://pintergreg.github.io/software-engineering/">pintergreg.github.io/s
 <li><a href="https://github.com/">GitHub</a></li>
 </ul></li>
 </ul>
-<aside class="notes">
-
-</aside>
+</div><div class="column exclude" style="width:30%;">
+<p><img data-src="figures/publicdomainvectors/tools-in-hand.svg" /></p>
+</div>
+</div>
 </section>
 
 <section>
@@ -845,6 +848,38 @@ craftmanship (later)</li>
 <section>
 <section id="how-big-are-softwares" class="title-slide slide level1">
 <h1>how big are softwares?</h1>
+<p>software is often measured by the source lines of code</p>
+<div class="wide-quote">
+<blockquote>
+<p>A line of code (LOC) is any line of text in a code that is not a
+comment or blank line.</p>
+<p>– <a
+href="https://www.geeksforgeeks.org/software-engineering/lines-of-code-loc-in-software-engineering/">Lines
+of Code (LOC) in Software Engineering</a></p>
+</blockquote>
+</div>
+<div class="columns mt-3">
+<div class="column" style="width:30%;">
+<p>2 lines (Python)</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
+</div><div class="column" style="width:30%;">
+<p>3 lines (Ruby)</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="cf">in</span> <span class="dv">0</span><span class="kw">..</span><span class="dv">9</span> <span class="cf">do</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">puts</span> i</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+</div><div class="column" style="width:30%;">
+<p>1 line (Ruby)</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print numbers from 0 to 9</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span><span class="kw">..</span><span class="dv">9</span>)<span class="at">.each</span> <span class="kw">{|</span>i<span class="kw">|</span> <span class="fu">puts</span> i<span class="kw">}</span></span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="how-big-are-softwares-1" class="slide level2">
+<h2>how big are softwares?</h2>
 <p>software is often measured by the source lines of code</p>
 <!--- Vanilla Music Player for Android (1.3.2): 48 thousand lines of code (LOC)
 - VLC for Android (3.6.5): 264 thousand LOC-->
@@ -1479,27 +1514,27 @@ decisions<br>have to be recorded</span></li>
 style="width:50%;">
 <h4 id="architechture-decision-record">architechture decision
 record</h4>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Title</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Status</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>What is the status, such as proposed, accepted,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>rejected, deprecated, superseded, etc.?</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>What is the issue that we&#39;re seeing that is</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>motivating this decision or change?</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>What is the change that we&#39;re proposing and/or doing?</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consequences</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>What becomes easier or more difficult to do</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>because of this change?</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Title</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Status</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>What is the status, such as proposed, accepted,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>rejected, deprecated, superseded, etc.?</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>What is the issue that we&#39;re seeing that is</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>motivating this decision or change?</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>What is the change that we&#39;re proposing and/or doing?</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consequences</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>What becomes easier or more difficult to do</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>because of this change?</span></code></pre></div>
 <div class="text-small">
 <p>ADR template by Michael Nygard from <a
 href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions">Documenting
