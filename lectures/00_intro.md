@@ -114,9 +114,9 @@ requirements analysis (35%) + design (35%) + midterm (30%)
 ::::::::::::
 
 
-# materials {.exclude}
+# materials {.exclude-header}
 
-:::::::::::: {.columns}
+:::::::::::: {.columns .exclude}
 ::::::::: {.column width="60%" .mt-3}
 - available online in two formats
     - handout
