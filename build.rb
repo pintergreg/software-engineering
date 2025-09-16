@@ -13,6 +13,7 @@ end
 
 FileUtils.rm_r @target if Dir.exist?(@target)
 FileUtils.mkdir_p "#{@target}/lectures"
+FileUtils.mkdir_p "#{@target}/practicals"
 
 
 FileUtils.cp('lectures/SUMMARY.md', "#{@target}/")
