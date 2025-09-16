@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gergő Pintér, PhD">
+  <title>sample task</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../assets/reveal.js-5.2.1//dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal.js-5.2.1//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../assets/reveal.js-5.2.1//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="../assets/custom.css"/>
+  <link rel="stylesheet" href="../assets/helpers.css"/>
+  <!--<script src="../assets/reveal_menu/menu.js"></script>
+  <link rel="stylesheet" href="../assets/reveal_menu/menu.css"/>
+
+  <script src="../assets/verticator/verticator.js"></script>
+  <link rel="stylesheet" href="../assets/verticator/verticator.css"/>-->
+
+  <script src="../assets/reveal-drawer-0.1.2/drawer.js"></script>
+  <link rel="stylesheet" href="../assets/reveal-drawer-0.1.2/drawer.css"/>
+
+  <script src="../assets/highlight_line.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
+calc(100% - 1.25rem)" data-background-size="125px">
+  <h1 class="title">sample task</h1>
+  <p class="author">Gergő Pintér, PhD</p>
+  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+</section>
+
+<section>
+<section id="sample-task-flashcard-application"
+class="title-slide slide level1">
+<h1>sample task – flashcard application</h1>
+<p>The prepresentative of a language association entrusts your software
+development company to create a flashcard application, which will help
+people to learn a minority language. The task is to design this
+software.</p>
+</section>
+<section id="the-user-story" class="slide level2">
+<h2>the user story</h2>
+<div class="wide-quote">
+<blockquote>
+<p>We would like you to create a flashcard app for smartphones. Just the
+usual stuff: it shows cards and then if needed it shows the other side
+of the card with the meaning.</p>
+<p>Oh, and words should be in groups. A word can appear in multiple
+groups. The user selects a group to practice. Then, the app shows a card
+with the word (or expression) in the target language. The user can do 3
+things:</p>
+<ol type="1">
+<li>Tap the card to show its other side, both sides should be shown at
+the same time,</li>
+<li>The use can swipe left to indicate that they do not know the word,
+or</li>
+<li>swipe to right indicating the they know the word well.</li>
+</ol>
+<p>The app should count the swipes and keep statistics. And one more
+thing: the statistics should be tracked per user basis.</p>
+</blockquote>
+</div>
+<!-- A word with more left swipes should appear more often. -->
+</section></section>
+<section>
+<section id="requirements-analysis" class="title-slide slide level1">
+<h1>requirements analysis</h1>
+<div class="columns">
+<div class="column mt-4" style="width:70%;">
+<ul>
+<li>starts with understanding the task
+<ul>
+<li>read, reread, and reflect on it</li>
+</ul></li>
+<li>collect every detail, specifically the ambiguous parts</li>
+<li>take notes, maybe draw</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="../lectures/figures/mental_map.drawio.svg" /></p>
+</div>
+</div>
+</section>
+<section id="why-do-requirements-analysis" class="slide level2">
+<h2>why do requirements analysis?</h2>
+<p>one reason is</p>
+<figure>
+<img data-src="../lectures/figures/cost_of_fixing.drawio.svg"
+alt="the rising costs of finding and fixing defects based on Figure 3.4 of [1] (Ambler, 2002)" />
+<figcaption aria-hidden="true">the rising costs of finding and fixing
+defects<br>based on Figure 3.4 of <span class="citation"
+data-cites="ambler2002agile">[1]</span> (Ambler, 2002)</figcaption>
+</figure>
+</section>
+<section id="why-do-requirements-analysis-well" class="slide level2">
+<h2>why do requirements analysis well?</h2>
+<p>misunderstanding the task can cost a lot</p>
+<figure>
+<img data-src="../lectures/figures/introducing_defects.drawio.svg"
+alt="the decreasing probability of introducing defects based on Figure 3.3 of [1] (Ambler, 2002)" />
+<figcaption aria-hidden="true">the decreasing probability of introducing
+defects<br>based on Figure 3.3 of <span class="citation"
+data-cites="ambler2002agile">[1]</span> (Ambler, 2002)</figcaption>
+</figure>
+</section>
+<section id="the-user-story-1" class="slide level2">
+<h2>the user story</h2>
+<div class="r-stack">
+<div class="wide-quote fragment fade-out" data-fragment-index="1">
+<blockquote>
+<p>We would like you to create a flashcard app for smartphones. Just the
+usual stuff: it shows cards and then if needed it shows the other side
+of the card with the meaning.</p>
+<p>Oh, and words should be in groups. A word can appear in multiple
+groups. The user selects a group to practice. Then, the app shows a card
+with the word (or expression) in the target language. The user can do 3
+things:</p>
+<ol type="1">
+<li>Tap the card to show its other side, both sides should be shown at
+the same time,</li>
+<li>The use can swipe left to indicate that they do not know the word,
+or</li>
+<li>swipe to right indicating the they know the word well.</li>
+</ol>
+<p>The app should count the swipes and keep statistics. And one more
+thing: the statistics should be tracked per user basis.</p>
+</blockquote>
+</div>
+<div class="wide-quote fragment current-visible"
+data-fragment-index="1">
+<blockquote>
+<p>We would like you to create a flashcard app for smartphones. Just the
+<span class="background-color-lightblue"><strong>usual
+stuff</strong></span>: it shows cards and then if needed it shows the
+other side of the card with the meaning.</p>
+<p>Oh, and words should be in <span
+class="background-color-lightblue"><strong>groups</strong></span>. A
+<span class="background-color-lightblue"><strong>word can appear in
+multiple groups</strong></span>. The user <span
+class="background-color-lightblue"><strong>selects a
+group</strong></span> to practice. Then, the app shows a card with the
+word (or expression) in the target language. The user can do 3
+things:</p>
+<ol type="1">
+<li>Tap the card to show its other side, both sides should be shown at
+the same time,</li>
+<li>The use can swipe left to indicate that they do not know the word,
+or</li>
+<li>swipe to right indicating the they know the word well.</li>
+</ol>
+<p>The app should <span class="background-color-lightblue"><strong>count
+the swipes and keep statistics</strong></span>. And one more thing: the
+<span class="background-color-lightblue"><strong>statistics should be
+tracked per user basis</strong></span>.</p>
+</blockquote>
+</div>
+<!-- > A [**word with more left swipes should appear more often**]{.background-color-lightblue}. -->
+</div>
+</section></section>
+<section id="lets-collect-the-requirements"
+class="title-slide slide level1">
+<h1>let’s collect the requirements</h1>
+<div class="r-fit-text mt-3">
+<p><a
+href="https://editor.plantuml.com/uml/SoWkIImgAKygvYfEJin9LJ3YAixEp5CeoYzEvUBILaZBIIpEI4uiIb58B2ZWud98pKi1gGK0">open
+PlantUML editor</a></p>
+<p>with a Work Breakdown Structure (WBS) diagram skeleton</p>
+</div>
+</section>
+
+<section>
+<section id="questions" class="title-slide slide level1">
+<h1>questions</h1>
+<ul>
+<li>“per user basis”
+<ul>
+<li>might indicate user management
+<ul>
+<li>create, read, update, and delete (CRUD)</li>
+<li>log in, log out</li>
+</ul></li>
+<li>or it can be completely offline</li>
+</ul></li>
+<li>“user selects a group”
+<ul>
+<li>is this action starts the “game”</li>
+</ul></li>
+<li>it is not mentioned explicitly, but cards management is possible
+required
+<ul>
+<li>CRUD</li>
+<li>sort into group</li>
+<li>remove from group</li>
+<li>“word can appear in multiple group”
+<ul>
+<li>one to many connection!</li>
+</ul></li>
+</ul></li>
+<li>“keeps statistics”
+<ul>
+<li>for what purpose? only to display it, or for the repetition
+mechanics?</li>
+</ul></li>
+</ul>
+</section>
+<section id="additional-questions" class="slide level2">
+<h2>additional questions</h2>
+<ul>
+<li>which platforms should be supported?</li>
+<li>what does ‘per user basis’ mean?</li>
+<li>who and how creates the cards?</li>
+<li>what is the teaching language?
+<ul>
+<li>only one language supported?</li>
+</ul></li>
+<li>does the front side of a card contain only a word/expression?
+<ul>
+<li>any additional info like word class</li>
+</ul></li>
+<li>does the back side of a card contain only a meaning?
+<ul>
+<li>any additional comments or connected words</li>
+</ul></li>
+<li>price of the application?
+<ul>
+<li>subscription model / one time payment / free</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="possible-architecture" class="title-slide slide level1">
+<h1>possible architecture</h1>
+<figure>
+<img data-src="../lectures/figures/simple_case.drawio.svg"
+alt="offline application, a simple case" />
+<figcaption aria-hidden="true">offline application, a simple
+case</figcaption>
+</figure>
+</section>
+<section id="evaluation" class="slide level2">
+<h2>evaluation</h2>
+<ul>
+<li>simple
+<ul>
+<li>it can contain advanced features like detailed statistics for the
+user, but it is stored on the device</li>
+<li>telemetry is possible to add if the customer require some statistics
+above what the app store provide</li>
+</ul></li>
+<li>the application package contains everything
+<ul>
+<li>including the word database</li>
+</ul></li>
+<li>does not depend on internet collection</li>
+</ul>
+<div class="text-color-secondary mt-2">
+<p>these are just some considerations, the customer needs to decide</p>
+</div>
+</section></section>
+<section>
+<section id="possible-architecture-2" class="title-slide slide level1">
+<h1>possible architecture 2</h1>
+<figure>
+<img data-src="../lectures/figures/complicated_case.drawio.svg"
+alt="service-based application, a more complicated case" />
+<figcaption aria-hidden="true">service-based application, a more
+complicated case</figcaption>
+</figure>
+</section>
+<section id="evaluation-1" class="slide level2">
+<h2>evaluation</h2>
+<ul>
+<li>more complicated, it consists of two different software
+<ul>
+<li>the server need to run constantly otherwise the application may be
+unusable
+<ul>
+<li>depends on the implementation</li>
+</ul></li>
+</ul></li>
+<li>can support subscription model
+<ul>
+<li>needs payment handling, which complicates things further</li>
+</ul></li>
+<li>the application package can still contain the word database
+<ul>
+<li>but the available word packages can be controlled based on the
+subscription plan</li>
+</ul></li>
+<li>it may depend on internet collection
+<ul>
+<li>for authentication/authorization</li>
+<li>for account syncronization</li>
+<li><em>subscription</em></li>
+</ul></li>
+</ul>
+<div class="text-color-secondary mt-2">
+<p>these are just some considerations, the customer needs to decide</p>
+</div>
+</section></section>
+<section id="customer-wants-telemetry" class="title-slide slide level1">
+<h1>customer wants telemetry</h1>
+<div class="columns">
+<div class="column text-smaller" style="width:50%;">
+<p><img data-src="../lectures/figures/telemetry_v1.drawio.svg" /></p>
+<ul>
+<li>app is like in scenario 1</li>
+<li>but we need to run a server for the telemetry</li>
+<li>at least the communication is one directional</li>
+</ul>
+</div><div class="column text-smaller fragment" style="width:50%;">
+<p><img data-src="../lectures/figures/telemetry_v2.drawio.svg" /></p>
+<ul>
+<li>like architecture 1, we only build the app</li>
+<li>telemetry is outsourced the a 3rd party service
+<ul>
+<li>not our responsibility!</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="database-transfer" class="title-slide slide level1">
+<h1>database transfer</h1>
+<ul>
+<li>cutomer is a language association, probably doesn’t have technical
+expertise
+<ul>
+<li>they’ll probably send an excel file in e-mail</li>
+</ul></li>
+<li>can we load the into an app?
+<ul>
+<li>of course</li>
+</ul></li>
+<li>do we want to do that?
+<ul>
+<li>not necessarily</li>
+</ul></li>
+</ul>
+</section>
+<section id="database-transfer-1" class="slide level2">
+<h2>database transfer</h2>
+<figure>
+<img data-src="../lectures/figures/etl.drawio.svg"
+alt="standardizing input" />
+<figcaption aria-hidden="true">standardizing input</figcaption>
+</figure>
+</section></section>
+<section id="think-over-every-possibility"
+class="title-slide slide level1">
+<h1>think over every possibility</h1>
+<ul>
+<li>it is acceptable to provide alternatives for the customer
+<ul>
+<li>they often don’t even know what they want</li>
+</ul></li>
+<li>to provide the alternatives, you have to think them over
+<ul>
+<li>it is also necessary for the price estimation</li>
+</ul></li>
+<li>start with bird’s eye view
+<ul>
+<li>then focus on the details more and more</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="text-smaller references csl-bib-body" role="list">
+<div id="ref-ambler2002agile" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">S.
+Ambler, <em>Agile modeling: Effective practices for extreme programming
+and the unified process</em>. John Wiley &amp; Sons, 2002.</div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    // Reveal.destroy();
+    // Reveal.initialize({
+    //     verticator: {
+    // 		color: '#181d37',
+    // 	},
+    // 	drawer: {
+    //       toggleDrawKey: "d", // (optional) key to enable drawing, default "d"
+    //       toggleBoardKey: "t", // (optional) key to show drawing board, default "t"
+    //       colors: ["#fa1e0e", "#8ac926", "#1982c4", "#ffca3a"], // (optional) list of colors avaiable (hex color codes)
+    //       color: "#FF0000", // (optional) color of a cursor, first color from `codes` is a default
+    //       pathSize: 4, // (optional) path size in px, default 4
+    //     },
+    // 	// markdown: {
+    //  //      smartypants: true,
+    //  //    },
+    //     // plugins: [ RevealMenu, Verticator ] 
+    //     // plugins: [ RevealDrawer, RevealMenu, Verticator ] 
+    // });
+    // console.log(Reveal.hasPlugin('RevealMenu'));
+    // Reveal.getPlugin('RevealMenu');
+    // console.log(Reveal.hasPlugin('RevealMenu'));
+    // Reveal.configure({ plugins: [ RevealDrawer, RevealMenu, Verticator ] });
+    highlight_lines()
+    </script>
+    </body>
+</html>
