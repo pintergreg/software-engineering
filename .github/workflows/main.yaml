@@ -33,6 +33,9 @@ jobs:
                   cd lectures
                   ruby build_slides.rb
                   cd ..
+                  cd practicals
+                  ruby build_slides.rb
+                  cd ..
 
             - name: compile handout
               run: |
