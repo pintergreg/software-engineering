@@ -1356,8 +1356,67 @@ from a dependency? why don’t you reimplement it?</figcaption>
 <p>which is actually an architecture decision</p>
 </div>
 </section>
-<section id="complexity-classes" class="slide level2">
-<h2>complexity classes</h2>
+<section id="reimplementation-costs" class="slide level2">
+<h2>reimplementation costs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="text-smaller">estimation by the Linux Foundation <span
+class="citation"
+data-cites="linuxfoundation2008linux">[12]</span></span></p>
+<ul>
+<li>Linux kernel (2008) 6.8 million LOC</li>
+<li>COnstructive COst MOdel (COCOMO) for cost estimation</li>
+<li>using 2008 US salaries: $1.4 billion</li>
+<li>development effort estimation exceeds 7500 Person-Years</li>
+</ul>
+<div>
+<p>Linux 6.16 (released 2025-08-07) has about 40 million LOC</p>
+</div>
+</div><div class="column text-smaller mt-2" style="width:50%;">
+<table>
+<caption>how much code does a developer write? <span class="citation"
+data-cites="mcenery2020how">[13]</span></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">years of coding</th>
+<th style="text-align: right;">avg. lines per day</th>
+<th style="text-align: right;">lines per year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1-5</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">25,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5-10</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">20,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10-15</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">15,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">15-20</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">10,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">20+</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">5,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section></section>
+<section>
+<section id="complexity-classes" class="title-slide slide level1">
+<h1>complexity classes</h1>
 <div class="text-smaller">
 <blockquote>
 <p>There are known knowns; there are things we know we know. We also
@@ -1410,12 +1469,12 @@ Defense)</p>
 </tbody>
 </table>
 <p><span class="text-smaller">source: <span class="citation"
-data-cites="bykovski2020simple">[12]</span></span></p>
+data-cites="bykovski2020simple">[14]</span></span></p>
 </section>
 <section id="complexity-classes-1" class="slide level2">
 <h2>complexity classes</h2>
 <p><span class="text-smaller">from Michael Bykovski’s essay <span
-class="citation" data-cites="bykovski2020simple">[12]</span></span></p>
+class="citation" data-cites="bykovski2020simple">[14]</span></span></p>
 <ul>
 <li>in a simple system, we know the knowns, everything is predictable,
 it’s easy to understand the system</li>
@@ -1425,7 +1484,7 @@ it’s easy to understand the system</li>
 measurable</li>
 <li>it is the province of engineers, surgeons, intelligence analysts,
 lawyers, and other experts <span class="citation"
-data-cites="enwiki:1300921689">[13]</span></li>
+data-cites="enwiki:1300921689">[15]</span></li>
 </ul></li>
 <li>in a complex system, the knowns are unknown to us, but we are aware
 of our uncertainty</li>
@@ -1470,7 +1529,7 @@ href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA</a></figc
 <h2>project complexity</h2>
 <div class="text-smaller">
 <p>Stacey matrix <span class="citation"
-data-cites="stacey2007strategic">[14]</span></p>
+data-cites="stacey2007strategic">[16]</span></p>
 </div>
 <div class="r-stack">
 <div class="exclude">
@@ -1696,8 +1755,27 @@ href="https://en.wikipedia.org/w/index.php?title=Occam%27s_razor&amp;oldid=13057
 class="uri">https://en.wikipedia.org/w/index.php?title=Occam%27s_razor&amp;oldid=1305790618</a>,
 2025.</div>
 </div>
+<div id="ref-linuxfoundation2008linux" class="csl-entry"
+role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">T.
+L. Foundation, <span>“Linux foundation publishes study estimating the
+value of linux.”</span> <a href="
+                   https://www.linuxfoundation.org/press/press-release/linux-foundation-publishes-study-estimating-the-value-of-linux
+                    " class="uri">
+                   https://www.linuxfoundation.org/press/press-release/linux-foundation-publishes-study-estimating-the-value-of-linux
+</a>, 22-Oct-2008.</div>
+</div>
+<div id="ref-mcenery2020how" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">S.
+McEnery, <span>“How much computer code has been written?”</span> <a
+href="
+                   https://medium.com/modern-stack/how-much-computer-code-has-been-written-c8c03100f459
+                    " class="uri">
+                   https://medium.com/modern-stack/how-much-computer-code-has-been-written-c8c03100f459
+</a>, 18-Jul-2020.</div>
+</div>
 <div id="ref-bykovski2020simple" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">M.
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">M.
 Bykovski, <span>“Simple vs. Complicated vs. Complex vs. chaotic.”</span>
 <a href="
                    https://medium.com/better-programming/simple-vs-complicated-vs-complex-vs-chaos-737b5964849d
@@ -1706,7 +1784,7 @@ Bykovski, <span>“Simple vs. Complicated vs. Complex vs. chaotic.”</span>
 </a>, 03-Mar-2020.</div>
 </div>
 <div id="ref-enwiki:1300921689" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div
+<div class="csl-left-margin">[15] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Cynefin
 framework — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -1715,7 +1793,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Cynefin_framework&amp;old
 2025.</div>
 </div>
 <div id="ref-stacey2007strategic" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[14] </div><div class="csl-right-inline">R.
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">R.
 D. Stacey, <em>Strategic management and organisational dynamics: The
 challenge of complexity to ways of thinking about organisations</em>.
 Pearson education, 2007.</div>
