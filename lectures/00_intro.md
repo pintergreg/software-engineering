@@ -427,6 +427,50 @@ based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
 
 software is often measured by the source lines of code
 
+::: {.wide-quote}
+> A line of code (LOC) is any line of text in a code that is not a comment or blank line.
+>
+> -- [Lines of Code (LOC) in Software Engineering](https://www.geeksforgeeks.org/software-engineering/lines-of-code-loc-in-software-engineering/)
+
+:::
+
+:::::::::::: {.columns .mt-3}
+::::::::: {.column width="30%"}
+2 lines (Python)
+
+```python
+for i in range(10):
+    print(i)
+
+```
+
+:::::::::
+::::::::: {.column width="30%"}
+3 lines (Ruby)
+
+```ruby
+for i in 0..9 do
+   puts i
+end
+```
+
+:::::::::
+::::::::: {.column width="30%"}
+1 line (Ruby)
+
+```ruby
+# print numbers from 0 to 9
+(0..9).each {|i| puts i}
+```
+
+:::::::::
+::::::::::::
+
+
+## how big are softwares?
+
+software is often measured by the source lines of code
+
 <!--- Vanilla Music Player for Android (1.3.2): 48 thousand lines of code (LOC)
 - VLC for Android (3.6.5): 264 thousand LOC-->
 <!--- Joplin 3.3.13 (note taking app): 1 million lines of code
