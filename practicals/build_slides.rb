@@ -1,7 +1,3 @@
-inputs = [
-    "01_project_assignment.md",
-    "02_user_story.md",
-]
-inputs.each do |x|
+Dir.glob('*.md').filter{|x| x =~ /^[0-9]{2}_.+\.md$/}.each do |x|
     `ruby build.rb -m #{x}`
 end
