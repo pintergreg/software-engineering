@@ -1000,14 +1000,21 @@ based on: [Introduction to Software Architecture](https://www.codeproject.com/Ar
 
 ## 
 
+::: {.wide-quote}
 > Architecture is the decisions that you wish you could get right early in a project.
 >
 > -- Ralph Johnson
 
+:::
+
+![the rising costs of finding and fixing defects based on Figure 3.4 of [@ambler2002agile] (Ambler, 2002)](figures/cost_of_fixing.drawio.svg){height=200}
+
 . . . 
 
+::: {.mt-2}
 to do that, you need to know all the unknowns, so you need **requirements analysis**, and **learning** the new/unknown technology
 
+:::
 
 # references
 
