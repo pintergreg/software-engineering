@@ -12,3 +12,5 @@ exclude:
     - HOME
     - summary_header
     - mindmap
+    - description
+    - description_hu
