@@ -2,8 +2,8 @@
 
 ## week 1
 
-1. [intro, software architecture](/slides/00_intro.html)
-2. [project assignment](/slides/01_project_assignment.html)
+1. [intro, software architecture](slides/00_intro.html)
+2. [project assignment](slides/01_project_assignment.html)
 
 ### readings
 
@@ -17,11 +17,11 @@
 
 ## week 2
 
-1. [week 1 summary](/slides/summary_week01.html)
-2. [software development life cycles](/slides/01_sdlc.html)
-3. [scrum](/slides/02_scrum.html)
-4. [kanban](/slides/03_kanban.html)
-5. [sample task](/slides/02_user_story.html)
+1. [week 1 summary](slides/summary_week01.html)
+2. [software development life cycles](slides/01_sdlc.html)
+3. [scrum](slides/02_scrum.html)
+4. [kanban](slides/03_kanban.html)
+5. [sample task](slides/02_user_story.html)
 
 ### readings
 
@@ -41,10 +41,10 @@ kanban
 
 ## week 3
 
-1. [week 2 summary](/slides/summary_week02.html)
-2. [requirement analysis](/slides/04_requirement_analysis.html)
-3. [user story mapping](/slides/05_user_story_mapping.html)
-4. [project assignment](/slides/project.html)
+1. [week 2 summary](slides/summary_week02.html)
+2. [requirement analysis](slides/04_requirement_analysis.html)
+3. [user story mapping](slides/05_user_story_mapping.html)
+4. [project assignment](slides/project.html)
 
 ### readings
 
@@ -71,9 +71,9 @@ user story mapping
      
 ## week 4
 
-1. [week 3 summary](/slides/summary_week03.html)
-2. [UML](/slides/06_uml.html)
-3. [C4](/slides/07_c4.html)
+1. [week 3 summary](slides/summary_week03.html)
+2. [UML](slides/06_uml.html)
+3. [C4](slides/07_c4.html)
 
 #### readings
 
@@ -93,8 +93,8 @@ C4 model
 
 ## week 5
 
-1. [week 4 summary](/slides/summary_week04.html)
-2. [design patterns](/slides/08_patterns.html)
+1. [week 4 summary](slides/summary_week04.html)
+2. [design patterns](slides/08_patterns.html)
 
 ### readings
 
@@ -129,9 +129,9 @@ MVC-MVP-MVVM
 
 ## week 6
 
-1. [week 5 summary](/slides/summary_week05.html)
-2. [interfaces](/slides/09_interfaces.html)
-3. [implementation planning](/slides/10_planning.html)
+1. [week 5 summary](slides/summary_week05.html)
+2. [interfaces](slides/09_interfaces.html)
+3. [implementation planning](slides/10_planning.html)
 
 ### readings
 
@@ -143,9 +143,9 @@ MVC-MVP-MVVM
 
 ## week 7
 
-1. [week 6 summary](/slides/summary_week06.html)
-2. [wireframing](/slides/11_wireframing.html)
-3. [clean code](/slides/12_clean_code.html)
+1. [week 6 summary](slides/summary_week06.html)
+2. [wireframing](slides/11_wireframing.html)
+3. [clean code](slides/12_clean_code.html)
 
 ### readings
 
@@ -155,9 +155,9 @@ MVC-MVP-MVVM
 
 ## week 9
 
-1. [week 7 summary](/slides/summary_week07.html)
-2. [code quality](/slides/13_code_quality.html)
-3. [code review](/slides/14_code_review.html)
+1. [week 7 summary](slides/summary_week07.html)
+2. [code quality](slides/13_code_quality.html)
+3. [code review](slides/14_code_review.html)
 
 ### readings
 
@@ -169,8 +169,8 @@ MVC-MVP-MVVM
 
 ## week 10
 
-1. [week 9 summary](/slides/summary_week09.html)
-2. [testing](/slides/15_testing.html)
+1. [week 9 summary](slides/summary_week09.html)
+2. [testing](slides/15_testing.html)
 
 ### readings
 
@@ -190,8 +190,8 @@ MVC-MVP-MVVM
 
 ## week 11
 
-1. [week 10 summary](/slides/summary_week10.html)
-2. [automatization](/slides/16_automatization.html)
+1. [week 10 summary](slides/summary_week10.html)
+2. [automatization](slides/16_automatization.html)
 
 ### readings
 
@@ -211,6 +211,6 @@ MVC-MVP-MVVM
 
 ## week 12
 
-1. [summary](/slides/summary_full.html)
-2. [mindmap](/slides/mindmap.html)
-3. [mock exam](/slides/mock_exam.html)
+1. [summary](slides/summary_full.html)
+2. [mindmap](slides/mindmap.html)
+3. [mock exam](slides/mock_exam.html)
