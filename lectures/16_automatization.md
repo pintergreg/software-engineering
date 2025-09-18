@@ -112,7 +112,67 @@ that is why I previously said that trust in your IDE
 :::
 
 
-# version control systems
+# version control
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-4}
+- version control (a.k.a. revision control) is system for recording and managing changes made in files
+- commonly used to manage source code
+    - however, it can be used to tracking changes to any kind of files
+- people often employ their own version control system, without realising it
+:::::::::
+::::::::: {.column width="45%"}
+![custom versioning using folders and files, based on Simon Mutch's [original](http://smutch.github.io/VersionControlTutorial/pages/0-intro.html)](figures/intuitive_version_tracking.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-3}
+based on Simon Mutch's [Version Control materials](http://smutch.github.io/VersionControlTutorial/pages/0-intro.html)
+:::
+
+::: notes
+[Simon Mutch | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en) | [source](https://gist.github.com/smutch/4951871)](figures/borrowed/vc-xkcd.jpg)
+
+:::
+
+## why you should use version control (for everything)
+
+::: {.wide-quote}
+> In practice, everything that has been created manually should be put in version control, including programs, original field observations, and the source files for papers.
+>
+> -- Best Practices for Scientific Computing; Wilson et al. 2012 ([arXiv:1210.0530](https://arxiv.org/abs/1210.0530))
+
+:::
+
+::: {.mt-5}
+this presentation is under version control as well
+:::
+
+::: notes
+Many services have some kind of version control built in. 
+For example Google Docs or Microsoft Word also provides some level of version control.
+:::
+
+
+## benefits of version control systems
+
+- generate backups
+- separates experiments from the working version
+    - branching, deployment strategies (much later in the course)
+- keep history and track changes
+    - traceability
+- foster collaboration and contribution
+    - team work
+
+The current level of software complexity is not manageable without allowing many people to work on the same code base, and the separation of the development versions from the production one.
+    
+::: {.mt-3}
+**later on the course**: the types and operation of version control systems
+:::
+
+
+# collaboration via version control systems
 
 :::::::::::: {.columns}
 ::::::::: {.column width="55%" .mt-2}
