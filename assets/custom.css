@@ -265,3 +265,6 @@ figcaption {
 .va-middle {
     vertical-align: middle;
 }
+.r-overlay-content{
+  background: var(--r-background-color);
+}
