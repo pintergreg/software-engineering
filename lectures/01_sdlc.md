@@ -78,7 +78,7 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 :::::::::
 ::::::::: {.column width="50%"}
 :::::: {.r-stack}
-![](figures/iterative.drawio.svg){width=500}
+![](figures/iterative.drawio.svg){width=500 data-preview-image="figures/iterative.drawio.svg"}
 ::::::
 :::::::::
 ::::::::::::
