@@ -289,10 +289,10 @@ Besides people there are events in scrum.
 - two week sprint
 - 26 tasks
 - ideal work line (green)
+    - not realistic
 :::
 ::: {.fragment .fade-in data-fragment-index="1"}
 - actual work line (red)
-    - not realistic
 - finished tasks per day (blue bars)
 :::
 :::::::::
@@ -473,9 +473,7 @@ each team member participating the daily scrum answers three questions:
 <!-- - the scrum team and stakeholders review what was accomplished in the sprint -->
 - the attendees collaborate on<br>what to do next
 - the product backlog may also be adjusted to meet new opportunities
-<!--- should not limiting it to a presentation, the working product should be demonstrated and discussed
-- timeboxed to a maximum of four hours for a one-month sprint
-    - for shorter sprints, the event is usually shorter-->
+
 :::::::::
 ::::::::: {.column width="50%"}
 ![Thea Schukken | [CC BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)](figures/borrowed/sprint_review.png)
@@ -534,11 +532,11 @@ Also known as "demo", when the scrum team demonstrates the sprint goal to the st
 ## retrospective starfish
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%"}
-![](figures/retro.drawio.svg)
+::::::::: {.column width="55%"}
+![](figures/retrospective_starfish.drawio.svg)
 
 :::::::::
-::::::::: {.column width="50%"}
+::::::::: {.column width="45%" .mt-4}
 - divide the whiteboard to 5 parts
 - every team member adds sticky notes to the respective parts
 :::::::::
