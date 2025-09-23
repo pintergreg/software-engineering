@@ -40,7 +40,7 @@ The word "*kanban*" roughly means board in Japanese (signboard or billboard, act
 ## principles of kanban
 
 :::::::::::: {.columns}
-::::::::: {.column width="70%"}
+::::::::: {.column width="70%" .mt-3}
 1. defining and visualizing a workflow
 2. actively managing items in a workflow
 3. improving a workflow
