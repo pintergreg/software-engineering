@@ -234,3 +234,12 @@ these are just some considerations, the customer needs to decide
 
 ::: {#refs .text-smaller}
 :::
+
+# requirements analysis in as a mindmap {visibility=uncounted}
+
+::: {.r-fit-text .mt-3}
+[open markmap editor](https://markmap.js.org/repl#?d=github%3Apintergreg%2Fsoftware-engineering%40refs%3Aheads%2Fmain%2Fpracticals%2Fra.md)
+
+with an incomplete requirements analysis
+
+:::
