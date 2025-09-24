@@ -109,7 +109,7 @@ misunderstanding the task can cost a lot
 # let's collect the requirements
 
 ::: {.r-fit-text .mt-3}
-[open PlantUML editor](https://editor.plantuml.com/uml/SoWkIImgAKygvYfEJin9LJ3YAixEp5CeoYzEvUBILaZBIIpEI4uiIb58B2ZWud98pKi1gGK0)
+[open PlantUML editor](https://editor.plantuml.com/uml/SoWkIImgoStCIybDBE0gJaxCILKmuYhEpinJACelJkNYqbP8oqaipaXEB4fHI2meuE9oI0MgXQe70000)
 
 with a Work Breakdown Structure (WBS) diagram skeleton
 
