@@ -1,6 +1,6 @@
 ---
 title: Software Development Life Cycle
-author: Gergő Pintér
+author: Gergő Pintér, PhD
 date: gergo.pinter@uni-corvinus.hu
 lang: en-US
 title-slide-attributes:
