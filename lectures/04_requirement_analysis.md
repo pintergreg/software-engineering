@@ -515,8 +515,35 @@ you can read [the rest of the scenarios](https://dannorth.net/blog/whats-in-a-st
 ![a code review process](figures/proc3.png){height=500}
 
 
-<!-- # data flow diagram -->
+# data flow diagram (DFD) {visibility=hidden}
 
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-3}
+
+- use comprehensible entity names
+- processes should be numbered for easier mapping and referral to specific processes
+- should be clear, the number of processes (functions) in one DFD is recommended to be from 6 to 9 (minimum is 3)
+- multi-level DFDs can be created
+    
+:::::::::
+::::::::: {.column width="40%"}
+![DFD components<br>[by [wooptoo](https://en.wikipedia.org/wiki/File:Data-flow-diagram-notation.svg) | public domain]{.text-smaller}](figures/borrowed/wikipedia/Data-flow-diagram-notation.svg)
+
+:::::::::
+::::::::::::
+
+# data flow diagram (DFD)
+
+- use comprehensible entity names
+- processes should be numbered for easier mapping and referral to specific processes
+- should be clear, the number of processes (functions) in one DFD is recommended to be from 6 to 9 (minimum is 3)
+- multi-level DFDs can be created
+
+![DFD components, there are multiple notations, sometimes extended with flowcharts elements](figures/dfd.drawio.svg){data-preview-image="figures/dfd.drawio.svg" data-preview-fit="contain" height=200}
+
+## data flow diagram example
+
+![](figures/dfd_flashcard.drawio.svg)
 
 # references
 
