@@ -1,7 +1,9 @@
 ---
 title: requirement analysis
+#subtitle: this section is based on [@krysik2023sdlc]
 author: Gergő Pintér, PhD
-date: gergo.pinter@uni-corvinus.hu
+institute: gergo.pinter@uni-corvinus.hu
+date: this section is based on [@krysik2023sdlc]
 lang: en-US
 title-slide-attributes:
     data-background-color: "#181d37"
@@ -20,10 +22,8 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 - first step of the software development life cycle (SDLC)
 - about understanding the task to avoid costly mistakes
 
-::: {.text-smaller}
-this section is based on [@krysik2023sdlc]
-:::
 
+![[the decreasing probability of introducing defects<br>based on Figure 3.3 of [@ambler2002agile]]{.text-smaller}](figures/introducing_defects.drawio.svg){data-preview-image="figures/introducing_defects.drawio.svg" data-preview-fit="contain" height=200}
 
 ## steps of requirement analysis
 
@@ -124,8 +124,8 @@ The goal here is to finalize a set of requirements that is achievable and aligns
 validation
 
 :    - is about confirming that the requirements actually meet the needs of the stakeholders
-     - are we building the right thing?
      - every stakeholder of the project
+     - [are we building the right thing?]{.background-color-lightblue}
 
 :::::::::
 ::::::::: {.column width="50%"}
@@ -134,7 +134,7 @@ verification
 :    - making sure that the requirements are documented correctly and consistently
         - like proofreading and quality checking
      - to ensure that all requirements are clear, unambiguous, and consistent
-     - are we building the thing right?
+     - [are we building the thing right?]{.background-color-lightblue}
 
 :::::::::
 ::::::::::::
@@ -159,6 +159,12 @@ examples from [@femmer2017rapid]
 # requirement analysis document example 
 
 :::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-4}
+- it is a living document
+- often updated throughout the project<br>as new information becomes available or requirements evolve
+- its main goal is to provide a clear, detailed, and agreed-upon set of requirements that guide the software development process
+
+:::::::::
 ::::::::: {.column width="45%"}
 **contents**
 
@@ -176,11 +182,6 @@ examples from [@femmer2017rapid]
 - version history and approvals
     
 :::::::::
-::::::::: {.column width="55%" .mt-4}
-- it is a living document
-- often updated throughout the project<br>as new information becomes available or requirements evolve
-- its main goal is to provide a clear, detailed, and agreed-upon set of requirements that guide the software development process
-:::::::::
 ::::::::::::
 
 
@@ -195,6 +196,7 @@ functional requirements define what a system is supposed to do<br>and non-functi
 ::::::::: {.column width="50%"}
 functional
 
+- [what]{.background-color-lightblue}
 - features
 - the webserver can serve pages via HTTP2
 
@@ -202,9 +204,11 @@ functional
 ::::::::: {.column width="50%}
 non-functional
 
+- [how]{.background-color-lightblue}
 - quality goals, quality of service requirements
 - webserver is available 99.9% of time<br>(yearly about 8h 41m downtime)
 - can serve at least 5.000 queries per sec
+
 
 :::::::::
 ::::::::::::
@@ -261,7 +265,7 @@ non-functional requirements specifies criteria that can be used to evaluate the 
 ## dependencies within a software
 
 - dependencies between the software components are not always obvious
-    - and change over time
+    - and can change over time
 - the core functionalities should be determined at the start of the project
     - that can serve as a foundation for the rest of the software
     - this requires comprehensive understanding of the project
@@ -365,6 +369,7 @@ as a `[type of user]`, I want to `[action/function]` in order to `[benefit/value
 
 ## the structure of a story
 
+::: {.text-larger}
 ```
 Title (one line describing the story)
 
@@ -384,6 +389,11 @@ Then  [outcome]
 
 Scenario 2: ...
 ```
+
+:::
+
+BDD uses natural-language constructs that can express the behavior and the expected outcomes
+
 
 ::: {.text-smaller}
 taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
@@ -430,12 +440,16 @@ Scenario 4: The ATM has insufficient funds
 
 ::: {.text-smaller}
 taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
+
+you can read [the rest of the scenarios](https://dannorth.net/blog/whats-in-a-story/)
 :::
 
 
 ## it may be difficult to extract knowledge
 
 - the scenarios (and tests) may require exact thresholds
+    - [not like: *if the temperature is too hot*]{.text-smaller}
+    - [but: *if the temperature is over 40°C*]{.text-smaller}
 - need to interview domain specialists
 - communication barrier, lack of common dictionary
 
@@ -452,7 +466,7 @@ taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
 - reduced development costs and time
 - enhanced product quality
 - better risk management
-- facilitates prioritization
+- better prioritization
 - improved communication and collaboration
 
 
@@ -473,10 +487,9 @@ taken from [@north2007what] by Daniel Terhorst-North | CC-BY 4.0
 <!-- - a task is often scheduled to start immediately when its prerequisites -->
 
 ::: {.fragment}
-![](figures/ccs24.svg)
+![](figures/gantt_semester_mm.svg)
 
 :::
-
 
 # flowchart
 

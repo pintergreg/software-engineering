@@ -1,0 +1,15 @@
+@startgantt
+skin rose
+scale 2
+
+printscale weekly
+
+Project starts 2025-09-17
+[requirements analysis] as [RA] starts 2025-09-17 and requires 5 weeks
+[requirements analysis presentation] happens at [RA]'s end
+[design] as [D] starts 2025-10-22 and requires 7 weeks
+
+[RA] -> [D]
+
+[design presentation] happens at [D]'s end
+@endgantt
