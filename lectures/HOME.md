@@ -44,7 +44,7 @@ kanban
 1. [week 2 summary](slides/summary_week02.html)
 2. [requirement analysis](slides/04_requirement_analysis.html)
 3. [user story mapping](slides/05_user_story_mapping.html)
-4. [project assignment](slides/project.html)
+4. [user story mapping example](slides/03_user_story_mapping.html)
 
 ### readings
 
