@@ -74,7 +74,24 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 ## customer provides the word database
 
-![standardizing input](../lectures/figures/etl.drawio.svg)
+:::::::::::: {.columns .mt-2}
+::::::::: {.column width="50%" .mt-3}
+- in excel format
+- one xlsx for each chapter (group)
+- two columns
+    - word
+    - meaning
+
+:::::::::
+::::::::: {.column width="50%"}
+![](../lectures/figures/words_xlsx.drawio.svg){width=300}
+
+:::::::::
+::::::::::::
+
+## standardizing input
+
+![ETL (Extract Transform Load)](../lectures/figures/etl.drawio.svg)
 
 # user story mapping
 
