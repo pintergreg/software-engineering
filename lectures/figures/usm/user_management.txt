@@ -1,0 +1,21 @@
+# user_activities: USER ACTIVITIES
+# user_tasks: USER TASKS
+# user_stories: USER STORIES
+# release1: RELEASE 1
+# release2: RELEASE 2
+# release3: RELEASE 3
+sign up: |{"bg":"#CEE5F2","fg":"#000000","font_size":20}
+    provide email: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}
+        valid: |{"bg":"#FFF9B2","font_size":20}
+    provide username: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}
+        not taken: |{"bg":"#FFF9B2","font_size":20}
+    provide password: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}
+        a strong one: |{"bg":"#FFF9B2","font_size":20}
+log in: |{"bg":"#CEE5F2","fg":"#000000","font_size":20}
+    type email: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}
+        or username: |{"bg":"#FFF9B2","font_size":20}
+    type password: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}
+    click login button: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}
+log out: |{"bg":"#CEE5F2","fg":"#000000","font_size":20}
+    click ≡ menu: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}
+    click logout: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}
