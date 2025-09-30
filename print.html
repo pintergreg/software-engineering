@@ -3450,9 +3450,16 @@ supposed to do and the constraints it must operate within (Krysik,
 <li>first step of the software development life cycle (SDLC)</li>
 <li>about understanding the task to avoid costly mistakes</li>
 </ul>
-<div class="text-smaller">
-<p>this section is based on (Krysik, 2023)</p>
-</div>
+<figure>
+<img src="lectures/figures/introducing_defects.drawio.svg"
+data-preview-image="figures/introducing_defects.drawio.svg"
+data-preview-fit="contain" height="200"
+alt="the decreasing probability of introducing defects based on Figure 3.3 of (Ambler, 2002)" />
+<figcaption aria-hidden="true"><span class="text-smaller">the decreasing
+probability of introducing defects<br>based on Figure 3.3 of <span
+class="citation" data-cites="ambler2002agile">(Ambler,
+2002)</span></span></figcaption>
+</figure>
 <h2 id="steps-of-requirement-analysis"><a class="header" href="#steps-of-requirement-analysis">steps of requirement analysis</a></h2>
 <ol>
 <li>stakeholder identification</li>
@@ -3561,8 +3568,9 @@ with the overall objectives of the project. (Krysik, 2023)</p>
 <ul>
 <li>is about confirming that the requirements actually meet the needs of
 the stakeholders</li>
-<li>are we building the right thing?</li>
 <li>every stakeholder of the project</li>
+<li><span class="background-color-lightblue">are we building the right
+thing?</span></li>
 </ul>
 </div>
 <div class="column" width="50%">
@@ -3575,7 +3583,8 @@ consistently
 </ul>
 </li>
 <li>to ensure that all requirements are clear, unambiguous, and consistent</li>
-<li>are we building the thing right?</li>
+<li><span class="background-color-lightblue">are we building the thing
+right?</span></li>
 </ul>
 </div>
 </div>
@@ -3613,6 +3622,15 @@ accuracy.”</span></li>
 </div>
 <h1 id="requirement-analysis-document-example"><a class="header" href="#requirement-analysis-document-example">requirement analysis document example</a></h1>
 <div class="columns">
+<div class="column mt-4" width="55%">
+<ul>
+<li>it is a living document</li>
+<li>often updated throughout the project<br>as new information becomes
+available or requirements evolve</li>
+<li>its main goal is to provide a clear, detailed, and agreed-upon set of
+requirements that guide the software development process</li>
+</ul>
+</div>
 <div class="column" width="45%">
 <p><strong>contents</strong></p>
 <ul>
@@ -3633,15 +3651,6 @@ accuracy.”</span></li>
 <li>version history and approvals</li>
 </ul>
 </div>
-<div class="column mt-4" width="55%">
-<ul>
-<li>it is a living document</li>
-<li>often updated throughout the project<br>as new information becomes
-available or requirements evolve</li>
-<li>its main goal is to provide a clear, detailed, and agreed-upon set of
-requirements that guide the software development process</li>
-</ul>
-</div>
 </div>
 <h2 id="functional-and-non-functional-requirements"><a class="header" href="#functional-and-non-functional-requirements">functional and non-functional requirements</a></h2>
 <div class="wide-quote">
@@ -3653,6 +3662,7 @@ non-functional requirements define how a system is supposed to operate
 <div class="column" width="50%">
 <p>functional</p>
 <ul>
+<li><span class="background-color-lightblue">what</span></li>
 <li>features</li>
 <li>the webserver can serve pages via HTTP2</li>
 </ul>
@@ -3660,6 +3670,7 @@ non-functional requirements define how a system is supposed to operate
 <div class="column" width="&quot;50%">
 <p>non-functional</p>
 <ul>
+<li><span class="background-color-lightblue">how</span></li>
 <li>quality goals, quality of service requirements</li>
 <li>webserver is available 99.9% of time<br>(yearly about 8h 41m downtime)</li>
 <li>can serve at least 5.000 queries per sec</li>
@@ -3713,7 +3724,7 @@ height="250" /></p>
 <ul>
 <li>dependencies between the software components are not always obvious
 <ul>
-<li>and change over time</li>
+<li>and can change over time</li>
 </ul>
 </li>
 <li>the core functionalities should be determined at the start of the
@@ -3826,6 +3837,7 @@ what’s going on (Terhorst-North, 2007)</li>
 criteria</li>
 </ul>
 <h2 id="the-structure-of-a-story"><a class="header" href="#the-structure-of-a-story">the structure of a story</a></h2>
+<div class="text-larger">
 <pre><code>Title (one line describing the story)
 
 Narrative:
@@ -3844,6 +3856,9 @@ Then  [outcome]
 
 Scenario 2: ...
 </code></pre>
+</div>
+<p>BDD uses natural-language constructs that can express the behavior and
+the expected outcomes</p>
 <div class="text-smaller">
 <p>taken from (Terhorst-North, 2007) by Daniel Terhorst-North | CC-BY 4.0</p>
 </div>
@@ -3874,10 +3889,19 @@ Scenario 4: The ATM has insufficient funds
 </div>
 <div class="text-smaller">
 <p>taken from (Terhorst-North, 2007) by Daniel Terhorst-North | CC-BY 4.0</p>
+<p>you can read <a href="https://dannorth.net/blog/whats-in-a-story/">the rest of the
+scenarios</a></p>
 </div>
 <h2 id="it-may-be-difficult-to-extract-knowledge"><a class="header" href="#it-may-be-difficult-to-extract-knowledge">it may be difficult to extract knowledge</a></h2>
 <ul>
-<li>the scenarios (and tests) may require exact thresholds</li>
+<li>the scenarios (and tests) may require exact thresholds
+<ul>
+<li><span class="text-smaller">not like: <em>if the temperature is too
+hot</em></span></li>
+<li><span class="text-smaller">but: <em>if the temperature is over
+40°C</em></span></li>
+</ul>
+</li>
 <li>need to interview domain specialists</li>
 <li>communication barrier, lack of common dictionary</li>
 </ul>
@@ -3892,7 +3916,7 @@ Scenario 4: The ATM has insufficient funds
 <li>reduced development costs and time</li>
 <li>enhanced product quality</li>
 <li>better risk management</li>
-<li>facilitates prioritization</li>
+<li>better prioritization</li>
 <li>improved communication and collaboration</li>
 </ul>
 <h1 id="requirements-analysis-techniques"><a class="header" href="#requirements-analysis-techniques">requirements analysis techniques</a></h1>
@@ -3911,7 +3935,7 @@ Scenario 4: The ATM has insufficient funds
 </li>
 </ul>
 <div class="fragment">
-<p><img src="lectures/figures/ccs24.svg" alt="" /></p>
+<p><img src="lectures/figures/gantt_semester_mm.svg" alt="" /></p>
 </div>
 <h1 id="flowchart"><a class="header" href="#flowchart">flowchart</a></h1>
 <div class="columns">
@@ -3942,6 +3966,10 @@ to solving a task</li>
 <h1 id="references-4"><a class="header" href="#references-4">references</a></h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 line-spacing="2">
+<div id="ref-ambler2002agile" class="csl-entry">
+<p>Ambler, S. (2002). <em>Agile modeling: Effective practices for extreme
+programming and the unified process</em>. John Wiley &amp; Sons.</p>
+</div>
 <div id="ref-femmer2017rapid" class="csl-entry">
 <p>Femmer, H., Fernández, D. M., Wagner, S., &amp; Eder, S. (2017). Rapid
 quality assurance with requirements smells. <em>Journal of Systems and

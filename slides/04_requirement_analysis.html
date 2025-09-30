@@ -70,7 +70,9 @@
 calc(100% - 1.25rem)" data-background-size="125px">
   <h1 class="title">requirement analysis</h1>
   <p class="author">Gergő Pintér, PhD</p>
-  <p class="date">gergo.pinter@uni-corvinus.hu</p>
+  <p class="institute">gergo.pinter@uni-corvinus.hu</p>
+  <p class="date">this section is based on <span class="citation"
+data-cites="krysik2023sdlc">[1]</span></p>
 </section>
 
 <section>
@@ -85,10 +87,16 @@ class="citation" data-cites="krysik2023sdlc">[1]</span>.</p>
 <li>first step of the software development life cycle (SDLC)</li>
 <li>about understanding the task to avoid costly mistakes</li>
 </ul>
-<div class="text-smaller">
-<p>this section is based on <span class="citation"
-data-cites="krysik2023sdlc">[1]</span></p>
-</div>
+<figure>
+<img data-src="figures/introducing_defects.drawio.svg"
+data-preview-image="figures/introducing_defects.drawio.svg"
+data-preview-fit="contain" height="200"
+alt="the decreasing probability of introducing defects based on Figure 3.3 of [2]" />
+<figcaption aria-hidden="true"><span class="text-smaller">the decreasing
+probability of introducing defects<br>based on Figure 3.3 of <span
+class="citation"
+data-cites="ambler2002agile">[2]</span></span></figcaption>
+</figure>
 </section>
 <section id="steps-of-requirement-analysis" class="slide level2">
 <h2>steps of requirement analysis</h2>
@@ -213,8 +221,9 @@ data-cites="krysik2023sdlc">[1]</span></p>
 <ul>
 <li>is about confirming that the requirements actually meet the needs of
 the stakeholders</li>
-<li>are we building the right thing?</li>
 <li>every stakeholder of the project</li>
+<li><span class="background-color-lightblue">are we building the right
+thing?</span></li>
 </ul>
 </dd>
 </dl>
@@ -230,7 +239,8 @@ consistently
 </ul></li>
 <li>to ensure that all requirements are clear, unambiguous, and
 consistent</li>
-<li>are we building the thing right?</li>
+<li><span class="background-color-lightblue">are we building the thing
+right?</span></li>
 </ul>
 </dd>
 </dl>
@@ -265,7 +275,7 @@ accuracy.”</span></li>
 </ul>
 <div class="text-smaller">
 <p>examples from <span class="citation"
-data-cites="femmer2017rapid">[2]</span></p>
+data-cites="femmer2017rapid">[3]</span></p>
 </div>
 </section></section>
 <section>
@@ -273,7 +283,15 @@ data-cites="femmer2017rapid">[2]</span></p>
 class="title-slide slide level1">
 <h1>requirement analysis document example</h1>
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column mt-4" style="width:55%;">
+<ul>
+<li>it is a living document</li>
+<li>often updated throughout the project<br>as new information becomes
+available or requirements evolve</li>
+<li>its main goal is to provide a clear, detailed, and agreed-upon set
+of requirements that guide the software development process</li>
+</ul>
+</div><div class="column" style="width:45%;">
 <p><strong>contents</strong></p>
 <ul>
 <li>introduction</li>
@@ -291,14 +309,6 @@ class="title-slide slide level1">
 <li>appendices</li>
 <li>version history and approvals</li>
 </ul>
-</div><div class="column mt-4" style="width:55%;">
-<ul>
-<li>it is a living document</li>
-<li>often updated throughout the project<br>as new information becomes
-available or requirements evolve</li>
-<li>its main goal is to provide a clear, detailed, and agreed-upon set
-of requirements that guide the software development process</li>
-</ul>
 </div>
 </div>
 </section>
@@ -308,18 +318,20 @@ class="slide level2">
 <div class="wide-quote">
 <p>functional requirements define what a system is supposed to do<br>and
 non-functional requirements define how a system is supposed to operate
-<span class="citation" data-cites="enwiki:1245895117">[3]</span></p>
+<span class="citation" data-cites="enwiki:1245895117">[4]</span></p>
 </div>
 <div class="columns mt-3">
 <div class="column" style="width:50%;">
 <p>functional</p>
 <ul>
+<li><span class="background-color-lightblue">what</span></li>
 <li>features</li>
 <li>the webserver can serve pages via HTTP2</li>
 </ul>
 </div><div class="column" style="width:&quot;50%;">
 <p>non-functional</p>
 <ul>
+<li><span class="background-color-lightblue">how</span></li>
 <li>quality goals, quality of service requirements</li>
 <li>webserver is available 99.9% of time<br>(yearly about 8h 41m
 downtime)</li>
@@ -377,7 +389,7 @@ height="200" /></p>
 <ul>
 <li>dependencies between the software components are not always obvious
 <ul>
-<li>and change over time</li>
+<li>and can change over time</li>
 </ul></li>
 <li>the core functionalities should be determined at the start of the
 project
@@ -497,7 +509,7 @@ idea for a requirement into implemented, tested, production-ready code,
 <ul>
 <li>as long as the requirement is specific enough that everyone knows
 what’s going on <span class="citation"
-data-cites="north2007what">[4]</span></li>
+data-cites="north2007what">[5]</span></li>
 </ul></li>
 <li>BDD starts from a user story and focuses on adding the acceptance
 criteria</li>
@@ -505,6 +517,7 @@ criteria</li>
 </section>
 <section id="the-structure-of-a-story" class="slide level2">
 <h2>the structure of a story</h2>
+<div class="text-larger">
 <pre><code>Title (one line describing the story)
 
 Narrative:
@@ -522,9 +535,12 @@ Then  [outcome]
   And [another outcome]...
 
 Scenario 2: ...</code></pre>
+</div>
+<p>BDD uses natural-language constructs that can express the behavior
+and the expected outcomes</p>
 <div class="text-smaller">
 <p>taken from <span class="citation"
-data-cites="north2007what">[4]</span> by Daniel Terhorst-North | CC-BY
+data-cites="north2007what">[5]</span> by Daniel Terhorst-North | CC-BY
 4.0</p>
 </div>
 </section>
@@ -551,15 +567,24 @@ Then the ATM should dispense $20
 </div>
 <div class="text-smaller">
 <p>taken from <span class="citation"
-data-cites="north2007what">[4]</span> by Daniel Terhorst-North | CC-BY
+data-cites="north2007what">[5]</span> by Daniel Terhorst-North | CC-BY
 4.0</p>
+<p>you can read <a
+href="https://dannorth.net/blog/whats-in-a-story/">the rest of the
+scenarios</a></p>
 </div>
 </section>
 <section id="it-may-be-difficult-to-extract-knowledge"
 class="slide level2">
 <h2>it may be difficult to extract knowledge</h2>
 <ul>
-<li>the scenarios (and tests) may require exact thresholds</li>
+<li>the scenarios (and tests) may require exact thresholds
+<ul>
+<li><span class="text-smaller">not like: <em>if the temperature is too
+hot</em></span></li>
+<li><span class="text-smaller">but: <em>if the temperature is over
+40°C</em></span></li>
+</ul></li>
 <li>need to interview domain specialists</li>
 <li>communication barrier, lack of common dictionary</li>
 </ul>
@@ -577,7 +602,7 @@ class="title-slide slide level1">
 <li>reduced development costs and time</li>
 <li>enhanced product quality</li>
 <li>better risk management</li>
-<li>facilitates prioritization</li>
+<li>better prioritization</li>
 <li>improved communication and collaboration</li>
 </ul>
 </section>
@@ -604,7 +629,7 @@ backward
 <!-- - a task is often scheduled to start immediately when its prerequisites --></li>
 </ul>
 <div class="fragment">
-<p><img data-src="figures/ccs24.svg" /></p>
+<p><img data-src="figures/gantt_semester_mm.svg" /></p>
 </div>
 </section>
 
@@ -651,14 +676,19 @@ engineering.”</span> <a href="
                     https://stratoflow.com/requirements-analysis
 </a>, 24-Nov-2023.</div>
 </div>
+<div id="ref-ambler2002agile" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">S.
+Ambler, <em>Agile modeling: Effective practices for extreme programming
+and the unified process</em>. John Wiley &amp; Sons, 2002.</div>
+</div>
 <div id="ref-femmer2017rapid" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">H.
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">H.
 Femmer, D. M. Fernández, S. Wagner, and S. Eder, <span>“Rapid quality
 assurance with requirements smells,”</span> <em>Journal of Systems and
 Software</em>, vol. 123, pp. 190–213, 2017.</div>
 </div>
 <div id="ref-enwiki:1245895117" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div
+<div class="csl-left-margin">[4] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Non-functional
 requirement — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -667,7 +697,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Non-functional_requiremen
 2024.</div>
 </div>
 <div id="ref-north2007what" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">D.
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">D.
 Terhorst-North, <span>“What’s in a story?”</span> <a href="
                     https://dannorth.net/whats-in-a-story
                     " class="uri">
