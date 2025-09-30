@@ -58,13 +58,16 @@ calc(100% - 1.25rem)" data-background-size="125px">
 <section id="sample-task-flashcard-application"
 class="title-slide slide level1">
 <h1>sample task – flashcard application</h1>
-<p>The prepresentative of a language association entrusts your software
-development company to create a flashcard application, which will help
-people to learn a minority language. The task is to design this
-software.</p>
+<ul>
+<li>customer is a language association</li>
+<li>has textbooks and workbooks for learning a minority language</li>
+<li>wants our company to develop a flashcard application, which will
+help people to learn the language</li>
+</ul>
 </section>
-<section id="the-user-story" class="slide level2">
-<h2>the user story</h2>
+<section id="the-user-story" class="slide level2"
+data-visibility="hidden">
+<h2 data-visibility="hidden">the user story</h2>
 <div class="wide-quote">
 <blockquote>
 <p>We would like you to create a flashcard app for smartphones. Just the
@@ -87,6 +90,65 @@ thing: the statistics should be tracked per user basis.</p>
 </div>
 </section></section>
 <section>
+<section id="had-another-meeting-to-clarify-the-task"
+class="title-slide slide level1">
+<h1>had another meeting to clarify the task</h1>
+<ul>
+<li>which platform?
+<ul>
+<li>Android and iOS (tablets should be supported)</li>
+<li>at least 5 years old devices should be supported</li>
+</ul></li>
+<li>offline app, no subscription plans, one-time payment via the
+store</li>
+<li>no <del>passive-aggressive</del> urging in a form of push
+notifications</li>
+<li>how the words are groupped?
+<ul>
+<li>by chapters of the textbook</li>
+<li>the customer provides a wordlist (with meaning) for each
+chapter</li>
+</ul></li>
+<li>user will not be able to add new words</li>
+<li>one interface language is enough
+<ul>
+<li>the majority language of the country</li>
+</ul></li>
+<li>logo of the language association should appear on the main
+screen</li>
+</ul>
+</section>
+<section id="had-another-meeting-to-clarify-the-task-1"
+class="slide level2">
+<h2>had another meeting to clarify the task</h2>
+<ul>
+<li>high-constrast theme is a good idea besides the light/dark ones
+<ul>
+<li>no need for additional themes</li>
+<li>font size settings is a good idea</li>
+</ul></li>
+<li>the customer wants a learning mode, which just goes through the word
+of the chapter (groups)</li>
+<li>and a practicing mode, which selects words randomly from every group
+<ul>
+<li>words with more left-swipe should appear more frequent</li>
+</ul></li>
+<li>users should be able to check the statistics
+<ul>
+<li>streak</li>
+<li>progress bar (learnt words / total)
+<ul>
+<li>if a word was swiped left, three right swipes needed to consider it
+learnt</li>
+</ul></li>
+<li>which days they learned in the last month, how many cards they’ve
+learnt</li>
+</ul></li>
+<li>the customer was interested in the audio feature for the cards, but
+<em>currently</em> not needed, maybe in a future release</li>
+</ul>
+</section></section>
+<section>
 <section id="offline-application" class="title-slide slide level1">
 <h1>offline application</h1>
 <figure>
@@ -98,10 +160,29 @@ case</figcaption>
 </section>
 <section id="customer-provides-the-word-database" class="slide level2">
 <h2>customer provides the word database</h2>
+<div class="columns mt-2">
+<div class="column mt-3" style="width:50%;">
+<ul>
+<li>in excel format</li>
+<li>one xlsx for each chapter (group)</li>
+<li>two columns
+<ul>
+<li>word</li>
+<li>meaning</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../lectures/figures/words_xlsx.drawio.svg"
+width="300" /></p>
+</div>
+</div>
+</section>
+<section id="standardizing-input" class="slide level2">
+<h2>standardizing input</h2>
 <figure>
 <img data-src="../lectures/figures/etl.drawio.svg"
-alt="standardizing input" />
-<figcaption aria-hidden="true">standardizing input</figcaption>
+alt="ETL (Extract Transform Load)" />
+<figcaption aria-hidden="true">ETL (Extract Transform Load)</figcaption>
 </figure>
 </section></section>
 <section id="user-story-mapping" class="title-slide slide level1">
