@@ -39,7 +39,7 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 |week| date       | lecture                                  | practical class       |
 |---:|-----------:|:----------------------------------------:|:---------------------:|
 |  1 | 2025-09-17 | intro, software architecture             | project assignment    |
-|  2 | 2025-09-24 | SDLC, scrum, kanban                      | colloquial R.A.       |
+|  2 | 2025-09-24 | SDLC, scrum, kanban                      | informal R.A.         |
 |  3 | 2025-10-01 | requirements analysis, user story mapping| formal R.A., workshop |
 |  4 | 2025-10-08 | UML, C4                                  | project workshop      |
 |  5 | 2025-10-15 | design patterns                          | project workshop      |
@@ -60,7 +60,7 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 |week| date       | lecture                                  | practical class       |
 |---:|-----------:|:----------------------------------------:|:---------------------:|
 |  1 | 2025-09-17 | intro, software architecture             | project assignment    |
-|  2 | 2025-09-24 | SDLC, scrum, kanban                      | colloquial R.A.       |
+|  2 | 2025-09-24 | SDLC, scrum, kanban                      | informal R.A.         |
 |  3 | 2025-10-01 | requirements analysis, user story mapping| formal R.A., workshop |
 |  4 | 2025-10-08 | UML, C4                                  | project workshop      |
 |  5 | 2025-10-15 | design patterns                          | project workshop      |
