@@ -15,10 +15,11 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 # sample task -- flashcard application
 
-The prepresentative of a language association entrusts your software development company to create a flashcard application, which will help people to learn a minority language.
-The task is to design this software.
+- customer is a language association
+- has textbooks and workbooks for learning a minority language
+- wants our company to develop a flashcard application, which will help people to learn the language
 
-## the user story
+## the user story {visibility=hidden}
 
 ::: {.wide-quote}
 > We would like you to create a flashcard app for smartphones.
@@ -36,6 +37,36 @@ The task is to design this software.
 > And one more thing: the statistics should be tracked per user basis.
 
 :::
+
+# had another meeting to clarify the task
+
+- which platform?
+    - Android and iOS (tablets should be supported)
+    - at least 5 years old devices should be supported
+- offline app, no subscription plans, one-time payment via the store
+- no ~~passive-aggressive~~ urging in a form of push notifications
+- how the words are groupped?
+    - by chapters of the textbook
+    - the customer provides a wordlist (with meaning) for each chapter
+- user will not be able to add new words
+- one interface language is enough
+    - the majority language of the country
+- logo of the language association should appear on the main screen
+
+## had another meeting to clarify the task
+
+- high-constrast theme is a good idea besides the light/dark ones
+    - no need for additional themes
+    - font size settings is a good idea
+- the customer wants a learning mode, which just goes through the word of the chapter (groups)
+- and a practicing mode, which selects words randomly from every group
+    - words with more left-swipe should appear more frequent
+- users should be able to check the statistics
+    - streak
+    - progress bar (learnt words / total)
+        - if a word was swiped left, three right swipes needed to consider it learnt
+    - which days they learned in the last month, how many cards they've learnt
+- the customer was interested in the audio feature for the cards, but *currently* not needed, maybe in a future release
 
 # offline application
 
