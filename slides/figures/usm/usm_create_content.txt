@@ -1,0 +1,13 @@
+# user_activities: USER ACTIVITIES
+# user_tasks: USER TASKS
+# user_stories: USER STORIES
+# release1: RELEASE 1
+# release2: RELEASE 2
+# release3: RELEASE 3
+create content: |{"bg":"#CEE5F2","fg":"#000000","font_size":20}
+    click new post: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}
+        valid: |{"bg":"#FFF9B2","font_size":20}
+    add content: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}
+        text: |{"bg":"#FFF9B2","font_size":20}
+            multimedia: |{"bg":"#FFF9B2","font_size":20}
+    save: |{"bg":"#F6CFE6","fg":"#000000","font_size":20}

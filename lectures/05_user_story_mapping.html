@@ -162,17 +162,65 @@
 <ul>
 <li>the backlog difficult to prioritize
 <ul>
-<li>identify dependencies</li>
+<li>because it’s a list</li>
+<li>difficult to identify dependencies
+<ul>
+<li>it quickly becomes a network</li>
+</ul>
+</li>
 <li>already at this point the tasks need detailed understanding</li>
 </ul>
 </li>
 <li>the backlog is one dimensional
 <ul>
-<li>priority</li>
+<li>which is priority</li>
 </ul>
 </li>
 </ul>
+<h1 id="user-story-mapping"><a class="header" href="#user-story-mapping">user story mapping</a></h1>
+<ul>
+<li>popularized by Jeff Patton
+<ul>
+<li><a href="https://jpattonassociates.com/the-new-backlog/">original blog post</a></li>
+<li>User Story Mapping, O’Reilly, 2014, ISBN-13: 978-1491904909</li>
+</ul>
+</li>
+<li>performed in workshops including
+<ul>
+<li>users,</li>
+<li>(UI) designers,</li>
+<li>developers,</li>
+<li>testers,</li>
+<li>and other stakeholders</li>
+</ul>
+</li>
+<li>build a shared understanding of the product and a common language</li>
+</ul>
+<h2 id="other-benefits-of-usm"><a class="header" href="#other-benefits-of-usm">other benefits of USM</a></h2>
+<ul>
+<li>helps to understand and prioritise what the user needs</li>
+<li>it can discussed with the customer / users → feedback</li>
+<li>highlights assumptions and risks that might be missed by a single
+viewpoint</li>
+<li>uncovering dependencies earlier and faster with multiple viewpoints</li>
+</ul>
 <h1 id="user-story-map"><a class="header" href="#user-story-map">user story map</a></h1>
+<div class="columns">
+<div class="column" width="50%">
+<ul>
+<li>two dimensional</li>
+<li>uses the <em>user’s</em> perspective to tell a story / narrative</li>
+<li>the user want to achieve a goal</li>
+<li>which consists of one or many activities</li>
+</ul>
+</div>
+<div class="column text-size-2" width="50%">
+<p><img src="figures/user_story_map_sketch.drawio.svg"
+data-preview-image="figures/user_story_map_sketch.drawio.svg"
+data-preview-fit="contain" /></p>
+</div>
+</div>
+<h1 id="user-story-map-1"><a class="header" href="#user-story-map-1">user story map</a></h1>
 <p><img src="figures/user_story_map.drawio.svg" alt="" /></p>
 <div class="notes">
 <ul>
@@ -191,7 +239,7 @@
 <div class="column" width="50%">
 <ul>
 <li>is sort of a big thing that people do</li>
-<li>that has lots of steps,</li>
+<li>that can have multiple steps,</li>
 <li>and doesn’t always have a precise workflow</li>
 </ul>
 <p>activities are still user stories with roles</p>
@@ -222,11 +270,11 @@ so I can keep up with their posts.
 </li>
 </ul>
 </div>
-<div class="column" width="45%">
+<div class="column" width="50%">
 <p>for example (follow a user)</p>
 <ol>
-<li>search for user</li>
-<li>add user to followed list</li>
+<li>search for a user</li>
+<li>add user to the followed list</li>
 </ol>
 </div>
 </div>
@@ -243,25 +291,10 @@ alt="from “Quickstart Guide to User Story Mapping” by Eben Halford | CC BY-S
 <figcaption aria-hidden="true">from “Quickstart Guide to User Story
 Mapping” by Eben Halford | CC BY-SA 2.5</figcaption>
 </figure>
-<h1 id="user-story-mapping"><a class="header" href="#user-story-mapping">user story mapping</a></h1>
-<ul>
-<li>popularized by Jeff Patton
-<ul>
-<li><a href="https://jpattonassociates.com/the-new-backlog/">original blog post</a></li>
-<li>User Story Mapping, O’Reilly, 2014, ISBN-13: 978-1491904909</li>
-</ul>
-</li>
-<li>performed in workshops including
-<ul>
-<li>users,</li>
-<li>(UI) designers,</li>
-<li>developers,</li>
-<li>testers,</li>
-<li>and stakeholders</li>
-</ul>
-</li>
-<li>build a shared understanding of the product and a common language</li>
-</ul>
+<div class="text-smaller">
+<p>reading: <a href="../resources/quickstart-guide-to-user-story-mapping.pdf">Quickstart Guide to User Story
+Mapping</a></p>
+</div>
 <h2 id="user-story-map-as-a-document"><a class="header" href="#user-story-map-as-a-document">user story map as a document</a></h2>
 <ul>
 <li>not final, not set in stone</li>
@@ -279,14 +312,100 @@ acquired about the software
 </ul>
 <h1 id="backbone-skeleton-ribs"><a class="header" href="#backbone-skeleton-ribs">backbone, skeleton, ribs</a></h1>
 <p><img src="figures/user_story_map_bones.drawio.svg" alt="" /></p>
+<p>top-down structure, high-level overview first, then adding details</p>
 <h2 id="iterations"><a class="header" href="#iterations">iterations</a></h2>
 <p><img src="figures/user_story_map_increments.drawio.svg" alt="" /></p>
+<h1 id="note-that"><a class="header" href="#note-that">note that</a></h1>
+<ul>
+<li>there can be several different types of user</li>
+<li>each one could have a different reason for their activities</li>
+</ul>
+<h1 id="story-mapping-steps"><a class="header" href="#story-mapping-steps">story mapping steps</a></h1>
+<ol>
+<li>set the context, decide on the goal
+<ul>
+<li>who is the user we are mapping for?</li>
+<li>what are they trying to achieve with their activity and why?</li>
+<li>what is the outcome they seek and how will we help them to achieve
+it?</li>
+</ul>
+</li>
+<li>tell a story
+<ul>
+<li>go wide not deep, details come later</li>
+<li>focus on the narrative flow<!--     - the sequence of the activities does not need to be perfect immediately -->
+</li>
+</ul>
+</li>
+<li>create the backbone of steps</li>
+<li>define user tasks for each step</li>
+</ol>
+<div class="text-smaller">
+<p>based on the <a href="../resources/quickstart-guide-to-user-story-mapping.pdf">Quickstart Guide to User Story
+Mapping</a></p>
+</div>
+<h2 id="story-mapping-steps-1"><a class="header" href="#story-mapping-steps-1">story mapping steps</a></h2>
+<ol>
+<li>set the context, decide on the goal</li>
+<li>tell a story</li>
+<li>create the backbone of steps
+<ul>
+<li>activities as a collection of things you do to get the goal done</li>
+<li>things that get your activity done are steps</li>
+<li>start your steps with a verb, an action</li>
+<li>the order of steps may differ by users, think of an ideal sequence</li>
+<li>discuss different use cases as they come up</li>
+</ul>
+</li>
+<li>define user tasks for each step
+<ul>
+<li>they can include sub-tasks, alternative tasks, exceptions, details
+and even UX notes</li>
+<li>if a step has many tasks, is may worth to split into separate
+steps</li>
+</ul>
+</li>
+</ol>
+<div class="text-smaller">
+<p>based on the <a href="../resources/quickstart-guide-to-user-story-mapping.pdf">Quickstart Guide to User Story
+Mapping</a></p>
+</div>
+<h1 id="social-media-platform-example--sign-up"><a class="header" href="#social-media-platform-example--sign-up">social media platform example – sign-up</a></h1>
+<p><img src="figures/usm/usm_sign_up.svg" alt="" /></p>
+<p>sign-up feature from a
+<span data-preview-image="figures/social_media_platform/p1_wbs.svg"
+data-preview-fit="contain">minimal social media platform</span></p>
+<!--:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+&#10;:::::::::
+::::::::: {.column width="50%"}
+&#10;:::::::::
+::::::::::::-->
+<h1 id="social-media-platform-example--user-management"><a class="header" href="#social-media-platform-example--user-management">social media platform example – user management</a></h1>
+<p><img src="figures/usm/user_management.svg"
+data-preview-image="figures/usm/user_management.svg"
+data-preview-fit="contain" /></p>
+<p>user management features from a
+<span data-preview-image="figures/social_media_platform/p1_wbs.svg"
+data-preview-fit="contain">social media platform v2</span></p>
+<h1 id="social-media-platform-example--create-content"><a class="header" href="#social-media-platform-example--create-content">social media platform example – create content</a></h1>
+<p><img src="figures/usm/um_create_content.svg"
+data-preview-image="figures/usm/um_create_content.svg"
+data-preview-fit="contain" /></p>
+<p>create content feature from a
+<span data-preview-image="figures/social_media_platform/p2_wbs.svg"
+data-preview-fit="contain">social media platform v2</span></p>
 <h1 id="social-media-platform---example"><a class="header" href="#social-media-platform---example">social media platform - example</a></h1>
 <p><img src="figures/social_media_platform/usm_sign_up.drawio.svg" alt="" /></p>
 <h1 id="user-story-mapping-mistakes"><a class="header" href="#user-story-mapping-mistakes">user story mapping mistakes</a></h1>
 <div class="columns">
 <div class="column" width="50%">
-<img src="figures/usm_too_many_details.drawio.svg" height="450" />
+<figure>
+<img src="figures/usm_too_many_details.drawio.svg" height="450"
+alt="getting bogged down in the details" />
+<figcaption aria-hidden="true">getting bogged down in the
+details</figcaption>
+</figure>
 </div>
 <div class="column" width="50%">
 <div class="r-stack">
