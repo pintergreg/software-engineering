@@ -99,6 +99,7 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 ::::::::: {.column width="50%" .mt-3}
 - let's draw a user story map
 - [open textusm](https://app.textusm.com/)
+- [open excalidraw](https://excalidraw.com/)
 
 :::::::::
 ::::::::: {.column width="50%"}
