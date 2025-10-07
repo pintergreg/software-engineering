@@ -364,6 +364,21 @@ stereotype (can be applied to actors as well)
 
 ## use case diagram - example
 
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/social_media_platform/usecase_1.svg){width=400}
+:::::::::
+::::::::: {.column width="50%" .fragment}
+![](figures/social_media_platform/usecase_2.svg){width=400}
+:::::::::
+::::::::::::
+
+## use case diagram - example
+
+![](figures/social_media_platform/usecase_3.svg){width=400}
+
+## use case diagram - example {visibility=hidden}
+
 :::::: {.r-stack}
 ::: {.fragment .fade-out data-fragment-index=1}
 ![](figures/social_media_platform/usecase_1.svg){width=400}
