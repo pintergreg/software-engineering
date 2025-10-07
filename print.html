@@ -4312,7 +4312,12 @@ mistakes</a></p>
 <ul>
 <li>structural</li>
 <li>procedural</li>
-<li>object oriented</li>
+<li>object oriented
+<ul>
+<li>class-based</li>
+</ul>
+</li>
+<li>functional</li>
 </ul>
 <h1 id="structural"><a class="header" href="#structural">structural</a></h1>
 <div class="columns">
@@ -4371,7 +4376,7 @@ else:
 <ul>
 <li>extends structural with procedures
 <ul>
-<li>a.k.a. functions, subroutines</li>
+<li>a.k.a. subroutines, methods, functions</li>
 </ul>
 </li>
 <li>the two main concepts
@@ -4408,7 +4413,7 @@ power(a, 3)
 <div class="column" width="50%">
 <p><img src="lectures/figures/flowchart_procedure_2.drawio.svg" alt="" /></p>
 </div>
-<div class="column pre-width-100 mt-4 text-size-3" width="50%">
+<div class="column mt-4 text-size-2" width="50%">
 <pre><code class="language-python">def power(a, b):
     r = a
     for _ in range(b - 1):
@@ -4438,15 +4443,15 @@ a = power(a, 3)
 <li>hiding the complex reality while exposing only the necessary parts</li>
 <li>allows to focus on interactions at a higher level without needing to
 understand the details of the implementation</li>
-<li>achieved through abstract classes and interfaces, which define a
-contract for what methods an object must implement without specifying
-how they should be implemented</li>
+<li><em>often</em> achieved through abstract classes and interfaces, which define
+a contract for what methods an object must implement without
+specifying how they should be implemented</li>
 </ul>
 <h2 id="2-encapsulation"><a class="header" href="#2-encapsulation">2. encapsulation</a></h2>
 <!--Encapsulation is the principle of bundling data (attributes) and methods (functions) that operate on that data into a single unit known as a class. This property restricts direct access to some of the object's components, which is a means of preventing unintended interference and misuse of the methods and data. By exposing only necessary parts of an object through public methods (getters and setters), encapsulation enhances security and integrity of the data-->
 <ul>
 <li>bundling data (attributes) and methods (functions) that operate on
-that data into a single unit known as a class</li>
+that data into a single unit</li>
 <li>this property restricts direct access to some of the object’s
 components
 <ul>
@@ -4467,9 +4472,9 @@ methods</li>
 <li>a mechanism that allows one class (subclass or derived class) to
 inherit attributes and methods from another class (superclass or base
 class)</li>
-<li>this promotes code reusability, as common functionality can be defined
-in a base class and reused in derived classes</li>
-<li>results hierarchical relationship which fosters modular design
+<li>this is said to promote code reusability, as common functionality can
+be defined in a base class and reused in derived classes</li>
+<li>results hierarchical relationship which can foster modular design
 <ul>
 <li>also increases dependency</li>
 </ul>
@@ -4477,9 +4482,15 @@ in a base class and reused in derived classes</li>
 </ul>
 <h2 id="class-based-inheritance"><a class="header" href="#class-based-inheritance">class-based inheritance</a></h2>
 <ul>
+<li>class-orientated, or class-based programming
+<ul>
+<li>inheritance via classes of objects,</li>
+<li>instead of inheritance via the objects alone</li>
+</ul>
+</li>
 <li>every object is defined by a class
 <ul>
-<li>which is a definition or a blueprint</li>
+<li>which is like a definition or a blueprint</li>
 <li>describes the structure and behavior of an object</li>
 </ul>
 </li>
@@ -4491,8 +4502,8 @@ in a base class and reused in derived classes</li>
 achieving true prototypal inheritance. It takes an old object as a
 parameter and returns an empty new object that inherits from the old
 one. If we attempt to obtain a member from the new object, and it
-lacks that key, then the old object will supply the member. Objects
-inherit from objects. What could be more object oriented than that?</p>
+lacks that key, then the old object will supply the member. <strong>Objects
+inherit from objects.</strong> What could be more object oriented than that?</p>
 <p><a href="http://crockford.com/javascript/prototypal.html">Douglas Crockford</a></p>
 </blockquote>
 <h2 id="oo-without-inheritance"><a class="header" href="#oo-without-inheritance">OO without inheritance</a></h2>
@@ -4519,6 +4530,80 @@ to provide specific behavior</li>
 </ul>
 </li>
 </ul>
+<h1 id="some-critics-of-oop"><a class="header" href="#some-critics-of-oop">some critics of OOP</a></h1>
+<div class="wide-quote">
+<blockquote>
+<p>object-oriented design is the roman numerals of computing</p>
+<p>– Rob Pike, creator of Go programming language</p>
+</blockquote>
+</div>
+<div class="wide-quote mt-1">
+<blockquote>
+<p>The problem with object-oriented languages is they’ve got all this
+implicit environment that they carry around with them. You wanted a
+banana but what you got was a gorilla holding the banana and the
+entire jungle.</p>
+<p>– Joe Armstrong, creator of Erlang programming language</p>
+</blockquote>
+</div>
+<div class="wide-quote mt-1">
+<blockquote>
+<p>Sometimes, the elegant implementation is just a function. Not a
+method. Not a class. Not a framework. Just a function.</p>
+<p>– John Carmack, co-founder of id Software, lead programmer of Doom,
+Quake, etc.</p>
+</blockquote>
+</div>
+<div class="text-smaller">
+<p>more: <a href="https://harmful.cat-v.org/software/OO_programming/">Object Oriented Programming is Inherently
+Harmful</a></p>
+</div>
+<h2 id="bounding-together-data-and-functions"><a class="header" href="#bounding-together-data-and-functions">bounding together data and functions</a></h2>
+<div class="columns">
+<div class="column mt-2" width="60%">
+<!-- > Functions do things. They have inputs and outputs. The inputs and outputs are data structures, which get changed by the functions. -->
+<ul>
+<li>methods change the state of the object</li>
+<li>introduces side effects</li>
+<li>makes harder to test</li>
+</ul>
+<p>the increase function depends on the state of the object Something</p>
+<p>how to reuse a function that has a hard dependency on an object state?</p>
+</div>
+<div class="column text-size-2" width="40%">
+<pre><code class="language-python">class Something:
+    foo = 0
+    
+    def increase(self, by):
+        self.foo += by
+    
+something = Something()
+print(something.foo)  # 0
+something.increase(2)
+print(something.foo)  # 2
+</code></pre>
+</div>
+</div>
+<h2 id="why-oo-got-popular"><a class="header" href="#why-oo-got-popular">why OO got popular?</a></h2>
+<div class="wide-quote">
+<blockquote>
+<ul>
+<li>Reason 1 - It was thought to be easy to learn.</li>
+<li>Reason 2 - It was thought to make code reuse easier.</li>
+<li>Reason 3 - It was hyped.</li>
+<li>Reason 4 - It created a new software industry.</li>
+</ul>
+<p>I see no evidence of 1 and 2. Reasons 3 and 4 seem to be the driving
+force behind the technology. If a language technology is so bad that
+it creates a new industry to solve problems of its own making then it
+must be a good idea for the guys who want to make money.</p>
+<p>– Joe Armstrong, creator of Erlang programming language</p>
+</blockquote>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://harmful.cat-v.org/software/OO_programming/why_oo_sucks">Why OO Sucks by Joe
+Armstrong</a></p>
+</div>
 <h1 id="unified-modeling-language"><a class="header" href="#unified-modeling-language">Unified Modeling Language</a></h1>
 <div class="columns">
 <div class="column mt-4" width="60%">
@@ -4590,6 +4675,17 @@ stereotype (can be applied to actors as well)
 :::::::::
 ::::::::::::-->
 <h2 id="use-case-diagram---example"><a class="header" href="#use-case-diagram---example">use case diagram - example</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<img src="lectures/figures/social_media_platform/usecase_1.svg" width="400" />
+</div>
+<div class="column fragment" width="50%">
+<img src="lectures/figures/social_media_platform/usecase_2.svg" width="400" />
+</div>
+</div>
+<h2 id="use-case-diagram---example-1"><a class="header" href="#use-case-diagram---example-1">use case diagram - example</a></h2>
+<img src="lectures/figures/social_media_platform/usecase_3.svg" width="400" />
+<h2 id="use-case-diagram---example-2"><a class="header" href="#use-case-diagram---example-2">use case diagram - example</a></h2>
 <div class="r-stack">
 <div class="fragment fade-out" data-fragment-index="1">
 <img src="lectures/figures/social_media_platform/usecase_1.svg" width="400" />
