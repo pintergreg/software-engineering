@@ -18,6 +18,8 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 - structural
 - procedural
 - object oriented
+    - class-based
+- functional
 
 # structural
 
@@ -86,7 +88,7 @@ for (var i = 0; i < 10; i++) {
 <!-- :::::::::::: {.columns} -->
 <!-- ::::::::: {.column width="70%"} -->
 - extends structural with procedures
-    - a.k.a. functions, subroutines
+    - a.k.a. subroutines, methods, functions
 - the two main concepts
     - modularity: organizing the parts of a program into separate modules
         - reusability
@@ -118,7 +120,7 @@ power(a, 3)
 ![](figures/flowchart_procedure_2.drawio.svg)
 
 :::::::::
-::::::::: {.column width="50%" .pre-width-100 .mt-4 .text-size-3}
+::::::::: {.column width="50%" .mt-4 .text-size-2}
 ```python
 def power(a, b):
     r = a
@@ -143,21 +145,21 @@ a = power(a, 3)
     3. inheritance
     4. polymorphism
 
-
+    
 ## 1. abstraction
 
 <!-- Abstraction involves hiding the complex reality while exposing only the necessary parts. It allows programmers to focus on interactions at a higher level without needing to understand the intricate details of the implementation. This is achieved through abstract classes and interfaces, which define a contract for what methods an object must implement without specifying how they should be implemented -->
 
 - hiding the complex reality while exposing only the necessary parts
 - allows to focus on interactions at a higher level without needing to understand the details of the implementation
-- achieved through abstract classes and interfaces, which define a contract for what methods an object must implement without specifying how they should be implemented
+- *often* achieved through abstract classes and interfaces, which define a contract for what methods an object must implement without specifying how they should be implemented
 
 
 ## 2. encapsulation
 
 <!--Encapsulation is the principle of bundling data (attributes) and methods (functions) that operate on that data into a single unit known as a class. This property restricts direct access to some of the object's components, which is a means of preventing unintended interference and misuse of the methods and data. By exposing only necessary parts of an object through public methods (getters and setters), encapsulation enhances security and integrity of the data-->
 
-- bundling data (attributes) and methods (functions) that operate on that data into a single unit known as a class
+- bundling data (attributes) and methods (functions) that operate on that data into a single unit
 - this property restricts direct access to some of the object's components
     - private, public, protected
 - can preventing unintended interference and misuse of the methods and data
@@ -169,15 +171,17 @@ a = power(a, 3)
 <!--Inheritance is a mechanism that allows one class (subclass or derived class) to inherit attributes and methods from another class (superclass or base class). This promotes code reusability, as common functionality can be defined in a base class and reused in derived classes.-->
 
 - a mechanism that allows one class (subclass or derived class) to inherit attributes and methods from another class (superclass or base class)
-- this promotes code reusability, as common functionality can be defined in a base class and reused in derived classes
-- results hierarchical relationship which fosters modular design
+- this is said to promote code reusability, as common functionality can be defined in a base class and reused in derived classes
+- results hierarchical relationship which can foster modular design
     - also increases dependency
-
 
 ## class-based inheritance
 
+- class-orientated, or class-based programming
+    - inheritance via classes of objects,
+    - instead of inheritance via the objects alone
 - every object is defined by a class
-    - which is a definition or a blueprint
+    - which is like a definition or a blueprint
     - describes the structure and behavior of an object
 - most common
 
@@ -187,7 +191,7 @@ a = power(a, 3)
 > The object function untangles JavaScript's constructor pattern, achieving true prototypal inheritance.
 > It takes an old object as a parameter and returns an empty new object that inherits from the old one.
 > If we attempt to obtain a member from the new object, and it lacks that key, then the old object will supply the member.
-> Objects inherit from objects.
+> **Objects inherit from objects.**
 > What could be more object oriented than that?
 >
 > [Douglas Crockford](http://crockford.com/javascript/prototypal.html)
@@ -208,6 +212,84 @@ a = power(a, 3)
 - enables flexibility in code, allowing for methods to perform differently based on the object that invokes them
     - method defined in a base class can be overridden in a derived class to provide specific behavior
 
+
+# some critics of OOP
+
+::: {.wide-quote}
+> object-oriented design is the roman numerals of computing
+>
+> -- Rob Pike, creator of Go programming language
+
+:::
+
+::: {.wide-quote .mt-1}
+> The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.
+>
+> -- Joe Armstrong, creator of Erlang programming language
+
+:::
+
+::: {.wide-quote .mt-1}
+> Sometimes, the elegant implementation is just a function. Not a method. Not a class. Not a framework. Just a function.
+>
+> -- John Carmack, co-founder of id Software, lead programmer of Doom, Quake, etc.
+
+:::
+
+::: {.text-smaller}
+more: [Object Oriented Programming is Inherently Harmful](https://harmful.cat-v.org/software/OO_programming/)
+:::
+
+## bounding together data and functions
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-2}
+<!-- > Functions do things. They have inputs and outputs. The inputs and outputs are data structures, which get changed by the functions. -->
+
+- methods change the state of the object
+- introduces side effects
+- makes harder to test
+
+the increase function depends on the state of the object Something
+
+how to reuse a function that has a hard dependency on an object state?
+
+:::::::::
+::::::::: {.column width="40%" .text-size-2}
+```python
+class Something:
+    foo = 0
+    
+    def increase(self, by):
+        self.foo += by
+    
+something = Something()
+print(something.foo)  # 0
+something.increase(2)
+print(something.foo)  # 2
+```
+
+:::::::::
+::::::::::::
+
+## why OO got popular?
+
+::: {.wide-quote}
+> - Reason 1 - It was thought to be easy to learn.
+> - Reason 2 - It was thought to make code reuse easier.
+> - Reason 3 - It was hyped.
+> - Reason 4 - It created a new software industry.
+> 
+> I see no evidence of 1 and 2. Reasons 3 and 4 seem to be the driving force behind the technology. If a language technology is so bad that it creates a new industry to solve problems of its own making then it must be a good idea for the guys who want to make money.
+> 
+> -- Joe Armstrong, creator of Erlang programming language
+
+:::
+
+::: {.text-smaller}
+source: [Why OO Sucks by Joe Armstrong](https://harmful.cat-v.org/software/OO_programming/why_oo_sucks)
+:::
+    
 # Unified Modeling Language
 
 :::::::::::: {.columns}
