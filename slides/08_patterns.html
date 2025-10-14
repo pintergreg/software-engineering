@@ -315,35 +315,6 @@ new customer requirements can be adopted</li>
 </div>
 </section>
 
-<section id="coupling" class="title-slide slide level1">
-<h1>coupling</h1>
-<div class="columns">
-<div class="column mt-5" style="width:55%;">
-<ul>
-<li>the degree of interdependence between software modules</li>
-<li>coupling is usually contrasted with cohesion
-<ul>
-<li>low coupling often correlates with high cohesion, and vice
-versa</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:45%;">
-<figure>
-<img data-src="figures/borrowed/CouplingVsCohesion.svg"
-alt="from Wikimedia | public domain" />
-<figcaption aria-hidden="true">from <a
-href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia</a>
-| public domain</figcaption>
-</figure>
-</div>
-</div>
-<div class="text-smaller mt-2">
-<p>source <a
-href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
-<span class="citation" data-cites="enwiki:1245630908">[5]</span></p>
-</div>
-</section>
-
 <section>
 <section id="solid-principles" class="title-slide slide level1">
 <h1>SOLID principles</h1>
@@ -351,7 +322,7 @@ href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</
 <p>SOLID is a mnemonic acronym for five design principles intended to
 make object-oriented designs more understandable, flexible, and
 maintainable <span class="citation"
-data-cites="enwiki:1237710587">[6]</span></p>
+data-cites="enwiki:1237710587">[5]</span></p>
 </blockquote>
 <ul>
 <li>single responsibility principle</li>
@@ -441,7 +412,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a hr
 </div>
 <div class="text-smaller">
 <p>example based on <span class="citation"
-data-cites="oloruntoba2024solid">[7]</span></p>
+data-cites="oloruntoba2024solid">[6]</span></p>
 </div>
 </section>
 <section id="open-closed-principle-1" class="slide level2">
@@ -479,7 +450,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 </div>
 <div class="text-smaller">
 <p>example based on <span class="citation"
-data-cites="oloruntoba2024solid">[7]</span></p>
+data-cites="oloruntoba2024solid">[6]</span></p>
 </div>
 </section>
 <section id="liskov-substitution-principle" class="slide level2">
@@ -487,18 +458,18 @@ data-cites="oloruntoba2024solid">[7]</span></p>
 <blockquote>
 <p>if class A is a subtype of class B, B should be able to replaced with
 A without disrupting the behavior of the program <span class="citation"
-data-cites="millington2019solid">[8]</span></p>
+data-cites="millington2019solid">[7]</span></p>
 </blockquote>
 <div class="text-smaller mt-3">
 <ul>
 <li>named after Barbara Liskov</li>
 <li>presented first in 1987 <span class="citation"
-data-cites="liskov1987data">[9]</span></li>
+data-cites="liskov1987data">[8]</span></li>
 <li>circle-ellipse problem / square–rectangle problem
 <ul>
 <li>existence of the circle–ellipse problem is used to criticize
 object-oriented programming <span class="citation"
-data-cites="enwiki:1165573623">[10]</span></li>
+data-cites="enwiki:1165573623">[9]</span></li>
 </ul></li>
 </ul>
 </div>
@@ -556,7 +527,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a hr
 </div>
 <div class="text-smaller">
 <p>code is based on <span class="citation"
-data-cites="erinc2020solid">[11]</span></p>
+data-cites="erinc2020solid">[10]</span></p>
 </div>
 </section>
 <section id="liskov-substitution-principle---example-1"
@@ -584,7 +555,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a hr
 <p>this example violates the Liskov substitution principle</p>
 <div class="text-smaller">
 <p>code is based on <span class="citation"
-data-cites="erinc2020solid">[11]</span></p>
+data-cites="erinc2020solid">[10]</span></p>
 </div>
 </section>
 <section id="interface-segregation-principle" class="slide level2">
@@ -605,7 +576,7 @@ height="275" /></p>
 </div>
 <div class="text-smaller">
 <p>example based on <span class="citation"
-data-cites="oloruntoba2024solid">[7]</span></p>
+data-cites="oloruntoba2024solid">[6]</span></p>
 </div>
 </section>
 <section id="dependency-inversion-principle" class="slide level2">
@@ -615,7 +586,7 @@ data-cites="oloruntoba2024solid">[7]</span></p>
 interfaces or abstract classes, not concrete classes. It’s an inversion
 because implementations depend upon abstractions and not the other way
 round. <span class="citation"
-data-cites="millington2019solid">[8]</span></p>
+data-cites="millington2019solid">[7]</span></p>
 </blockquote>
 <p><img data-src="figures/solid/dependency_inversion.svg"
 height="300" /></p>
@@ -644,7 +615,36 @@ concept</li>
 </ul>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="stec2024inversion">[12]</span></p>
+data-cites="stec2024inversion">[11]</span></p>
+</div>
+</section>
+
+<section id="coupling" class="title-slide slide level1">
+<h1>coupling</h1>
+<div class="columns">
+<div class="column mt-5" style="width:55%;">
+<ul>
+<li>the degree of interdependence between software modules</li>
+<li>coupling is usually contrasted with cohesion
+<ul>
+<li>low coupling often correlates with high cohesion, and vice
+versa</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<figure>
+<img data-src="figures/borrowed/CouplingVsCohesion.svg"
+alt="from Wikimedia | public domain" />
+<figcaption aria-hidden="true">from <a
+href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia</a>
+| public domain</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-2">
+<p>source <a
+href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
+<span class="citation" data-cites="enwiki:1245630908">[12]</span></p>
 </div>
 </section>
 
@@ -1347,17 +1347,8 @@ href="
                     https://fsharpforfunandprofit.com/fppatterns/
 </a>, Dec-2014.</div>
 </div>
-<div id="ref-enwiki:1245630908" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div
-class="csl-right-inline">Wikipedia contributors, <span>“Coupling
-(computer programming) — <span>Wikipedia</span><span>,</span> the free
-encyclopedia.”</span> <a
-href="https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908"
-class="uri">https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908</a>,
-2024.</div>
-</div>
 <div id="ref-enwiki:1237710587" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div
+<div class="csl-left-margin">[5] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“SOLID —
 <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
 href="https://en.wikipedia.org/w/index.php?title=SOLID&amp;oldid=1237710587"
@@ -1365,7 +1356,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=SOLID&amp;oldid=123771058
 2024.</div>
 </div>
 <div id="ref-oloruntoba2024solid" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">S.
 Oloruntoba and A. S. Walia, <span>“SOLID: The first 5 principles of
 object oriented design.”</span> <a href="
                     https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
@@ -1374,7 +1365,7 @@ object oriented design.”</span> <a href="
 </a>, 23-Apr-2024.</div>
 </div>
 <div id="ref-millington2019solid" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">S.
 Millington, <span>“A solid guide to SOLID principles.”</span> <a href="
                     https://www.baeldung.com/solid-principles
                     " class="uri">
@@ -1382,13 +1373,13 @@ Millington, <span>“A solid guide to SOLID principles.”</span> <a href="
 </a>, 05-Feb-2019.</div>
 </div>
 <div id="ref-liskov1987data" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[9] </div><div class="csl-right-inline">B.
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">B.
 Liskov, <span>“<a href="https://doi.org/10.1145/62139.62141">Keynote
 address - data abstraction and hierarchy</a>,”</span> <em>SIGPLAN
 Not.</em>, vol. 23, no. 5, pp. 17–34, Jan. 1987.</div>
 </div>
 <div id="ref-enwiki:1165573623" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[10] </div><div
+<div class="csl-left-margin">[9] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Circle–ellipse
 problem — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -1397,7 +1388,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Circle%E2%80%93ellipse_pr
 2023.</div>
 </div>
 <div id="ref-erinc2020solid" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[11] </div><div class="csl-right-inline">Y.
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">Y.
 K. Erinç, <span>“The SOLID principles of object-oriented programming
 explained in plain english.”</span> <a href="
                 https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
@@ -1406,12 +1397,21 @@ explained in plain english.”</span> <a href="
 </a>, 20-Aug-2020.</div>
 </div>
 <div id="ref-stec2024inversion" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">A.
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">A.
 Stec, <span>“Inversion of control.”</span> <a href="
                     https://www.baeldung.com/cs/ioc
                     " class="uri">
                     https://www.baeldung.com/cs/ioc
 </a>, 16-Feb-2024.</div>
+</div>
+<div id="ref-enwiki:1245630908" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Coupling
+(computer programming) — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908"
+class="uri">https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908</a>,
+2024.</div>
 </div>
 <div id="ref-enwiki:1230588445" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[13] </div><div
