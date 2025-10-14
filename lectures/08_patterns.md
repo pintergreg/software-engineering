@@ -144,24 +144,6 @@ Peter Norvig [demonstrated](http://www.norvig.com/design-patterns/) that 16 out 
 ::::::::::::
 
 
-# coupling
-
-:::::::::::: {.columns}
-::::::::: {.column width="55%" .mt-5}
-- the degree of interdependence between software modules
-- coupling is usually contrasted with cohesion
-    - low coupling often correlates with high cohesion, and vice versa
-:::::::::
-::::::::: {.column width="45%"}
-![from [Wikimedia](https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg) | public domain](figures/borrowed/CouplingVsCohesion.svg)
-:::::::::
-::::::::::::
-
-::: {.text-smaller .mt-2}
-source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) [@enwiki:1245630908]
-:::
-
-
 # SOLID principles
 
 > SOLID is a mnemonic acronym for five design principles intended to make object-oriented designs more understandable, flexible, and maintainable [@enwiki:1237710587]
@@ -439,6 +421,24 @@ increases reusability
 
 :::{.text-smaller}
 based on [@stec2024inversion]
+:::
+
+
+# coupling
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%" .mt-5}
+- the degree of interdependence between software modules
+- coupling is usually contrasted with cohesion
+    - low coupling often correlates with high cohesion, and vice versa
+:::::::::
+::::::::: {.column width="45%"}
+![from [Wikimedia](https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg) | public domain](figures/borrowed/CouplingVsCohesion.svg)
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-2}
+source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) [@enwiki:1245630908]
 :::
 
 
