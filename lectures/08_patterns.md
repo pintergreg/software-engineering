@@ -727,6 +727,17 @@ it is very similar to the onion and (the clean architecture [@martin2012clean])
 based on [@woltmann2023hexagonal]
 :::
 
+## the clean architecture
+
+![](figures/clean_architecture.drawio.svg)
+
+::: {.text-smaller}
+- by Robert C. Martin [@martin2012clean], unifies onion or hexagonal, etc.
+- source code dependencies can only point inwards
+- relies on dependency inversion principle
+- the number of circles is flexible
+
+:::
 
 # Model-View-Controller [@enwiki:1244967192]
 
