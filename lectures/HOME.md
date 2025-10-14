@@ -114,6 +114,7 @@ topologies
 
 :    - [Hexagonal Architecture](https://www.happycoders.eu/software-craftsmanship/hexagonal-architecture/) - by Sven Woltmann
      - [The Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/) - by Jeffrey Palermo
+     - [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) - by Robert C. Martin
 <!-- :    - [Introduction to Software Architecture](https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture) -->
 
 MVC-MVP-MVVM
