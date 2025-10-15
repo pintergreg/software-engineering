@@ -20,6 +20,41 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 ![based on Khalil Stemmel's figure [@stemmler2019how]](figures/the_software_design_and_architecture_stack_generalized.drawio.svg){height=475}
 
+## structural pattern matching
+
+::: {.text-size-3}
+```python
+foo = 3
+
+match foo:
+    case 1:
+        print("it's one")
+    case 2:
+        print("it's two")
+    case _:
+        print("it's not one or two")
+
+```
+
+:::
+
+## structural pattern matching
+
+::: {.text-size-3}
+```python
+foo = [1, 2.4, 3.1]
+
+match foo:
+    case [1, 2, 3]:
+        print("it's a list with 1, 2, and 3")
+    case [1, 2, _]:
+        print("it's a list with 1, 2, and whatever")
+    case [1, float(), float()]:
+        print("it's a list with 1, and two floats")
+
+```
+
+:::
 
 # gang of four (GoF) design patterns
 
