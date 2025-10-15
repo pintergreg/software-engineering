@@ -330,7 +330,10 @@ Architecture</a> -
 by Sven Woltmann</li>
 <li><a href="https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/">The Onion
 Architecture</a> -
-by Jeffrey Palermo<!-- :    - [Introduction to Software Architecture](https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture) -->
+by Jeffrey Palermo</li>
+<li><a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">The Clean
+Architecture</a> -
+by Robert C. Martin<!-- :    - [Introduction to Software Architecture](https://www.codeproject.com/Articles/1064240/Introduction-to-Software-Architecture) -->
 </li>
 </ul>
 <p>MVC-MVP-MVVM</p>
@@ -5159,6 +5162,32 @@ height="475" alt="based on Khalil Stemmel’s figure (Stemmler, 2019)" />
 class="citation" data-cites="stemmler2019how">(Stemmler,
 2019)</span></figcaption>
 </figure>
+<h2 id="structural-pattern-matching"><a class="header" href="#structural-pattern-matching">structural pattern matching</a></h2>
+<div class="text-size-3">
+<pre><code class="language-python">foo = 3
+
+match foo:
+    case 1:
+        print("it's one")
+    case 2:
+        print("it's two")
+    case _:
+        print("it's not one or two")
+</code></pre>
+</div>
+<h2 id="structural-pattern-matching-1"><a class="header" href="#structural-pattern-matching-1">structural pattern matching</a></h2>
+<div class="text-size-3">
+<pre><code class="language-python">foo = [1, 2.4, 3.1]
+
+match foo:
+    case [1, 2, 3]:
+        print("it's a list with 1, 2, and 3")
+    case [1, 2, _]:
+        print("it's a list with 1, 2, and whatever")
+    case [1, float(), float()]:
+        print("it's a list with 1, and two floats")
+</code></pre>
+</div>
 <h1 id="gang-of-four-gof-design-patterns"><a class="header" href="#gang-of-four-gof-design-patterns">gang of four (GoF) design patterns</a></h1>
 <ul>
 <li>GoF: Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides</li>
