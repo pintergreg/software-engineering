@@ -129,7 +129,7 @@ height="300" /></p>
 <li>you may need to work a technology / framework / language that you
 are not familiar with</li>
 <li>or you just have to learn a new codebase</li>
-<li>calculate with learning during the planning</li>
+<li>calculate with learning during the planning!</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="figures/complex_projects.drawio.cropped_no_people.svg"
@@ -178,7 +178,7 @@ research about how to use it</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <figure>
-<img data-src="figures/autocrop.png" width="300"
+<img data-src="figures/autocrop.png"
 alt="screenshot of leblancfg/autocrop GitHub project page" />
 <figcaption aria-hidden="true">screenshot of <a
 href="https://github.com/leblancfg/autocrop">leblancfg/autocrop</a>
@@ -276,7 +276,8 @@ mitigation measures</li>
 </div><div class="column" style="width:35%;">
 <figure>
 <img data-src="figures/borrowed/Risk%20Log%20-%20Party%20Example.svg"
-width="300" alt="by Hou710 | CC BY-SA" />
+data-preview-image="figures/borrowed/Risk Log - Party Example.svg"
+data-preview-fit="contain" alt="by Hou710 | CC BY-SA" />
 <figcaption aria-hidden="true">by <a
 href="https://en.wikipedia.org/wiki/File:Hou710_RiskLog.svg">Hou710</a>
 | <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC
@@ -412,6 +413,10 @@ abstraction</li>
 <p>from <a href="https://riskstorming.com/">riskstorming.com</a> | <a
 href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
 </div>
+<aside class="notes">
+<p>this could be a separate meeting/workshop at the beginning of a SCRUM
+sprint</p>
+</aside>
 </section>
 <section id="steps-of-risk-storming-1" class="slide level2">
 <h2>steps of risk storming</h2>
@@ -428,7 +433,7 @@ identified</li>
 <ul>
 <li>review and summarise the output,</li>
 <li>especially focusing on risks that only one person identified,</li>
-<li>or risks where multiple people disgree on the priority</li>
+<li>or risks where multiple people disagree on the priority</li>
 </ul></li>
 </ol>
 </div><div class="column" style="width:40%;">
@@ -485,7 +490,8 @@ probability/impact of identified risks
 <ul>
 <li>e.g. removing single points of failure,</li>
 </ul></li>
-<li>upon change you should re-run the risk-storming process</li>
+<li>upon change you should <em>re-run the risk-storming
+process</em>!</li>
 </ul></li>
 </ul>
 <div class="text-smaller">
@@ -496,15 +502,21 @@ href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
 <section id="walking-skeleton" class="slide level2">
 <h2>walking skeleton</h2>
 <div class="columns">
-<div class="column" style="width:70%;">
+<div class="column wide-quote mt-3" style="width:70%;">
 <blockquote>
 <p>A Walking Skeleton is a tiny implementation of the system that
 performs a small end-to-end function. It need not use the final
 architecture, but it should link together the main architectural
-components. The architecture and the functionality can then evolve in
-parallel.</p>
+components.
+<!-- The architecture and the functionality can then evolve in parallel. --></p>
 <p>– Alistair Cockburn</p>
 </blockquote>
+<div class="mt-2">
+<ul>
+<li>technical proof of concept</li>
+<li>minimizes risk and helps validate assumptions early</li>
+</ul>
+</div>
 </div><div class="column" style="width:30%;">
 <p><img data-src="figures/publicdomainvectors/skeleton.svg"
 width="275" /></p>
@@ -517,10 +529,34 @@ in the course)</p>
 href="https://wiki.c2.com/?WalkingSkeleton">wiki.c2.com</a></p>
 </div>
 </section>
+<section id="walking-skeleton-vs.-minimum-viable-product"
+class="slide level2">
+<h2>walking skeleton vs. minimum viable product</h2>
+<ul>
+<li>a walking skeleton is a technical proof of concept
+<ul>
+<li>built to validate that all parts of the system work together</li>
+<li>minimal in features but complete in architecture</li>
+</ul></li>
+<li>MVP is a business-driven approach
+<ul>
+<li>has just enough features to be useful to early adopters and gather
+user feedback</li>
+</ul></li>
+<li>walking skeleton typically comes before an MVP
+<ul>
+<li>ensuring the MVP has a solid technical foundation</li>
+</ul></li>
+</ul>
+</section>
 <section id="risk-storming-example" class="slide level2">
 <h2>risk storming example</h2>
+<div class="r-stack">
+<p><img data-src="figures/user_statistics/c4_component.excalidraw.svg"
+class="fragment fade-out" data-fragment-index="1" height="550" /></p>
 <p><img data-src="figures/user_statistics/risk_storming.excalidraw.svg"
-height="550" /></p>
+class="fragment" data-fragment-index="1" height="550" /></p>
+</div>
 </section></section>
 <section>
 <section id="schedule-milestones" class="title-slide slide level1">
@@ -722,9 +758,7 @@ href="https://en.wikipedia.org/wiki/File:CrispPlanningPokerDeck.jpg">Hkniberg</a
 <dd>
 <ul>
 <li>? means <em>unsure</em></li>
-<li>☕ means “I need a break”
-<!--- card values: 0, ½, 1, 2, 3, 5, 8, 13, 20, 40, 100, and optionally a ? (unsure)
-- Fibonacci sequence: 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89--></li>
+<li>☕ means “I need a break”</li>
 </ul>
 </dd>
 </dl>
