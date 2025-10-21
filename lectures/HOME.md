@@ -141,6 +141,7 @@ MVC-MVP-MVVM
 - [Story points and estimation ](https://www.atlassian.com/agile/project-management/estimation) - by Dan Radigan 
 - [What Scrum Says About Estimates](https://www.scrum.org/resources/blog/what-scrum-says-about-estimates)
 - [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)
+- [Walking Skeletons in Software Architecture](https://medium.com/@jorisvdaalsvoort/walking-skeletons-in-software-architecture-894168276e3f) - by Joris van der Aalsvoort
 
 ## week 7
 

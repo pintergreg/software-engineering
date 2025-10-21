@@ -52,7 +52,7 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 ::::::::: {.column width="50%" .mt-4}
 - you may need to work a technology / framework / language that you are not familiar with
 - or you just have to learn a new codebase
-- calculate with learning during the planning
+- calculate with learning during the planning!
 
 :::::::::
 ::::::::: {.column width="50%"}
@@ -98,7 +98,7 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 
 :::::::::
 ::::::::: {.column width="40%"}
-![screenshot of [leblancfg/autocrop](https://github.com/leblancfg/autocrop) GitHub project page](figures/autocrop.png){width=300}
+![screenshot of [leblancfg/autocrop](https://github.com/leblancfg/autocrop) GitHub project page](figures/autocrop.png)
 
 :::::::::
 ::::::::::::
@@ -179,7 +179,7 @@ from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativ
 
 :::::::::
 ::::::::: {.column width="35%"}
-![by [Hou710](https://en.wikipedia.org/wiki/File:Hou710_RiskLog.svg) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en) ](figures/borrowed/Risk Log - Party Example.svg){width=300}
+![by [Hou710](https://en.wikipedia.org/wiki/File:Hou710_RiskLog.svg) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en) ](figures/borrowed/Risk Log - Party Example.svg){data-preview-image="figures/borrowed/Risk Log - Party Example.svg" data-preview-fit="contain"}
 
 :::::::::
 ::::::::::::
@@ -268,6 +268,10 @@ this chapter is based on [riskstorming.com](https://riskstorming.com/) | [CC BY 
 ::: {.text-smaller}
 from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 :::
+
+::: notes
+this could be a separate meeting/workshop at the beginning of a SCRUM sprint
+:::
     
 
 ## steps of risk storming
@@ -280,7 +284,7 @@ from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativ
 4. review and summarise the risks
     - review and summarise the output,
     - especially focusing on risks that only one person identified,
-    - or risks where multiple people disgree on the priority
+    - or risks where multiple people disagree on the priority
 
 :::::::::
 ::::::::: {.column width="40%"}
@@ -322,7 +326,7 @@ from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativ
 - re-work
     - change software architecture to remove or reduce the probability/impact of identified risks
         - e.g. removing single points of failure, 
-    - upon change you should re-run the risk-storming process
+    - upon change you should *re-run the risk-storming process*!
 
 ::: {.text-smaller}
 from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
@@ -332,12 +336,19 @@ from [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://creativ
 ## walking skeleton
 
 :::::::::::: {.columns}
-::::::::: {.column width="70%"}
+::::::::: {.column width="70%" .wide-quote .mt-3}
 
-> A Walking Skeleton is a tiny implementation of the system that performs a small end-to-end function. It need not use the final architecture, but it should link together the main architectural components. The architecture and the functionality can then evolve in parallel.
+> A Walking Skeleton is a tiny implementation of the system that performs a small end-to-end function.
+It need not use the final architecture, but it should link together the main architectural components.
+<!-- The architecture and the functionality can then evolve in parallel. -->
 >
 > -- Alistair Cockburn
 
+::: {.mt-2}
+- technical proof of concept
+- minimizes risk and helps validate assumptions early
+
+:::
 :::::::::
 ::::::::: {.column width="30%"}
 ![](figures/publicdomainvectors/skeleton.svg){width=275}
@@ -352,10 +363,25 @@ via [wiki.c2.com](https://wiki.c2.com/?WalkingSkeleton)
 :::
 
 
+## walking skeleton vs. minimum viable product
+
+- a walking skeleton is a technical proof of concept
+    - built to validate that all parts of the system work together
+    - minimal in features but complete in architecture
+- MVP is a business-driven approach
+    - has just enough features to be useful to early adopters and gather user feedback
+- walking skeleton typically comes before an MVP
+    - ensuring the MVP has a solid technical foundation
+    
+
 ## risk storming example
 
-![](figures/user_statistics/risk_storming.excalidraw.svg){height=550}
+:::::: {.r-stack}
+![](figures/user_statistics/c4_component.excalidraw.svg){height=550 data-fragment-index=1 .fragment .fade-out}
 
+![](figures/user_statistics/risk_storming.excalidraw.svg){height=550 data-fragment-index=1 .fragment}
+
+::::::
 
 # schedule milestones
 
@@ -506,8 +532,7 @@ optional cards
 
 :    - ? means *unsure*
      - &#9749; means "I need a break"
-<!--- card values: 0, ½, 1, 2, 3, 5, 8, 13, 20, 40, 100, and optionally a ? (unsure)
-- Fibonacci sequence: 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89-->
+
 :::
 :::::::::
 ::::::::::::
