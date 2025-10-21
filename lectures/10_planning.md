@@ -588,6 +588,21 @@ This may be considered as a part of the communication overhead, it is an importa
 <!-- ## what can be done? -->
 <!-- Brooks' law says that it is impossible to measure useful work in man-months. -->
 
+## Brooks' law vs Torvalds' law
+
+> Adding manpower to a late software project makes it later.
+>
+> -- Fred Brooks (1975)
+
+> Given enough eyeballs, all bugs are shallow.
+>
+> -- Linus Torvalds (1999)
+
+::: {.fragment}
+- if you have many users (testers), they will find the bugs
+- if you have many developers, someone will understand and fix the bugs
+
+:::
 
 # references
 
