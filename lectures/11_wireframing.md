@@ -187,6 +187,8 @@ shows user flow, ~ user story map flow
 # some free tools
 
 - [Excalidraw](https://excalidraw.com/)
+    - [Basic UX/wireframing elements](https://libraries.excalidraw.com/?theme=light&sort=default#gabrielamacakova-basic-ux-wireframing-elements)
+    - [Lo-Fi Wireframing Kit](https://libraries.excalidraw.com/?theme=light&sort=default#spfr-lo-fi-wireframing-kit)
 - [draw.io](https://app.diagrams.net/)
 - [Google Drawings](https://docs.google.com/drawings)
 - [Quant-UX](https://quant-ux.com/)
