@@ -142,10 +142,6 @@ source: [@bruton2022what]
 :::::::::
 ::::::::::::
 
-
-<!-- ## prototype -->
-
-
 # wireframe map
 
 ![](figures/user_statistics/wireframe_map_2.drawio.svg){height=500}
@@ -153,6 +149,17 @@ source: [@bruton2022what]
 ::: {.text-smaller}
 shows user flow, ~ user story map flow 
 :::
+
+## prototype
+
+- prototypes allow to experience interactions
+- clickable, imitates the behaviour
+- construction is similar to the wireframe map
+    - screens are linked by flow,
+    - the actual UI elements triggers the change
+- low--high fidelity could work
+    - mostly high, though
+    - [Low fidelity prototype testing of the EE app](https://www.youtube.com/watch?v=yafaGNFu8Eg) [YT]
 
 
 # sitemap
