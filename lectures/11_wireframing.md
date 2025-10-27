@@ -58,7 +58,7 @@ based on: [@bruton2022what]
 
 ## design prototyping
 
-![Interaction Design Foundation [@ixdf2019what] | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/td-design-thinking-non-linear-process.webp){height=475}
+![Interaction Design Foundation [@ixdf2019what] | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/td-design-thinking-non-linear-process.webp){height=450 data-preview-image="figures/borrowed/td-design-thinking-non-linear-process.webp" data-preview-fit="contain"}
 
 
 # types of wireframes
@@ -82,7 +82,7 @@ based on: [@bruton2022what]
 ::::::::: {.column width="70" .mt-2}
 - first sketch
 - simple
-- rough visual representations of a webpage or application
+- rough visual representations of a webpage<br>or application
 - don't consider scale or pixel accuracy
 - don't include actual content, typography, colors
     - image: boxes with an X
@@ -94,7 +94,8 @@ source: [@bruton2022what]
 :::
 :::::::::
 ::::::::: {.column width="30%"}
-![](figures/user_statistics/wireframe_lofi.drawio.svg){width=250}
+![](figures/user_statistics/wireframe_lofi.drawio.svg){width=300}
+
 :::::::::
 ::::::::::::
 
@@ -102,10 +103,10 @@ source: [@bruton2022what]
 ## mid-fidelity wireframe
 
 :::::::::::: {.columns}
-::::::::: {.column width="70" .mt-2}
+::::::::: {.column width="60" .mt-2}
 - provides more precise representations of the layout
 - for exploring design ideas, establishing spacing and buttons, and user flow
-- still don't include images, typography or detailed content
+- still don't include images, typography<br>or detailed content
     - but show more details regarding components and features
 - no colors, grayscale
 - usually made with digital tool
@@ -114,8 +115,8 @@ source: [@bruton2022what]
 source: [@bruton2022what]
 :::
 :::::::::
-::::::::: {.column width="30%"}
-![mid-fidelity](figures/user_stats.drawio.svg){width=250}
+::::::::: {.column width="40%"}
+![](figures/user_stats.drawio.svg){width=300}
 :::::::::
 ::::::::::::
 
@@ -123,7 +124,7 @@ source: [@bruton2022what]
 ## hi-fidelity wireframe
 
 :::::::::::: {.columns}
-::::::::: {.column width="70" .mt-2}
+::::::::: {.column width="60" .mt-2}
 - exploring complex concepts, finalising design
 - provides pixel-specific layouts
 - usually have actual images and written content
@@ -136,8 +137,8 @@ source: [@bruton2022what]
 source: [@bruton2022what]
 :::
 :::::::::
-::::::::: {.column width="30%"}
-![high-fidelity](figures/user_statistics/wireframe_hifi.drawio.svg){width=250}
+::::::::: {.column width="40%"}
+![](figures/user_statistics/wireframe_hifi.drawio.svg){width=300}
 :::::::::
 ::::::::::::
 
@@ -166,7 +167,7 @@ shows user flow, ~ user story map flow
 
 :::::::::
 ::::::::: {.column width="75%"}
-![](figures/sitemap_wbs.svg){width=600}
+![](figures/sitemap_wbs.svg){width=600 data-preview-image="figures/sitemap_wbs.svg" data-preview-fit="contain"}
 
 :::::::::
 ::::::::::::
@@ -178,8 +179,9 @@ shows user flow, ~ user story map flow
 
 # some free tools
 
-- [Google Drawings](https://docs.google.com/drawings)
+- [Excalidraw](https://excalidraw.com/)
 - [draw.io](https://app.diagrams.net/)
+- [Google Drawings](https://docs.google.com/drawings)
 - [Quant-UX](https://quant-ux.com/)
     - open source (self-hosted) or free as a service
 - [wireframe.cc](https://wireframe.cc/)
