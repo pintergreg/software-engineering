@@ -23,6 +23,26 @@ During the second half of the semester, lectures also cover topics such as code 
 9. testing, working with legacy code
 10. CI, automatization, devops
 
+## evaluation
+
+the final grade is the weighted average of the requirements analysis (35%), the design (35%), and the midterm (30%)
+
+- requirements analysis, software design: **team work**
+- midterm: **individual**
+    - Moodle test
+    - 50 random multiple-choice questions
+- each part should reach the minimum (>50%)
+
+
+|score (%)|grade|
+|--------:|:---:|
+|    0-50 |  1  |
+|   51-66 |  2  |
+|   67-76 |  3  |
+|   77-86 |  4  |
+|  87-100 |  5  |
+
+
 ## learning outcomes
 
 ### skills

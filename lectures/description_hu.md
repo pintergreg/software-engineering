@@ -23,6 +23,25 @@ A szemeszter második felében az előadások olyan témákat is érintenek, min
 9. tesztelés, munka örökölt kóddal
 10. CI, automatizáció, devops
 
+## értékelés
+
+A végső jegy a követelményelemzés (35%), a tervezés (35%), és a zárhelyi (30%) súlyozott átlaga.
+
+- követelményelemzés, szoftver tervezés: **csapatmunka**
+- zárthelyi: **egyéni**
+    - Moodle teszt
+    - 50 véletlenszerű feleltválasztós kérdés
+- minden résznek külön el kell érnie az minimumot (>50%)
+
+
+|pont (%) |jegy |
+|--------:|:---:|
+|    0-50 |  1  |
+|   51-66 |  2  |
+|   67-76 |  3  |
+|   77-86 |  4  |
+|  87-100 |  5  |
+
 ## tanulási eredmények
 
 ### képességek
