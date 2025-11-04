@@ -181,11 +181,11 @@ fast feedback, agile, and so on...
 
 :::::::::::: {.columns .mt-4}
 ::::::::: {.column width="50%" }
-![float: 0--1](figures/user_statistics/user_data_light.svg)
+![float: 0--1](figures/user_statistics/user_data_light.svg){width=375}
 
 :::::::::
 ::::::::: {.column width="50%" }
-![integer: 0--100](figures/user_statistics/user_data_light_changed.svg)
+![integer: 0--100](figures/user_statistics/user_data_light_changed.svg){width=375}
 
 :::::::::
 ::::::::::::
@@ -202,7 +202,7 @@ it is not just rude, but will waste the time of the other team (with pointless d
 ## do no break the userland
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%" }
+::::::::: {.column width="50%" .wide-quote .mt-3}
 > the number one rule of kernel development is that "we don't break users"
 >
 > -- [Linus Torvalds](https://lkml.org/lkml/2017/11/21/356)
