@@ -149,6 +149,43 @@ class="citation" data-cites="stemmler2019how">[1]</span></figcaption>
 </figure>
 </section>
 
+<section>
+<section id="what-is-clean-code" class="title-slide slide level1">
+<h1>what is clean code</h1>
+<ul>
+<li>the term, <em>clean code</em> refers to code that’s easy to read,
+understand, and maintain
+<ul>
+<li>popularized by Robert C. Martin</li>
+</ul></li>
+<li>guideline how to write readable, understandable, and maintainable
+code
+<ul>
+<li>although not every “rule” applies to every language / situation</li>
+</ul></li>
+</ul>
+</section>
+<section id="why-it-matters" class="slide level2">
+<h2>why it matters</h2>
+<p>misconception: program code is mostly written, while in reality it is
+mainly read</p>
+<p>a well-written code is easy to read, understand, debug, maintain,
+extend, etc.</p>
+<div class="mt-3">
+<blockquote>
+<p>Any fool can write code that a computer can understand. Good
+programmers write code that humans can understand.</p>
+<p>– Martin Fowler <span class="citation"
+data-cites="fowler2018refactoring"><strong>fowler2018refactoring?</strong></span></p>
+</blockquote>
+</div>
+<div class="mt-3">
+<ul>
+<li>where human can be the future you, current or future colleague…</li>
+<li>like having a nice handwriting</li>
+</ul>
+</div>
+</section></section>
 <section id="hierarchy-in-style-guides"
 class="title-slide slide level1">
 <h1>hierarchy in style guides</h1>
@@ -160,6 +197,7 @@ class="title-slide slide level1">
 <li>Python: <a href="https://peps.python.org/pep-0008/">PEP 8</a> or <a
 href="https://pep8.org/">pep8.org</a></li>
 <li>Ruby: <a href="https://rubystyle.guide/">Ruby Style Guide</a></li>
+<li>Go: <a href="https://go.dev/doc/effective_go">Effective Go</a></li>
 <li>Rust <a
 href="https://doc.rust-lang.org/beta/style-guide/index.html">The Rust
 Style Guide</a></li>
@@ -183,7 +221,7 @@ TypeScript Style Guide</a></li>
 <p>not just style guides, also best practices</p>
 </div>
 </div><div class="column" style="width:45%;">
-<p><img data-src="figures/style_hierarchy.drawio.svg" width="300" /></p>
+<p><img data-src="figures/style_hierarchy.drawio.svg" width="375" /></p>
 </div>
 </div>
 </section>
@@ -460,7 +498,9 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a h
 </div>
 </div>
 </div><div class="column" style="width:30%;">
-<p><img data-src="figures/variable_scope.drawio.svg" width="250" /></p>
+<p><img data-src="figures/variable_scope.drawio.svg"
+data-preview-image="figures/variable_scope.drawio.svg"
+data-preview-fit="contain" width="250" /></p>
 </div>
 </div>
 </section>
@@ -945,30 +985,31 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a h
 <h2>function as interface</h2>
 <div class="columns">
 <div class="column pre-450" style="width:60%;">
-<div class="sourceCode" id="cb27"><pre
-class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>DataFrame.to_csv(</span>
-<span id="cb27-2"><a href="#cb27-2"></a>    path_or_buf<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>,</span>
-<span id="cb27-3"><a href="#cb27-3"></a>    sep<span class="op">=</span><span class="st">&#39;,&#39;</span>,</span>
-<span id="cb27-4"><a href="#cb27-4"></a>    na_rep<span class="op">=</span><span class="st">&#39;&#39;</span>,</span>
-<span id="cb27-5"><a href="#cb27-5"></a>    float_format<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-6"><a href="#cb27-6"></a>    columns<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-7"><a href="#cb27-7"></a>    header<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb27-8"><a href="#cb27-8"></a>    index<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb27-9"><a href="#cb27-9"></a>    index_label<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-10"><a href="#cb27-10"></a>    mode<span class="op">=</span><span class="st">&#39;w&#39;</span>,</span>
-<span id="cb27-11"><a href="#cb27-11"></a>    encoding<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-12"><a href="#cb27-12"></a>    compression<span class="op">=</span><span class="st">&#39;infer&#39;</span>,</span>
-<span id="cb27-13"><a href="#cb27-13"></a>    quoting<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-14"><a href="#cb27-14"></a>    quotechar<span class="op">=</span><span class="st">&#39;&quot;&#39;</span>,</span>
-<span id="cb27-15"><a href="#cb27-15"></a>    lineterminator<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-16"><a href="#cb27-16"></a>    chunksize<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-17"><a href="#cb27-17"></a>    date_format<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-18"><a href="#cb27-18"></a>    doublequote<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb27-19"><a href="#cb27-19"></a>    escapechar<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-20"><a href="#cb27-20"></a>    decimal<span class="op">=</span><span class="st">&#39;.&#39;</span>,</span>
-<span id="cb27-21"><a href="#cb27-21"></a>    errors<span class="op">=</span><span class="st">&#39;strict&#39;</span>,</span>
-<span id="cb27-22"><a href="#cb27-22"></a>    storage_options<span class="op">=</span><span class="va">None</span></span>
-<span id="cb27-23"><a href="#cb27-23"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb27" data-line-numbers="3,11,14"
+data-highlight-background="#c6ff8c"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>DataFrame.to_csv(</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    path_or_buf<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">&#39;,&#39;</span>,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    na_rep<span class="op">=</span><span class="st">&#39;&#39;</span>,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    float_format<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    header<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    index_label<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">&#39;w&#39;</span>,</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    encoding<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    compression<span class="op">=</span><span class="st">&#39;infer&#39;</span>,</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    quoting<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    quotechar<span class="op">=</span><span class="st">&#39;&quot;&#39;</span>,</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    lineterminator<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    chunksize<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    date_format<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    doublequote<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    escapechar<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    decimal<span class="op">=</span><span class="st">&#39;.&#39;</span>,</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>    errors<span class="op">=</span><span class="st">&#39;strict&#39;</span>,</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    storage_options<span class="op">=</span><span class="va">None</span></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <!--```python
 DataFrame.to_csv(path_or_buf=None, *, sep=',', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression='infer', quoting=None, quotechar='"', lineterminator=None, chunksize=None, date_format=None, doublequote=True, escapechar=None, decimal='.', errors='strict', storage_options=None)
 ```-->
@@ -1261,6 +1302,8 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a h
 </section>
 <section id="doctest" class="slide level2">
 <h2>doctest</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="pre-475">
 <div class="sourceCode" id="cb40"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
@@ -1286,6 +1329,35 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a h
 <span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
 <span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="pre-475">
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m doctest <span class="op">-</span>v fizzbuzz_doctest.py</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>Trying:</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">3</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;Fizz&#39;</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>ok</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>Trying:</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">5</span>)</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;Buzz&#39;</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>ok</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>Trying:</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">15</span>)</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;FizzBuzz&#39;</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>ok</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>Trying:</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">17</span>)</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;17&#39;</span></span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>ok</span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> passed.</span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>Test passed.</span></code></pre></div>
+</div>
+</div>
 </div>
 </section></section>
 <section id="references" class="title-slide slide level1">

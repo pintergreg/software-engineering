@@ -6598,7 +6598,7 @@ test the user statistics view of the user interface</p>
 <div class="columns mt-4">
 <div class="column" width="50%">
 <figure>
-<img src="lectures/figures/user_statistics/user_data_light.svg"
+<img src="lectures/figures/user_statistics/user_data_light.svg" width="375"
 alt="float: 0–1" />
 <figcaption aria-hidden="true">float: 0–1</figcaption>
 </figure>
@@ -6606,7 +6606,7 @@ alt="float: 0–1" />
 <div class="column" width="50%">
 <figure>
 <img src="lectures/figures/user_statistics/user_data_light_changed.svg"
-alt="integer: 0–100" />
+width="375" alt="integer: 0–100" />
 <figcaption aria-hidden="true">integer: 0–100</figcaption>
 </figure>
 </div>
@@ -6620,7 +6620,7 @@ pointless debugging)</p>
 </div>
 <h2 id="do-no-break-the-userland"><a class="header" href="#do-no-break-the-userland">do no break the userland</a></h2>
 <div class="columns">
-<div class="column" width="50%">
+<div class="column wide-quote mt-3" width="50%">
 <blockquote>
 <p>the number one rule of kernel development is that “we don’t break
 users”</p>
@@ -7879,6 +7879,38 @@ height="475" alt="based on Khalil Stemmel’s figure (Stemmler, 2019)" />
 class="citation" data-cites="stemmler2019how">(Stemmler,
 2019)</span></figcaption>
 </figure>
+<h1 id="what-is-clean-code"><a class="header" href="#what-is-clean-code">what is clean code</a></h1>
+<ul>
+<li>the term, <em>clean code</em> refers to code that’s easy to read, understand,
+and maintain
+<ul>
+<li>popularized by Robert C. Martin</li>
+</ul>
+</li>
+<li>guideline how to write readable, understandable, and maintainable code
+<ul>
+<li>although not every “rule” applies to every language / situation</li>
+</ul>
+</li>
+</ul>
+<h2 id="why-it-matters"><a class="header" href="#why-it-matters">why it matters</a></h2>
+<p>misconception: program code is mostly written, while in reality it is
+mainly read</p>
+<p>a well-written code is easy to read, understand, debug, maintain,
+extend, etc.</p>
+<div class="mt-3">
+<blockquote>
+<p>Any fool can write code that a computer can understand. Good
+programmers write code that humans can understand.</p>
+<p>– Martin Fowler (<strong>fowler2018refactoring?</strong>)</p>
+</blockquote>
+</div>
+<div class="mt-3">
+<ul>
+<li>where human can be the future you, current or future colleague…</li>
+<li>like having a nice handwriting</li>
+</ul>
+</div>
 <h1 id="hierarchy-in-style-guides"><a class="header" href="#hierarchy-in-style-guides">hierarchy in style guides</a></h1>
 <div class="columns">
 <div class="column" width="55">
@@ -7888,6 +7920,7 @@ class="citation" data-cites="stemmler2019how">(Stemmler,
 <li>Python: <a href="https://peps.python.org/pep-0008/">PEP 8</a> or
 <a href="https://pep8.org/">pep8.org</a></li>
 <li>Ruby: <a href="https://rubystyle.guide/">Ruby Style Guide</a></li>
+<li>Go: <a href="https://go.dev/doc/effective_go">Effective Go</a></li>
 <li>Rust <a href="https://doc.rust-lang.org/beta/style-guide/index.html">The Rust Style
 Guide</a></li>
 <li>etc.</li>
@@ -7913,7 +7946,7 @@ Guide</a></li>
 </div>
 </div>
 <div class="column" width="45%">
-<img src="lectures/figures/style_hierarchy.drawio.svg" width="300" />
+<img src="lectures/figures/style_hierarchy.drawio.svg" width="375" />
 </div>
 </div>
 <h1 id="write-idiomatic-code"><a class="header" href="#write-idiomatic-code">write idiomatic code</a></h1>
@@ -8168,7 +8201,9 @@ scope (Martin, 2009).</p>
 </div>
 </div>
 <div class="column" width="30%">
-<img src="lectures/figures/variable_scope.drawio.svg" width="250" />
+<p><img src="lectures/figures/variable_scope.drawio.svg"
+data-preview-image="figures/variable_scope.drawio.svg"
+data-preview-fit="contain" width="250" /></p>
 </div>
 </div>
 <h2 id="names-for-classes-functions"><a class="header" href="#names-for-classes-functions">names for classes, functions</a></h2>
@@ -8919,6 +8954,8 @@ annotations and warn about them</span></p>
 </code></pre>
 </div>
 <h2 id="doctest"><a class="header" href="#doctest">doctest</a></h2>
+<div class="columns">
+<div class="column" width="50%">
 <div class="pre-475">
 <pre><code class="language-python">def fizzbuzz(i: int) -&gt; str:
     """
@@ -8944,6 +8981,36 @@ annotations and warn about them</span></p>
         result = str(i)
     return result
 </code></pre>
+</div>
+</div>
+<div class="column fragment" width="50%">
+<div class="pre-475">
+<pre><code class="language-python">python -m doctest -v fizzbuzz_doctest.py
+Trying:
+    fizzbuzz(3)
+Expecting:
+    'Fizz'
+ok
+Trying:
+    fizzbuzz(5)
+Expecting:
+    'Buzz'
+ok
+Trying:
+    fizzbuzz(15)
+Expecting:
+    'FizzBuzz'
+ok
+Trying:
+    fizzbuzz(17)
+Expecting:
+    '17'
+ok
+4 passed.
+Test passed.
+</code></pre>
+</div>
+</div>
 </div>
 <h1 id="references-10"><a class="header" href="#references-10">references</a></h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
