@@ -199,6 +199,85 @@ programmers write code that humans can understand.</p>
 <li>like having a nice handwriting</li>
 </ul>
 </div>
+<h2 id="clear-is-better-than-clever"><a class="header" href="#clear-is-better-than-clever">clear is better than clever</a></h2>
+<div class="wide-quote">
+<blockquote>
+<p>In any kind of programming, clarity should always be the primary goal.</p>
+<p>Writing code that is straightforward and understandable is more
+valuable than trying to craft overly clever or intricate solutions.</p>
+<p>– <a href="https://go-proverbs.github.io/">Go Proverbs</a> by Rob Pike</p>
+</blockquote>
+</div>
+<p>source: <a href="https://golangprojectstructure.com/rob-pike-go-proverbs-3/#clear-is-better-than-clever">Rob Pike’s Go
+Proverbs</a></p>
+<h2 id="prime-check--clever-vs-clear"><a class="header" href="#prime-check--clever-vs-clear">prime check – clever vs. clear</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<pre><code class="language-go">func isPrime(n int) bool {
+    if n &lt; 2 {
+        return false
+    }
+
+    for i := 2; i*i &lt;= n; i++ {
+        if n%i == 0 {
+            return false
+        }
+    }
+
+    return true
+}
+</code></pre>
+</div>
+<div class="column" width="50%">
+<pre><code class="language-go">func isPrime(n int) bool {
+    if n &lt; 2 {
+        return false
+    }
+
+    for i := 2; i &lt;= n/2; i++ {
+        if n%i == 0 {
+            return false
+        }
+    }
+
+    return true
+}
+</code></pre>
+<p>less efficient, but it may be easier for a reader to understand</p>
+</div>
+</div>
+<p>source: <a href="https://golangprojectstructure.com/rob-pike-go-proverbs-3/#clear-is-better-than-clever">Rob Pike’s Go
+Proverbs</a></p>
+<h2 id=""><a class="header" href="#"></a></h2>
+<pre><code class="language-go">func isPrime(n int) bool {
+    if n &lt; 2 {
+        return false
+    }
+
+    for i := 2; i &lt;= int(math.Sqrt(float64(n))); i++ {
+        if n%i == 0 {
+            return false
+        }
+    }
+
+    return true
+}
+</code></pre>
+<div class="text-smaller">
+<ul>
+<li>iterating only up to the square root of n because if n has any divisor
+greater than its square root, there must also be a corresponding
+divisor smaller than the square root</li>
+<li>it is easier to understand than the “clever one”, but less wasteful
+then the “clear one”</li>
+<li>why is the clever on better?
+<ul>
+<li><span class="fragment">because multiplication is more efficient for
+the CPU than calculating the square root</span></li>
+</ul>
+</li>
+</ul>
+</div>
 <h1 id="hierarchy-in-style-guides"><a class="header" href="#hierarchy-in-style-guides">hierarchy in style guides</a></h1>
 <div class="columns">
 <div class="column" width="55">

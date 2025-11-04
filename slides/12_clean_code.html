@@ -185,6 +185,90 @@ data-cites="fowler2018refactoring">[2]</span></p>
 <li>like having a nice handwriting</li>
 </ul>
 </div>
+</section>
+<section id="clear-is-better-than-clever" class="slide level2">
+<h2>clear is better than clever</h2>
+<div class="wide-quote">
+<blockquote>
+<p>In any kind of programming, clarity should always be the primary
+goal.</p>
+<p>Writing code that is straightforward and understandable is more
+valuable than trying to craft overly clever or intricate solutions.</p>
+<p>– <a href="https://go-proverbs.github.io/">Go Proverbs</a> by Rob
+Pike</p>
+</blockquote>
+</div>
+<p>source: <a
+href="https://golangprojectstructure.com/rob-pike-go-proverbs-3/#clear-is-better-than-clever">Rob
+Pike’s Go Proverbs</a></p>
+</section>
+<section id="prime-check-clever-vs.-clear" class="slide level2">
+<h2>prime check – clever vs. clear</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb1"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> isPrime<span class="op">(</span>n <span class="dt">int</span><span class="op">)</span> <span class="dt">bool</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">2</span> <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ot">false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">:=</span> <span class="dv">2</span><span class="op">;</span> i<span class="op">*</span>i <span class="op">&lt;=</span> n<span class="op">;</span> i<span class="op">++</span> <span class="op">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n<span class="op">%</span>i <span class="op">==</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ot">false</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ot">true</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb2"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> isPrime<span class="op">(</span>n <span class="dt">int</span><span class="op">)</span> <span class="dt">bool</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">2</span> <span class="op">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ot">false</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">:=</span> <span class="dv">2</span><span class="op">;</span> i <span class="op">&lt;=</span> n<span class="op">/</span><span class="dv">2</span><span class="op">;</span> i<span class="op">++</span> <span class="op">{</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n<span class="op">%</span>i <span class="op">==</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ot">false</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ot">true</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>less efficient, but it may be easier for a reader to understand</p>
+</div>
+</div>
+<p>source: <a
+href="https://golangprojectstructure.com/rob-pike-go-proverbs-3/#clear-is-better-than-clever">Rob
+Pike’s Go Proverbs</a></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> isPrime<span class="op">(</span>n <span class="dt">int</span><span class="op">)</span> <span class="dt">bool</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">2</span> <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ot">false</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">:=</span> <span class="dv">2</span><span class="op">;</span> i <span class="op">&lt;=</span> <span class="dt">int</span><span class="op">(</span>math<span class="op">.</span>Sqrt<span class="op">(</span><span class="dt">float64</span><span class="op">(</span>n<span class="op">)));</span> i<span class="op">++</span> <span class="op">{</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n<span class="op">%</span>i <span class="op">==</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ot">false</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ot">true</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="text-smaller">
+<ul>
+<li>iterating only up to the square root of n because if n has any
+divisor greater than its square root, there must also be a corresponding
+divisor smaller than the square root</li>
+<li>it is easier to understand than the “clever one”, but less wasteful
+then the “clear one”</li>
+<li>why is the clever on better?
+<ul>
+<li><span class="fragment">because multiplication is more efficient for
+the CPU than calculating the square root</span></li>
+</ul></li>
+</ul>
+</div>
 </section></section>
 <section id="hierarchy-in-style-guides"
 class="title-slide slide level1">
@@ -269,43 +353,43 @@ properly</p>
 <h2>write idiomatic code</h2>
 <div class="columns column-gapless">
 <div class="column" style="width:55;">
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="fragment" data-fragment-index="5">
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>[<span class="op">...</span><span class="bu">Array</span>(<span class="dv">10</span>)<span class="op">.</span><span class="fu">keys</span>()]<span class="op">.</span><span class="fu">forEach</span>(i <span class="kw">=&gt;</span> {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>[<span class="op">...</span><span class="bu">Array</span>(<span class="dv">10</span>)<span class="op">.</span><span class="fu">keys</span>()]<span class="op">.</span><span class="fu">forEach</span>(i <span class="kw">=&gt;</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
 </div>
 </div><div class="column" style="width:20%;">
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">10</span>:</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 <div class="fragment" data-fragment-index="1">
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
 </div>
 </div><div class="column" style="width:25%;">
 <div class="fragment" data-fragment-index="2">
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="cf">in</span> <span class="dv">0</span><span class="kw">..</span><span class="dv">9</span> <span class="cf">do</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">puts</span> i</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="cf">in</span> <span class="dv">0</span><span class="kw">..</span><span class="dv">9</span> <span class="cf">do</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">puts</span> i</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
 </div>
 <div class="fragment" data-fragment-index="3">
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span><span class="kw">..</span><span class="dv">9</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>i<span class="kw">|</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">puts</span> i</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span><span class="kw">..</span><span class="dv">9</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>i<span class="kw">|</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">puts</span> i</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
 </div>
 <div class="fragment" data-fragment-index="4">
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span><span class="kw">..</span><span class="dv">9</span>)<span class="at">.each</span> <span class="kw">{|</span>i<span class="kw">|</span> <span class="fu">puts</span> i<span class="kw">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span><span class="kw">..</span><span class="dv">9</span>)<span class="at">.each</span> <span class="kw">{|</span>i<span class="kw">|</span> <span class="fu">puts</span> i<span class="kw">}</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -338,11 +422,11 @@ height="300" /></p>
 <section id="use-intention-revealing-names" class="slide level2">
 <h2>use intention-revealing names</h2>
 <div class="text-size-3">
-<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> d<span class="op">;</span> <span class="co">// elapsed time in days</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> d<span class="op">;</span> <span class="co">// elapsed time in days</span></span></code></pre></div>
 <div class="text-size-2 fragment" data-fragment-index="1">
 <p>the definition is only available ad the declaration</p>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> elapsedTimeInDays<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> elapsedTimeInDays<span class="op">;</span></span></code></pre></div>
 <div class="text-size-2 fragment" data-fragment-index="1">
 <p>the definition is available at every usage</p>
 </div>
@@ -354,7 +438,7 @@ height="300" /></p>
 <div class="column" style="width:32;">
 <p><strong>camelCase</strong></p>
 <div class="mt-4">
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> elapsedTimeInDays<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> elapsedTimeInDays<span class="op">;</span></span></code></pre></div>
 </div>
 <div class="text-smaller">
 <ul>
@@ -364,8 +448,8 @@ height="300" /></p>
 </div>
 </div><div class="column" style="width:32%;">
 <p><strong>UpperCamelCase (PascalCase)</strong></p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> DataCollector <span class="op">{}</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> DataCollector <span class="op">{}</span></span></code></pre></div>
 <div class="text-smaller">
 <ul>
 <li>Java (class)</li>
@@ -375,8 +459,8 @@ class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href=
 </div><div class="column" style="width:32%;">
 <p><strong>snake_case</strong></p>
 <div class="mt-4">
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>elapsed_time_in_days <span class="op">=</span> <span class="dv">17</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>elapsed_time_in_days <span class="op">=</span> <span class="dv">17</span></span></code></pre></div>
 </div>
 <div class="text-smaller">
 <ul>
@@ -432,19 +516,19 @@ also mean something different <span class="citation"
 data-cites="martin2009clean">[3]</span>.</p>
 </blockquote>
 <div class="text-size-2">
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_distance(data: pd.DataFrame) <span class="op">-&gt;</span> pd.Series:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># do something</span></span></code></pre></div>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_distance2(data: pd.DataFrame) <span class="op">-&gt;</span> pd.Series:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># do something else</span></span></code></pre></div>
-<div class="fragment">
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_eucledian_distance(data: pd.DataFrame) <span class="op">-&gt;</span> pd.Series:</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span></code></pre></div>
 <div class="sourceCode" id="cb16"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_levenshtein_distance(data: pd.DataFrame) <span class="op">-&gt;</span> pd.Series:</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_distance(data: pd.DataFrame) <span class="op">-&gt;</span> pd.Series:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># do something</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_distance2(data: pd.DataFrame) <span class="op">-&gt;</span> pd.Series:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># do something else</span></span></code></pre></div>
+<div class="fragment">
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_eucledian_distance(data: pd.DataFrame) <span class="op">-&gt;</span> pd.Series:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_levenshtein_distance(data: pd.DataFrame) <span class="op">-&gt;</span> pd.Series:</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span></code></pre></div>
 </div>
 </div>
 </section>
@@ -489,12 +573,12 @@ methods. The length of a name should correspond to the size of its scope
 <div class="columns">
 <div class="column" style="width:40%;">
 <p>it’s OK to do this:</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
 </div><div class="column" style="width:60%;">
 <p>it’s NOT OK in a large scope:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> d<span class="op">;</span> <span class="co">// elapsed time in days</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> d<span class="op">;</span> <span class="co">// elapsed time in days</span></span></code></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:30%;">
@@ -544,12 +628,12 @@ names</p>
 <li>adding a prefix to a name that gives information about type, length,
 or scope</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fnFactorial(iNum):</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> iNum <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> iNum</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> iNum <span class="op">*</span> fnFactorial(iNum <span class="op">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fnFactorial(iNum):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> iNum <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> iNum</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> iNum <span class="op">*</span> fnFactorial(iNum <span class="op">-</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="text-small">
 <p>source: <span class="citation"
 data-cites="bhargav2024hungarian">[5]</span></p>
@@ -557,17 +641,17 @@ data-cites="bhargav2024hungarian">[5]</span></p>
 </div>
 <div class="columns r-frame mt-1">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode csharp"><code class="sourceCode cs"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">interface</span> IShapeArea <span class="co">// I is also a prefix</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">void</span> <span class="fu">area</span><span class="op">();</span> </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">interface</span> IShapeArea <span class="co">// I is also a prefix</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">void</span> <span class="fu">area</span><span class="op">();</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode csharp"><code class="sourceCode cs"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">interface</span> ShapeArea </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">void</span> <span class="fu">area</span><span class="op">();</span> </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">interface</span> ShapeArea </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">void</span> <span class="fu">area</span><span class="op">();</span> </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </div>
 </div>
 </section>
@@ -659,62 +743,62 @@ class="slide level2">
 <div class="columns column-gapless fragment">
 <div class="column pre-height-100" style="width:68%;">
 <div class="text-smaller pre-height-100">
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;data.db&quot;</span>)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_sql(activity_query, con)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>records <span class="op">=</span> []</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> woy <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">36</span>, <span class="dv">40</span>):</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> dow <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        records.append([woy, dow, <span class="dv">0</span>])</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>empty <span class="op">=</span> pd.DataFrame.from_records(</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    records, columns<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>, <span class="st">&quot;count&quot;</span>]</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> (</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    pd.concat([data, empty])</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    .drop_duplicates(subset<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>], keep<span class="op">=</span><span class="st">&quot;first&quot;</span>)</span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>])</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>activity <span class="op">=</span> pd.pivot(</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    data, index<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>], columns<span class="op">=</span>[<span class="st">&quot;day_of_week&quot;</span>], values<span class="op">=</span>[<span class="st">&quot;count&quot;</span>]</span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>).values</span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> con.execute(progress_query)</span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>progress <span class="op">=</span> res.fetchone()[<span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;data.db&quot;</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_sql(activity_query, con)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>records <span class="op">=</span> []</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> woy <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">36</span>, <span class="dv">40</span>):</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> dow <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>        records.append([woy, dow, <span class="dv">0</span>])</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>empty <span class="op">=</span> pd.DataFrame.from_records(</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    records, columns<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>, <span class="st">&quot;count&quot;</span>]</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> (</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    pd.concat([data, empty])</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    .drop_duplicates(subset<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>], keep<span class="op">=</span><span class="st">&quot;first&quot;</span>)</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>])</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>activity <span class="op">=</span> pd.pivot(</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    data, index<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>], columns<span class="op">=</span>[<span class="st">&quot;day_of_week&quot;</span>], values<span class="op">=</span>[<span class="st">&quot;count&quot;</span>]</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>).values</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> con.execute(progress_query)</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>progress <span class="op">=</span> res.fetchone()[<span class="dv">0</span>]</span></code></pre></div>
 </div>
 </div><div class="column" style="width:32%;">
 <div class="text-smaller">
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode sql"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">CAST</span>(</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        strftime(<span class="st">&#39;%W&#39;</span>, <span class="dt">timestamp</span>) </span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">AS</span> <span class="dt">INTEGER</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">AS</span> week_of_year,</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">CAST</span>(</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        strftime(<span class="st">&#39;%u&#39;</span>, <span class="dt">timestamp</span>)</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">AS</span> <span class="dt">INTEGER</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">AS</span> day_of_week,</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> <span class="fu">count</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> activity</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    user_id <span class="op">=</span> <span class="dv">42</span> <span class="kw">AND</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    week_of_year <span class="op">&gt;</span> <span class="dv">35</span> <span class="kw">AND</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    week_of_year <span class="op">&lt;</span> <span class="dv">40</span></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    week_of_year,</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    day_of_week;</span></code></pre></div>
-<div class="sourceCode" id="cb24"><pre
-class="sourceCode sql"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    lesson <span class="op">/</span> <span class="fl">50.0</span> <span class="kw">AS</span> progress</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> activity</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    user_id <span class="op">=</span> <span class="dv">42</span> <span class="kw">AND</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&#39;success&#39;</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> lesson <span class="kw">DESC</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">1</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">CAST</span>(</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        strftime(<span class="st">&#39;%W&#39;</span>, <span class="dt">timestamp</span>) </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">AS</span> <span class="dt">INTEGER</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">AS</span> week_of_year,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">CAST</span>(</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        strftime(<span class="st">&#39;%u&#39;</span>, <span class="dt">timestamp</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">AS</span> <span class="dt">INTEGER</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">AS</span> day_of_week,</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> <span class="fu">count</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> activity</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    user_id <span class="op">=</span> <span class="dv">42</span> <span class="kw">AND</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    week_of_year <span class="op">&gt;</span> <span class="dv">35</span> <span class="kw">AND</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    week_of_year <span class="op">&lt;</span> <span class="dv">40</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    week_of_year,</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>    day_of_week;</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    lesson <span class="op">/</span> <span class="fl">50.0</span> <span class="kw">AS</span> progress</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> activity</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    user_id <span class="op">=</span> <span class="dv">42</span> <span class="kw">AND</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&#39;success&#39;</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> lesson <span class="kw">DESC</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">1</span>;</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -958,25 +1042,25 @@ class="citation" data-cites="martin2009clean">[3]</span>.”</span></li>
 </ul>
 </div>
 </div><div class="column" style="width:55%;">
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_empty_dataframe(start, end, cols):</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    records <span class="op">=</span> []</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> woy <span class="kw">in</span> <span class="bu">range</span>(start, end <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> dow <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>            records.append([woy, dow, <span class="dv">0</span>])</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame.from_records(</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>        records, columns<span class="op">=</span>cols</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_empty_dataframe(start, end, cols):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    records <span class="op">=</span> []</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> woy <span class="kw">in</span> <span class="bu">range</span>(start, end <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> dow <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>            records.append([woy, dow, <span class="dv">0</span>])</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame.from_records(</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        records, columns<span class="op">=</span>cols</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
 <div class="fragment" data-fragment-index="2">
-<div class="sourceCode" id="cb26"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> query_progress(as_percentage: <span class="bu">bool</span>):</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> con.execute(progress_query)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    progress <span class="op">=</span> res.fetchone()[<span class="dv">0</span>]</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> as_percentage:</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> query_progress(as_percentage: <span class="bu">bool</span>):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> con.execute(progress_query)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    progress <span class="op">=</span> res.fetchone()[<span class="dv">0</span>]</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> as_percentage:</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> progress</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -985,31 +1069,31 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a h
 <h2>function as interface</h2>
 <div class="columns">
 <div class="column pre-450" style="width:60%;">
-<div class="sourceCode" id="cb27" data-line-numbers="3,11,14"
+<div class="sourceCode" id="cb30" data-line-numbers="3,11,14"
 data-highlight-background="#c6ff8c"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>DataFrame.to_csv(</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    path_or_buf<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>,</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">&#39;,&#39;</span>,</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    na_rep<span class="op">=</span><span class="st">&#39;&#39;</span>,</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    float_format<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    header<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    index_label<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">&#39;w&#39;</span>,</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    encoding<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    compression<span class="op">=</span><span class="st">&#39;infer&#39;</span>,</span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    quoting<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    quotechar<span class="op">=</span><span class="st">&#39;&quot;&#39;</span>,</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    lineterminator<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    chunksize<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    date_format<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    doublequote<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    escapechar<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    decimal<span class="op">=</span><span class="st">&#39;.&#39;</span>,</span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>    errors<span class="op">=</span><span class="st">&#39;strict&#39;</span>,</span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    storage_options<span class="op">=</span><span class="va">None</span></span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>DataFrame.to_csv(</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    path_or_buf<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>,</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">&#39;,&#39;</span>,</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    na_rep<span class="op">=</span><span class="st">&#39;&#39;</span>,</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    float_format<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    header<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    index_label<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">&#39;w&#39;</span>,</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    encoding<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>    compression<span class="op">=</span><span class="st">&#39;infer&#39;</span>,</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    quoting<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    quotechar<span class="op">=</span><span class="st">&#39;&quot;&#39;</span>,</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    lineterminator<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    chunksize<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>    date_format<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>    doublequote<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>    escapechar<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>    decimal<span class="op">=</span><span class="st">&#39;.&#39;</span>,</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>    errors<span class="op">=</span><span class="st">&#39;strict&#39;</span>,</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    storage_options<span class="op">=</span><span class="va">None</span></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <!--```python
 DataFrame.to_csv(path_or_buf=None, *, sep=',', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression='infer', quoting=None, quotechar='"', lineterminator=None, chunksize=None, date_format=None, doublequote=True, escapechar=None, decimal='.', errors='strict', storage_options=None)
 ```-->
@@ -1048,35 +1132,35 @@ returning a value (the main effect) to the invoker of the operation
 <h2>side effect example</h2>
 <div class="columns column-gapless">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb28"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Something:</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    foo <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> increase(<span class="va">self</span>, by):</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.foo <span class="op">+=</span> by</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> decrease(<span class="va">self</span>, by):</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.foo <span class="op">-=</span> by</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>something <span class="op">=</span> Something()</span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(something.foo)  <span class="co"># 0</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>something.increase(<span class="dv">2</span>)</span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(something.foo)  <span class="co"># 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Something:</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    foo <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> increase(<span class="va">self</span>, by):</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.foo <span class="op">+=</span> by</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> decrease(<span class="va">self</span>, by):</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.foo <span class="op">-=</span> by</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>something <span class="op">=</span> Something()</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(something.foo)  <span class="co"># 0</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>something.increase(<span class="dv">2</span>)</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(something.foo)  <span class="co"># 2</span></span></code></pre></div>
 </div><div class="column fragment" style="width:50%;">
-<div class="sourceCode" id="cb29"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>smth <span class="op">=</span> {<span class="st">&quot;foo&quot;</span>: <span class="dv">0</span>}</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increase(what, by):</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> what <span class="op">+</span> by</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> decrease(what, by):</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> what <span class="op">-</span> by</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(smth[<span class="st">&quot;foo&quot;</span>])  <span class="co"># 0</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>increase(smth[<span class="st">&quot;foo&quot;</span>], <span class="dv">2</span>)  <span class="co"># 2</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(smth[<span class="st">&quot;foo&quot;</span>])  <span class="co"># 0</span></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>smth[<span class="st">&quot;foo&quot;</span>] <span class="op">=</span> increase(smth[<span class="st">&quot;foo&quot;</span>], <span class="dv">2</span>)</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(smth[<span class="st">&quot;foo&quot;</span>])  <span class="co"># 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>smth <span class="op">=</span> {<span class="st">&quot;foo&quot;</span>: <span class="dv">0</span>}</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increase(what, by):</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> what <span class="op">+</span> by</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> decrease(what, by):</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> what <span class="op">-</span> by</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(smth[<span class="st">&quot;foo&quot;</span>])  <span class="co"># 0</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>increase(smth[<span class="st">&quot;foo&quot;</span>], <span class="dv">2</span>)  <span class="co"># 2</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(smth[<span class="st">&quot;foo&quot;</span>])  <span class="co"># 0</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>smth[<span class="st">&quot;foo&quot;</span>] <span class="op">=</span> increase(smth[<span class="st">&quot;foo&quot;</span>], <span class="dv">2</span>)</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(smth[<span class="st">&quot;foo&quot;</span>])  <span class="co"># 2</span></span></code></pre></div>
 </div>
 </div>
 </section>
@@ -1113,69 +1197,69 @@ height="300" /></p>
 </section>
 <section id="separating-comments" class="slide level2">
 <h2>separating comments</h2>
-<div class="sourceCode" id="cb30"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># connect to the database</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;data.db&quot;</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># query activity data</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_sql(activity_query, con)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create empty dataframe</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>records <span class="op">=</span> []</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> woy <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">36</span>, <span class="dv">40</span>):</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> dow <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>        records.append([woy, dow, <span class="dv">0</span>])</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>empty <span class="op">=</span> pd.DataFrame.from_records(records, columns<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>, <span class="st">&quot;count&quot;</span>])</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="co"># combine empty and sparse dataframe</span></span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> (</span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    pd.concat([data, empty])</span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    .drop_duplicates(subset<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>], keep<span class="op">=</span><span class="st">&quot;first&quot;</span>)</span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>])</span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="co"># pivot dataframe</span></span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>activity <span class="op">=</span> pd.pivot(</span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>    data, index<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>], columns<span class="op">=</span>[<span class="st">&quot;day_of_week&quot;</span>], values<span class="op">=</span>[<span class="st">&quot;count&quot;</span>]</span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>).values</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># connect to the database</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;data.db&quot;</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># query activity data</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_sql(activity_query, con)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create empty dataframe</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>records <span class="op">=</span> []</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> woy <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">36</span>, <span class="dv">40</span>):</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> dow <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>        records.append([woy, dow, <span class="dv">0</span>])</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>empty <span class="op">=</span> pd.DataFrame.from_records(records, columns<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>, <span class="st">&quot;count&quot;</span>])</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="co"># combine empty and sparse dataframe</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> (</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>    pd.concat([data, empty])</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>    .drop_duplicates(subset<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>], keep<span class="op">=</span><span class="st">&quot;first&quot;</span>)</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>])</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a><span class="co"># pivot dataframe</span></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>activity <span class="op">=</span> pd.pivot(</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>    data, index<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>], columns<span class="op">=</span>[<span class="st">&quot;day_of_week&quot;</span>], values<span class="op">=</span>[<span class="st">&quot;count&quot;</span>]</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>).values</span></code></pre></div>
 </section>
 <section id="separated-functions" class="slide level2">
 <h2>separated functions</h2>
-<div class="sourceCode" id="cb31"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_empty_dataframe(start_week, end_week):</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    records <span class="op">=</span> []</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> woy <span class="kw">in</span> <span class="bu">range</span>(start_week, end_week<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> dow <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>            records.append([woy, dow, <span class="dv">0</span>])</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame.from_records(</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>        records, columns<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>, <span class="st">&quot;count&quot;</span>]</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fill_empty_with_activities(empty, activities):</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>        pd.concat([activities, empty])</span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>        .drop_duplicates(subset<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>], keep<span class="op">=</span><span class="st">&quot;first&quot;</span>)</span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>        .sort_values([<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>])</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>        .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pivot_dataframe(data):</span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.pivot(</span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>        data, index<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>], columns<span class="op">=</span>[<span class="st">&quot;day_of_week&quot;</span>], values<span class="op">=</span>[<span class="st">&quot;count&quot;</span>]</span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>    ).values</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_empty_dataframe(start_week, end_week):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    records <span class="op">=</span> []</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> woy <span class="kw">in</span> <span class="bu">range</span>(start_week, end_week<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> dow <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>            records.append([woy, dow, <span class="dv">0</span>])</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame.from_records(</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>        records, columns<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>, <span class="st">&quot;count&quot;</span>]</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fill_empty_with_activities(empty, activities):</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>        pd.concat([activities, empty])</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>        .drop_duplicates(subset<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>], keep<span class="op">=</span><span class="st">&quot;first&quot;</span>)</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>        .sort_values([<span class="st">&quot;week_of_year&quot;</span>, <span class="st">&quot;day_of_week&quot;</span>])</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>        .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pivot_dataframe(data):</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.pivot(</span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>        data, index<span class="op">=</span>[<span class="st">&quot;week_of_year&quot;</span>], columns<span class="op">=</span>[<span class="st">&quot;day_of_week&quot;</span>], values<span class="op">=</span>[<span class="st">&quot;count&quot;</span>]</span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>    ).values</span></code></pre></div>
 <div class="text-smaller">
 <p>these functions do one thing</p>
 </div>
 </section>
 <section id="separated-functions---usage" class="slide level2">
 <h2>separated functions - usage</h2>
-<div class="sourceCode" id="cb32"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;data.db&quot;</span>)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>activities <span class="op">=</span> pd.read_sql(activity_query, con)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>empty <span class="op">=</span> create_empty_dataframe(<span class="dv">36</span>, <span class="dv">39</span>)</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> fill_empty_with_activities(emty, activities)</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>activities_matrix <span class="op">=</span> pivot_dataframe(data)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;data.db&quot;</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>activities <span class="op">=</span> pd.read_sql(activity_query, con)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>empty <span class="op">=</span> create_empty_dataframe(<span class="dv">36</span>, <span class="dv">39</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> fill_empty_with_activities(emty, activities)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>activities_matrix <span class="op">=</span> pivot_dataframe(data)</span></code></pre></div>
 <p>only the comments remained, which can be read as a prose</p>
 </section>
 <section id="more-bad-comments" class="slide level2">
@@ -1184,29 +1268,29 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a h
 <div class="column" style="width:60%;">
 <div>
 <p><strong>journal comment</strong></p>
-<div class="sourceCode" id="cb33"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024-10-17 -- Add idiomatic coding examples </span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024-10-18 -- Add meaningful names section </span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024-10-17 -- Add idiomatic coding examples </span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024-10-18 -- Add meaningful names section </span></span></code></pre></div>
 <div class="text-smaller">
 <p>the version tracker keeps better journal</p>
 </div>
 </div>
 <div>
 <p><strong>noise comments</strong></p>
-<div class="sourceCode" id="cb34"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creates an empty dataframe</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_empty_dataframe(start_week, end_week):</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creates an empty dataframe</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_empty_dataframe(start_week, end_week):</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span></code></pre></div>
 <div class="text-smaller">
 <p>don’t write something that is already in the code</p>
 </div>
 </div>
 <div>
 <p><strong>closing brace comments</strong></p>
-<div class="sourceCode" id="cb35"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>} <span class="co">// for</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>} <span class="co">// for</span></span></code></pre></div>
 <div class="text-smaller">
 <p>modern editors can find (end display) the block endings</p>
 </div>
@@ -1223,26 +1307,26 @@ href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></figcaption>
 </section>
 <section id="apollo-11---colossus-2a" class="slide level2">
 <h2>Apollo 11 - Colossus 2A</h2>
-<div class="sourceCode" id="cb36" data-startFrom="149"><pre
-class="sourceCode numberSource numberLines"><code class="sourceCode" style="counter-reset: source-line 148;"><span id="cb36-149"><a href="#cb36-149"></a>P21VSAVE    DLOAD           # SAVE CURRENT BASE VECTOR</span>
-<span id="cb36-150"><a href="#cb36-150"></a>            TAT</span>
-<span id="cb36-151"><a href="#cb36-151"></a>        STOVL   P21TIME     # ..TIME</span>
-<span id="cb36-152"><a href="#cb36-152"></a>            RATT1</span>
-<span id="cb36-153"><a href="#cb36-153"></a>        STOVL   P21BASER    # ..POS B-29 OR B-27</span>
-<span id="cb36-154"><a href="#cb36-154"></a>            VATT1</span>
-<span id="cb36-155"><a href="#cb36-155"></a>        STORE   P21BASEV    # ..VEL B-7  OR B-5</span>
-<span id="cb36-156"><a href="#cb36-156"></a>        ABVAL   SL*</span>
-<span id="cb36-157"><a href="#cb36-157"></a>            0,2</span>
-<span id="cb36-158"><a href="#cb36-158"></a>        STOVL   P21VEL      # /VEL/ FOR N73 DSP</span>
-<span id="cb36-159"><a href="#cb36-159"></a>            RATT</span>
-<span id="cb36-160"><a href="#cb36-160"></a>        UNIT    DOT</span>
-<span id="cb36-161"><a href="#cb36-161"></a>            VATT        # U(R).(V)</span>
-<span id="cb36-162"><a href="#cb36-162"></a>        DDV ASIN        # U(R).U(V)</span>
-<span id="cb36-163"><a href="#cb36-163"></a>            P21VEL</span>
-<span id="cb36-164"><a href="#cb36-164"></a>        STORE   P21GAM      # SIN-1 U(R).U(V), -90 TO +90</span>
-<span id="cb36-165"><a href="#cb36-165"></a>        SXA,2   SET</span>
-<span id="cb36-166"><a href="#cb36-166"></a>            P21ORIG     # 0 = EARTH  2 = MOON</span>
-<span id="cb36-167"><a href="#cb36-167"></a>            P21FLAG</span></code></pre></div>
+<div class="sourceCode" id="cb39" data-startFrom="149"><pre
+class="sourceCode numberSource numberLines"><code class="sourceCode" style="counter-reset: source-line 148;"><span id="cb39-149"><a href="#cb39-149"></a>P21VSAVE    DLOAD           # SAVE CURRENT BASE VECTOR</span>
+<span id="cb39-150"><a href="#cb39-150"></a>            TAT</span>
+<span id="cb39-151"><a href="#cb39-151"></a>        STOVL   P21TIME     # ..TIME</span>
+<span id="cb39-152"><a href="#cb39-152"></a>            RATT1</span>
+<span id="cb39-153"><a href="#cb39-153"></a>        STOVL   P21BASER    # ..POS B-29 OR B-27</span>
+<span id="cb39-154"><a href="#cb39-154"></a>            VATT1</span>
+<span id="cb39-155"><a href="#cb39-155"></a>        STORE   P21BASEV    # ..VEL B-7  OR B-5</span>
+<span id="cb39-156"><a href="#cb39-156"></a>        ABVAL   SL*</span>
+<span id="cb39-157"><a href="#cb39-157"></a>            0,2</span>
+<span id="cb39-158"><a href="#cb39-158"></a>        STOVL   P21VEL      # /VEL/ FOR N73 DSP</span>
+<span id="cb39-159"><a href="#cb39-159"></a>            RATT</span>
+<span id="cb39-160"><a href="#cb39-160"></a>        UNIT    DOT</span>
+<span id="cb39-161"><a href="#cb39-161"></a>            VATT        # U(R).(V)</span>
+<span id="cb39-162"><a href="#cb39-162"></a>        DDV ASIN        # U(R).U(V)</span>
+<span id="cb39-163"><a href="#cb39-163"></a>            P21VEL</span>
+<span id="cb39-164"><a href="#cb39-164"></a>        STORE   P21GAM      # SIN-1 U(R).U(V), -90 TO +90</span>
+<span id="cb39-165"><a href="#cb39-165"></a>        SXA,2   SET</span>
+<span id="cb39-166"><a href="#cb39-166"></a>            P21ORIG     # 0 = EARTH  2 = MOON</span>
+<span id="cb39-167"><a href="#cb39-167"></a>            P21FLAG</span></code></pre></div>
 <p><a
 href="https://github.com/chrislgarry/Apollo-11/blob/4d15e4d9d37202847334d4c640058803ed4e782e/Comanche055/GROUND_TRACKING_DETERMINATION_PROGRAM.agc#L149-L167">source</a>,
 <a href="https://github.com/chrislgarry/Apollo-11">GitHub
@@ -1255,17 +1339,17 @@ class="citation" data-cites="slavin2015coding">[7]</span></p>
 <p>some open source licences should be included to the beginning of the
 files</p>
 <p><strong>informative comments</strong></p>
-<div class="sourceCode" id="cb37"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>timestamp <span class="op">=</span> <span class="st">&quot;2024-10-22 09:30:42&quot;</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># matches for timestamps in the format of: YYYY-MM-DD HH:MM:SS</span></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;\d</span><span class="sc">{4}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs"> \d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>timestamp <span class="op">=</span> <span class="st">&quot;2024-10-22 09:30:42&quot;</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># matches for timestamps in the format of: YYYY-MM-DD HH:MM:SS</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;\d</span><span class="sc">{4}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs"> \d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
 <div class="fragment">
 <p><strong>TODOs – good or bad?</strong></p>
-<div class="sourceCode" id="cb38"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: this allows invalid month, day, hour, minute and second values</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;\d</span><span class="sc">{4}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs"> \d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: this allows invalid month, day, hour, minute and second values</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;\d</span><span class="sc">{4}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs"> \d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
 <p><span class="text-smaller">editors can collect <code>TODO</code> (and
 <code>FIXME</code>) annotations and warn about them</span></p>
 </div>
@@ -1273,31 +1357,31 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a h
 <section id="documentation" class="slide level2">
 <h2>documentation</h2>
 <div class="pre-475">
-<div class="sourceCode" id="cb39"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Fizzbuzz is a game for children to teach them about division.</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">    It is also a common coding practice.</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co">    i : int</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Input number tested against division by 3, 5 and 15.</span></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co">    str</span></span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="co">        `Fizz` if input divisible by 3, `Buzz` if divisible by 5 and `FizzBuzz` if both.</span></span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
-<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Fizzbuzz is a game for children to teach them about division.</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co">    It is also a common coding practice.</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="co">    i : int</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Input number tested against division by 3, 5 and 15.</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="co">    str</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="co">        `Fizz` if input divisible by 3, `Buzz` if divisible by 5 and `FizzBuzz` if both.</span></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
 </div>
 </section>
 <section id="doctest" class="slide level2">
@@ -1305,57 +1389,57 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a h
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="pre-475">
-<div class="sourceCode" id="cb40"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fizzbuzz(3)</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;Fizz&#39;</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fizzbuzz(5)</span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;Buzz&#39;</span></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fizzbuzz(12)</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;Fizz&#39;</span></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fizzbuzz(15)</span></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;FizzBuzz&#39;</span></span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fizzbuzz(17)</span></span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;17&#39;</span></span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
-<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
-<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
-<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
-<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fizzbuzz(i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fizzbuzz(3)</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;Fizz&#39;</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fizzbuzz(5)</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;Buzz&#39;</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fizzbuzz(12)</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;Fizz&#39;</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fizzbuzz(15)</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;FizzBuzz&#39;</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fizzbuzz(17)</span></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;17&#39;</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;FizzBuzz&quot;</span></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Fizz&quot;</span></span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> <span class="st">&quot;Buzz&quot;</span></span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
 </div>
 </div><div class="column fragment" style="width:50%;">
 <div class="pre-475">
-<div class="sourceCode" id="cb41"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m doctest <span class="op">-</span>v fizzbuzz_doctest.py</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>Trying:</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">3</span>)</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;Fizz&#39;</span></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>ok</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>Trying:</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">5</span>)</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;Buzz&#39;</span></span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>ok</span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>Trying:</span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">15</span>)</span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;FizzBuzz&#39;</span></span>
-<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>ok</span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>Trying:</span>
-<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">17</span>)</span>
-<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
-<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;17&#39;</span></span>
-<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>ok</span>
-<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> passed.</span>
-<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>Test passed.</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m doctest <span class="op">-</span>v fizzbuzz_doctest.py</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>Trying:</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">3</span>)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;Fizz&#39;</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>ok</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>Trying:</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">5</span>)</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;Buzz&#39;</span></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>ok</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>Trying:</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">15</span>)</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;FizzBuzz&#39;</span></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>ok</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>Trying:</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>    fizzbuzz(<span class="dv">17</span>)</span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>Expecting:</span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;17&#39;</span></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>ok</span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> passed.</span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>Test passed.</span></code></pre></div>
 </div>
 </div>
 </div>
