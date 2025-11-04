@@ -144,11 +144,12 @@ MVC-MVP-MVVM
 - [Walking Skeletons in Software Architecture](https://medium.com/@jorisvdaalsvoort/walking-skeletons-in-software-architecture-894168276e3f) - by Joris van der Aalsvoort
 - [Brooks’ Law: Adding Manpower to a Late Project Makes It Later](https://effectiviology.com/brooks-law/) - by Itamar Shatz
 
-## week 7
+## week 8
 
 1. [week 6 summary](slides/summary_week06.html)
 2. [wireframing](slides/11_wireframing.html)
 3. [clean code](slides/12_clean_code.html)
+4. [C4 in practise](slides/04_c4.html)
 
 ### readings
 
