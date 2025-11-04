@@ -42,6 +42,90 @@ a well-written code is easy to read, understand, debug, maintain, extend, etc.
 - like having a nice handwriting
 :::
 
+## clear is better than clever
+
+::: {.wide-quote}
+> In any kind of programming, clarity should always be the primary goal.
+>
+> Writing code that is straightforward and understandable is more valuable than trying to craft overly clever or intricate solutions.
+>
+> -- [Go Proverbs](https://go-proverbs.github.io/) by Rob Pike 
+
+:::
+
+source: [Rob Pike’s Go Proverbs](https://golangprojectstructure.com/rob-pike-go-proverbs-3/#clear-is-better-than-clever)
+
+## prime check -- clever vs. clear
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+```go
+func isPrime(n int) bool {
+    if n < 2 {
+        return false
+    }
+
+    for i := 2; i*i <= n; i++ {
+        if n%i == 0 {
+            return false
+        }
+    }
+
+    return true
+}
+```
+
+:::::::::
+::::::::: {.column width="50%"}
+```go
+func isPrime(n int) bool {
+    if n < 2 {
+        return false
+    }
+
+    for i := 2; i <= n/2; i++ {
+        if n%i == 0 {
+            return false
+        }
+    }
+
+    return true
+}
+```
+
+less efficient, but it may be easier for a reader to understand
+
+:::::::::
+::::::::::::
+
+source: [Rob Pike’s Go Proverbs](https://golangprojectstructure.com/rob-pike-go-proverbs-3/#clear-is-better-than-clever)
+
+##
+
+```go
+func isPrime(n int) bool {
+	if n < 2 {
+		return false
+	}
+
+	for i := 2; i <= int(math.Sqrt(float64(n))); i++ {
+		if n%i == 0 {
+			return false
+		}
+	}
+
+	return true
+}
+```
+
+::: {.text-smaller}
+- iterating only up to the square root of n because if n has any divisor greater than its square root, there must also be a corresponding divisor smaller than the square root
+- it is easier to understand than the "clever one", but less wasteful then the "clear one"
+- why is the clever on better?
+    - [because multiplication is more efficient for the CPU than calculating the square root]{.fragment}
+
+:::
+
 # hierarchy in style guides
 
 :::::::::::: {.columns}
