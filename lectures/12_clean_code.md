@@ -1036,7 +1036,10 @@ def fizzbuzz(i: int) -> str:
 
 ## doctest
 
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
 ::: {.pre-475}
+
 ```python
 def fizzbuzz(i: int) -> str:
     """
@@ -1062,8 +1065,41 @@ def fizzbuzz(i: int) -> str:
         result = str(i)
     return result
 ```
+
 :::
 
+:::::::::
+::::::::: {.column width="50%" .fragment}
+::: {.pre-475}
+``` {.python}
+python -m doctest -v fizzbuzz_doctest.py
+Trying:
+    fizzbuzz(3)
+Expecting:
+    'Fizz'
+ok
+Trying:
+    fizzbuzz(5)
+Expecting:
+    'Buzz'
+ok
+Trying:
+    fizzbuzz(15)
+Expecting:
+    'FizzBuzz'
+ok
+Trying:
+    fizzbuzz(17)
+Expecting:
+    '17'
+ok
+4 passed.
+Test passed.
+```
+
+:::
+:::::::::
+::::::::::::
 
 # references
 
