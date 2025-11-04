@@ -140,9 +140,79 @@ in Excalidraw</a></figcaption>
 </div>
 </section>
 
-<section id="component-diagram-c4-for-statistics-module"
+<section>
+<section id="level-2-container-diagram"
 class="title-slide slide level1">
-<h1>component diagram (C4) for statistics module</h1>
+<h1>Level 2: Container diagram</h1>
+<ul>
+<li>a container is an application or a data store
+<ul>
+<li><span class="text-smaller">e.g., a server-side web application, a
+desktop application, a mobile app</span></li>
+</ul></li>
+<li>shows the high-level shape of the software architecture and how
+responsibilities are distributed across it
+<ul>
+<li>also shows the major technology choices</li>
+<li>and how the containers communicate with one another
+(interfaces)</li>
+</ul></li>
+<li>simple, high-level technology focused diagram that is useful for
+software developers and support/operations staff alike</li>
+</ul>
+<div class="wide-quote mt-2">
+<blockquote>
+<p>Zooms into the software system, and shows the containers
+(applications, data stores, microservices, etc.) that make up that
+software system. Technology decisions are also a key part of this
+diagram.</p>
+<p>Simon Brown - <a
+href="https://www.infoq.com/articles/C4-architecture-model/">The C4
+Model for Software Architecture</a></p>
+</blockquote>
+</div>
+</section>
+<section id="container-diagram-of-the-flashcard-application"
+class="slide level2">
+<h2>container diagram of the flashcard application</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img data-src="c4/container.excalidraw.svg" height="375" /></p>
+</div><div class="column fragment" style="width:65%;">
+<p><img data-src="c4/container_server_client.excalidraw.svg"
+height="425" /></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="level-3-component-diagram"
+class="title-slide slide level1">
+<h1>Level 3: Component diagram</h1>
+<ul>
+<li>shows the major structural building blocks of the application (with
+interfaces)</li>
+<li>roughly like the UML component diagram
+<ul>
+<li>but the concept of a component is more relaxed</li>
+<li>as the implementation is not necessarily OO</li>
+</ul></li>
+<li>basically the actual blueprint of the software</li>
+<li>focus on this level in the project assigment</li>
+</ul>
+<div class="wide-quote mt-2">
+<blockquote>
+<p>Zooms into an individual container to show the components inside it.
+These components should map to real abstractions (e.g., a grouping of
+code) in your codebase.</p>
+<p>Simon Brown - <a
+href="https://www.infoq.com/articles/C4-architecture-model/">The C4
+Model for Software Architecture</a></p>
+</blockquote>
+</div>
+</section>
+<section id="component-diagram-for-statistics-module"
+class="slide level2">
+<h2>component diagram for statistics module</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><img
@@ -157,11 +227,32 @@ in Excalidraw</a></p>
 width="300" /></p>
 </div>
 </div>
+</section></section>
+<section id="level-4-code" class="title-slide slide level1">
+<h1>Level 4: Code</h1>
+<div class="wide-quote">
+<blockquote>
+<p>Finally, if you really want or need to, you can zoom into an
+individual component to show how that component is implemented.</p>
+<p>Simon Brown - <a
+href="https://www.infoq.com/articles/C4-architecture-model/">The C4
+Model for Software Architecture</a></p>
+</blockquote>
+</div>
+<div class="mt-3">
+<ul>
+<li>this could be, for example, class diagram with UML</li>
+<li>we’re skipping it (also not required for the project
+assignment)</li>
+</ul>
+</div>
 </section>
 
 <section id="customer-wants-to-add-telemetry"
-class="title-slide slide level1" data-visibility="hidden">
-<h1 data-visibility="hidden">customer wants to add telemetry</h1>
+class="title-slide slide level1" data-visibility="uncounted"
+data-background="#ebcb8b40">
+<h1 data-visibility="uncounted" data-background="#ebcb8b40">customer
+wants to add telemetry</h1>
 <p><img data-src="../lectures/figures/telemetry_v2.drawio.svg" /></p>
 </section>
     </div>
