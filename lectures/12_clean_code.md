@@ -17,6 +17,30 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 ![based on Khalil Stemmel's figure [@stemmler2019how]](figures/the_software_design_and_architecture_stack_generalized.drawio.svg){height=475}
 
+# what is clean code
+
+- the term, _clean code_ refers to code that's easy to read, understand, and maintain
+    - popularized by Robert C. Martin
+- guideline how to write readable, understandable, and maintainable code
+    - although not every "rule" applies to every language / situation
+
+## why it matters
+
+misconception: program code is mostly written, while in reality it is mainly read
+
+a well-written code is easy to read, understand, debug, maintain, extend, etc.
+
+::: {.mt-3}
+> Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
+>
+> -- Martin Fowler [@fowler2018refactoring]
+
+:::
+
+::: {.mt-3}
+- where human can be the future you, current or future colleague...
+- like having a nice handwriting
+:::
 
 # hierarchy in style guides
 
@@ -25,6 +49,7 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 - language level:
     - Python: [PEP 8](https://peps.python.org/pep-0008/) or [pep8.org](https://pep8.org/)
     - Ruby: [Ruby Style Guide](https://rubystyle.guide/)
+    - Go: [Effective Go](https://go.dev/doc/effective_go)
     - Rust [The Rust Style Guide](https://doc.rust-lang.org/beta/style-guide/index.html)
     - etc.
 - organization level:
@@ -38,7 +63,7 @@ not just style guides, also best practices
 :::
 :::::::::
 ::::::::: {.column width="45%"}
-![](figures/style_hierarchy.drawio.svg){width=300}
+![](figures/style_hierarchy.drawio.svg){width=375}
 
 :::::::::
 ::::::::::::
@@ -341,7 +366,7 @@ int d; // elapsed time in days
 ::::::::::::
 :::::::::
 ::::::::: {.column width="30%"}
-![](figures/variable_scope.drawio.svg){width=250}
+![](figures/variable_scope.drawio.svg){width=250 preview-image="figures/variable_scope.drawio.svg" preview-fit="contain"}
 
 :::::::::
 ::::::::::::
