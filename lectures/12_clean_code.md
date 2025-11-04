@@ -699,7 +699,7 @@ def query_progress(as_percentage: bool):
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%" .pre-450}
-```python {.numberLines}
+```{.python line-numbers="3,11,14" data-highlight-background="#c6ff8c"}
 DataFrame.to_csv(
     path_or_buf=None, *,
     sep=',',
