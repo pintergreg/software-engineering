@@ -1185,6 +1185,104 @@ Test passed.
 :::::::::
 ::::::::::::
 
+# summary
+
+- bear in mind that the code is more often read than written
+    - make your intentions clear
+- use the language properly as it's intended
+    - write idiomatic code
+- follow the (style) guides, and best practices
+    - hierarchy
+
+## clean code / meaningful names [@martin2009clean]
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+
+- use intention-revealing names
+- pick one word per concept
+- avoid disinformation
+- make meaningful distinctions
+  - d[on't use names like `doSomething()` and `doSomething2()`]{.text-smaller}
+- use pronounceable names
+- use searchable names
+  - ["The longer the scope of a function, the shorter its name should be." -- Robert C. Martin]{.text-smaller}
+- avoid encodings
+  - [`intNumberOfDays = 0`]{.text-smaller}
+- don't pun or use humor, be professional
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/hand-with-bottle.svg){height=300}
+
+:::::::::
+::::::::::::
+
+## names for classes, functions
+
+:::::::::::: {.columns .mt-3}
+::::::::: {.column width="50%"}
+- a class is a model / blueprint of *something*
+- the name should be a noun
+    - e.g., `User`, `Activity`
+- an object is an instance of a class
+    - still a noun
+    - e.g., `user = User()`
+:::::::::
+::::::::: {.column width="50%"}
+- a function *does* something
+- the name should contain a verb
+    - in imperative
+    - e.g., `aggregate_activity`
+    - ~~`activity_aggregation`~~
+
+:::::::::
+::::::::::::
+
+## clean code / functions [@martin2009clean]
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+- "Functions should hardly ever be 20 lines long" [@martin2009clean]
+  - shorter functions are easier to understand
+- do one thing (single responsibility principle)
+- "The longer the scope of a function, the shorter its name should be." -- Robert C. Martin
+- avoid using more than three arguments
+- avoid using flags
+- no side effects
+- prefer exceptions to returning error codes
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/cogwheel.svg){height=300}
+
+:::::::::
+::::::::::::
+
+
+## clean code / comments [@martin2009clean]
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="60%"}
+**avoid**
+
+- journal comments
+- noise comments
+- writing something that is already in the code
+- closing brace comments
+- separating comments
+
+**however, comments can be used if they help to understand the code**
+
+- informative comments, that explain what is happening
+    - math, physics, domain-specific things
+- (API) documentation with examples
+:::::::::
+::::::::: {.column width="40%"}
+![by Oliver Widder (Geek and Poke) [CC&nbsp;BY&nbsp;3.0](https://creativecommons.org/licenses/by/3.0/)](figures/borrowed/geek_and_poke/good_comments.jpg){width=375}
+
+:::::::::
+::::::::::::
+
 # references
 
 ::: {#refs}
