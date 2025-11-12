@@ -9135,6 +9135,140 @@ Test passed.
 </div>
 </div>
 </div>
+<h1 id="summary-1"><a class="header" href="#summary-1">summary</a></h1>
+<ul>
+<li>bear in mind that the code is more often read than written
+<ul>
+<li>make your intentions clear</li>
+</ul>
+</li>
+<li>use the language properly as it’s intended
+<ul>
+<li>write idiomatic code</li>
+</ul>
+</li>
+<li>follow the (style) guides, and best practices
+<ul>
+<li>hierarchy</li>
+</ul>
+</li>
+</ul>
+<h2 id="clean-code--meaningful-names-martin-2009"><a class="header" href="#clean-code--meaningful-names-martin-2009">clean code / meaningful names (Martin, 2009)</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>use intention-revealing names</li>
+<li>pick one word per concept</li>
+<li>avoid disinformation</li>
+<li>make meaningful distinctions
+<ul>
+<li>d<span class="text-smaller">on’t use names like <code>doSomething()</code> and
+<code>doSomething2()</code></span></li>
+</ul>
+</li>
+<li>use pronounceable names</li>
+<li>use searchable names
+<ul>
+<li><span class="text-smaller">“The longer the scope of a function, the
+shorter its name should be.” – Robert C. Martin</span></li>
+</ul>
+</li>
+<li>avoid encodings
+<ul>
+<li><span class="text-smaller"><code>intNumberOfDays = 0</code></span></li>
+</ul>
+</li>
+<li>don’t pun or use humor, be professional</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="lectures/figures/publicdomainvectors/hand-with-bottle.svg"
+height="300" /></p>
+</div>
+</div>
+<h2 id="names-for-classes-functions-1"><a class="header" href="#names-for-classes-functions-1">names for classes, functions</a></h2>
+<div class="columns mt-3">
+<div class="column" width="50%">
+<ul>
+<li>a class is a model / blueprint of <em>something</em></li>
+<li>the name should be a noun
+<ul>
+<li>e.g., <code>User</code>, <code>Activity</code></li>
+</ul>
+</li>
+<li>an object is an instance of a class
+<ul>
+<li>still a noun</li>
+<li>e.g., <code>user = User()</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<ul>
+<li>a function <em>does</em> something</li>
+<li>the name should contain a verb
+<ul>
+<li>in imperative</li>
+<li>e.g., <code>aggregate_activity</code></li>
+<li><s><code>activity_aggregation</code></s></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2 id="clean-code--functions-martin-2009"><a class="header" href="#clean-code--functions-martin-2009">clean code / functions (Martin, 2009)</a></h2>
+<div class="columns">
+<div class="column" width="70%">
+<ul>
+<li>“Functions should hardly ever be 20 lines long” (Martin, 2009)
+<ul>
+<li>shorter functions are easier to understand</li>
+</ul>
+</li>
+<li>do one thing (single responsibility principle)</li>
+<li>“The longer the scope of a function, the shorter its name should be.”
+– Robert C. Martin</li>
+<li>avoid using more than three arguments</li>
+<li>avoid using flags</li>
+<li>no side effects</li>
+<li>prefer exceptions to returning error codes</li>
+</ul>
+</div>
+<div class="column" width="30%">
+<img src="lectures/figures/publicdomainvectors/cogwheel.svg" height="300" />
+</div>
+</div>
+<h2 id="clean-code--comments-martin-2009"><a class="header" href="#clean-code--comments-martin-2009">clean code / comments (Martin, 2009)</a></h2>
+<div class="columns column-gapless">
+<div class="column" width="60%">
+<p><strong>avoid</strong></p>
+<ul>
+<li>journal comments</li>
+<li>noise comments</li>
+<li>writing something that is already in the code</li>
+<li>closing brace comments</li>
+<li>separating comments</li>
+</ul>
+<p><strong>however, comments can be used if they help to understand the code</strong></p>
+<ul>
+<li>informative comments, that explain what is happening
+<ul>
+<li>math, physics, domain-specific things</li>
+</ul>
+</li>
+<li>(API) documentation with examples</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="lectures/figures/borrowed/geek_and_poke/good_comments.jpg" width="375"
+alt="by Oliver Widder (Geek and Poke) CC BY 3.0" />
+<figcaption aria-hidden="true">by Oliver Widder (Geek and Poke) <a
+href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></figcaption>
+</figure>
+</div>
+</div>
 <h1 id="references-10"><a class="header" href="#references-10">references</a></h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 line-spacing="2">
