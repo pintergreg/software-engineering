@@ -632,6 +632,23 @@ int main (void) {
 :::::::::
 ::::::::::::
 
+# summary
+
+- (code) review is for improving (code) quality
+    - finding issues as early as possible
+- applies to every output element of the development process
+    - V-model
+    - requirement analysis can be reviewed
+    - for design: risk storming
+    - for code review, four formality level 
+        - informal, walkthrough, technical, inspection
+- be open to feedback, try to learn from the review
+- the subject of the code review is not you, but your code
+    - use I-messages
+    - talk about the code, not the coder
+    - ask questions
+    - don’t forget to praise
+
 
 # references
 
