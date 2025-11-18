@@ -585,7 +585,24 @@ Furthermore, in many cases the new programmer cannot just learn about the projec
 This may be considered as a part of the communication overhead, it is an important aspect.
 :::
 
-<!-- ## what can be done? -->
+
+## what can be done?
+
+reduce stress/administrative burden, pointless meetings, create more relaxed environment instead of adding more people
+
+on the other hand, addig more resources (manpower) may help depending on
+
+- attributes of the people who are being added to the project
+- ways in which group members are expected to communicate
+- reason why additional manpower is being added
+- the overall team size don't get too large
+- group social dynamic, before and after the addition of new people
+
+::: {.text-smaller .mt-2}
+source: [effectiviology.com/brooks-law](https://effectiviology.com/brooks-law/)
+:::
+
+
 <!-- Brooks' law says that it is impossible to measure useful work in man-months. -->
 
 ## Brooks' law vs Torvalds' law
