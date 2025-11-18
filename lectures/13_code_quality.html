@@ -167,9 +167,7 @@ working software over comprehensive documentation</p>
 <p>software craftmanship<br />
 not only working software, but also well-crafted software</p>
 </div>
-<div class="columns mt-2 fragment" height="240">
-<div class="column text-align-left" width="70%">
-<div class="text-align-left">
+<div class="text-align-left mt-2">
 <p>well-crafted</p>
 <ul>
 <li>high quality</li>
@@ -179,16 +177,14 @@ not only working software, but also well-crafted software</p>
 <li>code is clean, easy to understand, <strong>maintain</strong></li>
 </ul>
 </div>
-</div>
-<div class="column" width="30%">
-</div>
-</div>
 <h1 id="code-smell"><a class="header" href="#code-smell">code smell</a></h1>
+<div class="wide-quote">
 <blockquote>
 <p>a code smell is a surface indication that usually corresponds to a
 deeper problem</p>
 <p>– Martin Flower (Fowler, 2006)</p>
 </blockquote>
+</div>
 <div class="columns mt-3">
 <div class="column text-smaller" width="40%">
 <p>software rot is the degradation, deterioration, or loss of the use or
@@ -306,12 +302,30 @@ cherry-picking single fields.” (Atwood, 2006)</span></li>
 <div class="text-smaller">
 <ul>
 <li>hard to understand, even if it is tested and documented</li>
-<li>use nested conditions instead<!--- avoid negative conditionals -- Robert C. Martin [@martin2009clean]
-    - `if (!is_raining()) {do_something();}`{.javascript}-->
+<li>use nested conditions instead</li>
+<li>avoid negative conditionals – Robert C. Martin (Martin, 2009)
+<ul>
+<li><code>if (!is_raining()) {do_something();}</code></li>
+</ul>
 </li>
 </ul>
 </div>
 </div>
+<h2 id="conditional-complexity--use-nested-conditions"><a class="header" href="#conditional-complexity--use-nested-conditions">conditional complexity – use nested conditions</a></h2>
+<pre><code class="language-python">if not (
+    is_pressure_low()
+    or (is_temperature_high() and not is_humidity_low())
+    and (is_fall() or not is_raining())
+):
+    do_something()
+</code></pre>
+<pre><code class="language-python">if not (
+    is_pressure_low()
+    or (is_temperature_high() and not is_humidity_low())
+    and (is_fall() or not is_raining())
+):
+    do_something()
+</code></pre>
 <h2 id="class-based-smells-alternative-classes-with-different-interfaces"><a class="header" href="#class-based-smells-alternative-classes-with-different-interfaces">class-based smells: alternative classes with different interfaces</a></h2>
 <blockquote>
 <p>If two classes are similar on the inside, but different on the
@@ -320,11 +334,13 @@ outside, perhaps they can be modified to share a common interface
 </blockquote>
 <h2 id="class-based-smells-data-class"><a class="header" href="#class-based-smells-data-class">class-based smells: data class???</a></h2>
 <div class="columns">
-<div class="column" width="70%">
+<div class="column wide-quote" width="70%">
 <blockquote>
 <p>Avoid classes that passively store data. Classes should contain data
-and methods to operate on that data, too (Atwood, 2006).</p>
+and methods to operate on that data, too.</p>
+<p>– Jeff Atwood (Atwood, 2006)</p>
 </blockquote>
+<p>comes from the OOP definition, but outdated</p>
 <div class="mt-3">
 <ul>
 <li>Kotlin: <a href="https://kotlinlang.org/docs/data-classes.html">Data classes﻿</a></li>
@@ -351,6 +367,9 @@ class (Atwood, 2006).</p>
 <p>If you inherit from a class, but never use any of the inherited
 functionality, should you really be using inheritance? (Atwood, 2006)</p>
 </blockquote>
+<div class="fragment mt-4">
+<p>basically an architectural issue!</p>
+</div>
 </div>
 <div class="column" width="30%">
 <img src="figures/no_middleman.drawio.svg" width="250" />
@@ -370,18 +389,20 @@ don’t, hide it (Atwood, 2006).</p>
 <li>hiding the complex reality while exposing only the necessary parts</li>
 <li>allows to focus on interactions at a higher level without needing to
 understand the details of the implementation</li>
-<li>achieved through abstract classes and interfaces, which define a
-contract for what methods an object must implement without specifying
-how they should be implemented</li>
+<li>can be achieved through abstract classes and interfaces, which define
+a contract for what methods an object must implement without
+specifying how they should be implemented</li>
 </ul>
 </div>
 <h2 id="class-based-smells-feature-envy"><a class="header" href="#class-based-smells-feature-envy">class-based smells: feature envy</a></h2>
 <img src="figures/feature_envy.drawio.svg" width="500" />
+<div class="wide-quote">
 <blockquote>
 <p>Methods that make extensive use of another class may belong in another
 class. Consider moving this method to the class it is so envious of.</p>
 <p>– Jeff Atwood (Atwood, 2006)</p>
 </blockquote>
+</div>
 <h2 id="more-code-smells"><a class="header" href="#more-code-smells">more code smells</a></h2>
 <div class="columns">
 <div class="column mt-5" width="60%">
@@ -402,34 +423,43 @@ domain</figcaption>
 <h2 id="comment-related-smells"><a class="header" href="#comment-related-smells">comment related smells</a></h2>
 <p><strong>1. obsolete comment</strong></p>
 <p>version <em>n-1</em> (OOP)</p>
+<div class="text-larger">
 <pre><code class="language-python"># increase class attribute
 def increase(self, by):
     self.foo += by
 </code></pre>
+</div>
 <p>version <em>n</em> (FP)</p>
+<div class="text-larger">
 <pre><code class="language-python"># increase class attribute
 def increase(what, by):
     return what + by
 </code></pre>
+</div>
 <div class="mt-2 text-smaller">
 <p>these are actually noise comments, so they are bad in the first place</p>
 </div>
 <h2 id="comment-related-smells-1"><a class="header" href="#comment-related-smells-1">comment related smells</a></h2>
 <p><strong>2. redundant comment</strong></p>
+<div class="text-larger">
 <pre><code class="language-python"># creates an empty dataframe
 def create_empty_dataframe(start_week, end_week):
 </code></pre>
+</div>
 <div class="mt-5">
 <p>redundant as it does not give new information, a form of noise comment</p>
 </div>
 <h2 id="comment-related-smells-2"><a class="header" href="#comment-related-smells-2">comment related smells</a></h2>
 <p><strong>3. commented-out code</strong></p>
+<div class="text-larger">
 <pre><code class="language-python">def increase(what, by):
     # print(what, by)
     return what + by
 </code></pre>
+</div>
 <p>not needed, just remove it</p>
 <div class="fragment">
+<div class="text-larger">
 <pre><code class="language-python">class Something:
     foo = 0
     
@@ -442,6 +472,7 @@ def create_empty_dataframe(start_week, end_week):
     # def mutiply(self, by):
     #     self.foo *= by
 </code></pre>
+</div>
 <p>the version tracker will preserve it, if you might meed it sometime in
 the future</p>
 </div>
@@ -452,6 +483,7 @@ the future</p>
 </code></pre>
 <div class="fragment">
 <pre><code class="language-python">PI = 3.141592
+
 
 def calculate_circle_area(r: float) -&gt; float:
     return r * r * PI
@@ -482,6 +514,7 @@ if next_level &lt; length:
 </code></pre>
 <p>also increases consistency, the condition needs to be adjusted in one
 place</p>
+<p>can be an adjustable parameter</p>
 <h1 id="denoting-blocks"><a class="header" href="#denoting-blocks">denoting blocks</a></h1>
 <div class="columns column-gapless">
 <div class="column" width="50">
@@ -547,7 +580,7 @@ func main() {
 </div>
 </div>
 <h2 id="what-could-go-wrong"><a class="header" href="#what-could-go-wrong">what could go wrong?</a></h2>
-<div class="fragment">
+<div>
 <div class="text-smaller">
 <p>parts from
 <a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">sslKeyExchange.c</a></p>
@@ -569,7 +602,7 @@ if ((err = SSLHashSHA1.final(&amp;hashCtx, &amp;hashOut)) != 0)
     SSLFreeBuffer(&amp;hashCtx);
     return err;
 </code></pre>
-<div class="fragment">
+<div>
 <p>more about Apple’s “goto fail” fiasco (2014): (Wheeler, 2014), (Migues,
 2014)</p>
 <p>false blame on <code>goto</code>, could be prevented by review and testing</p>
@@ -1009,12 +1042,6 @@ Staticcheck: 0.15
 ErrCehck: 0.15
 Licence: 0.00-->
 <h1 id="code-chunk-permanence-in-a-codebase"><a class="header" href="#code-chunk-permanence-in-a-codebase">code chunk permanence in a codebase</a></h1>
-<!--:::::::::::: {.columns}
-::::::::: {.column width="50%"}
-&#10;:::::::::
-::::::::: {.column width="50%"}
-&#10;:::::::::
-::::::::::::-->
 <figure>
 <img
 src="https://raw.githubusercontent.com/src-d/hercules/refs/heads/master/doc/linux.png"
