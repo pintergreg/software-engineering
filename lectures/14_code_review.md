@@ -456,7 +456,7 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 
 :::
 
-::: {.fragment .text-align-left}
+::: {.fragment .text-align-left .mt-3}
 - however, when a reviewer too often says LGTM, it becomes fishy
     - especially if the review code turns out to be problematic later regardless the positive feedback
 
@@ -483,14 +483,14 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 
 ## how can you tell if the code matches the task?
 
-:::::: {.r-stack}
-![](figures/traceability_via_commit_change.drawio.svg){width=800}
+:::::: {.r-stack .mt-4}
+![](figures/traceability_via_commit_change.drawio.svg){width=950}
 
-![](figures/traceability_via_commit_parts.drawio.svg){width=800 .fragment data-fragment-index=1}
+![](figures/traceability_via_commit_parts.drawio.svg){width=950 .fragment data-fragment-index=1}
 
-![](figures/traceability_via_commit_message_parts.drawio.svg){width=800 .fragment data-fragment-index=2}
+![](figures/traceability_via_commit_message_parts.drawio.svg){width=950 .fragment data-fragment-index=2}
 
-![](figures/traceability_via_commit.drawio.svg){width=800 .fragment data-fragment-index=3}
+![](figures/traceability_via_commit.drawio.svg){width=950 .fragment data-fragment-index=3}
 ::::::
 
 
