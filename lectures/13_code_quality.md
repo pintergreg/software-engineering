@@ -27,9 +27,7 @@ software craftmanship
 
 :::
 
-:::::::::::: {.columns .mt-2  .fragment height=240}
-::::::::: {.column width="70%" .text-align-left}
-::: {.text-align-left}
+::: {.text-align-left .mt-2}
 well-crafted
 ~    - high quality
      - well-designed
@@ -38,23 +36,20 @@ well-crafted
      - code is clean, easy to understand, **maintain**
 
 :::
-:::::::::
-::::::::: {.column width="30%"}
-
-:::::::::
-::::::::::::
-
 
 # code smell
 
+::: {.wide-quote}
 > a code smell is a surface indication that usually corresponds to a deeper problem
 >
 > -- Martin Flower [@fowler2006code]
 
+:::
 
 :::::::::::: {.columns .mt-3}
 ::::::::: {.column width="40%" .text-smaller}
 software rot is the degradation, deterioration, or loss of the use or performance of software over time [@enwiki:1236668404]
+
 :::::::::
 ::::::::: {.column width="40%" .text-smaller}
 **requirement smell**: signs in the requirements that are not necessarily wrong but could be problematic [@femmer2017rapid]
@@ -165,10 +160,30 @@ if not (
 ::: {.text-smaller}
 - hard to understand, even if it is tested and documented
 - use nested conditions instead
-<!--- avoid negative conditionals -- Robert C. Martin [@martin2009clean]
-    - `if (!is_raining()) {do_something();}`{.javascript}-->
+- avoid negative conditionals -- Robert C. Martin [@martin2009clean]
+    - `if (!is_raining()) {do_something();}`{.javascript}
 :::
 ::::::
+
+## conditional complexity -- use nested conditions {visibility=hidden}
+
+```python
+if not (
+    is_pressure_low()
+    or (is_temperature_high() and not is_humidity_low())
+    and (is_fall() or not is_raining())
+):
+    do_something()
+```
+
+```python
+if not (
+    is_pressure_low()
+    or (is_temperature_high() and not is_humidity_low())
+    and (is_fall() or not is_raining())
+):
+    do_something()
+```
 
 
 ## class-based smells: alternative classes with different interfaces {visibility=hidden}
@@ -179,8 +194,12 @@ if not (
 ## class-based smells: data class???
 
 :::::::::::: {.columns}
-::::::::: {.column width="70%"}
-> Avoid classes that passively store data. Classes should contain data and methods to operate on that data, too [@atwood2006code].
+::::::::: {.column width="70%" .wide-quote}
+> Avoid classes that passively store data. Classes should contain data and methods to operate on that data, too.
+>
+> -- Jeff Atwood [@atwood2006code]
+
+comes from the OOP definition, but outdated
 
 ::: {.mt-3}
 - Kotlin: [Data classes﻿](https://kotlinlang.org/docs/data-classes.html)
@@ -207,6 +226,10 @@ if not (
 ::::::::: {.column width="70%" .mt-5}
 > If you inherit from a class, but never use any of the inherited functionality, should you really be using inheritance? [@atwood2006code]
 
+::: {.fragment .mt-4}
+basically an architectural issue!
+:::
+
 :::::::::
 ::::::::: {.column width="30%"}
 ![](figures/no_middleman.drawio.svg){width=250}
@@ -226,7 +249,7 @@ if not (
 OOP principle: abstraction
 ~    - hiding the complex reality while exposing only the necessary parts
      - allows to focus on interactions at a higher level without needing to understand the details of the implementation
-     - achieved through abstract classes and interfaces, which define a contract for what methods an object must implement without specifying how they should be implemented
+     - can be achieved through abstract classes and interfaces, which define a contract for what methods an object must implement without specifying how they should be implemented
 :::
      
 
@@ -234,11 +257,13 @@ OOP principle: abstraction
 
 ![](figures/feature_envy.drawio.svg){width=500}
 
+::: {.wide-quote}
 > Methods that make extensive use of another class may belong in another class.
 > Consider moving this method to the class it is so envious of.
 >
 > -- Jeff Atwood [@atwood2006code]
 
+:::
 
 ## more code smells
 
@@ -262,19 +287,23 @@ with own examples
 
 version *n-1* (OOP)
 
+::: {.text-larger}
 ```python
 # increase class attribute
 def increase(self, by):
     self.foo += by
 ```
+:::
 
 version *n* (FP)
 
+::: {.text-larger}
 ```python
 # increase class attribute
 def increase(what, by):
     return what + by
 ```
+:::
 
 ::: {.mt-2 .text-smaller}
 these are actually noise comments, so they are bad in the first place
@@ -285,10 +314,12 @@ these are actually noise comments, so they are bad in the first place
 
 **2. redundant comment**
 
+::: {.text-larger}
 ```python
 # creates an empty dataframe
 def create_empty_dataframe(start_week, end_week):
 ```
+:::
 
 ::: {.mt-5}
 redundant as it does not give new information, a form of noise comment
@@ -299,15 +330,18 @@ redundant as it does not give new information, a form of noise comment
 
 **3. commented-out code**
 
+::: {.text-larger}
 ```python
 def increase(what, by):
     # print(what, by)
     return what + by
 ```
+:::
 
 not needed, just remove it
 
 ::: {.fragment}
+::: {.text-larger}
 ```python
 class Something:
     foo = 0
@@ -321,6 +355,7 @@ class Something:
     # def mutiply(self, by):
     #     self.foo *= by
 ```
+:::
 
 the version tracker will preserve it, if you might meed it sometime in the future
 :::
@@ -338,6 +373,7 @@ def calculate_circle_area(r: float) -> float:
 ::: {.fragment}
 ```python
 PI = 3.141592
+
 
 def calculate_circle_area(r: float) -> float:
     return r * r * PI
@@ -379,6 +415,8 @@ if next_level < length:
 ```
 
 also increases consistency, the condition needs to be adjusted in one place
+
+can be an adjustable parameter
 
 
 # denoting blocks
@@ -465,7 +503,7 @@ fn main() {
 
 ## what could go wrong?
 
-:::::: {.fragment}
+:::::: {}
 ::: {.text-smaller}
 parts from [sslKeyExchange.c](https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt)
 :::
@@ -491,7 +529,7 @@ fail:
     return err;
 ```
 
-::: {.fragment}
+::: {}
 more about Apple's "goto fail" fiasco (2014): [@wheeler2014apple], [@migues2014understanding]
 
 false blame on `goto`, could be prevented by review and testing
@@ -812,15 +850,6 @@ Licence: 0.00-->
 
 
 # code chunk permanence in a codebase 
-
-<!--:::::::::::: {.columns}
-::::::::: {.column width="50%"}
-
-:::::::::
-::::::::: {.column width="50%"}
-
-:::::::::
-::::::::::::-->
 
 ![Linux codebase -- from the [Hercules](https://github.com/src-d/hercules) (Git history analyser) documentation](https://raw.githubusercontent.com/src-d/hercules/refs/heads/master/doc/linux.png){width=400}
 
