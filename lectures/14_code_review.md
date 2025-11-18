@@ -524,6 +524,16 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 source: [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) [@beams2014how]
 :::
 
+## keeping clean history
+
+![](figures/user_statistics/branching.svg){width=850}
+
+::: {.text-smaller .fragment}
+- features are often developed on separate feature branches
+- after a feature is completed, the branch is merged
+- as a feature branch may contain too much commits (detail)
+    - commits on a feature branch often squashed into one commit
+:::
 
 # review in numbers
 
