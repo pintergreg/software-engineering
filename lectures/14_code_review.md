@@ -638,7 +638,7 @@ int main (void) {
     - finding issues as early as possible
 - applies to every output element of the development process
     - V-model
-    - requirement analysis can be reviewed
+    - requirement analysis can be reviewed (requirements smells)
     - for design: risk storming
     - for code review, four formality level 
         - informal, walkthrough, technical, inspection
