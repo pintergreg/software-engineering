@@ -864,6 +864,16 @@ Licence: 0.00-->
 ![own drawing based on [Glen Lipka's](https://commadot.com/wtf-per-minute/)](figures/wtf_per_minute.drawio.svg){width=725}
 
 
+# summary
+
+- code smells indicate issues with the code
+    - style guide violations as well
+    - programming paradigm/language dependence
+- there are some measures to evaluate the quality of the work
+    - e.g., cyclomatic complexity
+    - can be automatized or done with review
+
+
 # references
 
 ::: {#refs}
