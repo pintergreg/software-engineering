@@ -428,7 +428,7 @@ always ask yourself, if your feedback is true, necessary and kind
     - [refer to your opinion instead]{.text-smaller}
 - is it necessary?
     - [does the ~~demanded~~ requested change make the reviewed code better]{.text-smaller}
-- it it kind?
+- is it kind?
 
 ::: {.text-smaller}
 source: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
