@@ -532,7 +532,7 @@ fail:
 ::: {}
 more about Apple's "goto fail" fiasco (2014): [@wheeler2014apple], [@migues2014understanding]
 
-false blame on `goto`, could be prevented by review and testing
+false blame on `goto` (based on Dijkstra's essay: [Go To Statement Considered Harmful](https://www.dcs.gla.ac.uk/~pat/cpM/choco4/nqueens/Goto-Harmful-Dijkstra.pdf)), could be prevented by review and testing
 :::
 ::::::
 
