@@ -1722,6 +1722,60 @@ source: [Smoke testing (software), Wikipedia](https://en.wikipedia.org/wiki/Smok
 :::::::::
 ::::::::::::
 
+# summary
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .text-smaller}
+![](figures/v_model_unit_testing.drawio.svg){width=450}
+
+unit is defined as a single behaviour exhibited by the system under test 
+
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/test_pyramid.drawio.svg){width=450}
+:::::::::
+::::::::::::
+
+- a unit test is another piece of code, that tests the given unit 
+    - arrange, act, assert(, annihilate)
+- the percentage of the code lines ‘protected’ or covered by tests
+    - test the edge cases
+
+    
+## test-driven development (TDD)
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![](figures/tdd.drawio.svg){width=350}
+
+:::::::::
+::::::::: {.column width="50%" .mt-5}
+!["As the tests get more specific, the code gets more generic." -- Robert C. Martin](figures/test_code_generality.drawio.svg){width=375 .mt-4}
+
+:::::::::
+::::::::::::
+
+## the legacy code dilemma
+
+legacy code: code without tests
+
+::: {.quote-wide}
+> When we change code, we should have tests in place.
+> To put tests in place, we often have to change code.
+
+:::
+
+
+|                  | add feature | fix a bug | refactor | optimize |
+| ---------------- | ----------- | --------- | -------- | -------- |
+| structure        | changes     | changes   | changes  |          |
+| new funcionality | changes     |           |          |          |
+| functionality    |             | changes   |          |          |
+| resource usage   |             |           |          | changes  |
+
+::: {.text-smaller}
+source: Michael Feathers, Working Effectively with Legacy Code [@feathers2004working]
+:::
 
 # references
 
