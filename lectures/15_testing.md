@@ -1429,17 +1429,39 @@ def test_withdraw():
 ::::::::::::
 
 
-<!-- # fuzz testing (fuzzing) -->
+## fuzz testing (fuzzing)
+
+::: {.text-larger}
+testing by randomly generated inputs
+:::
+
+in contrast of property-based testing
+
+::: {.wide-quote .mt-1}
+> Fuzz testing works by throwing everything at the wall and seeing what sticks.
+>
+> -- Xuanyi Chew, "[Property-Based Testing](https://blog.gopheracademy.com/advent-2017/property-based-testing/)"
+
+:::
+
+::: {.wide-quote .mt-1}
+> Fuzz testing is great at discovering unexpected inputs that expose weird behaviour.
+>
+> -- Jay Conrod, "[Internals of Go’s new fuzzing system](https://jayconrod.com/posts/123/internals-of-go-s-new-fuzzing-system)"
+
+:::
+
+fuzzing will more likely to tell that there's an issue, but not what it is
 
 ## testing is never complete
 
 ::: {.wide-quote}
 > By its nature, testing is never complete.
-As the influential computer scientist Edsger Dijkstra put it, “**Testing shows the presence, not the absence of bugs.**”
+As the influential computer scientist Edsger Dijkstra put it, "**Testing shows the presence, not the absence of bugs.**"
 No quantity of tests can ever prove a package free of bugs.
 At best, they increase our confidence that the package works well in a wide range of important scenarios.
 >
-> -- Alan Donovan & Brian Kernighan, “The Go Programming Language” [@donovan2015go]
+> -- Alan Donovan & Brian Kernighan, "The Go Programming Language" [@donovan2015go]
 
 :::
 
