@@ -1942,6 +1942,96 @@ understanding</li>
 width="300" /></p>
 </div>
 </div>
+<h1 id="summary"><a class="header" href="#summary">summary</a></h1>
+<div class="columns">
+<div class="column text-smaller" width="50%">
+<img src="figures/v_model_unit_testing.drawio.svg" width="450" />
+<p>unit is defined as a single behaviour exhibited by the system under test</p>
+</div>
+<div class="column" width="50%">
+<img src="figures/test_pyramid.drawio.svg" width="450" />
+</div>
+</div>
+<ul>
+<li>a unit test is another piece of code, that tests the given unit
+<ul>
+<li>arrange, act, assert(, annihilate)</li>
+</ul>
+</li>
+<li>the percentage of the code lines ‘protected’ or covered by tests
+<ul>
+<li>test the edge cases</li>
+</ul>
+</li>
+</ul>
+<h2 id="test-driven-development-tdd-1"><a class="header" href="#test-driven-development-tdd-1">test-driven development (TDD)</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<img src="figures/tdd.drawio.svg" width="350" />
+</div>
+<div class="column mt-5" width="50%">
+<figure>
+<img src="figures/test_code_generality.drawio.svg" class="mt-4"
+width="375"
+alt="“As the tests get more specific, the code gets more generic.” – Robert C. Martin" />
+<figcaption aria-hidden="true">“As the tests get more specific, the code
+gets more generic.” – Robert C. Martin</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="the-legacy-code-dilemma-1"><a class="header" href="#the-legacy-code-dilemma-1">the legacy code dilemma</a></h2>
+<p>legacy code: code without tests</p>
+<div class="quote-wide">
+<blockquote>
+<p>When we change code, we should have tests in place. To put tests in
+place, we often have to change code.</p>
+</blockquote>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>add feature</th>
+<th>fix a bug</th>
+<th>refactor</th>
+<th>optimize</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>structure</td>
+<td>changes</td>
+<td>changes</td>
+<td>changes</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>new funcionality</td>
+<td>changes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>functionality</td>
+<td></td>
+<td>changes</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>resource usage</td>
+<td></td>
+<td></td>
+<td></td>
+<td>changes</td>
+</tr>
+</tbody>
+</table>
+<div class="text-smaller">
+<p>source: Michael Feathers, Working Effectively with Legacy Code
+(Feathers, 2004)</p>
+</div>
 <h1 id="references"><a class="header" href="#references">references</a></h1>
 <div id="refs"
 class="text-smaller references csl-bib-body hanging-indent"
