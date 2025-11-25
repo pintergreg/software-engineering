@@ -1647,7 +1647,47 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a h
 <span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> account.balance <span class="op">==</span> <span class="dv">10</span></span></code></pre></div>
 </div>
 </div>
-<!-- # fuzz testing (fuzzing) -->
+</section>
+<section id="fuzz-testing-fuzzing" class="slide level2">
+<h2>fuzz testing (fuzzing)</h2>
+<div class="text-larger">
+<p>testing by randomly generated inputs</p>
+</div>
+<p>in contrast of property-based testing</p>
+<div class="wide-quote mt-1">
+<blockquote>
+<p>Fuzz testing works by throwing everything at the wall and seeing what
+sticks.</p>
+<p>– Xuanyi Chew, “<a
+href="https://blog.gopheracademy.com/advent-2017/property-based-testing/">Property-Based
+Testing</a>”</p>
+</blockquote>
+</div>
+<div class="wide-quote mt-1">
+<blockquote>
+<p>Fuzz testing is great at discovering unexpected inputs that expose
+weird behaviour.</p>
+<p>– Jay Conrod, “<a
+href="https://jayconrod.com/posts/123/internals-of-go-s-new-fuzzing-system">Internals
+of Go’s new fuzzing system</a>”</p>
+</blockquote>
+</div>
+<p>fuzzing will more likely to tell that there’s an issue, but not what
+it is</p>
+</section>
+<section id="testing-is-never-complete" class="slide level2">
+<h2>testing is never complete</h2>
+<div class="wide-quote">
+<blockquote>
+<p>By its nature, testing is never complete. As the influential computer
+scientist Edsger Dijkstra put it, “<strong>Testing shows the presence,
+not the absence of bugs.</strong>” No quantity of tests can ever prove a
+package free of bugs. At best, they increase our confidence that the
+package works well in a wide range of important scenarios.</p>
+<p>– Alan Donovan &amp; Brian Kernighan, “The Go Programming Language”
+<span class="citation" data-cites="donovan2015go">[14]</span></p>
+</blockquote>
+</div>
 </section></section>
 <section>
 <section id="legacy-code" class="title-slide slide level1">
@@ -1661,15 +1701,15 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a h
 <ul>
 <li><span class="text-smaller">degraded, deteriorated, or lost its use
 or performance over time <span class="citation"
-data-cites="enwiki:1236668404">[14]</span></span></li>
+data-cites="enwiki:1236668404">[15]</span></span></li>
 </ul></li>
 <li>spaghetti code
 <ul>
 <li><span class="text-smaller">“has a complex and tangled control
 structure, resulting in a program flow that is like a bowl of spaghetti,
 twisted and tangled” <span class="citation"
-data-cites="horstmann2007java">[15]</span> via <span class="citation"
-data-cites="enwiki:1245199146">[16]</span></span></li>
+data-cites="horstmann2007java">[16]</span> via <span class="citation"
+data-cites="enwiki:1245199146">[17]</span></span></li>
 </ul></li>
 </ul>
 </div><div class="column r-frame" style="width:40%;">
@@ -1677,8 +1717,8 @@ data-cites="enwiki:1245199146">[16]</span></span></li>
 <div class="text-smaller">
 <p>implied cost of future reworking because a solution prioritized
 short-term solution over long-term design <span class="citation"
-data-cites="beal2011technical">[17]</span> <span class="citation"
-data-cites="enwiki:1253473056">[18]</span></p>
+data-cites="beal2011technical">[18]</span> <span class="citation"
+data-cites="enwiki:1253473056">[19]</span></p>
 <dl>
 <dt><span class="text-smaller">some reasons:</span></dt>
 <dd>
@@ -1730,7 +1770,7 @@ it is. With tests, we can change the behavior of our code quickly and
 verifiably. Without them, we really don’t know if our code is getting
 better or worse.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code: Preface
-<span class="citation" data-cites="feathers2004working">[19]</span></p>
+<span class="citation" data-cites="feathers2004working">[20]</span></p>
 </blockquote>
 <div class="mt-2">
 <ul>
@@ -1770,7 +1810,7 @@ href="https://game-icons.net">game-icons.net</a></p>
 <p>When we change code, we should have tests in place. To put tests in
 place, we often have to change code.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
-class="citation" data-cites="feathers2004working">[19]</span></p>
+class="citation" data-cites="feathers2004working">[20]</span></p>
 <p>(Part I / Chapter 2)</p>
 </blockquote>
 </section>
@@ -1839,7 +1879,7 @@ class="citation" data-cites="feathers2004working">[19]</span></p>
 </div>
 <div class="text-smaller">
 <p>source: Working Effectively with Legacy Code by Michael Feathers
-<span class="citation" data-cites="feathers2004working">[19]</span></p>
+<span class="citation" data-cites="feathers2004working">[20]</span></p>
 </div>
 </section>
 <section id="sensing" class="slide level2">
@@ -1850,7 +1890,7 @@ class="citation" data-cites="feathers2004working">[19]</span></p>
 <p>We break dependencies to <strong>sense</strong> when we can’t access
 values our code computes.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
-class="citation" data-cites="feathers2004working">[19]</span></p>
+class="citation" data-cites="feathers2004working">[20]</span></p>
 </blockquote>
 <div class="fragment mt-4" data-fragment-index="1">
 <p>e.g., misspelled function name</p>
@@ -1881,7 +1921,7 @@ alt="broken dependency" />
 <p>We break dependencies to <strong>separate</strong> when we can’t even
 get a piece of code into a test harness to run.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
-class="citation" data-cites="feathers2004working">[19]</span></p>
+class="citation" data-cites="feathers2004working">[20]</span></p>
 </blockquote>
 </section>
 <section id="seams" class="slide level2">
@@ -1893,7 +1933,7 @@ class="citation" data-cites="feathers2004working">[19]</span></p>
 without editing in that place.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code: Part I /
 chp. 4 <span class="citation"
-data-cites="feathers2004working">[19]</span></p>
+data-cites="feathers2004working">[20]</span></p>
 </blockquote>
 <blockquote>
 <p>A seam is a place in the code that you can insert a modification in
@@ -1976,7 +2016,7 @@ fake</figcaption>
 </table>
 <div class="text-smaller mt-4">
 <p>Michael Feathers, Working Effectively with Legacy Code: part 1 pp 6
-<span class="citation" data-cites="feathers2004working">[19]</span></p>
+<span class="citation" data-cites="feathers2004working">[20]</span></p>
 </div>
 </section>
 
@@ -2020,7 +2060,7 @@ before sent to the test team</li>
 <p>source: <a
 href="https://en.wikipedia.org/wiki/Smoke_testing_(software)">Smoke
 testing (software), Wikipedia</a> <span class="citation"
-data-cites="enwiki:1251780629">[20]</span></p>
+data-cites="enwiki:1251780629">[21]</span></p>
 </div>
 </div><div class="column" style="width:25%;">
 <p><img data-src="figures/publicdomainvectors/roof-chimney.svg"
@@ -2031,7 +2071,7 @@ width="250" /></p>
 <p>“The phrase smoke test comes from electronic hardware testing. You
 plug in a new board and turn on the power. If you see smoke coming from
 the board, turn off the power. You don’t have to do any more testing.
-<span class="citation" data-cites="bach2002lessons">[21]</span>”</p>
+<span class="citation" data-cites="bach2002lessons">[22]</span>”</p>
 </div>
 </section>
 <section id="rubber-duck-debugging" class="slide level2">
@@ -2043,7 +2083,7 @@ the board, turn off the power. You don’t have to do any more testing.
 language</li>
 <li>originates from a story in the book <em>The Pragmatic
 Programmer</em> <span class="citation"
-data-cites="hund2019pragmatic">[22]</span></li>
+data-cites="hund2019pragmatic">[23]</span></li>
 <li>in which a programmer explains the code, line by line, to a rubber
 duck</li>
 <li>rationale: teaching / explaining something can provide a deeper
@@ -2160,8 +2200,13 @@ Preston-Werner, <span>“Readme driven development.”</span> <a href="
                    https://tom.preston-werner.com/2010/08/23/readme-driven-development.html
 </a>, 23-Aug-2010.</div>
 </div>
+<div id="ref-donovan2015go" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">A.
+A. Donovan and B. W. Kernighan, <em>The go programming language</em>.
+Addison-Wesley Professional, 2015.</div>
+</div>
 <div id="ref-enwiki:1236668404" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[14] </div><div
+<div class="csl-left-margin">[15] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Software rot —
 <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
 href="
@@ -2171,12 +2216,12 @@ href="
 </a>, 2024.</div>
 </div>
 <div id="ref-horstmann2007java" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div class="csl-right-inline">C.
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">C.
 S. Horstmann, <em>Java concepts for AP computer science</em>. John Wiley
 &amp; Sons, Inc., 2007.</div>
 </div>
 <div id="ref-enwiki:1245199146" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[16] </div><div
+<div class="csl-left-margin">[17] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Spaghetti code —
 <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
 href="https://en.wikipedia.org/w/index.php?title=Spaghetti_code&amp;oldid=1245199146"
@@ -2184,7 +2229,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Spaghetti_code&amp;oldid=
 2024.</div>
 </div>
 <div id="ref-beal2011technical" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">V.
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">V.
 Beal, <span>“Technical debt.”</span> <a href="
                    https://www.techopedia.com/definition/27913/technical-debt
                     " class="uri">
@@ -2192,7 +2237,7 @@ Beal, <span>“Technical debt.”</span> <a href="
 </a>, 21-Nov-2011.</div>
 </div>
 <div id="ref-enwiki:1253473056" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[18] </div><div
+<div class="csl-left-margin">[19] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Technical debt —
 <span>Wikipedia</span><span>,</span> the free encyclopedia.”</span> <a
 href="https://en.wikipedia.org/w/index.php?title=Technical_debt&amp;oldid=1253473056"
@@ -2200,12 +2245,12 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Technical_debt&amp;oldid=
 2024.</div>
 </div>
 <div id="ref-feathers2004working" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[19] </div><div class="csl-right-inline">M.
+<div class="csl-left-margin">[20] </div><div class="csl-right-inline">M.
 Feathers, <em>Working effectively with legacy code</em>. Prentice Hall
 Professional, 2004.</div>
 </div>
 <div id="ref-enwiki:1251780629" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[20] </div><div
+<div class="csl-left-margin">[21] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Smoke testing
 (software) — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -2214,13 +2259,13 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Smoke_testing_(software)&
 2024.</div>
 </div>
 <div id="ref-bach2002lessons" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[21] </div><div class="csl-right-inline">J.
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">J.
 Bach, B. Pettichord, and C. Kaner, <em>Lessons learned in software
 testing: A context-driven approach</em>. John Wiley &amp; Sons,
 2002.</div>
 </div>
 <div id="ref-hund2019pragmatic" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[22] </div><div class="csl-right-inline">A.
+<div class="csl-left-margin">[23] </div><div class="csl-right-inline">A.
 Hunt and D. Thomas, <em>The pragmatic programmer: From journeyman to
 master</em>, 2nd ed. Boston, MA: Addison Wesley, 2019.</div>
 </div>

@@ -1549,7 +1549,41 @@ Then the ATM should dispense $20
 </code></pre>
 </div>
 </div>
-<!-- # fuzz testing (fuzzing) -->
+<h2 id="fuzz-testing-fuzzing"><a class="header" href="#fuzz-testing-fuzzing">fuzz testing (fuzzing)</a></h2>
+<div class="text-larger">
+<p>testing by randomly generated inputs</p>
+</div>
+<p>in contrast of property-based testing</p>
+<div class="wide-quote mt-1">
+<blockquote>
+<p>Fuzz testing works by throwing everything at the wall and seeing what
+sticks.</p>
+<p>– Xuanyi Chew, “<a href="https://blog.gopheracademy.com/advent-2017/property-based-testing/">Property-Based
+Testing</a>”</p>
+</blockquote>
+</div>
+<div class="wide-quote mt-1">
+<blockquote>
+<p>Fuzz testing is great at discovering unexpected inputs that expose
+weird behaviour.</p>
+<p>– Jay Conrod, “<a href="https://jayconrod.com/posts/123/internals-of-go-s-new-fuzzing-system">Internals of Go’s new fuzzing
+system</a>”</p>
+</blockquote>
+</div>
+<p>fuzzing will more likely to tell that there’s an issue, but not what it
+is</p>
+<h2 id="testing-is-never-complete"><a class="header" href="#testing-is-never-complete">testing is never complete</a></h2>
+<div class="wide-quote">
+<blockquote>
+<p>By its nature, testing is never complete. As the influential computer
+scientist Edsger Dijkstra put it, “<strong>Testing shows the presence, not
+the absence of bugs.</strong>” No quantity of tests can ever prove a package
+free of bugs. At best, they increase our confidence that the package
+works well in a wide range of important scenarios.</p>
+<p>– Alan Donovan &amp; Brian Kernighan, “The Go Programming Language”
+(Donovan &amp; Kernighan, 2015)</p>
+</blockquote>
+</div>
 <h1 id="legacy-code"><a class="header" href="#legacy-code">legacy code</a></h1>
 <div class="columns column-gapless">
 <div class="column" width="60%">
@@ -1926,6 +1960,10 @@ https://www.techopedia.com/definition/27913/technical-debt
 <div id="ref-beck2002test" class="csl-entry">
 <p>Beck, K. (2002). <em>Test driven development: By example</em>. Addison-Wesley
 Professional.</p>
+</div>
+<div id="ref-donovan2015go" class="csl-entry">
+<p>Donovan, A. A., &amp; Kernighan, B. W. (2015). <em>The go programming
+language</em>. Addison-Wesley Professional.</p>
 </div>
 <div id="ref-feathers2004working" class="csl-entry">
 <p>Feathers, M. (2004). <em>Working effectively with legacy code</em>. Prentice
