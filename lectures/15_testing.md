@@ -1431,6 +1431,17 @@ def test_withdraw():
 
 <!-- # fuzz testing (fuzzing) -->
 
+## testing is never complete
+
+::: {.wide-quote}
+> By its nature, testing is never complete.
+As the influential computer scientist Edsger Dijkstra put it, “**Testing shows the presence, not the absence of bugs.**”
+No quantity of tests can ever prove a package free of bugs.
+At best, they increase our confidence that the package works well in a wide range of important scenarios.
+>
+> -- Alan Donovan & Brian Kernighan, “The Go Programming Language” [@donovan2015go]
+
+:::
 
 # legacy code
 
