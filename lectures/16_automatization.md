@@ -1053,6 +1053,34 @@ source: [The high price of context switching for developers & ways to avoid it](
 read more: [The Pomodoro Technique: What It Is & How It Boosts Productivity](https://www.lifehack.org/articles/productivity/the-pomodoro-technique-is-it-right-for-you.html) by Leon Ho [@ho2025pomodoro]
 :::
 
+# summary
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+
+::: {.text-align-left}
+automatize as many things you can
+~ to gain immediate feedback
+~ and decrease interruptions
+
+:::
+
+::: {.mt-2}
+- linters, static code analysis
+    - style guide compliance
+    - code smell finding
+- CI/CD
+    - review, building, testing, deployment
+    - vulnerability alerts
+
+:::
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/robotic-arm-assembles-a-puzzle.svg){width=300}
+
+:::::::::
+::::::::::::
+
 # references
 
 ::: {#refs .text-smaller}
