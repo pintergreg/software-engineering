@@ -171,10 +171,6 @@ For example Google Docs or Microsoft Word also provides some level of version co
 
 The current level of software complexity is not manageable without allowing many people to work on the same code base, and the separation of the development versions from the production one.
     
-::: {.mt-3}
-**later on the course**: the types and operation of version control systems
-:::
-
 
 # collaboration via version control systems
 
@@ -312,7 +308,7 @@ the figures are based on Figure 2.4 of the [TortoiseSVN documentation](https://t
 :::::::::
 ::::::::::::
 
-::: {.text-align-left .mt-3 .fragment}
+::: {.text-align-left .mt-3}
 example: **git**, mercurial
 :::
 
@@ -325,14 +321,14 @@ the figures are based on Figure 2.5 of the [TortoiseSVN documentation](https://t
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
-![centralized](figures/vcs_centralized.drawio.svg){width=400}
+![centralized](figures/vcs_centralized.drawio.svg){width=400 preview-image="figures/vcs_centralized.drawio.svg" preview-fit="contain"}
 
 ::: {.text-align-left .text-smaller .mt-3}
 example: subversion
 :::
 :::::::::
 ::::::::: {.column width="50%"}
-![distributed](figures/vcs_distributed.drawio.svg){width=400}
+![distributed](figures/vcs_distributed.drawio.svg){width=400 preview-image="figures/vcs_distributed.drawio.svg" preview-fit="contain"}
 
 ::: {.text-align-left .text-smaller .mt-3}
 example: **git**, mercurial
@@ -587,7 +583,7 @@ further reading: [11 DevOps Principles and Practices to Master: Pro Advice](http
 ::::::::: {.column width="75%"}
 ::: {.text-smaller}
 - [CI]{.tooltip title="continuous integration"} and [CD]{.tooltip title="continuous deployment"} became a fundamental part of software development
-    - got integrated into services like GitHub, GitLab, BitBucket, JetBrains Space
+    - got integrated into services like GitHub, GitLab, BitBucket, JetBrains Space, Forgejo
 - some solutions:
     - Jenkins
         - open source, self hosted
@@ -667,7 +663,7 @@ just decrease the work by automatizing trivial tasks
     - Apple's "goto fail" issue is officially called CVE-2014-1266
 - GitHub [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
     - uses package manager
-    - e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry (Python)
+    - e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry or uv (Python)
     - checks dependencies for vulnerabilities
 
 :::::::::
