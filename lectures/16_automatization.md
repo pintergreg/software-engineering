@@ -111,6 +111,10 @@ importance of personal preferences!
 that is why I previously said that trust in your IDE
 :::
 
+## ruff - Python linter and code formatter
+
+![Linting the CPython codebase from scratch. | source: [astral-sh/ruff](https://github.com/astral-sh/ruff)](figures/borrowed/ruff_speed.svg){width=750}
+
 
 # version control
 
