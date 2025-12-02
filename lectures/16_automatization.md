@@ -1023,11 +1023,32 @@ source: [The high price of context switching for developers & ways to avoid it](
 <!--- "eat the frog" 
     - frog is a metaphor for the biggest and most important task-->
 
-<!--
+
 ## pomodoro technique
 
-::: {}
-:::-->
+- time management method, developed by Francesco Cirillo in the late 1980s
+- "Pomodoro" means tomato in Italian
+- you *must* take a 5-minute break after every 25 minutes of work (aka session)
+- after 4 "Pomodoro" work sessions, take 15-30 minute longer break
+    - 100 minutes of work time with 15 minutes of short breaks
+
+    
+:::::::::::: {.columns}
+::::::::: {.column width="75%"}
+::: {.wide-quote .mt-2}
+> It's not about squeezing as many tasks as possible into a day.
+> It's about taking the time to do things right and giving yourself the space to breathe.
+>
+> -- Francesco Cirillo
+    
+:::
+
+:::::::::
+::::::::: {.column width="25%"}
+![](figures/publicdomainvectors/tomato-red.svg)
+:::::::::
+::::::::::::
+
 
 # references
 
