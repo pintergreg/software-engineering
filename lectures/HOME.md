@@ -204,7 +204,8 @@ MVC-MVP-MVVM
 - [What Is Software Deployment? Process and Best Practices](https://learn.g2.com/software-deployment) - by Washija Kazim 
 - [11 DevOps Principles and Practices to Master: Pro Advice](https://roadmap.sh/devops/principles) - by Fernando Doglio
 - [The Cost of Interruption for Software Developers](https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/) - by Steven To
-- [The high price of context switching for developers & ways to avoid it](https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/) - by Nitin Pande
+- [The high price of context switching for developers & ways to avoid it](https://web.archive.org/web/20240111134336/https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/) - by Nitin Pande
+- [The High Price of Context Switching for Developers and How to Mitigate It](https://medium.com/@malviyamanish026/the-high-price-of-context-switching-for-developers-and-how-to-mitigate-it-46826f32c4d6) - by Manish Malviya
 - [Programmer Interrupted ](http://blog.ninlabs.com/2013/01/programmer-interrupted/) - by Chris Parnin
 
 #### optional
