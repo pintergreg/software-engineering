@@ -1049,6 +1049,9 @@ source: [The high price of context switching for developers & ways to avoid it](
 :::::::::
 ::::::::::::
 
+::: {.text-smaller}
+read more: [The Pomodoro Technique: What It Is & How It Boosts Productivity](https://www.lifehack.org/articles/productivity/the-pomodoro-technique-is-it-right-for-you.html) by Leon Ho [@ho2025pomodoro]
+:::
 
 # references
 
