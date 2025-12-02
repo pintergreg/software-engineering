@@ -250,6 +250,17 @@ width="300" /></p>
 <aside class="notes">
 <p>that is why I previously said that trust in your IDE</p>
 </aside>
+</section>
+<section id="ruff---python-linter-and-code-formatter"
+class="slide level2">
+<h2>ruff - Python linter and code formatter</h2>
+<figure>
+<img data-src="figures/borrowed/ruff_speed.svg" width="750"
+alt="Linting the CPython codebase from scratch. | source: astral-sh/ruff" />
+<figcaption aria-hidden="true">Linting the CPython codebase from
+scratch. | source: <a
+href="https://github.com/astral-sh/ruff">astral-sh/ruff</a></figcaption>
+</figure>
 </section></section>
 <section>
 <section id="version-control" class="title-slide slide level1">
@@ -329,10 +340,6 @@ control.</p>
 <p>The current level of software complexity is not manageable without
 allowing many people to work on the same code base, and the separation
 of the development versions from the production one.</p>
-<div class="mt-3">
-<p><strong>later on the course</strong>: the types and operation of
-version control systems</p>
-</div>
 </section></section>
 <section>
 <section id="collaboration-via-version-control-systems"
@@ -510,7 +517,7 @@ alt="changes shared" />
 </figure>
 </div>
 </div>
-<div class="text-align-left mt-3 fragment">
+<div class="text-align-left mt-3">
 <p>example: <strong>git</strong>, mercurial</p>
 </div>
 <div class="text-smaller">
@@ -525,8 +532,9 @@ class="slide level2">
 <div class="columns">
 <div class="column" style="width:50%;">
 <figure>
-<img data-src="figures/vcs_centralized.drawio.svg" width="400"
-alt="centralized" />
+<img data-src="figures/vcs_centralized.drawio.svg"
+data-preview-image="figures/vcs_centralized.drawio.svg"
+data-preview-fit="contain" width="400" alt="centralized" />
 <figcaption aria-hidden="true">centralized</figcaption>
 </figure>
 <div class="text-align-left text-smaller mt-3">
@@ -534,8 +542,9 @@ alt="centralized" />
 </div>
 </div><div class="column" style="width:50%;">
 <figure>
-<img data-src="figures/vcs_distributed.drawio.svg" width="400"
-alt="distributed" />
+<img data-src="figures/vcs_distributed.drawio.svg"
+data-preview-image="figures/vcs_distributed.drawio.svg"
+data-preview-fit="contain" width="400" alt="distributed" />
 <figcaption aria-hidden="true">distributed</figcaption>
 </figure>
 <div class="text-align-left text-smaller mt-3">
@@ -874,7 +883,7 @@ Doglio</p>
 fundamental part of software development
 <ul>
 <li>got integrated into services like GitHub, GitLab, BitBucket,
-JetBrains Space</li>
+JetBrains Space, Forgejo</li>
 </ul></li>
 <li>some solutions:
 <ul>
@@ -1012,7 +1021,7 @@ data-cites="enwiki:1256072917">[10]</span></li>
 href="https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide">Dependabot</a>
 <ul>
 <li>uses package manager</li>
-<li>e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry
+<li>e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry or uv
 (Python)</li>
 <li>checks dependencies for vulnerabilities</li>
 </ul></li>

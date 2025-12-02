@@ -13285,6 +13285,14 @@ width="300" /></p>
 <div class="notes">
 <p>that is why I previously said that trust in your IDE</p>
 </div>
+<h2 id="ruff---python-linter-and-code-formatter"><a class="header" href="#ruff---python-linter-and-code-formatter">ruff - Python linter and code formatter</a></h2>
+<figure>
+<img src="lectures/figures/borrowed/ruff_speed.svg" width="750"
+alt="Linting the CPython codebase from scratch. | source: astral-sh/ruff" />
+<figcaption aria-hidden="true">Linting the CPython codebase from
+scratch. | source: <a
+href="https://github.com/astral-sh/ruff">astral-sh/ruff</a></figcaption>
+</figure>
 <h1 id="version-control-1"><a class="header" href="#version-control-1">version control</a></h1>
 <div class="columns">
 <div class="column mt-4" width="55%">
@@ -13359,10 +13367,6 @@ control.</p>
 <p>The current level of software complexity is not manageable without
 allowing many people to work on the same code base, and the separation
 of the development versions from the production one.</p>
-<div class="mt-3">
-<p><strong>later on the course</strong>: the types and operation of version control
-systems</p>
-</div>
 <h1 id="collaboration-via-version-control-systems"><a class="header" href="#collaboration-via-version-control-systems">collaboration via version control systems</a></h1>
 <div class="columns">
 <div class="column mt-2" width="55%">
@@ -13539,7 +13543,7 @@ alt="changes shared" />
 </figure>
 </div>
 </div>
-<div class="text-align-left mt-3 fragment">
+<div class="text-align-left mt-3">
 <p>example: <strong>git</strong>, mercurial</p>
 </div>
 <div class="text-smaller">
@@ -13550,8 +13554,9 @@ documentation</a></p>
 <div class="columns">
 <div class="column" width="50%">
 <figure>
-<img src="lectures/figures/vcs_centralized.drawio.svg" width="400"
-alt="centralized" />
+<img src="lectures/figures/vcs_centralized.drawio.svg"
+data-preview-image="figures/vcs_centralized.drawio.svg"
+data-preview-fit="contain" width="400" alt="centralized" />
 <figcaption aria-hidden="true">centralized</figcaption>
 </figure>
 <div class="text-align-left text-smaller mt-3">
@@ -13560,8 +13565,9 @@ alt="centralized" />
 </div>
 <div class="column" width="50%">
 <figure>
-<img src="lectures/figures/vcs_distributed.drawio.svg" width="400"
-alt="distributed" />
+<img src="lectures/figures/vcs_distributed.drawio.svg"
+data-preview-image="figures/vcs_distributed.drawio.svg"
+data-preview-fit="contain" width="400" alt="distributed" />
 <figcaption aria-hidden="true">distributed</figcaption>
 </figure>
 <div class="text-align-left text-smaller mt-3">
@@ -13862,7 +13868,7 @@ Advice</a> - by Fernando Doglio</p>
 fundamental part of software development
 <ul>
 <li>got integrated into services like GitHub, GitLab, BitBucket,
-JetBrains Space</li>
+JetBrains Space, Forgejo</li>
 </ul>
 </li>
 <li>some solutions:
@@ -13996,7 +14002,7 @@ known information security vulnerabilities (Wikipedia contributors,
 <a href="https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide">Dependabot</a>
 <ul>
 <li>uses package manager</li>
-<li>e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry
+<li>e.g., cargo (Rust), npm (JS), nuget (C#), maven (Java), poetry or uv
 (Python)</li>
 <li>checks dependencies for vulnerabilities</li>
 </ul>
