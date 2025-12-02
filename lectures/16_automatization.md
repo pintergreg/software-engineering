@@ -893,6 +893,10 @@ format examples:
 [[semver]{.tooltip title="semantic versioning"}](https://semver.org): "If your software is being used in production, it should probably already be 1.0.0." 
 :::
 
+## 
+
+![Hugo [0.147.3](https://github.com/gohugoio/hugo/releases/tag/v0.147.3)](figures/hugo_0_147_3.png)
+
 
 ## Fibonacci releases
 
