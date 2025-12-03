@@ -1,0 +1,55 @@
+@startuml
+skin rose
+
+interface Visitor {
+    + void visit(d: Dot)
+    + void visit(c: Circle)
+    + void visit(r: Rectangle)
+}
+
+class XMLExportVisitor {
+    + void visit(d: Dot)
+    + void visit(c: Circle)
+    + void visit(r: Rectangle)
+}
+
+interface Shape {
+    + void draw()
+    + void move(x: int, y: int)
+    + void accept(visitor: Visitor)
+}
+
+class Dot {
+    ...
+    + void draw()
+    + void move(x: int, y: int)
+    + void accept(visitor: Visitor)
+}
+
+class Circle {
+    ...
+    + void draw()
+    + void move(x: int, y: int)
+    + void accept(visitor: Visitor)
+}
+
+class Rectangle {
+    ...
+    + void draw()
+    + void move(x: int, y: int)
+    + void accept(visitor: Visitor)
+}
+
+Visitor <|..right.. XMLExportVisitor
+Shape <|.. Dot
+Shape <|.. Circle
+Shape <|.. Rectangle
+
+Visitor <..right.. Shape
+Visitor ..> Dot
+Visitor ..> Circle
+Visitor ..> Rectangle
+
+XMLExportVisitor <.. client
+Shape <.. client
+@enduml
