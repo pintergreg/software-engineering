@@ -156,6 +156,8 @@ MVC-MVP-MVVM
 - [What is wireframing? A complete guide](https://www.uxdesigninstitute.com/blog/what-is-wireframing/) - by Louise Bruton
 - [UI Prototypes](https://www.interaction-design.org/literature/topics/prototypes)
 - [Practical training for creating more usable products](https://balsamiq.com/learn/) - by balsamiq
+- [The Clean Code Handbook](https://www.freecodecamp.org/news/the-clean-code-handbook/) - by Shahan Chowdhury
+- [Clean Code sumamry](https://www.learnerd.org/book_summary/technology/clean_code.html) -- watch the video!
 
 ## week 9
 
