@@ -88,30 +88,38 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 # evaluation
 
 ::: {.r-fit-text}
-requirements analysis (35%) + design (35%) + midterm (30%)
+round(requirements analysis (35%) + design (35%) + midterm (30%))
 :::
 
 :::::::::::: {.columns .mt-4}
-::::::::: {.column width="60%" .mt-2}
+::::::::: {.column width="60%"}
 - requirements analysis, software design: **team work**
+    - the team will get the same grades
 - midterm: **individual**
     - Moodle test
-    - 50 random multiple-choice questions
-- each part should reach the minimum (>50%)
+    - 50 random multiple-choice questions<br>(1 point each)
+    - scores to grade conversion in the table
+- each part should reach passing grade (2)
 
 :::::::::
 ::::::::: {.column width="40%"}
 
-|score (%)|grade|
+|score    |grade|
 |--------:|:---:|
-|    0-50 |  1  |
-|   51-66 |  2  |
-|   67-76 |  3  |
-|   77-86 |  4  |
-|  87-100 |  5  |
+|    0-29 |  1  |
+|   30-34 |  2  |
+|   35-39 |  3  |
+|   40-44 |  4  |
+|   45-50 |  5  |
 
 :::::::::
 ::::::::::::
+
+::: notes
+The groups submit their requirement analysis and the software design as a set of diagrams (user story map, C4, etc.) and text.
+Both the requirement analysis and the software design represent 35% of the overall grade, and the individual midterm provides 30%. 
+The midterm consists of 50 multiple-choice questions, with a total of 50 points available. The conversion of exam points to grades is as follows:
+:::
 
 
 # materials {.exclude-header}

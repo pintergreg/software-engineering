@@ -25,22 +25,27 @@ During the second half of the semester, lectures also cover topics such as code 
 
 ## evaluation
 
-the final grade is the weighted average of the requirements analysis (35%), the design (35%), and the midterm (30%)
+The groups submit their requirement analysis and the software design as a set of diagrams (user story map, C4, etc.) and some text.
+Both the requirement analysis and the software design graded independently, but represent 35% of the final grade, and the individual midterm provides 30%. 
+The midterm consists of 50 multiple-choice questions (1 point each), with a total of 50 points available. The conversion of midterm points to grades is in the table below.
+
+The final grade is the weighted average of the requirements analysis (35%), the design (35%), and the midterm (30%) as grades.
 
 - requirements analysis, software design: **team work**
+    - everyone in a team will get the same grades
 - midterm: **individual**
     - Moodle test
-    - 50 random multiple-choice questions
-- each part should reach the minimum (>50%)
+    - 50 random multiple-choice questions<br>(1 point each)
+    - scores to grade conversion in the table
+- each part should reach passing grade (2)
 
-
-|score (%)|grade|
+|score    |grade|
 |--------:|:---:|
-|    0-50 |  1  |
-|   51-66 |  2  |
-|   67-76 |  3  |
-|   77-86 |  4  |
-|  87-100 |  5  |
+|    0-29 |  1  |
+|   30-34 |  2  |
+|   35-39 |  3  |
+|   40-44 |  4  |
+|   45-50 |  5  |
 
 
 ## learning outcomes

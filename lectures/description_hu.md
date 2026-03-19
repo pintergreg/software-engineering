@@ -25,22 +25,26 @@ A szemeszter második felében az előadások olyan témákat is érintenek, min
 
 ## értékelés
 
+A csoportok követelményelemzésüket és a szoftvertervet diagramok (uer story map, C4 stb.) és szöveg formájában nyújtják be. 
+A követelményelemzés és a szoftverterv egyaránt a teljes osztályzat 35%-át, az egyéni zárthelyi vizsga pedig 30%-át teszi ki, mindegyik külön osztályozva.
+A zárthelyi 50 feleltválasztós kérdésből áll, amellyel 50 pont szerezhető (1 pont kérdésenként). A ZH pontok jegyre váltását az alábbi táblázat mutatja.
+
 A végső jegy a követelményelemzés (35%), a tervezés (35%), és a zárhelyi (30%) súlyozott átlaga.
 
 - követelményelemzés, szoftver tervezés: **csapatmunka**
+    - mindenki azonos jegyet kap egy csapatban
 - zárthelyi: **egyéni**
     - Moodle teszt
-    - 50 véletlenszerű feleltválasztós kérdés
-- minden résznek külön el kell érnie az minimumot (>50%)
+    - 50 véletlenszerű feleltválasztós kérdés (1 pont kérdésenként)
+- minden résznek külön elégségesnek kell lennie (2-es)
 
-
-|pont (%) |jegy |
+|pont     |jegy |
 |--------:|:---:|
-|    0-50 |  1  |
-|   51-66 |  2  |
-|   67-76 |  3  |
-|   77-86 |  4  |
-|  87-100 |  5  |
+|    0-29 |  1  |
+|   30-34 |  2  |
+|   35-39 |  3  |
+|   40-44 |  4  |
+|   45-50 |  5  |
 
 ## tanulási eredmények
 
