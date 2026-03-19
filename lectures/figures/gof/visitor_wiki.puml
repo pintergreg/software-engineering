@@ -1,0 +1,44 @@
+@startuml
+skin rose
+
+class Client
+
+class Visitor {
+    void visit(a: ConcreteElementA)
+    void visit(b: ConcreteElementB)
+}
+
+class ConcreteVisitor1 {
+    void visit(a: ConcreteElementA)
+    void visit(b: ConcreteElementB)
+}
+
+class ConcreteVisitor2 {
+    void visit(a: ConcreteElementA)
+    void visit(b: ConcreteElementB)
+}
+
+Visitor <|-- ConcreteVisitor1
+Visitor <|-- ConcreteVisitor2
+
+class Element {
+    void accept(visitor: Visitor)
+}
+
+class ConcreteElementA {
+    void accept(visitor: Visitor)
+}
+
+
+class ConcreteElementB {
+    void accept(visitor: Visitor)
+}
+
+
+Element <|-- ConcreteElementA
+Element <|-- ConcreteElementB
+
+Client --> Visitor
+Client --> ObjectStructure
+ObjectStructure --> Element
+@enduml
