@@ -798,8 +798,9 @@ is it possible to decrease the dependency stack?
 
 :::::::::
 ::::::::: {.column width="50%" .fragment}
-![what if you don't actually use everything from a dependency? why don't you reimplement it?](figures/dep_inner.drawio.svg)
+![what if you don't actually use everything from a dependency?](figures/dep_inner.drawio.svg)
 
+<!-- why don't you reimplement it? -->
 :::::::::
 ::::::::::::
 
@@ -810,6 +811,72 @@ choose your dependencies wisely
 
 which is actually an architecture decision
 ::::::
+
+## dependencies for transposing a spreadsheet
+
+```python
+def transpose_with_pandas(path: str) -> pd.DataFrame:
+    df = pd.read_excel(path)
+    return df.transpose()
+```
+
+8 dependencies: numpy, pandas, python-dateutil, pytz, six, tzdata, et-xmlfile, openpyxl
+
+
+## dependencies for transposing a spreadsheet / 2
+
+```python
+def transpose_without_pandas(path: str) -> np.ndarray:
+    wb = load_workbook(filename=path, read_only=True)
+    arr = np.array(
+        [[cell for cell in row] for row in wb.active.iter_rows(values_only=True)]
+    )
+    return np.transpose(arr)
+```
+
+3 dependencies: numpy, et-xmlfile, openpyxl
+
+
+## dependencies for transposing a spreadsheet / 3
+
+```python
+def transpose_without_numpy(path: str) -> list:
+    wb = load_workbook(filename=path, read_only=True)
+    sheet = wb["Sheet1"]
+
+    mx = []
+    for row in sheet.iter_rows(values_only=True):
+        mx.append(list(row))
+
+    # https://stackoverflow.com/a/6473724/4737417
+    return list(map(list, zip(*mx)))
+```
+
+2 dependencies: et-xmlfile, openpyxl
+
+dependencies are used only to open an XLSX spreadsheet, the transposition is achieved only using the standard library
+
+not trivial to understand the `list(map(list, zip(*mx)))`,<br>read the explanation at [Stack Overflow](https://stackoverflow.com/a/6473724/4737417)
+
+## why don't you reimplement it (from scratch)?
+
+<!-- - what if you don't actually use everything from a dependency? -->
+
+<!--:::::::::::: {.columns}
+::::::::: {.column width="50%"}-->
+
+trade-off between 
+
+- implementation speed (or ease of coding) and the number of dependencies
+- reading/understanding the code and the number of dependencies
+
+<!--
+:::::::::
+::::::::: {.column width="50%" .fragment}
+![](figures/quality_time_cost.drawio.svg)
+
+:::::::::
+::::::::::::-->
 
 ## reimplementation costs
 
