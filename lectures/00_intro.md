@@ -815,6 +815,9 @@ which is actually an architecture decision
 ## dependencies for transposing a spreadsheet
 
 ```python
+import pandas as pd
+
+
 def transpose_with_pandas(path: str) -> pd.DataFrame:
     df = pd.read_excel(path)
     return df.transpose()
@@ -826,6 +829,10 @@ def transpose_with_pandas(path: str) -> pd.DataFrame:
 ## dependencies for transposing a spreadsheet / 2
 
 ```python
+import numpy as np
+from openpyxl import load_workbook
+
+
 def transpose_without_pandas(path: str) -> np.ndarray:
     wb = load_workbook(filename=path, read_only=True)
     arr = np.array(
@@ -840,6 +847,9 @@ def transpose_without_pandas(path: str) -> np.ndarray:
 ## dependencies for transposing a spreadsheet / 3
 
 ```python
+from openpyxl import load_workbook
+
+
 def transpose_without_numpy(path: str) -> list:
     wb = load_workbook(filename=path, read_only=True)
     sheet = wb["Sheet1"]
