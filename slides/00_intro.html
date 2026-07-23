@@ -1354,10 +1354,11 @@ class="slide level2">
 </div><div class="column fragment" style="width:50%;">
 <figure>
 <img data-src="figures/dep_inner.drawio.svg"
-alt="what if you don’t actually use everything from a dependency? why don’t you reimplement it?" />
+alt="what if you don’t actually use everything from a dependency?" />
 <figcaption aria-hidden="true">what if you don’t actually use everything
-from a dependency? why don’t you reimplement it?</figcaption>
+from a dependency?</figcaption>
 </figure>
+<!-- why don't you reimplement it? -->
 </div>
 </div>
 <div class="fragment">
@@ -1366,6 +1367,70 @@ from a dependency? why don’t you reimplement it?</figcaption>
 </div>
 <p>which is actually an architecture decision</p>
 </div>
+</section>
+<section id="dependencies-for-transposing-a-spreadsheet"
+class="slide level2">
+<h2>dependencies for transposing a spreadsheet</h2>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transpose_with_pandas(path: <span class="bu">str</span>) <span class="op">-&gt;</span> pd.DataFrame:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_excel(path)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df.transpose()</span></code></pre></div>
+<p>8 dependencies: numpy, pandas, python-dateutil, pytz, six, tzdata,
+et-xmlfile, openpyxl</p>
+</section>
+<section id="dependencies-for-transposing-a-spreadsheet-2"
+class="slide level2">
+<h2>dependencies for transposing a spreadsheet / 2</h2>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transpose_without_pandas(path: <span class="bu">str</span>) <span class="op">-&gt;</span> np.ndarray:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    wb <span class="op">=</span> load_workbook(filename<span class="op">=</span>path, read_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    arr <span class="op">=</span> np.array(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        [[cell <span class="cf">for</span> cell <span class="kw">in</span> row] <span class="cf">for</span> row <span class="kw">in</span> wb.active.iter_rows(values_only<span class="op">=</span><span class="va">True</span>)]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.transpose(arr)</span></code></pre></div>
+<p>3 dependencies: numpy, et-xmlfile, openpyxl</p>
+</section>
+<section id="dependencies-for-transposing-a-spreadsheet-3"
+class="slide level2">
+<h2>dependencies for transposing a spreadsheet / 3</h2>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transpose_without_numpy(path: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    wb <span class="op">=</span> load_workbook(filename<span class="op">=</span>path, read_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    sheet <span class="op">=</span> wb[<span class="st">&quot;Sheet1&quot;</span>]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    mx <span class="op">=</span> []</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> sheet.iter_rows(values_only<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        mx.append(<span class="bu">list</span>(row))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># https://stackoverflow.com/a/6473724/4737417</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">list</span>, <span class="bu">zip</span>(<span class="op">*</span>mx)))</span></code></pre></div>
+<p>2 dependencies: et-xmlfile, openpyxl</p>
+<p>dependencies are used only to open an XLSX spreadsheet, the
+transposition is achieved only using the standard library</p>
+<p>not trivial to understand the
+<code>list(map(list, zip(*mx)))</code>,<br>read the explanation at <a
+href="https://stackoverflow.com/a/6473724/4737417">Stack
+Overflow</a></p>
+</section>
+<section id="why-dont-you-reimplement-it-from-scratch"
+class="slide level2">
+<h2>why don’t you reimplement it (from scratch)?</h2>
+<!-- - what if you don't actually use everything from a dependency? -->
+<!--:::::::::::: {.columns}
+::::::::: {.column width="50%"}-->
+<p>trade-off between</p>
+<ul>
+<li>implementation speed (or ease of coding) and the number of
+dependencies</li>
+<li>reading/understanding the code and the number of dependencies</li>
+</ul>
+<!--
+:::::::::
+::::::::: {.column width="50%" .fragment}
+![](figures/quality_time_cost.drawio.svg)
+
+:::::::::
+::::::::::::-->
 </section>
 <section id="reimplementation-costs" class="slide level2">
 <h2>reimplementation costs</h2>
@@ -1606,27 +1671,27 @@ decisions<br>have to be recorded</span></li>
 style="width:50%;">
 <h4 id="architechture-decision-record">architechture decision
 record</h4>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Title</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Status</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>What is the status, such as proposed, accepted,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>rejected, deprecated, superseded, etc.?</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>What is the issue that we&#39;re seeing that is</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>motivating this decision or change?</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>What is the change that we&#39;re proposing and/or doing?</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consequences</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>What becomes easier or more difficult to do</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>because of this change?</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Title</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Status</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>What is the status, such as proposed, accepted,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>rejected, deprecated, superseded, etc.?</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>What is the issue that we&#39;re seeing that is</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>motivating this decision or change?</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>What is the change that we&#39;re proposing and/or doing?</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consequences</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>What becomes easier or more difficult to do</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>because of this change?</span></code></pre></div>
 <div class="text-small">
 <p>ADR template by Michael Nygard from <a
 href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions">Documenting

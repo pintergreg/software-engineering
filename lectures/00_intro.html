@@ -1156,10 +1156,11 @@ developer time is expensive, reuse components</span></p>
 <div class="column fragment" width="50%">
 <figure>
 <img src="figures/dep_inner.drawio.svg"
-alt="what if you don’t actually use everything from a dependency? why don’t you reimplement it?" />
+alt="what if you don’t actually use everything from a dependency?" />
 <figcaption aria-hidden="true">what if you don’t actually use everything
-from a dependency? why don’t you reimplement it?</figcaption>
+from a dependency?</figcaption>
 </figure>
+<!-- why don't you reimplement it? -->
 </div>
 </div>
 <div class="fragment">
@@ -1168,6 +1169,56 @@ from a dependency? why don’t you reimplement it?</figcaption>
 </div>
 <p>which is actually an architecture decision</p>
 </div>
+<h2 id="dependencies-for-transposing-a-spreadsheet"><a class="header" href="#dependencies-for-transposing-a-spreadsheet">dependencies for transposing a spreadsheet</a></h2>
+<pre><code class="language-python">def transpose_with_pandas(path: str) -&gt; pd.DataFrame:
+    df = pd.read_excel(path)
+    return df.transpose()
+</code></pre>
+<p>8 dependencies: numpy, pandas, python-dateutil, pytz, six, tzdata,
+et-xmlfile, openpyxl</p>
+<h2 id="dependencies-for-transposing-a-spreadsheet--2"><a class="header" href="#dependencies-for-transposing-a-spreadsheet--2">dependencies for transposing a spreadsheet / 2</a></h2>
+<pre><code class="language-python">def transpose_without_pandas(path: str) -&gt; np.ndarray:
+    wb = load_workbook(filename=path, read_only=True)
+    arr = np.array(
+        [[cell for cell in row] for row in wb.active.iter_rows(values_only=True)]
+    )
+    return np.transpose(arr)
+</code></pre>
+<p>3 dependencies: numpy, et-xmlfile, openpyxl</p>
+<h2 id="dependencies-for-transposing-a-spreadsheet--3"><a class="header" href="#dependencies-for-transposing-a-spreadsheet--3">dependencies for transposing a spreadsheet / 3</a></h2>
+<pre><code class="language-python">def transpose_without_numpy(path: str) -&gt; list:
+    wb = load_workbook(filename=path, read_only=True)
+    sheet = wb["Sheet1"]
+
+    mx = []
+    for row in sheet.iter_rows(values_only=True):
+        mx.append(list(row))
+
+    # https://stackoverflow.com/a/6473724/4737417
+    return list(map(list, zip(*mx)))
+</code></pre>
+<p>2 dependencies: et-xmlfile, openpyxl</p>
+<p>dependencies are used only to open an XLSX spreadsheet, the
+transposition is achieved only using the standard library</p>
+<p>not trivial to understand the <code>list(map(list, zip(*mx)))</code>,<br>read the
+explanation at <a href="https://stackoverflow.com/a/6473724/4737417">Stack
+Overflow</a></p>
+<h2 id="why-dont-you-reimplement-it-from-scratch"><a class="header" href="#why-dont-you-reimplement-it-from-scratch">why don’t you reimplement it (from scratch)?</a></h2>
+<!-- - what if you don't actually use everything from a dependency? -->
+<!--:::::::::::: {.columns}
+::::::::: {.column width="50%"}-->
+<p>trade-off between</p>
+<ul>
+<li>implementation speed (or ease of coding) and the number of
+dependencies</li>
+<li>reading/understanding the code and the number of dependencies</li>
+</ul>
+<!--
+:::::::::
+::::::::: {.column width="50%" .fragment}
+![](figures/quality_time_cost.drawio.svg)
+&#10;:::::::::
+::::::::::::-->
 <h2 id="reimplementation-costs"><a class="header" href="#reimplementation-costs">reimplementation costs</a></h2>
 <div class="columns">
 <div class="column" width="50%">
