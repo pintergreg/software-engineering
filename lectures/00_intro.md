@@ -163,7 +163,7 @@ The midterm consists of 50 multiple-choice questions, with a total of 50 points 
     
 # program vs. software
 
-:::::::::::: {.columns .fragment}
+:::::::::::: {.columns .column-gapless}
 ::::::::: {.column width="75%"}
 > A computer program is a sequence or set of instructions in a programming language for a computer to execute.
 > It is one component of software, which also includes documentation and other intangible components.
@@ -227,7 +227,7 @@ In any other cases the number id printed.
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
-![](figures/software_development.drawio.svg){width=400}
+![](figures/software_development_v2.drawio.svg){width=400}
 
 :::::::::
 ::::::::: {.column width="50%" .mt-5 .column-align-left}
