@@ -604,6 +604,12 @@ end
 
 # test-driven development (TDD)
 
+[![](figures/borrowed/lego_car_by_brick_experiment_channel.jpg)](https://www.youtube.com/watch?v=pwglOlD7e0M){target="_blank"}
+
+[Making Lego Car CROSS Gaps by Brick Experiment Channel (YouTube video 4:24)]{.text-smaller}
+
+## test-driven development (TDD)
+
 :::::::::::: {.columns}
 ::::::::: {.column width="55%" .mt-5}
 - write test _before_ writing the tested code
