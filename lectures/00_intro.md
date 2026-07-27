@@ -146,6 +146,7 @@ The midterm consists of 50 multiple-choice questions, with a total of 50 points 
 - diagram drawing: 
     - [draw.io](https://app.diagrams.net/)
     - [Google Drawings](https://docs.google.com/drawings)
+    - [user story map template for Google Sheets](https://www.avion.io/blog/user-story-mapping-template/)
     - [plantuml](https://plantuml.com/)
 - whiteboard:
     - [excalidraw](https://excalidraw.com/)
@@ -153,6 +154,7 @@ The midterm consists of 50 multiple-choice questions, with a total of 50 points 
     - [Trello](https://trello.com/)
 - code hosting / task management
     - [GitHub](https://github.com/)
+    - you won't really need code hosting for this course
 
 :::::::::
 ::::::::: {.column width="30%" .exclude}
