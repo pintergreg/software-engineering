@@ -656,7 +656,7 @@ It requires more resources, but at the same time it also increases complexity.
 ::: {.fragment .mt-2}
 - KISS, an acronym for "Keep it simple, stupid!"
     - a variations: keep it stupidly simple
-    - the acronym was popular in the 70s
+    - the acronym got popular in the 70s
 :::
 
 ::: notes
@@ -1015,12 +1015,12 @@ Stacey matrix [@stacey2007strategic]
 ::::::::: {.column width="50%" .mt-3}
 - represents design decisions
 - shared understanding
-- [the architecture decisions<br>have to be recorded]{.fragment data-fragment-index=1}
+- [the architecture decisions<br>have to be recorded]{ data-fragment-index=1}
 
 <!-- ![](figures/publicdomainvectors/man-at-crossroads.svg) -->
 
 :::::::::
-::::::::: {.column width="50%" .text-smaller .fragment data-fragment-index=1}
+::::::::: {.column width="50%" .text-smaller  data-fragment-index=1}
 #### architechture decision record
 
 ```markdown
@@ -1099,6 +1099,21 @@ based on: [Introduction to Software Architecture](https://www.codeproject.com/Ar
 ::: {.mt-2}
 to do that, you need to know all the unknowns, so you need **requirements analysis**, and **learning** the new/unknown technology
 
+:::
+
+## constructing a software design
+
+> There are two ways of constructing a software design: 
+>
+> One way is to make it so simple that there are _obviously_ no deficiencies and 
+> the other way is to make it so complicated that there are no _obvious_ deficiencies.
+>
+> The first method is far more difficult.
+>
+> -- C.A.R. Hoare [@hoare2007emperor]
+
+::: {.text-smaller .mt-2}
+see KISS philosophy...
 :::
 
 # references
