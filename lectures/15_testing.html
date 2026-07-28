@@ -1091,20 +1091,20 @@ data-fragment-index="1">
 <span style="display: inline-block;"><code>Nov 08, 13:11</code></span></p>
 </div>
 <ol>
-<li>do experiment</li>
+<li>do some experiments</li>
 </ol>
 <pre><code class="language-python">&gt;&gt;&gt; "Nov 08, 13:11"[3:5]
 ' 0'
 &gt;&gt;&gt; "Nov 08, 13:11"[4:6]
 '08'
 </code></pre>
-<ol start="2">
-<li>put it to a function</li>
+<ol start="3">
+<li>write code (should add test first)</li>
 </ol>
 <pre><code class="language-python">def extract_day(s: str) -&gt; int:
     return int(s[4:6])
 </code></pre>
-<ol start="3">
+<ol start="2">
 <li>add test based on the experiment</li>
 </ol>
 <pre><code class="language-python">def test_extract_day():
@@ -1114,9 +1114,18 @@ data-fragment-index="1">
 </code></pre>
 </div>
 </div>
+<div class="notes">
+<p>When I develop code, I often need to do some experiments. Open a new
+files or an interactive console and try things out. After finding the
+solution, the prodiction code could be written, and the that’s it. A
+better approach is to write a test immediately after finding the
+solution, as the knowledge how the unit should work is already gained.
+The test can protect you. For example, when the input date format is
+changed. The failing test will immediately notify you about a problem.</p>
+</div>
 <h2 id="behaviour-driven-development-bdd"><a class="header" href="#behaviour-driven-development-bdd">behaviour-driven development (BDD)</a></h2>
 <div class="columns">
-<div class="column mt-3" width="55%">
+<div class="column" width="55%">
 <ul>
 <li>BDD is an extension of <span class="tooltip"
 title="test-driven development">TDD</span></li>
@@ -1126,6 +1135,11 @@ implemented, <strong>tested</strong>, production-ready code</li>
 criteria
 <ul>
 <li>which can be turned into unit tests</li>
+</ul>
+</li>
+<li>there are tools to support this
+<ul>
+<li>e.g., <a href="https://cucumber.io/">cucumber</a></li>
 </ul>
 </li>
 </ul>

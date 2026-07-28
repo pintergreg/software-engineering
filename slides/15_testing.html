@@ -1153,20 +1153,20 @@ data-fragment-index="1" style="width:40%;">
 style="display: inline-block;"><code>Nov 08, 13:11</code></span></p>
 </div>
 <ol type="1">
-<li>do experiment</li>
+<li>do some experiments</li>
 </ol>
 <div class="sourceCode" id="cb31"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Nov 08, 13:11&quot;</span>[<span class="dv">3</span>:<span class="dv">5</span>]</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">&#39; 0&#39;</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Nov 08, 13:11&quot;</span>[<span class="dv">4</span>:<span class="dv">6</span>]</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;08&#39;</span></span></code></pre></div>
-<ol start="2" type="1">
-<li>put it to a function</li>
+<ol start="3" type="1">
+<li>write code (should add test first)</li>
 </ol>
 <div class="sourceCode" id="cb32"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_day(s: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">int</span>(s[<span class="dv">4</span>:<span class="dv">6</span>])</span></code></pre></div>
-<ol start="3" type="1">
+<ol start="2" type="1">
 <li>add test based on the experiment</li>
 </ol>
 <div class="sourceCode" id="cb33"><pre
@@ -1176,11 +1176,21 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a h
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> actual <span class="op">==</span> expected</span></code></pre></div>
 </div>
 </div>
+<aside class="notes">
+<p>When I develop code, I often need to do some experiments. Open a new
+files or an interactive console and try things out. After finding the
+solution, the prodiction code could be written, and the that’s it. A
+better approach is to write a test immediately after finding the
+solution, as the knowledge how the unit should work is already gained.
+The test can protect you. For example, when the input date format is
+changed. The failing test will immediately notify you about a
+problem.</p>
+</aside>
 </section>
 <section id="behaviour-driven-development-bdd" class="slide level2">
 <h2>behaviour-driven development (BDD)</h2>
 <div class="columns">
-<div class="column mt-3" style="width:55%;">
+<div class="column" style="width:55%;">
 <ul>
 <li>BDD is an extension of <span class="tooltip"
 title="test-driven development">TDD</span></li>
@@ -1190,6 +1200,10 @@ implemented, <strong>tested</strong>, production-ready code</li>
 criteria
 <ul>
 <li>which can be turned into unit tests</li>
+</ul></li>
+<li>there are tools to support this
+<ul>
+<li>e.g., <a href="https://cucumber.io/">cucumber</a></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
