@@ -673,6 +673,14 @@ Attributed to William of Ockham, a 14th-century English philosopher and theologi
 The principle is sometimes paraphrased as "of two competing theories, the simpler explanation of an entity is to be preferred." [@enwiki:1305790618]
 :::
 
+## Zawinski's law of software envelopment
+
+> Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can.
+>
+> - Jamie Zawinski
+
+- programs experience pressure to evolve into toolkits and application platforms
+- often interpreted as a comment on software bloat 
 
 ## Linux 5.8 -- 800,000 new lines of code
 
