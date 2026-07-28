@@ -18,7 +18,7 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 - provide a common foundation in software engineering for students from various backgrounds
 - provide a shared terminology to be able to work seamlessly with software developers
 - introduce the fundamentals of modern software development methodologies and life cycle models
-    - with a focusing in detail on Scrum and Kanban
+    - with focusing in details on Scrum and Kanban
 - introduce **requirements analysis** and **software modelling**
     - both in theory and in practice
 - provide an insight to code quality, code review, testing and automation
@@ -31,27 +31,27 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 - then, during the second half of the semester, they design its architecture
     - using the **C4 model**, which is a set of hierarchical diagrams describing the architecture of a software system
 - the practical classes are **workshops** in which the **students work in teams**
-    - under an instructor's guidance
+    - under an instructor's guidance, and can have immediate feedback on the project assignment
 
 
 # schedule {visibility=hidden}
 
 |week| date       | lecture                                  | practical class       |
 |---:|-----------:|:----------------------------------------:|:---------------------:|
-|  1 | 2025-09-17 | intro, software architecture             | project assignment    |
-|  2 | 2025-09-24 | SDLC, scrum, kanban                      | informal R.A.         |
-|  3 | 2025-10-01 | requirements analysis, user story mapping| formal R.A., workshop |
-|  4 | 2025-10-08 | UML, C4                                  | project workshop      |
-|  5 | 2025-10-15 | design patterns                          | project workshop      |
-|  6 | 2025-10-22 | interfaces, implementation planning      | **req. analysis demo**|
-|  7 | 2025-10-29 | **school holiday**                       |                       |
-|  8 | 2025-11-05 | wireframing, clean clode                 | project workshop      |
-|  9 | 2025-11-12 | code quality, code review                | project workshop      |
-| 10 | 2025-11-19 | testing, legacy code                     | project workshop      |
-| 11 | 2025-11-26 | CI, automatization, devops               | project workshop      |
-| 12 | 2025-12-03 | summary, course feedback                 | project workshop      |
-| 13 | 2025-12-10 | **midterm**                              | **design demo**       |
-| 14 | 2025-12-17 | no planned lecture                       |                       |
+|  1 | 2026-09-16 | intro, software architecture             | project assignment    |
+|  2 | 2026-09-23 | SDLC, scrum, kanban                      | informal R.A.         |
+|  3 | 2026-09-30 | requirements analysis, user story mapping| formal R.A., workshop |
+|  4 | 2026-10-07 | UML, C4                                  | project workshop      |
+|  5 | 2026-10-14 | design patterns                          | project workshop      |
+|  6 | 2026-10-21 | interfaces, implementation planning      | **req. analysis demo**|
+|  7 | 2026-10-28 | **school holiday**                       |                       |
+|  8 | 2026-11-04 | wireframing, clean code                  | project workshop      |
+|  9 | 2026-11-11 | code quality, code review                | project workshop      |
+| 10 | 2026-11-18 | testing, legacy code                     | project workshop      |
+| 11 | 2026-11-25 | CI, automatization, devops               | project workshop      |
+| 12 | 2026-12-02 | summary                                  | project workshop      |
+| 13 | 2026-12-09 | **midterm**                              | **design demo**       |
+<!-- | 14 | 2026-12-17 | no planned lecture                       |                       | -->
 
 
 # schedule {.exclude-header}
@@ -59,13 +59,13 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 ::: {.exclude}
 |week| date       | lecture                                  | practical class       |
 |---:|-----------:|:----------------------------------------:|:---------------------:|
-|  1 | 2025-09-17 | intro, software architecture             | project assignment    |
-|  2 | 2025-09-24 | SDLC, scrum, kanban                      | informal R.A.         |
-|  3 | 2025-10-01 | requirements analysis, user story mapping| formal R.A., workshop |
-|  4 | 2025-10-08 | UML, C4                                  | project workshop      |
-|  5 | 2025-10-15 | design patterns                          | project workshop      |
-|  6 | 2025-10-22 | interfaces, implementation planning      | **req. analysis demo**|
-|  7 | 2025-10-29 | **school holiday**                       |                       |
+|  1 | 2026-09-16 | intro, software architecture             | project assignment    |
+|  2 | 2026-09-23 | SDLC, scrum, kanban                      | informal R.A.         |
+|  3 | 2026-09-30 | requirements analysis, user story mapping| formal R.A., workshop |
+|  4 | 2026-10-07 | UML, C4                                  | project workshop      |
+|  5 | 2026-10-14 | design patterns                          | project workshop      |
+|  6 | 2026-10-21 | interfaces, implementation planning      | **req. analysis demo**|
+|  7 | 2026-10-28 | **school holiday**                       |                       |
 
 :::
 
@@ -74,13 +74,12 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 ::: {.exclude}
 |week| date       | lecture                                  | practical class       |
 |---:|-----------:|:----------------------------------------:|:---------------------:|
-|  8 | 2025-11-05 | wireframing, clean clode                 | project workshop      |
-|  9 | 2025-11-12 | code quality, code review                | project workshop      |
-| 10 | 2025-11-19 | testing, legacy code                     | project workshop      |
-| 11 | 2025-11-26 | CI, automatization, devops               | project workshop      |
-| 12 | 2025-12-03 | summary, course feedback                 | project workshop      |
-| 13 | 2025-12-10 | **midterm**                              | **design demo**       |
-| 14 | 2025-12-17 | no planned lecture                       |                       |
+|  8 | 2026-11-04 | wireframing, clean code                  | project workshop      |
+|  9 | 2026-11-11 | code quality, code review                | project workshop      |
+| 10 | 2026-11-18 | testing, legacy code                     | project workshop      |
+| 11 | 2026-11-25 | CI, automatization, devops               | project workshop      |
+| 12 | 2026-12-02 | summary                                  | project workshop      |
+| 13 | 2026-12-09 | **midterm**                              | **design demo**       |
 
 :::
 
@@ -146,6 +145,7 @@ The midterm consists of 50 multiple-choice questions, with a total of 50 points 
 - diagram drawing: 
     - [draw.io](https://app.diagrams.net/)
     - [Google Drawings](https://docs.google.com/drawings)
+        - probably the least effort
     - [user story map template for Google Sheets](https://www.avion.io/blog/user-story-mapping-template/)
     - [plantuml](https://plantuml.com/)
 - whiteboard:
