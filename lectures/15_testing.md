@@ -601,6 +601,12 @@ end
 :::::::::
 ::::::::::::
 
+## do not isolate code (too much) when you test it
+
+> The less your tests resemble the way your software is used, the less confidence they can give you.
+>
+> -- [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106)
+
 
 # test-driven development (TDD)
 
