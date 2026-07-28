@@ -436,6 +436,9 @@ One)</a> - by Michael Lynch
 <li><a href="https://testfort.com/blog/what-is-test-driven-development-and-why-its-important">What Is Test-driven Development and Why It’s
 Important</a> -
 by Anna Khrupa</li>
+<li><a href="https://kiss-and-solid.com/blog/why-tdd-matters">The Big TDD
+Misunderstanding</a> -
+by Oliver Wolf</li>
 <li><a href="https://dannorth.net/whats-in-a-story/">What’s in a Story?</a> - by
 Daniel Terhorst-North</li>
 <li><a href="https://testdriven.io/blog/modern-tdd/">Modern Test-Driven Development in
@@ -12191,6 +12194,79 @@ styles</li>
 <p><img src="lectures/figures/publicdomainvectors/japan-gate-clipart.svg"
 width="300" /></p>
 </div>
+</div>
+<h1 id="discussion"><a class="header" href="#discussion">discussion</a></h1>
+<blockquote>
+<p>The less your tests resemble the way your software is used, the less
+confidence they can give you.</p>
+<p>– <a href="https://twitter.com/kentcdodds/status/977018512689455106">Kent C.
+Dodds</a></p>
+</blockquote>
+<h1 id="some-critiques-of-tdd"><a class="header" href="#some-critiques-of-tdd">some critiques of TDD</a></h1>
+<div class="columns">
+<div class="column" width="60%">
+<ul>
+<li>end-to-end or integration tests could be better for quality assurance
+<ul>
+<li>but this could lead slower feedback loop</li>
+<li><span class="text-smaller">mitigation: making the tests independent
+of each other, run them parallelly</span></li>
+</ul>
+</li>
+<li>the test pyramid forbade a lot of end-to-end and integration tests
+<ul>
+<li>advocates writing a lot of unit tests</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<img src="lectures/figures/test_pyramid_no_text.drawio.svg" width="450" />
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <a href="https://kiss-and-solid.com/blog/why-tdd-matters">The Big TDD
+Misunderstanding</a> by
+Oliver Wolf</p>
+</div>
+<div class="notes">
+<blockquote>
+<p>To have the best quality assurance and refactor resistance, you would
+write e2e or integration tests. This can lead to tests that take a
+long time to execute and increase the feedback loop. You can try to
+solve this by making the tests independent of each other so they can
+run in parallel.</p>
+<p>Originally, the test pyramid forbade a lot of end-to-end and
+integration tests. Instead, the pyramid says we should write a lot of
+unit tests, and for most people, a unit is a class. This often leads
+to an inside-out approach, testing the structure of the system rather
+than its behavior.</p>
+<p>– Oliver Wolf <a href="https://kiss-and-solid.com/blog/why-tdd-matters">The Big TDD
+Misunderstanding</a></p>
+</blockquote>
+</div>
+<h2 id="do-not-isolate-code-too-much-when-you-test-it"><a class="header" href="#do-not-isolate-code-too-much-when-you-test-it">do not isolate code (too much) when you test it</a></h2>
+<ul>
+<li>we mock to isolate from database, for example, and speed up tests
+<ul>
+<li>consider not stubbing the whole infrastructure</li>
+</ul>
+</li>
+<li>the more you isolate your “unit” under test, the less meaningful the
+test coverage report becomes</li>
+</ul>
+<div class="text-smaller">
+<p>based on <a href="https://kiss-and-solid.com/blog/why-tdd-matters">The Big TDD
+Misunderstanding</a> by
+Oliver Wolf</p>
+</div>
+<div class="mt-3">
+<blockquote>
+<p>The less your tests resemble the way your software is used, the less
+confidence they can give you.</p>
+<p>– <a href="https://twitter.com/kentcdodds/status/977018512689455106">Kent C.
+Dodds</a></p>
+</blockquote>
 </div>
 <h1 id="too-strict-tdd"><a class="header" href="#too-strict-tdd">too strict TDD</a></h1>
 <div class="columns">
