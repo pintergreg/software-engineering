@@ -601,12 +601,6 @@ end
 :::::::::
 ::::::::::::
 
-## do not isolate code (too much) when you test it
-
-> The less your tests resemble the way your software is used, the less confidence they can give you.
->
-> -- [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106)
-
 
 # test-driven development (TDD)
 
@@ -947,6 +941,57 @@ kata (型)
 :::::::::
 ::::::::::::
 
+# discussion
+
+> The less your tests resemble the way your software is used, the less confidence they can give you.
+>
+> -- [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106)
+
+# some critiques of TDD
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- end-to-end or integration tests could be better for quality assurance
+    - but this could lead slower feedback loop
+    - [mitigation: making the tests independent of each other, run them parallelly]{.text-smaller}
+- the test pyramid forbade a lot of end-to-end and integration tests
+    - advocates writing a lot of unit tests
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/test_pyramid_no_text.drawio.svg){width=450}
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+based on [The Big TDD Misunderstanding](https://kiss-and-solid.com/blog/why-tdd-matters) by Oliver Wolf
+:::
+
+::: notes
+> To have the best quality assurance and refactor resistance, you would write e2e or integration tests. This can lead to tests that take a long time to execute and increase the feedback loop. You can try to solve this by making the tests independent of each other so they can run in parallel.
+>
+> Originally, the test pyramid forbade a lot of end-to-end and integration tests. Instead, the pyramid says we should write a lot of unit tests, and for most people, a unit is a class. This often leads to an inside-out approach, testing the structure of the system rather than its behavior.
+>
+> -- Oliver Wolf [The Big TDD Misunderstanding](https://kiss-and-solid.com/blog/why-tdd-matters)
+
+:::
+
+## do not isolate code (too much) when you test it
+
+- we mock to isolate from database, for example, and speed up tests
+    - consider not stubbing the whole infrastructure
+- the more you isolate your "unit" under test, the less meaningful the test coverage report becomes
+
+::: {.text-smaller}
+based on [The Big TDD Misunderstanding](https://kiss-and-solid.com/blog/why-tdd-matters) by Oliver Wolf
+:::
+
+::: {.mt-3}
+> The less your tests resemble the way your software is used, the less confidence they can give you.
+>
+> -- [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106)
+
+:::
 
 # too strict TDD
 

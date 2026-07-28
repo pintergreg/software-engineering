@@ -181,6 +181,7 @@ MVC-MVP-MVVM
 ### readings
 
 - [What Is Test-driven Development and Why It’s Important](https://testfort.com/blog/what-is-test-driven-development-and-why-its-important) - by Anna Khrupa
+- [The Big TDD Misunderstanding](https://kiss-and-solid.com/blog/why-tdd-matters) - by Oliver Wolf
 - [What's in a Story?](https://dannorth.net/whats-in-a-story/) - by Daniel Terhorst-North
 - [Modern Test-Driven Development in Python](https://testdriven.io/blog/modern-tdd/) - by Jan Giacomelli
 - [The Cycles of TDD](http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html) - by Robert C. Martin
