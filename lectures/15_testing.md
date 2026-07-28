@@ -961,7 +961,7 @@ kata (型)
 task: get day from a date string like [`Nov 08, 13:11`]{style="display: inline-block;"}
 :::
 
-1. do experiment
+1. do some experiments
 
 ```python
 >>> "Nov 08, 13:11"[3:5]
@@ -969,12 +969,12 @@ task: get day from a date string like [`Nov 08, 13:11`]{style="display: inline-b
 >>> "Nov 08, 13:11"[4:6]
 '08'
 ```
-2. put it to a function
+3. write code (should add test first)
 ```python
 def extract_day(s: str) -> int:
     return int(s[4:6])
 ```    
-3. add test based on the experiment
+2. add test based on the experiment
 ```python
 def test_extract_day():
     actual = extract_day("Nov 08, 13:11")
@@ -984,15 +984,25 @@ def test_extract_day():
 :::::::::
 ::::::::::::
 
+::: notes
+When I develop code, I often need to do some experiments. Open a new files or an interactive console and try things out.
+After finding the solution, the prodiction code could be written, and the that's it.
+A better approach is to write a test immediately after finding the solution, as the knowledge how the unit should work is already gained.
+The test can protect you.
+For example, when the input date format is changed. The failing test will immediately notify you about a problem.
+:::
+
 
 ## behaviour-driven development (BDD)
 
 :::::::::::: {.columns}
-::::::::: {.column width="55%" .mt-3}
+::::::::: {.column width="55%"}
 - BDD is an extension of [TDD]{.tooltip title="test-driven development"}
 - using BDD can help you to turn an idea for a requirement into implemented, **tested**, production-ready code
 - BDD starts from a user story and focuses on adding the acceptance criteria
     - which can be turned into unit tests
+- there are tools to support this
+    - e.g., [cucumber](https://cucumber.io/)
 
 :::::::::
 ::::::::: {.column width="45%"}
