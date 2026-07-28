@@ -1096,12 +1096,18 @@ based on: [Introduction to Software Architecture](https://www.codeproject.com/Ar
 
 ![the rising costs of finding and fixing defects based on Figure 3.4 of [@ambler2002agile] (Ambler, 2002)](figures/cost_of_fixing.drawio.svg){height=200}
 
-. . . 
-
 ::: {.mt-2}
 to do that, you need to know all the unknowns, so you need **requirements analysis**, and **learning** the new/unknown technology
 
 :::
+
+## design is compromise
+
+> Compromise is neither good nor bad, it’s something we do every day. It’s decision making. Prioritizing. Deciding that one thing is more important than another. It’s finding the right balance between two competing desires.
+>
+> Which compromises you make   — that’s what matters. Choosing the right compromises is what defines good design.
+>
+> -- [Steph Ango](https://stephango.com/design-is-compromise)
 
 ## constructing a software design
 
