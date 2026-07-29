@@ -1494,7 +1494,32 @@ def test_withdraw():
 
 :::::::::
 ::::::::::::
+## think like a villian
 
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- think like someone who's going to abuse the system that you’re designing and building
+- expect the unexpected in terms of data that your code will receive
+- expect malicious actors to feed in data in an attempt to gain unauthorized access or manipulate the system in undesirable ways
+- test for that stuff in your code
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/hacker-guesses-password.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Beej's Guide to Learning Computer Science](https://beej.us/guide/bglcs/html/split/problem-solving.html#think-like-a-villain)
+:::
+
+::: notes
+> A real square root function, for example, could be well tested. Give it some perfect squares, some non-perfect squares, some fractions, etc. Works perfectly. You wouldn’t pass in negative numbers, right? That would be silly. But you know who would? A villain!
+> 
+> -- Brian “Beej Jorgensen” Hall [Beej's Guide to Learning Computer Science](https://beej.us/guide/bglcs/html/split/problem-solving.html#think-like-a-villain)
+
+:::
 
 ## fuzz testing (fuzzing)
 
