@@ -244,14 +244,8 @@ figcaption {
 .width-100 {
     width: 100% !important;
 }
-.pre-450 pre {
-    height: 450px;
-}
-.pre-475 pre {
-    height: 475px;
-}
-.code-margin-top-0 .sourceCode {
-    margin-top: 0
+.code-no-max-height .sourceCode {
+    max-height: none;
 }
 .table-image-margin-0 table img {
     margin: 0;
