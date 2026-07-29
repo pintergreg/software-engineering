@@ -288,7 +288,7 @@ architectural styles provides patterns to separate the business logic from the p
 
 unit testing usually targets the business logic
 
-:::::: {.fragment .text-smaller .mt-2}
+:::::: {.text-smaller .mt-2}
 which was embedded into the query in the previous example
 
 ```sql
@@ -1788,6 +1788,187 @@ source: [Smoke testing (software), Wikipedia](https://en.wikipedia.org/wiki/Smok
 
 :::::::::
 ::::::::::::
+
+# testing principles
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+1. [testing shows presence of defects]{}
+2. [exhaustive testing is impossible]{.alpha-50}
+3. [early testing]{.alpha-50}
+4. [defect clustering]{.alpha-50}
+5. [pesticide paradox]{.alpha-50}
+6. [testing is context dependent]{.alpha-50}
+7. [absence of error fallacy]{.alpha-50}
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .wide-quote}
+> The purpose of testing is to discover bugs in software but no matter how much testing we carry out or if no bugs are discovered, we cannot say that there are no defects in the system. Testing will reduce the probability of any hidden bugs remaining in the software however it is not a proof that the software is bug free.
+>
+> source: [The Seven Principles of Software Testing](https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+from the book: "Foundations of software testing" [@dorothy2008foundations]
+
+reading on the web: [The Seven Principles of Software Testing](https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766)
+:::
+
+## testing principles
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+1. [testing shows presence of defects]{.alpha-50}
+2. [exhaustive testing is impossible]{}
+3. [early testing]{.alpha-50}
+4. [defect clustering]{.alpha-50}
+5. [pesticide paradox]{.alpha-50}
+6. [testing is context dependent]{.alpha-50}
+7. [absence of error fallacy]{.alpha-50}
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .wide-quote}
+- not possible to test everything
+- testing all the scenarios would require more time/money
+- focus the testing effort based on risks and priorities
+    - create a test plan according to them based on the budget and time
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-3}
+source/reading: [The Seven Principles of Software Testing](https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766)
+:::
+
+## testing principles
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+1. [testing shows presence of defects]{.alpha-50}
+2. [exhaustive testing is impossible]{.alpha-50}
+3. [early testing]{}
+4. [defect clustering]{.alpha-50}
+5. [pesticide paradox]{.alpha-50}
+6. [testing is context dependent]{.alpha-50}
+7. [absence of error fallacy]{.alpha-50}
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .wide-quote}
+![the rising costs of finding and fixing defects based on Figure 3.4 of [@ambler2002agile] (Ambler, 2002)](figures/cost_of_fixing.drawio.svg){height=200}
+
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-3}
+reading: [The Seven Principles of Software Testing](https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766)
+:::
+
+## testing principles
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+1. [testing shows presence of defects]{.alpha-50}
+2. [exhaustive testing is impossible]{.alpha-50}
+3. [early testing]{.alpha-50}
+4. [defect clustering]{}
+5. [pesticide paradox]{.alpha-50}
+6. [testing is context dependent]{.alpha-50}
+7. [absence of error fallacy]{.alpha-50}
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .wide-quote}
+- defects are not distributed evenly across the codebase and tend to concentrate or cluster in a few areas
+- applying the Pareto Principle (the 80-20 rule) which says that 80% of the bugs are in 20% of the code
+- consider this during risk assessment for test planning to allocate more time for testing areas with known complex code/sections
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-3}
+source/reading: [The Seven Principles of Software Testing](https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766)
+:::
+
+## testing principles
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+1. [testing shows presence of defects]{.alpha-50}
+2. [exhaustive testing is impossible]{.alpha-50}
+3. [early testing]{.alpha-50}
+4. [defect clustering]{.alpha-50}
+5. [pesticide paradox]{}
+6. [testing is context dependent]{.alpha-50}
+7. [absence of error fallacy]{.alpha-50}
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .wide-quote}
+- if the same set of test cases are repeated over and over again, it will no longer find any new bugs
+- similarly to insects building up resistance to pesticides over time
+- review requirements and design documents for defects, and create new test cases to cover untested areas, alternative paths, and different test data
+- writing more tests will require more testing time hence increase the cost
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-3}
+source/reading: [The Seven Principles of Software Testing](https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766)
+:::
+
+## testing principles
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+1. [testing shows presence of defects]{.alpha-50}
+2. [exhaustive testing is impossible]{.alpha-50}
+3. [early testing]{.alpha-50}
+4. [defect clustering]{.alpha-50}
+5. [pesticide paradox]{.alpha-50}
+6. [testing is context dependent]{}
+7. [absence of error fallacy]{.alpha-50}
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .wide-quote}
+- testing needs to be tailored according to the type of project
+- different software systems have different levels of risk and impact therefore testing needs to reflect this
+
+![](figures/quantifying_risks_wide.drawio.svg){width=400 data-preview-image="figures/quantifying_risks.drawio.svg" data-preview-fit="contain"}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-1}
+source/reading: [The Seven Principles of Software Testing](https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766)
+:::
+
+
+## testing principles
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+1. [testing shows presence of defects]{.alpha-50}
+2. [exhaustive testing is impossible]{.alpha-50}
+3. [early testing]{.alpha-50}
+4. [defect clustering]{.alpha-50}
+5. [pesticide paradox]{.alpha-50}
+6. [testing is context dependent]{.alpha-50}
+7. [absence of error fallacy]{}
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .wide-quote}
+- it may seem that the software has been tested and all the defects have been fixed
+    ![](figures/code coverage_ 100_.svg)
+- however the system could still end up being unusable by the client
+- this can occur when the software developed did not meet the business needs and **requirements** of the user
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller .mt-3}
+source/reading: [The Seven Principles of Software Testing](https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766)
+:::
 
 # summary
 
