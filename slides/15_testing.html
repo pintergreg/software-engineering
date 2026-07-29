@@ -436,7 +436,7 @@ class="slide level2">
 <p>architectural styles provides patterns to separate the business logic
 from the persistence layer</p>
 <p>unit testing usually targets the business logic</p>
-<div class="fragment text-smaller mt-2">
+<div class="text-smaller mt-2">
 <p>which was embedded into the query in the previous example</p>
 <div class="sourceCode" id="cb6"><pre
 class="sourceCode sql"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
@@ -2202,6 +2202,225 @@ width="300" /></p>
 </div>
 </section></section>
 <section>
+<section id="testing-principles" class="title-slide slide level1">
+<h1>testing principles</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><span>testing shows presence of defects</span></li>
+<li><span class="alpha-50">exhaustive testing is impossible</span></li>
+<li><span class="alpha-50">early testing</span></li>
+<li><span class="alpha-50">defect clustering</span></li>
+<li><span class="alpha-50">pesticide paradox</span></li>
+<li><span class="alpha-50">testing is context dependent</span></li>
+<li><span class="alpha-50">absence of error fallacy</span></li>
+</ol>
+</div><div class="column text-smaller wide-quote" style="width:50%;">
+<blockquote>
+<p>The purpose of testing is to discover bugs in software but no matter
+how much testing we carry out or if no bugs are discovered, we cannot
+say that there are no defects in the system. Testing will reduce the
+probability of any hidden bugs remaining in the software however it is
+not a proof that the software is bug free.</p>
+<p>source: <a
+href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The
+Seven Principles of Software Testing</a></p>
+</blockquote>
+</div>
+</div>
+<div class="text-smaller">
+<p>from the book: “Foundations of software testing” <span
+class="citation" data-cites="dorothy2008foundations">[24]</span></p>
+<p>reading on the web: <a
+href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The
+Seven Principles of Software Testing</a></p>
+</div>
+</section>
+<section id="testing-principles-1" class="slide level2">
+<h2>testing principles</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><span class="alpha-50">testing shows presence of defects</span></li>
+<li><span>exhaustive testing is impossible</span></li>
+<li><span class="alpha-50">early testing</span></li>
+<li><span class="alpha-50">defect clustering</span></li>
+<li><span class="alpha-50">pesticide paradox</span></li>
+<li><span class="alpha-50">testing is context dependent</span></li>
+<li><span class="alpha-50">absence of error fallacy</span></li>
+</ol>
+</div><div class="column text-smaller wide-quote" style="width:50%;">
+<ul>
+<li>not possible to test everything</li>
+<li>testing all the scenarios would require more time/money</li>
+<li>focus the testing effort based on risks and priorities
+<ul>
+<li>create a test plan according to them based on the budget and
+time</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="text-smaller mt-3">
+<p>source/reading: <a
+href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The
+Seven Principles of Software Testing</a></p>
+</div>
+</section>
+<section id="testing-principles-2" class="slide level2">
+<h2>testing principles</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><span class="alpha-50">testing shows presence of defects</span></li>
+<li><span class="alpha-50">exhaustive testing is impossible</span></li>
+<li><span>early testing</span></li>
+<li><span class="alpha-50">defect clustering</span></li>
+<li><span class="alpha-50">pesticide paradox</span></li>
+<li><span class="alpha-50">testing is context dependent</span></li>
+<li><span class="alpha-50">absence of error fallacy</span></li>
+</ol>
+</div><div class="column text-smaller wide-quote" style="width:50%;">
+<figure>
+<img data-src="figures/cost_of_fixing.drawio.svg" height="200"
+alt="the rising costs of finding and fixing defects based on Figure 3.4 of [25] (Ambler, 2002)" />
+<figcaption aria-hidden="true">the rising costs of finding and fixing
+defects based on Figure 3.4 of <span class="citation"
+data-cites="ambler2002agile">[25]</span> (Ambler, 2002)</figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller mt-3">
+<p>reading: <a
+href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The
+Seven Principles of Software Testing</a></p>
+</div>
+</section>
+<section id="testing-principles-3" class="slide level2">
+<h2>testing principles</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><span class="alpha-50">testing shows presence of defects</span></li>
+<li><span class="alpha-50">exhaustive testing is impossible</span></li>
+<li><span class="alpha-50">early testing</span></li>
+<li><span>defect clustering</span></li>
+<li><span class="alpha-50">pesticide paradox</span></li>
+<li><span class="alpha-50">testing is context dependent</span></li>
+<li><span class="alpha-50">absence of error fallacy</span></li>
+</ol>
+</div><div class="column text-smaller wide-quote" style="width:50%;">
+<ul>
+<li>defects are not distributed evenly across the codebase and tend to
+concentrate or cluster in a few areas</li>
+<li>applying the Pareto Principle (the 80-20 rule) which says that 80%
+of the bugs are in 20% of the code</li>
+<li>consider this during risk assessment for test planning to allocate
+more time for testing areas with known complex code/sections</li>
+</ul>
+</div>
+</div>
+<div class="text-smaller mt-3">
+<p>source/reading: <a
+href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The
+Seven Principles of Software Testing</a></p>
+</div>
+</section>
+<section id="testing-principles-4" class="slide level2">
+<h2>testing principles</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><span class="alpha-50">testing shows presence of defects</span></li>
+<li><span class="alpha-50">exhaustive testing is impossible</span></li>
+<li><span class="alpha-50">early testing</span></li>
+<li><span class="alpha-50">defect clustering</span></li>
+<li><span>pesticide paradox</span></li>
+<li><span class="alpha-50">testing is context dependent</span></li>
+<li><span class="alpha-50">absence of error fallacy</span></li>
+</ol>
+</div><div class="column text-smaller wide-quote" style="width:50%;">
+<ul>
+<li>if the same set of test cases are repeated over and over again, it
+will no longer find any new bugs</li>
+<li>similarly to insects building up resistance to pesticides over
+time</li>
+<li>review requirements and design documents for defects, and create new
+test cases to cover untested areas, alternative paths, and different
+test data</li>
+<li>writing more tests will require more testing time hence increase the
+cost</li>
+</ul>
+</div>
+</div>
+<div class="text-smaller mt-3">
+<p>source/reading: <a
+href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The
+Seven Principles of Software Testing</a></p>
+</div>
+</section>
+<section id="testing-principles-5" class="slide level2">
+<h2>testing principles</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><span class="alpha-50">testing shows presence of defects</span></li>
+<li><span class="alpha-50">exhaustive testing is impossible</span></li>
+<li><span class="alpha-50">early testing</span></li>
+<li><span class="alpha-50">defect clustering</span></li>
+<li><span class="alpha-50">pesticide paradox</span></li>
+<li><span>testing is context dependent</span></li>
+<li><span class="alpha-50">absence of error fallacy</span></li>
+</ol>
+</div><div class="column text-smaller wide-quote" style="width:50%;">
+<ul>
+<li>testing needs to be tailored according to the type of project</li>
+<li>different software systems have different levels of risk and impact
+therefore testing needs to reflect this</li>
+</ul>
+<p><img data-src="figures/quantifying_risks_wide.drawio.svg"
+data-preview-image="figures/quantifying_risks.drawio.svg"
+data-preview-fit="contain" width="400" /></p>
+</div>
+</div>
+<div class="text-smaller mt-1">
+<p>source/reading: <a
+href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The
+Seven Principles of Software Testing</a></p>
+</div>
+</section>
+<section id="testing-principles-6" class="slide level2">
+<h2>testing principles</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><span class="alpha-50">testing shows presence of defects</span></li>
+<li><span class="alpha-50">exhaustive testing is impossible</span></li>
+<li><span class="alpha-50">early testing</span></li>
+<li><span class="alpha-50">defect clustering</span></li>
+<li><span class="alpha-50">pesticide paradox</span></li>
+<li><span class="alpha-50">testing is context dependent</span></li>
+<li><span>absence of error fallacy</span></li>
+</ol>
+</div><div class="column text-smaller wide-quote" style="width:50%;">
+<ul>
+<li>it may seem that the software has been tested and all the defects
+have been fixed <img
+data-src="figures/code%20coverage_%20100_.svg" /></li>
+<li>however the system could still end up being unusable by the
+client</li>
+<li>this can occur when the software developed did not meet the business
+needs and <strong>requirements</strong> of the user</li>
+</ul>
+</div>
+</div>
+<div class="text-smaller mt-3">
+<p>source/reading: <a
+href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The
+Seven Principles of Software Testing</a></p>
+</div>
+</section></section>
+<section>
 <section id="summary" class="title-slide slide level1">
 <h1>summary</h1>
 <div class="columns">
@@ -2468,6 +2687,16 @@ testing: A context-driven approach</em>. John Wiley &amp; Sons,
 <div class="csl-left-margin">[23] </div><div class="csl-right-inline">A.
 Hunt and D. Thomas, <em>The pragmatic programmer: From journeyman to
 master</em>, 2nd ed. Boston, MA: Addison Wesley, 2019.</div>
+</div>
+<div id="ref-dorothy2008foundations" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[24] </div><div class="csl-right-inline">G.
+Dorothy, E. Isabel, B. Rex, <em>et al.</em>, <span>“Foundations of
+software testing: ISTQB certification.”</span> 2008.</div>
+</div>
+<div id="ref-ambler2002agile" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[25] </div><div class="csl-right-inline">S.
+Ambler, <em>Agile modeling: Effective practices for extreme programming
+and the unified process</em>. John Wiley &amp; Sons, 2002.</div>
 </div>
 </div>
 </section>
