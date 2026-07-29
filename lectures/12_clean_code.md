@@ -808,9 +808,6 @@ DataFrame.to_csv(
     storage_options=None
 )
 ```
-<!--```python
-DataFrame.to_csv(path_or_buf=None, *, sep=',', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression='infer', quoting=None, quotechar='"', lineterminator=None, chunksize=None, date_format=None, doublequote=True, escapechar=None, decimal='.', errors='strict', storage_options=None)
-```-->
 
 :::::::::
 ::::::::: {.column width="40%" .mt-5}
