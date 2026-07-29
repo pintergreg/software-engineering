@@ -782,7 +782,7 @@ def query_progress(as_percentage: bool):
 ## function as interface
 
 :::::::::::: {.columns}
-::::::::: {.column width="60%" .pre-450}
+::::::::: {.column width="60%" .code-no-max-height}
 ```{.python line-numbers="3,11,14" data-highlight-background="#c6ff8c"}
 DataFrame.to_csv(
     path_or_buf=None, *,
@@ -1088,7 +1088,7 @@ re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
 
 ## documentation
 
-::: {.pre-475}
+::: {.code-no-max-height}
 ```python
 def fizzbuzz(i: int) -> str:
     """Fizzbuzz is a game for children to teach them about division.
@@ -1122,7 +1122,7 @@ def fizzbuzz(i: int) -> str:
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
-::: {.pre-475}
+::: {.code-no-max-height}
 
 ```python
 def fizzbuzz(i: int) -> str:
@@ -1154,7 +1154,7 @@ def fizzbuzz(i: int) -> str:
 
 :::::::::
 ::::::::: {.column width="50%" .fragment}
-::: {.pre-475}
+::: {.code-no-max-height}
 ``` {.python}
 python -m doctest -v fizzbuzz_doctest.py
 Trying:
