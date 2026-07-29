@@ -232,18 +232,14 @@ In any other cases the number id printed.
 ![](figures/software_development_v2.drawio.svg){width=400}
 
 :::::::::
-::::::::: {.column width="50%" .mt-5 .column-align-left}
-::: {.fragment}
+::::::::: {.column width="50%" .mt-5}
 - does that mean a program is not 
     - planned
     - documented
     - tested
     - verified?
-:::
-::: {.fragment}
 - the main difference is the formality of the process
     - which correlates the complexity of the project
-:::
 
 :::::::::
 ::::::::::::
@@ -402,9 +398,7 @@ based on Software Architecture Metaphors by Lisa Stähli [@stahli2021software]
 ::::::::: {.column width="50%"}
 - change in user requirements, and the external dependencies such as frameworks, libraries, etc. can affect the software
 :::::::::
-<!-- ::::::::: {.column width="20%"} -->
 
-<!-- ::::::::: -->
 ::::::::::::
 
 
@@ -681,6 +675,7 @@ The principle is sometimes paraphrased as "of two competing theories, the simple
 
 - programs experience pressure to evolve into toolkits and application platforms
 - often interpreted as a comment on software bloat
+
 
 ## Linux 5.8 -- 800,000 new lines of code
 
