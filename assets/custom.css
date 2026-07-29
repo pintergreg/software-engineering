@@ -33,7 +33,7 @@
   --r-link-color: #bf9055;
   --r-heading-color: #181d37;
   --r-main-font-size: 1.75rem;
-  --r-block-margin: 1rem;
+  --r-block-margin: 0.75rem;
 }
 .backgrounds {
      background-color: white;
@@ -62,36 +62,15 @@
 }
 #title-slide h1.title {
     color: #BF8F55 !important;
-/*     font-size: 1.35rem; */
     font-weight: 400;
 }
 #title-slide p.subtitle {
     color: #BF8F55 !important;
-/*     font-size: var(--r-heading1-size); */
-/*     font-size: 2.5rem; */
     text-transform: var(--r-heading-text-transform);
     letter-spacing: var(--r-heading-letter-spacing);
 }
 #title-slide p {
     color: white !important;
-}
-#title-slide sup {
-    font-size-adjust: 0.5 !important;
-    font-size: 1.25rem !important;
-    color: #bee4fd;
-}
-.sup-lightblue sup {
-    color: #bee4fd;
-}
-#title-slide p.author sup:before {
-    content: " ";
-}
-#title-slide p.institute {
-    margin: 2em 0;
-    font-size: 1.25rem !important;
-}
-#title-slide p.institute sup:after {
-    content: " ";
 }
 #title-slide p.date {
     font-size: 1.5rem;
@@ -116,6 +95,8 @@
 }
 .reveal blockquote {
     width: 75% !important;
+    margin-left: auto;
+    margin-right: auto;
 }
 .text-white {
     color: white;
@@ -261,4 +242,7 @@ figcaption {
 }
 .r-overlay-content{
   background: var(--r-background-color);
+}
+.r-frame {
+    border: 2px solid var(--r-main-color) !important;
 }
