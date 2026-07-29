@@ -87,19 +87,10 @@
 #title-slide {
     overflow-y: visible;
 }
-.add_v_align {
-    padding-top: 96px;
-}
-.shrink-table table {
-    font-size: large;
-}
 .reveal blockquote {
     width: 75% !important;
     margin-left: auto;
     margin-right: auto;
-}
-.text-white {
-    color: white;
 }
 #references {
     font-size: 1.15rem;
@@ -123,21 +114,6 @@ li.fragment.visible {
 li.fragment.visible.current-fragment {
     color: #181d37;
 }
-.publications::before {
-    content: "Dissertation";
-    display: block;
-    font-size: 36px;
-
-    margin: var(--r-heading-margin);
-    color: var(--r-heading-color);
-    font-family: var(--r-heading-font);
-    font-weight: var(--r-heading-font-weight);
-    line-height: var(--r-heading-line-height);
-    letter-spacing: var(--r-heading-letter-spacing);
-    text-transform: var(--r-heading-text-transform);
-
-    margin-top: 2.5rem;
-}
 .background-color-lightblue {
     background: #bee4fd !important;
 }
@@ -146,9 +122,6 @@ li.fragment.visible.current-fragment {
 }
 .text-color-secondary {
     color: var(--r-link-color) !important;
-}
-.text-color-white {
-    color: white !important;
 }
 .text-color-lightblue {
     color: #bee4fd;
