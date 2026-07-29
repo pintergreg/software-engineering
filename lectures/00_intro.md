@@ -58,7 +58,7 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 ::: {.exclude}
 |week| date       | lecture                                  | practical class       |
-|---:|-----------:|:----------------------------------------:|:---------------------:|
+|---:|-----------:|:----------------------------:|:---------------------:|
 |  1 | 2026-09-16 | intro, software architecture             | project assignment    |
 |  2 | 2026-09-23 | SDLC, scrum, kanban                      | informal R.A.         |
 |  3 | 2026-09-30 | requirements analysis, user story mapping| formal R.A., workshop |
@@ -73,7 +73,7 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 ::: {.exclude}
 |week| date       | lecture                                  | practical class       |
-|---:|-----------:|:----------------------------------------:|:---------------------:|
+|---:|-----------:|:----------------------------:|:---------------------:|
 |  8 | 2026-11-04 | wireframing, clean code                  | project workshop      |
 |  9 | 2026-11-11 | code quality, code review                | project workshop      |
 | 10 | 2026-11-18 | testing, legacy code                     | project workshop      |
@@ -145,8 +145,8 @@ The midterm consists of 50 multiple-choice questions, with a total of 50 points 
 - diagram drawing: 
     - [draw.io](https://app.diagrams.net/)
     - [Google Drawings](https://docs.google.com/drawings)
-        - probably the least effort
     - [user story map template for Google Sheets](https://www.avion.io/blog/user-story-mapping-template/)
+        - probably the least effort
     - [plantuml](https://plantuml.com/)
 - whiteboard:
     - [excalidraw](https://excalidraw.com/)
@@ -154,7 +154,7 @@ The midterm consists of 50 multiple-choice questions, with a total of 50 points 
     - [Trello](https://trello.com/)
 - code hosting / task management
     - [GitHub](https://github.com/)
-    - you won't really need code hosting for this course
+    - [you won't really need code hosting for this course]{.text-smaller}
 
 :::::::::
 ::::::::: {.column width="30%" .exclude}
@@ -680,7 +680,7 @@ The principle is sometimes paraphrased as "of two competing theories, the simple
 > - Jamie Zawinski
 
 - programs experience pressure to evolve into toolkits and application platforms
-- often interpreted as a comment on software bloat 
+- often interpreted as a comment on software bloat
 
 ## Linux 5.8 -- 800,000 new lines of code
 
