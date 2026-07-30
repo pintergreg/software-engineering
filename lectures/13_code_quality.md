@@ -822,16 +822,16 @@ def calculate_progress_2(
 - misspell: finds commonly misspelled English words
 
 :::::::::
-::::::::: {.column width="25%" .text-smaller .table-image-margin-0}
+::::::::: {.column width="25%" .text-smaller}
 |score|grade                                    |
 |----:|:---------------------------------------:|
-| >90 |![](figures/go report_ A+.svg){width=113}|
-| >80 |![](figures/go report_ A.svg){width=100} |
-| >70 |![](figures/go report_ B.svg){width=100} |
-| >60 |![](figures/go report_ C.svg){width=100} |
-| >50 |![](figures/go report_ D.svg){width=100} |
-| >40 |![](figures/go report_ E.svg){width=100} |
-|<=40 |![](figures/go report_ F.svg){width=100} |
+| >90 |![](figures/go report_ A+.svg){width=113 .m-0}|
+| >80 |![](figures/go report_ A.svg){width=100 .m-0} |
+| >70 |![](figures/go report_ B.svg){width=100 .m-0} |
+| >60 |![](figures/go report_ C.svg){width=100 .m-0} |
+| >50 |![](figures/go report_ D.svg){width=100 .m-0} |
+| >40 |![](figures/go report_ E.svg){width=100 .m-0} |
+|<=40 |![](figures/go report_ F.svg){width=100 .m-0} |
 
 :::::::::
 ::::::::::::
