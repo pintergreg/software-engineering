@@ -861,7 +861,7 @@ Licence: 0.00-->
 
 # WTF per minute
 
-![own drawing based on [Glen Lipka's](https://commadot.com/wtf-per-minute/)](figures/wtf_per_minute.drawio.svg){width=725}
+![own drawing based on [Glen Lipka's](https://commadot.com/wtf-per-minute/), which is based on [Thom Holwerda](https://www.osnews.com/story/19266/wtfsm/)'s](figures/wtf_per_minute.drawio.svg){width=725}
 
 
 # summary
