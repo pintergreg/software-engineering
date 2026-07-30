@@ -165,6 +165,13 @@ a = power(a, 3)
 - can preventing unintended interference and misuse of the methods and data
     - by exposing only the necessary parts of an object through public methods
 
+::: {.text-smaller .mt-3}
+> Object-oriented programming, whose essence is nothing more than programming using data with associated behaviors, is a powerful idea. It truly is. But it’s not always the best idea. … Sometimes data is just data and functions are just functions.
+>
+> -- Rob Pike
+
+:::
+
 
 ## 3. inheritance
 
@@ -271,6 +278,11 @@ print(something.foo)  # 2
 
 :::::::::
 ::::::::::::
+
+::: {.wide-quote .mt-2}
+> Sometimes data is just data and functions are just functions. -- Rob Pike
+
+:::
 
 ## why OO got popular?
 
