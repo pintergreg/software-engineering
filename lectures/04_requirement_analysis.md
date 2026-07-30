@@ -321,6 +321,25 @@ based on [Making sense of MVP (Minimum Viable Product)](https://blog.crisp.se/20
 <!-- ## minimum marketable product -->
 
 
+## users only care about 20% of your application
+
+
+- 80% of the users will only ever use about 20% of your application's features
+- but not enough to implement only 20%
+- because each user uses a different 20%
+
+![](figures/pie/0.svg){width=150}
+![](figures/pie/2.svg){width=150}
+![](figures/pie/3.svg){width=150}
+![](figures/pie/1.svg){width=150}
+![](figures/pie/4.svg){width=150}
+
+
+::: {.text-smaller}
+further reading: [Simplicity](https://www.joelonsoftware.com/2006/12/09/simplicity/) by Joel Spolsky,<br>[Users Only Care About 20% of Your Application](https://idiallo.com/blog/users-only-care-about-20-percent) by Ibrahim Diallo
+:::
+
+
 # social media platform - example
 
 ![](figures/social_media_platform/p1_wbs.svg){width=85%}

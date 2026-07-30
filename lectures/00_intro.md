@@ -676,8 +676,25 @@ The principle is sometimes paraphrased as "of two competing theories, the simple
 - programs experience pressure to evolve into toolkits and application platforms
 - often interpreted as a comment on software bloat
 
+## users only care about 20% of your application
 
-## Linux 5.8 -- 800,000 new lines of code
+
+- 80% of the users will only ever use about 20% of your application's features
+- but not enough to implement only 20%
+- because each user uses a different 20%
+
+![](figures/pie/0.svg){width=150}
+![](figures/pie/2.svg){width=150}
+![](figures/pie/3.svg){width=150}
+![](figures/pie/1.svg){width=150}
+![](figures/pie/4.svg){width=150}
+
+
+::: {.text-smaller}
+further reading: [Simplicity](https://www.joelonsoftware.com/2006/12/09/simplicity/) by Joel Spolsky,<br>[Users Only Care About 20% of Your Application](https://idiallo.com/blog/users-only-care-about-20-percent) by Ibrahim Diallo
+:::
+
+# Linux 5.8 -- 800,000 new lines of code
 
 ::: {.text-smaller}
 > [Linux Torvalds](https://lore.kernel.org/lkml/CAHk-=whfuea587g8rh2DeLFFGYxiVuh-bzq22osJwz3q4SOfmA@mail.gmail.com/): despite not really having any single thing that stands out... 5.8 looks to be one of our biggest releases of all time
