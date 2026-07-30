@@ -589,7 +589,7 @@ a join synchronizes two inflows (waits for the slower)
 ::::::::::::
 
 
-# timing diagram
+# timing diagram {visibility=hidden}
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
