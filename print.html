@@ -943,8 +943,7 @@ Rabinowitz</a></p>
 <div class="column" width="50%">
 <img src="lectures/figures/software_development_v2.drawio.svg" width="400" />
 </div>
-<div class="column mt-5 column-align-left" width="50%">
-<div class="fragment">
+<div class="column mt-5" width="50%">
 <ul>
 <li>does that mean a program is not
 <ul>
@@ -954,17 +953,12 @@ Rabinowitz</a></p>
 <li>verified?</li>
 </ul>
 </li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
 <li>the main difference is the formality of the process
 <ul>
 <li>which correlates the complexity of the project</li>
 </ul>
 </li>
 </ul>
-</div>
 </div>
 </div>
 <div class="notes">
@@ -1141,8 +1135,6 @@ a user documentation (manual) for the operators of the system.</p>
 frameworks, libraries, etc. can affect the software</li>
 </ul>
 </div>
-<!-- ::::::::: {.column width="20%"} -->
-<!-- ::::::::: -->
 </div>
 <div class="notes">
 <p>Another similarity to gardening is that external factors can influence
@@ -6700,7 +6692,7 @@ acts as a stand-in for a real object or module (GeeksforGeeks, 2019).</p>
 </div>
 <h2 id="user-statistics---mock-backend"><a class="header" href="#user-statistics---mock-backend">user statistics - mock backend</a></h2>
 <div class="columns">
-<div class="column text-smaller pre-height-100" width="60%">
+<div class="column text-smaller code-no-max-height" width="60%">
 <pre><code class="language-ruby">require 'sinatra'
 
 def generate_progress
@@ -6884,7 +6876,7 @@ deprecated and replaced by the union_all() method (#3007) allowing
 opting for a faster union algorithm for coverages (#3151)</p>
 </div>
 <div class="columns fragment">
-<div class="column pre-width-100" width="55%">
+<div class="column" width="55%">
 <pre><code class="language-python">from shapely import Polygon
 import geopandas as gpd
 
@@ -6900,14 +6892,6 @@ gpd.GeoDataFrame(geometry=[p1, p2]).unary_union
 <img src="lectures/figures/unary_union.svg" height="100" />
 </div>
 </div>
-<!--:::::::::::: {.columns .fragment}
-::::::::: {.column width="80%" .text-smaller }
-`DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_all()' method instead.`
-&#10;:::::::::
-::::::::: {.column width="20%"}
-![](figures/unary_union.svg){height=100}
-&#10;:::::::::
-::::::::::::-->
 <div class="fragment">
 <pre><code class="language-python">def unary_union(self):
     warnings.warn(
@@ -8614,8 +8598,8 @@ Martin (Martin, 2009)</p>
 </ul>
 <h2 id="do-one-thing-single-responsibility-principle"><a class="header" href="#do-one-thing-single-responsibility-principle">do one thing (single responsibility principle)</a></h2>
 <div class="columns column-gapless fragment">
-<div class="column pre-height-100" width="68%">
-<div class="text-smaller pre-height-100">
+<div class="column" width="68%">
+<div class="text-smaller">
 <pre><code class="language-python">import sqlite3
 import pandas as pd
 
