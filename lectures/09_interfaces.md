@@ -88,7 +88,7 @@ specify
 ## user statistics - mock backend
 
 :::::::::::: {.columns}
-::::::::: {.column width="60%" .text-smaller .pre-height-100}
+::::::::: {.column width="60%" .text-smaller .code-no-max-height}
 ```ruby {#sinatra .number-lines style="height:450px"}
 require 'sinatra'
 
@@ -267,7 +267,7 @@ GeoPandas 1.0 / new deprecations: unary_union attribute is now deprecated and re
 :::
 
 :::::::::::: {.columns .fragment}
-::::::::: {.column width="55%" .pre-width-100}
+::::::::: {.column width="55%"}
 ```python
 from shapely import Polygon
 import geopandas as gpd
@@ -284,19 +284,6 @@ DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_al
 ![](figures/unary_union.svg){height=100}
 :::::::::
 ::::::::::::
-
-<!--:::::::::::: {.columns .fragment}
-::::::::: {.column width="80%" .text-smaller }
-`DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_all()' method instead.`
-
-:::::::::
-::::::::: {.column width="20%"}
-![](figures/unary_union.svg){height=100}
-
-:::::::::
-::::::::::::-->
-
-
 
 ::: {.fragment}
 ```python

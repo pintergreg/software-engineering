@@ -84,9 +84,6 @@
     background-position-x: center;
     background-position-y: top;
 }
-#title-slide {
-    overflow-y: visible;
-}
 .reveal blockquote {
     width: 75% !important;
     margin-left: auto;
@@ -187,13 +184,9 @@ figcaption {
 }
 .pre-width-100 pre {
     width: 100% !important;
-    margin: 0 !important;
 }
 .pre-width-100 > div {
     margin: 0 !important;
-}
-.pre-height-100 pre {
-    height: 100% !important;
 }
 .width-100 {
     width: 100% !important;

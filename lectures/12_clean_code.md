@@ -594,8 +594,8 @@ with own examples
 ## do one thing (single responsibility principle)
 
 :::::::::::: {.columns .column-gapless .fragment}
-::::::::: {.column width="68%" .pre-height-100}
-::: {.text-smaller .pre-height-100}
+::::::::: {.column width="68%"}
+::: {.text-smaller}
 ```python
 import sqlite3
 import pandas as pd
