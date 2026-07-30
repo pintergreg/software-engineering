@@ -37,15 +37,7 @@
 }
 .backgrounds {
      background-color: white;
-/*      background-image: url('assets/corvinus_neti.svg') !important; */
-     background-size: 23vw !important;
-     background-repeat: no-repeat !important;
-     background-position: 1.25rem calc(100% - 1.25rem) !important;
 }
-/* @media print {
-    .backgrounds {
-    }
-} */
 .slide-number-pdf {
     color: #181d37 !important;
     background-color: white !important;
@@ -74,11 +66,6 @@
 }
 #title-slide p.date {
     font-size: 1.5rem;
-    /** hack for netmob logo **/
-/*     padding-top: 110px; */
-/*     background-image: url(assets/netmob.svg); */
-/*     background-size: auto 80px; */
-/*     background-image: url(assets/rocket_snail_v2.svg); */
     background-size: auto 100px;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -104,12 +91,6 @@
 }
 .citation {
     color: #bf9055;
-}
-li.fragment.visible {
-    color: #181d37d0;
-}
-li.fragment.visible.current-fragment {
-    color: #181d37;
 }
 .background-color-lightblue {
     background: #bee4fd !important;
@@ -179,8 +160,8 @@ figcaption {
 .wide-quote blockquote p {
     line-height: 1.2;
 }
-.column-align-left{
-    text-align:left;
+.column-align-left {
+    text-align: left;
 }
 .pre-width-100 pre {
     width: 100% !important;
@@ -194,19 +175,13 @@ figcaption {
 .code-no-max-height .sourceCode {
     max-height: none;
 }
-.table-image-margin-0 table img {
-    margin: 0;
-}
 .tooltip {
     text-decoration-line: underline;
     text-decoration-color: var(--r-link-color);
     text-decoration-style: dotted;
     cursor: help;
 }
-.va-middle {
-    vertical-align: middle;
-}
-.r-overlay-content{
+.r-overlay-content {
   background: var(--r-background-color);
 }
 .r-frame {

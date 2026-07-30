@@ -97,3 +97,6 @@
 .inline-block {
     display: inline-block;
 }
+.va-middle {
+    vertical-align: middle;
+}
