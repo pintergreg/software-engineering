@@ -671,7 +671,7 @@ The principle is sometimes paraphrased as "of two competing theories, the simple
 
 > Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can.
 >
-> - Jamie Zawinski
+> -- Jamie Zawinski
 
 - programs experience pressure to evolve into toolkits and application platforms
 - often interpreted as a comment on software bloat
