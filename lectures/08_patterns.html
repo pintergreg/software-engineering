@@ -407,7 +407,7 @@ rather than complicate old programs by adding new “features”.</p>
 <div class="column" width="50%">
 <p><img src="figures/solid/open_closed_pre.svg" alt="" /></p>
 </div>
-<div class="column pre-width-100 text-smaller" width="50%">
+<div class="column text-smaller" width="50%">
 <pre><code class="language-python">class Shape:
     pass
 
@@ -492,7 +492,7 @@ object-oriented programming (Wikipedia contributors, 2023)</li>
 </div>
 <h2 id="liskov-substitution-principle---example"><a class="header" href="#liskov-substitution-principle---example">Liskov substitution principle - example</a></h2>
 <div class="columns">
-<div class="column pre-width-100" width="50%">
+<div class="column" width="55%">
 <pre><code class="language-python">class Rectangle:
 
     def __init__(self, width: int, height: int):
@@ -515,7 +515,7 @@ object-oriented programming (Wikipedia contributors, 2023)</li>
         return self.__width * self.__height
 </code></pre>
 </div>
-<div class="column" width="50%">
+<div class="column" width="45%">
 <pre><code class="language-python">class Square(Rectangle):
 
     def __init__(self, width: int):
@@ -1049,7 +1049,7 @@ Anthony Ferrara</p>
 </div>
 <h1 id="user-statistics-example"><a class="header" href="#user-statistics-example">user statistics example</a></h1>
 <div class="columns">
-<div class="column pre-width-100" width="55%">
+<div class="column mt-3" width="55%">
 <p><code>as a user I want to see my activity to see my progress</code></p>
 <p>display user statistics including</p>
 <ul>
@@ -1134,10 +1134,10 @@ height="100" /></p>
 </div>
 <h2 id="architecture-v3---sql"><a class="header" href="#architecture-v3---sql">architecture v3 - SQL</a></h2>
 <div class="columns column-gapless">
-<div class="column" width="35%">
+<div class="column mt-3" width="30%">
 <p><img src="figures/user_statistics/component_3.svg" alt="" /></p>
 </div>
-<div class="column pre-width-100" width="65%">
+<div class="column" width="70%">
 <p><span class="text-smaller">for the activity matrix:</span></p>
 <pre><code class="language-sql">SELECT
     CAST(strftime('%W', timestamp) AS INTEGER) AS week_of_year,
@@ -1167,7 +1167,7 @@ GROUP BY
 </div>
 </div>
 </div>
-<div class="column pre-width-100" width="50%">
+<div class="column" width="50%">
 <p><span class="text-smaller">for the progress:</span></p>
 <pre><code class="language-sql">SELECT
     lesson / 50.0 AS progress

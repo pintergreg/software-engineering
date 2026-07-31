@@ -11,7 +11,7 @@ skin rose
 ++++ communication
 ++++ interaction overview
 ++++[#LightGreen] sequence
-++++[#SkyBlue] timing
+'++++[#SkyBlue] timing
 ++ structure
 +++[#LightGreen] class
 +++[#LightGreen] object

@@ -413,7 +413,7 @@ rather than complicate old programs by adding new “features”.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="figures/solid/open_closed_pre.svg" /></p>
-</div><div class="column pre-width-100 text-smaller" style="width:50%;">
+</div><div class="column text-smaller" style="width:50%;">
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Shape:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -508,7 +508,7 @@ data-cites="enwiki:1165573623">[9]</span></li>
 class="slide level2">
 <h2>Liskov substitution principle - example</h2>
 <div class="columns">
-<div class="column pre-width-100" style="width:50%;">
+<div class="column" style="width:55%;">
 <div class="sourceCode" id="cb5"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -530,7 +530,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a hr
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> getArea(<span class="va">self</span>):</span>
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.__width <span class="op">*</span> <span class="va">self</span>.__height</span></code></pre></div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:45%;">
 <div class="sourceCode" id="cb6"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Square(Rectangle):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1110,7 +1110,7 @@ To MVC</a> - by Anthony Ferrara</p>
 <section id="user-statistics-example" class="title-slide slide level1">
 <h1>user statistics example</h1>
 <div class="columns">
-<div class="column pre-width-100" style="width:55%;">
+<div class="column mt-3" style="width:55%;">
 <p><code>as a user I want to see my activity to see my progress</code></p>
 <dl>
 <dt>display user statistics including</dt>
@@ -1209,9 +1209,9 @@ height="100" /></p>
 <section id="architecture-v3---sql" class="slide level2">
 <h2>architecture v3 - SQL</h2>
 <div class="columns column-gapless">
-<div class="column" style="width:35%;">
+<div class="column mt-3" style="width:30%;">
 <p><img data-src="figures/user_statistics/component_3.svg" /></p>
-</div><div class="column pre-width-100" style="width:65%;">
+</div><div class="column" style="width:70%;">
 <p><span class="text-smaller">for the activity matrix:</span></p>
 <div class="sourceCode" id="cb10"><pre
 class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
@@ -1242,7 +1242,7 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="#
 <p><img data-src="figures/user_statistics/sequence.svg" /></p>
 </div>
 </div>
-</div><div class="column pre-width-100" style="width:50%;">
+</div><div class="column" style="width:50%;">
 <p><span class="text-smaller">for the progress:</span></p>
 <div class="sourceCode" id="cb11"><pre
 class="sourceCode sql"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>

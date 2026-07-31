@@ -1478,9 +1478,7 @@ theories, the simpler explanation of an entity is to be preferred.”
 <blockquote>
 <p>Every program attempts to expand until it can read mail. Those
 programs which cannot so expand are replaced by ones which can.</p>
-<ul>
-<li>Jamie Zawinski</li>
-</ul>
+<p>– Jamie Zawinski</p>
 </blockquote>
 <ul>
 <li>programs experience pressure to evolve into toolkits and application
@@ -1683,6 +1681,130 @@ from a dependency?</figcaption>
 <p>which is actually an architecture decision</p>
 </div>
 <h2 id="dependencies-for-transposing-a-spreadsheet"><a class="header" href="#dependencies-for-transposing-a-spreadsheet">dependencies for transposing a spreadsheet</a></h2>
+<div class="columns text-smaller">
+<div class="column" width="50%">
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">42</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="column" width="50%">
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">41</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">42</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code class="language-python">import pandas as pd
 
 
@@ -4542,7 +4664,7 @@ mistakes</a></p>
 <li>functional</li>
 </ul>
 <h1 id="structural"><a class="header" href="#structural">structural</a></h1>
-<div class="columns">
+<div class="columns column-gapless">
 <div class="column mt-5" width="20%">
 <ul>
 <li>statement</li>
@@ -4550,22 +4672,21 @@ mistakes</a></p>
 <li><span class="fragment" data-fragment-index="2">iteration</span></li>
 </ul>
 </div>
-<div class="column" width="40%">
+<div class="column" width="50%">
 <div class="r-stack text-size-2">
-<div class="fragment fade-out pre-width-100" data-fragment-index="1">
+<div class="fragment fade-out" data-fragment-index="1">
 <pre><code class="language-python">a = 4.2
 a = a * 10
 </code></pre>
 </div>
-<div class="fragment current-visible pre-width-100"
-data-fragment-index="1">
+<div class="fragment current-visible" data-fragment-index="1">
 <pre><code class="language-python">if a &gt; 17
     a -= 5
 else:
     a += 5
 </code></pre>
 </div>
-<div class="fragment pre-width-100" data-fragment-index="2">
+<div class="fragment" data-fragment-index="2">
 <br>
 <pre><code class="language-python">for i in range(10):
     print(i)
@@ -4578,7 +4699,7 @@ else:
 </div>
 </div>
 </div>
-<div class="column" width="40%">
+<div class="column" width="30%">
 <div class="r-stack">
 <div class="fragment fade-out" data-fragment-index="1">
 <p><img src="lectures/figures/flowchart_statement.drawio.svg" alt="" /></p>
@@ -5635,7 +5756,7 @@ rather than complicate old programs by adding new “features”.</p>
 <div class="column" width="50%">
 <p><img src="lectures/figures/solid/open_closed_pre.svg" alt="" /></p>
 </div>
-<div class="column pre-width-100 text-smaller" width="50%">
+<div class="column text-smaller" width="50%">
 <pre><code class="language-python">class Shape:
     pass
 
@@ -5720,7 +5841,7 @@ object-oriented programming (Wikipedia contributors, 2023)</li>
 </div>
 <h2 id="liskov-substitution-principle---example"><a class="header" href="#liskov-substitution-principle---example">Liskov substitution principle - example</a></h2>
 <div class="columns">
-<div class="column pre-width-100" width="50%">
+<div class="column" width="55%">
 <pre><code class="language-python">class Rectangle:
 
     def __init__(self, width: int, height: int):
@@ -5743,7 +5864,7 @@ object-oriented programming (Wikipedia contributors, 2023)</li>
         return self.__width * self.__height
 </code></pre>
 </div>
-<div class="column" width="50%">
+<div class="column" width="45%">
 <pre><code class="language-python">class Square(Rectangle):
 
     def __init__(self, width: int):
@@ -6277,7 +6398,7 @@ Anthony Ferrara</p>
 </div>
 <h1 id="user-statistics-example"><a class="header" href="#user-statistics-example">user statistics example</a></h1>
 <div class="columns">
-<div class="column pre-width-100" width="55%">
+<div class="column mt-3" width="55%">
 <p><code>as a user I want to see my activity to see my progress</code></p>
 <p>display user statistics including</p>
 <ul>
@@ -6362,10 +6483,10 @@ height="100" /></p>
 </div>
 <h2 id="architecture-v3---sql"><a class="header" href="#architecture-v3---sql">architecture v3 - SQL</a></h2>
 <div class="columns column-gapless">
-<div class="column" width="35%">
+<div class="column mt-3" width="30%">
 <p><img src="lectures/figures/user_statistics/component_3.svg" alt="" /></p>
 </div>
-<div class="column pre-width-100" width="65%">
+<div class="column" width="70%">
 <p><span class="text-smaller">for the activity matrix:</span></p>
 <pre><code class="language-sql">SELECT
     CAST(strftime('%W', timestamp) AS INTEGER) AS week_of_year,
@@ -6395,7 +6516,7 @@ GROUP BY
 </div>
 </div>
 </div>
-<div class="column pre-width-100" width="50%">
+<div class="column" width="50%">
 <p><span class="text-smaller">for the progress:</span></p>
 <pre><code class="language-sql">SELECT
     lesson / 50.0 AS progress
