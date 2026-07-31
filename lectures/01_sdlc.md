@@ -218,11 +218,19 @@ This reads like an answer to the agile manifesto.
 The working software is good, but should well-crafted, which aligns with the ninth agile principle: "Continuous attention to technical excellence and good design enhances agility."
 :::
 
+## software craftsmanship in the era of vibes
+
+> Most people are talking about how AI can help us make software faster and help us make more software.
+> As craftspeople, we should look at AI and ask, "How can this help me build better software?
+>
+> -- [Nathan Sobo](https://zed.dev/blog/software-craftsmanship-in-the-era-of-vibes)
+
+
 <!--## subway map to agile practices
 
 ![](borrowed/subway_map_to_agile_practices.svg)-->
 
-## agile vs. waterfall
+# agile vs. waterfall
 
 | agile                                 | waterfall                              |
 |:-------------------------------------:|:--------------------------------------:|
