@@ -85,8 +85,6 @@ for (var i = 0; i < 10; i++) {
 
 # procedural
 
-<!-- :::::::::::: {.columns} -->
-<!-- ::::::::: {.column width="70%"} -->
 - extends structural with procedures
     - a.k.a. subroutines, methods, functions
 - the two main concepts
@@ -95,23 +93,6 @@ for (var i = 0; i < 10; i++) {
     - scoping
         - limit the scope of the variables
 
-<!--:::::::::
-::::::::: {.column width="30%"}
-![](figures/flowchart_procedure.drawio.svg)
-
-```python
-def power(a, b):
-    r = a
-    for _ in range(b - 1):
-        r *= r
-    return r
-
-a = 4.2
-a = a * 10
-power(a, 3)
-```
-
-:::::::::-->
 
 ## procedural - example
 
@@ -506,22 +487,6 @@ Aggregation can occur when a class is a collection or container of other classes
 :::::::::
 ::::::::::::
 
-<!--
-# activity diagram
-
-- graphical representations of workflows
-- similar to flowcharts
-    - but uses UML notation
-    - and can visualize parallel processing
-
-:::::::::::: {.columns}
-::::::::: {.column width="50%"}
-![](figures/uml/power.drawio.svg){height=300}
-:::::::::
-::::::::: {.column width="50%"}
-![](figures/uml/activity.svg){height=300}
-:::::::::
-::::::::::::-->
 
 # activity diagram
 
