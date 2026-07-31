@@ -1324,7 +1324,7 @@ it is hard to objectively measure the quality of code
 ::::::::: {.column width="70%" .mt-4}
 - zombie scrum: doing something without heart, without its essence
 - if you write unit tests _just_ to increase the test coverage they loose its function
-    - and collect badges: ![](figures/code coverage_ 84_.svg){width=150 .no-margin .va-middle} ![](figures/code coverage_ 100_.svg){width=150 .no-margin .va-middle}
+    - and collect badges: ![](figures/code coverage_ 84_.svg){width=150 .m-0 .va-middle} ![](figures/code coverage_ 100_.svg){width=150 .m-0 .va-middle}
 
 :::::::::
 ::::::::: {.column width="30%"}

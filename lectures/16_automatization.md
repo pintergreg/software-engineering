@@ -510,7 +510,7 @@ also known as daily build
 :::
 :::::::::
 ::::::::: {.column width="30%"}
-![](figures/test_pyramid_manual.drawio.svg){width=200 .no-margin}
+![](figures/test_pyramid_manual.drawio.svg){width=200 .m-0}
 
 :::::::::
 ::::::::::::
