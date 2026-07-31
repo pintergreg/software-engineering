@@ -14,6 +14,8 @@
 - [Practical Tips on Software Architecture Design, Part Two](https://medium.com/@mbue/practical-tips-on-software-architecture-design-part-two-37c2b61d7b6d) - by Marco Bürckel
 - [Why Write ADRs](https://github.blog/engineering/why-write-adrs/) - by Eli Perkins
 - [Stacey matrix](https://www.praxisframework.org/en/library/stacey-matrix)
+- [I don't think AI will make your processes go faster](https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/) - by Frederick Vanbrabant
+- [The Cathedral, the Bazaar, and the Winchester Mystery House](https://www.dbreunig.com/2026/03/26/winchester-mystery-house.html) - by Drew Breunig
 
 ## week 2
 

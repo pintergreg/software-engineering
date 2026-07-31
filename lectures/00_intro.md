@@ -256,6 +256,101 @@ One should come up with recipes, cook the food, but the restaurant also needs co
 
 :::
 
+## {visibility=hidden}
+
+> Software development is about translating a problem into a solution that a computer can understand and automatically resolve. Preferably in a secure and scalable way.
+>
+> -- Frederick Vanbrabant
+
+# software engineering in the age of ~~AI~~ LLM
+
+![based on Frederick Vanbrabant's figure](figures/project_timeline__before_ai_fvb.svg)
+
+- if your task was to improve project throughput, your first stop would be _software development_
+- because that takes the most amount of time
+
+    
+## software engineering in the age of ~~AI~~ LLM / 2
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+![based on Frederick Vanbrabant's figure](figures/project_timeline_expectation_fvb.svg)
+
+:::::::::
+::::::::: {.column width="50%"}
+::: {.text-larger}
+expectation: AI's going to make it so much faster
+:::
+
+::: {.wide-quote .mt-2}
+> Every software developer knows that you can’t make projects go faster just by typing faster. If that were the case we would all be taking typing lessons.
+>
+> [[Frederick Vanbrabant]{.text-smaller}](https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/)
+:::
+
+:::::::::
+::::::::::::
+
+## software is made between commits
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%" .mt-3}
+- coding got cheap^*^ with coding agents
+    - [^*^price is increasing though]{.text-smaller}
+- but coding wasn't the difficult part
+    - comprehension and coordination are
+- to translate a problem into a solution that a computer can understand, you need a full overview of the problem
+    - e.g., with constant iteration with the domain experts <!--(more agile)-->
+    - this is often the part that slows down software development
+
+:::::::::
+::::::::: {.column width="25%"}
+![](figures/borrowed/mermaid-diagram-2026-07-31-130228.svg)
+
+:::::::::
+::::::::::::
+
+:::{.text-smaller}
+source/reading: [I don't think AI will make your processes go faster](https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/) by Frederick Vanbrabant
+:::
+
+## coding agents generate code based on specification
+
+which can get performing a requirement analysis
+
+> What software developers have been begging for since the beginning of the profession: Receiving a detailed outline of the problem and what the end result should look like.
+>
+> [Frederick Vanbrabant](https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/)
+
+## from today, is software engineering dead?
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+::: {.wide-quote}
+> From today, painting is dead.
+>
+> [-- Paul Delaroche, French painter]{.text-smaller}
+
+:::
+:::{.text-smaller .mt-2}
+- photography didn’t kill painting,
+    -  just changed what painting was for 
+- nowadays, having cameras in smartphones doesn't make everyone a photographer
+- although one doesn't need a photographer to take a photo
+- LLMs will change software engineering but won't replace it
+- painting remained as an art, see software craftmanship
+:::
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/artist-paints-a-picture.svg)
+
+:::::::::
+::::::::::::
+
+:::{.text-smaller}
+readings: [From Today, Software Engineering is Dead](https://building138.com/from-today-software-engineering-is-dead) by Russell Jennings
+:::
+
 
 # software development is like building a house
 
@@ -713,7 +808,7 @@ further reading: [Simplicity](https://www.joelonsoftware.com/2006/12/09/simplici
 a more technical read: [Why Linux’s biggest ever kernel release is really no big deal](https://www.linux.com/news/why-linuxs-biggest-ever-kernel-release-is-really-no-big-deal/)
 :::
 
-# version control
+## version control
 
 :::::::::::: {.columns}
 ::::::::: {.column width="55%" .mt-4}
@@ -929,6 +1024,9 @@ trade-off between
 - implementation speed (or ease of coding) and the number of dependencies
 - reading/understanding the code and the number of dependencies
 
+::: {.mt-4 .text-smaller}
+[advice:]{.text-color-lightblue} you don't want to reimplement datetime / timezone handling
+:::
 <!--
 :::::::::
 ::::::::: {.column width="50%" .fragment}
@@ -936,6 +1034,38 @@ trade-off between
 
 :::::::::
 ::::::::::::-->
+
+## how much code a developer write
+
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .wide-quote}
+Mythical man month: 10 lines per developer day [@brooks1974mythical]
+
+:::{.text-smaller}
+> Redis is composed of 100k lines of code, I wrote at least 70k of that in 10 years. [...] assuming I work 22 days every month for 11 months:
+>
+>    70000/(22*11*10) = ~29 LOC / day
+>
+> Which is not too far from 10 [...], so the Mythical Man Month book is indeed quite accurate.
+>
+> -- [Salvatore "antirez" Sanfilippo](https://news.ycombinator.com/item?id=22308360), creator of the Redis in-memory database
+
+:::
+:::::::::
+::::::::: {.column width="50%" .text-smaller .mt-2}
+|years of coding|avg. lines per day|lines per year|
+|:-------------:|-----------------:|-------------:|
+|           1-5 |              100 |       25,000 |
+|          5-10 |               80 |       20,000 |
+|         10-15 |               60 |       15,000 |
+|         15-20 |               40 |       10,000 |
+|           20+ |               20 |        5,000 |
+
+table: how much code does a developer write? [@mcenery2020how]
+
+:::::::::
+::::::::::::
 
 ## reimplementation costs
 
@@ -966,6 +1096,22 @@ table: how much code does a developer write? [@mcenery2020how]
 
 :::::::::
 ::::::::::::
+
+## recalculating reimplementation costs
+
+- with Opus 4.5 and enabling Agent Teams, the average net lines added by Claude per commit is 1,000 lines of code per commit
+- which is ~2 magnitudes higher than what a human programmer writes per day
+
+:::{.text-smaller .mt-3}
+source: [The Cathedral, the Bazaar, and the Winchester Mystery House](https://www.dbreunig.com/2026/03/26/winchester-mystery-house.html) by Drew Breunig
+:::
+
+:::{.r-fit-text .mt-2}
+implementation costs are changing
+:::
+
+practically decreasing
+
 
 # complexity classes
 
