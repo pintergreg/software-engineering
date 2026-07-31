@@ -364,6 +364,18 @@ source: [When to make a Git Commit ](https://dev.to/gonedark/when-to-make-a-git-
 ::::::::::::
 
 
+## discussion
+
+:::{.r-fit-text}
+if AI writes code, should the session be part of the commit?
+:::
+
+<!--:::{.fragment}
+> Source code is now source conversation [with a coding agent]. -- Nathan Sobo
+
+:::-->
+
+
 ## branching strategies
 
 - branching is more than just separating workspace, work-in-progress code from released
