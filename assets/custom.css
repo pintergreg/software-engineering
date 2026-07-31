@@ -128,9 +128,6 @@ figcaption {
 .no-figure-top-margin img {
     margin-top: 0;
 }
-.no-margin {
-    margin: 0 !important;
-}
 .border-color-primary {
     border-color: var(--r-main-color);
 }
