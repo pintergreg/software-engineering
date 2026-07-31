@@ -79,18 +79,12 @@
 #references {
     font-size: 1.15rem;
 }
-.color-box {
-    width: 2ex;
-    height: 2ex;
-    display: inline-block;
-    border: 1px solid #2d2d2d;
-}
 .center-content {
     display: flex;
     align-items: center;
 }
 .citation {
-    color: #bf9055;
+    color: var(--r-link-color);
 }
 .background-color-lightblue {
     background: #bee4fd !important;
@@ -148,9 +142,6 @@ figcaption {
 }
 .svg-invert {
     filter: invert(100%);
-}
-.hyphens {
-    hyphens: auto;
 }
 .wide-quote blockquote {
     width: 100% !important;
