@@ -231,7 +231,7 @@ advantages
 ::::::::: {.column width="50%"}
 ![](figures/solid/open_closed_pre.svg)
 :::::::::
-::::::::: {.column width="50%" .pre-width-100 .text-smaller}
+::::::::: {.column width="50%" .text-smaller}
 ```python
 class Shape:
     pass
@@ -321,7 +321,7 @@ example based on [@oloruntoba2024solid]
 ## Liskov substitution principle - example
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%" .pre-width-100}
+::::::::: {.column width="55%"}
 ```python
 class Rectangle:
 
@@ -347,7 +347,7 @@ class Rectangle:
 ```
 
 :::::::::
-::::::::: {.column width="50%"}
+::::::::: {.column width="45%"}
 ```python
 class Square(Rectangle):
 
@@ -845,7 +845,7 @@ other alternatives: [Alternatives To MVC ](https://blog.ircmaxell.com/2014/11/al
 # user statistics example
 
 :::::::::::: {.columns}
-::::::::: {.column width="55%" .pre-width-100}
+::::::::: {.column width="55%" .mt-3}
 `as a user I want to see my activity to see my progress`
 
 display user statistics including
@@ -958,10 +958,10 @@ make the database aggregate the data
 ## architecture v3 - SQL
 
 :::::::::::: {.columns .column-gapless}
-::::::::: {.column width="35%"}
+::::::::: {.column width="30%" .mt-3}
 ![](figures/user_statistics/component_3.svg)
 :::::::::
-::::::::: {.column width="65%" .pre-width-100}
+::::::::: {.column width="70%"}
 [for the activity matrix:]{.text-smaller}
 
 ```sql
@@ -995,7 +995,7 @@ GROUP BY
 :::
 :::::
 :::::::::
-::::::::: {.column width="50%" .pre-width-100}
+::::::::: {.column width="50%"}
 [for the progress:]{.text-smaller}
 
 ```sql

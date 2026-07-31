@@ -154,12 +154,6 @@ figcaption {
 .column-align-left {
     text-align: left;
 }
-.pre-width-100 pre {
-    width: 100% !important;
-}
-.pre-width-100 > div {
-    margin: 0 !important;
-}
 .width-100 {
     width: 100% !important;
 }
@@ -177,4 +171,7 @@ figcaption {
 }
 .r-frame {
     border: 2px solid var(--r-main-color) !important;
+}
+.reveal pre {
+    width: 100%;
 }

@@ -23,22 +23,22 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 # structural
 
-:::::::::::: {.columns}
+:::::::::::: {.columns .column-gapless}
 ::::::::: {.column width="20%" .mt-5}
 - statement
 - [condition]{.fragment data-fragment-index=1}
 - [iteration]{.fragment data-fragment-index=2}
 
 :::::::::
-::::::::: {.column width="40%"}
+::::::::: {.column width="50%"}
 :::::: {.r-stack .text-size-2}
-::: {.fragment .fade-out data-fragment-index=1 .pre-width-100}
+::: {.fragment .fade-out data-fragment-index=1}
 ```python
 a = 4.2
 a = a * 10
 ```
 :::
-::: {.fragment .current-visible data-fragment-index=1 .pre-width-100}
+::: {.fragment .current-visible data-fragment-index=1}
 ```python
 if a > 17
     a -= 5
@@ -46,7 +46,7 @@ else:
     a += 5
 ```
 :::
-::: {.fragment data-fragment-index=2 .pre-width-100}
+::: {.fragment data-fragment-index=2}
 <br>
 ```python
 for i in range(10):
@@ -65,7 +65,7 @@ for (var i = 0; i < 10; i++) {
 
 ::::::
 :::::::::
-::::::::: {.column width="40%"}
+::::::::: {.column width="30%"}
 :::::: {.r-stack}
 ::: {.fragment .fade-out data-fragment-index=1}
 ![](figures/flowchart_statement.drawio.svg)
