@@ -1317,6 +1317,56 @@ to do that, you need to know all the unknowns, so you need **requirements analys
 see KISS philosophy...
 :::
 
+# summary: software engineering often compared to house building
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="60%"}
+- because it is an engineering discipline
+- however software doesn't have to obey<br>the laws of physics
+- software design should focus on the data structures and the connection between the modules
+    - not the implementation details
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/architect-engineer-developing-a-construction-of-house.svg){width=250}
+:::::::::
+::::::::::::
+
+## software development is more like gardening
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- a garden might be planned
+- external factors influence the result
+    - weather, pests
+- garden needs constant care to bloom
+- sometimes also experimentation
+    - methods, tools
+- garden is like an art (with function)
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/gardener-watering-with-a-hose.svg){width=250}
+:::::::::
+::::::::::::
+
+## software growth
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- number of lines of code is increasing
+    - which increases complexity
+- "every line of code written comes at a price: maintenance" [@tef2016write]
+    - larger garden, more gardening
+- software development processes to handle the complexity
+    - the course focuses on requirement analysis and design 
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/idea-of-success-achievement.svg){width=250}
+:::::::::
+::::::::::::
+
 # references
 
 ::: {#refs .text-smaller}
