@@ -338,6 +338,8 @@ which can get performing a requirement analysis
 - nowadays, having cameras in smartphones doesn't make everyone a photographer
 - although one doesn't need a photographer to take a photo
 - LLMs will change software engineering but won't replace it
+    - age of personal software?
+    - [software for one](https://www.ajwaxman.com/writing/software-for-one) by Adam Waxman
 - painting remained as an art, see software craftmanship
 :::
 :::::::::
