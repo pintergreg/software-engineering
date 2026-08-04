@@ -1,0 +1,18 @@
+@startuml
+skin rose
+scale 2
+() REST as i1
+() REST as i2
+[component 1] .right.> i1 : receive
+
+i1 - [your component]
+[your component] .right.> i2: send
+i2 - [component 3]
+
+note top of i1
+  liberal: e.g., missing time zone of the timestamp
+end note
+note top of i2
+  strictly adhere standards
+end note
+@enduml

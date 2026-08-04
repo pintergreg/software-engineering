@@ -246,6 +246,8 @@ alt="hexagonal arcitectural pattern (a.k.a. ports &amp; adapters)" />
 <figcaption aria-hidden="true">hexagonal arcitectural pattern (a.k.a.
 ports &amp; adapters)</figcaption>
 </figure>
+<p>the most important elements of the design are the interfaces, hexagonal
+arcitecture focuses on them</p>
 <h2 id="user-statistics-example---interfaces"><a class="header" href="#user-statistics-example---interfaces">user statistics example - interfaces</a></h2>
 <div class="columns">
 <div class="column" width="60%">
@@ -523,7 +525,7 @@ gpd.GeoDataFrame(geometry=[p1, p2]).unary_union
 </div>
 <p>IDEs can parse the deprecation decorators and show to the developer
 during work</p>
-<h1 id="discusson-hyrums-law"><a class="header" href="#discusson-hyrums-law">discusson: Hyrum’s Law</a></h1>
+<h1 id="discussion-hyrums-law"><a class="header" href="#discussion-hyrums-law">discussion: Hyrum’s Law</a></h1>
 <div class="columns column-gapless">
 <div class="column wide-quote mt-5" width="65%">
 <blockquote>
@@ -579,8 +581,45 @@ depend on it</p>
 <p>think like a villian, someone who’s going to abuse the system that
 you’re designing and building</p>
 </div>
+<h1 id="discussion-postels-law"><a class="header" href="#discussion-postels-law">discussion: Postel’s law</a></h1>
+<div class="wide-quote">
+<blockquote>
+<p>Be conservative in what you do, be liberal in what you accept from
+others.</p>
+<p>– Jon Postel, in the specification of TCP in 1980 (RFC 761) source:
+<a href="https://lawsofsoftwareengineering.com/laws/postels-law/">Postel’s
+Law</a></p>
+</blockquote>
+</div>
+<h2 id="postels-law"><a class="header" href="#postels-law">Postel’s law</a></h2>
+<p><img src="figures/postels_law.svg" alt="" /></p>
+<div class="columns wide-quote">
+<div class="column" width="33%">
+<blockquote>
+<p>When receiving data, handle variations, minor errors, or deviations
+where possible. Don’t crash or reject communication over minor issues.</p>
+</blockquote>
+</div>
+<div class="column" width="33%">
+<blockquote>
+<p>When your system emits data or interacts with the outside world,
+adhere closely to protocols and standards.</p>
+</blockquote>
+</div>
+<div class="column" width="33%">
+<blockquote>
+<p>In modern times, overly liberal acceptance can sometimes mask errors,
+so this law is occasionally tempered with security considerations.</p>
+</blockquote>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://lawsofsoftwareengineering.com/laws/postels-law/">Laws of Software Engineering / Postel’s
+Law</a></p>
+</div>
 <h1 id="references"><a class="header" href="#references">references</a></h1>
-<div id="refs" class="references csl-bib-body hanging-indent"
+<div id="refs"
+class="text-smaller references csl-bib-body hanging-indent"
 line-spacing="2">
 <div id="ref-dodd2020metric" class="csl-entry">
 <p>Dodd, T. (2020). <em>Metric vs imperial units: How NASA lost a 327 million

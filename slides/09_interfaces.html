@@ -239,6 +239,8 @@ alt="hexagonal arcitectural pattern (a.k.a. ports &amp; adapters)" />
 <figcaption aria-hidden="true">hexagonal arcitectural pattern (a.k.a.
 ports &amp; adapters)</figcaption>
 </figure>
+<p>the most important elements of the design are the interfaces,
+hexagonal arcitecture focuses on them</p>
 </section>
 <section id="user-statistics-example---interfaces" class="slide level2">
 <h2>user statistics example - interfaces</h2>
@@ -542,8 +544,8 @@ data-cites="ozler2019java">[5]</span></p>
 during work</p>
 </section></section>
 <section>
-<section id="discusson-hyrums-law" class="title-slide slide level1">
-<h1>discusson: Hyrum’s Law</h1>
+<section id="discussion-hyrums-law" class="title-slide slide level1">
+<h1>discussion: Hyrum’s Law</h1>
 <div class="columns column-gapless">
 <div class="column wide-quote mt-5" style="width:65%;">
 <blockquote>
@@ -601,9 +603,51 @@ depend on it</p>
 you’re designing and building</p>
 </div>
 </section></section>
+<section>
+<section id="discussion-postels-law" class="title-slide slide level1">
+<h1>discussion: Postel’s law</h1>
+<div class="wide-quote">
+<blockquote>
+<p>Be conservative in what you do, be liberal in what you accept from
+others.</p>
+<p>– Jon Postel, in the specification of TCP in 1980 (RFC 761) source:
+<a
+href="https://lawsofsoftwareengineering.com/laws/postels-law/">Postel’s
+Law</a></p>
+</blockquote>
+</div>
+</section>
+<section id="postels-law" class="slide level2">
+<h2>Postel’s law</h2>
+<p><img data-src="figures/postels_law.svg" /></p>
+<div class="columns wide-quote">
+<div class="column" style="width:33%;">
+<blockquote>
+<p>When receiving data, handle variations, minor errors, or deviations
+where possible. Don’t crash or reject communication over minor
+issues.</p>
+</blockquote>
+</div><div class="column" style="width:33%;">
+<blockquote>
+<p>When your system emits data or interacts with the outside world,
+adhere closely to protocols and standards.</p>
+</blockquote>
+</div><div class="column" style="width:33%;">
+<blockquote>
+<p>In modern times, overly liberal acceptance can sometimes mask errors,
+so this law is occasionally tempered with security considerations.</p>
+</blockquote>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://lawsofsoftwareengineering.com/laws/postels-law/">Laws of
+Software Engineering / Postel’s Law</a></p>
+</div>
+</section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="references csl-bib-body" role="list">
+<div id="refs" class="text-smaller references csl-bib-body" role="list">
 <div id="ref-enwiki:1244878409" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Interface
