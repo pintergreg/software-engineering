@@ -357,7 +357,7 @@ source: [@ozler2019java]
 IDEs can parse the deprecation decorators and show to the developer during work
 
 
-# discusson: Hyrum's Law
+# discussion: Hyrum's Law
 
 :::::::::::: {.columns .column-gapless}
 ::::::::: {.column width="65%" .wide-quote .mt-5}
@@ -420,7 +420,40 @@ think like a villian, someone who's going to abuse the system that you’re desi
 
 :::
 
+# discussion: Postel's law
+
+::: {.wide-quote}
+> Be conservative in what you do, be liberal in what you accept from others.
+> 
+> -- Jon Postel, in the specification of TCP in 1980 (RFC 761) source: [Postel's Law](https://lawsofsoftwareengineering.com/laws/postels-law/)
+
+:::
+
+
+## Postel's law
+
+![](figures/postels_law.svg)
+
+:::::::::::: {.columns .wide-quote}
+::::::::: {.column width="33%"}
+> When receiving data, handle variations, minor errors, or deviations where possible. Don’t crash or reject communication over minor issues.
+
+:::::::::
+::::::::: {.column width="33%"}
+> When your system emits data or interacts with the outside world, adhere closely to protocols and standards.
+
+:::::::::
+::::::::: {.column width="33%"}
+> In modern times, overly liberal acceptance can sometimes mask errors, so this law is occasionally tempered with security considerations.
+
+:::::::::
+::::::::::::
+
+:::{.text-smaller}
+source: [Laws of Software Engineering / Postel's Law](https://lawsofsoftwareengineering.com/laws/postels-law/)
+:::
+
 # references
 
-::: {#refs}
+::: {#refs .text-smaller}
 :::
