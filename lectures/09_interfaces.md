@@ -133,10 +133,10 @@ def generate_activity_matrix
   result
 end
 
-get '/user-statistics' do
+get '/user/:id/statistics' do
   data = {}
   data['name'] = 'Marvin'
-  data['id'] = 42
+  data['id'] = params['id']
   data['registration'] = '2019-10-02'
   data['progress'] = generate_progress
   data['activity'] = generate_activity_matrix
@@ -146,7 +146,7 @@ end
 :::::::::
 ::::::::: {.column width="40%"}
 ::: {.text-smaller}
-`http://localhost:4567/user-statistics`
+`http://localhost:4567/user/42/statistics`
 :::
 
 ```json
@@ -356,6 +356,69 @@ source: [@ozler2019java]
 
 IDEs can parse the deprecation decorators and show to the developer during work
 
+
+# discusson: Hyrum's Law
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="65%" .wide-quote .mt-5}
+> With a sufficient number of users of an API,<br>
+> it does not matter what you promise in the contract:<br>
+> all observable behaviors of your system<br>
+> will be depended on by somebody.
+>
+> --  Hyrum Wright, 2012
+
+:::{}
+[Hyrum's Law](https://www.hyrumslaw.com/)
+:::
+
+:::::::::
+::::::::: {.column width="35%"}
+![by Randall Munroe<br>[CC&nbsp;BY-NC&nbsp;2.5](https://creativecommons.org/licenses/by-nc/2.5/deed.en) | [source](https://xkcd.com/1172/)](figures/borrowed/xkcd/workflow_2x.png)
+:::::::::
+::::::::::::
+
+
+## example to Hyrum's Law
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+`/user/<id>/statistics`
+
+```json
+{
+    "name": "Marvin",
+    "id": 42,
+    "registration": "2019-10-02",
+    "progress": 0.92,
+    "activity": [
+        [4,9,7,4,7,1,8],
+        [9,8,1,8,4,1,7],
+        [3,6,8,4,2,4,5],
+        [3,5,5,3,2,9,7]
+    ]
+}
+```
+:::::::::
+::::::::: {.column width="50%"}
+no documented `/users` endpoint, but existing implementation
+
+``` ruby
+get '/users' do
+  data = {"ids" => [42]}
+  return data.to_json
+end
+```
+
+sooner or later someone will discover the undocumented behavior and depend on it
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+think like a villian, someone who's going to abuse the system that you’re designing and building
+
+:::
 
 # references
 

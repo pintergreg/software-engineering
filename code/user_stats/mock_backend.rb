@@ -18,15 +18,20 @@ def generate_activity_matrix
   result
 end
 
-get '/user-statistics' do
+get '/user/:id/statistics' do
   data = {}
   data['name'] = 'Marvin'
-  data['id'] = 42
+  data['id'] = params['id']
   data['registration'] = '2019-10-02'
   data['progress'] = generate_progress
   data['activity'] = generate_activity_matrix
   return data.to_json
 end
+
+# get '/users' do
+#   data = {"ids" => [42]}
+#   return data.to_json
+# end
 
 # irb(main):002:0> generate_progress
 # => 0.58
