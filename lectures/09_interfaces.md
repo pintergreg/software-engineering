@@ -16,14 +16,18 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 an interface is a shared boundary across which two or more separate components of a computer system [@enwiki:1244878409]
 
-:::::::::::: {.columns .mt-3}
+:::::::::::: {.columns .mt-2}
 ::::::::: {.column width="50%"}
 ![hardware interfaces by [Pittigrilli](https://en.wikipedia.org/wiki/File:RJ-45_Ethernet_socket_on_Lenovo_T410_Laptop.jpg) | [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/RJ-45_Ethernet_socket_on_Lenovo_T410_Laptop.jpg){width=450}
+
+[Ethernet 1000BASE-T | DisplayPort 1.2 | USB 2.0]{.text-smaller}
 :::::::::
 ::::::::: {.column width="50%"}
 ![user interface KDE Plasma 5.22 from [Wikimedia](https://commons.wikimedia.org/wiki/File:KDE_Plasma_5.22.png) [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/KDE_Plasma_5.22.png){width=450}
 :::::::::
 ::::::::::::
+
+![](figures/uml/component_horizontal.svg){height=150}
 
 
 ## interface is an agreement
@@ -40,6 +44,27 @@ an interface is a shared boundary across which two or more separate components o
 ![](figures/publicdomainvectors/business-handshake-hands.svg){width=500}
 :::::::::
 ::::::::::::
+
+# a 327 Million Dollar interface miscommunication
+
+NASA and Lockheed Martin mixed up units for the Mars Climate Orbiter (1999)
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-1}
+- spacecraft sent values back to Earth in **Newton seconds** (kg⋅m/s)
+- the software in the ground station read those results as **pound seconds**
+    - the guidance and navigation teams was off by a factor of 4.45 times
+- this led to a miscalculated trajectory, which doomed the probe and the mission
+
+:::::::::
+::::::::: {.column width="40%"}
+![rendering of the Mars Climate Orbiter [by NASA/JPL/Corby Waste via [Wikipedia](https://en.wikipedia.org/wiki/File:Mars_Climate_Orbiter_2.jpg) [@enwiki:1248652445]]{.text-small}](figures/borrowed/Mars_Climate_Orbiter_2.jpg)
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+based on [@dodd2020metric], read the [full story](https://everydayastronaut.com/mars-climate-orbiter/) written by Tim Dodd
+:::
 
 #
 
@@ -330,28 +355,6 @@ source: [@ozler2019java]
 :::
 
 IDEs can parse the deprecation decorators and show to the developer during work
-
-
-# a 327 Million Dollar interface miscommunication
-
-NASA and Lockheed Martin mixed up units for the Mars Climate Orbiter (1999)
-
-:::::::::::: {.columns}
-::::::::: {.column width="60%" .mt-1}
-- spacecraft sent values back to Earth in **Newton seconds**
-- the software in the ground station read those results as **pound seconds**
-    - the guidance and navigation teams was off by a factor of 4.45 times
-- this led to a miscalculated trajectory, which doomed the probe and the mission
-
-:::::::::
-::::::::: {.column width="40%"}
-![rendering of the Mars Climate Orbiter [by NASA/JPL/Corby Waste via [Wikipedia](https://en.wikipedia.org/wiki/File:Mars_Climate_Orbiter_2.jpg) [@enwiki:1248652445]]{.text-small}](figures/borrowed/Mars_Climate_Orbiter_2.jpg)
-:::::::::
-::::::::::::
-
-::: {.text-smaller}
-based on [@dodd2020metric], read the [full story](https://everydayastronaut.com/mars-climate-orbiter/) written by Tim Dodd
-:::
 
 
 # references
