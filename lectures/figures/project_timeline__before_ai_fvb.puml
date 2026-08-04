@@ -1,0 +1,31 @@
+@startgantt
+
+skin rose
+scale 2
+<style>
+ganttDiagram {
+	separator {
+		Margin 1 5
+		Padding 1 25
+	}
+}
+</style>
+printscale weekly
+Project starts 2026-01-07
+-- scoping --
+[feature exploration] requires 2 weeks
+[budget] starts 2026-01-21 and requires 1 week
+[legal] starts 2026-01-21 and requires 2 weeks
+[documenting] starts 2026-02-04 and requires 1 week
+-- development --
+[exploration] starts 2026-02-11 and requires 3 weeks
+[software development] starts 2026-03-04 and requires 12 weeks
+'note bottom
+'  seemingly the development is the bottleneck
+'end note
+[documentation] starts 2026-05-27 and requires 17 days
+-- deployment --
+[deployment] starts 2026-05-27 and requires 2 weeks
+'[intensive care] starts 2026-06-10 and requires 2 weeks
+
+@endgantt
