@@ -924,7 +924,35 @@ format examples:
 table: KDE / Plasma 6.1 series [release schedule](https://community.kde.org/Schedules/Plasma_6)
 
 
+## maker's schedule, manager's schedule {visibility=hidden}
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+- manager's schedule is for bosses
+- traditional appointment book, with each day cut into one hour intervals
+- by default you change what you're doing every hour
+- but you can block off several hours for a single task if you need to
+- need to meet with someone? find an open slot in your schedule, book them, and you're done
+
+:::::::::
+::::::::: {.column width="50%"}
+- another way of using time that's common among people who make things
+    - like programmers and writers
+- prefer to use time in units of *half a day at least
+- an hour is barely enough time to get started coding well
+- meetings are a disaster: a single meeting can breaking an afternoon into two too small pieces
+
+:::::::::
+::::::::::::
+
 # interruption
+
+> Multitasking is a myth. What you’re really doing is switching between tasks. It's almost always more efficient to focus on one task at a time.
+>
+> -- Dr. Sahar Yousef, Cognitive Neuroscientist, UC Berkeley
+
+
+## obligatory comic about interruption
 
 :::::::::::: {.columns}
 ::::::::: {.column width="33%"}
@@ -944,7 +972,7 @@ table: KDE / Plasma 6.1 series [release schedule](https://community.kde.org/Sche
 
 ## interruption
 
-- the greatest "enemy" of a developer is interruption
+- one of the greatest "enemy" of a developer is interruption
 - the code is one thing, the logic behind it is another
     - takes time to understand
 - context switching is costly
@@ -1005,6 +1033,60 @@ source: [The Cost of Interruption for Software Developers](https://www.brightdev
 
 ::: {.text-smaller}
 source: [The Cost of Interruption for Software Developers](https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/) -- by Steven To [@to2018cost]
+:::
+
+
+## maker's schedule, manager's schedule
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+- manager's schedule is for bosses
+- traditional appointment book, with each day cut into **one hour intervals**
+- by default you change what you're doing every hour
+- but you can block off several hours for a single task if you need to
+- need to meet with someone? find an open slot in your schedule, book them, and you're done
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/to-do-list.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Maker's Schedule, Manager's Schedule](https://www.paulgraham.com/makersschedule.html) -- by Paul Graham 
+:::
+
+## maker's schedule, manager's schedule
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+- another way of using time that's common among people who make things
+    - like programmers and writers
+- prefer to use time in units of **half a day at least**
+- an hour is barely enough time to get started coding well
+- **meetings are a disaster**: a single meeting can breaking an afternoon into two too small pieces
+    - ["the mere consciousness of an engagement will sometimes worry a whole day" -- Charles Dickens]{.text-smaller}
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/developer-at-work.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Maker's Schedule, Manager's Schedule](https://www.paulgraham.com/makersschedule.html) -- by Paul Graham 
+:::
+
+
+## meeting is a disaster
+
+::: {.wide-quote}
+> For someone on the maker's schedule, having a meeting is like throwing an exception. It doesn't merely cause you to switch from one task to another; it changes the mode in which you work.
+>
+> -- Paul Graham, [Maker's Schedule, Manager's Schedule](https://www.paulgraham.com/makersschedule.html)
+
 :::
 
 
