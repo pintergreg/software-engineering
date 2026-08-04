@@ -144,7 +144,7 @@ close attention to interface definition</p>
 <p>an interface is a shared boundary across which two or more separate
 components of a computer system <span class="citation"
 data-cites="enwiki:1244878409">[1]</span></p>
-<div class="columns mt-3">
+<div class="columns mt-2">
 <div class="column" style="width:50%;">
 <figure>
 <img
@@ -155,6 +155,8 @@ href="https://en.wikipedia.org/wiki/File:RJ-45_Ethernet_socket_on_Lenovo_T410_La
 | <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC
 BY-SA</a></figcaption>
 </figure>
+<p><span class="text-smaller">Ethernet 1000BASE-T | DisplayPort 1.2 |
+USB 2.0</span></p>
 </div><div class="column" style="width:50%;">
 <figure>
 <img data-src="figures/borrowed/KDE_Plasma_5.22.png" width="450"
@@ -166,6 +168,8 @@ BY-SA</a></figcaption>
 </figure>
 </div>
 </div>
+<p><img data-src="figures/uml/component_horizontal.svg"
+height="150" /></p>
 </section>
 <section id="interface-is-an-agreement" class="slide level2">
 <h2>interface is an agreement</h2>
@@ -187,6 +191,45 @@ width="500" /></p>
 </div>
 </div>
 </section>
+<section id="a-327-million-dollar-interface-miscommunication"
+class="title-slide slide level1">
+<h1>a 327 Million Dollar interface miscommunication</h1>
+<p>NASA and Lockheed Martin mixed up units for the Mars Climate Orbiter
+(1999)</p>
+<div class="columns">
+<div class="column mt-1" style="width:60%;">
+<ul>
+<li>spacecraft sent values back to Earth in <strong>Newton
+seconds</strong> (kg⋅m/s)</li>
+<li>the software in the ground station read those results as
+<strong>pound seconds</strong>
+<ul>
+<li>the guidance and navigation teams was off by a factor of 4.45
+times</li>
+</ul></li>
+<li>this led to a miscalculated trajectory, which doomed the probe and
+the mission</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<figure>
+<img data-src="figures/borrowed/Mars_Climate_Orbiter_2.jpg"
+alt="rendering of the Mars Climate Orbiter by NASA/JPL/Corby Waste via Wikipedia [2]" />
+<figcaption aria-hidden="true">rendering of the Mars Climate Orbiter
+<span class="text-small">by NASA/JPL/Corby Waste via <a
+href="https://en.wikipedia.org/wiki/File:Mars_Climate_Orbiter_2.jpg">Wikipedia</a>
+<span class="citation"
+data-cites="enwiki:1248652445">[2]</span></span></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>based on <span class="citation"
+data-cites="dodd2020metric">[3]</span>, read the <a
+href="https://everydayastronaut.com/mars-climate-orbiter/">full
+story</a> written by Tim Dodd</p>
+</div>
+</section>
+
 <section>
 <section id="section" class="title-slide slide level1">
 <h1></h1>
@@ -241,7 +284,7 @@ the backends’s state
 <blockquote>
 <p>A mock, in software engineering, is a simulated object or module that
 acts as a stand-in for a real object or module <span class="citation"
-data-cites="geeksforgeeks2019mock">[2]</span>.
+data-cites="geeksforgeeks2019mock">[4]</span>.
 <!-- Mocks are often used in testing to isolate the behavior of a particular module or component and to verify that it behaves as expected. --></p>
 </blockquote>
 </div>
@@ -269,10 +312,10 @@ class="sourceCode numberSource ruby number-lines"><code class="sourceCode ruby">
 <span id="sinatra-16"><a href="#sinatra-16"></a>  result</span>
 <span id="sinatra-17"><a href="#sinatra-17"></a><span class="cf">end</span></span>
 <span id="sinatra-18"><a href="#sinatra-18"></a></span>
-<span id="sinatra-19"><a href="#sinatra-19"></a>get <span class="vs">&#39;/user-statistics&#39;</span> <span class="cf">do</span></span>
+<span id="sinatra-19"><a href="#sinatra-19"></a>get <span class="vs">&#39;/user/:id/statistics&#39;</span> <span class="cf">do</span></span>
 <span id="sinatra-20"><a href="#sinatra-20"></a>  data <span class="kw">=</span> <span class="kw">{}</span></span>
 <span id="sinatra-21"><a href="#sinatra-21"></a>  data<span class="kw">[</span><span class="vs">&#39;name&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;Marvin&#39;</span></span>
-<span id="sinatra-22"><a href="#sinatra-22"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="dv">42</span></span>
+<span id="sinatra-22"><a href="#sinatra-22"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="kw">=</span> params<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span></span>
 <span id="sinatra-23"><a href="#sinatra-23"></a>  data<span class="kw">[</span><span class="vs">&#39;registration&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;2019-10-02&#39;</span></span>
 <span id="sinatra-24"><a href="#sinatra-24"></a>  data<span class="kw">[</span><span class="vs">&#39;progress&#39;</span><span class="kw">]</span> <span class="kw">=</span> generate_progress</span>
 <span id="sinatra-25"><a href="#sinatra-25"></a>  data<span class="kw">[</span><span class="vs">&#39;activity&#39;</span><span class="kw">]</span> <span class="kw">=</span> generate_activity_matrix</span>
@@ -280,7 +323,7 @@ class="sourceCode numberSource ruby number-lines"><code class="sourceCode ruby">
 <span id="sinatra-27"><a href="#sinatra-27"></a><span class="cf">end</span></span></code></pre></div>
 </div><div class="column" style="width:40%;">
 <div class="text-smaller">
-<p><code>http://localhost:4567/user-statistics</code></p>
+<p><code>http://localhost:4567/user/42/statistics</code></p>
 </div>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
@@ -493,50 +536,71 @@ class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>source: <span class="citation"
-data-cites="ozler2019java">[3]</span></p>
+data-cites="ozler2019java">[5]</span></p>
 </div>
 <p>IDEs can parse the deprecation decorators and show to the developer
 during work</p>
 </section></section>
-<section id="a-327-million-dollar-interface-miscommunication"
-class="title-slide slide level1">
-<h1>a 327 Million Dollar interface miscommunication</h1>
-<p>NASA and Lockheed Martin mixed up units for the Mars Climate Orbiter
-(1999)</p>
-<div class="columns">
-<div class="column mt-1" style="width:60%;">
-<ul>
-<li>spacecraft sent values back to Earth in <strong>Newton
-seconds</strong></li>
-<li>the software in the ground station read those results as
-<strong>pound seconds</strong>
-<ul>
-<li>the guidance and navigation teams was off by a factor of 4.45
-times</li>
-</ul></li>
-<li>this led to a miscalculated trajectory, which doomed the probe and
-the mission</li>
-</ul>
-</div><div class="column" style="width:40%;">
+<section>
+<section id="discusson-hyrums-law" class="title-slide slide level1">
+<h1>discusson: Hyrum’s Law</h1>
+<div class="columns column-gapless">
+<div class="column wide-quote mt-5" style="width:65%;">
+<blockquote>
+<p>With a sufficient number of users of an API,<br> it does not matter
+what you promise in the contract:<br> all observable behaviors of your
+system<br> will be depended on by somebody.</p>
+<p>– Hyrum Wright, 2012</p>
+</blockquote>
+<div>
+<p><a href="https://www.hyrumslaw.com/">Hyrum’s Law</a></p>
+</div>
+</div><div class="column" style="width:35%;">
 <figure>
-<img data-src="figures/borrowed/Mars_Climate_Orbiter_2.jpg"
-alt="rendering of the Mars Climate Orbiter by NASA/JPL/Corby Waste via Wikipedia [4]" />
-<figcaption aria-hidden="true">rendering of the Mars Climate Orbiter
-<span class="text-small">by NASA/JPL/Corby Waste via <a
-href="https://en.wikipedia.org/wiki/File:Mars_Climate_Orbiter_2.jpg">Wikipedia</a>
-<span class="citation"
-data-cites="enwiki:1248652445">[4]</span></span></figcaption>
+<img data-src="figures/borrowed/xkcd/workflow_2x.png"
+alt="by Randall Munroe CC BY-NC 2.5 | source" />
+<figcaption aria-hidden="true">by Randall Munroe<br><a
+href="https://creativecommons.org/licenses/by-nc/2.5/deed.en">CC BY-NC 2.5</a>
+| <a href="https://xkcd.com/1172/">source</a></figcaption>
 </figure>
 </div>
 </div>
-<div class="text-smaller">
-<p>based on <span class="citation"
-data-cites="dodd2020metric">[5]</span>, read the <a
-href="https://everydayastronaut.com/mars-climate-orbiter/">full
-story</a> written by Tim Dodd</p>
-</div>
 </section>
-
+<section id="example-to-hyrums-law" class="slide level2">
+<h2>example to Hyrum’s Law</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><code>/user/&lt;id&gt;/statistics</code></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Marvin&quot;</span><span class="fu">,</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">42</span><span class="fu">,</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;registration&quot;</span><span class="fu">:</span> <span class="st">&quot;2019-10-02&quot;</span><span class="fu">,</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;progress&quot;</span><span class="fu">:</span> <span class="fl">0.92</span><span class="fu">,</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;activity&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">4</span><span class="ot">,</span><span class="dv">9</span><span class="ot">,</span><span class="dv">7</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">7</span><span class="ot">,</span><span class="dv">1</span><span class="ot">,</span><span class="dv">8</span><span class="ot">],</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">9</span><span class="ot">,</span><span class="dv">8</span><span class="ot">,</span><span class="dv">1</span><span class="ot">,</span><span class="dv">8</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">1</span><span class="ot">,</span><span class="dv">7</span><span class="ot">],</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">3</span><span class="ot">,</span><span class="dv">6</span><span class="ot">,</span><span class="dv">8</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">2</span><span class="ot">,</span><span class="dv">4</span><span class="ot">,</span><span class="dv">5</span><span class="ot">],</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">3</span><span class="ot">,</span><span class="dv">5</span><span class="ot">,</span><span class="dv">5</span><span class="ot">,</span><span class="dv">3</span><span class="ot">,</span><span class="dv">2</span><span class="ot">,</span><span class="dv">9</span><span class="ot">,</span><span class="dv">7</span><span class="ot">]</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<p>no documented <code>/users</code> endpoint, but existing
+implementation</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>get <span class="vs">&#39;/users&#39;</span> <span class="cf">do</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  data <span class="kw">=</span> <span class="kw">{</span><span class="st">&quot;ids&quot;</span> <span class="kw">=&gt;</span> <span class="kw">[</span><span class="dv">42</span><span class="kw">]}</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="at">.to_json</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+<p>sooner or later someone will discover the undocumented behavior and
+depend on it</p>
+</div>
+</div>
+<div class="text-smaller">
+<p>think like a villian, someone who’s going to abuse the system that
+you’re designing and building</p>
+</div>
+</section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
 <div id="refs" class="references csl-bib-body" role="list">
@@ -549,25 +613,8 @@ href="https://en.wikipedia.org/w/index.php?title=Interface_(computing)&amp;oldid
 class="uri">https://en.wikipedia.org/w/index.php?title=Interface_(computing)&amp;oldid=1244878409</a>,
 2024.</div>
 </div>
-<div id="ref-geeksforgeeks2019mock" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div
-class="csl-right-inline">GeeksforGeeks, <span>“MOCK (introduction) –
-software engineering.”</span> <a href="
-                   https://www.geeksforgeeks.org/software-engineering-mock-introduction/
-                    " class="uri">
-                   https://www.geeksforgeeks.org/software-engineering-mock-introduction/
-</a>, 26-Apr-2019.</div>
-</div>
-<div id="ref-ozler2019java" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">H.
-Ozler, <span>“Java @deprecated annotation.”</span> <a href="
-                   https://www.baeldung.com/java-deprecated
-                    " class="uri">
-                   https://www.baeldung.com/java-deprecated
-</a>, 02-Jan-2019.</div>
-</div>
 <div id="ref-enwiki:1248652445" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div
+<div class="csl-left-margin">[2] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Mars climate
 orbiter — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -576,13 +623,30 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Mars_Climate_Orbiter&amp;
 2024.</div>
 </div>
 <div id="ref-dodd2020metric" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">T.
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">T.
 Dodd, <span>“Metric vs imperial units: How NASA lost a 327 million
 dollar mission to mars.”</span> <a href="
                    https://everydayastronaut.com/mars-climate-orbiter/
                     " class="uri">
                    https://everydayastronaut.com/mars-climate-orbiter/
 </a>, 14-Mar-2020.</div>
+</div>
+<div id="ref-geeksforgeeks2019mock" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div
+class="csl-right-inline">GeeksforGeeks, <span>“MOCK (introduction) –
+software engineering.”</span> <a href="
+                   https://www.geeksforgeeks.org/software-engineering-mock-introduction/
+                    " class="uri">
+                   https://www.geeksforgeeks.org/software-engineering-mock-introduction/
+</a>, 26-Apr-2019.</div>
+</div>
+<div id="ref-ozler2019java" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">H.
+Ozler, <span>“Java @deprecated annotation.”</span> <a href="
+                   https://www.baeldung.com/java-deprecated
+                    " class="uri">
+                   https://www.baeldung.com/java-deprecated
+</a>, 02-Jan-2019.</div>
 </div>
 </div>
 </section>

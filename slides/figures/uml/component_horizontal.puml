@@ -1,0 +1,13 @@
+@startuml
+skin rose
+scale 2
+[web UI] .right.> REST : use
+
+REST - [login manager]
+'note right of [login manager]
+'  a component
+'end note
+'note top of REST
+'  an interface
+'end note
+@enduml

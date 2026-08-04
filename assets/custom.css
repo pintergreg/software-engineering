@@ -170,5 +170,5 @@ figcaption {
     border: 2px solid var(--r-main-color) !important;
 }
 .reveal pre {
-    width: 100%;
+    width: 99%;
 }
