@@ -8751,12 +8751,20 @@ Guide</a></li>
 </ul>
 </li>
 </ul>
-<div class="fragment">
+<div>
 <p>not just style guides, also best practices</p>
 </div>
 </div>
 <div class="column" width="45%">
 <img src="lectures/figures/style_hierarchy.drawio.svg" width="375" />
+<ul>
+<li>project level:
+<ul>
+<li>Joint Strike Fighter (F-35)<br><a href="https://www.stroustrup.com/JSF-AV-rules.pdf">C++ coding
+standard</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 <h1 id="write-idiomatic-code"><a class="header" href="#write-idiomatic-code">write idiomatic code</a></h1>
@@ -8798,7 +8806,7 @@ width="250" /></p>
 properly</p>
 </div>
 <h2 id="write-idiomatic-code-1"><a class="header" href="#write-idiomatic-code-1">write idiomatic code</a></h2>
-<div class="columns column-gapless">
+<div class="columns">
 <div class="column" width="55">
 <pre><code class="language-javascript">for (i = 0; i &lt; 10; i++) {
     console.log(i);
@@ -8845,9 +8853,9 @@ end
 <h1 id="clean-code"><a class="header" href="#clean-code">clean code</a></h1>
 <p>Clean Code: A Handbook of Agile Software Craftsmanship</p>
 <p>by Robert C. Martin (2009) (Martin, 2009)</p>
-<!--::: {.fragment .text-smaller}
-some recommendations are too specific to C-like languages
-:::-->
+<div class="notes">
+<p>some recommendations are too specific to C-like languages</p>
+</div>
 <h1 id="meaningful-names"><a class="header" href="#meaningful-names">meaningful names</a></h1>
 <div class="columns">
 <div class="column mt-5" width="60%">
@@ -9146,7 +9154,7 @@ Martin (Martin, 2009)</p>
 <li>shorter functions are easier to understand</li>
 </ul>
 <h2 id="do-one-thing-single-responsibility-principle"><a class="header" href="#do-one-thing-single-responsibility-principle">do one thing (single responsibility principle)</a></h2>
-<div class="columns column-gapless fragment">
+<div class="columns fragment">
 <div class="column" width="68%">
 <div class="text-smaller">
 <pre><code class="language-python">import sqlite3
@@ -9396,6 +9404,91 @@ LIMIT 1;
 </div>
 </div>
 </div>
+<h2 id="command-query-separation"><a class="header" href="#command-query-separation">command query separation</a></h2>
+<div class="wide-quote">
+<blockquote>
+<ul>
+<li>Commands: Change the state of a system but do not return a value.</li>
+<li>Queries: Return a result and do not change the observable state of
+the system (are free of side effects).</li>
+</ul>
+<p>– Martin Fowler, <a href="https://martinfowler.com/bliki/CommandQuerySeparation.html">Command Query
+Separation</a></p>
+</blockquote>
+</div>
+<div class="mt-2">
+<ul>
+<li>states that each method should be either a command that performs an
+action</li>
+<li>or a query that returns data to the caller</li>
+<li>but not both
+<ul>
+<li>asking a question should not modify the answer</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="text-smaller mt-2">
+<p>source: <a href="https://github.com/iluwatar/programming-principles">Introduction to Programming
+Principles</a> by Ilkka
+Seppälä,<br><a href="https://martinfowler.com/bliki/CommandQuerySeparation.html">Command Query
+Separation</a>
+by Martin Fowler</p>
+</div>
+<h2 id="no-side-effects"><a class="header" href="#no-side-effects">no side effects</a></h2>
+<div class="columns">
+<div class="column wide-qoute" width="50%">
+<blockquote>
+<p>Side effects are lies. Your function promises to do one thing, but it
+also does other hidden things (Martin, 2009).</p>
+<p>– Robert C. Martin</p>
+</blockquote>
+</div>
+<div class="column text-smaller wide-qoute" width="50%">
+<blockquote>
+<p>an operation, function or expression is said to have a <strong>side effect</strong>
+if it modifies some state variable value(s) outside its local
+environment, that is to say has an observable effect besides returning
+a value (the main effect) to the invoker of the operation (Wikipedia
+contributors, 2022).</p>
+</blockquote>
+</div>
+</div>
+<h2 id="side-effect-example"><a class="header" href="#side-effect-example">side effect example</a></h2>
+<div class="columns">
+<div class="column" width="50%">
+<pre><code class="language-python">class Something:
+    foo = 0
+    
+    def increase(self, by):
+        self.foo += by
+    
+    def decrease(self, by):
+        self.foo -= by
+    
+something = Something()
+print(something.foo)  # 0
+something.increase(2)
+print(something.foo)  # 2
+</code></pre>
+</div>
+<div class="column fragment" width="50%">
+<pre><code class="language-python">smth = {"foo": 0}
+
+def increase(what, by):
+    return what + by
+
+def decrease(what, by):
+    return what - by
+
+print(smth["foo"])  # 0
+increase(smth["foo"], 2)  # 2
+print(smth["foo"])  # 0
+smth["foo"] = increase(smth["foo"], 2)
+print(smth["foo"])  # 2
+</code></pre>
+</div>
+</div>
 <h2 id="the-inverse-scope-law-of-function-names"><a class="header" href="#the-inverse-scope-law-of-function-names">the inverse scope law of function names</a></h2>
 <div class="columns">
 <div class="column" width="70%">
@@ -9419,8 +9512,8 @@ Martin</a></p>
 </div>
 </div>
 <h2 id="function-arguments"><a class="header" href="#function-arguments">function arguments</a></h2>
-<div class="columns column-gapless">
-<div class="column" width="45%">
+<div class="columns">
+<div class="column" width="50%">
 <div class="text-align-left">
 <ul>
 <li>do not use more than three (Martin, 2009)</li>
@@ -9447,7 +9540,7 @@ proclaiming that this function does more than one thing (Martin,
 </ul>
 </div>
 </div>
-<div class="column" width="55%">
+<div class="column" width="50%">
 <pre><code class="language-python">def build_empty_dataframe(start, end, cols):
     records = []
     for woy in range(start, end + 1):
@@ -9505,60 +9598,6 @@ alt="Libreoffice Calc CSV settings dialog" />
 <figcaption aria-hidden="true">Libreoffice Calc CSV settings
 dialog</figcaption>
 </figure>
-</div>
-</div>
-<h2 id="no-side-effects"><a class="header" href="#no-side-effects">no side effects</a></h2>
-<div class="columns">
-<div class="column wide-qoute" width="50%">
-<blockquote>
-<p>Side effects are lies. Your function promises to do one thing, but it
-also does other hidden things (Martin, 2009).</p>
-<p>– Robert C. Martin</p>
-</blockquote>
-</div>
-<div class="column text-smaller wide-qoute" width="50%">
-<blockquote>
-<p>an operation, function or expression is said to have a <strong>side effect</strong>
-if it modifies some state variable value(s) outside its local
-environment, that is to say has an observable effect besides returning
-a value (the main effect) to the invoker of the operation (Wikipedia
-contributors, 2022).</p>
-</blockquote>
-</div>
-</div>
-<h2 id="side-effect-example"><a class="header" href="#side-effect-example">side effect example</a></h2>
-<div class="columns column-gapless">
-<div class="column" width="50%">
-<pre><code class="language-python">class Something:
-    foo = 0
-    
-    def increase(self, by):
-        self.foo += by
-    
-    def decrease(self, by):
-        self.foo -= by
-    
-something = Something()
-print(something.foo)  # 0
-something.increase(2)
-print(something.foo)  # 2
-</code></pre>
-</div>
-<div class="column fragment" width="50%">
-<pre><code class="language-python">smth = {"foo": 0}
-
-def increase(what, by):
-    return what + by
-
-def decrease(what, by):
-    return what - by
-
-print(smth["foo"])  # 0
-increase(smth["foo"], 2)  # 2
-print(smth["foo"])  # 0
-smth["foo"] = increase(smth["foo"], 2)
-print(smth["foo"])  # 2
-</code></pre>
 </div>
 </div>
 <h2 id="prefer-exceptions-to-returning-error-codes"><a class="header" href="#prefer-exceptions-to-returning-error-codes">prefer exceptions to returning error codes</a></h2>
@@ -9648,7 +9687,7 @@ activities_matrix = pivot_dataframe(data)
 </code></pre>
 <p>only the comments remained, which can be read as a prose</p>
 <h2 id="more-bad-comments"><a class="header" href="#more-bad-comments">more bad comments</a></h2>
-<div class="columns column-gapless">
+<div class="columns">
 <div class="column" width="60%">
 <div>
 <p><strong>journal comment</strong></p>
@@ -9924,7 +9963,7 @@ height="300" /></p>
 </div>
 </div>
 <h2 id="clean-code--comments-martin-2009"><a class="header" href="#clean-code--comments-martin-2009">clean code / comments (Martin, 2009)</a></h2>
-<div class="columns column-gapless">
+<div class="columns">
 <div class="column" width="60%">
 <p><strong>avoid</strong></p>
 <ul>
