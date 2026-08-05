@@ -717,6 +717,85 @@ Table: empty activity table
 ::::::::::::
 
 
+## command query separation
+
+::: {.wide-quote}
+> - Commands: Change the state of a system but do not return a value.
+> - Queries: Return a result and do not change the observable state of the system (are free of side effects).
+>
+> -- Martin Fowler, [Command Query Separation](https://martinfowler.com/bliki/CommandQuerySeparation.html)
+
+:::
+
+::: {.mt-2}
+- states that each method should be either a command that performs an action 
+- or a query that returns data to the caller
+- but not both
+    - asking a question should not modify the answer
+
+:::
+
+::: {.text-smaller .mt-2}
+source: [Introduction to Programming Principles](https://github.com/iluwatar/programming-principles) by Ilkka Seppälä,<br>[Command Query Separation](https://martinfowler.com/bliki/CommandQuerySeparation.html) by Martin Fowler
+:::
+
+## no side effects
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .wide-qoute}
+> Side effects are lies.
+> Your function promises to do one thing, but it also does other hidden things [@martin2009clean].
+>
+> -- Robert C. Martin
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .wide-qoute}
+> an operation, function or expression is said to have a **side effect** if it modifies some state variable value(s) outside its local environment, that is to say has an observable effect besides returning a value (the main effect) to the invoker of the operation [@enwiki:1063806709].
+
+:::::::::
+::::::::::::
+
+
+## side effect example
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+```python
+class Something:
+    foo = 0
+    
+    def increase(self, by):
+        self.foo += by
+    
+    def decrease(self, by):
+        self.foo -= by
+    
+something = Something()
+print(something.foo)  # 0
+something.increase(2)
+print(something.foo)  # 2
+```
+:::::::::
+::::::::: {.column width="50%" .fragment}
+```python
+smth = {"foo": 0}
+
+def increase(what, by):
+    return what + by
+
+def decrease(what, by):
+    return what - by
+
+print(smth["foo"])  # 0
+increase(smth["foo"], 2)  # 2
+print(smth["foo"])  # 0
+smth["foo"] = increase(smth["foo"], 2)
+print(smth["foo"])  # 2
+```
+:::::::::
+::::::::::::
+
+
 ## the inverse scope law of function names
 
 :::::::::::: {.columns}
@@ -820,63 +899,6 @@ DataFrame.to_csv(
 ::::::::::::
 
 
-## no side effects
-
-:::::::::::: {.columns}
-::::::::: {.column width="50%" .wide-qoute}
-> Side effects are lies.
-> Your function promises to do one thing, but it also does other hidden things [@martin2009clean].
->
-> -- Robert C. Martin
-
-:::::::::
-::::::::: {.column width="50%" .text-smaller .wide-qoute}
-> an operation, function or expression is said to have a **side effect** if it modifies some state variable value(s) outside its local environment, that is to say has an observable effect besides returning a value (the main effect) to the invoker of the operation [@enwiki:1063806709].
-
-:::::::::
-::::::::::::
-
-
-## side effect example
-
-:::::::::::: {.columns}
-::::::::: {.column width="50%"}
-```python
-class Something:
-    foo = 0
-    
-    def increase(self, by):
-        self.foo += by
-    
-    def decrease(self, by):
-        self.foo -= by
-    
-something = Something()
-print(something.foo)  # 0
-something.increase(2)
-print(something.foo)  # 2
-```
-:::::::::
-::::::::: {.column width="50%" .fragment}
-```python
-smth = {"foo": 0}
-
-def increase(what, by):
-    return what + by
-
-def decrease(what, by):
-    return what - by
-
-print(smth["foo"])  # 0
-increase(smth["foo"], 2)  # 2
-print(smth["foo"])  # 0
-smth["foo"] = increase(smth["foo"], 2)
-print(smth["foo"])  # 2
-```
-:::::::::
-::::::::::::
-
-
 ## prefer exceptions to returning error codes
 
 - in unix-like systems processes still return 0 if the execution was successful
@@ -885,7 +907,6 @@ print(smth["foo"])  # 2
     - meaningful name
     - no mental mapping
     - exception handling syntactically more readable
-
 
 # comments
 
