@@ -212,7 +212,7 @@ DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/) -- a web-based sculpting and
     - what functions would you need
 - identify dependencies between the features / modules
 - plan sprints with usable increments
-- deadline: **2 December 2025** (week 12)
+- deadline: **2 December 2026** (week 12)
     - when the team also presents the work as a presentation (10 minutes)
 - practical classes are workshops
     - main source of feedback from the instructor
@@ -228,41 +228,79 @@ DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/) -- a web-based sculpting and
 
 # suggested software for
 
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
 - the document: [Google Docs](https://docs.google.com/docs)
-- user story map: [Google Drawings](https://docs.google.com/drawings)
-- flowchart: [Google Drawings](https://docs.google.com/drawings)
+- user story map:
+    1. [excalidraw](https://excalidraw.com/)
+    2. [Google Drawings](https://docs.google.com/drawings)
+    3. [user story map template for Google Sheets](https://www.avion.io/blog/user-story-mapping-template/)
+    4. [draw.io](https://app.diagrams.net/)
+- flowchart: [Google Drawings](https://docs.google.com/drawings), [draw.io](https://app.diagrams.net/)
+- C4: 
+    1. [excalidraw](https://excalidraw.com/) with a [C4 plugin](https://libraries.excalidraw.com/?target=_excalidraw&referrer=https://excalidraw.com/&useHash=true&token=3a8D0OOR3Rbh7B5J_pkNT&theme=light&version=2#dmitry-burnyshev-c4-architecture)
+    2. [Google Drawings](https://docs.google.com/drawings)
+    3. [create C4 diagrams in draw.io](https://www.drawio.com/blog/c4-modelling)
+- UML: [excalidraw](https://excalidraw.com/), [draw.io](https://app.diagrams.net/), [PlantUML](https://plantuml.com/)
 <!-- - team management: [Trello](https://trello.com/) -->
-- UML: [draw.io](https://app.diagrams.net/)
-- C4: [Google Drawings](https://docs.google.com/drawings)
-    - [create C4 diagrams in draw.io](https://www.drawio.com/blog/c4-modelling)
 
+::: {.text-smaller}
+excalidraw has excelent shared work functionality
+:::
 
+:::::::::
+::::::::: {.column width="30%" .exclude}
+![](../lectures/figures/publicdomainvectors/tools-in-hand.svg)
+
+:::::::::
+:::::::::::: 
+
+    
 # submission
 
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
 - you have to submit the main design document
 - you may indicate who was responsible for each part
 - including every diagram
     - please keep every version of the diagrams and attach them to the submission as I would like to see the evolution of your design
 - and the presentation
 
-you have to submit these by 2 December 2025 via Moodle,<br>when you also present your work
+you have to submit these (zipped)
+by 2 December 2026 via Moodle, when you also present your work
 
 it is enough to upload it by one person from each team
 
+:::::::::
+::::::::: {.column width="30%" .exclude}
+![](../lectures/figures/publicdomainvectors/sending-letter.svg)
+
+:::::::::
+:::::::::::: 
+
+
 # presentation
 
-- the presentation should contain the purpose of the software
-    - practically the project assignment
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+- the presentation should contain the purpose of the software component
+    - based on the project assignment
     - but with your interpretation
 - team members
-    - maybe with responsibilities
+    - with responsibilities
 - the introduction of your design
     - from high level to the low level (according to C4)
     - describe the overall design
-    - focusing on the interactions between your components
-    - detail at least one of the component to the class level
-    - attach UI mockups
+    - highlight on the interactions / interfaces between the components
+<!--     - detail at least one of the component to the class level -->
+    - attach UI mockups when necessary
 
+:::::::::
+::::::::: {.column width="30%" .exclude}
+![](../lectures/figures/publicdomainvectors/business-tactics-coaching.svg)
+
+:::::::::
+:::::::::::: 
     
 ## presentation
 
