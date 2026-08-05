@@ -16,7 +16,7 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 # the project
 
 An event organizer company entrusts your software development company to create a choreography designer software for drone shows.
-They have just bought 512 drones and they want to be able to do smaller-scale drone shows on parties, birthdays, and weddings.
+They have just bought 768 drones and they want to be able to do smaller-scale drone shows on parties, birthdays, and weddings.
 
 The software should be able to manage the position of every drone in a given space in respect of the time.
 Every drone is capable of switch on RGB LEDs with a given light intensity.
@@ -34,10 +34,15 @@ Your task is to design this software.
 ![Drone Show at Sydney (2023) by Leoxiong | [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)](../lectures/figures/borrowed/wikipedia/drone_show_at_sydney_2023.jpg)
 
 :::::::::
-::::::::: {.column width="40%" .text-smaller .mt-1}
-from YouTube
+::::::::: {.column width="40%" .text-smaller .mt-3}
 
-- [Dragon Boat Show with 1500 drones in Shenzhen, China](https://www.youtube.com/watch?v=3G1KBu6H6BM)
+example
+
+: [Dragon Boat Show with 1500 drones in Shenzhen, China](https://www.youtube.com/watch?v=3G1KBu6H6BM){target="_blank"}
+
+background
+
+: [How Drone Shows Work](https://www.youtube.com/watch?v=7fKfBb7x9WQ)<br>by Julius Moorman
 
 :::::::::
 ::::::::::::
@@ -46,21 +51,103 @@ from YouTube
 ## choreography design in focus
 
 :::::::::::: {.columns}
-::::::::: {.column width="60%"}
+::::::::: {.column width="60%" .mt-3}
 - the client company wants to design and operate the show
-- the software has to focus on the choreography design, not the software running on the drone
-- you can assume that there is a software from the drone manufacturer, which deals with the hardware level
+- the software has to focus on the choreography design
+    - not the software running on the drone
+- you can assume there's a software (SDK) from the drone manufacturer
+    - which deals with the hardware
     - it is an external "component" of the software system
 
 :::::::::
 ::::::::: {.column width="40%"}
-![](../lectures/figures/choreographer/viewport.drawio.svg)
+![AI generated | GPT Image2](../lectures/figures/choreographer/drone_show_gpt_image2_3x4.png)
 
 :::::::::
 ::::::::::::
 
-[How Drone Shows Work](https://www.youtube.com/watch?v=7fKfBb7x9WQ) by Julius Moorman
-    
+
+## architecture sketch
+
+![](../lectures/figures/choreographer/component.drawio.svg){width=700}
+
+## shape design
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+- responsible for creating models/shapes/objects
+   - saving, loading, modifying
+- 3D sculpting 
+- the exported model is used by the animation component
+
+DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/) -- a web-based sculpting and painting application
+
+
+:::::::::
+::::::::: {.column width="30%"}
+![shape design GUI mockup](../lectures/figures/choreographer/viewport.drawio.svg)
+
+:::::::::
+::::::::::::
+
+
+## animation
+
+- responsible for animating premade models
+    - in a 3D space and time
+- handles a timeline, which consist of frames
+- each frame holds some models in a position, orientation, color
+- allows modifications of a model
+- computes transformations between frames
+
+:::::::::::: {.columns .mt-2 .column-gapless}
+::::::::: {.column width="33%"}
+![](../lectures/figures/choreographer/animation_1.drawio.svg){.m-0}
+:::::::::
+::::::::: {.column width="33%"}
+![](../lectures/figures/choreographer/animation_2.drawio.svg){.m-0}
+:::::::::
+::::::::: {.column width="33%"}
+![](../lectures/figures/choreographer/animation_3.drawio.svg){.m-0}
+
+:::::::::
+::::::::::::
+
+[animation GUI mockup]{.text-smaller}
+
+
+## geo-mapping
+
+- responsible for determining the location of the drone show
+- using GPS coordinates
+- saving/loading/editing area description files
+- mapping the animation trajectory to real world (GPS) coordinates
+- DEMO: [geojson.io](https://geojson.io/?map=15.43/47.52645/19.04699)
+
+::: {.mt-1}
+![screenshot of [geojson.io](https://geojson.io/?map=15.43/47.52645/19.04699)](../lectures/figures/choreographer/geojson_io.png){height=300}
+
+:::
+
+
+## operation
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- responsible for starting / stopping the show
+- monitoring the drones during the show
+- check the status of the drones / environment
+- makes it possible to preview the show
+- initiate uploading trajectories
+    - show choreography
+- download telemetry from the drones
+
+:::::::::
+::::::::: {.column width="40%"}
+![operation GUI mockup](../lectures/figures/choreographer/operation.drawio.svg)
+
+:::::::::
+::::::::::::
 
 # contents -- outline
 
@@ -86,11 +173,11 @@ from YouTube
 ::::::::: {.column width="70%"}
 - user stories
     - user story maps
-    - with BDD-style acceptance criteria
+<!--     - with BDD-style acceptance criteria -->
 - flowcharts
 - first 3 level of C4
-- also static and dynamic models of the software
-    - 4th level / UML
+<!--- also static and dynamic models of the software
+    - 4th level / UML-->
 - UI mockups
 
 :::::::::
@@ -120,19 +207,19 @@ from YouTube
 ## work in agile methodology
 
 :::::::::::: {.columns}
-::::::::: {.column width="65%"}
+::::::::: {.column width="70%"}
 - imagine how you would use a software like this
     - what functions would you need
-- identify dependencies between the functions / modules
+- identify dependencies between the features / modules
 - plan sprints with usable increments
-- deadline: **10 December 2025** (week 13)
-    - when the team also presents the design as a presentation
+- deadline: **2 December 2025** (week 12)
+    - when the team also presents the work as a presentation (10 minutes)
 - practical classes are workshops
-    - possible feedback from the instructor
-- **NO CODING**
+    - main source of feedback from the instructor
+- NO CODING
 
 :::::::::
-::::::::: {.column width="35%"}
+::::::::: {.column width="30%"}
 ![](../lectures/figures/publicdomainvectors/business-ideas-development.svg)
 
 :::::::::
@@ -144,7 +231,7 @@ from YouTube
 - the document: [Google Docs](https://docs.google.com/docs)
 - user story map: [Google Drawings](https://docs.google.com/drawings)
 - flowchart: [Google Drawings](https://docs.google.com/drawings)
-- team management: [Trello](https://trello.com/)
+<!-- - team management: [Trello](https://trello.com/) -->
 - UML: [draw.io](https://app.diagrams.net/)
 - C4: [Google Drawings](https://docs.google.com/drawings)
     - [create C4 diagrams in draw.io](https://www.drawio.com/blog/c4-modelling)
@@ -155,11 +242,10 @@ from YouTube
 - you have to submit the main design document
 - you may indicate who was responsible for each part
 - including every diagram
-    - please keep every version of the diagrams and attach them to the submission
-        - I would like to see the evolution of your design
+    - please keep every version of the diagrams and attach them to the submission as I would like to see the evolution of your design
 - and the presentation
 
-you have to submit these by 10 December 2025 via Moodle,<br>when you also present your work
+you have to submit these by 2 December 2025 via Moodle,<br>when you also present your work
 
 it is enough to upload it by one person from each team
 
