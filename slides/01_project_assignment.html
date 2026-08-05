@@ -59,7 +59,7 @@ calc(100% - 1.25rem)" data-background-size="125px">
 <h1>the project</h1>
 <p>An event organizer company entrusts your software development company
 to create a choreography designer software for drone shows. They have
-just bought 512 drones and they want to be able to do smaller-scale
+just bought 768 drones and they want to be able to do smaller-scale
 drone shows on parties, birthdays, and weddings.</p>
 <p>The software should be able to manage the position of every drone in
 a given space in respect of the time. Every drone is capable of switch
@@ -81,36 +81,150 @@ alt="Drone Show at Sydney (2023) by Leoxiong | CC-BY-SA" />
 <a
 href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA</a></figcaption>
 </figure>
-</div><div class="column text-smaller mt-1" style="width:40%;">
-<p>from YouTube</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=3G1KBu6H6BM">Dragon Boat
-Show with 1500 drones in Shenzhen, China</a></li>
-</ul>
+</div><div class="column text-smaller mt-3" style="width:40%;">
+<dl>
+<dt>example</dt>
+<dd>
+<p><a href="https://www.youtube.com/watch?v=3G1KBu6H6BM"
+target="_blank">Dragon Boat Show with 1500 drones in Shenzhen,
+China</a></p>
+</dd>
+<dt>background</dt>
+<dd>
+<p><a href="https://www.youtube.com/watch?v=7fKfBb7x9WQ">How Drone Shows
+Work</a><br>by Julius Moorman</p>
+</dd>
+</dl>
 </div>
 </div>
 </section>
 <section id="choreography-design-in-focus" class="slide level2">
 <h2>choreography design in focus</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column mt-3" style="width:60%;">
 <ul>
 <li>the client company wants to design and operate the show</li>
-<li>the software has to focus on the choreography design, not the
-software running on the drone</li>
-<li>you can assume that there is a software from the drone manufacturer,
-which deals with the hardware level
+<li>the software has to focus on the choreography design
 <ul>
+<li>not the software running on the drone</li>
+</ul></li>
+<li>you can assume there’s a software (SDK) from the drone manufacturer
+<ul>
+<li>which deals with the hardware</li>
 <li>it is an external “component” of the software system</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
+<figure>
+<img
+data-src="../lectures/figures/choreographer/drone_show_gpt_image2_3x4.png"
+alt="AI generated | GPT Image2" />
+<figcaption aria-hidden="true">AI generated | GPT Image2</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="architecture-sketch" class="slide level2">
+<h2>architecture sketch</h2>
 <p><img
-data-src="../lectures/figures/choreographer/viewport.drawio.svg" /></p>
+data-src="../lectures/figures/choreographer/component.drawio.svg"
+width="700" /></p>
+</section>
+<section id="shape-design" class="slide level2">
+<h2>shape design</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>responsible for creating models/shapes/objects
+<ul>
+<li>saving, loading, modifying</li>
+</ul></li>
+<li>3D sculpting</li>
+<li>the exported model is used by the animation component</li>
+</ul>
+<p>DEMO: <a href="https://nomadsculpt.com/demo/">Nomad Sculpt</a> – a
+web-based sculpting and painting application</p>
+</div><div class="column" style="width:30%;">
+<figure>
+<img data-src="../lectures/figures/choreographer/viewport.drawio.svg"
+alt="shape design GUI mockup" />
+<figcaption aria-hidden="true">shape design GUI mockup</figcaption>
+</figure>
 </div>
 </div>
-<p><a href="https://www.youtube.com/watch?v=7fKfBb7x9WQ">How Drone Shows
-Work</a> by Julius Moorman</p>
+</section>
+<section id="animation" class="slide level2">
+<h2>animation</h2>
+<ul>
+<li>responsible for animating premade models
+<ul>
+<li>in a 3D space and time</li>
+</ul></li>
+<li>handles a timeline, which consist of frames</li>
+<li>each frame holds some models in a position, orientation, color</li>
+<li>allows modifications of a model</li>
+<li>computes transformations between frames</li>
+</ul>
+<div class="columns mt-2 column-gapless">
+<div class="column" style="width:33%;">
+<p><img
+data-src="../lectures/figures/choreographer/animation_1.drawio.svg"
+class="m-0" /></p>
+</div><div class="column" style="width:33%;">
+<p><img
+data-src="../lectures/figures/choreographer/animation_2.drawio.svg"
+class="m-0" /></p>
+</div><div class="column" style="width:33%;">
+<p><img
+data-src="../lectures/figures/choreographer/animation_3.drawio.svg"
+class="m-0" /></p>
+</div>
+</div>
+<p><span class="text-smaller">animation GUI mockup</span></p>
+</section>
+<section id="geo-mapping" class="slide level2">
+<h2>geo-mapping</h2>
+<ul>
+<li>responsible for determining the location of the drone show</li>
+<li>using GPS coordinates</li>
+<li>saving/loading/editing area description files</li>
+<li>mapping the animation trajectory to real world (GPS)
+coordinates</li>
+<li>DEMO: <a
+href="https://geojson.io/?map=15.43/47.52645/19.04699">geojson.io</a></li>
+</ul>
+<div class="mt-1">
+<figure>
+<img data-src="../lectures/figures/choreographer/geojson_io.png"
+height="300" alt="screenshot of geojson.io" />
+<figcaption aria-hidden="true">screenshot of <a
+href="https://geojson.io/?map=15.43/47.52645/19.04699">geojson.io</a></figcaption>
+</figure>
+</div>
+</section>
+<section id="operation" class="slide level2">
+<h2>operation</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>responsible for starting / stopping the show</li>
+<li>monitoring the drones during the show</li>
+<li>check the status of the drones / environment</li>
+<li>makes it possible to preview the show</li>
+<li>initiate uploading trajectories
+<ul>
+<li>show choreography</li>
+</ul></li>
+<li>download telemetry from the drones</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<figure>
+<img data-src="../lectures/figures/choreographer/operation.drawio.svg"
+alt="operation GUI mockup" />
+<figcaption aria-hidden="true">operation GUI mockup</figcaption>
+</figure>
+</div>
+</div>
 </section></section>
 <section>
 <section id="contents-outline" class="title-slide slide level1">
@@ -143,15 +257,13 @@ Work</a> by Julius Moorman</p>
 <ul>
 <li>user stories
 <ul>
-<li>user story maps</li>
-<li>with BDD-style acceptance criteria</li>
+<li>user story maps
+<!--     - with BDD-style acceptance criteria --></li>
 </ul></li>
 <li>flowcharts</li>
-<li>first 3 level of C4</li>
-<li>also static and dynamic models of the software
-<ul>
-<li>4th level / UML</li>
-</ul></li>
+<li>first 3 level of C4
+<!--- also static and dynamic models of the software
+    - 4th level / UML--></li>
 <li>UI mockups</li>
 </ul>
 </div><div class="column" style="width:30%;">
@@ -185,25 +297,26 @@ set of features
 <section id="work-in-agile-methodology" class="slide level2">
 <h2>work in agile methodology</h2>
 <div class="columns">
-<div class="column" style="width:65%;">
+<div class="column" style="width:70%;">
 <ul>
 <li>imagine how you would use a software like this
 <ul>
 <li>what functions would you need</li>
 </ul></li>
-<li>identify dependencies between the functions / modules</li>
+<li>identify dependencies between the features / modules</li>
 <li>plan sprints with usable increments</li>
-<li>deadline: <strong>10 December 2025</strong> (week 13)
+<li>deadline: <strong>2 December 2026</strong> (week 12)
 <ul>
-<li>when the team also presents the design as a presentation</li>
+<li>when the team also presents the work as a presentation (10
+minutes)</li>
 </ul></li>
 <li>practical classes are workshops
 <ul>
-<li>possible feedback from the instructor</li>
+<li>main source of feedback from the instructor</li>
 </ul></li>
-<li><strong>NO CODING</strong></li>
+<li>NO CODING</li>
 </ul>
-</div><div class="column" style="width:35%;">
+</div><div class="column" style="width:30%;">
 <p><img
 data-src="../lectures/figures/publicdomainvectors/business-ideas-development.svg" /></p>
 </div>
@@ -211,65 +324,100 @@ data-src="../lectures/figures/publicdomainvectors/business-ideas-development.svg
 </section></section>
 <section id="suggested-software-for" class="title-slide slide level1">
 <h1>suggested software for</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
 <ul>
 <li>the document: <a href="https://docs.google.com/docs">Google
 Docs</a></li>
-<li>user story map: <a href="https://docs.google.com/drawings">Google
-Drawings</a></li>
+<li>user story map:
+<ol type="1">
+<li><a href="https://excalidraw.com/">excalidraw</a></li>
+<li><a href="https://docs.google.com/drawings">Google Drawings</a></li>
+<li><a
+href="https://www.avion.io/blog/user-story-mapping-template/">user story
+map template for Google Sheets</a></li>
+<li><a href="https://app.diagrams.net/">draw.io</a></li>
+</ol></li>
 <li>flowchart: <a href="https://docs.google.com/drawings">Google
-Drawings</a></li>
-<li>team management: <a href="https://trello.com/">Trello</a></li>
-<li>UML: <a href="https://app.diagrams.net/">draw.io</a></li>
-<li>C4: <a href="https://docs.google.com/drawings">Google Drawings</a>
-<ul>
+Drawings</a>, <a href="https://app.diagrams.net/">draw.io</a></li>
+<li>C4:
+<ol type="1">
+<li><a href="https://excalidraw.com/">excalidraw</a> with a <a
+href="https://libraries.excalidraw.com/?target=_excalidraw&amp;referrer=https://excalidraw.com/&amp;useHash=true&amp;token=3a8D0OOR3Rbh7B5J_pkNT&amp;theme=light&amp;version=2#dmitry-burnyshev-c4-architecture">C4
+plugin</a></li>
+<li><a href="https://docs.google.com/drawings">Google Drawings</a></li>
 <li><a href="https://www.drawio.com/blog/c4-modelling">create C4
 diagrams in draw.io</a></li>
-</ul></li>
+</ol></li>
+<li>UML: <a href="https://excalidraw.com/">excalidraw</a>, <a
+href="https://app.diagrams.net/">draw.io</a>, <a
+href="https://plantuml.com/">PlantUML</a>
+<!-- - team management: [Trello](https://trello.com/) --></li>
 </ul>
+<div class="text-smaller">
+<p>excalidraw has excelent shared work functionality</p>
+</div>
+</div><div class="column exclude" style="width:30%;">
+<p><img
+data-src="../lectures/figures/publicdomainvectors/tools-in-hand.svg" /></p>
+</div>
+</div>
 </section>
 
 <section id="submission" class="title-slide slide level1">
 <h1>submission</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
 <ul>
 <li>you have to submit the main design document</li>
 <li>you may indicate who was responsible for each part</li>
 <li>including every diagram
 <ul>
 <li>please keep every version of the diagrams and attach them to the
-submission
-<ul>
-<li>I would like to see the evolution of your design</li>
-</ul></li>
+submission as I would like to see the evolution of your design</li>
 </ul></li>
 <li>and the presentation</li>
 </ul>
-<p>you have to submit these by 10 December 2025 via Moodle,<br>when you
-also present your work</p>
+<p>you have to submit these (zipped) by 2 December 2026 via Moodle, when
+you also present your work</p>
 <p>it is enough to upload it by one person from each team</p>
+</div><div class="column exclude" style="width:30%;">
+<p><img
+data-src="../lectures/figures/publicdomainvectors/sending-letter.svg" /></p>
+</div>
+</div>
 </section>
 
 <section>
 <section id="presentation" class="title-slide slide level1">
 <h1>presentation</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
 <ul>
 <li>the presentation should contain the purpose of the software
+component
 <ul>
-<li>practically the project assignment</li>
+<li>based on the project assignment</li>
 <li>but with your interpretation</li>
 </ul></li>
 <li>team members
 <ul>
-<li>maybe with responsibilities</li>
+<li>with responsibilities</li>
 </ul></li>
 <li>the introduction of your design
 <ul>
 <li>from high level to the low level (according to C4)</li>
 <li>describe the overall design</li>
-<li>focusing on the interactions between your components</li>
-<li>detail at least one of the component to the class level</li>
-<li>attach UI mockups</li>
+<li>highlight on the interactions / interfaces between the components
+<!--     - detail at least one of the component to the class level --></li>
+<li>attach UI mockups when necessary</li>
 </ul></li>
 </ul>
+</div><div class="column exclude" style="width:30%;">
+<p><img
+data-src="../lectures/figures/publicdomainvectors/business-tactics-coaching.svg" /></p>
+</div>
+</div>
 </section>
 <section id="presentation-1" class="slide level2">
 <h2>presentation</h2>
