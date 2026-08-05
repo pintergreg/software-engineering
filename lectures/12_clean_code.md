@@ -187,7 +187,7 @@ just as in the case of natural languages, you ought to use a language properly
 
 ## write idiomatic code
 
-:::::::::::: {.columns .column-gapless}
+:::::::::::: {.columns}
 ::::::::: {.column width="55"}
 ```javascript
 for (i = 0; i < 10; i++) {
@@ -253,9 +253,9 @@ Clean Code: A Handbook of Agile Software Craftsmanship
 
 by Robert C. Martin (2009) [@martin2009clean]
 
-<!--::: {.fragment .text-smaller}
+::: notes
 some recommendations are too specific to C-like languages
-:::-->
+:::
 
 
 # meaningful names
@@ -596,7 +596,7 @@ with own examples
 
 ## do one thing (single responsibility principle)
 
-:::::::::::: {.columns .column-gapless .fragment}
+:::::::::::: {.columns .fragment}
 ::::::::: {.column width="68%"}
 ::: {.text-smaller}
 ```python
@@ -740,8 +740,8 @@ Table: empty activity table
 
 ## function arguments
 
-:::::::::::: {.columns .column-gapless}
-::::::::: {.column width="45%"}
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
 ::: {.text-align-left}
 - do not use more than three [@martin2009clean]
 :::
@@ -755,7 +755,7 @@ Table: empty activity table
 :::
 
 :::::::::
-::::::::: {.column width="55%"}
+::::::::: {.column width="50%"}
 ```python
 def build_empty_dataframe(start, end, cols):
     records = []
@@ -839,7 +839,7 @@ DataFrame.to_csv(
 
 ## side effect example
 
-:::::::::::: {.columns .column-gapless}
+:::::::::::: {.columns}
 ::::::::: {.column width="50%"}
 ```python
 class Something:
@@ -979,8 +979,7 @@ only the comments remained, which can be read as a prose
 
 ## more bad comments
 
-
-:::::::::::: {.columns .column-gapless}
+:::::::::::: {.columns}
 ::::::::: {.column width="60%"}
 
 :::::: {}
@@ -1261,7 +1260,7 @@ Test passed.
 
 ## clean code / comments [@martin2009clean]
 
-:::::::::::: {.columns .column-gapless}
+:::::::::::: {.columns}
 ::::::::: {.column width="60%"}
 **avoid**
 
