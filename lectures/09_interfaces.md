@@ -432,7 +432,7 @@ think like a villian, someone who's going to abuse the system that you’re desi
 :::
 
 
-## Postel's law
+## Postel's law / robustness principle
 
 ![](figures/postels_law.svg)
 
