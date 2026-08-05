@@ -142,13 +142,16 @@ func isPrime(n int) bool {
         - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
         - [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
 
-::: {.fragment}
+
+::: {}
 not just style guides, also best practices
 :::
 :::::::::
 ::::::::: {.column width="45%"}
 ![](figures/style_hierarchy.drawio.svg){width=375}
 
+- project level:
+    - Joint Strike Fighter (F-35)<br>[C++ coding standard](https://www.stroustrup.com/JSF-AV-rules.pdf)
 :::::::::
 ::::::::::::
 
