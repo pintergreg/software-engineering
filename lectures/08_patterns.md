@@ -151,6 +151,8 @@ Peter Norvig [demonstrated](http://www.norvig.com/design-patterns/) that 16 out 
 
 ## map-filter-reduce
 
+some FP design patterns
+
 :::::::::::: {.columns}
 ::::::::: {.column width="10%"}
 map
@@ -182,6 +184,8 @@ filter the collection to include only those elements that evaluate to true using
 Enum.filter([1, 2, 3, 4], fn(x) -> rem(x, 2) == 0 end)
 [2, 4]
 ```
+
+[remove odd elements]{.text-smaller}
 :::::::::
 :::::::::::: 
 
