@@ -148,57 +148,6 @@ Peter Norvig [demonstrated](http://www.norvig.com/design-patterns/) that 16 out 
 
 [more about](https://fsharpforfunandprofit.com/fppatterns/) it from Scott Wlaschin [@wlaschin2014functional]
 
-## map-filter-reduce
-
-map
-: apply a function to each item and produce a new collection
-
-``` elixir
-Enum.map([0, 1, 2, 3], fn(x) -> x - 1 end)
-[-1, 0, 1, 2]
-```
-
-filter
-: filter the collection to include only those elements that evaluate to true using the provided function
-
-``` elixir
-Enum.filter([1, 2, 3, 4], fn(x) -> rem(x, 2) == 0 end)
-[2, 4]
-```
-
-reduce
-: distill the collection down into a single value
-
-``` elixir
-Enum.reduce([1, 2, 3], fn(x, acc) -> x + acc end)
-6
-```
-
-## map-filter-reduce
-
-| function | definition | example |
-|:--|:-----------|:---------------|
-| map      | apply a function to each item and produce a new collection |
-| filter   | filter the collection to include only those elements that evaluate to true using the provided function |
-| reduce   | distill the collection down into a single value |
-
-
-``` elixir
-Enum.map([0, 1, 2, 3], fn(x) -> x - 1 end)
-[-1, 0, 1, 2]
-```
-
-
-``` elixir
-Enum.filter([1, 2, 3, 4], fn(x) -> rem(x, 2) == 0 end)
-[2, 4]
-```
-
-
-``` elixir
-Enum.reduce([1, 2, 3], fn(x, acc) -> x + acc end)
-6
-```
 
 ## map-filter-reduce
 
