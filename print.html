@@ -5909,6 +5909,8 @@ class="citation" data-cites="stemmler2019how">(Stemmler,
 2019)</span></figcaption>
 </figure>
 <h2 id="structural-pattern-matching"><a class="header" href="#structural-pattern-matching">structural pattern matching</a></h2>
+<p>a <em>paradigm principle</em> example in functional programming, in addition to
+OOP’s from week 4</p>
 <div class="text-size-3">
 <pre><code class="language-python">foo = 3
 
@@ -5922,6 +5924,8 @@ match foo:
 </code></pre>
 </div>
 <h2 id="structural-pattern-matching-1"><a class="header" href="#structural-pattern-matching-1">structural pattern matching</a></h2>
+<p>a <em>paradigm principle</em> example in functional programming, in addition to
+OOP’s from week 4</p>
 <div class="text-size-3">
 <pre><code class="language-python">foo = [1, 2.4, 3.1]
 
@@ -6043,6 +6047,53 @@ Software” (1994) (Gamma et al., 1994)</li>
 features in Lisp or Dylan (1998) (Norvig, 1998)</p>
 <p><a href="https://fsharpforfunandprofit.com/fppatterns/">more about</a> it from
 Scott Wlaschin (Wlaschin, 2014)</p>
+<h2 id="map-filter-reduce"><a class="header" href="#map-filter-reduce">map-filter-reduce</a></h2>
+<p>some FP design patterns</p>
+<div class="columns">
+<div class="column" width="10%">
+<p>map</p>
+</div>
+<div class="column text-smaller" width="30%">
+<p>apply a function to each item and produce a new collection</p>
+</div>
+<div class="column" width="60%">
+<pre><code class="language-elixir">Enum.map([0, 1, 2, 3], fn(x) -&gt; x - 1 end)
+[-1, 0, 1, 2]
+</code></pre>
+</div>
+</div>
+<div class="columns">
+<div class="column" width="10%">
+<p>filter</p>
+</div>
+<div class="column text-smaller" width="30%">
+<p>filter the collection to include only those elements that evaluate to
+true using the provided function</p>
+</div>
+<div class="column" width="60%">
+<pre><code class="language-elixir">Enum.filter([1, 2, 3, 4], fn(x) -&gt; rem(x, 2) == 0 end)
+[2, 4]
+</code></pre>
+<p><span class="text-smaller">remove odd elements</span></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" width="10%">
+<p>reduce</p>
+</div>
+<div class="column text-smaller" width="30%">
+<p>distill the collection down into a single value</p>
+</div>
+<div class="column" width="60%">
+<pre><code class="language-elixir">Enum.reduce([1, 2, 3], fn(x, acc) -&gt; x + acc end)
+6
+</code></pre>
+</div>
+</div>
+<div class="text-smaller">
+<p>examples and definitions are from <a href="https://elixirschool.com/en/lessons/basics/enum">Elixir
+School</a> by Sean Callan</p>
+</div>
 <h1 id="you-arent-gonna-need-it-yagni"><a class="header" href="#you-arent-gonna-need-it-yagni">You aren’t gonna need it (YAGNI)</a></h1>
 <div class="columns">
 <div class="column" width="50%">
