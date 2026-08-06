@@ -265,8 +265,6 @@ source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.c
 
 ## Agile + Coding Agents
 
-
-<!-- - agile traded predictability for adaptability, addressing non-deterministic development -->
 - for solving the problem of non-deterministic development, agile traded predictability for adaptability
 - coding agents can build reliable software when problems are simple enough
 - split complex requirements into multiple simple ones (avoid heavy design docs)
@@ -278,7 +276,6 @@ source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.c
 ::: {.text-smaller .mt-2}
 source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html) by François Zaninotto
 :::
-
 
 # references
 
