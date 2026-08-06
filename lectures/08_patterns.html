@@ -644,6 +644,75 @@ href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia<
 <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
 (Wikipedia contributors, 2024a)</p>
 </div>
+<h1 id="law-of-demeter"><a class="header" href="#law-of-demeter">law of Demeter</a></h1>
+<div class="columns">
+<div class="column wide-quote mt-5" width="60%">
+<blockquote>
+<p>An object should only interact with its immediate friends, not
+strangers.</p>
+<p>– Ian Holland et al. (1987) (Milanović, 2026)</p>
+</blockquote>
+<ul>
+<li>an object should only call methods of:
+<ul>
+<li>itself,</li>
+<li>its direct components,</li>
+<li>its function parameters,</li>
+<li>or objects it creates<!-- - it should not navigate through one object to reach another -->
+</li>
+</ul>
+</li>
+<li>it should not reach an object through another one</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="figures/law_of_demeter_v2.drawio.svg"
+alt="based on (Milanović, 2026)" />
+<figcaption aria-hidden="true">based on <span class="citation"
+data-cites="milanovic2026demeter">(Milanović, 2026)</span></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://lawsofsoftwareengineering.com/laws/law-of-demeter/">Laws of Software Engineering / Law of
+Demeter</a></p>
+</div>
+<h2 id="law-of-demeter-1"><a class="header" href="#law-of-demeter-1">law of Demeter</a></h2>
+<div class="columns">
+<div class="column wide-quote mt-5" width="60%">
+<ul>
+<li>if object A only calls its immediate friend (B) and doesn’t reach into
+its internals (like C), then changes to C or removal of C don’t affect
+A
+<ul>
+<li><span class="text-smaller">this way, each class knows as little as
+possible about others, reducing the impact of changes</span></li>
+<li><span class="text-smaller">decreases dependency &amp; results looser
+coupling</span></li>
+</ul>
+</li>
+<li>this often leads to adding wrapper methods
+<ul>
+<li>w<span class="text-smaller">hile that might increase the number of
+methods, it results in cleaner interactions</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="figures/law_of_demeter_v2.drawio.svg"
+alt="based on (Milanović, 2026)" />
+<figcaption aria-hidden="true">based on <span class="citation"
+data-cites="milanovic2026demeter">(Milanović, 2026)</span></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://lawsofsoftwareengineering.com/laws/law-of-demeter/">Laws of Software Engineering / Law of
+Demeter</a></p>
+</div>
 <h1 id="topologies"><a class="header" href="#topologies">topologies</a></h1>
 <div class="columns">
 <div class="column" width="60%">
@@ -1325,6 +1394,13 @@ https://www.inngest.com/blog/message-bus-vs-queues
                    https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
                     " class="uri">
 https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+</a>.</p>
+</div>
+<div id="ref-milanovic2026demeter" class="csl-entry">
+<p>Milanović, M. (2026). <em>Law of demeter</em>. <a href="
+                   https://lawsofsoftwareengineering.com/laws/law-of-demeter/
+                    " class="uri">
+https://lawsofsoftwareengineering.com/laws/law-of-demeter/
 </a>.</p>
 </div>
 <div id="ref-millington2019solid" class="csl-entry">

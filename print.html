@@ -192,6 +192,9 @@ by Frederick Vanbrabant</li>
 <li><a href="https://www.dbreunig.com/2026/03/26/winchester-mystery-house.html">The Cathedral, the Bazaar, and the Winchester Mystery
 House</a> -
 by Drew Breunig</li>
+<li><a href="https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html">Spec-Driven Development: The Waterfall Strikes
+Back</a> -
+by François Zaninotto</li>
 </ul>
 <h2 id="week-2"><a class="header" href="#week-2">week 2</a></h2>
 <ol>
@@ -973,6 +976,12 @@ Rabinowitz</a></p>
 </ul>
 </div>
 </div>
+<div class="text-smalller wide-quote">
+<blockquote>
+<p>Process exists to reduce uncertainty, not to create paper trails. –
+<a href="https://addyosmani.com/blog/21-lessons/">Addy Osmani</a></p>
+</blockquote>
+</div>
 <div class="notes">
 <p>A program code is only a part of a software. Programming is more or less
 a synonym to coding.</p>
@@ -1595,6 +1604,11 @@ Saint-Exupéry</a>
 <ul>
 <li>a variations: keep it stupidly simple</li>
 <li>the acronym got popular in the 70s</li>
+<li>see
+<a href="https://en.wikipedia.org/w/index.php?title=Occam%27s_razor"
+target="_blank"><span class="tooltip"
+title="From Wikipedia: There is a concept in philosophy, called Occam&#39;s razor, which is the problem-solving principle that recommends searching for explanations constructed with the smallest possible set of elements. Attributed to William of Ockham, a 14th-century English philosopher and theologian. The principle is sometimes paraphrased as &quot;of two competing theories, the simpler explanation of an entity is to be preferred.&quot;">Occam’s
+razor</span></a></li>
 </ul>
 </li>
 </ul>
@@ -2927,15 +2941,15 @@ usually work better.</p>
 documentation before coding – an echo of the Waterfall era. While it
 promises structure for AI-driven programming, it risks burying agility
 under layers of Markdown.</p>
-<p>– François Zaninotto
-<a href="https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html">figure</a></p>
+<p>– François Zaninotto (Zaninotto, 2025)</p>
 </blockquote>
 </div>
 <figure>
 <img src="lectures/figures/spec_driven_development.drawio.svg"
-alt="based on François Zaninotto’ figure" />
-<figcaption aria-hidden="true">based on François Zaninotto’ <a
-href="https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html">figure</a></figcaption>
+alt="based on François Zaninotto’ figure (Zaninotto, 2025)" />
+<figcaption aria-hidden="true">based on François Zaninotto’ figure <span
+class="citation" data-cites="zaninotto2025specdriven">(Zaninotto,
+2025)</span></figcaption>
 </figure>
 <ul>
 <li>based on a prompt, an LLM generates <em>product specifications</em>, an
@@ -2946,10 +2960,9 @@ documents to refine the spec</li>
 <div class="text-smaller">
 <p>source: <a href="https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html">Spec-Driven Development: The Waterfall Strikes
 Back</a>
-by François Zaninotto</p>
+by François Zaninotto (Zaninotto, 2025)</p>
 </div>
 <h2 id="agile--coding-agents"><a class="header" href="#agile--coding-agents">Agile + Coding Agents</a></h2>
-<!-- - agile traded predictability for adaptability, addressing non-deterministic development -->
 <ul>
 <li>for solving the problem of non-deterministic development, agile traded
 predictability for adaptability</li>
@@ -2969,7 +2982,7 @@ succeeds, repeat from #1</li>
 <div class="text-smaller mt-2">
 <p>source: <a href="https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html">Spec-Driven Development: The Waterfall Strikes
 Back</a>
-by François Zaninotto</p>
+by François Zaninotto (Zaninotto, 2025)</p>
 </div>
 <h1 id="references-1"><a class="header" href="#references-1">references</a></h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
@@ -2993,6 +3006,14 @@ Concepts and techniques. <em>Proc. IEEE WESTCON, Los Angeles</em>, 1–9.</p>
                    https://mindmajix.com/what-is-extreme-programming
                     " class="uri">
 https://mindmajix.com/what-is-extreme-programming
+</a>.</p>
+</div>
+<div id="ref-zaninotto2025specdriven" class="csl-entry">
+<p>Zaninotto, F. (2025). <em>Spec-driven development: The waterfall strikes
+back</em>. <a href="lectures/
+                   https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html
+                    " class="uri">
+https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html
 </a>.</p>
 </div>
 </div>
@@ -6362,6 +6383,75 @@ href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia<
 <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
 (Wikipedia contributors, 2024a)</p>
 </div>
+<h1 id="law-of-demeter"><a class="header" href="#law-of-demeter">law of Demeter</a></h1>
+<div class="columns">
+<div class="column wide-quote mt-5" width="60%">
+<blockquote>
+<p>An object should only interact with its immediate friends, not
+strangers.</p>
+<p>– Ian Holland et al. (1987) (Milanović, 2026)</p>
+</blockquote>
+<ul>
+<li>an object should only call methods of:
+<ul>
+<li>itself,</li>
+<li>its direct components,</li>
+<li>its function parameters,</li>
+<li>or objects it creates<!-- - it should not navigate through one object to reach another -->
+</li>
+</ul>
+</li>
+<li>it should not reach an object through another one</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="lectures/figures/law_of_demeter_v2.drawio.svg"
+alt="based on (Milanović, 2026)" />
+<figcaption aria-hidden="true">based on <span class="citation"
+data-cites="milanovic2026demeter">(Milanović, 2026)</span></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://lawsofsoftwareengineering.com/laws/law-of-demeter/">Laws of Software Engineering / Law of
+Demeter</a></p>
+</div>
+<h2 id="law-of-demeter-1"><a class="header" href="#law-of-demeter-1">law of Demeter</a></h2>
+<div class="columns">
+<div class="column wide-quote mt-5" width="60%">
+<ul>
+<li>if object A only calls its immediate friend (B) and doesn’t reach into
+its internals (like C), then changes to C or removal of C don’t affect
+A
+<ul>
+<li><span class="text-smaller">this way, each class knows as little as
+possible about others, reducing the impact of changes</span></li>
+<li><span class="text-smaller">decreases dependency &amp; results looser
+coupling</span></li>
+</ul>
+</li>
+<li>this often leads to adding wrapper methods
+<ul>
+<li>w<span class="text-smaller">hile that might increase the number of
+methods, it results in cleaner interactions</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<figure>
+<img src="lectures/figures/law_of_demeter_v2.drawio.svg"
+alt="based on (Milanović, 2026)" />
+<figcaption aria-hidden="true">based on <span class="citation"
+data-cites="milanovic2026demeter">(Milanović, 2026)</span></figcaption>
+</figure>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://lawsofsoftwareengineering.com/laws/law-of-demeter/">Laws of Software Engineering / Law of
+Demeter</a></p>
+</div>
 <h1 id="topologies"><a class="header" href="#topologies">topologies</a></h1>
 <div class="columns">
 <div class="column" width="60%">
@@ -7043,6 +7133,13 @@ https://www.inngest.com/blog/message-bus-vs-queues
                    https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
                     " class="uri">
 https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+</a>.</p>
+</div>
+<div id="ref-milanovic2026demeter" class="csl-entry">
+<p>Milanović, M. (2026). <em>Law of demeter</em>. <a href="lectures/
+                   https://lawsofsoftwareengineering.com/laws/law-of-demeter/
+                    " class="uri">
+https://lawsofsoftwareengineering.com/laws/law-of-demeter/
 </a>.</p>
 </div>
 <div id="ref-millington2019solid" class="csl-entry">
