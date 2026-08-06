@@ -318,6 +318,53 @@ non-functional requirements specifies criteria that can be used to evaluate the 
 based on [Making sense of MVP (Minimum Viable Product)](https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp) by Henrik Kniberg
 :::
 
+
+## Gall's law
+
+:::::::::::: {.columns}
+::::::::: {.column width="80%" .wide-quote}
+> A complex system that works is invariably found to have evolved from a simple system that worked.
+>
+> John Gall
+
+
+:::::::::
+::::::::: {.column width="20%"}
+![](figures/publicdomainvectors/hand-with-sprout.svg){height=120}
+
+:::::::::
+::::::::::::
+
+:::::::::::: {.columns .text-smaller .hyphen}
+::::::::: {.column width="25%"}
+Don't build a complex system from scratch, make a simple version that works, then iterate and add complexity.
+
+Rhis approach serves as a launching pad for experimentation and innovation.
+
+:::::::::
+::::::::: {.column width="25%"}
+Successful large systems often grow organically. 
+
+A fully designed-from-scratch complex system usually fails because you can’t foresee all interactions.
+
+:::::::::
+::::::::: {.column width="25%"}
+Gall's law argues for creating a MVP, and then growing it, rather than a big-bang approach.
+
+:::::::::
+::::::::: {.column width="25%"}
+Systems that grow tend to adapt and handle complexity better because they’ve been tested and refined at each stage.
+
+An overly complex initial design can break when something unexpected happens.
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Laws of Software Engineering / Gall's Law](https://lawsofsoftwareengineering.com/laws/galls-law/)
+:::
+
+
 <!-- ## minimum marketable product -->
 
 
