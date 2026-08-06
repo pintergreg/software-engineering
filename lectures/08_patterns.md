@@ -22,6 +22,8 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 ## structural pattern matching
 
+a _paradigm principle_ example in functional programming, in addition to OOP's from week 4
+
 ::: {.text-size-3}
 ```python
 foo = 3
@@ -39,6 +41,8 @@ match foo:
 :::
 
 ## structural pattern matching
+
+a _paradigm principle_ example in functional programming, in addition to OOP's from week 4
 
 ::: {.text-size-3}
 ```python
@@ -144,6 +148,113 @@ Peter Norvig [demonstrated](http://www.norvig.com/design-patterns/) that 16 out 
 
 [more about](https://fsharpforfunandprofit.com/fppatterns/) it from Scott Wlaschin [@wlaschin2014functional]
 
+## map-filter-reduce
+
+map
+: apply a function to each item and produce a new collection
+
+``` elixir
+Enum.map([0, 1, 2, 3], fn(x) -> x - 1 end)
+[-1, 0, 1, 2]
+```
+
+filter
+: filter the collection to include only those elements that evaluate to true using the provided function
+
+``` elixir
+Enum.filter([1, 2, 3, 4], fn(x) -> rem(x, 2) == 0 end)
+[2, 4]
+```
+
+reduce
+: distill the collection down into a single value
+
+``` elixir
+Enum.reduce([1, 2, 3], fn(x, acc) -> x + acc end)
+6
+```
+
+## map-filter-reduce
+
+| function | definition | example |
+|:--|:-----------|:---------------|
+| map      | apply a function to each item and produce a new collection |
+| filter   | filter the collection to include only those elements that evaluate to true using the provided function |
+| reduce   | distill the collection down into a single value |
+
+
+``` elixir
+Enum.map([0, 1, 2, 3], fn(x) -> x - 1 end)
+[-1, 0, 1, 2]
+```
+
+
+``` elixir
+Enum.filter([1, 2, 3, 4], fn(x) -> rem(x, 2) == 0 end)
+[2, 4]
+```
+
+
+``` elixir
+Enum.reduce([1, 2, 3], fn(x, acc) -> x + acc end)
+6
+```
+
+## map-filter-reduce
+
+:::::::::::: {.columns}
+::::::::: {.column width="10%"}
+map
+
+:::::::::
+::::::::: {.column width="30%" .text-smaller}
+apply a function to each item and produce a new collection
+
+:::::::::
+::::::::: {.column width="60%"}
+``` elixir
+Enum.map([0, 1, 2, 3], fn(x) -> x - 1 end)
+[-1, 0, 1, 2]
+```
+:::::::::
+:::::::::::: 
+
+:::::::::::: {.columns}
+::::::::: {.column width="10%"}
+filter
+
+:::::::::
+::::::::: {.column width="30%" .text-smaller}
+filter the collection to include only those elements that evaluate to true using the provided function
+:::::::::
+::::::::: {.column width="60%"}
+
+``` elixir
+Enum.filter([1, 2, 3, 4], fn(x) -> rem(x, 2) == 0 end)
+[2, 4]
+```
+:::::::::
+:::::::::::: 
+
+:::::::::::: {.columns}
+::::::::: {.column width="10%"}
+reduce
+
+:::::::::
+::::::::: {.column width="30%" .text-smaller}
+distill the collection down into a single value
+:::::::::
+::::::::: {.column width="60%"}
+``` elixir
+Enum.reduce([1, 2, 3], fn(x, acc) -> x + acc end)
+6
+```
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+examples and definitions are from [Elixir School](https://elixirschool.com/en/lessons/basics/enum) by Sean Callan 
+:::
 
 # You aren't gonna need it (YAGNI)
 
