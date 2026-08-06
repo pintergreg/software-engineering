@@ -755,6 +755,7 @@ It requires more resources, but at the same time it also increases complexity.
 - KISS, an acronym for "Keep it simple, stupid!"
     - a variations: keep it stupidly simple
     - the acronym got popular in the 70s
+    - see [[Occam's razor]{.tooltip title="From Wikipedia: There is a concept in philosophy, called Occam's razor, which is the problem-solving principle that recommends searching for explanations constructed with the smallest possible set of elements. Attributed to William of Ockham, a 14th-century English philosopher and theologian. The principle is sometimes paraphrased as \"of two competing theories, the simpler explanation of an entity is to be preferred.\""}](https://en.wikipedia.org/w/index.php?title=Occam%27s_razor){target="_blank"}
 :::
 
 ::: notes
