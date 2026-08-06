@@ -250,17 +250,17 @@ Although usually the customer does not know what they want, so agile usually wor
 ::: {.wide-quote .text-smaller}
 > Spec-Driven Development (SDD) revives the old idea of heavy documentation before coding -- an echo of the Waterfall era. While it promises structure for AI-driven programming, it risks burying agility under layers of Markdown.
 >
-> -- François Zaninotto [figure](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html)
+> -- François Zaninotto [@zaninotto2025specdriven]
 :::
 
-![based on François Zaninotto' [figure](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html)](figures/spec_driven_development.drawio.svg)
+![based on François Zaninotto' figure [@zaninotto2025specdriven]](figures/spec_driven_development.drawio.svg)
 
 
 - based on a prompt, an LLM generates _product specifications_, an _implementation plan_, and a detailed _list of tasks_
 - each document depends on the previous one, and users can edit the documents to refine the spec
 
 ::: {.text-smaller}
-source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html) by François Zaninotto
+source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html) by François Zaninotto [@zaninotto2025specdriven]
 :::
 
 ## Agile + Coding Agents
@@ -274,7 +274,7 @@ source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.c
   3. develop the experiment; if it fails, return to #2; if it succeeds, repeat from #1
   
 ::: {.text-smaller .mt-2}
-source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html) by François Zaninotto
+source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html) by François Zaninotto [@zaninotto2025specdriven]
 :::
 
 # references

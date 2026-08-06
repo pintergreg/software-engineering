@@ -16,6 +16,7 @@
 - [Stacey matrix](https://www.praxisframework.org/en/library/stacey-matrix)
 - [I don't think AI will make your processes go faster](https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/) - by Frederick Vanbrabant
 - [The Cathedral, the Bazaar, and the Winchester Mystery House](https://www.dbreunig.com/2026/03/26/winchester-mystery-house.html) - by Drew Breunig
+- [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html) - by François Zaninotto
 
 ## week 2
 
