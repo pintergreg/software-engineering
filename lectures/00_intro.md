@@ -244,6 +244,11 @@ In any other cases the number id printed.
 :::::::::
 ::::::::::::
 
+::: {.text-smalller .wide-quote}
+> Process exists to reduce uncertainty, not to create paper trails. -- [Addy Osmani](https://addyosmani.com/blog/21-lessons/)
+
+:::
+
 ::: notes
 A program code is only a part of a software.
 Programming is more or less a synonym to coding.
