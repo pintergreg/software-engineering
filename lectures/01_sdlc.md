@@ -245,5 +245,42 @@ Can waterfall work? Yes, it can, if the customer exactly knows what they want an
 
 Although usually the customer does not know what they want, so agile usually work better.
 
+# spec-driven development (SDD)
+
+::: {.wide-quote .text-smaller}
+> Spec-Driven Development (SDD) revives the old idea of heavy documentation before coding -- an echo of the Waterfall era. While it promises structure for AI-driven programming, it risks burying agility under layers of Markdown.
+>
+> -- François Zaninotto [figure](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html)
+:::
+
+![based on François Zaninotto' [figure](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html)](figures/spec_driven_development.drawio.svg)
+
+
+- based on a prompt, an LLM generates _product specifications_, an _implementation plan_, and a detailed _list of tasks_
+- each document depends on the previous one, and users can edit the documents to refine the spec
+
+::: {.text-smaller}
+source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html) by François Zaninotto
+:::
+
+## Agile + Coding Agents
+
+
+<!-- - agile traded predictability for adaptability, addressing non-deterministic development -->
+- for solving the problem of non-deterministic development, agile traded predictability for adaptability
+- coding agents can build reliable software when problems are simple enough
+- split complex requirements into multiple simple ones (avoid heavy design docs)
+- lean startup–inspired workflow:
+  1. identify the next most risky assumption
+  2. design the simplest experiment to test it
+  3. develop the experiment; if it fails, return to #2; if it succeeds, repeat from #1
+  
+::: {.text-smaller .mt-2}
+source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html) by François Zaninotto
+:::
+
 
 # references
+
+::: {#refs}
+:::
