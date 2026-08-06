@@ -501,7 +501,7 @@ source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)
 ::::::::::::
 
 ::: {.text-smaller}
-source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareengineering.com/laws/law-of-demeter/)
+source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareengineering.com/laws/law-of-demeter/) by Dr. Milan Milanović 
 :::
 
 ## law of Demeter
@@ -522,7 +522,7 @@ source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareen
 ::::::::::::
 
 ::: {.text-smaller}
-source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareengineering.com/laws/law-of-demeter/)
+source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareengineering.com/laws/law-of-demeter/) by Dr. Milan Milanović 
 :::
 
 

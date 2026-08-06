@@ -427,7 +427,7 @@ think like a villian, someone who's going to abuse the system that you’re desi
 ::: {.wide-quote}
 > Be conservative in what you do, be liberal in what you accept from others.
 > 
-> -- Jon Postel, in the specification of TCP in 1980 (RFC 761) source: [Postel's Law](https://lawsofsoftwareengineering.com/laws/postels-law/)
+> -- Jon Postel, in the specification of TCP in 1980 (RFC 761) source: [Postel's Law](https://lawsofsoftwareengineering.com/laws/postels-law/) by Dr. Milan Milanović
 
 :::
 
@@ -452,7 +452,7 @@ think like a villian, someone who's going to abuse the system that you’re desi
 ::::::::::::
 
 :::{.text-smaller}
-source: [Laws of Software Engineering / Postel's Law](https://lawsofsoftwareengineering.com/laws/postels-law/)
+source: [Laws of Software Engineering / Postel's Law](https://lawsofsoftwareengineering.com/laws/postels-law/) by Dr. Milan Milanović
 :::
 
 # references

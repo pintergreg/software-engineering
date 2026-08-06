@@ -361,7 +361,7 @@ An overly complex initial design can break when something unexpected happens.
 ::::::::::::
 
 ::: {.text-smaller}
-source: [Laws of Software Engineering / Gall's Law](https://lawsofsoftwareengineering.com/laws/galls-law/)
+source: [Laws of Software Engineering / Gall's Law](https://lawsofsoftwareengineering.com/laws/galls-law/) by Dr. Milan Milanović
 :::
 
 
