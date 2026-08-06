@@ -477,6 +477,55 @@ source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)
 :::
 
 
+# law of Demeter
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .wide-quote .mt-5}
+> An object should only interact with its immediate friends, not strangers.
+>
+> -- Ian Holland et al. (1987) [@milanovic2026demeter]
+
+- an object should only call methods of:
+    - itself,
+    - its direct components,
+    - its function parameters,
+    - or objects it creates
+<!-- - it should not navigate through one object to reach another -->
+- it should not reach an object through another one
+
+:::::::::
+::::::::: {.column width="40%"}
+![based on [@milanovic2026demeter]](figures/law_of_demeter_v2.drawio.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareengineering.com/laws/law-of-demeter/)
+:::
+
+## law of Demeter
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .wide-quote .mt-5}
+- if object A only calls its immediate friend (B) and doesn’t reach into its internals (like C), then changes to C or removal of C don’t affect A
+    - [this way, each class knows as little as possible about others, reducing the impact of changes]{.text-smaller}
+    - [decreases dependency & results looser coupling]{.text-smaller}
+- this often leads to adding wrapper methods
+    - w[hile that might increase the number of methods, it results in cleaner interactions]{.text-smaller}
+
+:::::::::
+::::::::: {.column width="40%"}
+![based on [@milanovic2026demeter]](figures/law_of_demeter_v2.drawio.svg) 
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareengineering.com/laws/law-of-demeter/)
+:::
+
+
 # topologies
 
 :::::::::::: {.columns}
