@@ -1,6 +1,6 @@
 require 'optparse'
 
-options = {fragments: ""}
+options = {fragments: "--fragments"}
 OptionParser.new do |opts|
   opts.banner = "Usage: example.rb [options]"
 
@@ -8,8 +8,8 @@ OptionParser.new do |opts|
     options[:selected] = x
   end
 
-  opts.on("-f", "--fragments", "Enable fragments") do |x|
-    options[:fragments] = "--fragments"
+  opts.on("-F", "--no-fragments", "Disable fragments") do |x|
+    options[:fragments] = ""
   end
 end.parse!
 
