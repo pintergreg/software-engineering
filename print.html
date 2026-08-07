@@ -5367,6 +5367,87 @@ must be a good idea for the guys who want to make money.</p>
 <p>source: <a href="https://harmful.cat-v.org/software/OO_programming/why_oo_sucks">Why OO Sucks by Joe
 Armstrong</a></p>
 </div>
+<h1 id="paradigm-principles-of-functional-programming"><a class="header" href="#paradigm-principles-of-functional-programming">paradigm principles of functional programming</a></h1>
+<div class="columns">
+<div class="column mt-6 text-size-2" width="40%">
+<ul>
+<li>pure functions</li>
+<li>immutability</li>
+<li>first-class functions</li>
+<li>higher-order functions</li>
+</ul>
+</div>
+<div class="column" width="60%">
+<figure>
+<img src="lectures/figures/fp_characteristics.drawio.svg" width="400"
+alt="based on Rainer Grimm’s figure" />
+<figcaption aria-hidden="true">based on Rainer Grimm’s <a
+href="https://www.modernescpp.com/index.php/pure-functions/">figure</a></figcaption>
+</figure>
+</div>
+</div>
+<h2 id="pure-functions"><a class="header" href="#pure-functions">pure functions</a></h2>
+<ul>
+<li>pure functions exhibit two key characteristics:
+<ul>
+<li>they consistently produce the same output for the same input, and</li>
+<li>they have no side effects</li>
+</ul>
+</li>
+<li>the absence of side effects eliminates unexpected changes to the
+program state, promoting predictability and testability</li>
+</ul>
+<div class="text-smaller mt-2">
+<p>source: <a href="https://www.jamesparker.dev/the-principles-of-functional-programming/">The principles of functional
+programming</a>
+by James Parker</p>
+</div>
+<h2 id="immutability"><a class="header" href="#immutability">immutability</a></h2>
+<ul>
+<li>once a variable is assigned a value, it cannot be changed</li>
+<li>instead of modifying existing data, functional programming emphasises
+the creation of new, immutable data structures</li>
+<li>benefits: predictable code, thread-safe applications, aids, concurrent
+and parallel programming, easier testing</li>
+</ul>
+<div class="text-smaller mt-2">
+<p>source: <a href="https://www.jamesparker.dev/the-principles-of-functional-programming/">The principles of functional
+programming</a>
+by James Parker</p>
+</div>
+<h2 id="first-class-and-higher-order-functions"><a class="header" href="#first-class-and-higher-order-functions">first-class and higher-order functions</a></h2>
+<div class="columns">
+<div class="column mt-1" width="40%">
+<ul>
+<li>first-class means that functions can be assigned to variables</li>
+<li>higher-order: the functions can be passed as arguments to other
+functions, and returned as values</li>
+<li>which enables the composition of complex functionalities from simpler
+building blocks</li>
+</ul>
+</div>
+<div class="column" width="60%">
+<pre><code class="language-elixir">defmodule Wish do
+    def power(a, b) do
+        if b &gt; 1 do
+            a * power(a, b - 1)
+        else
+            a
+        end
+    end
+    def what_to_do(a, b, func) do
+        func.(a, b)
+    end
+end
+
+IO.puts(Wish.power(3, 4)) # 81
+IO.puts(Wish.what_to_do(3, 4, &amp;Wish.power/2)) # 81
+IO.puts(Wish.what_to_do(3, 4, fn x, y -&gt; x + y end)) # 7
+sub = fn x, y -&gt; x - y end
+IO.puts(Wish.what_to_do(3, 4, sub)) # -1
+</code></pre>
+</div>
+</div>
 <h1 id="unified-modeling-language"><a class="header" href="#unified-modeling-language">Unified Modeling Language</a></h1>
 <div class="columns">
 <div class="column mt-4" width="60%">

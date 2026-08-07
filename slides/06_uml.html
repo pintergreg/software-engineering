@@ -458,6 +458,96 @@ href="https://harmful.cat-v.org/software/OO_programming/why_oo_sucks">Why
 OO Sucks by Joe Armstrong</a></p>
 </div>
 </section></section>
+<section>
+<section id="paradigm-principles-of-functional-programming"
+class="title-slide slide level1">
+<h1>paradigm principles of functional programming</h1>
+<div class="columns">
+<div class="column mt-6 text-size-2" style="width:40%;">
+<ul>
+<li>pure functions</li>
+<li>immutability</li>
+<li>first-class functions</li>
+<li>higher-order functions</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<figure>
+<img data-src="figures/fp_characteristics.drawio.svg" width="400"
+alt="based on Rainer Grimm’s figure" />
+<figcaption aria-hidden="true">based on Rainer Grimm’s <a
+href="https://www.modernescpp.com/index.php/pure-functions/">figure</a></figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="pure-functions" class="slide level2">
+<h2>pure functions</h2>
+<ul>
+<li>pure functions exhibit two key characteristics:
+<ul>
+<li>they consistently produce the same output for the same input,
+and</li>
+<li>they have no side effects</li>
+</ul></li>
+<li>the absence of side effects eliminates unexpected changes to the
+program state, promoting predictability and testability</li>
+</ul>
+<div class="text-smaller mt-2">
+<p>source: <a
+href="https://www.jamesparker.dev/the-principles-of-functional-programming/">The
+principles of functional programming</a> by James Parker</p>
+</div>
+</section>
+<section id="immutability" class="slide level2">
+<h2>immutability</h2>
+<ul>
+<li>once a variable is assigned a value, it cannot be changed</li>
+<li>instead of modifying existing data, functional programming
+emphasises the creation of new, immutable data structures</li>
+<li>benefits: predictable code, thread-safe applications, aids,
+concurrent and parallel programming, easier testing</li>
+</ul>
+<div class="text-smaller mt-2">
+<p>source: <a
+href="https://www.jamesparker.dev/the-principles-of-functional-programming/">The
+principles of functional programming</a> by James Parker</p>
+</div>
+</section>
+<section id="first-class-and-higher-order-functions"
+class="slide level2">
+<h2>first-class and higher-order functions</h2>
+<div class="columns">
+<div class="column mt-1" style="width:40%;">
+<ul>
+<li>first-class means that functions can be assigned to variables</li>
+<li>higher-order: the functions can be passed as arguments to other
+functions, and returned as values</li>
+<li>which enables the composition of complex functionalities from
+simpler building blocks</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">defmodule</span> <span class="cn">Wish</span> <span class="kw">do</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> power<span class="fu">(</span>a, b<span class="fu">)</span> <span class="kw">do</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> b <span class="op">&gt;</span> <span class="dv">1</span> <span class="kw">do</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            a <span class="op">*</span> power<span class="fu">(</span>a, b <span class="op">-</span> <span class="dv">1</span><span class="fu">)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            a</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> what_to_do<span class="fu">(</span>a, b, func<span class="fu">)</span> <span class="kw">do</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        func<span class="op">.</span><span class="fu">(</span>a, b<span class="fu">)</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="cn">Wish</span><span class="op">.</span>power<span class="fu">(</span><span class="dv">3</span>, <span class="dv">4</span><span class="fu">))</span> <span class="co"># 81</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="cn">Wish</span><span class="op">.</span>what_to_do<span class="fu">(</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="op">&amp;</span><span class="cn">Wish</span><span class="op">.</span>power<span class="op">/</span><span class="dv">2</span><span class="fu">))</span> <span class="co"># 81</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="cn">Wish</span><span class="op">.</span>what_to_do<span class="fu">(</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="kw">fn</span> x, y <span class="op">-&gt;</span> x <span class="op">+</span> y <span class="kw">end</span><span class="fu">))</span> <span class="co"># 7</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>sub <span class="op">=</span> <span class="kw">fn</span> x, y <span class="op">-&gt;</span> x <span class="op">-</span> y <span class="kw">end</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="cn">Wish</span><span class="op">.</span>what_to_do<span class="fu">(</span><span class="dv">3</span>, <span class="dv">4</span>, sub<span class="fu">))</span> <span class="co"># -1</span></span></code></pre></div>
+</div>
+</div>
+</section></section>
 <section id="unified-modeling-language"
 class="title-slide slide level1">
 <h1>Unified Modeling Language</h1>
