@@ -1611,13 +1611,13 @@ by Michael Feathers [@feathers2004working]-->
 ## what is legacy code?
 
 :::::::::::: {.columns .column-gapless}
-::::::::: {.column width="80%"}
+::::::::: {.column width="80%" .wide-quote .mt-2}
 > Code without tests is bad code.
 > It doesn’t matter how well written it is; it doesn’t matter how pretty or object-oriented or well-encapsulated it is.
 > With tests, we can change the behavior of our code quickly and verifiably.
 > Without them, we really don’t know if our code is getting better or worse.
 >
-> -- Michael Feathers, Working Effectively with Legacy Code: Preface [@feathers2004working]
+> -- Michael Feathers, Working Effectively with Legacy Code [@feathers2004working]
 
 ::: {.mt-2}
 - there is a change request, which results on code change
