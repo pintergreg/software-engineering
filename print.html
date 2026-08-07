@@ -434,6 +434,8 @@ One)</a> - by Michael Lynch
 <li><a href="https://mtlynch.io/human-code-reviews-2/">Part Two</a></li>
 </ul>
 </li>
+<li><a href="https://addyosmani.com/blog/21-lessons/">21 Lessons From 14 Years at
+Google</a> - by Addy Osmani</li>
 </ul>
 <h2 id="week-10"><a class="header" href="#week-10">week 10</a></h2>
 <ol>
@@ -10275,6 +10277,11 @@ Test passed.
 </div>
 </div>
 <h1 id="summary-1"><a class="header" href="#summary-1">summary</a></h1>
+<blockquote>
+<p>Any fool can write code that a computer can understand. Good
+programmers write code that humans can understand.</p>
+<p>– Martin Fowler, 2008</p>
+</blockquote>
 <ul>
 <li>bear in mind that the code is more often read than written
 <ul>
@@ -12062,6 +12069,14 @@ class="fragment" data-fragment-index="2" width="950" /></p>
 <p><img src="lectures/figures/traceability_via_commit.drawio.svg" class="fragment"
 data-fragment-index="3" width="950" /></p>
 </div>
+<div class="text-smaller wide-quote">
+<blockquote>
+<p>A diff can show what changed in the artifact, but it cannot explain
+which requirement demanded the change, which constraint shaped it, or
+which tradeoff caused one structure to be chosen over another.</p>
+<p>– Chad Fowler (Fowler, 2026)</p>
+</blockquote>
+</div>
 <h2 id="how-to-write-the-commit-message"><a class="header" href="#how-to-write-the-commit-message">how to write the commit message?</a></h2>
 <div class="columns">
 <div class="column" width="60%">
@@ -12114,6 +12129,23 @@ Message</a> (Beams, 2014)</p>
 <li>commits on a feature branch often squashed into one commit</li>
 </ul>
 </li>
+</ul>
+</div>
+<h2 id="discussion-1"><a class="header" href="#discussion-1">discussion</a></h2>
+<div class="text-size-3">
+<p>what is a drawback of traceability via linking issue IDs?</p>
+</div>
+<div class="fragment">
+<p>there’s an argument stating that in the age of <s>AI</s> LLMs not the
+code should be versioned but the prompt and the requirements</p>
+<p>see: <a href="https://aicoding.leaflet.pub/3mcbiyal7jc2y">Provenance Is the New Version
+Control</a> (Fowler, 2026)</p>
+</div>
+<div class="notes">
+<ul>
+<li>issue tracker usually a different system than version control</li>
+<li>usually, but not always: see
+<a href="https://fossil-scm.org/home/doc/trunk/www/index.wiki">Fossil</a></li>
 </ul>
 </div>
 <h1 id="review-in-numbers"><a class="header" href="#review-in-numbers">review in numbers</a></h1>
@@ -12248,6 +12280,13 @@ https://cbea.ms/git-commit/
 <div id="ref-forsberg1991relationship" class="csl-entry">
 <p>Forsberg, K., &amp; Mooz, H. (1991). The relationship of system engineering
 to the project cycle. <em>Center for Systems Management</em>, <em>5333</em>.</p>
+</div>
+<div id="ref-fowler2026provenance" class="csl-entry">
+<p>Fowler, C. (2026). <em>Provenance is the new version control</em>. <a href="lectures/
+                   https://aicoding.leaflet.pub/3mcbiyal7jc2y
+                    " class="uri">
+https://aicoding.leaflet.pub/3mcbiyal7jc2y
+</a>.</p>
 </div>
 <div id="ref-hauer2018code" class="csl-entry">
 <p>Hauer, P. (2018). <em>Code review guidelines for humans</em>. <a href="lectures/
@@ -12880,6 +12919,24 @@ Experiment Channel (YouTube video 4:24)</span></p>
 <img src="lectures/figures/tdd.drawio.svg" width="350" />
 </div>
 </div>
+<h2 id="write-tests-instead-of-chasing-bugs"><a class="header" href="#write-tests-instead-of-chasing-bugs">write tests instead of chasing bugs</a></h2>
+<div class="text-smaller wide-quote">
+<blockquote>
+<p>People also underestimate the time they spend debugging. They
+underestimate how much time they can spend chasing a long bug. With
+testing, I know straight away when I added a bug. That lets me fix the
+bug immediately before <span class="background-color-lightblue">it can
+crawl off and hide</span>. There are few things more frustrating or
+time-wasting than debugging. Wouldn’t it be a hell of a lot quicker if
+we just didn’t create the bugs in the first place?</p>
+<p>– Martin Fowler (2002) as cited in Evolutionary Design: A Conversation
+with Martin Fowler, Part III by Bill Venners, November 18, 2002.</p>
+</blockquote>
+</div>
+<div class="mt-3">
+<p><span class="background-color-lightblue">*</span>Linux kernel bugs hide
+for 2 years on average. Some hide for 20 years. (Qu, 2026)</p>
+</div>
 <h2 id="red"><a class="header" href="#red">red</a></h2>
 <div class="columns">
 <div class="column mt-3" width="75%">
@@ -13195,7 +13252,7 @@ styles</li>
 width="300" /></p>
 </div>
 </div>
-<h1 id="discussion-1"><a class="header" href="#discussion-1">discussion</a></h1>
+<h1 id="discussion-2"><a class="header" href="#discussion-2">discussion</a></h1>
 <blockquote>
 <p>The less your tests resemble the way your software is used, the less
 confidence they can give you.</p>
@@ -13602,9 +13659,9 @@ width="400" /></p>
 loose its function
 <ul>
 <li>and collect badges:
-<img src="lectures/figures/code%20coverage_%2084_.svg" class="m-0 va-middle"
+<img src="lectures/figures/code_coverage_84.svg" class="m-0 va-middle"
 width="150" />
-<img src="lectures/figures/code%20coverage_%20100_.svg" class="m-0 va-middle"
+<img src="lectures/figures/code_coverage_100.svg" class="m-0 va-middle"
 width="150" /></li>
 </ul>
 </li>
@@ -14388,7 +14445,7 @@ Testing</a></p>
 <div class="column text-smaller wide-quote" width="50%">
 <ul>
 <li>it may seem that the software has been tested and all the defects have
-been fixed <img src="lectures/figures/code%20coverage_%20100_.svg" alt="" /></li>
+been fixed <img src="lectures/figures/code_coverage_100.svg" alt="" /></li>
 <li>however the system could still end up being unusable by the client</li>
 <li>this can occur when the software developed did not meet the business
 needs and <strong>requirements</strong> of the user</li>
@@ -14581,6 +14638,14 @@ Pearson Education.</p>
                    https://tom.preston-werner.com/2010/08/23/readme-driven-development.html
                     " class="uri">
 https://tom.preston-werner.com/2010/08/23/readme-driven-development.html
+</a>.</p>
+</div>
+<div id="ref-qu2026kernel" class="csl-entry">
+<p>Qu, J. G. (2026). <em>Kernel bugs hide for 2 years on average. Some hide
+for 20.</em> <a href="lectures/
+                   https://pebblebed.com/blog/kernel-bugs
+                    " class="uri">
+https://pebblebed.com/blog/kernel-bugs
 </a>.</p>
 </div>
 <div id="ref-seemann2007unit" class="csl-entry">
@@ -15067,7 +15132,7 @@ Commit</a> (McCreary,
 </div>
 </div>
 </div>
-<h2 id="discussion-2"><a class="header" href="#discussion-2">discussion</a></h2>
+<h2 id="discussion-3"><a class="header" href="#discussion-3">discussion</a></h2>
 <div class="r-fit-text">
 <p>if AI writes code, should the session be part of the commit?</p>
 </div>
@@ -15904,6 +15969,9 @@ Lamb</a><br>used with the author’s permission</figcaption>
 <p>source: <a href="https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/">The Cost of Interruption for Software
 Developers</a>
 – by Steven To (To, 2018)</p>
+<p>additional regarding: <a href="https://blog.ninlabs.com/blog/programmer-interrupted/">Programmer
+Interrupted</a> – by
+Chris Parnin</p>
 </div>
 <h2 id="planned-and-unplanned-interruptions"><a class="header" href="#planned-and-unplanned-interruptions">planned and unplanned interruptions</a></h2>
 <div class="columns column-gapless">

@@ -829,6 +829,15 @@ class="fragment" data-fragment-index="2" width="950" /></p>
 <p><img data-src="figures/traceability_via_commit.drawio.svg"
 class="fragment" data-fragment-index="3" width="950" /></p>
 </div>
+<div class="text-smaller wide-quote">
+<blockquote>
+<p>A diff can show what changed in the artifact, but it cannot explain
+which requirement demanded the change, which constraint shaped it, or
+which tradeoff caused one structure to be chosen over another.</p>
+<p>– Chad Fowler <span class="citation"
+data-cites="fowler2026provenance">[7]</span></p>
+</blockquote>
+</div>
 </section>
 <section id="how-to-write-the-commit-message" class="slide level2">
 <h2>how to write the commit message?</h2>
@@ -868,7 +877,7 @@ href="https://creativecommons.org/licenses/by-nc/2.5/deed.en">CC BY-NC 2.5</a>
 <div class="text-smaller">
 <p>source: <a href="https://chris.beams.io/posts/git-commit/">How to
 Write a Git Commit Message</a> <span class="citation"
-data-cites="beams2014how">[7]</span></p>
+data-cites="beams2014how">[8]</span></p>
 </div>
 </section>
 <section id="keeping-clean-history" class="slide level2">
@@ -885,6 +894,26 @@ width="850" /></p>
 </ul></li>
 </ul>
 </div>
+</section>
+<section id="discussion" class="slide level2">
+<h2>discussion</h2>
+<div class="text-size-3">
+<p>what is a drawback of traceability via linking issue IDs?</p>
+</div>
+<div class="fragment">
+<p>there’s an argument stating that in the age of <del>AI</del> LLMs not
+the code should be versioned but the prompt and the requirements</p>
+<p>see: <a href="https://aicoding.leaflet.pub/3mcbiyal7jc2y">Provenance
+Is the New Version Control</a> <span class="citation"
+data-cites="fowler2026provenance">[7]</span></p>
+</div>
+<aside class="notes">
+<ul>
+<li>issue tracker usually a different system than version control</li>
+<li>usually, but not always: see <a
+href="https://fossil-scm.org/home/doc/trunk/www/index.wiki">Fossil</a></li>
+</ul>
+</aside>
 </section></section>
 <section id="review-in-numbers" class="title-slide slide level1">
 <h1>review in numbers</h1>
@@ -908,7 +937,7 @@ width="300" /></p>
 </div>
 <div class="text-smaller">
 <p>source: <span class="citation"
-data-cites="smartbear_best">[8]</span></p>
+data-cites="smartbear_best">[9]</span></p>
 </div>
 </section>
 
@@ -1063,8 +1092,16 @@ href="
                    https://www.slideshare.net/slideshow/compassionate-yet-candid-code-reviews/113119451
 </a>, 06-Sep-2018.</div>
 </div>
-<div id="ref-beams2014how" class="csl-entry" role="listitem">
+<div id="ref-fowler2026provenance" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[7] </div><div class="csl-right-inline">C.
+Fowler, <span>“Provenance is the new version control.”</span> <a href="
+                   https://aicoding.leaflet.pub/3mcbiyal7jc2y
+                    " class="uri">
+                   https://aicoding.leaflet.pub/3mcbiyal7jc2y
+</a>, 13-Jan-2026.</div>
+</div>
+<div id="ref-beams2014how" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">C.
 Beams, <span>“How to write a git commit message.”</span> <a href="
                    https://cbea.ms/git-commit/
                     " class="uri">
@@ -1072,7 +1109,7 @@ Beams, <span>“How to write a git commit message.”</span> <a href="
 </a>, 31-Aug-2014.</div>
 </div>
 <div id="ref-smartbear_best" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div
+<div class="csl-left-margin">[9] </div><div
 class="csl-right-inline">Smartbear, <span>“Best practices for code
 review.”</span> <a href="
                    https://smartbear.com/learn/code-review/best-practices-for-peer-code-review

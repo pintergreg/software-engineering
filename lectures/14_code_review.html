@@ -744,6 +744,14 @@ class="fragment" data-fragment-index="2" width="950" /></p>
 <p><img src="figures/traceability_via_commit.drawio.svg" class="fragment"
 data-fragment-index="3" width="950" /></p>
 </div>
+<div class="text-smaller wide-quote">
+<blockquote>
+<p>A diff can show what changed in the artifact, but it cannot explain
+which requirement demanded the change, which constraint shaped it, or
+which tradeoff caused one structure to be chosen over another.</p>
+<p>– Chad Fowler (Fowler, 2026)</p>
+</blockquote>
+</div>
 <h2 id="how-to-write-the-commit-message"><a class="header" href="#how-to-write-the-commit-message">how to write the commit message?</a></h2>
 <div class="columns">
 <div class="column" width="60%">
@@ -796,6 +804,23 @@ Message</a> (Beams, 2014)</p>
 <li>commits on a feature branch often squashed into one commit</li>
 </ul>
 </li>
+</ul>
+</div>
+<h2 id="discussion"><a class="header" href="#discussion">discussion</a></h2>
+<div class="text-size-3">
+<p>what is a drawback of traceability via linking issue IDs?</p>
+</div>
+<div class="fragment">
+<p>there’s an argument stating that in the age of <s>AI</s> LLMs not the
+code should be versioned but the prompt and the requirements</p>
+<p>see: <a href="https://aicoding.leaflet.pub/3mcbiyal7jc2y">Provenance Is the New Version
+Control</a> (Fowler, 2026)</p>
+</div>
+<div class="notes">
+<ul>
+<li>issue tracker usually a different system than version control</li>
+<li>usually, but not always: see
+<a href="https://fossil-scm.org/home/doc/trunk/www/index.wiki">Fossil</a></li>
 </ul>
 </div>
 <h1 id="review-in-numbers"><a class="header" href="#review-in-numbers">review in numbers</a></h1>
@@ -930,6 +955,13 @@ https://cbea.ms/git-commit/
 <div id="ref-forsberg1991relationship" class="csl-entry">
 <p>Forsberg, K., &amp; Mooz, H. (1991). The relationship of system engineering
 to the project cycle. <em>Center for Systems Management</em>, <em>5333</em>.</p>
+</div>
+<div id="ref-fowler2026provenance" class="csl-entry">
+<p>Fowler, C. (2026). <em>Provenance is the new version control</em>. <a href="
+                   https://aicoding.leaflet.pub/3mcbiyal7jc2y
+                    " class="uri">
+https://aicoding.leaflet.pub/3mcbiyal7jc2y
+</a>.</p>
 </div>
 <div id="ref-hauer2018code" class="csl-entry">
 <p>Hauer, P. (2018). <em>Code review guidelines for humans</em>. <a href="
