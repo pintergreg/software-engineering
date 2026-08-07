@@ -541,6 +541,21 @@ source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)
 :::
 
 
+# law of unintended consequences
+
+::: {.wide-quote}
+> In the social sciences, unintended consequences (more colloquially called knock-on effects) are outcomes of a purposeful action that are not intended or foreseen. [@enwiki:1365617401]
+
+:::
+
+- in software engineering, this could be introducing bugs or performance issues when fixing something or adding new features
+- high coupling at class/module level or side effects at function level can contribute to this
+
+::: {.text-smaller}
+source: [Laws of Software Engineering / Law of Unintended Consequences](https://lawsofsoftwareengineering.com/laws/law-of-unintended-consequences/) by Dr. Milan Milanović
+:::
+
+
 # law of Demeter
 
 :::::::::::: {.columns}
