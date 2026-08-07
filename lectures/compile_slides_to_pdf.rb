@@ -16,6 +16,6 @@ else
 
     inputs.each do |x|
         # puts "#{x} #{x.gsub(".html", ".pdf")}"
-        `npx decktape reveal --headless new --chrome-path /bin/chromium #{x} #{x.gsub(".html", ".pdf")}`
+        `npx decktape reveal --headless new --fragments --pdf-author "Gergő Pintér" --chrome-path /bin/chromium #{x} #{x.gsub(".html", ".pdf")}`
     end
 end
