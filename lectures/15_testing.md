@@ -628,6 +628,23 @@ end
 ::::::::::::
 
 
+## write tests instead of chasing bugs
+
+::: {.text-smaller .wide-quote}
+> People also underestimate the time they spend debugging.
+> They underestimate how much time they can spend chasing a long bug.
+> With testing, I know straight away when I added a bug.
+> That lets me fix the bug immediately before [it can crawl off and hide]{.background-color-lightblue}. There are few things more frustrating or time-wasting than debugging. Wouldn't it be a hell of a lot quicker if we just didn't create the bugs in the first place?
+>
+> -- Martin Fowler (2002) as cited in Evolutionary Design: A Conversation with Martin Fowler, Part III by Bill Venners, November 18, 2002.
+
+:::
+
+::: {.mt-3}
+[*]{.background-color-lightblue}Linux kernel bugs hide for 2 years on average. Some hide for 20 years. [@qu2026kernel]
+:::
+
+
 ## red
 
 :::::::::::: {.columns}

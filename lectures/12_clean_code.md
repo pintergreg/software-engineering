@@ -1207,12 +1207,17 @@ Test passed.
 
 # summary
 
+> Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
+>
+> -- Martin Fowler, 2008
+
 - bear in mind that the code is more often read than written
     - make your intentions clear
 - use the language properly as it's intended
     - write idiomatic code
 - follow the (style) guides, and best practices
     - hierarchy
+    
 
 ## clean code / meaningful names [@martin2009clean]
 
