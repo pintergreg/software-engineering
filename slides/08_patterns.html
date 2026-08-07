@@ -726,6 +726,31 @@ href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</
 </div>
 </section>
 
+<section id="law-of-unintended-consequences"
+class="title-slide slide level1">
+<h1>law of unintended consequences</h1>
+<div class="wide-quote">
+<blockquote>
+<p>In the social sciences, unintended consequences (more colloquially
+called knock-on effects) are outcomes of a purposeful action that are
+not intended or foreseen. <span class="citation"
+data-cites="enwiki:1365617401">[13]</span></p>
+</blockquote>
+</div>
+<ul>
+<li>in software engineering, this could be introducing bugs or
+performance issues when fixing something or adding new features</li>
+<li>high coupling at class/module level or side effects at function
+level can contribute to this</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a
+href="https://lawsofsoftwareengineering.com/laws/law-of-unintended-consequences/">Laws
+of Software Engineering / Law of Unintended Consequences</a> by
+Dr. Milan Milanović</p>
+</div>
+</section>
+
 <section>
 <section id="law-of-demeter" class="title-slide slide level1">
 <h1>law of Demeter</h1>
@@ -735,7 +760,7 @@ href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</
 <p>An object should only interact with its immediate friends, not
 strangers.</p>
 <p>– Ian Holland et al. (1987) <span class="citation"
-data-cites="milanovic2026demeter">[13]</span></p>
+data-cites="milanovic2026demeter">[14]</span></p>
 </blockquote>
 <ul>
 <li>an object should only call methods of:
@@ -751,9 +776,9 @@ data-cites="milanovic2026demeter">[13]</span></p>
 </div><div class="column" style="width:40%;">
 <figure>
 <img data-src="figures/law_of_demeter_v2.drawio.svg"
-alt="based on [13]" />
+alt="based on [14]" />
 <figcaption aria-hidden="true">based on <span class="citation"
-data-cites="milanovic2026demeter">[13]</span></figcaption>
+data-cites="milanovic2026demeter">[14]</span></figcaption>
 </figure>
 </div>
 </div>
@@ -786,9 +811,9 @@ methods, it results in cleaner interactions</span></li>
 </div><div class="column" style="width:40%;">
 <figure>
 <img data-src="figures/law_of_demeter_v2.drawio.svg"
-alt="based on [13]" />
+alt="based on [14]" />
 <figcaption aria-hidden="true">based on <span class="citation"
-data-cites="milanovic2026demeter">[13]</span></figcaption>
+data-cites="milanovic2026demeter">[14]</span></figcaption>
 </figure>
 </div>
 </div>
@@ -805,15 +830,15 @@ of Software Engineering / Law of Demeter</a> by Dr. Milan Milanović</p>
 <div class="column" style="width:60%;">
 <p>Object-oriented design (OOD) is the process of planning a system of
 interacting objects to solve a software problem <span class="citation"
-data-cites="enwiki:1230588445">[14]</span>.</p>
+data-cites="enwiki:1230588445">[15]</span>.</p>
 <div class="fragment" data-fragment-index="1">
 <p>control flow? structure?</p>
 <figure>
 <img data-src="figures/legacy_structure.drawio.svg" width="400"
-alt="historically grown architecture based on [15]" />
+alt="historically grown architecture based on [16]" />
 <figcaption aria-hidden="true">historically grown architecture<br>based
 on <span class="citation"
-data-cites="woltmann2023hexagonal">[15]</span></figcaption>
+data-cites="woltmann2023hexagonal">[16]</span></figcaption>
 </figure>
 </div>
 <!--
@@ -922,8 +947,8 @@ duplicates</li>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="okeyo2023beginners">[16]</span> and <span class="citation"
-data-cites="inngest2022message">[17]</span></p>
+data-cites="okeyo2023beginners">[17]</span> and <span class="citation"
+data-cites="inngest2022message">[18]</span></p>
 </div>
 <aside class="notes">
 <p>https://www.inngest.com/blog/message-bus-vs-queues</p>
@@ -991,7 +1016,7 @@ operates as a single unit</li>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="baeldung20214layered">[18]</span></p>
+data-cites="baeldung20214layered">[19]</span></p>
 </div>
 </section>
 <section id="onion-architecture" class="slide level2">
@@ -1022,7 +1047,7 @@ foundation</li>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="palermo2008onion">[19]</span></p>
+data-cites="palermo2008onion">[20]</span></p>
 </div>
 <aside class="notes">
 <ul>
@@ -1038,7 +1063,7 @@ vs layered</a></li>
 <div class="column" style="width:60%;">
 <ul>
 <li>invented by Alistair Cockburn <span class="citation"
-data-cites="cockburn2010hexagonal">[20]</span></li>
+data-cites="cockburn2010hexagonal">[21]</span></li>
 <li>application should be equally controllable by users, other
 applications, or automated tests
 <ul>
@@ -1056,7 +1081,7 @@ width="325" /></p>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="woltmann2023hexagonal">[15]</span></p>
+data-cites="woltmann2023hexagonal">[16]</span></p>
 </div>
 </section>
 <section id="hexagonal-ports-adapters" class="slide level2">
@@ -1099,7 +1124,7 @@ application hexagon</li>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="woltmann2023hexagonal">[15]</span></p>
+data-cites="woltmann2023hexagonal">[16]</span></p>
 </div>
 </section>
 <section id="hexagonal-vs.-layered" class="slide level2">
@@ -1136,11 +1161,11 @@ width="350" /></p>
 </div>
 <div class="text-smaller fragment" data-fragment-index="2">
 <p>it is very similar to the onion and (the clean architecture <span
-class="citation" data-cites="martin2012clean">[21]</span>)</p>
+class="citation" data-cites="martin2012clean">[22]</span>)</p>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="woltmann2023hexagonal">[15]</span></p>
+data-cites="woltmann2023hexagonal">[16]</span></p>
 </div>
 </section>
 <section id="the-clean-architecture" class="slide level2">
@@ -1149,7 +1174,7 @@ data-cites="woltmann2023hexagonal">[15]</span></p>
 <div class="text-smaller">
 <ul>
 <li>by Robert C. Martin <span class="citation"
-data-cites="martin2012clean">[21]</span>, unifies onion or hexagonal,
+data-cites="martin2012clean">[22]</span>, unifies onion or hexagonal,
 etc.</li>
 <li>source code dependencies can only point inwards</li>
 <li>relies on dependency inversion principle</li>
@@ -1161,7 +1186,7 @@ etc.</li>
 <section id="model-view-controller-enwiki1244967192"
 class="title-slide slide level1">
 <h1>Model-View-Controller <span class="citation"
-data-cites="enwiki:1244967192">[22]</span></h1>
+data-cites="enwiki:1244967192">[23]</span></h1>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
@@ -1218,7 +1243,7 @@ the data model</li>
 </div>
 <div class="text-smaller">
 <p>figures based on <span class="citation"
-data-cites="pedamkar2023mvc">[23]</span></p>
+data-cites="pedamkar2023mvc">[24]</span></p>
 </div>
 <div class="text-smaller">
 <p>other alternatives: <a
@@ -1577,8 +1602,17 @@ href="https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)
 class="uri">https://en.wikipedia.org/w/index.php?title=Coupling_(computer_programming)&amp;oldid=1245630908</a>,
 2024.</div>
 </div>
+<div id="ref-enwiki:1365617401" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Unintended
+consequences — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Unintended_consequences&amp;oldid=1365617401"
+class="uri">https://en.wikipedia.org/w/index.php?title=Unintended_consequences&amp;oldid=1365617401</a>,
+2026.</div>
+</div>
 <div id="ref-milanovic2026demeter" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">M.
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">M.
 Milanović, <span>“Law of demeter.”</span> <a href="
                    https://lawsofsoftwareengineering.com/laws/law-of-demeter/
                     " class="uri">
@@ -1586,7 +1620,7 @@ Milanović, <span>“Law of demeter.”</span> <a href="
 </a>, 2026.</div>
 </div>
 <div id="ref-enwiki:1230588445" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[14] </div><div
+<div class="csl-left-margin">[15] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Object-oriented
 analysis and design — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -1595,7 +1629,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Object-oriented_analysis_
 2024.</div>
 </div>
 <div id="ref-woltmann2023hexagonal" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">S.
 Woltmann, <span>“Hexagonal architecture.”</span> <a href="
                     https://www.happycoders.eu/software-craftsmanship/hexagonal-architecture/
                     " class="uri">
@@ -1603,7 +1637,7 @@ Woltmann, <span>“Hexagonal architecture.”</span> <a href="
 </a>, 18-Jan-2023.</div>
 </div>
 <div id="ref-okeyo2023beginners" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[16] </div><div class="csl-right-inline">B.
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">B.
 Okeyo, <span>“A beginners guide to understanding message bus
 architecture.”</span> <a href="
                     https://dev.to/billy_de_cartel/a-beginners-guide-to-understanding-message-bus-architecture-22ec
@@ -1612,7 +1646,7 @@ architecture.”</span> <a href="
 </a>, 24-Apr-2023.</div>
 </div>
 <div id="ref-inngest2022message" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">I.
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">I.
 Inc., <span>“Message queue vs message bus: The practical
 differences.”</span> <a href="
                     https://www.inngest.com/blog/message-bus-vs-queues
@@ -1621,7 +1655,7 @@ differences.”</span> <a href="
 </a>, 29-Jun-2022.</div>
 </div>
 <div id="ref-baeldung20214layered" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[18] </div><div
+<div class="csl-left-margin">[19] </div><div
 class="csl-right-inline">baeldung, <span>“Layered architecture.”</span>
 <a href="
                     https://www.baeldung.com/cs/layered-architecture
@@ -1630,7 +1664,7 @@ class="csl-right-inline">baeldung, <span>“Layered architecture.”</span>
 </a>, 11-Nov-2021.</div>
 </div>
 <div id="ref-palermo2008onion" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[19] </div><div class="csl-right-inline">J.
+<div class="csl-left-margin">[20] </div><div class="csl-right-inline">J.
 Palermo, <span>“The onion architecture : Part 1.”</span> <a href="
                     https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
                     " class="uri">
@@ -1638,7 +1672,7 @@ Palermo, <span>“The onion architecture : Part 1.”</span> <a href="
 </a>, 29-Jul-2008.</div>
 </div>
 <div id="ref-cockburn2010hexagonal" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[20] </div><div class="csl-right-inline">A.
+<div class="csl-left-margin">[21] </div><div class="csl-right-inline">A.
 Cockburn, <span>“Hexagonal architecture.”</span> <a href="
                    https://alistair.cockburn.us/hexagonal-architecture/
                     " class="uri">
@@ -1646,7 +1680,7 @@ Cockburn, <span>“Hexagonal architecture.”</span> <a href="
 </a>, 28-Feb-2010.</div>
 </div>
 <div id="ref-martin2012clean" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[21] </div><div class="csl-right-inline">R.
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">R.
 C. Martin, <span>“The clean architecture.”</span> <a href="
                    https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
                     " class="uri">
@@ -1654,7 +1688,7 @@ C. Martin, <span>“The clean architecture.”</span> <a href="
 </a>, 13-Aug-2012.</div>
 </div>
 <div id="ref-enwiki:1244967192" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[22] </div><div
+<div class="csl-left-margin">[23] </div><div
 class="csl-right-inline">Wikipedia contributors,
 <span>“Model–view–controller — <span>Wikipedia</span><span>,</span> the
 free encyclopedia.”</span> <a
@@ -1663,7 +1697,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%
 2024.</div>
 </div>
 <div id="ref-pedamkar2023mvc" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[23] </div><div class="csl-right-inline">P.
+<div class="csl-left-margin">[24] </div><div class="csl-right-inline">P.
 Pedamkar, <span>“MVC vs MVP vs MVVM.”</span> <a href="
                    https://www.educba.com/mvc-vs-mvp-vs-mvvm/
                     " class="uri">

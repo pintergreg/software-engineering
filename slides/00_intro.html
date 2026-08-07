@@ -1340,6 +1340,29 @@ platforms</li>
 <li>often interpreted as a comment on software bloat</li>
 </ul>
 </section>
+<section id="second-system-effect" class="slide level2">
+<h2>second-system effect</h2>
+<div class="wide-quote">
+<blockquote>
+<p>The second-system effect (also second-system syndrome) is the
+tendency for a successful first system (often small and relatively
+elegant) to be followed by a second system that becomes over-engineered
+or bloated.</p>
+<p>– Fed Brooks, The Mythical Man-Month (1975) <span class="citation"
+data-cites="enwiki:1354324134">[12]</span></p>
+</blockquote>
+</div>
+<p>migitation:</p>
+<ul>
+<li>resisting unnecessary generalization,</li>
+<li>making resource costs visible for small features,</li>
+<li>ensuring experienced architectural leadership</li>
+</ul>
+<div class="text-smaller">
+<p>more in [Laws of Software Engineering / Second-System Effect] by
+Dr. Milan Milanović</p>
+</div>
+</section>
 <section id="users-only-care-about-20-of-your-application"
 class="slide level2">
 <h2>users only care about 20% of your application</h2>
@@ -1754,7 +1777,7 @@ reimplement datetime / timezone handling</p>
 <div class="columns">
 <div class="column wide-quote" style="width:50%;">
 <p>Mythical man month: 10 lines per developer day <span class="citation"
-data-cites="brooks1974mythical">[12]</span></p>
+data-cites="brooks1974mythical">[13]</span></p>
 <div class="text-smaller">
 <blockquote>
 <p>Redis is composed of 100k lines of code, I wrote at least 70k of that
@@ -1769,7 +1792,7 @@ indeed quite accurate.</p>
 </div><div class="column text-smaller mt-2" style="width:50%;">
 <table>
 <caption>how much code does a developer write? <span class="citation"
-data-cites="mcenery2020how">[13]</span></caption>
+data-cites="mcenery2020how">[14]</span></caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">years of coding</th>
@@ -1814,7 +1837,7 @@ data-cites="mcenery2020how">[13]</span></caption>
 <div class="column" style="width:50%;">
 <p><span class="text-smaller">estimation by the Linux Foundation <span
 class="citation"
-data-cites="linuxfoundation2008linux">[14]</span></span></p>
+data-cites="linuxfoundation2008linux">[15]</span></span></p>
 <ul>
 <li>Linux kernel (2008) 6.8 million LOC</li>
 <li>COnstructive COst MOdel (COCOMO) for cost estimation</li>
@@ -1827,7 +1850,7 @@ data-cites="linuxfoundation2008linux">[14]</span></span></p>
 </div><div class="column text-smaller mt-2" style="width:50%;">
 <table>
 <caption>how much code does a developer write? <span class="citation"
-data-cites="mcenery2020how">[13]</span></caption>
+data-cites="mcenery2020how">[14]</span></caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">years of coding</th>
@@ -1940,12 +1963,12 @@ Defense)</p>
 </tbody>
 </table>
 <p><span class="text-smaller">source: <span class="citation"
-data-cites="bykovski2020simple">[15]</span></span></p>
+data-cites="bykovski2020simple">[16]</span></span></p>
 </section>
 <section id="complexity-classes-1" class="slide level2">
 <h2>complexity classes</h2>
 <p><span class="text-smaller">from Michael Bykovski’s essay <span
-class="citation" data-cites="bykovski2020simple">[15]</span></span></p>
+class="citation" data-cites="bykovski2020simple">[16]</span></span></p>
 <ul>
 <li>in a simple system, we know the knowns, everything is predictable,
 it’s easy to understand the system</li>
@@ -1955,7 +1978,7 @@ it’s easy to understand the system</li>
 measurable</li>
 <li>it is the province of engineers, surgeons, intelligence analysts,
 lawyers, and other experts <span class="citation"
-data-cites="enwiki:1300921689">[16]</span></li>
+data-cites="enwiki:1300921689">[17]</span></li>
 </ul></li>
 <li>in a complex system, the knowns are unknown to us, but we are aware
 of our uncertainty</li>
@@ -2000,7 +2023,7 @@ href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA</a></figc
 <h2>project complexity</h2>
 <div class="text-smaller">
 <p>Stacey matrix <span class="citation"
-data-cites="stacey2007strategic">[17]</span></p>
+data-cites="stacey2007strategic">[18]</span></p>
 </div>
 <div class="r-stack">
 <div class="exclude">
@@ -2128,10 +2151,10 @@ in a project.</p>
 </div>
 <figure>
 <img data-src="figures/cost_of_fixing.drawio.svg" height="200"
-alt="the rising costs of finding and fixing defects based on Figure 3.4 of [18] (Ambler, 2002)" />
+alt="the rising costs of finding and fixing defects based on Figure 3.4 of [19] (Ambler, 2002)" />
 <figcaption aria-hidden="true">the rising costs of finding and fixing
 defects based on Figure 3.4 of <span class="citation"
-data-cites="ambler2002agile">[18]</span> (Ambler, 2002)</figcaption>
+data-cites="ambler2002agile">[19]</span> (Ambler, 2002)</figcaption>
 </figure>
 <div class="mt-2">
 <p>to do that, you need to know all the unknowns, so you need
@@ -2161,7 +2184,7 @@ deficiencies and the other way is to make it so complicated that there
 are no <em>obvious</em> deficiencies.</p>
 <p>The first method is far more difficult.</p>
 <p>– C.A.R. Hoare <span class="citation"
-data-cites="hoare2007emperor">[19]</span></p>
+data-cites="hoare2007emperor">[20]</span></p>
 </blockquote>
 <div class="text-smaller mt-2">
 <p>see KISS philosophy…</p>
@@ -2225,7 +2248,7 @@ width="250" /></p>
 <li>which increases complexity</li>
 </ul></li>
 <li>“every line of code written comes at a price: maintenance” <span
-class="citation" data-cites="tef2016write">[20]</span>
+class="citation" data-cites="tef2016write">[21]</span>
 <ul>
 <li>larger garden, more gardening</li>
 </ul></li>
@@ -2337,13 +2360,22 @@ href="https://en.wikipedia.org/w/index.php?title=Occam%27s_razor&amp;oldid=13057
 class="uri">https://en.wikipedia.org/w/index.php?title=Occam%27s_razor&amp;oldid=1305790618</a>,
 2025.</div>
 </div>
+<div id="ref-enwiki:1354324134" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div
+class="csl-right-inline">Wikipedia contributors, <span>“Second-system
+effect — <span>Wikipedia</span><span>,</span> the free
+encyclopedia.”</span> <a
+href="https://en.wikipedia.org/w/index.php?title=Second-system_effect&amp;oldid=1354324134"
+class="uri">https://en.wikipedia.org/w/index.php?title=Second-system_effect&amp;oldid=1354324134</a>,
+2026.</div>
+</div>
 <div id="ref-brooks1974mythical" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">F.
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">F.
 P. Brooks, <span>“The mythical man-month,”</span> <em>Datamation</em>,
 vol. 20, no. 12, pp. 44–52, 1974.</div>
 </div>
 <div id="ref-mcenery2020how" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">S.
 McEnery, <span>“How much computer code has been written?”</span> <a
 href="
                    https://medium.com/modern-stack/how-much-computer-code-has-been-written-c8c03100f459
@@ -2353,7 +2385,7 @@ href="
 </div>
 <div id="ref-linuxfoundation2008linux" class="csl-entry"
 role="listitem">
-<div class="csl-left-margin">[14] </div><div class="csl-right-inline">T.
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">T.
 L. Foundation, <span>“Linux foundation publishes study estimating the
 value of linux.”</span> <a href="
                    https://www.linuxfoundation.org/press/press-release/linux-foundation-publishes-study-estimating-the-value-of-linux
@@ -2362,7 +2394,7 @@ value of linux.”</span> <a href="
 </a>, 22-Oct-2008.</div>
 </div>
 <div id="ref-bykovski2020simple" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div class="csl-right-inline">M.
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">M.
 Bykovski, <span>“Simple vs. Complicated vs. Complex vs. chaotic.”</span>
 <a href="
                    https://medium.com/better-programming/simple-vs-complicated-vs-complex-vs-chaos-737b5964849d
@@ -2371,7 +2403,7 @@ Bykovski, <span>“Simple vs. Complicated vs. Complex vs. chaotic.”</span>
 </a>, 03-Mar-2020.</div>
 </div>
 <div id="ref-enwiki:1300921689" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[16] </div><div
+<div class="csl-left-margin">[17] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Cynefin
 framework — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -2380,23 +2412,23 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Cynefin_framework&amp;old
 2025.</div>
 </div>
 <div id="ref-stacey2007strategic" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">R.
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">R.
 D. Stacey, <em>Strategic management and organisational dynamics: The
 challenge of complexity to ways of thinking about organisations</em>.
 Pearson education, 2007.</div>
 </div>
 <div id="ref-ambler2002agile" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[18] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[19] </div><div class="csl-right-inline">S.
 Ambler, <em>Agile modeling: Effective practices for extreme programming
 and the unified process</em>. John Wiley &amp; Sons, 2002.</div>
 </div>
 <div id="ref-hoare2007emperor" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[19] </div><div class="csl-right-inline">C.
+<div class="csl-left-margin">[20] </div><div class="csl-right-inline">C.
 A. R. Hoare, <span>“The emperor’s old clothes,”</span> in <em>ACM turing
 award lectures</em>, 2007, p. 1980.</div>
 </div>
 <div id="ref-tef2016write" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[20] </div><div
+<div class="csl-left-margin">[21] </div><div
 class="csl-right-inline">tef, <span>“Write code that is easy to delete,
 not easy to extend.”</span> <a href="
                     https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to
