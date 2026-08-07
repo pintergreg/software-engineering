@@ -1214,6 +1214,37 @@ Stacey matrix [@stacey2007strategic]
 :::
 
 
+# discussion
+
+::: {.text-size-2}
+Should a software developer add complexity to the software code to make the interaction simpler for the user
+
+or should the user deal with a complex interface so that the software code can be simple? 
+:::
+
+:::{.text-smaller}
+source: Larry Tesler [@enwiki:1366278137]
+:::
+
+## Tesler's law
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .wide-quote}
+[a.k.a law of conservation of complexity]{.text-smaller}
+
+> Every application has an inherent amount of complexity that cannot be removed or hidden. Instead, it must be dealt with, either in product development or in user interaction. [@enwiki:1366278137]
+    
+:::::::::
+::::::::: {.column width="50%"}
+![based on Dr. Milan Milanović's [figure](https://lawsofsoftwareengineering.com/laws/teslers-law/)](figures/teslers_law.drawio.svg)
+:::::::::
+::::::::::::
+
+:::{.text-smaller}
+more on [Laws of Software Engineering / Tesler's Law](https://lawsofsoftwareengineering.com/laws/galls-law/) by Dr. Milan Milanović
+:::
+
+
 # what is software architecture?
 
 > "Architecture" is a term that lots of people try to define, with little agreement. There are two common elements: One is the highest-level breakdown of a system into its parts; the other, decisions that are hard to change.
