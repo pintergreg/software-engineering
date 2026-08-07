@@ -1,11 +1,15 @@
 require 'optparse'
 
-options = {}
+options = {fragments: ""}
 OptionParser.new do |opts|
   opts.banner = "Usage: example.rb [options]"
 
   opts.on("-s", "--selected PATH", "Select slides to compile") do |x|
     options[:selected] = x
+  end
+
+  opts.on("-f", "--fragments", "Enable fragments") do |x|
+    options[:fragments] = "--fragments"
   end
 end.parse!
 
@@ -16,6 +20,6 @@ else
 
     inputs.each do |x|
         # puts "#{x} #{x.gsub(".html", ".pdf")}"
-        `npx decktape reveal --headless new --fragments --pdf-author "Gergő Pintér" --chrome-path /bin/chromium #{x} #{x.gsub(".html", ".pdf")}`
+        `npx decktape reveal --headless new #{options[:fragments]} --pdf-author "Gergő Pintér" --chrome-path /bin/chromium #{x} #{x.gsub(".html", ".pdf")}`
     end
 end
