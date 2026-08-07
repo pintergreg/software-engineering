@@ -1003,6 +1003,8 @@ table: KDE / Plasma 6.1 series [release schedule](https://community.kde.org/Sche
 
 ::: {.text-smaller}
 source: [The Cost of Interruption for Software Developers](https://www.brightdevelopers.com/the-cost-of-interruption-for-software-developers/) -- by Steven To [@to2018cost]
+
+additional regarding: [Programmer Interrupted](https://blog.ninlabs.com/blog/programmer-interrupted/) -- by Chris Parnin
 :::
 
 
