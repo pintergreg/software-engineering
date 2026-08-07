@@ -493,6 +493,13 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 ![](figures/traceability_via_commit.drawio.svg){width=950 .fragment data-fragment-index=3}
 ::::::
 
+::: {.text-smaller .wide-quote}
+> A diff can show what changed in the artifact, but it cannot explain which requirement demanded the change, which constraint shaped it, or which tradeoff caused one structure to be chosen over another.
+>
+> -- Chad Fowler [@fowler2026provenance]
+
+:::
+
 
 ## how to write the commit message?
 
@@ -524,6 +531,7 @@ based on: [Code Review Guidelines for Humans](https://phauer.com/2018/code-revie
 source: [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) [@beams2014how]
 :::
 
+
 ## keeping clean history
 
 ![](figures/user_statistics/branching.svg){width=850}
@@ -534,6 +542,25 @@ source: [How to Write a Git Commit Message](https://chris.beams.io/posts/git-com
 - as a feature branch may contain too much commits (detail)
     - commits on a feature branch often squashed into one commit
 :::
+
+
+## discussion
+
+::: {.text-size-3}
+what is a drawback of traceability via linking issue IDs?
+:::
+
+::: {.fragment}
+there's an argument stating that in the age of ~~AI~~ LLMs not the code should be versioned but the prompt and the requirements
+
+see: [Provenance Is the New Version Control](https://aicoding.leaflet.pub/3mcbiyal7jc2y) [@fowler2026provenance]
+:::
+
+::: notes
+- issue tracker usually a different system than version control
+- usually, but not always: see [Fossil](https://fossil-scm.org/home/doc/trunk/www/index.wiki)
+:::
+
 
 # review in numbers
 
