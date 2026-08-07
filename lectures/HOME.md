@@ -175,7 +175,8 @@ MVC-MVP-MVVM
 - [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) - by Philipp Hauer
 - [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/) - by Michael Lynch
     - [Part Two](https://mtlynch.io/human-code-reviews-2/)
-
+- [21 Lessons From 14 Years at Google](https://addyosmani.com/blog/21-lessons/) - by Addy Osmani
+    
 ## week 10
 
 1. [week 9 summary](slides/summary_week09.html)
