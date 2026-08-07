@@ -1324,7 +1324,7 @@ it is hard to objectively measure the quality of code
 ::::::::: {.column width="70%" .mt-4}
 - zombie scrum: doing something without heart, without its essence
 - if you write unit tests _just_ to increase the test coverage they loose its function
-    - and collect badges: ![](figures/code coverage_ 84_.svg){width=150 .m-0 .va-middle} ![](figures/code coverage_ 100_.svg){width=150 .m-0 .va-middle}
+    - and collect badges: ![](figures/code_coverage_84.svg){width=150 .m-0 .va-middle} ![](figures/code_coverage_100.svg){width=150 .m-0 .va-middle}
 
 :::::::::
 ::::::::: {.column width="30%"}
@@ -1984,7 +1984,7 @@ source/reading: [The Seven Principles of Software Testing](https://community.dyn
 :::::::::
 ::::::::: {.column width="50%" .text-smaller .wide-quote}
 - it may seem that the software has been tested and all the defects have been fixed
-    ![](figures/code coverage_ 100_.svg)
+    ![](figures/code_coverage_100.svg)
 - however the system could still end up being unusable by the client
 - this can occur when the software developed did not meet the business needs and **requirements** of the user
 
