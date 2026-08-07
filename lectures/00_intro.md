@@ -779,6 +779,26 @@ The principle is sometimes paraphrased as "of two competing theories, the simple
 - programs experience pressure to evolve into toolkits and application platforms
 - often interpreted as a comment on software bloat
 
+## second-system effect
+
+::: {.wide-quote}
+> The second-system effect (also second-system syndrome) is the tendency for a successful first system (often small and relatively elegant) to be followed by a second system that becomes over-engineered or bloated.
+> 
+> -- Fed Brooks, The Mythical Man-Month (1975) [@enwiki:1354324134]
+
+:::
+
+migitation:
+
+- resisting unnecessary generalization,
+- making resource costs visible for small features,
+- ensuring experienced architectural leadership
+
+::: {.text-smaller}
+more in [Laws of Software Engineering / Second-System Effect] by Dr. Milan Milanović
+:::
+
+
 ## users only care about 20% of your application
 
 
