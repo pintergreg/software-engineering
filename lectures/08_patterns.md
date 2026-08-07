@@ -970,6 +970,21 @@ other alternatives: [Alternatives To MVC ](https://blog.ircmaxell.com/2014/11/al
 :::
 
 
+# law of leaky abstractions
+
+> All non-trivial abstractions, to some degree, are leaky.
+>
+> -- Joel Spolsky
+
+- refers to a design flaw where an abstraction, intended to simplify and hide the underlying complexity of a system, fails to completely do so
+- this results in some of the implementation details becoming exposed or 'leaking' through the abstraction,
+- forcing users to have knowledge of these underlying complexities to effectively use or troubleshoot the system 
+
+::: {.text-smaller}
+source: Wikipedia / [Leaky abstraction](https://en.wikipedia.org/wiki/Leaky_abstraction) [@enwiki:1314409362]
+:::
+
+
 # user statistics example
 
 :::::::::::: {.columns}
