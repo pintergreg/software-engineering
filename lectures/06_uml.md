@@ -282,7 +282,83 @@ print(something.foo)  # 2
 ::: {.text-smaller}
 source: [Why OO Sucks by Joe Armstrong](https://harmful.cat-v.org/software/OO_programming/why_oo_sucks)
 :::
-    
+
+
+# paradigm principles of functional programming
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%" .mt-6 .text-size-2}
+- pure functions
+- immutability
+- first-class functions
+- higher-order functions
+
+:::::::::
+::::::::: {.column width="60%"}
+![based on Rainer Grimm's [figure](https://www.modernescpp.com/index.php/pure-functions/)](figures/fp_characteristics.drawio.svg){width=400}
+:::::::::
+::::::::::::
+
+
+## pure functions
+
+- pure functions exhibit two key characteristics:
+    - they consistently produce the same output for the same input, and
+    - they have no side effects
+- the absence of side effects eliminates unexpected changes to the program state, promoting predictability and testability
+
+::: {.text-smaller .mt-2}
+source: [The principles of functional programming](https://www.jamesparker.dev/the-principles-of-functional-programming/) by James Parker
+:::
+
+
+## immutability
+
+- once a variable is assigned a value, it cannot be changed
+- instead of modifying existing data, functional programming emphasises the creation of new, immutable data structures
+- benefits: predictable code, thread-safe applications, aids, concurrent and parallel programming, easier testing
+
+::: {.text-smaller .mt-2}
+source: [The principles of functional programming](https://www.jamesparker.dev/the-principles-of-functional-programming/) by James Parker
+:::
+
+
+## first-class and higher-order functions
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%" .mt-1}
+
+- first-class means that functions can be assigned to variables
+- higher-order: the functions can be passed as arguments to other functions, and returned as values 
+- which enables the composition of complex functionalities from simpler building blocks
+
+:::::::::
+::::::::: {.column width="60%"}
+``` elixir
+defmodule Wish do
+    def power(a, b) do
+        if b > 1 do
+            a * power(a, b - 1)
+        else
+            a
+        end
+    end
+    def what_to_do(a, b, func) do
+        func.(a, b)
+    end
+end
+
+IO.puts(Wish.power(3, 4)) # 81
+IO.puts(Wish.what_to_do(3, 4, &Wish.power/2)) # 81
+IO.puts(Wish.what_to_do(3, 4, fn x, y -> x + y end)) # 7
+sub = fn x, y -> x - y end
+IO.puts(Wish.what_to_do(3, 4, sub)) # -1
+```
+
+:::::::::
+::::::::::::
+
+
 # Unified Modeling Language
 
 :::::::::::: {.columns}
