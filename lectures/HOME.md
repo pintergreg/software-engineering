@@ -102,6 +102,7 @@ C4 model
 ### readings
 
 - [The Full-stack Software Design & Architecture Map](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/) - by Khalil Stemmler
+- [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) - by Sagar Hudge
 
 SOLID
 

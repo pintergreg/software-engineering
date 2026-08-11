@@ -604,6 +604,138 @@ source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareen
 source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareengineering.com/laws/law-of-demeter/) by Dr. Milan Milanović 
 :::
 
+# parts of an architecture
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- presentation layer (frontend/UI)
+    - handles the interactions that users have with the software
+    - focuses on the user interface and user experience -- later in course
+- [business logic layer (domain layer)]{.alpha-50}
+- [application layer (service layer)]{.alpha-50}
+- [data access layer (persistence layer)]{.alpha-50}
+- [data layer]{.alpha-50}
+
+:::::::::
+::::::::: {.column width="40%"}
+<!-- ![user interface KDE Plasma 5.22 from [Wikimedia](https://commons.wikimedia.org/wiki/File:KDE_Plasma_5.22.png) [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/KDE_Plasma_5.22.png) -->
+
+![](figures/publicdomainvectors/application-interface-development.svg) 
+<!-- ![](figures/user_statistics/wireframe_hifi_light.drawio.svg)  -->
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+## parts of an architecture
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- [presentation layer (frontend/UI)]{.alpha-50}
+- business logic layer (domain layer)
+    - where business rules and application logic are implemented
+    - processes data, applies business rules, and controls transactions
+- [application layer (service layer)]{.alpha-50}
+- [data access layer (persistence layer)]{.alpha-50}
+- [data layer]{.alpha-50}
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/cogwheel.svg){width=250}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+## parts of an architecture
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- [presentation layer (frontend/UI)]{.alpha-50}
+- [business logic layer (domain layer)]{.alpha-50}
+- application layer (service layer)
+    - acts as a bridge between the presentation layer and business logic
+    - manages application flow, coordinates user requests, and processes business operations
+- [data access layer (persistence layer)]{.alpha-50}
+- [data layer]{.alpha-50}
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/wooden-bridge-water.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+## parts of an architecture
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- [presentation layer (frontend/UI)]{.alpha-50}
+- [business logic layer (domain layer)]{.alpha-50}
+- [application layer (service layer)]{.alpha-50}
+- data access layer (persistence layer)
+    - handles data storage and retrieval from persistent storage systems (e.g., database)
+    - manages [CRUD]{.tooltip title="Create, Read, Update, Delete"} operations and interacts with data sources
+- [data layer]{.alpha-50}
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/publicdomainvectors/storage-facility.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+::: notes
+CRUD = Create, Read, Update, Delete
+:::
+
+## parts of an architecture
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- [presentation layer (frontend/UI)]{.alpha-50}
+- [business logic layer (domain layer)]{.alpha-50}
+- [application layer (service layer)]{.alpha-50}
+- [data access layer (persistence layer)]{.alpha-50}
+- data layer
+    - where data is stored in a structured or semi-structured format
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/data.drawio.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+## how separating parts helps to design an architecture?
+
+- [separation of concerns]{.background-color-lightblue}: each component has a clear responsibility, making the codebase easier to understand, maintain, and modify
+- [modularity and reusability]{.background-color-lightblue}: parts (components or services) that can be used across different parts of the application or even other projects
+- [scalability]{.background-color-lightblue}: changes in one part (e.g., database layer) do not necessarily affect others, easier to replace one as the software scales
+- [ease of testing]{.background-color-lightblue}: each part can be tested individually
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
 
 # topologies
 
@@ -672,7 +804,7 @@ control flow? structure?
 ::::::::: {.column width="50%"}
 ![](figures/message_bus.drawio.svg){width=325}
 
-::: {.fragment}
+::: {}
 ![CAN bus](figures/can_bus.drawio.svg){width=325}
 :::
 :::::::::
@@ -835,7 +967,7 @@ disadvantages
 <!-- ![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300} -->
 ![](figures/hexagonal_extend.drawio.svg){width=325}
 
-::: {.fragment .text-smaller}
+::: {.text-smaller}
 - hexagonal architecture does not specify what is inside the application hexagon
 - represents a single design decision:
     - wrap your application in an API and put tests around it
