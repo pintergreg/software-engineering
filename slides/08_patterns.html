@@ -824,21 +824,198 @@ of Software Engineering / Law of Demeter</a> by Dr. Milan Milanović</p>
 </div>
 </section></section>
 <section>
+<section id="parts-of-an-architecture" class="title-slide slide level1">
+<h1>parts of an architecture</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>presentation layer (frontend/UI)
+<ul>
+<li>handles the interactions that users have with the software</li>
+<li>focuses on the user interface and user experience – later in
+course</li>
+</ul></li>
+<li><span class="alpha-50">business logic layer (domain
+layer)</span></li>
+<li><span class="alpha-50">application layer (service layer)</span></li>
+<li><span class="alpha-50">data access layer (persistence
+layer)</span></li>
+<li><span class="alpha-50">data layer</span></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<!-- ![user interface KDE Plasma 5.22 from [Wikimedia](https://commons.wikimedia.org/wiki/File:KDE_Plasma_5.22.png) [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)](figures/borrowed/KDE_Plasma_5.22.png) -->
+<p><img
+data-src="figures/publicdomainvectors/application-interface-development.svg" />
+<!-- ![](figures/user_statistics/wireframe_hifi_light.drawio.svg)  --></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers
+in software architecture</a> by Sagar Hudge <span class="citation"
+data-cites="hudge2024layers">[15]</span></p>
+</div>
+</section>
+<section id="parts-of-an-architecture-1" class="slide level2">
+<h2>parts of an architecture</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><span class="alpha-50">presentation layer (frontend/UI)</span></li>
+<li>business logic layer (domain layer)
+<ul>
+<li>where business rules and application logic are implemented</li>
+<li>processes data, applies business rules, and controls
+transactions</li>
+</ul></li>
+<li><span class="alpha-50">application layer (service layer)</span></li>
+<li><span class="alpha-50">data access layer (persistence
+layer)</span></li>
+<li><span class="alpha-50">data layer</span></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/publicdomainvectors/cogwheel.svg"
+width="250" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers
+in software architecture</a> by Sagar Hudge <span class="citation"
+data-cites="hudge2024layers">[15]</span></p>
+</div>
+</section>
+<section id="parts-of-an-architecture-2" class="slide level2">
+<h2>parts of an architecture</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><span class="alpha-50">presentation layer (frontend/UI)</span></li>
+<li><span class="alpha-50">business logic layer (domain
+layer)</span></li>
+<li>application layer (service layer)
+<ul>
+<li>acts as a bridge between the presentation layer and business
+logic</li>
+<li>manages application flow, coordinates user requests, and processes
+business operations</li>
+</ul></li>
+<li><span class="alpha-50">data access layer (persistence
+layer)</span></li>
+<li><span class="alpha-50">data layer</span></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img
+data-src="figures/publicdomainvectors/wooden-bridge-water.svg" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers
+in software architecture</a> by Sagar Hudge <span class="citation"
+data-cites="hudge2024layers">[15]</span></p>
+</div>
+</section>
+<section id="parts-of-an-architecture-3" class="slide level2">
+<h2>parts of an architecture</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><span class="alpha-50">presentation layer (frontend/UI)</span></li>
+<li><span class="alpha-50">business logic layer (domain
+layer)</span></li>
+<li><span class="alpha-50">application layer (service layer)</span></li>
+<li>data access layer (persistence layer)
+<ul>
+<li>handles data storage and retrieval from persistent storage systems
+(e.g., database)</li>
+<li>manages <span class="tooltip"
+title="Create, Read, Update, Delete">CRUD</span> operations and
+interacts with data sources</li>
+</ul></li>
+<li><span class="alpha-50">data layer</span></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img
+data-src="figures/publicdomainvectors/storage-facility.svg" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers
+in software architecture</a> by Sagar Hudge <span class="citation"
+data-cites="hudge2024layers">[15]</span></p>
+</div>
+<aside class="notes">
+<p>CRUD = Create, Read, Update, Delete</p>
+</aside>
+</section>
+<section id="parts-of-an-architecture-4" class="slide level2">
+<h2>parts of an architecture</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><span class="alpha-50">presentation layer (frontend/UI)</span></li>
+<li><span class="alpha-50">business logic layer (domain
+layer)</span></li>
+<li><span class="alpha-50">application layer (service layer)</span></li>
+<li><span class="alpha-50">data access layer (persistence
+layer)</span></li>
+<li>data layer
+<ul>
+<li>where data is stored in a structured or semi-structured format</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/data.drawio.svg" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers
+in software architecture</a> by Sagar Hudge <span class="citation"
+data-cites="hudge2024layers">[15]</span></p>
+</div>
+</section>
+<section id="how-separating-parts-helps-to-design-an-architecture"
+class="slide level2">
+<h2>how separating parts helps to design an architecture?</h2>
+<ul>
+<li><span class="background-color-lightblue">separation of
+concerns</span>: each component has a clear responsibility, making the
+codebase easier to understand, maintain, and modify</li>
+<li><span class="background-color-lightblue">modularity and
+reusability</span>: parts (components or services) that can be used
+across different parts of the application or even other projects</li>
+<li><span class="background-color-lightblue">scalability</span>: changes
+in one part (e.g., database layer) do not necessarily affect others,
+easier to replace one as the software scales</li>
+<li><span class="background-color-lightblue">ease of testing</span>:
+each part can be tested individually</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a
+href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers
+in software architecture</a> by Sagar Hudge <span class="citation"
+data-cites="hudge2024layers">[15]</span></p>
+</div>
+</section></section>
+<section>
 <section id="topologies" class="title-slide slide level1">
 <h1>topologies</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Object-oriented design (OOD) is the process of planning a system of
 interacting objects to solve a software problem <span class="citation"
-data-cites="enwiki:1230588445">[15]</span>.</p>
+data-cites="enwiki:1230588445">[16]</span>.</p>
 <div class="fragment" data-fragment-index="1">
 <p>control flow? structure?</p>
 <figure>
 <img data-src="figures/legacy_structure.drawio.svg" width="400"
-alt="historically grown architecture based on [16]" />
+alt="historically grown architecture based on [17]" />
 <figcaption aria-hidden="true">historically grown architecture<br>based
 on <span class="citation"
-data-cites="woltmann2023hexagonal">[16]</span></figcaption>
+data-cites="woltmann2023hexagonal">[17]</span></figcaption>
 </figure>
 </div>
 <!--
@@ -896,7 +1073,7 @@ services</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="figures/message_bus.drawio.svg" width="325" /></p>
-<div class="fragment">
+<div>
 <figure>
 <img data-src="figures/can_bus.drawio.svg" width="325" alt="CAN bus" />
 <figcaption aria-hidden="true">CAN bus</figcaption>
@@ -947,8 +1124,8 @@ duplicates</li>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="okeyo2023beginners">[17]</span> and <span class="citation"
-data-cites="inngest2022message">[18]</span></p>
+data-cites="okeyo2023beginners">[18]</span> and <span class="citation"
+data-cites="inngest2022message">[19]</span></p>
 </div>
 <aside class="notes">
 <p>https://www.inngest.com/blog/message-bus-vs-queues</p>
@@ -1016,7 +1193,7 @@ operates as a single unit</li>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="baeldung20214layered">[19]</span></p>
+data-cites="baeldung20214layered">[20]</span></p>
 </div>
 </section>
 <section id="onion-architecture" class="slide level2">
@@ -1047,7 +1224,7 @@ foundation</li>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="palermo2008onion">[20]</span></p>
+data-cites="palermo2008onion">[21]</span></p>
 </div>
 <aside class="notes">
 <ul>
@@ -1063,7 +1240,7 @@ vs layered</a></li>
 <div class="column" style="width:60%;">
 <ul>
 <li>invented by Alistair Cockburn <span class="citation"
-data-cites="cockburn2010hexagonal">[21]</span></li>
+data-cites="cockburn2010hexagonal">[22]</span></li>
 <li>application should be equally controllable by users, other
 applications, or automated tests
 <ul>
@@ -1081,7 +1258,7 @@ width="325" /></p>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="woltmann2023hexagonal">[16]</span></p>
+data-cites="woltmann2023hexagonal">[17]</span></p>
 </div>
 </section>
 <section id="hexagonal-ports-adapters" class="slide level2">
@@ -1110,7 +1287,7 @@ divided among developers</li>
 <!-- ![based on [Cth027's figure](https://en.wikipedia.org/wiki/File:Hexagonal_Architecture.svg)<br>CC BY-SA](figures/hexagonal_gray.drawio.svg){width=300} -->
 <p><img data-src="figures/hexagonal_extend.drawio.svg"
 width="325" /></p>
-<div class="fragment text-smaller">
+<div class="text-smaller">
 <ul>
 <li>hexagonal architecture does not specify what is inside the
 application hexagon</li>
@@ -1124,7 +1301,7 @@ application hexagon</li>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="woltmann2023hexagonal">[16]</span></p>
+data-cites="woltmann2023hexagonal">[17]</span></p>
 </div>
 </section>
 <section id="hexagonal-vs.-layered" class="slide level2">
@@ -1161,11 +1338,11 @@ width="350" /></p>
 </div>
 <div class="text-smaller fragment" data-fragment-index="2">
 <p>it is very similar to the onion and (the clean architecture <span
-class="citation" data-cites="martin2012clean">[22]</span>)</p>
+class="citation" data-cites="martin2012clean">[23]</span>)</p>
 </div>
 <div class="text-smaller">
 <p>based on <span class="citation"
-data-cites="woltmann2023hexagonal">[16]</span></p>
+data-cites="woltmann2023hexagonal">[17]</span></p>
 </div>
 </section>
 <section id="the-clean-architecture" class="slide level2">
@@ -1174,7 +1351,7 @@ data-cites="woltmann2023hexagonal">[16]</span></p>
 <div class="text-smaller">
 <ul>
 <li>by Robert C. Martin <span class="citation"
-data-cites="martin2012clean">[22]</span>, unifies onion or hexagonal,
+data-cites="martin2012clean">[23]</span>, unifies onion or hexagonal,
 etc.</li>
 <li>source code dependencies can only point inwards</li>
 <li>relies on dependency inversion principle</li>
@@ -1186,7 +1363,7 @@ etc.</li>
 <section id="model-view-controller-enwiki1244967192"
 class="title-slide slide level1">
 <h1>Model-View-Controller <span class="citation"
-data-cites="enwiki:1244967192">[23]</span></h1>
+data-cites="enwiki:1244967192">[24]</span></h1>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
@@ -1243,7 +1420,7 @@ the data model</li>
 </div>
 <div class="text-smaller">
 <p>figures based on <span class="citation"
-data-cites="pedamkar2023mvc">[24]</span></p>
+data-cites="pedamkar2023mvc">[25]</span></p>
 </div>
 <div class="text-smaller">
 <p>other alternatives: <a
@@ -1271,7 +1448,7 @@ effectively use or troubleshoot the system</li>
 <p>source: Wikipedia / <a
 href="https://en.wikipedia.org/wiki/Leaky_abstraction">Leaky
 abstraction</a> <span class="citation"
-data-cites="enwiki:1314409362">[25]</span></p>
+data-cites="enwiki:1314409362">[26]</span></p>
 </div>
 </section>
 
@@ -1643,8 +1820,16 @@ Milanović, <span>“Law of demeter.”</span> <a href="
                    https://lawsofsoftwareengineering.com/laws/law-of-demeter/
 </a>, 2026.</div>
 </div>
+<div id="ref-hudge2024layers" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">S.
+Hudge, <span>“Layers in software architecture.”</span> <a href="
+                   https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6
+                    " class="uri">
+                   https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6
+</a>, 17-Oct-2024.</div>
+</div>
 <div id="ref-enwiki:1230588445" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div
+<div class="csl-left-margin">[16] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Object-oriented
 analysis and design — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -1653,7 +1838,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Object-oriented_analysis_
 2024.</div>
 </div>
 <div id="ref-woltmann2023hexagonal" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[16] </div><div class="csl-right-inline">S.
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">S.
 Woltmann, <span>“Hexagonal architecture.”</span> <a href="
                     https://www.happycoders.eu/software-craftsmanship/hexagonal-architecture/
                     " class="uri">
@@ -1661,7 +1846,7 @@ Woltmann, <span>“Hexagonal architecture.”</span> <a href="
 </a>, 18-Jan-2023.</div>
 </div>
 <div id="ref-okeyo2023beginners" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">B.
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">B.
 Okeyo, <span>“A beginners guide to understanding message bus
 architecture.”</span> <a href="
                     https://dev.to/billy_de_cartel/a-beginners-guide-to-understanding-message-bus-architecture-22ec
@@ -1670,7 +1855,7 @@ architecture.”</span> <a href="
 </a>, 24-Apr-2023.</div>
 </div>
 <div id="ref-inngest2022message" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[18] </div><div class="csl-right-inline">I.
+<div class="csl-left-margin">[19] </div><div class="csl-right-inline">I.
 Inc., <span>“Message queue vs message bus: The practical
 differences.”</span> <a href="
                     https://www.inngest.com/blog/message-bus-vs-queues
@@ -1679,7 +1864,7 @@ differences.”</span> <a href="
 </a>, 29-Jun-2022.</div>
 </div>
 <div id="ref-baeldung20214layered" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[19] </div><div
+<div class="csl-left-margin">[20] </div><div
 class="csl-right-inline">baeldung, <span>“Layered architecture.”</span>
 <a href="
                     https://www.baeldung.com/cs/layered-architecture
@@ -1688,7 +1873,7 @@ class="csl-right-inline">baeldung, <span>“Layered architecture.”</span>
 </a>, 11-Nov-2021.</div>
 </div>
 <div id="ref-palermo2008onion" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[20] </div><div class="csl-right-inline">J.
+<div class="csl-left-margin">[21] </div><div class="csl-right-inline">J.
 Palermo, <span>“The onion architecture : Part 1.”</span> <a href="
                     https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
                     " class="uri">
@@ -1696,7 +1881,7 @@ Palermo, <span>“The onion architecture : Part 1.”</span> <a href="
 </a>, 29-Jul-2008.</div>
 </div>
 <div id="ref-cockburn2010hexagonal" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[21] </div><div class="csl-right-inline">A.
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">A.
 Cockburn, <span>“Hexagonal architecture.”</span> <a href="
                    https://alistair.cockburn.us/hexagonal-architecture/
                     " class="uri">
@@ -1704,7 +1889,7 @@ Cockburn, <span>“Hexagonal architecture.”</span> <a href="
 </a>, 28-Feb-2010.</div>
 </div>
 <div id="ref-martin2012clean" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[22] </div><div class="csl-right-inline">R.
+<div class="csl-left-margin">[23] </div><div class="csl-right-inline">R.
 C. Martin, <span>“The clean architecture.”</span> <a href="
                    https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
                     " class="uri">
@@ -1712,7 +1897,7 @@ C. Martin, <span>“The clean architecture.”</span> <a href="
 </a>, 13-Aug-2012.</div>
 </div>
 <div id="ref-enwiki:1244967192" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[23] </div><div
+<div class="csl-left-margin">[24] </div><div
 class="csl-right-inline">Wikipedia contributors,
 <span>“Model–view–controller — <span>Wikipedia</span><span>,</span> the
 free encyclopedia.”</span> <a
@@ -1721,7 +1906,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Model%E2%80%93view%E2%80%
 2024.</div>
 </div>
 <div id="ref-pedamkar2023mvc" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[24] </div><div class="csl-right-inline">P.
+<div class="csl-left-margin">[25] </div><div class="csl-right-inline">P.
 Pedamkar, <span>“MVC vs MVP vs MVVM.”</span> <a href="
                    https://www.educba.com/mvc-vs-mvp-vs-mvvm/
                     " class="uri">
@@ -1729,7 +1914,7 @@ Pedamkar, <span>“MVC vs MVP vs MVVM.”</span> <a href="
 </a>, 05-Apr-2023.</div>
 </div>
 <div id="ref-enwiki:1314409362" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[25] </div><div
+<div class="csl-left-margin">[26] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Leaky
 abstraction — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
