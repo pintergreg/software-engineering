@@ -8,6 +8,7 @@ title-slide-attributes:
 slideNumber: "true"
 showSlideNumber: "print"
 revealjs-url: "../assets/reveal.js-5.2.1/"
+link-citations: true
 ---
 
 # types
