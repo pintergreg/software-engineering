@@ -71,6 +71,11 @@ background
 
 ![](../lectures/figures/choreographer/component.drawio.svg){width=700}
 
+::: {.text-smaller}
+There are some dependency between the modules. For example, the _shape design_ produces reusable shapes, so the _animation_ depend on the a _shape design_. 
+:::
+
+
 ## shape design
 
 :::::::::::: {.columns}
