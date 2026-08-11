@@ -29,7 +29,7 @@ The task is to design this software.
 > The user can do 3 things:
 >
 > 1. Tap the card to show its other side, both sides should be shown at the same time,
-> 2. The use can swipe left to indicate that they do not know the word, or
+> 2. The user can swipe left to indicate that they do not know the word, or
 > 3. swipe to right indicating the they know the word well.
 >
 > The app should count the swipes and keep statistics.
@@ -80,7 +80,7 @@ misunderstanding the task can cost a lot
 > The user can do 3 things:
 >
 > 1. Tap the card to show its other side, both sides should be shown at the same time,
-> 2. The use can swipe left to indicate that they do not know the word, or
+> 2. The user can swipe left to indicate that they do not know the word, or
 > 3. swipe to right indicating the they know the word well.
 >
 > The app should count the swipes and keep statistics.
