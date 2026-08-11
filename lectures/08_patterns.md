@@ -825,7 +825,7 @@ control flow? structure?
     - one to one
 
 :::::::::
-::::::::: {.column width="50%" .fragment}
+::::::::: {.column width="50%"}
 **delivery guaranties**
 
 - at most once
@@ -1014,7 +1014,7 @@ based on [@woltmann2023hexagonal]
 can be extend without changing the business logic
 :::
 
-::: {.text-smaller .fragment data-fragment-index=2}
+::: {.text-smaller .fragment data-fragment-index=1}
 it is very similar to the onion and (the clean architecture [@martin2012clean])
 :::
 
@@ -1108,9 +1108,17 @@ other alternatives: [Alternatives To MVC ](https://blog.ircmaxell.com/2014/11/al
 >
 > -- Joel Spolsky
 
+:::::::::::: {.columns}
+::::::::: {.column width="80%"}
 - refers to a design flaw where an abstraction, intended to simplify and hide the underlying complexity of a system, fails to completely do so
 - this results in some of the implementation details becoming exposed or 'leaking' through the abstraction,
-- forcing users to have knowledge of these underlying complexities to effectively use or troubleshoot the system 
+- forcing users to have knowledge of these underlying complexities to effectively use or troubleshoot the system
+
+:::::::::
+::::::::: {.column width="20%" .mt-2}
+![](figures/publicdomainvectors/water-leak.svg)
+:::::::::
+::::::::::::
 
 ::: {.text-smaller}
 source: Wikipedia / [Leaky abstraction](https://en.wikipedia.org/wiki/Leaky_abstraction) [@enwiki:1314409362]
