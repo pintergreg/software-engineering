@@ -141,7 +141,9 @@ calc(100% - 1.25rem)" data-background-size="125px">
 <section id="v-model-forsberg1991relationship"
 class="title-slide slide level1">
 <h1>V model <span class="citation"
-data-cites="forsberg1991relationship">[1]</span></h1>
+data-cites="forsberg1991relationship"><a
+href="#/ref-forsberg1991relationship"
+role="doc-biblioref">[1]</a></span></h1>
 <div class="columns column-gapless text-smaller">
 <div class="column mt-4" style="width:50%;">
 <ul>
@@ -243,8 +245,8 @@ units</li>
 <li>“only entry points to externally-visible system behaviours define
 units”
 <ul>
-<li>by Kent Beck <span class="citation"
-data-cites="beck2002test">[2]</span></li>
+<li>by Kent Beck <span class="citation" data-cites="beck2002test"><a
+href="#/ref-beck2002test" role="doc-biblioref">[2]</a></span></li>
 </ul></li>
 </ul>
 <!-- > Unit is defined as a single behaviour exhibited by the system under test, usually corresponding to a requirement.
@@ -253,8 +255,8 @@ data-cites="beck2002test">[2]</span></li>
 >
 > -- Kent Beck via Wikipedia-->
 <div class="text-smaller">
-<p>source: <span class="citation"
-data-cites="enwiki:1249792515">[3]</span></p>
+<p>source: <span class="citation" data-cites="enwiki:1249792515"><a
+href="#/ref-enwiki:1249792515" role="doc-biblioref">[3]</a></span></p>
 </div>
 </section>
 <section id="unit-vs-integration-testing" class="slide level2">
@@ -265,8 +267,8 @@ data-cites="enwiki:1249792515">[3]</span></p>
 murky, even by the slippery standards of most software terminology.</p>
 <p>– <a
 href="https://martinfowler.com/articles/2021-test-shapes.html">Martin
-Fowler</a> <span class="citation"
-data-cites="fowler2021diverse">[4]</span></p>
+Fowler</a> <span class="citation" data-cites="fowler2021diverse"><a
+href="#/ref-fowler2021diverse" role="doc-biblioref">[4]</a></span></p>
 </blockquote>
 </div>
 <div class="columns mt-3">
@@ -592,14 +594,17 @@ width="300" /></p>
 <img data-src="figures/spectrum_of_test_doubles.drawio.svg" width="400"
 alt="reproduction of figure 2 from [5]" />
 <figcaption aria-hidden="true">reproduction of figure 2 from <span
-class="citation" data-cites="seemann2007unit">[5]</span></figcaption>
+class="citation" data-cites="seemann2007unit"><a
+href="#/ref-seemann2007unit"
+role="doc-biblioref">[5]</a></span></figcaption>
 </figure>
 </div>
 </div>
 <div class="text-smaller">
 <p>these are from the book <em>xUnit test patterns: Refactoring test
 code</em> – by Gerard Meszaros <span class="citation"
-data-cites="meszaros2007xunit">[6]</span></p>
+data-cites="meszaros2007xunit"><a href="#/ref-meszaros2007xunit"
+role="doc-biblioref">[6]</a></span></p>
 </div>
 </section>
 <section id="test-doubles-test-dummy" class="slide level2">
@@ -613,8 +618,8 @@ Dummies contain no implementation and are mostly used when required as
 parameter values, but not otherwise utilized. Nulls can be considered
 dummies, but real dummies are derivations of interfaces or base classes
 without any implementation at all.</p>
-<p>– Mark Seemann <span class="citation"
-data-cites="seemann2007unit">[5]</span></p>
+<p>– Mark Seemann <span class="citation" data-cites="seemann2007unit"><a
+href="#/ref-seemann2007unit" role="doc-biblioref">[5]</a></span></p>
 </blockquote>
 </div>
 </div><div class="column" style="width:30%;">
@@ -638,8 +643,8 @@ class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb11-1"><a href=
 interfaces or base classes. Methods returning void will typically
 contain no implementation at all, while methods returning values will
 typically return hard-coded values.</p>
-<p>– Mark Seemann <span class="citation"
-data-cites="seemann2007unit">[5]</span></p>
+<p>– Mark Seemann <span class="citation" data-cites="seemann2007unit"><a
+href="#/ref-seemann2007unit" role="doc-biblioref">[5]</a></span></p>
 </blockquote>
 </div>
 </div><div class="column" style="width:42%;">
@@ -673,16 +678,16 @@ class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb12-1"><a href=
 instance on which to invoke members, a spy will also record which
 members were invoked so that unit tests can verify that members were
 invoked as expected.</p>
-<p>– Mark Seemann <span class="citation"
-data-cites="seemann2007unit">[5]</span></p>
+<p>– Mark Seemann <span class="citation" data-cites="seemann2007unit"><a
+href="#/ref-seemann2007unit" role="doc-biblioref">[5]</a></span></p>
 </blockquote>
 </div>
 </div><div class="column text-smaller" style="width:40%;">
 <blockquote>
 <p>One form of this might be an email service that records how many
 messages it was sent.</p>
-<p>– Martin Fowler <span class="citation"
-data-cites="fowler2006test">[7]</span></p>
+<p>– Martin Fowler <span class="citation" data-cites="fowler2006test"><a
+href="#/ref-fowler2006test" role="doc-biblioref">[7]</a></span></p>
 </blockquote>
 <div class="mt-2">
 <p>or keeping track of the test user (of the learning app) and give back
@@ -701,8 +706,8 @@ values according to the input parameter</p>
 interactions between different members of the type it’s inheriting.
 While not a complete production implementation, a fake may resemble a
 production implementation, albeit with some shortcuts.</p>
-<p>– Mark Seemann <span class="citation"
-data-cites="seemann2007unit">[5]</span></p>
+<p>– Mark Seemann <span class="citation" data-cites="seemann2007unit"><a
+href="#/ref-seemann2007unit" role="doc-biblioref">[5]</a></span></p>
 </blockquote>
 </div>
 <p>when you add logic for the test double, that might be tested as
@@ -749,8 +754,8 @@ developer never sees the actual code implementing the interface or base
 class, but can configure the mock to provide return values, expect
 particular members to be invoked, and so on. Depending on its
 configuration, a mock can behave like a dummy, a stub, or a spy.</p>
-<p>– Mark Seemann <span class="citation"
-data-cites="seemann2007unit">[5]</span></p>
+<p>– Mark Seemann <span class="citation" data-cites="seemann2007unit"><a
+href="#/ref-seemann2007unit" role="doc-biblioref">[5]</a></span></p>
 </blockquote>
 </div>
 </div><div class="column" style="width:35%;">
@@ -758,7 +763,9 @@ data-cites="seemann2007unit">[5]</span></p>
 <img data-src="figures/spectrum_of_test_doubles.drawio.svg" width="400"
 alt="reproduction of figure 2 from [5]" />
 <figcaption aria-hidden="true">reproduction of figure 2 from <span
-class="citation" data-cites="seemann2007unit">[5]</span></figcaption>
+class="citation" data-cites="seemann2007unit"><a
+href="#/ref-seemann2007unit"
+role="doc-biblioref">[5]</a></span></figcaption>
 </figure>
 </div>
 </div>
@@ -814,7 +821,8 @@ Conversation with Martin Fowler, Part III by Bill Venners, November 18,
 <div class="mt-3">
 <p><span class="background-color-lightblue">*</span>Linux kernel bugs
 hide for 2 years on average. Some hide for 20 years. <span
-class="citation" data-cites="qu2026kernel">[8]</span></p>
+class="citation" data-cites="qu2026kernel"><a href="#/ref-qu2026kernel"
+role="doc-biblioref">[8]</a></span></p>
 </div>
 </section>
 <section id="red" class="slide level2">
@@ -865,7 +873,8 @@ class="citation" data-cites="qu2026kernel">[8]</span></p>
 body of code, altering its internal structure without changing its
 external behavior.</p>
 <p>– Martin Fowler <span class="citation"
-data-cites="fowler_refactoringcom">[9]</span></p>
+data-cites="fowler_refactoringcom"><a href="#/ref-fowler_refactoringcom"
+role="doc-biblioref">[9]</a></span></p>
 </blockquote>
 </div>
 <ul>
@@ -1081,7 +1090,8 @@ is not allowed; it should be <code>import fizzbuzz</code></span></p>
 <p>– Robert C. Martin, <a
 href="http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html">The
 Cycles of TDD</a> <span class="citation"
-data-cites="martin2014cycles">[10]</span></p>
+data-cites="martin2014cycles"><a href="#/ref-martin2014cycles"
+role="doc-biblioref">[10]</a></span></p>
 </blockquote>
 <p><img data-src="figures/test_code_generality.drawio.svg" class="mt-4"
 width="375" /></p>
@@ -1112,7 +1122,9 @@ variable</em></li>
 <p>source: Robert C. Martin, <a
 href="https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html">The
 Transformation Priority Premise</a> <span class="citation"
-data-cites="martin2013transformation">[11]</span></p>
+data-cites="martin2013transformation"><a
+href="#/ref-martin2013transformation"
+role="doc-biblioref">[11]</a></span></p>
 </div>
 </section>
 <section id="coding-kata" class="slide level2">
@@ -1332,9 +1344,9 @@ Scenario 2: ...</code></pre>
 </div>
 </div>
 <div class="text-smaller">
-<p>taken from <span class="citation"
-data-cites="north2007what">[12]</span> by Daniel Terhorst-North | CC-BY
-4.0</p>
+<p>taken from <span class="citation" data-cites="north2007what"><a
+href="#/ref-north2007what" role="doc-biblioref">[12]</a></span> by
+Daniel Terhorst-North | CC-BY 4.0</p>
 </div>
 <aside class="notes">
 <ul>
@@ -1377,9 +1389,9 @@ Then  [outcome]
 
 Scenario 2: ...</code></pre>
 <div class="text-smaller">
-<p>taken from <span class="citation"
-data-cites="north2007what">[12]</span> by Daniel Terhorst-North | CC-BY
-4.0</p>
+<p>taken from <span class="citation" data-cites="north2007what"><a
+href="#/ref-north2007what" role="doc-biblioref">[12]</a></span> by
+Daniel Terhorst-North | CC-BY 4.0</p>
 </div>
 </div>
 </div>
@@ -1400,7 +1412,8 @@ coding</li>
 <div class="mt-3">
 <p>test format like <span class="tooltip"
 title="behaviour-driven development">BDD</span>, example from <span
-class="citation" data-cites="enwiki:1091258091">[13]</span>:</p>
+class="citation" data-cites="enwiki:1091258091"><a
+href="#/ref-enwiki:1091258091" role="doc-biblioref">[13]</a></span>:</p>
 <pre><code>Given Book that has not been checked out
 And User who is registered on the system
 When User checks out a book
@@ -1420,7 +1433,9 @@ width="300" /></p>
 worthless […]</p>
 <p>So how do we solve this problem? Write your Readme first.</p>
 <p>– by Tom Preston-Werner <span class="citation"
-data-cites="prestonwerner2010readme">[14]</span></p>
+data-cites="prestonwerner2010readme"><a
+href="#/ref-prestonwerner2010readme"
+role="doc-biblioref">[14]</a></span></p>
 </blockquote>
 </div>
 <div class="text-smaller">
@@ -1440,7 +1455,9 @@ down</li>
 <p>source: <a
 href="https://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme
 Driven Development</a> – by Tom Preston-Werner <span class="citation"
-data-cites="prestonwerner2010readme">[14]</span></p>
+data-cites="prestonwerner2010readme"><a
+href="#/ref-prestonwerner2010readme"
+role="doc-biblioref">[14]</a></span></p>
 </div>
 </section></section>
 <section>
@@ -1743,8 +1760,9 @@ So that I can get money when the bank is closed</code></pre>
 <div class="text-smaller">
 <p>story example taken from <a
 href="https://dannorth.net/whats-in-a-story/">What’s in a Story?</a>
-<span class="citation" data-cites="north2007what">[12]</span> by Daniel
-Terhorst-North | CC-BY 4.0</p>
+<span class="citation" data-cites="north2007what"><a
+href="#/ref-north2007what" role="doc-biblioref">[12]</a></span> by
+Daniel Terhorst-North | CC-BY 4.0</p>
 </div>
 </div>
 </div>
@@ -1846,7 +1864,8 @@ not the absence of bugs.</strong>” No quantity of tests can ever prove a
 package free of bugs. At best, they increase our confidence that the
 package works well in a wide range of important scenarios.</p>
 <p>– Alan Donovan &amp; Brian Kernighan, “The Go Programming Language”
-<span class="citation" data-cites="donovan2015go">[15]</span></p>
+<span class="citation" data-cites="donovan2015go"><a
+href="#/ref-donovan2015go" role="doc-biblioref">[15]</a></span></p>
 </blockquote>
 </div>
 </section></section>
@@ -1862,15 +1881,18 @@ package works well in a wide range of important scenarios.</p>
 <ul>
 <li><span class="text-smaller">degraded, deteriorated, or lost its use
 or performance over time <span class="citation"
-data-cites="enwiki:1236668404">[16]</span></span></li>
+data-cites="enwiki:1236668404"><a href="#/ref-enwiki:1236668404"
+role="doc-biblioref">[16]</a></span></span></li>
 </ul></li>
 <li>spaghetti code
 <ul>
 <li><span class="text-smaller">“has a complex and tangled control
 structure, resulting in a program flow that is like a bowl of spaghetti,
 twisted and tangled” <span class="citation"
-data-cites="horstmann2007java">[17]</span> via <span class="citation"
-data-cites="enwiki:1245199146">[18]</span></span></li>
+data-cites="horstmann2007java"><a href="#/ref-horstmann2007java"
+role="doc-biblioref">[17]</a></span> via <span class="citation"
+data-cites="enwiki:1245199146"><a href="#/ref-enwiki:1245199146"
+role="doc-biblioref">[18]</a></span></span></li>
 </ul></li>
 </ul>
 </div><div class="column r-frame" style="width:40%;">
@@ -1878,8 +1900,10 @@ data-cites="enwiki:1245199146">[18]</span></span></li>
 <div class="text-smaller">
 <p>implied cost of future reworking because a solution prioritized
 short-term solution over long-term design <span class="citation"
-data-cites="beal2011technical">[19]</span> <span class="citation"
-data-cites="enwiki:1253473056">[20]</span></p>
+data-cites="beal2011technical"><a href="#/ref-beal2011technical"
+role="doc-biblioref">[19]</a></span> <span class="citation"
+data-cites="enwiki:1253473056"><a href="#/ref-enwiki:1253473056"
+role="doc-biblioref">[20]</a></span></p>
 <dl>
 <dt><span class="text-smaller">some reasons:</span></dt>
 <dd>
@@ -1931,7 +1955,9 @@ it is. With tests, we can change the behavior of our code quickly and
 verifiably. Without them, we really don’t know if our code is getting
 better or worse.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
-class="citation" data-cites="feathers2004working">[21]</span></p>
+class="citation" data-cites="feathers2004working"><a
+href="#/ref-feathers2004working"
+role="doc-biblioref">[21]</a></span></p>
 </blockquote>
 <div class="mt-2">
 <ul>
@@ -1971,7 +1997,9 @@ href="https://game-icons.net">game-icons.net</a></p>
 <p>When we change code, we should have tests in place. To put tests in
 place, we often have to change code.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
-class="citation" data-cites="feathers2004working">[21]</span></p>
+class="citation" data-cites="feathers2004working"><a
+href="#/ref-feathers2004working"
+role="doc-biblioref">[21]</a></span></p>
 <p>(Part I / Chapter 2)</p>
 </blockquote>
 </section>
@@ -2040,7 +2068,9 @@ class="citation" data-cites="feathers2004working">[21]</span></p>
 </div>
 <div class="text-smaller">
 <p>source: Working Effectively with Legacy Code by Michael Feathers
-<span class="citation" data-cites="feathers2004working">[21]</span></p>
+<span class="citation" data-cites="feathers2004working"><a
+href="#/ref-feathers2004working"
+role="doc-biblioref">[21]</a></span></p>
 </div>
 </section>
 <section id="sensing" class="slide level2">
@@ -2051,7 +2081,9 @@ class="citation" data-cites="feathers2004working">[21]</span></p>
 <p>We break dependencies to <strong>sense</strong> when we can’t access
 values our code computes.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
-class="citation" data-cites="feathers2004working">[21]</span></p>
+class="citation" data-cites="feathers2004working"><a
+href="#/ref-feathers2004working"
+role="doc-biblioref">[21]</a></span></p>
 </blockquote>
 <div class="fragment mt-4" data-fragment-index="1">
 <p>e.g., misspelled function name</p>
@@ -2082,7 +2114,9 @@ alt="broken dependency" />
 <p>We break dependencies to <strong>separate</strong> when we can’t even
 get a piece of code into a test harness to run.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code <span
-class="citation" data-cites="feathers2004working">[21]</span></p>
+class="citation" data-cites="feathers2004working"><a
+href="#/ref-feathers2004working"
+role="doc-biblioref">[21]</a></span></p>
 </blockquote>
 </section>
 <section id="seams" class="slide level2">
@@ -2093,8 +2127,9 @@ class="citation" data-cites="feathers2004working">[21]</span></p>
 <p>A seam is a place where you can alter behavior in your program
 without editing in that place.</p>
 <p>– Michael Feathers, Working Effectively with Legacy Code: Part I /
-chp. 4 <span class="citation"
-data-cites="feathers2004working">[21]</span></p>
+chp. 4 <span class="citation" data-cites="feathers2004working"><a
+href="#/ref-feathers2004working"
+role="doc-biblioref">[21]</a></span></p>
 </blockquote>
 <blockquote>
 <p>A seam is a place in the code that you can insert a modification in
@@ -2177,7 +2212,9 @@ fake</figcaption>
 </table>
 <div class="text-smaller mt-4">
 <p>Michael Feathers, Working Effectively with Legacy Code: part 1 pp 6
-<span class="citation" data-cites="feathers2004working">[21]</span></p>
+<span class="citation" data-cites="feathers2004working"><a
+href="#/ref-feathers2004working"
+role="doc-biblioref">[21]</a></span></p>
 </div>
 </section>
 
@@ -2221,7 +2258,8 @@ before sent to the test team</li>
 <p>source: <a
 href="https://en.wikipedia.org/wiki/Smoke_testing_(software)">Smoke
 testing (software), Wikipedia</a> <span class="citation"
-data-cites="enwiki:1251780629">[22]</span></p>
+data-cites="enwiki:1251780629"><a href="#/ref-enwiki:1251780629"
+role="doc-biblioref">[22]</a></span></p>
 </div>
 </div><div class="column" style="width:25%;">
 <p><img data-src="figures/publicdomainvectors/roof-chimney.svg"
@@ -2232,7 +2270,8 @@ width="250" /></p>
 <p>“The phrase smoke test comes from electronic hardware testing. You
 plug in a new board and turn on the power. If you see smoke coming from
 the board, turn off the power. You don’t have to do any more testing.
-<span class="citation" data-cites="bach2002lessons">[23]</span>”</p>
+<span class="citation" data-cites="bach2002lessons"><a
+href="#/ref-bach2002lessons" role="doc-biblioref">[23]</a></span>”</p>
 </div>
 </section>
 <section id="rubber-duck-debugging" class="slide level2">
@@ -2243,8 +2282,8 @@ the board, turn off the power. You don’t have to do any more testing.
 <li>a method of debugging code by articulating a problem in natural
 language</li>
 <li>originates from a story in the book <em>The Pragmatic
-Programmer</em> <span class="citation"
-data-cites="hund2019pragmatic">[24]</span></li>
+Programmer</em> <span class="citation" data-cites="hund2019pragmatic"><a
+href="#/ref-hund2019pragmatic" role="doc-biblioref">[24]</a></span></li>
 <li>in which a programmer explains the code, line by line, to a rubber
 duck</li>
 <li>rationale: teaching / explaining something can provide a deeper
@@ -2286,7 +2325,9 @@ Seven Principles of Software Testing</a></p>
 </div>
 <div class="text-smaller">
 <p>from the book: “Foundations of software testing” <span
-class="citation" data-cites="dorothy2008foundations">[25]</span></p>
+class="citation" data-cites="dorothy2008foundations"><a
+href="#/ref-dorothy2008foundations"
+role="doc-biblioref">[25]</a></span></p>
 <p>reading on the web: <a
 href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The
 Seven Principles of Software Testing</a></p>
@@ -2342,7 +2383,8 @@ Seven Principles of Software Testing</a></p>
 alt="the rising costs of finding and fixing defects based on Figure 3.4 of [26] (Ambler, 2002)" />
 <figcaption aria-hidden="true">the rising costs of finding and fixing
 defects based on Figure 3.4 of <span class="citation"
-data-cites="ambler2002agile">[26]</span> (Ambler, 2002)</figcaption>
+data-cites="ambler2002agile"><a href="#/ref-ambler2002agile"
+role="doc-biblioref">[26]</a></span> (Ambler, 2002)</figcaption>
 </figure>
 </div>
 </div>
@@ -2567,7 +2609,9 @@ place, we often have to change code.</p>
 </table>
 <div class="text-smaller">
 <p>source: Michael Feathers, Working Effectively with Legacy Code <span
-class="citation" data-cites="feathers2004working">[21]</span></p>
+class="citation" data-cites="feathers2004working"><a
+href="#/ref-feathers2004working"
+role="doc-biblioref">[21]</a></span></p>
 </div>
 </section></section>
 <section id="references" class="title-slide slide level1">

@@ -182,17 +182,19 @@ not only working software, but also well-crafted software</p>
 <blockquote>
 <p>a code smell is a surface indication that usually corresponds to a
 deeper problem</p>
-<p>– Martin Flower (Fowler, 2006)</p>
+<p>– Martin Flower (<a href="#ref-fowler2006code">Fowler, 2006</a>)</p>
 </blockquote>
 </div>
 <div class="columns mt-3">
 <div class="column text-smaller" width="40%">
 <p>software rot is the degradation, deterioration, or loss of the use or
-performance of software over time (Wikipedia contributors, 2024)</p>
+performance of software over time (<a href="#ref-enwiki:1236668404">Wikipedia contributors,
+2024</a>)</p>
 </div>
 <div class="column text-smaller" width="40%">
 <p><strong>requirement smell</strong>: signs in the requirements that are not
-necessarily wrong but could be problematic (Femmer et al., 2017)</p>
+necessarily wrong but could be problematic (<a href="#ref-femmer2017rapid">Femmer et al.,
+2017</a>)</p>
 </div>
 </div>
 <h2 id="clean-clode-violations-as-code-smells"><a class="header" href="#clean-clode-violations-as-code-smells">clean clode violations as code smells</a></h2>
@@ -215,14 +217,14 @@ necessarily wrong but could be problematic (Femmer et al., 2017)</p>
 <li>a function / class does more than one thing</li>
 </ul>
 <div class="text-smaller">
-<p>source: (Atwood, 2006)</p>
+<p>source: (<a href="#ref-atwood2006code">Atwood, 2006</a>)</p>
 </div>
 <h2 id="some-code-smells"><a class="header" href="#some-code-smells">some code smells</a></h2>
 <ul>
 <li>duplicated code
 <ul>
 <li><span class="text-smaller">Don’t Repeat Yourself! (a.k.a., DRY
-principle) (Venners, 2003)</span></li>
+principle) (<a href="#ref-venners2003orthogonality">Venners, 2003</a>)</span></li>
 </ul>
 </li>
 <li>speculative generality
@@ -247,12 +249,13 @@ but an error</span></li>
 <li><span class="text-smaller">“Watch out for objects that contain a lot
 of optional or unnecessary fields. If you’re passing an object as a
 parameter to a method, make sure that you’re using all of it and not
-cherry-picking single fields.” (Atwood, 2006)</span></li>
+cherry-picking single fields.” (<a href="#ref-atwood2006code">Atwood,
+2006</a>)</span></li>
 </ul>
 </li>
 </ul>
 <div class="text-smaller">
-<p>source: (Atwood, 2006)</p>
+<p>source: (<a href="#ref-atwood2006code">Atwood, 2006</a>)</p>
 </div>
 <h2 id="conditional-complexity"><a class="header" href="#conditional-complexity">conditional complexity</a></h2>
 <div class="columns">
@@ -303,7 +306,8 @@ cherry-picking single fields.” (Atwood, 2006)</span></li>
 <ul>
 <li>hard to understand, even if it is tested and documented</li>
 <li>use nested conditions instead</li>
-<li>avoid negative conditionals – Robert C. Martin (Martin, 2009)
+<li>avoid negative conditionals – Robert C. Martin (<a href="#ref-martin2009clean">Martin,
+2009</a>)
 <ul>
 <li><code>if (!is_raining()) {do_something();}</code></li>
 </ul>
@@ -330,7 +334,7 @@ cherry-picking single fields.” (Atwood, 2006)</span></li>
 <blockquote>
 <p>If two classes are similar on the inside, but different on the
 outside, perhaps they can be modified to share a common interface
-(Atwood, 2006).</p>
+(<a href="#ref-atwood2006code">Atwood, 2006</a>).</p>
 </blockquote>
 <h2 id="class-based-smells-data-class"><a class="header" href="#class-based-smells-data-class">class-based smells: data class???</a></h2>
 <div class="columns">
@@ -338,7 +342,7 @@ outside, perhaps they can be modified to share a common interface
 <blockquote>
 <p>Avoid classes that passively store data. Classes should contain data
 and methods to operate on that data, too.</p>
-<p>– Jeff Atwood (Atwood, 2006)</p>
+<p>– Jeff Atwood (<a href="#ref-atwood2006code">Atwood, 2006</a>)</p>
 </blockquote>
 <p>comes from the OOP definition, but outdated</p>
 <div class="mt-3">
@@ -358,14 +362,15 @@ width="300" /></p>
 <blockquote>
 <p>If you always see the same data hanging around together, maybe it
 belongs together. Consider rolling the related data up into a larger
-class (Atwood, 2006).</p>
+class (<a href="#ref-atwood2006code">Atwood, 2006</a>).</p>
 </blockquote>
 <h2 id="class-based-smells-refused-bequest"><a class="header" href="#class-based-smells-refused-bequest">class-based smells: refused bequest</a></h2>
 <div class="columns">
 <div class="column mt-5" width="70%">
 <blockquote>
 <p>If you inherit from a class, but never use any of the inherited
-functionality, should you really be using inheritance? (Atwood, 2006)</p>
+functionality, should you really be using inheritance? (<a href="#ref-atwood2006code">Atwood,
+2006</a>)</p>
 </blockquote>
 <div class="fragment mt-4">
 <p>basically an architectural issue!</p>
@@ -380,7 +385,7 @@ functionality, should you really be using inheritance? (Atwood, 2006)</p>
 <blockquote>
 <p>Beware of classes that unnecessarily expose their internals. […] You
 should have a compelling reason for every item you make public. If you
-don’t, hide it (Atwood, 2006).</p>
+don’t, hide it (<a href="#ref-atwood2006code">Atwood, 2006</a>).</p>
 </blockquote>
 </div>
 <div class="text-smaller mt-5">
@@ -400,14 +405,14 @@ specifying how they should be implemented</li>
 <blockquote>
 <p>Methods that make extensive use of another class may belong in another
 class. Consider moving this method to the class it is so envious of.</p>
-<p>– Jeff Atwood (Atwood, 2006)</p>
+<p>– Jeff Atwood (<a href="#ref-atwood2006code">Atwood, 2006</a>)</p>
 </blockquote>
 </div>
 <h2 id="more-code-smells"><a class="header" href="#more-code-smells">more code smells</a></h2>
 <div class="columns">
 <div class="column mt-5" width="60%">
 <p>this section is based on the book <em>Clean Code</em> (chapter 17) by Robert C.
-Martin (Martin, 2009)</p>
+Martin (<a href="#ref-martin2009clean">Martin, 2009</a>)</p>
 <p>with own examples</p>
 </div>
 <div class="column" width="40%">
@@ -603,8 +608,9 @@ if ((err = SSLHashSHA1.final(&amp;hashCtx, &amp;hashOut)) != 0)
     return err;
 </code></pre>
 <div>
-<p>more about Apple’s “goto fail” fiasco (2014): (Wheeler, 2014), (Migues,
-2014)</p>
+<p>more about Apple’s “goto fail” fiasco (2014): (<a href="#ref-wheeler2014apple">Wheeler,
+2014</a>), (<a href="#ref-migues2014understanding">Migues,
+2014</a>)</p>
 <p>false blame on <code>goto</code> (based on Dijkstra’s essay: <a href="https://www.dcs.gla.ac.uk/~pat/cpM/choco4/nqueens/Goto-Harmful-Dijkstra.pdf">Go To Statement
 Considered
 Harmful</a>),
@@ -635,7 +641,7 @@ width="400" /></p>
 </div>
 <h1 id="halstead-metrics"><a class="header" href="#halstead-metrics">Halstead metrics</a></h1>
 <p>Halstead’s goal was to identify measurable properties of software, and
-the relations between them (Radon documentation, n.d.).</p>
+the relations between them (<a href="#ref-radon">Radon documentation, n.d.</a>).</p>
 <div class="columns text-smaller">
 <div class="column" width="50%">
 <p>statistically computed numbers:</p>
@@ -813,7 +819,7 @@ the if.</td>
 <div class="text-smaller">
 <p>source: Radon
 <a href="https://radon.readthedocs.io/en/latest/index.html">documentation</a>
-(Radon documentation, n.d.)</p>
+(<a href="#ref-radon">Radon documentation, n.d.</a>)</p>
 </div>
 <!--|assert          |+1|The assert statement internally roughly equals a conditional statement.           |
 |comprehension   |+1|A list/set/dict comprehension of generator expression is equivalent to a for loop.|-->
@@ -862,10 +868,10 @@ the if.</td>
 <div class="text-smaller">
 <p>source: Radon
 <a href="https://radon.readthedocs.io/en/latest/index.html">documentation</a>
-(Radon documentation, n.d.)</p>
+(<a href="#ref-radon">Radon documentation, n.d.</a>)</p>
 </div>
 <h1 id="maintainability-index"><a class="header" href="#maintainability-index">maintainability index</a></h1>
-<p>original (Coleman et al., 1994):<br />
+<p>original (<a href="#ref-coleman1994using">Coleman et al., 1994</a>):<br />
 $$ MI = 171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L} $$</p>
 <p>Visual Studio derivate:<br />
 $$ MI = max\left[0,100 \frac{171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L}}{171}\right] $$</p>
@@ -907,7 +913,8 @@ $$ MI = max\left[0,100 \frac{171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L}}{171}\right] 
 <div class="column text-size-1" width="30%">
 <table>
 <caption>based on <span class="citation"
-data-cites="sharma2024analyzing">(Sharma, 2024)</span></caption>
+data-cites="sharma2024analyzing">(<a href="#ref-sharma2024analyzing"
+role="doc-biblioref">Sharma, 2024</a>)</span></caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">score</th>
@@ -937,16 +944,17 @@ data-cites="sharma2024analyzing">(Sharma, 2024)</span></caption>
 </tr>
 </tbody>
 </table>
-<p>based on (Sharma, 2024)</p>
+<p>based on (<a href="#ref-sharma2024analyzing">Sharma, 2024</a>)</p>
 </div>
 </div>
 </div>
 <div class="text-smaller mt-2 fragment">
 <p><strong>issues</strong>: ease of computation, language independence,
-understandability, explainability (Heitlager et al., 2007)</p>
+understandability, explainability (<a href="#ref-heitlager2007practical">Heitlager et al.,
+2007</a>)</p>
 <p>read more in <a href="https://avandeursen.com/2014/08/29/think-twice-before-using-the-maintainability-index/">Think Twice Before Using the “Maintainability
 Index”</a>
-(Deursen, 2014)</p>
+(<a href="#ref-vandeursen2014think">Deursen, 2014</a>)</p>
 </div>
 <h2 id="maintainability-index--example"><a class="header" href="#maintainability-index--example">maintainability index – example</a></h2>
 <pre><code class="language-python">def calculate_progress(finished: int, total: int, as_percentage: bool) -&gt; float:
@@ -1059,7 +1067,7 @@ analyser) documentation</figcaption>
 <li>there was no need to change it, presumably it was written well in the
 first place</li>
 <li>multiple changes in a short period indicate problems during software
-development (Nagappan et al., 2010)</li>
+development (<a href="#ref-nagappan2010change">Nagappan et al., 2010</a>)</li>
 </ul>
 </div>
 <h1 id="wtf-per-minute"><a class="header" href="#wtf-per-minute">WTF per minute</a></h1>

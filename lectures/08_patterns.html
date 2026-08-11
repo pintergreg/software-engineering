@@ -165,8 +165,9 @@
 src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
 height="475" alt="based on Khalil Stemmel’s figure (Stemmler, 2019)" />
 <figcaption aria-hidden="true">based on Khalil Stemmel’s figure <span
-class="citation" data-cites="stemmler2019how">(Stemmler,
-2019)</span></figcaption>
+class="citation" data-cites="stemmler2019how">(<a
+href="#ref-stemmler2019how" role="doc-biblioref">Stemmler,
+2019</a>)</span></figcaption>
 </figure>
 <h2 id="structural-pattern-matching"><a class="header" href="#structural-pattern-matching">structural pattern matching</a></h2>
 <p>a <em>paradigm principle</em> example in functional programming, in addition to
@@ -204,7 +205,7 @@ match foo:
 <li>23 common software design patterns
 <ul>
 <li>published in “Design Patterns: Elements of Reusable Object-Oriented
-Software” (1994) (Gamma et al., 1994)</li>
+Software” (1994) (<a href="#ref-gamma1994design">Gamma et al., 1994</a>)</li>
 </ul>
 </li>
 <li>provides solutions to common design problems</li>
@@ -304,9 +305,9 @@ Software” (1994) (Gamma et al., 1994)</li>
 </table>
 <p>Peter Norvig <a href="http://www.norvig.com/design-patterns/">demonstrated</a> that
 16 out of the 23 patterns are simplified or eliminated by language
-features in Lisp or Dylan (1998) (Norvig, 1998)</p>
+features in Lisp or Dylan (1998) (<a href="#ref-norvig1998design">Norvig, 1998</a>)</p>
 <p><a href="https://fsharpforfunandprofit.com/fppatterns/">more about</a> it from
-Scott Wlaschin (Wlaschin, 2014)</p>
+Scott Wlaschin (<a href="#ref-wlaschin2014functional">Wlaschin, 2014</a>)</p>
 <h2 id="map-filter-reduce"><a class="header" href="#map-filter-reduce">map-filter-reduce</a></h2>
 <p>some FP design patterns</p>
 <div class="columns">
@@ -396,7 +397,7 @@ new customer requirements can be adopted</li>
 <blockquote>
 <p>SOLID is a mnemonic acronym for five design principles intended to
 make object-oriented designs more understandable, flexible, and
-maintainable (Wikipedia contributors, 2024d)</p>
+maintainable (<a href="#ref-enwiki:1237710587">Wikipedia contributors, 2024d</a>)</p>
 </blockquote>
 <ul>
 <li>single responsibility principle</li>
@@ -486,7 +487,7 @@ class AreaCalculator:
 </div>
 </div>
 <div class="text-smaller">
-<p>example based on (Oloruntoba &amp; Walia, 2024)</p>
+<p>example based on (<a href="#ref-oloruntoba2024solid">Oloruntoba &amp; Walia, 2024</a>)</p>
 </div>
 <h2 id="open-closed-principle-1"><a class="header" href="#open-closed-principle-1">open-closed principle</a></h2>
 <div class="columns">
@@ -522,21 +523,23 @@ class AreaCalculator:
 </div>
 </div>
 <div class="text-smaller">
-<p>example based on (Oloruntoba &amp; Walia, 2024)</p>
+<p>example based on (<a href="#ref-oloruntoba2024solid">Oloruntoba &amp; Walia, 2024</a>)</p>
 </div>
 <h2 id="liskov-substitution-principle"><a class="header" href="#liskov-substitution-principle">Liskov substitution principle</a></h2>
 <blockquote>
 <p>if class A is a subtype of class B, B should be able to replaced with
-A without disrupting the behavior of the program (Millington, 2019)</p>
+A without disrupting the behavior of the program (<a href="#ref-millington2019solid">Millington,
+2019</a>)</p>
 </blockquote>
 <div class="text-smaller mt-3">
 <ul>
 <li>named after Barbara Liskov</li>
-<li>presented first in 1987 (Liskov, 1987)</li>
+<li>presented first in 1987 (<a href="#ref-liskov1987data">Liskov, 1987</a>)</li>
 <li>circle-ellipse problem / square–rectangle problem
 <ul>
 <li>existence of the circle–ellipse problem is used to criticize
-object-oriented programming (Wikipedia contributors, 2023)</li>
+object-oriented programming (<a href="#ref-enwiki:1165573623">Wikipedia contributors,
+2023</a>)</li>
 </ul>
 </li>
 </ul>
@@ -592,7 +595,7 @@ object-oriented programming (Wikipedia contributors, 2023)</li>
 </div>
 </div>
 <div class="text-smaller">
-<p>code is based on (Erinç, 2020)</p>
+<p>code is based on (<a href="#ref-erinc2020solid">Erinç, 2020</a>)</p>
 </div>
 <h2 id="liskov-substitution-principle---example-1"><a class="header" href="#liskov-substitution-principle---example-1">Liskov substitution principle - example</a></h2>
 <pre><code class="language-python">def getAreaTest(r: Rectangle):
@@ -616,7 +619,7 @@ Expected area of 20, got 100
 </code></pre>
 <p>this example violates the Liskov substitution principle</p>
 <div class="text-smaller">
-<p>code is based on (Erinç, 2020)</p>
+<p>code is based on (<a href="#ref-erinc2020solid">Erinç, 2020</a>)</p>
 </div>
 <h2 id="interface-segregation-principle"><a class="header" href="#interface-segregation-principle">interface segregation principle</a></h2>
 <blockquote>
@@ -633,14 +636,14 @@ function they do no need.</p>
 </div>
 </div>
 <div class="text-smaller">
-<p>example based on (Oloruntoba &amp; Walia, 2024)</p>
+<p>example based on (<a href="#ref-oloruntoba2024solid">Oloruntoba &amp; Walia, 2024</a>)</p>
 </div>
 <h2 id="dependency-inversion-principle"><a class="header" href="#dependency-inversion-principle">dependency inversion principle</a></h2>
 <blockquote>
 <p>Dependency inversion principle says that modules should depend upon
 interfaces or abstract classes, not concrete classes. It’s an
 inversion because implementations depend upon abstractions and not the
-other way round. (Millington, 2019)</p>
+other way round. (<a href="#ref-millington2019solid">Millington, 2019</a>)</p>
 </blockquote>
 <img src="figures/solid/dependency_inversion.svg" height="300" />
 <div class="text-smaller">
@@ -666,7 +669,7 @@ concept</li>
 <li>e.g., Spring Framework, ASP.NET Core</li>
 </ul>
 <div class="text-smaller">
-<p>based on (Stec, 2024)</p>
+<p>based on (<a href="#ref-stec2024inversion">Stec, 2024</a>)</p>
 </div>
 <h1 id="coupling"><a class="header" href="#coupling">coupling</a></h1>
 <div class="columns">
@@ -693,14 +696,15 @@ href="https://commons.wikimedia.org/wiki/File:CouplingVsCohesion.svg">Wikimedia<
 <div class="text-smaller mt-2">
 <p>source
 <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a>
-(Wikipedia contributors, 2024a)</p>
+(<a href="#ref-enwiki:1245630908">Wikipedia contributors, 2024a</a>)</p>
 </div>
 <h1 id="law-of-unintended-consequences"><a class="header" href="#law-of-unintended-consequences">law of unintended consequences</a></h1>
 <div class="wide-quote">
 <blockquote>
 <p>In the social sciences, unintended consequences (more colloquially
 called knock-on effects) are outcomes of a purposeful action that are
-not intended or foreseen. (Wikipedia contributors, 2026)</p>
+not intended or foreseen. (<a href="#ref-enwiki:1365617401">Wikipedia contributors,
+2026</a>)</p>
 </blockquote>
 </div>
 <ul>
@@ -720,7 +724,8 @@ by Dr. Milan Milanović</p>
 <blockquote>
 <p>An object should only interact with its immediate friends, not
 strangers.</p>
-<p>– Ian Holland et al. (1987) (Milanović, 2026)</p>
+<p>– Ian Holland et al. (1987) (<a href="#ref-milanovic2026demeter">Milanović,
+2026</a>)</p>
 </blockquote>
 <ul>
 <li>an object should only call methods of:
@@ -740,7 +745,8 @@ strangers.</p>
 <img src="figures/law_of_demeter_v2.drawio.svg"
 alt="based on (Milanović, 2026)" />
 <figcaption aria-hidden="true">based on <span class="citation"
-data-cites="milanovic2026demeter">(Milanović, 2026)</span></figcaption>
+data-cites="milanovic2026demeter">(<a href="#ref-milanovic2026demeter"
+role="doc-biblioref">Milanović, 2026</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -776,7 +782,8 @@ methods, it results in cleaner interactions</span></li>
 <img src="figures/law_of_demeter_v2.drawio.svg"
 alt="based on (Milanović, 2026)" />
 <figcaption aria-hidden="true">based on <span class="citation"
-data-cites="milanovic2026demeter">(Milanović, 2026)</span></figcaption>
+data-cites="milanovic2026demeter">(<a href="#ref-milanovic2026demeter"
+role="doc-biblioref">Milanović, 2026</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -810,7 +817,7 @@ Dr. Milan Milanović</p>
 <div class="text-smaller">
 <p>source: <a href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers in software
 architecture</a>
-by Sagar Hudge (Hudge, 2024)</p>
+by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 </div>
 <h2 id="parts-of-an-architecture-1"><a class="header" href="#parts-of-an-architecture-1">parts of an architecture</a></h2>
 <div class="columns">
@@ -835,7 +842,7 @@ by Sagar Hudge (Hudge, 2024)</p>
 <div class="text-smaller">
 <p>source: <a href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers in software
 architecture</a>
-by Sagar Hudge (Hudge, 2024)</p>
+by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 </div>
 <h2 id="parts-of-an-architecture-2"><a class="header" href="#parts-of-an-architecture-2">parts of an architecture</a></h2>
 <div class="columns">
@@ -861,7 +868,7 @@ business operations</li>
 <div class="text-smaller">
 <p>source: <a href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers in software
 architecture</a>
-by Sagar Hudge (Hudge, 2024)</p>
+by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 </div>
 <h2 id="parts-of-an-architecture-3"><a class="header" href="#parts-of-an-architecture-3">parts of an architecture</a></h2>
 <div class="columns">
@@ -889,7 +896,7 @@ interacts with data sources</li>
 <div class="text-smaller">
 <p>source: <a href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers in software
 architecture</a>
-by Sagar Hudge (Hudge, 2024)</p>
+by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 </div>
 <div class="notes">
 <p>CRUD = Create, Read, Update, Delete</p>
@@ -916,7 +923,7 @@ by Sagar Hudge (Hudge, 2024)</p>
 <div class="text-smaller">
 <p>source: <a href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers in software
 architecture</a>
-by Sagar Hudge (Hudge, 2024)</p>
+by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 </div>
 <h2 id="how-separating-parts-helps-to-design-an-architecture"><a class="header" href="#how-separating-parts-helps-to-design-an-architecture">how separating parts helps to design an architecture?</a></h2>
 <ul>
@@ -935,22 +942,23 @@ part can be tested individually</li>
 <div class="text-smaller">
 <p>source: <a href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers in software
 architecture</a>
-by Sagar Hudge (Hudge, 2024)</p>
+by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 </div>
 <h1 id="topologies"><a class="header" href="#topologies">topologies</a></h1>
 <div class="columns">
 <div class="column" width="60%">
 <p>Object-oriented design (OOD) is the process of planning a system of
-interacting objects to solve a software problem (Wikipedia contributors,
-2024c).</p>
+interacting objects to solve a software problem (<a href="#ref-enwiki:1230588445">Wikipedia
+contributors, 2024c</a>).</p>
 <div class="fragment" data-fragment-index="1">
 <p>control flow? structure?</p>
 <figure>
 <img src="figures/legacy_structure.drawio.svg" width="400"
 alt="historically grown architecture based on (Woltmann, 2023)" />
 <figcaption aria-hidden="true">historically grown architecture<br>based
-on <span class="citation" data-cites="woltmann2023hexagonal">(Woltmann,
-2023)</span></figcaption>
+on <span class="citation" data-cites="woltmann2023hexagonal">(<a
+href="#ref-woltmann2023hexagonal" role="doc-biblioref">Woltmann,
+2023</a>)</span></figcaption>
 </figure>
 </div>
 <!--
@@ -1032,7 +1040,7 @@ ensuring that only that recipient processes the message</li>
 </li>
 </ul>
 </div>
-<div class="column fragment" width="50%">
+<div class="column" width="50%">
 <p><strong>delivery guaranties</strong></p>
 <ul>
 <li>at most once
@@ -1057,7 +1065,8 @@ duplicates</li>
 </div>
 </div>
 <div class="text-smaller">
-<p>based on (Okeyo, 2023) and (Inc., 2022)</p>
+<p>based on (<a href="#ref-okeyo2023beginners">Okeyo, 2023</a>) and (<a href="#ref-inngest2022message">Inc.,
+2022</a>)</p>
 </div>
 <div class="notes">
 <p>https://www.inngest.com/blog/message-bus-vs-queues</p>
@@ -1129,7 +1138,7 @@ operates as a single unit</li>
 </div>
 </div>
 <div class="text-smaller">
-<p>based on (baeldung, 2021)</p>
+<p>based on (<a href="#ref-baeldung20214layered">baeldung, 2021</a>)</p>
 </div>
 <h2 id="onion-architecture"><a class="header" href="#onion-architecture">onion architecture</a></h2>
 <div class="columns">
@@ -1161,7 +1170,7 @@ foundation</li>
 </div>
 </div>
 <div class="text-smaller">
-<p>based on (Palermo, 2008)</p>
+<p>based on (<a href="#ref-palermo2008onion">Palermo, 2008</a>)</p>
 </div>
 <div class="notes">
 <ul>
@@ -1173,7 +1182,8 @@ layered</a></li>
 <div class="columns">
 <div class="column" width="60%">
 <ul>
-<li>invented by Alistair Cockburn (Cockburn, 2010)</li>
+<li>invented by Alistair Cockburn (<a href="#ref-cockburn2010hexagonal">Cockburn,
+2010</a>)</li>
 <li>application should be equally controllable by users, other
 applications, or automated tests
 <ul>
@@ -1191,7 +1201,7 @@ business logic <!-- - easy to mock --></li>
 </div>
 </div>
 <div class="text-smaller">
-<p>based on (Woltmann, 2023)</p>
+<p>based on (<a href="#ref-woltmann2023hexagonal">Woltmann, 2023</a>)</p>
 </div>
 <h2 id="hexagonal-ports--adapters"><a class="header" href="#hexagonal-ports--adapters">hexagonal (ports &amp; adapters)</a></h2>
 <div class="columns">
@@ -1226,7 +1236,7 @@ hexagon</li>
 </div>
 </div>
 <div class="text-smaller">
-<p>based on (Woltmann, 2023)</p>
+<p>based on (<a href="#ref-woltmann2023hexagonal">Woltmann, 2023</a>)</p>
 </div>
 <h2 id="hexagonal-vs-layered"><a class="header" href="#hexagonal-vs-layered">hexagonal vs. layered</a></h2>
 <!--
@@ -1259,24 +1269,25 @@ hexagon</li>
 <div class="fragment" data-fragment-index="1">
 <p>can be extend without changing the business logic</p>
 </div>
-<div class="text-smaller fragment" data-fragment-index="2">
-<p>it is very similar to the onion and (the clean architecture (Martin,
-2012))</p>
+<div class="text-smaller fragment" data-fragment-index="1">
+<p>it is very similar to the onion and (the clean architecture (<a href="#ref-martin2012clean">Martin,
+2012</a>))</p>
 </div>
 <div class="text-smaller">
-<p>based on (Woltmann, 2023)</p>
+<p>based on (<a href="#ref-woltmann2023hexagonal">Woltmann, 2023</a>)</p>
 </div>
 <h2 id="the-clean-architecture"><a class="header" href="#the-clean-architecture">the clean architecture</a></h2>
 <p><img src="figures/clean_architecture.drawio.svg" alt="" /></p>
 <div class="text-smaller">
 <ul>
-<li>by Robert C. Martin (Martin, 2012), unifies onion or hexagonal, etc.</li>
+<li>by Robert C. Martin (<a href="#ref-martin2012clean">Martin, 2012</a>), unifies
+onion or hexagonal, etc.</li>
 <li>source code dependencies can only point inwards</li>
 <li>relies on dependency inversion principle</li>
 <li>the number of circles is flexible</li>
 </ul>
 </div>
-<h1 id="model-view-controller-wikipedia-contributors-2024b"><a class="header" href="#model-view-controller-wikipedia-contributors-2024b">Model-View-Controller (Wikipedia contributors, 2024b)</a></h1>
+<h1 id="model-view-controller-wikipedia-contributors-2024b"><a class="header" href="#model-view-controller-wikipedia-contributors-2024b">Model-View-Controller (<a href="#ref-enwiki:1244967192">Wikipedia contributors, 2024b</a>)</a></h1>
 <div class="columns">
 <div class="column" width="55%">
 <ul>
@@ -1333,7 +1344,7 @@ data model</li>
 </div>
 </div>
 <div class="text-smaller">
-<p>figures based on (Pedamkar, 2023)</p>
+<p>figures based on (<a href="#ref-pedamkar2023mvc">Pedamkar, 2023</a>)</p>
 </div>
 <div class="text-smaller">
 <p>other alternatives: <a href="https://blog.ircmaxell.com/2014/11/alternatives-to-mvc.html">Alternatives To
@@ -1345,6 +1356,8 @@ Anthony Ferrara</p>
 <p>All non-trivial abstractions, to some degree, are leaky.</p>
 <p>– Joel Spolsky</p>
 </blockquote>
+<div class="columns">
+<div class="column" width="80%">
 <ul>
 <li>refers to a design flaw where an abstraction, intended to simplify and
 hide the underlying complexity of a system, fails to completely do so</li>
@@ -1353,10 +1366,15 @@ hide the underlying complexity of a system, fails to completely do so</li>
 <li>forcing users to have knowledge of these underlying complexities to
 effectively use or troubleshoot the system</li>
 </ul>
+</div>
+<div class="column mt-2" width="20%">
+<p><img src="figures/publicdomainvectors/water-leak.svg" alt="" /></p>
+</div>
+</div>
 <div class="text-smaller">
 <p>source: Wikipedia / <a href="https://en.wikipedia.org/wiki/Leaky_abstraction">Leaky
-abstraction</a> (Wikipedia
-contributors, 2025)</p>
+abstraction</a>
+(<a href="#ref-enwiki:1314409362">Wikipedia contributors, 2025</a>)</p>
 </div>
 <h1 id="user-statistics-example"><a class="header" href="#user-statistics-example">user statistics example</a></h1>
 <div class="columns">

@@ -164,8 +164,9 @@
 src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
 height="475" alt="based on Khalil Stemmel’s figure (Stemmler, 2019)" />
 <figcaption aria-hidden="true">based on Khalil Stemmel’s figure <span
-class="citation" data-cites="stemmler2019how">(Stemmler,
-2019)</span></figcaption>
+class="citation" data-cites="stemmler2019how">(<a
+href="#ref-stemmler2019how" role="doc-biblioref">Stemmler,
+2019</a>)</span></figcaption>
 </figure>
 <h1 id="what-is-clean-code"><a class="header" href="#what-is-clean-code">what is clean code</a></h1>
 <ul>
@@ -190,7 +191,7 @@ extend, etc.</p>
 <blockquote>
 <p>Any fool can write code that a computer can understand. Good
 programmers write code that humans can understand.</p>
-<p>– Martin Fowler (Fowler, 2018)</p>
+<p>– Martin Fowler (<a href="#ref-fowler2018refactoring">Fowler, 2018</a>)</p>
 </blockquote>
 </div>
 <div class="mt-3">
@@ -409,7 +410,7 @@ end
 </div>
 <h1 id="clean-code"><a class="header" href="#clean-code">clean code</a></h1>
 <p>Clean Code: A Handbook of Agile Software Craftsmanship</p>
-<p>by Robert C. Martin (2009) (Martin, 2009)</p>
+<p>by Robert C. Martin (2009) (<a href="#ref-martin2009clean">Martin, 2009</a>)</p>
 <div class="notes">
 <p>some recommendations are too specific to C-like languages</p>
 </div>
@@ -417,7 +418,7 @@ end
 <div class="columns">
 <div class="column mt-5" width="60%">
 <p>this section is based on the book <em>Clean Code</em> (chapter 2) by Robert C.
-Martin (Martin, 2009)</p>
+Martin (<a href="#ref-martin2009clean">Martin, 2009</a>)</p>
 <p>with own examples</p>
 </div>
 <div class="column" width="40%">
@@ -481,7 +482,7 @@ height="300" /></p>
 <div class="fragment mt-4">
 <!-- according to a study, camelCase is faster to type but snake_case is faster to read [@sharif2010eye] -->
 <p>a study states, camelCase is faster to type but snake_case is faster to
-read (Sharif &amp; Maletic, 2010)</p>
+read (<a href="#ref-sharif2010eye">Sharif &amp; Maletic, 2010</a>)</p>
 </div>
 <div class="fragment mt-2">
 <p>read the style guide</p>
@@ -489,7 +490,7 @@ read (Sharif &amp; Maletic, 2010)</p>
 <h2 id="avoid-disinformation"><a class="header" href="#avoid-disinformation">avoid disinformation</a></h2>
 <blockquote>
 <p>Do not refer to a grouping of accounts as an <code>accountList</code> unless it’s
-actually a <code>List</code> (Martin, 2009).</p>
+actually a <code>List</code> (<a href="#ref-martin2009clean">Martin, 2009</a>).</p>
 </blockquote>
 <div class="text-smaller">
 <p>better to use <code>accounts</code>, it does not depend on the collection name</p>
@@ -500,7 +501,7 @@ actually a <code>List</code> (Martin, 2009).</p>
 <div class="fragment mt-3">
 <blockquote>
 <p>disinformative names would be the use of lower-case <code>L</code> or uppercase
-<code>O</code> (Martin, 2009)</p>
+<code>O</code> (<a href="#ref-martin2009clean">Martin, 2009</a>)</p>
 </blockquote>
 <ul>
 <li>they can look almost like the one and zero, respectively – use the
@@ -513,7 +514,8 @@ to use them</li>
 <blockquote>
 <p>It is not sufficient to add number series or noise words, even though
 the compiler is satisfied. If names must be different, then they
-should also mean something different (Martin, 2009).</p>
+should also mean something different (<a href="#ref-martin2009clean">Martin,
+2009</a>).</p>
 </blockquote>
 <div class="text-size-2">
 <pre><code class="language-python">def calculate_distance(data: pd.DataFrame) -&gt; pd.Series:
@@ -536,12 +538,12 @@ should also mean something different (Martin, 2009).</p>
 <p>Noise words are another meaningless distinction. Imagine that you have
 a <code>Product</code> class. If you have another called <code>ProductInfo</code> or
 <code>ProductData</code>, you have made the names different without making them
-mean anything different (Martin, 2009).</p>
+mean anything different (<a href="#ref-martin2009clean">Martin, 2009</a>).</p>
 </blockquote>
 <h2 id="use-pronounceable-names"><a class="header" href="#use-pronounceable-names">use pronounceable names</a></h2>
 <blockquote>
 <p>If you can’t pronounce it, you can’t discuss it without sounding like
-an idiot (Martin, 2009).</p>
+an idiot (<a href="#ref-martin2009clean">Martin, 2009</a>).</p>
 </blockquote>
 <ul>
 <li>Should <code>etid</code> be an integer?</li>
@@ -558,7 +560,7 @@ more difficult to pronounce</p>
 <blockquote>
 <p>Single-letter names can ONLY be used as local variables inside short
 methods. The length of a name should correspond to the size of its
-scope (Martin, 2009).</p>
+scope (<a href="#ref-martin2009clean">Martin, 2009</a>).</p>
 </blockquote>
 </div>
 <div class="columns">
@@ -628,7 +630,7 @@ or scope</li>
         return iNum * fnFactorial(iNum - 1)
 </code></pre>
 <div class="text-small">
-<p>source: (Bhargav, 2024)</p>
+<p>source: (<a href="#ref-bhargav2024hungarian">Bhargav, 2024</a>)</p>
 </div>
 </div>
 <div class="columns r-frame mt-1">
@@ -650,7 +652,7 @@ or scope</li>
 <h2 id="avoid-mental-mapping"><a class="header" href="#avoid-mental-mapping">avoid mental mapping</a></h2>
 <blockquote>
 <p>Readers shouldn’t have to mentally translate your names into other
-names they already know (Martin, 2009).</p>
+names they already know (<a href="#ref-martin2009clean">Martin, 2009</a>).</p>
 </blockquote>
 <!-- CPU, USB, CLI, GUI, LED, RGB, ORM, PEP, RFC, GPS, etc... -->
 <div class="columns mt-4">
@@ -668,12 +670,13 @@ names they already know (Martin, 2009).</p>
 <li>be objective and professional</li>
 </ul>
 <blockquote>
-<p>Say what you mean. Mean what you say (Martin, 2009).</p>
+<p>Say what you mean. Mean what you say (<a href="#ref-martin2009clean">Martin,
+2009</a>).</p>
 </blockquote>
 <h2 id="pick-one-word-per-concept"><a class="header" href="#pick-one-word-per-concept">pick one word per concept</a></h2>
 <blockquote>
 <p>it’s confusing to have <code>fetch</code> , <code>retrieve</code>, and <code>get</code> as equivalent
-methods of different classes (Martin, 2009)</p>
+methods of different classes (<a href="#ref-martin2009clean">Martin, 2009</a>)</p>
 </blockquote>
 <p>it also helps to search for the term</p>
 <h2 id="add-meaningful-context"><a class="header" href="#add-meaningful-context">add meaningful context</a></h2>
@@ -681,7 +684,8 @@ methods of different classes (Martin, 2009)</p>
 <p>Imagine that you have variables named firstName, lastName, street,
 houseNumber, city, state, and zipcode. Taken together it’s pretty
 clear that they form an address. But what if you just saw the state
-variable being used alone in a method? (Martin, 2009)</p>
+variable being used alone in a method? (<a href="#ref-martin2009clean">Martin,
+2009</a>)</p>
 </blockquote>
 <ul>
 <li>adding a prefix?
@@ -696,7 +700,7 @@ context</li>
 <div class="columns">
 <div class="column mt-5" width="60%">
 <p>this section is based on the book <em>Clean Code</em> (chapter 3) by Robert C.
-Martin (Martin, 2009)</p>
+Martin (<a href="#ref-martin2009clean">Martin, 2009</a>)</p>
 <p>with own examples</p>
 </div>
 <div class="column" width="40%">
@@ -705,7 +709,8 @@ Martin (Martin, 2009)</p>
 </div>
 <h2 id="functions-should-be-as-small-as-possible"><a class="header" href="#functions-should-be-as-small-as-possible">functions should be as small as possible</a></h2>
 <blockquote>
-<p>Functions should hardly ever be 20 lines long (Martin, 2009)</p>
+<p>Functions should hardly ever be 20 lines long (<a href="#ref-martin2009clean">Martin,
+2009</a>)</p>
 </blockquote>
 <ul>
 <li>shorter functions are easier to understand</li>
@@ -997,7 +1002,7 @@ by Martin Fowler</p>
 <div class="column wide-qoute" width="50%">
 <blockquote>
 <p>Side effects are lies. Your function promises to do one thing, but it
-also does other hidden things (Martin, 2009).</p>
+also does other hidden things (<a href="#ref-martin2009clean">Martin, 2009</a>).</p>
 <p>– Robert C. Martin</p>
 </blockquote>
 </div>
@@ -1006,8 +1011,8 @@ also does other hidden things (Martin, 2009).</p>
 <p>an operation, function or expression is said to have a <strong>side effect</strong>
 if it modifies some state variable value(s) outside its local
 environment, that is to say has an observable effect besides returning
-a value (the main effect) to the invoker of the operation (Wikipedia
-contributors, 2022).</p>
+a value (the main effect) to the invoker of the operation (<a href="#ref-enwiki:1063806709">Wikipedia
+contributors, 2022</a>).</p>
 </blockquote>
 </div>
 </div>
@@ -1073,7 +1078,7 @@ Martin</a></p>
 <div class="column" width="50%">
 <div class="text-align-left">
 <ul>
-<li>do not use more than three (Martin, 2009)</li>
+<li>do not use more than three (<a href="#ref-martin2009clean">Martin, 2009</a>)</li>
 </ul>
 </div>
 <div class="text-align-left fragment" data-fragment-index="1">
@@ -1090,8 +1095,8 @@ Martin</a></p>
 <li>do not use flags
 <ul>
 <li><span class="text-smaller">“Flag arguments are ugly […] loudly
-proclaiming that this function does more than one thing (Martin,
-2009).”</span></li>
+proclaiming that this function does more than one thing (<a href="#ref-martin2009clean">Martin,
+2009</a>).”</span></li>
 </ul>
 </li>
 </ul>
@@ -1174,7 +1179,7 @@ successful</li>
 <div class="columns">
 <div class="column mt-5" width="60%">
 <p>this section is based on the book <em>Clean Code</em> (chapter 4) by Robert C.
-Martin (Martin, 2009)</p>
+Martin (<a href="#ref-martin2009clean">Martin, 2009</a>)</p>
 <p>with own examples</p>
 </div>
 <div class="column" width="40%">
@@ -1308,7 +1313,8 @@ href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></figcaption>
 </code></pre>
 <p><a href="https://github.com/chrislgarry/Apollo-11/blob/4d15e4d9d37202847334d4c640058803ed4e782e/Comanche055/GROUND_TRACKING_DETERMINATION_PROGRAM.agc#L149-L167">source</a>,
 <a href="https://github.com/chrislgarry/Apollo-11">GitHub repository</a>, more
-about the Apollo Guidance Computer: (Slavin, 2015)</p>
+about the Apollo Guidance Computer: (<a href="#ref-slavin2015coding">Slavin,
+2015</a>)</p>
 <h2 id="good-comments"><a class="header" href="#good-comments">good comments</a></h2>
 <p><strong>legal comments</strong></p>
 <p>some open source licences should be included to the beginning of the
@@ -1438,7 +1444,7 @@ programmers write code that humans can understand.</p>
 </ul>
 </li>
 </ul>
-<h2 id="clean-code--meaningful-names-martin-2009"><a class="header" href="#clean-code--meaningful-names-martin-2009">clean code / meaningful names (Martin, 2009)</a></h2>
+<h2 id="clean-code--meaningful-names-martin-2009"><a class="header" href="#clean-code--meaningful-names-martin-2009">clean code / meaningful names (<a href="#ref-martin2009clean">Martin, 2009</a>)</a></h2>
 <div class="columns">
 <div class="column" width="60%">
 <ul>
@@ -1502,11 +1508,12 @@ height="300" /></p>
 </ul>
 </div>
 </div>
-<h2 id="clean-code--functions-martin-2009"><a class="header" href="#clean-code--functions-martin-2009">clean code / functions (Martin, 2009)</a></h2>
+<h2 id="clean-code--functions-martin-2009"><a class="header" href="#clean-code--functions-martin-2009">clean code / functions (<a href="#ref-martin2009clean">Martin, 2009</a>)</a></h2>
 <div class="columns">
 <div class="column" width="70%">
 <ul>
-<li>“Functions should hardly ever be 20 lines long” (Martin, 2009)
+<li>“Functions should hardly ever be 20 lines long” (<a href="#ref-martin2009clean">Martin,
+2009</a>)
 <ul>
 <li>shorter functions are easier to understand</li>
 </ul>
@@ -1524,7 +1531,7 @@ height="300" /></p>
 <img src="figures/publicdomainvectors/cogwheel.svg" height="300" />
 </div>
 </div>
-<h2 id="clean-code--comments-martin-2009"><a class="header" href="#clean-code--comments-martin-2009">clean code / comments (Martin, 2009)</a></h2>
+<h2 id="clean-code--comments-martin-2009"><a class="header" href="#clean-code--comments-martin-2009">clean code / comments (<a href="#ref-martin2009clean">Martin, 2009</a>)</a></h2>
 <div class="columns">
 <div class="column" width="60%">
 <p><strong>avoid</strong></p>

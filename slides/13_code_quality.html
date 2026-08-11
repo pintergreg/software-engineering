@@ -178,19 +178,21 @@ not only working software, but also well-crafted software
 <blockquote>
 <p>a code smell is a surface indication that usually corresponds to a
 deeper problem</p>
-<p>– Martin Flower <span class="citation"
-data-cites="fowler2006code">[1]</span></p>
+<p>– Martin Flower <span class="citation" data-cites="fowler2006code"><a
+href="#/ref-fowler2006code" role="doc-biblioref">[1]</a></span></p>
 </blockquote>
 </div>
 <div class="columns mt-3">
 <div class="column text-smaller" style="width:40%;">
 <p>software rot is the degradation, deterioration, or loss of the use or
 performance of software over time <span class="citation"
-data-cites="enwiki:1236668404">[2]</span></p>
+data-cites="enwiki:1236668404"><a href="#/ref-enwiki:1236668404"
+role="doc-biblioref">[2]</a></span></p>
 </div><div class="column text-smaller" style="width:40%;">
 <p><strong>requirement smell</strong>: signs in the requirements that
 are not necessarily wrong but could be problematic <span
-class="citation" data-cites="femmer2017rapid">[3]</span></p>
+class="citation" data-cites="femmer2017rapid"><a
+href="#/ref-femmer2017rapid" role="doc-biblioref">[3]</a></span></p>
 </div>
 </div>
 </section>
@@ -214,8 +216,8 @@ class="slide level2">
 <li>a function / class does more than one thing</li>
 </ul>
 <div class="text-smaller">
-<p>source: <span class="citation"
-data-cites="atwood2006code">[4]</span></p>
+<p>source: <span class="citation" data-cites="atwood2006code"><a
+href="#/ref-atwood2006code" role="doc-biblioref">[4]</a></span></p>
 </div>
 </section>
 <section id="some-code-smells" class="slide level2">
@@ -225,7 +227,9 @@ data-cites="atwood2006code">[4]</span></p>
 <ul>
 <li><span class="text-smaller">Don’t Repeat Yourself! (a.k.a., DRY
 principle) <span class="citation"
-data-cites="venners2003orthogonality">[5]</span></span></li>
+data-cites="venners2003orthogonality"><a
+href="#/ref-venners2003orthogonality"
+role="doc-biblioref">[5]</a></span></span></li>
 </ul></li>
 <li>speculative generality
 <ul>
@@ -249,12 +253,13 @@ but an error</span></li>
 of optional or unnecessary fields. If you’re passing an object as a
 parameter to a method, make sure that you’re using all of it and not
 cherry-picking single fields.” <span class="citation"
-data-cites="atwood2006code">[4]</span></span></li>
+data-cites="atwood2006code"><a href="#/ref-atwood2006code"
+role="doc-biblioref">[4]</a></span></span></li>
 </ul></li>
 </ul>
 <div class="text-smaller">
-<p>source: <span class="citation"
-data-cites="atwood2006code">[4]</span></p>
+<p>source: <span class="citation" data-cites="atwood2006code"><a
+href="#/ref-atwood2006code" role="doc-biblioref">[4]</a></span></p>
 </div>
 </section>
 <section id="conditional-complexity" class="slide level2"
@@ -309,7 +314,8 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
 <li>hard to understand, even if it is tested and documented</li>
 <li>use nested conditions instead</li>
 <li>avoid negative conditionals – Robert C. Martin <span
-class="citation" data-cites="martin2009clean">[6]</span>
+class="citation" data-cites="martin2009clean"><a
+href="#/ref-martin2009clean" role="doc-biblioref">[6]</a></span>
 <ul>
 <li><code
 class="sourceCode javascript"><span class="cf">if</span> (<span class="op">!</span><span class="fu">is_raining</span>()) {<span class="fu">do_something</span>()<span class="op">;</span>}</code></li>
@@ -345,7 +351,8 @@ with different interfaces</h2>
 <blockquote>
 <p>If two classes are similar on the inside, but different on the
 outside, perhaps they can be modified to share a common interface <span
-class="citation" data-cites="atwood2006code">[4]</span>.</p>
+class="citation" data-cites="atwood2006code"><a
+href="#/ref-atwood2006code" role="doc-biblioref">[4]</a></span>.</p>
 </blockquote>
 </section>
 <section id="class-based-smells-data-class" class="slide level2">
@@ -355,8 +362,8 @@ class="citation" data-cites="atwood2006code">[4]</span>.</p>
 <blockquote>
 <p>Avoid classes that passively store data. Classes should contain data
 and methods to operate on that data, too.</p>
-<p>– Jeff Atwood <span class="citation"
-data-cites="atwood2006code">[4]</span></p>
+<p>– Jeff Atwood <span class="citation" data-cites="atwood2006code"><a
+href="#/ref-atwood2006code" role="doc-biblioref">[4]</a></span></p>
 </blockquote>
 <p>comes from the OOP definition, but outdated</p>
 <div class="mt-3">
@@ -380,7 +387,8 @@ width="300" /></p>
 <blockquote>
 <p>If you always see the same data hanging around together, maybe it
 belongs together. Consider rolling the related data up into a larger
-class <span class="citation" data-cites="atwood2006code">[4]</span>.</p>
+class <span class="citation" data-cites="atwood2006code"><a
+href="#/ref-atwood2006code" role="doc-biblioref">[4]</a></span>.</p>
 </blockquote>
 </section>
 <section id="class-based-smells-refused-bequest" class="slide level2">
@@ -390,7 +398,8 @@ class <span class="citation" data-cites="atwood2006code">[4]</span>.</p>
 <blockquote>
 <p>If you inherit from a class, but never use any of the inherited
 functionality, should you really be using inheritance? <span
-class="citation" data-cites="atwood2006code">[4]</span></p>
+class="citation" data-cites="atwood2006code"><a
+href="#/ref-atwood2006code" role="doc-biblioref">[4]</a></span></p>
 </blockquote>
 <div class="fragment mt-4">
 <p>basically an architectural issue!</p>
@@ -406,8 +415,8 @@ class="citation" data-cites="atwood2006code">[4]</span></p>
 <blockquote>
 <p>Beware of classes that unnecessarily expose their internals. […] You
 should have a compelling reason for every item you make public. If you
-don’t, hide it <span class="citation"
-data-cites="atwood2006code">[4]</span>.</p>
+don’t, hide it <span class="citation" data-cites="atwood2006code"><a
+href="#/ref-atwood2006code" role="doc-biblioref">[4]</a></span>.</p>
 </blockquote>
 </div>
 <div class="text-smaller mt-5">
@@ -435,8 +444,8 @@ specifying how they should be implemented</li>
 <p>Methods that make extensive use of another class may belong in
 another class. Consider moving this method to the class it is so envious
 of.</p>
-<p>– Jeff Atwood <span class="citation"
-data-cites="atwood2006code">[4]</span></p>
+<p>– Jeff Atwood <span class="citation" data-cites="atwood2006code"><a
+href="#/ref-atwood2006code" role="doc-biblioref">[4]</a></span></p>
 </blockquote>
 </div>
 </section>
@@ -445,8 +454,8 @@ data-cites="atwood2006code">[4]</span></p>
 <div class="columns">
 <div class="column mt-5" style="width:60%;">
 <p>this section is based on the book <em>Clean Code</em> (chapter 17) by
-Robert C. Martin <span class="citation"
-data-cites="martin2009clean">[6]</span></p>
+Robert C. Martin <span class="citation" data-cites="martin2009clean"><a
+href="#/ref-martin2009clean" role="doc-biblioref">[6]</a></span></p>
 <p>with own examples</p>
 </div><div class="column" style="width:40%;">
 <figure>
@@ -659,8 +668,11 @@ class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="
 <span id="cb27-650"><a href="#cb27-650"></a>    <span class="cf">return</span> err<span class="op">;</span></span></code></pre></div>
 <div>
 <p>more about Apple’s “goto fail” fiasco (2014): <span class="citation"
-data-cites="wheeler2014apple">[7]</span>, <span class="citation"
-data-cites="migues2014understanding">[8]</span></p>
+data-cites="wheeler2014apple"><a href="#/ref-wheeler2014apple"
+role="doc-biblioref">[7]</a></span>, <span class="citation"
+data-cites="migues2014understanding"><a
+href="#/ref-migues2014understanding"
+role="doc-biblioref">[8]</a></span></p>
 <p>false blame on <code>goto</code> (based on Dijkstra’s essay: <a
 href="https://www.dcs.gla.ac.uk/~pat/cpM/choco4/nqueens/Goto-Harmful-Dijkstra.pdf">Go
 To Statement Considered Harmful</a>), could be prevented by review and
@@ -697,7 +709,8 @@ width="400" /></p>
 <h1>Halstead metrics</h1>
 <p>Halstead’s goal was to identify measurable properties of software,
 and the relations between them <span class="citation"
-data-cites="radon">[9]</span>.</p>
+data-cites="radon"><a href="#/ref-radon"
+role="doc-biblioref">[9]</a></span>.</p>
 <div class="columns text-smaller">
 <div class="column" style="width:50%;">
 <p>statistically computed numbers:</p>
@@ -896,7 +909,8 @@ the if.</td>
 <div class="text-smaller">
 <p>source: Radon <a
 href="https://radon.readthedocs.io/en/latest/index.html">documentation</a>
-<span class="citation" data-cites="radon">[9]</span></p>
+<span class="citation" data-cites="radon"><a href="#/ref-radon"
+role="doc-biblioref">[9]</a></span></p>
 </div>
 <!--|assert          |+1|The assert statement internally roughly equals a conditional statement.           |
 |comprehension   |+1|A list/set/dict comprehension of generator expression is equivalent to a for loop.|-->
@@ -948,15 +962,16 @@ class="slide level2">
 <div class="text-smaller">
 <p>source: Radon <a
 href="https://radon.readthedocs.io/en/latest/index.html">documentation</a>
-<span class="citation" data-cites="radon">[9]</span></p>
+<span class="citation" data-cites="radon"><a href="#/ref-radon"
+role="doc-biblioref">[9]</a></span></p>
 </div>
 </section></section>
 <section>
 <section id="maintainability-index" class="title-slide slide level1">
 <h1>maintainability index</h1>
 <dl>
-<dt>original <span class="citation"
-data-cites="coleman1994using">[10]</span>:</dt>
+<dt>original <span class="citation" data-cites="coleman1994using"><a
+href="#/ref-coleman1994using" role="doc-biblioref">[10]</a></span>:</dt>
 <dd>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>I</mi><mo>=</mo><mn>171</mn><mo>−</mo><mn>5.2</mn><mo>ln</mo><mi>V</mi><mo>−</mo><mn>0.23</mn><mi>G</mi><mo>−</mo><mn>16.2</mn><mo>ln</mo><mi>L</mi></mrow><annotation encoding="application/x-tex"> MI = 171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L} </annotation></semantics></math>
 </dd>
@@ -1000,7 +1015,8 @@ data-cites="coleman1994using">[10]</span>:</dt>
 </div><div class="column text-size-1" style="width:30%;">
 <table>
 <caption>based on <span class="citation"
-data-cites="sharma2024analyzing">[11]</span></caption>
+data-cites="sharma2024analyzing"><a href="#/ref-sharma2024analyzing"
+role="doc-biblioref">[11]</a></span></caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">score</th>
@@ -1036,11 +1052,15 @@ data-cites="sharma2024analyzing">[11]</span></caption>
 <div class="text-smaller mt-2 fragment">
 <p><strong>issues</strong>: ease of computation, language independence,
 understandability, explainability <span class="citation"
-data-cites="heitlager2007practical">[12]</span></p>
+data-cites="heitlager2007practical"><a
+href="#/ref-heitlager2007practical"
+role="doc-biblioref">[12]</a></span></p>
 <p>read more in <a
 href="https://avandeursen.com/2014/08/29/think-twice-before-using-the-maintainability-index/">Think
 Twice Before Using the “Maintainability Index”</a> <span
-class="citation" data-cites="vandeursen2014think">[13]</span></p>
+class="citation" data-cites="vandeursen2014think"><a
+href="#/ref-vandeursen2014think"
+role="doc-biblioref">[13]</a></span></p>
 </div>
 </section>
 <section id="maintainability-index-example" class="slide level2">
@@ -1160,8 +1180,9 @@ analyser) documentation</figcaption>
 <li>there was no need to change it, presumably it was written well in
 the first place</li>
 <li>multiple changes in a short period indicate problems during software
-development <span class="citation"
-data-cites="nagappan2010change">[14]</span></li>
+development <span class="citation" data-cites="nagappan2010change"><a
+href="#/ref-nagappan2010change"
+role="doc-biblioref">[14]</a></span></li>
 </ul>
 </div>
 </section>
