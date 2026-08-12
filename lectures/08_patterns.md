@@ -1361,8 +1361,11 @@ on the other hand, most of these are present in all the three architectures!
 
 # record architecture decisions
 
-::: {.text-small}
-in each architecture decision record, write these sections:
+::: {.wide-quote .text-smaller}
+> Architecture represents the significant [design decisions]{.background-color-lightblue} that shape a system, where significant is measured by cost of change. -- Grady Booch
+
+> Developers working on that project have a [shared understanding]{.background-color-lightblue} of the system design. [...] This understanding includes how the system is divided into components and how the components interact through interfaces. -- Ralph Johnson
+
 :::
 
 ```markdown
@@ -1386,7 +1389,7 @@ What becomes easier or more difficult to do because of this change?
 ```
 
 ::: {.text-small}
-ADR template by Michael Nygard from [Documenting architecture decisions](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions)
+ADR template by Michael Nygard from [Documenting architecture decisions](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions), where each architecture decision record have these sections.
 :::
 
 ::: notes
