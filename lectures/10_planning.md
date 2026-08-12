@@ -655,6 +655,24 @@ source: [effectiviology.com/brooks-law](https://effectiviology.com/brooks-law/)
 
 :::
 
+# summary
+
+- conduct research
+    - learning can be a task to reduce uncertainty
+    - fail fast
+    - minimal working example
+- identify and prioritize risks
+    - risk register, risk storming
+- assign responsibilities and tasks
+    - to exactly one person
+    - beware dependencies between tasks
+- allocate resources / estimates
+    - planning poker
+
+::: {}
+[open mindmap](mindmap.html){target="_blank"}
+:::
+
 # references
 
 ::: {#refs}
