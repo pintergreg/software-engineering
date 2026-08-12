@@ -14,10 +14,9 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 link-citations: true
 ---
 
-![](figures/sdlc_2.drawio.svg){width=900}
-
-
 # software design and architecture stack
+
+<!-- ![](figures/sdlc_2.drawio.svg){width=900} -->
 
 ![based on Khalil Stemmel's figure [@stemmler2019how]](figures/the_software_design_and_architecture_stack_generalized.drawio.svg){height=475}
 
