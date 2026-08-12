@@ -6082,8 +6082,8 @@ for drawing C4</li>
 <p><img src="lectures/figures/c4_drawings_person_shape.png" alt="" /></p>
 </div>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><img src="lectures/figures/sdlc_2.drawio.svg" width="900" />
-<h1 id="software-design-and-architecture-stack"><a class="header" href="#software-design-and-architecture-stack">software design and architecture stack</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="software-design-and-architecture-stack"><a class="header" href="#software-design-and-architecture-stack">software design and architecture stack</a></h1>
+<!-- ![](figures/sdlc_2.drawio.svg){width=900} -->
 <figure>
 <img
 src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
@@ -7550,8 +7550,20 @@ but that would also be a dependency</li>
 architectures!</p>
 </div>
 <h1 id="record-architecture-decisions"><a class="header" href="#record-architecture-decisions">record architecture decisions</a></h1>
-<div class="text-small">
-<p>in each architecture decision record, write these sections:</p>
+<div class="wide-quote text-smaller">
+<blockquote>
+<p>Architecture represents the significant
+<span class="background-color-lightblue">design decisions</span> that
+shape a system, where significant is measured by cost of change. –
+Grady Booch</p>
+</blockquote>
+<blockquote>
+<p>Developers working on that project have a
+<span class="background-color-lightblue">shared understanding</span>
+of the system design. […] This understanding includes how the system
+is divided into components and how the components interact through
+interfaces. – Ralph Johnson</p>
+</blockquote>
 </div>
 <pre><code class="language-markdown"># Title
 
@@ -7573,7 +7585,8 @@ What becomes easier or more difficult to do because of this change?
 </code></pre>
 <div class="text-small">
 <p>ADR template by Michael Nygard from <a href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions">Documenting architecture
-decisions</a></p>
+decisions</a>,
+where each architecture decision record have these sections.</p>
 </div>
 <div class="notes">
 <p>You can use <a href="https://github.com/npryce/adr-tools">adr-tools</a> to manage
@@ -7620,6 +7633,48 @@ which reduces interruption</li>
 <div class="text-smaller mt-1">
 <p>based on <a href="https://github.blog/2020-08-13-why-write-adrs/">Why Write
 ADRs</a> by Eli Perkins</p>
+</div>
+<h1 id="summary-1"><a class="header" href="#summary-1">summary</a></h1>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>architectural patterns</td>
+<td>model-view-controller, MVP, MVVM</td>
+</tr>
+<tr class="even">
+<td>architectural styles</td>
+<td>layered, onion, hexagonal, clear, client-server</td>
+</tr>
+<tr class="odd">
+<td>architectural principles</td>
+<td>coupling &amp; cohesion</td>
+</tr>
+<tr class="even">
+<td><span class="alpha-50">design patterns</span></td>
+<td><span class="alpha-50">GOF, map-filter-reduce</span></td>
+</tr>
+<tr class="odd">
+<td>desing principles</td>
+<td>SOLID, DRY, YAGNI, hollywood principle</td>
+</tr>
+</tbody>
+</table>
+<div class="columns mt-3">
+<div class="column mt-2" width="50%">
+<ul>
+<li>law of demeter</li>
+<li>law of leaky abstractions</li>
+<li>law of unintended consequences</li>
+</ul>
+</div>
+<div class="column" width="50%">
+<p><img src="lectures/figures/publicdomainvectors/law-and-justice-concept.svg"
+width="150" /></p>
+</div>
 </div>
 <h1 id="references-6"><a class="header" href="#references-6">references</a></h1>
 <div id="refs" class="text-small references csl-bib-body hanging-indent"
@@ -10614,7 +10669,7 @@ Test passed.
 </div>
 </div>
 </div>
-<h1 id="summary-1"><a class="header" href="#summary-1">summary</a></h1>
+<h1 id="summary-2"><a class="header" href="#summary-2">summary</a></h1>
 <blockquote>
 <p>Any fool can write code that a computer can understand. Good
 programmers write code that humans can understand.</p>
@@ -11720,7 +11775,7 @@ href="https://commadot.com/wtf-per-minute/">Glen Lipka’s</a>, which is
 based on <a href="https://www.osnews.com/story/19266/wtfsm/">Thom
 Holwerda</a>’s</figcaption>
 </figure>
-<h1 id="summary-2"><a class="header" href="#summary-2">summary</a></h1>
+<h1 id="summary-3"><a class="header" href="#summary-3">summary</a></h1>
 <ul>
 <li>code smells indicate issues with the code
 <ul>
@@ -12598,7 +12653,7 @@ width="300" /></p>
 <div class="text-smaller">
 <p>source: (<a href="lectures/14_code_review.html#ref-smartbear_best">Smartbear, n.d.</a>)</p>
 </div>
-<h1 id="summary-3"><a class="header" href="#summary-3">summary</a></h1>
+<h1 id="summary-4"><a class="header" href="#summary-4">summary</a></h1>
 <ul>
 <li>(code) review is for improving (code) quality
 <ul>
@@ -14828,7 +14883,7 @@ needs and <strong>requirements</strong> of the user</li>
 <p>source/reading: <a href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The Seven Principles of Software
 Testing</a></p>
 </div>
-<h1 id="summary-4"><a class="header" href="#summary-4">summary</a></h1>
+<h1 id="summary-5"><a class="header" href="#summary-5">summary</a></h1>
 <div class="columns">
 <div class="column text-smaller" width="50%">
 <img src="lectures/figures/v_model_unit_testing.drawio.svg" width="450" />
@@ -16532,7 +16587,7 @@ to breathe.</p>
 Productivity</a>
 by Leon Ho (<a href="lectures/16_automatization.html#ref-ho2025pomodoro">Ho, 2025</a>)</p>
 </div>
-<h1 id="summary-5"><a class="header" href="#summary-5">summary</a></h1>
+<h1 id="summary-6"><a class="header" href="#summary-6">summary</a></h1>
 <div class="columns">
 <div class="column" width="60%">
 <div class="text-align-left">

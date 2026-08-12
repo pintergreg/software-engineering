@@ -137,14 +137,11 @@ calc(100% - 1.25rem)" data-background-size="125px">
   <p class="date">gergo.pinter@uni-corvinus.hu</p>
 </section>
 
-<section class="slide level2">
-
-<p><img data-src="figures/sdlc_2.drawio.svg" width="900" /></p>
-</section>
 <section>
 <section id="software-design-and-architecture-stack"
 class="title-slide slide level1">
 <h1>software design and architecture stack</h1>
+<!-- ![](figures/sdlc_2.drawio.svg){width=900} -->
 <figure>
 <img
 data-src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
@@ -1803,8 +1800,20 @@ architectures!</p>
 <section id="record-architecture-decisions"
 class="title-slide slide level1">
 <h1>record architecture decisions</h1>
-<div class="text-small">
-<p>in each architecture decision record, write these sections:</p>
+<div class="wide-quote text-smaller">
+<blockquote>
+<p>Architecture represents the significant <span
+class="background-color-lightblue">design decisions</span> that shape a
+system, where significant is measured by cost of change. – Grady
+Booch</p>
+</blockquote>
+<blockquote>
+<p>Developers working on that project have a <span
+class="background-color-lightblue">shared understanding</span> of the
+system design. […] This understanding includes how the system is divided
+into components and how the components interact through interfaces. –
+Ralph Johnson</p>
+</blockquote>
 </div>
 <div class="sourceCode" id="cb15"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Title</span></span>
@@ -1827,7 +1836,8 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1">
 <div class="text-small">
 <p>ADR template by Michael Nygard from <a
 href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions">Documenting
-architecture decisions</a></p>
+architecture decisions</a>, where each architecture decision record have
+these sections.</p>
 </div>
 <aside class="notes">
 <p>You can use <a
@@ -1874,6 +1884,51 @@ data-src="figures/publicdomainvectors/shelves-with-office-folders.svg" /></p>
 Write ADRs</a> by Eli Perkins</p>
 </div>
 </section></section>
+<section id="summary" class="title-slide slide level1">
+<h1>summary</h1>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>architectural patterns</td>
+<td>model-view-controller, MVP, MVVM</td>
+</tr>
+<tr class="even">
+<td>architectural styles</td>
+<td>layered, onion, hexagonal, clear, client-server</td>
+</tr>
+<tr class="odd">
+<td>architectural principles</td>
+<td>coupling &amp; cohesion</td>
+</tr>
+<tr class="even">
+<td><span class="alpha-50">design patterns</span></td>
+<td><span class="alpha-50">GOF, map-filter-reduce</span></td>
+</tr>
+<tr class="odd">
+<td>desing principles</td>
+<td>SOLID, DRY, YAGNI, hollywood principle</td>
+</tr>
+</tbody>
+</table>
+<div class="columns mt-3">
+<div class="column mt-2" style="width:50%;">
+<ul>
+<li>law of demeter</li>
+<li>law of leaky abstractions</li>
+<li>law of unintended consequences</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img
+data-src="figures/publicdomainvectors/law-and-justice-concept.svg"
+width="150" /></p>
+</div>
+</div>
+</section>
+
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
 <div id="refs" class="text-small references csl-bib-body" role="list">
