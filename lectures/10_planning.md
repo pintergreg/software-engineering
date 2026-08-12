@@ -485,7 +485,7 @@ Man-month is a hypothetical unit of work representing the work done by one perso
 :::
 
 
-## estimate – a necessary evil? 
+## estimate - a necessary evil? 
 
 ::: {.wide-quote .text-smaller}
 > Product Owner: Hey, how long do you believe Feature F will take?
@@ -513,6 +513,11 @@ Man-month is a hypothetical unit of work representing the work done by one perso
 ::::::::::::
 
 According to Erik Thorsell, technical debt is the main reason for conflict between a PO and a development team.
+
+::: {.wide-quote .text-smallerd}
+> Technical debt is the pollution of the digital world, invisible until it chokes the systems that depend on it. -- [Chris Loy](https://chrisloy.dev/post/2025/12/30/the-rise-of-industrial-software) [@loy2025rise]
+
+:::
 
 ::: {.mt-1}
 reading: [Estimate - a necessary evil?](https://thorsell.io/2025/12/07/estimates.html) by Erik Thorsell [@thorsell2025estimates]
