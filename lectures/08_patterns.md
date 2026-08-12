@@ -122,6 +122,11 @@ read about the design patterns in details, for example at [refactoring.guru](htt
 
 ## bridge pattern (structural)
 
+::: {.wide-quote .text-smaller}
+The bridge pattern lets you split a large class or a set of closely related classes into two separate hierarchies.
+
+:::
+
 ![](figures/gof/bridge_pre.svg){height=175}
 
 :::::: {.r-stack .fragment data-fragment-index=1}
@@ -132,6 +137,96 @@ read about the design patterns in details, for example at [refactoring.guru](htt
 ![](figures/gof/bridge_2.svg){height=225}
 :::
 :::::
+
+
+<!--## observer pattern (behavioral)
+
+- instead of flooding the service with update requests,
+- or the server sending notifications to everyone
+- clients can subscribe to notifications
+- this is exactly how newsletters work-->
+
+## observer pattern (behavioral)
+
+- instead of flooding the service with update requests, or the server sending notifications to everyone clients can subscribe to notifications
+- this is exactly how newsletters work
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+![](figures/gof/observer.svg)
+:::::::::
+::::::::: {.column width="40%" .mt-3}
+![](figures/gof/observer_sequence.svg)
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+more at: [refactoring.guru / Observer](https://refactoring.guru/design-patterns/observer)
+:::
+
+## observer pattern - Python example
+
+:::::::::::: {.columns .text-smaller}
+::::::::: {.column width="45%"}
+``` python
+class Observable:
+    def __init__(self):
+        self.subscribers = []
+
+    def subscribe(self, subscriber):
+        self.subscribers.append(subscriber)
+
+    def notify(self, data):
+        for subscriber in self.subscribers:
+            subscriber.update(data)
+
+class Subscriber:  # aka Observer
+    def __init__(self, name):
+        self.name = name
+
+    def update(self, data):
+        print(f"{self.name} received data: {data}")
+```
+
+:::::::::
+::::::::: {.column width="55%"}
+``` python
+class TemperatureSensor(Observable):
+    def __init__(self):
+        super().__init__()
+
+    def change_temperature(self, temp):
+        print(f"Temperature changed to: {temp}")
+        self.notify(temp)
+
+class DisplayUnit(Subscriber):
+    def update(self, temp):
+        print(f"{self.name} updated with temperature: {temp}")
+```
+``` python
+sensor = TemperatureSensor()  # create observable
+
+display1 = DisplayUnit("Display 1")  # create observer
+display2 = DisplayUnit("Display 2")  # create observer
+
+sensor.subscribe(display1)
+sensor.subscribe(display2)
+
+sensor.change_temperature(25)  # change value
+```
+```
+Temperature changed to: 25
+Display 1 updated with temperature: 25
+Display 2 updated with temperature: 25
+```
+
+:::::::::
+::::::::::::
+
+::: {.text-small}
+example code is based on: [Observer Pattern in Functional Reactive Programming (FRP)](https://softwarepatternslexicon.com/functional-programming/essential-functional-programming-patterns/observer-pattern-in-functional-reactive-programming/)
+:::
 
 
 ## GoF design patterns in functional programming
@@ -515,13 +610,31 @@ increases reusability
 - IoC shifts control from the application to an outside framework
 - promotes a more modular design by decoupling components
     - however, adding an IoC framework can increase complexity
-        - with a significant learning curve for those unfamiliar with the concept
-- e.g., Spring Framework, ASP.NET Core
+    - with a significant learning curve for those unfamiliar with the concept
+- observer pattern (Gang of Four design pattern) is a form of IoC
+<!-- - dependency injection os also a form of IoC -->
 
 :::{.text-smaller}
-based on [@stec2024inversion]
+based on [@stec2024inversion], [Three Design Patterns That Use Inversion of Control](https://www.sitepoint.com/three-design-patterns-that-use-inversion-of-control/) by Alejandro Gervasio
 :::
 
+<!--## dependency injection
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+
+:::::::::
+::::::::: {.column width="50%" .wide-quote .text-smaller}
+**dependency injection for five-year-olds**
+
+> When you go and get things out of the refrigerator for yourself, you can cause problems. You might leave the door open, you might get something Mommy or Daddy don't want you to have. You might even be looking for something we don't even have or which has expired.
+>
+> What you should be doing is stating a need, "I need something to drink with lunch," and then we will make sure you have something when you sit down to eat something.
+>
+> -- John Munsch, 28 October 2009. 
+
+:::::::::
+::::::::::::-->
 
 # coupling
 
@@ -1106,7 +1219,8 @@ other alternatives: [Alternatives To MVC ](https://blog.ircmaxell.com/2014/11/al
 
 tight coupling between layers
 
-~ - follow dependency injection principles for flexible dependency management
+<!-- ~ - follow dependency injection principles for flexible dependency management -->
+~ - use techniques like inversion of control for flexible dependency management
 ~ - each layer should only interacts with its adjacent layer through well-defined interfaces
 
 too many layers
