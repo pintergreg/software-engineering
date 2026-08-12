@@ -485,6 +485,39 @@ Man-month is a hypothetical unit of work representing the work done by one perso
 :::
 
 
+## estimate – a necessary evil? 
+
+::: {.wide-quote .text-smaller}
+> Product Owner: Hey, how long do you believe Feature F will take?
+> 
+> Developer: Idk. We haven’t even started working on it and it’s bound to stir up some old issues.
+
+:::
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+**developer**
+
+- annoying and even difficult to attempt to give an answer
+<!--- programming is a craft, needs time to build the best possible product without _quick fixes_
+    - which will lead technical debts-->
+- many developers dislike uncertainty, and technical debt is a significant uncertainty 
+:::::::::
+::::::::: {.column width="50%"}
+**product owener**
+
+- estimates are a crucial piece of the short and long term planning
+- for backlog prioritisation needs information about how long it'll take
+
+:::::::::
+::::::::::::
+
+According to Erik Thorsell, technical debt is the main reason for conflict between a PO and a development team.
+
+::: {.mt-1}
+reading: [Estimate - a necessary evil?](https://thorsell.io/2025/12/07/estimates.html) by Erik Thorsell
+:::
+
 ## estimating time requirement of a task
 
 :::::::::::: {.columns}

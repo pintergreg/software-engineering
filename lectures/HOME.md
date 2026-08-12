@@ -147,6 +147,7 @@ MVC-MVP-MVVM
 - [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)
 - [Walking Skeletons in Software Architecture](https://medium.com/@jorisvdaalsvoort/walking-skeletons-in-software-architecture-894168276e3f) - by Joris van der Aalsvoort
 - [Brooks’ Law: Adding Manpower to a Late Project Makes It Later](https://effectiviology.com/brooks-law/) - by Itamar Shatz
+- [Estimate – a necessary evil?](https://thorsell.io/2025/12/07/estimates.html) - by Erik Thorsell
 
 ## week 8
 
