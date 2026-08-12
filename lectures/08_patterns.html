@@ -792,7 +792,7 @@ role="doc-biblioref">Milanović, 2026</a>)</span></figcaption>
 Demeter</a> by
 Dr. Milan Milanović</p>
 </div>
-<h1 id="parts-of-an-architecture"><a class="header" href="#parts-of-an-architecture">parts of an architecture</a></h1>
+<h1 id="layers-of-an-architecture"><a class="header" href="#layers-of-an-architecture">layers of an architecture</a></h1>
 <div class="columns">
 <div class="column" width="60%">
 <ul>
@@ -819,7 +819,7 @@ Dr. Milan Milanović</p>
 architecture</a>
 by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 </div>
-<h2 id="parts-of-an-architecture-1"><a class="header" href="#parts-of-an-architecture-1">parts of an architecture</a></h2>
+<h2 id="layers-of-an-architecture-1"><a class="header" href="#layers-of-an-architecture-1">layers of an architecture</a></h2>
 <div class="columns">
 <div class="column" width="60%">
 <ul>
@@ -844,7 +844,7 @@ by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 architecture</a>
 by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 </div>
-<h2 id="parts-of-an-architecture-2"><a class="header" href="#parts-of-an-architecture-2">parts of an architecture</a></h2>
+<h2 id="layers-of-an-architecture-2"><a class="header" href="#layers-of-an-architecture-2">layers of an architecture</a></h2>
 <div class="columns">
 <div class="column" width="60%">
 <ul>
@@ -870,7 +870,7 @@ business operations</li>
 architecture</a>
 by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 </div>
-<h2 id="parts-of-an-architecture-3"><a class="header" href="#parts-of-an-architecture-3">parts of an architecture</a></h2>
+<h2 id="layers-of-an-architecture-3"><a class="header" href="#layers-of-an-architecture-3">layers of an architecture</a></h2>
 <div class="columns">
 <div class="column" width="60%">
 <ul>
@@ -901,7 +901,7 @@ by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 <div class="notes">
 <p>CRUD = Create, Read, Update, Delete</p>
 </div>
-<h2 id="parts-of-an-architecture-4"><a class="header" href="#parts-of-an-architecture-4">parts of an architecture</a></h2>
+<h2 id="layers-of-an-architecture-4"><a class="header" href="#layers-of-an-architecture-4">layers of an architecture</a></h2>
 <div class="columns">
 <div class="column" width="60%">
 <ul>
@@ -925,19 +925,19 @@ by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 architecture</a>
 by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
 </div>
-<h2 id="how-separating-parts-helps-to-design-an-architecture"><a class="header" href="#how-separating-parts-helps-to-design-an-architecture">how separating parts helps to design an architecture?</a></h2>
+<h2 id="how-separating-layers-helps-to-design-an-architecture"><a class="header" href="#how-separating-layers-helps-to-design-an-architecture">how separating layers helps to design an architecture?</a></h2>
 <ul>
 <li><span class="background-color-lightblue">separation of
-concerns</span>: each component has a clear responsibility, making the
+concerns</span>: each element has a clear responsibility, making the
 codebase easier to understand, maintain, and modify</li>
 <li><span class="background-color-lightblue">modularity and
-reusability</span>: parts (components or services) that can be used
+reusability</span>: elements (components or services) that can be used
 across different parts of the application or even other projects</li>
 <li><span class="background-color-lightblue">scalability</span>: changes
-in one part (e.g., database layer) do not necessarily affect others,
-easier to replace one as the software scales</li>
+in one element (e.g., database layer) do not necessarily affect
+others, easier to replace one as the software scales</li>
 <li><span class="background-color-lightblue">ease of testing</span>: each
-part can be tested individually</li>
+element can be tested individually</li>
 </ul>
 <div class="text-smaller">
 <p>source: <a href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers in software
@@ -1351,6 +1351,97 @@ data model</li>
 MVC</a> - by
 Anthony Ferrara</p>
 </div>
+<h1 id="common-pitfalls-of-architecture-design-and-how-to-avoid-them"><a class="header" href="#common-pitfalls-of-architecture-design-and-how-to-avoid-them">common pitfalls of architecture design and how to avoid them</a></h1>
+<p>tight coupling between layers</p>
+<ul>
+<li>
+<p>follow dependency injection principles for flexible dependency
+management</p>
+</li>
+<li>
+<p>each layer should only interacts with its adjacent layer through
+well-defined interfaces</p>
+</li>
+</ul>
+<p>too many layers</p>
+<ul>
+<li>
+<p>define the essential layers based on your application requirements;
+4‑5 layers are usually enough</p>
+</li>
+<li>
+<p>avoid splitting responsibilities into too many small layers without
+reason</p>
+</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers in software
+architecture</a>
+by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
+</div>
+<h2 id="common-pitfalls-of-architecture-design-and-how-to-avoid-them-1"><a class="header" href="#common-pitfalls-of-architecture-design-and-how-to-avoid-them-1">common pitfalls of architecture design and how to avoid them</a></h2>
+<p>cross-layer communication</p>
+<ul>
+<li>
+<p>violates the separation of concerns</p>
+</li>
+<li>
+<p>each layer only interacts with its adjacent layers (see
+<span class="tooltip"
+title="An object should only interact with its immediate friends, not strangers.">law
+of Demeter</span>)</p>
+</li>
+</ul>
+<p>mixing business logic in the presentation layer</p>
+<ul>
+<li>
+<p>happens when business rules implemented directly in the presentation
+layer resulting duplicated or inconsistent logic, which is harder to
+update, scale, or test</p>
+</li>
+<li>
+<p>keep business logic in the business logic layer and presentation layer
+should only display data/status updates</p>
+</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers in software
+architecture</a>
+by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
+</div>
+<h2 id="common-pitfalls-of-architecture-design-and-how-to-avoid-them-2"><a class="header" href="#common-pitfalls-of-architecture-design-and-how-to-avoid-them-2">common pitfalls of architecture design and how to avoid them</a></h2>
+<p>failure to refactor and maintain the architecture</p>
+<ul>
+<li>
+<p>“over time, the architecture may become outdated or cluttered with
+technical debt, making it hard to scale or add new features” (<a href="#ref-hudge2024layers">Hudge,
+2024</a>)</p>
+</li>
+<li>
+<p>regularly review and refactor the codebase to keep layers clean and
+maintainable – iterative design, <span class="tooltip"
+title="Leave the code cleaner than you found it.">boys scout
+rule</span></p>
+</li>
+</ul>
+<p>lack of proper layer abstraction</p>
+<ul>
+<li>
+<p>“if layers are not abstracted properly (e.g., exposing internal
+implementation details), it becomes difficult to replace or update
+components without affecting other layers” (<a href="#ref-hudge2024layers">Hudge,
+2024</a>)</p>
+</li>
+<li>
+<p>each layer should have a clear interface that hides internal details
+from other layers</p>
+</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers in software
+architecture</a>
+by Sagar Hudge (<a href="#ref-hudge2024layers">Hudge, 2024</a>)</p>
+</div>
 <h1 id="law-of-leaky-abstractions"><a class="header" href="#law-of-leaky-abstractions">law of leaky abstractions</a></h1>
 <blockquote>
 <p>All non-trivial abstractions, to some degree, are leaky.</p>
@@ -1607,8 +1698,7 @@ which reduces interruption</li>
 ADRs</a> by Eli Perkins</p>
 </div>
 <h1 id="references"><a class="header" href="#references">references</a></h1>
-<div id="refs"
-class="text-smaller references csl-bib-body hanging-indent"
+<div id="refs" class="text-small references csl-bib-body hanging-indent"
 line-spacing="2">
 <div id="ref-baeldung20214layered" class="csl-entry">
 <p>baeldung. (2021). <em>Layered architecture</em>. <a href="

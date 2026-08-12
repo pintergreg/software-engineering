@@ -842,8 +842,9 @@ of Software Engineering / Law of Demeter</a> by Dr. Milan Milanović</p>
 </div>
 </section></section>
 <section>
-<section id="parts-of-an-architecture" class="title-slide slide level1">
-<h1>parts of an architecture</h1>
+<section id="layers-of-an-architecture"
+class="title-slide slide level1">
+<h1>layers of an architecture</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
@@ -875,8 +876,8 @@ data-cites="hudge2024layers"><a href="#/ref-hudge2024layers"
 role="doc-biblioref">[15]</a></span></p>
 </div>
 </section>
-<section id="parts-of-an-architecture-1" class="slide level2">
-<h2>parts of an architecture</h2>
+<section id="layers-of-an-architecture-1" class="slide level2">
+<h2>layers of an architecture</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
@@ -905,8 +906,8 @@ data-cites="hudge2024layers"><a href="#/ref-hudge2024layers"
 role="doc-biblioref">[15]</a></span></p>
 </div>
 </section>
-<section id="parts-of-an-architecture-2" class="slide level2">
-<h2>parts of an architecture</h2>
+<section id="layers-of-an-architecture-2" class="slide level2">
+<h2>layers of an architecture</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
@@ -937,8 +938,8 @@ data-cites="hudge2024layers"><a href="#/ref-hudge2024layers"
 role="doc-biblioref">[15]</a></span></p>
 </div>
 </section>
-<section id="parts-of-an-architecture-3" class="slide level2">
-<h2>parts of an architecture</h2>
+<section id="layers-of-an-architecture-3" class="slide level2">
+<h2>layers of an architecture</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
@@ -972,8 +973,8 @@ role="doc-biblioref">[15]</a></span></p>
 <p>CRUD = Create, Read, Update, Delete</p>
 </aside>
 </section>
-<section id="parts-of-an-architecture-4" class="slide level2">
-<h2>parts of an architecture</h2>
+<section id="layers-of-an-architecture-4" class="slide level2">
+<h2>layers of an architecture</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
@@ -1000,21 +1001,21 @@ data-cites="hudge2024layers"><a href="#/ref-hudge2024layers"
 role="doc-biblioref">[15]</a></span></p>
 </div>
 </section>
-<section id="how-separating-parts-helps-to-design-an-architecture"
+<section id="how-separating-layers-helps-to-design-an-architecture"
 class="slide level2">
-<h2>how separating parts helps to design an architecture?</h2>
+<h2>how separating layers helps to design an architecture?</h2>
 <ul>
 <li><span class="background-color-lightblue">separation of
-concerns</span>: each component has a clear responsibility, making the
+concerns</span>: each element has a clear responsibility, making the
 codebase easier to understand, maintain, and modify</li>
 <li><span class="background-color-lightblue">modularity and
-reusability</span>: parts (components or services) that can be used
+reusability</span>: elements (components or services) that can be used
 across different parts of the application or even other projects</li>
 <li><span class="background-color-lightblue">scalability</span>: changes
-in one part (e.g., database layer) do not necessarily affect others,
+in one element (e.g., database layer) do not necessarily affect others,
 easier to replace one as the software scales</li>
 <li><span class="background-color-lightblue">ease of testing</span>:
-each part can be tested individually</li>
+each element can be tested individually</li>
 </ul>
 <div class="text-smaller">
 <p>source: <a
@@ -1464,6 +1465,136 @@ href="https://blog.ircmaxell.com/2014/11/alternatives-to-mvc.html">Alternatives
 To MVC</a> - by Anthony Ferrara</p>
 </div>
 </section></section>
+<section>
+<section
+id="common-pitfalls-of-architecture-design-and-how-to-avoid-them"
+class="title-slide slide level1">
+<h1>common pitfalls of architecture design and how to avoid them</h1>
+<dl>
+<dt>tight coupling between layers</dt>
+<dd>
+<ul>
+<li>follow dependency injection principles for flexible dependency
+management</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>each layer should only interacts with its adjacent layer through
+well-defined interfaces</li>
+</ul>
+</dd>
+<dt>too many layers</dt>
+<dd>
+<ul>
+<li>define the essential layers based on your application requirements;
+4‑5 layers are usually enough</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>avoid splitting responsibilities into too many small layers without
+reason</li>
+</ul>
+</dd>
+</dl>
+<div class="text-smaller">
+<p>source: <a
+href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers
+in software architecture</a> by Sagar Hudge <span class="citation"
+data-cites="hudge2024layers"><a href="#/ref-hudge2024layers"
+role="doc-biblioref">[15]</a></span></p>
+</div>
+</section>
+<section
+id="common-pitfalls-of-architecture-design-and-how-to-avoid-them-1"
+class="slide level2">
+<h2>common pitfalls of architecture design and how to avoid them</h2>
+<dl>
+<dt>cross-layer communication</dt>
+<dd>
+<ul>
+<li>violates the separation of concerns</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>each layer only interacts with its adjacent layers (see <span
+class="tooltip"
+title="An object should only interact with its immediate friends, not strangers.">law
+of Demeter</span>)</li>
+</ul>
+</dd>
+<dt>mixing business logic in the presentation layer</dt>
+<dd>
+<ul>
+<li>happens when business rules implemented directly in the presentation
+layer resulting duplicated or inconsistent logic, which is harder to
+update, scale, or test</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>keep business logic in the business logic layer and presentation
+layer should only display data/status updates</li>
+</ul>
+</dd>
+</dl>
+<div class="text-smaller">
+<p>source: <a
+href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers
+in software architecture</a> by Sagar Hudge <span class="citation"
+data-cites="hudge2024layers"><a href="#/ref-hudge2024layers"
+role="doc-biblioref">[15]</a></span></p>
+</div>
+</section>
+<section
+id="common-pitfalls-of-architecture-design-and-how-to-avoid-them-2"
+class="slide level2">
+<h2>common pitfalls of architecture design and how to avoid them</h2>
+<dl>
+<dt>failure to refactor and maintain the architecture</dt>
+<dd>
+<ul>
+<li>“over time, the architecture may become outdated or cluttered with
+technical debt, making it hard to scale or add new features” <span
+class="citation" data-cites="hudge2024layers"><a
+href="#/ref-hudge2024layers" role="doc-biblioref">[15]</a></span></li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>regularly review and refactor the codebase to keep layers clean and
+maintainable – iterative design, <span class="tooltip"
+title="Leave the code cleaner than you found it.">boys scout
+rule</span></li>
+</ul>
+</dd>
+<dt>lack of proper layer abstraction</dt>
+<dd>
+<ul>
+<li>“if layers are not abstracted properly (e.g., exposing internal
+implementation details), it becomes difficult to replace or update
+components without affecting other layers” <span class="citation"
+data-cites="hudge2024layers"><a href="#/ref-hudge2024layers"
+role="doc-biblioref">[15]</a></span></li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>each layer should have a clear interface that hides internal details
+from other layers</li>
+</ul>
+</dd>
+</dl>
+<div class="text-smaller">
+<p>source: <a
+href="https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6">Layers
+in software architecture</a> by Sagar Hudge <span class="citation"
+data-cites="hudge2024layers"><a href="#/ref-hudge2024layers"
+role="doc-biblioref">[15]</a></span></p>
+</div>
+</section></section>
 <section id="law-of-leaky-abstractions"
 class="title-slide slide level1">
 <h1>law of leaky abstractions</h1>
@@ -1745,7 +1876,7 @@ Write ADRs</a> by Eli Perkins</p>
 </section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="text-smaller references csl-bib-body" role="list">
+<div id="refs" class="text-small references csl-bib-body" role="list">
 <div id="ref-stemmler2019how" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
 Stemmler, <span>“How to learn software design and architecture.”</span>
