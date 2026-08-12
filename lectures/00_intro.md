@@ -88,37 +88,45 @@ link-citations: true
 # evaluation
 
 ::: {.r-fit-text}
-round(requirements analysis (35%) + design (35%) + midterm (30%))
+requirements analysis (35%) + design (35%) + midterm (30%)
 :::
 
-:::::::::::: {.columns .mt-4}
-::::::::: {.column width="60%"}
-- requirements analysis, software design: **team work**
-    - the team will get the same grades
+::: {.r-fit-text}
+e.g., requirements analysis (90×0.35) + design (85×0.35) + midterm (70×0.3) = 82.25 (4)
+:::
+
+:::::::::::: {.columns .mt-2}
+::::::::: {.column width="65%"}
+- requirements analysis and software design
+    - **team work**, where each team member gets the same grade expressed as a point (0--100)
 - midterm: **individual**
     - Moodle test
     - 50 random multiple-choice questions<br>(1 point each)
     - scores to grade conversion in the table
-- each part should reach passing grade (2)
+- each part should reach passing grade separately
 
 :::::::::
-::::::::: {.column width="40%"}
+::::::::: {.column width="35%"}
 
-|score    |grade|
-|--------:|:---:|
-|    0-29 |  1  |
-|   30-34 |  2  |
-|   35-39 |  3  |
-|   40-44 |  4  |
-|   45-50 |  5  |
+| score | %      |grade|
+|------:|-------:|:---:|
+|  0-25 |   0-50 |  1  |
+| 26-33 |  51-66 |  2  |
+| 34-38 |  67-76 |  3  |
+| 39-42 |  77-86 |  4  |
+| 43-50 | 87-100 |  5  |
 
 :::::::::
 ::::::::::::
 
+::: {}
+activity during lectures may be rewarded up to 5 percentage point
+:::
+
 ::: notes
 The groups submit their requirement analysis and the software design as a set of diagrams (user story map, C4, etc.) and text.
 Both the requirement analysis and the software design represent 35% of the overall grade, and the individual midterm provides 30%. 
-The midterm consists of 50 multiple-choice questions, with a total of 50 points available. The conversion of exam points to grades is as follows:
+The midterm consists of 50 multiple-choice questions, with a total of 50 points available.
 :::
 
 

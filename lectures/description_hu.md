@@ -30,21 +30,23 @@ A követelményelemzés és a szoftverterv egyaránt a teljes osztályzat 35%-á
 A zárthelyi 50 feleltválasztós kérdésből áll, amellyel 50 pont szerezhető (1 pont kérdésenként). A ZH pontok jegyre váltását az alábbi táblázat mutatja.
 
 A végső jegy a követelményelemzés (35%), a tervezés (35%), és a zárhelyi (30%) súlyozott átlaga.
+Például, követelményelemzés (90×0.35) + tervezés (85×0.35) + zárhelyi (70×0.3) = 82.25 (4)
 
 - követelményelemzés, szoftver tervezés: **csapatmunka**
-    - mindenki azonos jegyet kap egy csapatban
+    - mindenki azonos jegyet (pontot) kap egy csapatban (0-100)
 - zárthelyi: **egyéni**
     - Moodle teszt
     - 50 véletlenszerű feleltválasztós kérdés (1 pont kérdésenként)
 - minden résznek külön elégségesnek kell lennie (2-es)
+- az aktív részvétel az előadásokon akár 5 százalékponttal is jutalmazható
 
-|pont     |jegy |
-|--------:|:---:|
-|    0-29 |  1  |
-|   30-34 |  2  |
-|   35-39 |  3  |
-|   40-44 |  4  |
-|   45-50 |  5  |
+| pont  | %      |jegy |
+|------:|-------:|:---:|
+|  0-25 |   0-50 |  1  |
+| 26-33 |  51-66 |  2  |
+| 34-38 |  67-76 |  3  |
+| 39-42 |  77-86 |  4  |
+| 43-50 | 87-100 |  5  |
 
 ## tanulási eredmények
 
