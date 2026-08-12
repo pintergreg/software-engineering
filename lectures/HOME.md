@@ -163,6 +163,7 @@ MVC-MVP-MVVM
 - [Practical training for creating more usable products](https://balsamiq.com/learn/) - by balsamiq
 - [The Clean Code Handbook](https://www.freecodecamp.org/news/the-clean-code-handbook/) - by Shahan Chowdhury
 - [Clean Code sumamry](https://www.learnerd.org/book_summary/technology/clean_code.html) -- watch the video!
+- [7 More Common Mistakes in Architecture Diagrams](https://www.ilograph.com/blog/posts/more-common-diagram-mistakes/) - by Billy Pilger
 
 ## week 9
 
