@@ -1425,6 +1425,28 @@ You can use [adr-tools](https://github.com/npryce/adr-tools) to manage the markd
 based on [Why Write ADRs](https://github.blog/2020-08-13-why-write-adrs/) by Eli Perkins
 :::
 
+# summary
+
+|                          |
+|--------------------------|-------------------------------------------------|
+| architectural patterns   | model-view-controller, MVP, MVVM                |
+| architectural styles     | layered, onion, hexagonal, clear, client-server |
+| architectural principles | coupling & cohesion                             |
+| [design patterns]{.alpha-50} | [GOF, map-filter-reduce]{.alpha-50} |
+| desing principles        | SOLID, DRY, YAGNI, hollywood principle |
+
+:::::::::::: {.columns .mt-3}
+::::::::: {.column width="50%" .mt-2}
+- law of demeter
+- law of leaky abstractions
+- law of unintended consequences
+
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/publicdomainvectors/law-and-justice-concept.svg){width=150}
+:::::::::
+::::::::::::
+
 # references
 
 ::: {#refs .text-small}
