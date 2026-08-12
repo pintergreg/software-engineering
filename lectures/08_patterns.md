@@ -605,7 +605,7 @@ source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareen
 source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareengineering.com/laws/law-of-demeter/) by Dr. Milan Milanović 
 :::
 
-# parts of an architecture
+# layers of an architecture
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
@@ -631,7 +631,7 @@ source: [Laws of Software Engineering / Law of Demeter](https://lawsofsoftwareen
 source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
 :::
 
-## parts of an architecture
+## layers of an architecture
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
@@ -654,7 +654,7 @@ source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers
 source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
 :::
 
-## parts of an architecture
+## layers of an architecture
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
@@ -677,7 +677,7 @@ source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers
 source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
 :::
 
-## parts of an architecture
+## layers of an architecture
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
@@ -704,7 +704,7 @@ source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers
 CRUD = Create, Read, Update, Delete
 :::
 
-## parts of an architecture
+## layers of an architecture
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
@@ -726,12 +726,12 @@ CRUD = Create, Read, Update, Delete
 source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
 :::
 
-## how separating parts helps to design an architecture?
+## how separating layers helps to design an architecture?
 
-- [separation of concerns]{.background-color-lightblue}: each component has a clear responsibility, making the codebase easier to understand, maintain, and modify
-- [modularity and reusability]{.background-color-lightblue}: parts (components or services) that can be used across different parts of the application or even other projects
-- [scalability]{.background-color-lightblue}: changes in one part (e.g., database layer) do not necessarily affect others, easier to replace one as the software scales
-- [ease of testing]{.background-color-lightblue}: each part can be tested individually
+- [separation of concerns]{.background-color-lightblue}: each element has a clear responsibility, making the codebase easier to understand, maintain, and modify
+- [modularity and reusability]{.background-color-lightblue}: elements (components or services) that can be used across different parts of the application or even other projects
+- [scalability]{.background-color-lightblue}: changes in one element (e.g., database layer) do not necessarily affect others, easier to replace one as the software scales
+- [ease of testing]{.background-color-lightblue}: each element can be tested individually
 
 ::: {.text-smaller}
 source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
@@ -1103,6 +1103,55 @@ other alternatives: [Alternatives To MVC ](https://blog.ircmaxell.com/2014/11/al
 :::
 
 
+# common pitfalls of architecture design and how to avoid them
+
+tight coupling between layers
+
+~ - follow dependency injection principles for flexible dependency management
+~ - each layer should only interacts with its adjacent layer through well-defined interfaces
+
+too many layers
+
+~ - define the essential layers based on your application requirements; 4&#8209;5&nbsp;layers are usually enough 
+~ - avoid splitting responsibilities into too many small layers without reason
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+## common pitfalls of architecture design and how to avoid them
+
+cross-layer communication 
+
+~ - violates the separation of concerns
+~ - each layer only interacts with its adjacent layers (see [law of Demeter]{.tooltip title="An object should only interact with its immediate friends, not strangers."})
+
+mixing business logic in the presentation layer
+
+~ - happens when business rules implemented directly in the presentation layer resulting duplicated or inconsistent logic, which is harder to update, scale, or test
+~ - keep business logic in the business logic layer and presentation layer should only display data/status updates
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+## common pitfalls of architecture design and how to avoid them
+
+failure to refactor and maintain the architecture
+
+~ - "over time, the architecture may become outdated or cluttered with technical debt, making it hard to scale or add new features" [@hudge2024layers]
+~ - regularly review and refactor the codebase to keep layers clean and maintainable -- iterative design, [boys scout rule]{.tooltip title="Leave the code cleaner than you found it."}
+
+lack of proper layer abstraction
+
+~ - "if layers are not abstracted properly (e.g., exposing internal implementation details), it becomes difficult to replace or update components without affecting other layers" [@hudge2024layers]
+~ - each layer should have a clear interface that hides internal details from other layers
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+
 # law of leaky abstractions
 
 > All non-trivial abstractions, to some degree, are leaky.
@@ -1124,7 +1173,6 @@ other alternatives: [Alternatives To MVC ](https://blog.ircmaxell.com/2014/11/al
 ::: {.text-smaller}
 source: Wikipedia / [Leaky abstraction](https://en.wikipedia.org/wiki/Leaky_abstraction) [@enwiki:1314409362]
 :::
-
 
 # user statistics example
 
