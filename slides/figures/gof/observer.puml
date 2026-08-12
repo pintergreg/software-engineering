@@ -1,0 +1,36 @@
+@startuml
+skin rose
+scale 2
+
+class Observable {
+    - subscribers[]
+    + void subscribe()
+    + void unsubscribe()
+    + void notify()
+}
+
+interface Subscriber {
+    + void update()
+}
+
+class subscribe1 {
+    - state
+    + void update()
+}
+
+class subscribe2 {
+    - state
+    + void update()
+}
+
+Subscriber <|.. subscribe1
+Subscriber <|.. subscribe2
+
+Observable "0..*" <.right. Subscriber
+
+note right of Observable::notify
+  for s in subscribers:
+    s.update()
+end note
+
+@enduml

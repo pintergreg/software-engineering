@@ -263,6 +263,10 @@ Software” (1994) (<a href="#ref-gamma1994design">Gamma et al., 1994</a>)</li>
 <a href="https://refactoring.guru/design-patterns/catalog">refactoring.guru</a></p>
 </div>
 <h2 id="bridge-pattern-structural"><a class="header" href="#bridge-pattern-structural">bridge pattern (structural)</a></h2>
+<div class="wide-quote text-smaller">
+<p>The bridge pattern lets you split a large class or a set of closely
+related classes into two separate hierarchies.</p>
+</div>
 <img src="figures/gof/bridge_pre.svg" height="175" />
 <div class="r-stack fragment" data-fragment-index="1">
 <div class="fragment fade-out" data-fragment-index="2">
@@ -271,6 +275,86 @@ Software” (1994) (<a href="#ref-gamma1994design">Gamma et al., 1994</a>)</li>
 <div class="fragment" data-fragment-index="2">
 <img src="figures/gof/bridge_2.svg" height="225" />
 </div>
+</div>
+<!--## observer pattern (behavioral)
+&#10;- instead of flooding the service with update requests,
+- or the server sending notifications to everyone
+- clients can subscribe to notifications
+- this is exactly how newsletters work-->
+<h2 id="observer-pattern-behavioral"><a class="header" href="#observer-pattern-behavioral">observer pattern (behavioral)</a></h2>
+<ul>
+<li>instead of flooding the service with update requests, or the server
+sending notifications to everyone clients can subscribe to
+notifications</li>
+<li>this is exactly how newsletters work</li>
+</ul>
+<div class="columns">
+<div class="column" width="60%">
+<p><img src="figures/gof/observer.svg" alt="" /></p>
+</div>
+<div class="column mt-3" width="40%">
+<p><img src="figures/gof/observer_sequence.svg" alt="" /></p>
+</div>
+</div>
+<div class="text-smaller">
+<p>more at: <a href="https://refactoring.guru/design-patterns/observer">refactoring.guru /
+Observer</a></p>
+</div>
+<h2 id="observer-pattern---python-example"><a class="header" href="#observer-pattern---python-example">observer pattern - Python example</a></h2>
+<div class="columns text-smaller">
+<div class="column" width="45%">
+<pre><code class="language-python">class Observable:
+    def __init__(self):
+        self.subscribers = []
+
+    def subscribe(self, subscriber):
+        self.subscribers.append(subscriber)
+
+    def notify(self, data):
+        for subscriber in self.subscribers:
+            subscriber.update(data)
+
+class Subscriber:  # aka Observer
+    def __init__(self, name):
+        self.name = name
+
+    def update(self, data):
+        print(f"{self.name} received data: {data}")
+</code></pre>
+</div>
+<div class="column" width="55%">
+<pre><code class="language-python">class TemperatureSensor(Observable):
+    def __init__(self):
+        super().__init__()
+
+    def change_temperature(self, temp):
+        print(f"Temperature changed to: {temp}")
+        self.notify(temp)
+
+class DisplayUnit(Subscriber):
+    def update(self, temp):
+        print(f"{self.name} updated with temperature: {temp}")
+</code></pre>
+<pre><code class="language-python">sensor = TemperatureSensor()  # create observable
+
+display1 = DisplayUnit("Display 1")  # create observer
+display2 = DisplayUnit("Display 2")  # create observer
+
+sensor.subscribe(display1)
+sensor.subscribe(display2)
+
+sensor.change_temperature(25)  # change value
+</code></pre>
+<pre><code>Temperature changed to: 25
+Display 1 updated with temperature: 25
+Display 2 updated with temperature: 25
+</code></pre>
+</div>
+</div>
+<div class="text-small">
+<p>example code is based on: <a href="https://softwarepatternslexicon.com/functional-programming/essential-functional-programming-patterns/observer-pattern-in-functional-reactive-programming/">Observer Pattern in Functional Reactive
+Programming
+(FRP)</a></p>
 </div>
 <h2 id="gof-design-patterns-in-functional-programming"><a class="header" href="#gof-design-patterns-in-functional-programming">GoF design patterns in functional programming</a></h2>
 <table>
@@ -658,19 +742,33 @@ other way round. (<a href="#ref-millington2019solid">Millington, 2019</a>)</p>
 <li>IoC shifts control from the application to an outside framework</li>
 <li>promotes a more modular design by decoupling components
 <ul>
-<li>however, adding an IoC framework can increase complexity
-<ul>
+<li>however, adding an IoC framework can increase complexity</li>
 <li>with a significant learning curve for those unfamiliar with the
 concept</li>
 </ul>
 </li>
-</ul>
+<li>observer pattern (Gang of Four design pattern) is a form of IoC<!-- - dependency injection os also a form of IoC -->
 </li>
-<li>e.g., Spring Framework, ASP.NET Core</li>
 </ul>
 <div class="text-smaller">
-<p>based on (<a href="#ref-stec2024inversion">Stec, 2024</a>)</p>
+<p>based on (<a href="#ref-stec2024inversion">Stec, 2024</a>), <a href="https://www.sitepoint.com/three-design-patterns-that-use-inversion-of-control/">Three Design Patterns
+That Use Inversion of
+Control</a>
+by Alejandro Gervasio</p>
 </div>
+<!--## dependency injection
+&#10;:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+&#10;:::::::::
+::::::::: {.column width="50%" .wide-quote .text-smaller}
+**dependency injection for five-year-olds**
+&#10;> When you go and get things out of the refrigerator for yourself, you can cause problems. You might leave the door open, you might get something Mommy or Daddy don't want you to have. You might even be looking for something we don't even have or which has expired.
+>
+> What you should be doing is stating a need, "I need something to drink with lunch," and then we will make sure you have something when you sit down to eat something.
+>
+> -- John Munsch, 28 October 2009. 
+&#10;:::::::::
+::::::::::::-->
 <h1 id="coupling"><a class="header" href="#coupling">coupling</a></h1>
 <div class="columns">
 <div class="column mt-5" width="55%">
@@ -1353,15 +1451,11 @@ Anthony Ferrara</p>
 </div>
 <h1 id="common-pitfalls-of-architecture-design-and-how-to-avoid-them"><a class="header" href="#common-pitfalls-of-architecture-design-and-how-to-avoid-them">common pitfalls of architecture design and how to avoid them</a></h1>
 <p>tight coupling between layers</p>
+<!-- ~ - follow dependency injection principles for flexible dependency management -->
+<p>~ - use techniques like inversion of control for flexible dependency management</p>
 <ul>
-<li>
-<p>follow dependency injection principles for flexible dependency
-management</p>
-</li>
-<li>
-<p>each layer should only interacts with its adjacent layer through
-well-defined interfaces</p>
-</li>
+<li>each layer should only interacts with its adjacent layer through
+well-defined interfaces</li>
 </ul>
 <p>too many layers</p>
 <ul>

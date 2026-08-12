@@ -1,0 +1,9 @@
+@startuml
+skin rose
+scale 2
+
+Observable -> "Subscriber1" : notify
+Subscriber1 --> Subscriber1: update
+Observable -> "Subscriber2" : notify
+Subscriber2 --> Subscriber2: update
+@enduml
