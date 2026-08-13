@@ -1,16 +1,16 @@
 [book]
 authors = ["Gergő Pintér"]
-multilingual = false
 src = "src"
 title = "handout"
 description = "software engineering"
+language = "en"
 
 [rust]
 edition = "2021"
 
 [output.html]
 git-repository-url = "https://github.com/pintergreg/software-engineering"
-site-url = "https://pintergreg.github.io/software-engineering/"
+site-url = "/software-engineering/"
 mathjax-support = true
 # additional-js = ["quizdown/quizdown.js", "quizdown/quizdown-init.js"]
 additional-css = ["assets/custom-mdbook.css"]
@@ -20,5 +20,6 @@ enable = true
 level = 1
 
 [preprocessor.toc]
+optional = true
 command = "mdbook-toc"
 renderer = ["html"]
