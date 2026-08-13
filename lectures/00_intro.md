@@ -364,9 +364,47 @@ which can get performing a requirement analysis
 ::::::::::::
 
 :::{.text-smaller}
-readings: [From Today, Software Engineering is Dead](https://building138.com/from-today-software-engineering-is-dead) by Russell Jennings
+reading: [From Today, Software Engineering is Dead](https://building138.com/from-today-software-engineering-is-dead) by Russell Jennings
 :::
 
+# industrial revolution in software engineering
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![](figures/industrial_software_1.drawio.svg)
+
+- traditionally, software has been closer to craft than manufacture
+- personal or disposable software appears
+- perhaps not so scalable or robust but works
+:::
+::: {.fragment .current-visible data-fragment-index=1}
+![](figures/industrial_software_2.drawio.svg)
+
+- AI changes this: as with photography, [SE]{.tooltip title="software engineering"} got cheaply available for everyone
+- brings mass production of code
+
+<!-- - also, software is getting more industrialized -->
+:::
+::: {.fragment .current-visible data-fragment-index=2}
+![](figures/industrial_software_3.drawio.svg)
+
+- craftmanship still exists and remains but maybe the direction changes
+- focuses on finding and solving new problems
+- it's a cycle though
+
+:::
+::: {.fragment .current-visible data-fragment-index=3}
+![](figures/industrial_software_4.drawio.svg)
+
+> Industrialisation does not replace technological progress, but it will greatly accelerate both the absorption of new ideas and the commoditisation of new capabilities. -- Chris Loy
+
+
+:::
+::::::
+
+:::{.text-smaller}
+source/reading: [The rise of industrial software](https://chrisloy.dev/post/2025/12/30/the-rise-of-industrial-softwared) by Chris Loy [@loy2025rise]
+:::
 
 # software development is like building a house
 
@@ -1437,5 +1475,5 @@ see KISS philosophy...
 
 # references
 
-::: {#refs .text-smaller}
+::: {#refs .text-small}
 :::
