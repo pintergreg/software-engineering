@@ -18,6 +18,7 @@
 - [The Cathedral, the Bazaar, and the Winchester Mystery House](https://www.dbreunig.com/2026/03/26/winchester-mystery-house.html) - by Drew Breunig
 - [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html) - by François Zaninotto
 - [The rise of industrial software](https://chrisloy.dev/post/2025/12/30/the-rise-of-industrial-softwared) - by Chris Loy
+- [Eight Myths on Software Engineering and GenAI](https://queue.acm.org/detail.cfm?id=3807963) - by Jenna Butler et al.
 
 ## week 2
 
