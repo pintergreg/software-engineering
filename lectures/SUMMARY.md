@@ -1,6 +1,6 @@
 # summary
 
-[home](lectures/HOME.md)
+[home](/)
 [course description](lectures/description.md)
 [introduction](lectures/00_intro.md)
 [software development life cycle](lectures/01_sdlc.md)
