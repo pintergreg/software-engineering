@@ -127,8 +127,9 @@ DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/){target="_blank"} -- a web-ba
 ## geo-mapping
 
 - responsible for determining the location of the drone show
-- using GPS coordinates
-- saving/loading/editing area description files
+    - using GPS coordinates
+- the height as well so the result is a 3D hull
+- saving/loading/editing area/volume description files
 - mapping the animation trajectory to real world (GPS) coordinates
 - DEMO: [geojson.io](https://geojson.io/?map=15.43/47.52645/19.04699)
 
