@@ -158,6 +158,33 @@ DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/){target="_blank"} -- a web-ba
 :::::::::
 ::::::::::::
 
+# not architecture, sketch
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![](../lectures/figures/choreographer/component.drawio.svg){width=700}
+
+more like usage roles than actual components in terms of architecture
+
+:::
+::: {.fragment .current-visible data-fragment-index=1}
+![](../lectures/figures/choreographer/internals.drawio.svg){width=600}
+
+- there are _shared_ components practical to implement once
+- this figure is not comprehensive!
+:::
+::::::
+
+## not architecture, sketch
+
+![](../lectures/figures/choreographer/data_flow.drawio.svg){width=8000}
+
+- data flow sketch
+- drone vendor SDK can be assumed
+- lines between the software and the drone are not part of the assignment
+- this figure is not comprehensive!
+
+
 # contents -- outline
 
 - introduction
@@ -235,7 +262,7 @@ DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/){target="_blank"} -- a web-ba
 ::::::::::::
 
 
-# suggested software for
+## suggested software for
 
 :::::::::::: {.columns}
 ::::::::: {.column width="70%"}
