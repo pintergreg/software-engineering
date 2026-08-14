@@ -90,6 +90,15 @@ further regarding: [Laws of Software Engineering](https://lawsofsoftwareengineer
 :::
 
 
+## IKEA on TESAMMANS collection {visibility=hidden}
+
+::: {.wide-quote}
+> Each piece focuses on an unexpected yet harmonious palette marked by [surprising colour combinations]{.background-color-lightblue} and playful patterns. 
+>
+> February 2024, [IKEA and Raw Color unveil the colourful TESAMMANS collection](https://www.ikea.com/global/en/newsroom/collaborations/ikea-launching-tesammans-collaboration-with-raw-color-240228/)
+
+:::
+
 # wireframe
 
 :::::::::::: {.columns}
