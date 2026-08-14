@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
 # Controls when the workflow will run
@@ -13,7 +11,6 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-    # This workflow contains a single job called "build"
     build:
         runs-on: ubuntu-24.04
 
@@ -23,7 +20,7 @@ jobs:
             - name: install dependencies
               run: |
                   sudo apt-get install -y ruby pandoc npm
-                  wget -qO mdbook.tar.gz https://github.com/rust-lang/mdBook/releases/download/v0.4.41/mdbook-v0.4.41-x86_64-unknown-linux-gnu.tar.gz
+                  wget -qO mdbook.tar.gz https://github.com/rust-lang/mdBook/releases/download/v0.4.52/mdbook-v0.4.52-x86_64-unknown-linux-gnu.tar.gz
                   sudo tar xf mdbook.tar.gz -C /usr/local/bin mdbook
                   mdbook --version
                   rm -rf mdbook.tar.gz
