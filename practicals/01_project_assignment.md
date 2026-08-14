@@ -85,7 +85,7 @@ There are some dependency between the modules. For example, the _shape design_ p
 - 3D sculpting 
 - the exported model is used by the animation component
 
-DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/) -- a web-based sculpting and painting application
+DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/){target="_blank"} -- a web-based sculpting and painting application
 
 
 :::::::::
@@ -104,6 +104,9 @@ DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/) -- a web-based sculpting and
 - each frame holds some models in a position, orientation, color
 - allows modifications of a model
 - computes transformations between frames
+<!-- - video editor demo: [VidStudio](https://vidstudio.app/video-editor) -->
+
+2D DEMO: [Motionity](https://www.motionity.app/){target="_blank"} -- a web-based motion graphics editor
 
 :::::::::::: {.columns .mt-2 .column-gapless}
 ::::::::: {.column width="33%"}
