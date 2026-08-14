@@ -2,7 +2,7 @@
 
 ## week 1
 
-1. [intro, software architecture](/slides/00_intro.html)
+1. [intro, software architecture](/software-engineering/slides/00_intro.html)
 2. [project assignment](slides/01_project_assignment.html)
 
 ### readings
