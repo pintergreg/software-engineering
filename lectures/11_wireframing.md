@@ -287,4 +287,5 @@ shows user flow, ~ user story map flow
 - [How to Create a Wireframe Map](https://blog.hubspot.com/website/wireframe-map) - by Maddy Osman
 - [UI Prototypes](https://www.interaction-design.org/literature/topics/prototypes)
 - [Practical training for creating more usable products](https://balsamiq.com/learn/) - by balsamiq
+- a bit of fun: [The worst volume control UI in the world](https://uxdesign.cc/the-worst-volume-control-ui-in-the-world-60713dc86950)
 :::
