@@ -319,3 +319,19 @@ it is enough to upload it by one person from each team
     - and a more technical part focusing on the internal structures
         - zoom into the system as C4 modelling propagates
         - detail the interfaces and the environments where a software will operate
+
+# {.exclude}
+
+:::::::::::: {.columns}
+::::::::: {.column width="65%"}
+::: {.r-fit-text .mt-4}
+questions?
+
+:::
+
+:::::::::
+::::::::: {.column width="35%"}
+![](../lectures/figures/publicdomainvectors/question-mark-color.svg){width="150"}
+
+:::::::::
+:::::::::::: 
