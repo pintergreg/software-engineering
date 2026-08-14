@@ -147,8 +147,8 @@ width="700" /></p>
 <li>3D sculpting</li>
 <li>the exported model is used by the animation component</li>
 </ul>
-<p>DEMO: <a href="https://nomadsculpt.com/demo/">Nomad Sculpt</a> – a
-web-based sculpting and painting application</p>
+<p>DEMO: <a href="https://nomadsculpt.com/demo/" target="_blank">Nomad
+Sculpt</a> – a web-based sculpting and painting application</p>
 </div><div class="column" style="width:30%;">
 <figure>
 <img data-src="../lectures/figures/choreographer/viewport.drawio.svg"
@@ -168,8 +168,11 @@ alt="shape design GUI mockup" />
 <li>handles a timeline, which consist of frames</li>
 <li>each frame holds some models in a position, orientation, color</li>
 <li>allows modifications of a model</li>
-<li>computes transformations between frames</li>
+<li>computes transformations between frames
+<!-- - video editor demo: [VidStudio](https://vidstudio.app/video-editor) --></li>
 </ul>
+<p>2D DEMO: <a href="https://www.motionity.app/"
+target="_blank">Motionity</a> – a web-based motion graphics editor</p>
 <div class="columns mt-2 column-gapless">
 <div class="column" style="width:33%;">
 <p><img
@@ -190,9 +193,12 @@ class="m-0" /></p>
 <section id="geo-mapping" class="slide level2">
 <h2>geo-mapping</h2>
 <ul>
-<li>responsible for determining the location of the drone show</li>
+<li>responsible for determining the location of the drone show
+<ul>
 <li>using GPS coordinates</li>
-<li>saving/loading/editing area description files</li>
+</ul></li>
+<li>the height as well so the result is a 3D hull</li>
+<li>saving/loading/editing area/volume description files</li>
 <li>mapping the animation trajectory to real world (GPS)
 coordinates</li>
 <li>DEMO: <a
