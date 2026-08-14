@@ -35,34 +35,6 @@ link-citations: true
 
 ## user interface (UI) / user experience (UX)
 
-<!--according to Scott Jenson, the most important thing in design is _empathy_
-
-**understanding**
-
-~ - learn about your "users", convert them into people
-~ - market insight
-
-**bridging**
-
-~ - use that learning to mold technology into products that meet real needs
-~ - new products
-
-**flowing**
-
-~ - simplify the structure of the product to streamline use
-~ - intuitive design
-
-**refining**
-
-~ - sweat the details, get the little things right that save time and boost value
-~ - delight users
-
-::: {.text-smaller}
-source: [The Paradox of Empathy](https://jenson.org/paradox/) by Scott Jenson
-:::
-
-## user interface (UI) / user experience (UX)-->
-
 according to Scott Jenson, the most important thing in design is _empathy_
 
 **understanding**
@@ -103,87 +75,6 @@ source: [The Paradox of Empathy](https://jenson.org/paradox/) by Scott Jenson
 optional reading on copywriting: [What is UX Copywriting?](https://www.youngurbanproject.com/what-is-ux-copywriting/) by Sakshi Jonwal [@jonwal2025what]
 :::
 
-<!--
-# user interface (UI) / user experience (UX)
-
-according to Scott Jenson, design is
-
-:::::::::::: {.columns}
-::::::::: {.column width="32"}
-**understanding**
-
-::: {.text-smaller}
-- user tests
-- focus groups
-- surveys
-- interviews
-- personas
-
-:::
-:::::::::
-::::::::: {.column width="24%"}
-**bridging**
-
-::: {.text-smaller}
-- core tech pros/cons
-- what is easy?
-- what is hard?
-- what is important?
-
-:::
-:::::::::
-::::::::: {.column width="22%"}
-**flowing**
-
-::: {.text-smaller}
-- "real UX"
-- paper sketches
-- UX mockups
-- motion studies
-- journey maps
-
-:::
-:::::::::
-::::::::: {.column width="22%"}
-**refining**
-
-::: {.text-smaller}
-- design systems
-- color themes
-- animations
-- copywriting
-- stylguide
-- icons
-
-:::
-:::::::::
-::::::::::::
--->
-
-<!--
-|             |            |
-|:------------|------------|
-|understanding|user tests  |
-|             |focus groups|
-|             |surveys     |
-|             |interviews  |
-|             |personas    |
-|bridging     |pros/cons of core tech|
-|             |what is easy?         |
-|             |what is hard?         |
-|             |what it important?    |
-|flowing      |"real UX"             |
-|             |paper sketches        |
-|             |UX mockups            |
-|             |motion studies        |
-|             |journey maps          |
-|refining     |design systems        |
-|             |color themes          |
-|             |animations            |
-|             |copywriting           |
-|             |stylguide             |
-|             |icons                 |
--->
 
 # principle of least astonishment
 
