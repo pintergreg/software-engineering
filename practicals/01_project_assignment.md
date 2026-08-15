@@ -162,7 +162,7 @@ DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/){target="_blank"} -- a web-ba
 
 :::::: {.r-stack}
 ::: {.fragment .fade-out data-fragment-index=1}
-![](../lectures/figures/choreographer/component.drawio.svg){width=700}
+![](../lectures/figures/choreographer/component.drawio.svg){width=600}
 
 more like usage roles than actual components in terms of architecture
 
@@ -177,12 +177,29 @@ more like usage roles than actual components in terms of architecture
 
 ## not architecture, sketch
 
-![](../lectures/figures/choreographer/data_flow.drawio.svg){width=8000}
+![](../lectures/figures/choreographer/data_flow.drawio.svg){width=800}
 
 - data flow sketch
 - drone vendor SDK can be assumed
 - lines between the software and the drone are not part of the assignment
 - this figure is not comprehensive!
+
+
+## remember: it's like gardening
+
+:::::::::::: {.columns}
+::::::::: {.column width="65%"}
+- I have a plan in mind how this software would look like
+- yours can be different and it's perfectly fine
+- you're free to choose any solution that doesn't conflict with the description
+    - which is deliberately underspecified
+- the assignment values the process and the effort you put in work
+
+:::::::::
+::::::::: {.column width="35%"}
+![](../lectures/figures/publicdomainvectors/gardener-watering-with-a-hose.svg){width=250}
+:::::::::
+::::::::::::
 
 
 # contents -- outline
