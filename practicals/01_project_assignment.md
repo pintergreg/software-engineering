@@ -189,7 +189,7 @@ more like usage roles than actual components in terms of architecture
 
 :::::::::::: {.columns}
 ::::::::: {.column width="65%"}
-- I have a plan in mind how this software would look like
+- it is planned how this software would look like
 - yours can be different and it's perfectly fine
 - you're free to choose any solution that doesn't conflict with the description
     - which is deliberately underspecified
@@ -227,11 +227,15 @@ more like usage roles than actual components in terms of architecture
 - user stories
     - user story maps
 <!--     - with BDD-style acceptance criteria -->
-- flowcharts
 - first 3 level of C4
+- flowcharts
+- data flow diagram if needed
+- optionally data structure description
+    - could be UML
+- UI mockups
+
 <!--- also static and dynamic models of the software
     - 4th level / UML-->
-- UI mockups
 
 :::::::::
 ::::::::: {.column width="30%"}
@@ -248,11 +252,14 @@ more like usage roles than actual components in terms of architecture
 > -- Ben Shneiderman
 
 ::: {.mt-2}
-- create a **user story map** in details for one role's set of features
+- create a **user story map** in details for your team's set of features
     - for example the choreography design
-- you don't have to detail every single role
-    - but give an overview of the system
-    - illustrate the every roles and the connections between them
+    - you don't have to detail every single role
+    - because each team has its own responsibility
+- create container and component diagrams (C4)
+    - you don't have to detail other team's components, 
+    - but display them to give an realistic overview of the system
+    - illustrate every component and the connections between them
 
 :::
 
@@ -315,7 +322,7 @@ excalidraw has excelent shared work functionality
 ::::::::: {.column width="70%"}
 - you have to submit the main design document
 - you may indicate who was responsible for each part
-- including every diagram
+- including every diagram, and UI mockup
     - please keep every version of the diagrams and attach them to the submission as I would like to see the evolution of your design
 - and the presentation
 
