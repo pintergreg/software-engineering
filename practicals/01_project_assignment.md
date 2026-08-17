@@ -160,6 +160,15 @@ DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/){target="_blank"} -- a web-ba
 
 # not architecture, sketch
 
+![](../lectures/figures/choreographer/data_flow.drawio.svg){width=800}
+
+- data flow sketch
+- drone vendor SDK can be assumed
+- lines between the software and the drone are not part of the assignment
+- this figure is not comprehensive!
+
+## not architecture, sketch
+
 :::::: {.r-stack}
 ::: {.fragment .fade-out data-fragment-index=1}
 ![](../lectures/figures/choreographer/component.drawio.svg){width=600}
@@ -175,13 +184,12 @@ more like usage roles than actual components in terms of architecture
 :::
 ::::::
 
-## not architecture, sketch
 
-![](../lectures/figures/choreographer/data_flow.drawio.svg){width=800}
+## component sketch
 
-- data flow sketch
-- drone vendor SDK can be assumed
-- lines between the software and the drone are not part of the assignment
+![](../lectures/figures/choreographer/arch.drawio.svg){width=800}
+
+- each color is a responsibility area
 - this figure is not comprehensive!
 
 
