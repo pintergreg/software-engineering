@@ -25,12 +25,17 @@ A szemeszter második felében az előadások olyan témákat is érintenek, min
 
 ## értékelés
 
-A csoportok követelményelemzésüket és a szoftvertervet diagramok (uer story map, C4 stb.) és szöveg formájában nyújtják be. 
-A követelményelemzés és a szoftverterv egyaránt a teljes osztályzat 35%-át, az egyéni zárthelyi vizsga pedig 30%-át teszi ki, mindegyik külön osztályozva.
-A zárthelyi 50 feleltválasztós kérdésből áll, amellyel 50 pont szerezhető (1 pont kérdésenként). A ZH pontok jegyre váltását az alábbi táblázat mutatja.
+A csoportok követelményelemzésüket és a szoftvertervet diagramok (user story map, C4 stb.) és szöveg formájában nyújtják be, valamint prezentálják is október 10-én és december 2-án.
+Az értékelés fő szempontja a tanult módszertanok helyes alkalmazása, az agilis, csoportmunkán alapuló tervezés lefolytatása. 
+A követelményelemzés és a szoftverterv egyaránt a teljes osztályzat 35%-át, az egyéni zárthelyi vizsga pedig 30%-át teszi ki.
+A zárthelyi 50 feleltválasztós kérdésből áll, amellyel 50 pont szerezhető (1 pont kérdésenként). A ZH pontok százalékként kerülnek beszámításra, és legalább elégséges szintet el kell érnie.
 
 A végső jegy a követelményelemzés (35%), a tervezés (35%), és a zárhelyi (30%) súlyozott átlaga.
-Például, követelményelemzés (90×0.35) + tervezés (85×0.35) + zárhelyi (70×0.3) = 82.25 (4)
+Például, követelményelemzés (90×0.35) + tervezés (85×0.35) + zárhelyi (70×0.3) = 82.25 (4).
+
+Az előadásokon való aktív részvétel akár 5 százalékponttal is jutalmazható, amely az oktató szubjektív megítélése szerint, és a pontszámítás végén kerül hozzáadásra.
+
+Csak a sikertelen ZH-t lehet újra megírni (2026 december 9), javításra nincs lehetőség.
 
 - követelményelemzés, szoftver tervezés: **csapatmunka**
     - mindenki azonos jegyet (pontot) kap egy csapatban (0-100)
@@ -47,6 +52,20 @@ Például, követelményelemzés (90×0.35) + tervezés (85×0.35) + zárhelyi (
 | 34-38 |  67-76 |  3  |
 | 39-42 |  77-86 |  4  |
 | 43-50 | 87-100 |  5  |
+
+### minimum követelmény
+
+- legalább elégséges zárthelyi
+- elfogadott, legalább elégséges követelmény elemzés és szoftver terv
+- a szoftver tervnek le kell fednie a követelmény elemzés minden elemét
+- a követelmény elemzésnek teljesítenie kell az előre meghatározott kitételeket, valamint fel kell tárnia a megvalósíthatóság további feltételeit
+
+## hallgatói tevékenységek
+
+- részvétel az előadásokon, az elméleti témakörök megtanulása
+- részvétel a gyakorlatokon, csoportmunka user story mapping és C4 modellezés segítségével
+- csapattársak munkájának ellenőrzése, risk storming
+- csapatközi együttműködés
 
 ## tanulási eredmények
 
@@ -79,3 +98,9 @@ A tárgy sikeres elvégzése után a hallgatók képesek lesznek:
 
 - a hallgató képes lesz részt venni korszerű módszertanokra alapozott információs rendszer fejlesztési projektekben akár csapattagként, akár - megfelelő tapasztalatszerzés után - kisebb projektek vagy részprojektek vezetőjeként
 - képes felelős döntéseket hozni tervezési és kivitelezési kérdésekben
+
+## kötelező irodalom
+
+- Patton, J., & Economy, P. (2014). User story mapping: discover the whole story, build the right product. " O'Reilly Media, Inc.".
+- Brown, S. (2026). The C4 Model: Visualizing Software Architecture. " O'Reilly Media, Inc.".
+- https://pintergreg.github.io/software-engineering/

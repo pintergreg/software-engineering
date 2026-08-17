@@ -50,9 +50,9 @@ link-citations: true
 |  9 | 2026-11-11 | code quality, code review                | project workshop      |
 | 10 | 2026-11-18 | testing, legacy code                     | project workshop      |
 | 11 | 2026-11-25 | CI, automatization, devops               | project workshop      |
-| 12 | 2026-12-02 | summary                                  | project workshop      |
-| 13 | 2026-12-09 | **midterm**                              | **design demo**       |
-<!-- | 14 | 2026-12-17 | no planned lecture                       |                       | -->
+| 12 | 2026-12-02 | **midterm**                              | **design demo**       |
+| 13 | 2026-12-09 | no planned lecture                       | retake failed midterm |
+<!-- | 12 | 2026-12-09 | summary                                  | project workshop      | -->
 
 
 # schedule {.exclude-header}
@@ -79,8 +79,8 @@ link-citations: true
 |  9 | 2026-11-11 | code quality, code review                | project workshop      |
 | 10 | 2026-11-18 | testing, legacy code                     | project workshop      |
 | 11 | 2026-11-25 | CI, automatization, devops               | project workshop      |
-| 12 | 2026-12-02 | summary                                  | project workshop      |
-| 13 | 2026-12-09 | **midterm**                              | **design demo**       |
+| 12 | 2026-12-02 | **midterm**                              | **design demo**       |
+| 13 | 2026-12-09 | no planned lecture                       | retake failed midterm |
 
 :::
 
