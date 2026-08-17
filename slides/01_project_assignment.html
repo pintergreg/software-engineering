@@ -240,6 +240,19 @@ alt="operation GUI mockup" />
 <section>
 <section id="not-architecture-sketch" class="title-slide slide level1">
 <h1>not architecture, sketch</h1>
+<p><img
+data-src="../lectures/figures/choreographer/data_flow.drawio.svg"
+width="800" /></p>
+<ul>
+<li>data flow sketch</li>
+<li>drone vendor SDK can be assumed</li>
+<li>lines between the software and the drone are not part of the
+assignment</li>
+<li>this figure is not comprehensive!</li>
+</ul>
+</section>
+<section id="not-architecture-sketch-1" class="slide level2">
+<h2>not architecture, sketch</h2>
 <div class="r-stack">
 <div class="fragment fade-out" data-fragment-index="1">
 <p><img
@@ -260,16 +273,12 @@ once</li>
 </div>
 </div>
 </section>
-<section id="not-architecture-sketch-1" class="slide level2">
-<h2>not architecture, sketch</h2>
-<p><img
-data-src="../lectures/figures/choreographer/data_flow.drawio.svg"
+<section id="component-sketch" class="slide level2">
+<h2>component sketch</h2>
+<p><img data-src="../lectures/figures/choreographer/arch.drawio.svg"
 width="800" /></p>
 <ul>
-<li>data flow sketch</li>
-<li>drone vendor SDK can be assumed</li>
-<li>lines between the software and the drone are not part of the
-assignment</li>
+<li>each color is a responsibility area</li>
 <li>this figure is not comprehensive!</li>
 </ul>
 </section>
@@ -278,7 +287,7 @@ assignment</li>
 <div class="columns">
 <div class="column" style="width:65%;">
 <ul>
-<li>I have a plan in mind how this software would look like</li>
+<li>it is planned how this software would look like</li>
 <li>yours can be different and it’s perfectly fine</li>
 <li>you’re free to choose any solution that doesn’t conflict with the
 description
@@ -329,12 +338,17 @@ width="250" /></p>
 <li>user story maps
 <!--     - with BDD-style acceptance criteria --></li>
 </ul></li>
+<li>first 3 level of C4</li>
 <li>flowcharts</li>
-<li>first 3 level of C4
-<!--- also static and dynamic models of the software
-    - 4th level / UML--></li>
+<li>data flow diagram if needed</li>
+<li>optionally data structure description
+<ul>
+<li>could be UML</li>
+</ul></li>
 <li>UI mockups</li>
 </ul>
+<!--- also static and dynamic models of the software
+    - 4th level / UML-->
 </div><div class="column" style="width:30%;">
 <p><img
 data-src="../lectures/figures/publicdomainvectors/paperboard-flowchart.svg"
@@ -350,15 +364,18 @@ height="300" /></p>
 </blockquote>
 <div class="mt-2">
 <ul>
-<li>create a <strong>user story map</strong> in details for one role’s
+<li>create a <strong>user story map</strong> in details for your team’s
 set of features
 <ul>
 <li>for example the choreography design</li>
+<li>you don’t have to detail every single role</li>
+<li>because each team has its own responsibility</li>
 </ul></li>
-<li>you don’t have to detail every single role
+<li>create container and component diagrams (C4)
 <ul>
-<li>but give an overview of the system</li>
-<li>illustrate the every roles and the connections between them</li>
+<li>you don’t have to detail other team’s components,</li>
+<li>but display them to give an realistic overview of the system</li>
+<li>illustrate every component and the connections between them</li>
 </ul></li>
 </ul>
 </div>
@@ -439,7 +456,7 @@ data-src="../lectures/figures/publicdomainvectors/tools-in-hand.svg" /></p>
 <ul>
 <li>you have to submit the main design document</li>
 <li>you may indicate who was responsible for each part</li>
-<li>including every diagram
+<li>including every diagram, and UI mockup
 <ul>
 <li>please keep every version of the diagrams and attach them to the
 submission as I would like to see the evolution of your design</li>
