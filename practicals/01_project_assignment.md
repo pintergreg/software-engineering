@@ -158,6 +158,7 @@ DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/){target="_blank"} -- a web-ba
 :::::::::
 ::::::::::::
 
+
 # not architecture, sketch
 
 ![](../lectures/figures/choreographer/data_flow.drawio.svg){width=800}
@@ -166,6 +167,35 @@ DEMO: [Nomad Sculpt](https://nomadsculpt.com/demo/){target="_blank"} -- a web-ba
 - drone vendor SDK can be assumed
 - lines between the software and the drone are not part of the assignment
 - this figure is not comprehensive!
+
+
+## shape model
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+animating by relocating the points
+
+![](../lectures/figures/choreographer/animating_by_points.drawio.svg){width=400}
+:::::::::
+::::::::: {.column width="50%" .fragment data-fragment-index=1}
+animating by modifying the skeleton
+
+![](../lectures/figures/choreographer/animating_by_skeleton.drawio.svg){width=400}
+:::::::::
+::::::::::::
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+first seems easier on the developer side, but results tedious work for the choreographer animating an object consisting hundreds of points
+
+:::::::::
+::::::::: {.column width="50%" .fragment data-fragment-index=1}
+using a solid body model, later the model is converted to a [polygon mesh](https://en.wikipedia.org/wiki/Polygon_mesh)
+
+DEMO: [Mesh2Motion](https://app.mesh2motion.org/){target="_blank"}, [Maximo](https://www.mixamo.com/#/?page=1&type=Motion%2CMotionPack){target="_blank"}
+:::::::::
+::::::::::::
+
 
 ## not architecture, sketch
 
