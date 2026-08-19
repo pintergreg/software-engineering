@@ -227,7 +227,7 @@ more like usage roles than actual components in terms of architecture
 
 :::::::::::: {.columns}
 ::::::::: {.column width="65%"}
-- it is planned how this software would look like
+- there's a plan how this software would look like
 - yours can be different and it's perfectly fine
 - you're free to choose any solution that doesn't conflict with the description
     - which is deliberately underspecified
