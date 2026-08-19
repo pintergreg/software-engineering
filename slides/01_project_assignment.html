@@ -251,6 +251,38 @@ assignment</li>
 <li>this figure is not comprehensive!</li>
 </ul>
 </section>
+<section id="shape-model" class="slide level2">
+<h2>shape model</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>animating by relocating the points</p>
+<p><img
+data-src="../lectures/figures/choreographer/animating_by_points.drawio.svg"
+width="400" /></p>
+</div><div class="column fragment" data-fragment-index="1"
+style="width:50%;">
+<p>animating by modifying the skeleton</p>
+<p><img
+data-src="../lectures/figures/choreographer/animating_by_skeleton.drawio.svg"
+width="400" /></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>first seems easier on the developer side, but results tedious work
+for the choreographer animating an object consisting hundreds of
+points</p>
+</div><div class="column fragment" data-fragment-index="1"
+style="width:50%;">
+<p>using a solid body model, later the model is converted to a <a
+href="https://en.wikipedia.org/wiki/Polygon_mesh">polygon mesh</a></p>
+<p>DEMO: <a href="https://app.mesh2motion.org/"
+target="_blank">Mesh2Motion</a>, <a
+href="https://www.mixamo.com/#/?page=1&amp;type=Motion%2CMotionPack"
+target="_blank">Maximo</a></p>
+</div>
+</div>
+</section>
 <section id="not-architecture-sketch-1" class="slide level2">
 <h2>not architecture, sketch</h2>
 <div class="r-stack">
@@ -287,7 +319,7 @@ width="800" /></p>
 <div class="columns">
 <div class="column" style="width:65%;">
 <ul>
-<li>it is planned how this software would look like</li>
+<li>there’s a plan how this software would look like</li>
 <li>yours can be different and it’s perfectly fine</li>
 <li>you’re free to choose any solution that doesn’t conflict with the
 description
