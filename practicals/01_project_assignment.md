@@ -240,13 +240,13 @@ more like usage roles than actual components in terms of architecture
 ::::::::::::
 
 
-# contents -- outline
+# contents -- outline draft
 
 - introduction
-    - what the software is -- practically the project assignment
+    - [what the software is -- practically the project assignment]{.alpha-50}
     - team members -- students working on the assignment
 - stakeholder identification
-- methodology
+- [methodology]{.alpha-50}
 - detailed requirements
     - functional requirements
     - non-functional requirements
@@ -254,8 +254,8 @@ more like usage roles than actual components in terms of architecture
 - prioritization of requirements
 - constraints and assumptions
 - acceptance criteria
-- appendices
-- version history and approvals
+- [appendices]{.alpha-50}
+- [version history and approvals]{.alpha-50}
 
 
 ## diagrams
@@ -265,7 +265,7 @@ more like usage roles than actual components in terms of architecture
 - user stories
     - user story maps
 <!--     - with BDD-style acceptance criteria -->
-- first 3 level of C4
+- C4 diagrams: container and component
 - flowcharts
 - data flow diagram if needed
 - optionally data structure description
