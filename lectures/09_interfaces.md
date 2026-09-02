@@ -79,6 +79,15 @@ the most important elements of the design are the interfaces, hexagonal arcitect
 >
 > Martin Odersky, creator of the [Scala](https://www.scala-lang.org/) programming language
 
+::::::{.fragment .mt-2}
+::: {.text-small}
+the quote goes on...
+:::
+
+> So, I expect types will become a lot stronger and more precise than what we had because types are essentially the handle that we can make a contract between the human and the AI that a human can understand and concise enough to be reviewed.
+
+::::::
+
 ::: {.text-smaller .mt-3}
 source: [Ryan Peterman's interview with Martin Odersky](https://www.youtube.com/watch?v=LdN4sPWM-WY&t=1860s)
 :::
