@@ -73,8 +73,18 @@ based on [@dodd2020metric], read the [full story](https://everydayastronaut.com/
 
 the most important elements of the design are the interfaces, hexagonal arcitecture focuses on them
 
+##
 
-## user statistics example - interfaces
+> if the code is AI generated then the focus has to go elsewhere and I think the focus will go to the interfaces and to the types
+>
+> Martin Odersky, creator of the [Scala](https://www.scala-lang.org/) programming language
+
+::: {.text-smaller .mt-3}
+source: [Ryan Peterman's interview with Martin Odersky](https://www.youtube.com/watch?v=LdN4sPWM-WY&t=1860s)
+:::
+
+
+# user statistics example - interfaces
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
