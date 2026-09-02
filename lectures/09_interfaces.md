@@ -117,7 +117,7 @@ specify
 - with a well defined interface, the frontend can work regardless of the backends's state
     - e.g., using a mock backend
 
-::: {.wide-quote .fragment}
+::: {.wide-quote .fragment .mt-2}
 > A mock, in software engineering, is a simulated object or module that acts as a stand-in for a real object or module [@geeksforgeeks2019mock].
 <!-- Mocks are often used in testing to isolate the behavior of a particular module or component and to verify that it behaves as expected. -->
 :::
@@ -200,7 +200,7 @@ a mock backend should be enough for a frontend developer to create and test the 
 }
 ```
 
-::: {.fragment .mt-2}
+::: {.mt-2}
 it may be presented to the customer
 
 ::: {.text-smaller}
@@ -240,7 +240,7 @@ it is not just rude, but will waste the time of the other team (with pointless d
 ## do no break the userland
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%" .wide-quote .mt-3}
+::::::::: {.column width="50%" .mt-4}
 > the number one rule of kernel development is that "we don't break users"
 >
 > -- [Linus Torvalds](https://lkml.org/lkml/2017/11/21/356)
@@ -261,7 +261,7 @@ it is not just rude, but will waste the time of the other team (with pointless d
     - diagrams show inner dependencies
 
 :::
-::: {.align-left .fragment}
+::: {.align-left}
 - services announce API deprecations
 - so as library / framework developers
     - can be a source of new issues even if downstream code is not changed
@@ -293,7 +293,7 @@ it is not just rude, but will waste the time of the other team (with pointless d
 :::::::::
 ::::::::::::
 
-::: {.fragment}
+::: {}
 `https://developers.facebook.com/v21.0/me?fields=id,name`
 :::
 
@@ -304,7 +304,7 @@ it is not just rude, but will waste the time of the other team (with pointless d
 GeoPandas 1.0 / new deprecations: unary_union attribute is now deprecated and replaced by the union_all() method (#3007) allowing opting for a faster union algorithm for coverages (#3151)
 :::
 
-:::::::::::: {.columns .fragment}
+:::::::::::: {.columns}
 ::::::::: {.column width="55%"}
 ```python
 from shapely import Polygon
@@ -323,7 +323,7 @@ DeprecationWarning: The 'unary_union' attribute is deprecated, use the 'union_al
 :::::::::
 ::::::::::::
 
-::: {.fragment}
+::: {}
 ```python
 def unary_union(self):
     warnings.warn(
@@ -343,7 +343,7 @@ source: [github.com/geopandas/geopandas](https://github.com/geopandas/geopandas/
 
 ## java
 
-:::{.text-smaller}
+:::{}
 ```java
 public class Worker {
     /**
