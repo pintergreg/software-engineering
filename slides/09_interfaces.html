@@ -244,8 +244,24 @@ ports &amp; adapters)</figcaption>
 <p>the most important elements of the design are the interfaces,
 hexagonal arcitecture focuses on them</p>
 </section>
-<section id="user-statistics-example---interfaces" class="slide level2">
-<h2>user statistics example - interfaces</h2>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>if the code is AI generated then the focus has to go elsewhere and I
+think the focus will go to the interfaces and to the types</p>
+<p>Martin Odersky, creator of the <a
+href="https://www.scala-lang.org/">Scala</a> programming language</p>
+</blockquote>
+<div class="text-smaller mt-3">
+<p>source: <a
+href="https://www.youtube.com/watch?v=LdN4sPWM-WY&amp;t=1860s">Ryan
+Peterman’s interview with Martin Odersky</a></p>
+</div>
+</section></section>
+<section>
+<section id="user-statistics-example---interfaces"
+class="title-slide slide level1">
+<h1>user statistics example - interfaces</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><img
@@ -284,7 +300,7 @@ the backends’s state
 <li>e.g., using a mock backend</li>
 </ul></li>
 </ul>
-<div class="wide-quote fragment">
+<div class="wide-quote fragment mt-2">
 <blockquote>
 <p>A mock, in software engineering, is a simulated object or module that
 acts as a stand-in for a real object or module <span class="citation"
@@ -365,7 +381,7 @@ class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="ot">[</span><span class="dv">3</span><span class="ot">,</span><span class="dv">5</span><span class="ot">,</span><span class="dv">5</span><span class="ot">,</span><span class="dv">3</span><span class="ot">,</span><span class="dv">2</span><span class="ot">,</span><span class="dv">9</span><span class="ot">,</span><span class="dv">7</span><span class="ot">]</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
-<div class="fragment mt-2">
+<div class="mt-2">
 <p>it may be presented to the customer</p>
 <div class="text-smaller">
 <p>fast feedback, agile, and so on…</p>
@@ -406,7 +422,7 @@ pointless debugging)</p>
 <section id="do-no-break-the-userland" class="slide level2">
 <h2>do no break the userland</h2>
 <div class="columns">
-<div class="column wide-quote mt-3" style="width:50%;">
+<div class="column mt-4" style="width:50%;">
 <blockquote>
 <p>the number one rule of kernel development is that “we don’t break
 users”</p>
@@ -440,7 +456,7 @@ impacted teams</li>
 </ul></li>
 </ul>
 </div>
-<div class="align-left fragment">
+<div class="align-left">
 <ul>
 <li>services announce API deprecations</li>
 <li>so as library / framework developers
@@ -477,7 +493,7 @@ width="375" /></p>
 </div>
 </div>
 </div>
-<div class="fragment">
+<div>
 <p><code>https://developers.facebook.com/v21.0/me?fields=id,name</code></p>
 </div>
 </section></section>
@@ -489,7 +505,7 @@ width="375" /></p>
 deprecated and replaced by the union_all() method (#3007) allowing
 opting for a faster union algorithm for coverages (#3151)</p>
 </div>
-<div class="columns fragment">
+<div class="columns">
 <div class="column" style="width:55%;">
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shapely <span class="im">import</span> Polygon</span>
@@ -505,7 +521,7 @@ the ‘union_all()’ method instead.</p>
 <p><img data-src="figures/unary_union.svg" height="100" /></p>
 </div>
 </div>
-<div class="fragment">
+<div>
 <div class="sourceCode" id="cb4"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unary_union(<span class="va">self</span>):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    warnings.warn(</span>
@@ -523,7 +539,7 @@ href="https://github.com/geopandas/geopandas/blob/f150ec0480cfbf2ad8074d210d103b
 </section>
 <section id="java" class="slide level2">
 <h2>java</h2>
-<div class="text-smaller">
+<div>
 <div class="sourceCode" id="cb5"><pre
 class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Worker <span class="op">{</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/**</span></span>

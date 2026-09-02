@@ -273,7 +273,18 @@ ports &amp; adapters)</figcaption>
 </figure>
 <p>the most important elements of the design are the interfaces, hexagonal
 arcitecture focuses on them</p>
-<h2 id="user-statistics-example---interfaces"><a class="header" href="#user-statistics-example---interfaces">user statistics example - interfaces</a></h2>
+<h2 id="-1"><a class="header" href="#-1"></a></h2>
+<blockquote>
+<p>if the code is AI generated then the focus has to go elsewhere and I
+think the focus will go to the interfaces and to the types</p>
+<p>Martin Odersky, creator of the <a href="https://www.scala-lang.org/">Scala</a>
+programming language</p>
+</blockquote>
+<div class="text-smaller mt-3">
+<p>source: <a href="https://www.youtube.com/watch?v=LdN4sPWM-WY&amp;t=1860s">Ryan Peterman’s interview with Martin
+Odersky</a></p>
+</div>
+<h1 id="user-statistics-example---interfaces"><a class="header" href="#user-statistics-example---interfaces">user statistics example - interfaces</a></h1>
 <div class="columns">
 <div class="column" width="60%">
 <p><img src="figures/user_statistics/component_interface.svg" alt="" /></p>
@@ -304,7 +315,7 @@ backends’s state
 </ul>
 </li>
 </ul>
-<div class="wide-quote fragment">
+<div class="wide-quote fragment mt-2">
 <blockquote>
 <p>A mock, in software engineering, is a simulated object or module that
 acts as a stand-in for a real object or module (<a href="#ref-geeksforgeeks2019mock">GeeksforGeeks,
@@ -381,7 +392,7 @@ test the user statistics view of the user interface</p>
     ]
 }
 </code></pre>
-<div class="fragment mt-2">
+<div class="mt-2">
 <p>it may be presented to the customer</p>
 <div class="text-smaller">
 <p>fast feedback, agile, and so on…</p>
@@ -418,7 +429,7 @@ pointless debugging)</p>
 </div>
 <h2 id="do-no-break-the-userland"><a class="header" href="#do-no-break-the-userland">do no break the userland</a></h2>
 <div class="columns">
-<div class="column wide-quote mt-3" width="50%">
+<div class="column mt-4" width="50%">
 <blockquote>
 <p>the number one rule of kernel development is that “we don’t break
 users”</p>
@@ -451,7 +462,7 @@ impacted teams</li>
 </li>
 </ul>
 </div>
-<div class="align-left fragment">
+<div class="align-left">
 <ul>
 <li>services announce API deprecations</li>
 <li>so as library / framework developers
@@ -488,7 +499,7 @@ width="375" /></p>
 </div>
 </div>
 </div>
-<div class="fragment">
+<div>
 <p><code>https://developers.facebook.com/v21.0/me?fields=id,name</code></p>
 </div>
 <h1 id="language-level"><a class="header" href="#language-level">language level</a></h1>
@@ -497,7 +508,7 @@ width="375" /></p>
 deprecated and replaced by the union_all() method (#3007) allowing
 opting for a faster union algorithm for coverages (#3151)</p>
 </div>
-<div class="columns fragment">
+<div class="columns">
 <div class="column" width="55%">
 <pre><code class="language-python">from shapely import Polygon
 import geopandas as gpd
@@ -514,7 +525,7 @@ gpd.GeoDataFrame(geometry=[p1, p2]).unary_union
 <img src="figures/unary_union.svg" height="100" />
 </div>
 </div>
-<div class="fragment">
+<div>
 <pre><code class="language-python">def unary_union(self):
     warnings.warn(
         "The 'unary_union' attribute is deprecated, "
@@ -530,7 +541,7 @@ gpd.GeoDataFrame(geometry=[p1, p2]).unary_union
 </div>
 </div>
 <h2 id="java"><a class="header" href="#java">java</a></h2>
-<div class="text-smaller">
+<div>
 <pre><code class="language-java">public class Worker {
     /**
      * Calculate period between versions
