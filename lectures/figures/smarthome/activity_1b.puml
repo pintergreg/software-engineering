@@ -1,0 +1,32 @@
+@startuml
+skin rose
+scale 2
+
+start
+
+repeat
+  :scan devices;
+  :connect to device;
+  if (has service?) then (no)
+
+label sp_lab0
+label sp_lab1
+label lab
+:handle error;
+stop
+
+else (yes)
+if (has characteristics?) then (no)
+label sp_lab2
+goto sp_lab1
+else (yes)
+  :read and parse data; <<procedure>>
+  :write to database;
+endif
+endif
+
+  :wait 20 minutes;
+repeat while (exit command received?) is (no) not (yes)
+
+stop
+@enduml

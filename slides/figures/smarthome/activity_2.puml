@@ -1,0 +1,14 @@
+@startuml
+skin rose
+scale 2
+
+start
+:read data;
+note right: temperature: 4 bytes\nhumidity: 4 bytes
+:convert to little-endian;
+note right: separately
+:binary to decimal;
+:divide temperature by 100;
+note right: not a real float number\n22.51 ˚C is 2251
+stop
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+skin rose
+scale 2
+
+node "raspberry pi 3B+" {
+
+[logger]
+
+database sqlite3
+
+[webservice]
+}
+
+node "temperature sensor"
+
+[logger] - sqlite3 : write
+sqlite3 - [webservice]: read
+[logger] -(0)- "temperature sensor" : " bluetooth"
+
+node "user device"
+
+[webservice] -(0)- "user device" : " HTTP"
+
+@enduml

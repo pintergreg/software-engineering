@@ -855,6 +855,93 @@ objects interact with each other over time</li>
 <div class="text-smaller">
 <p>source: <a href="https://plantuml.com/timing-diagram">PlantUML documentation</a></p>
 </div>
+<h1 id="smart-home-example"><a class="header" href="#smart-home-example">smart home example</a></h1>
+<div class="columns">
+<div class="column mt-2" width="60%">
+<ul>
+<li>multiple smart thermometers
+<ul>
+<li>also provide humidity</li>
+</ul>
+</li>
+<li>the thermometers can be accessed via bluetooth LE</li>
+<li>there is a “server” in the apartment that cyclically reads the
+temperature (and humidity) values from the sensors</li>
+<li>the server also provides a web-based interface to access the current
+and the historical temperature values</li>
+<li>the smart home system should handle multiple sensors
+<ul>
+<li>though it doesn’t need to handle arbitrary sensor models</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="40%">
+<p><img src="figures/smarthome/smart_home.drawio.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="smart-home-example--use-case-diagram"><a class="header" href="#smart-home-example--use-case-diagram">smart home example – use case diagram</a></h2>
+<img src="figures/smarthome/use_case.svg" height="400" />
+<p>although actors are denoted by stick figures, devices can also be actors</p>
+<h2 id="smart-home-example--deployment-diagram"><a class="header" href="#smart-home-example--deployment-diagram">smart home example – deployment diagram</a></h2>
+<img src="figures/smarthome/deployment.svg" height="400" />
+<h2 id="smart-home-example--sequence-diagram"><a class="header" href="#smart-home-example--sequence-diagram">smart home example – sequence diagram</a></h2>
+<div class="columns">
+<div class="column" width="35%">
+<p><img src="figures/smarthome/deployment_webservice.svg" alt="" /></p>
+</div>
+<div class="column" width="65%">
+<p><img src="figures/smarthome/sequence.svg" alt="" /></p>
+</div>
+</div>
+<h2 id="smart-home-example--activity-diagram"><a class="header" href="#smart-home-example--activity-diagram">smart home example – activity diagram</a></h2>
+<div class="columns">
+<div class="column text-smaller mt-1" width="40%">
+<p><img src="figures/smarthome/deployment_ble.svg" alt="" /></p>
+<ul>
+<li>sensor connection by address
+<ul>
+<li>Bluetooth Low Energy</li>
+<li><a href="https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt">Generic ATTribute
+profile</a></li>
+</ul>
+</li>
+<li>services
+<ul>
+<li>provides characteristics</li>
+</ul>
+</li>
+<li>characteristics
+<ul>
+<li>single data point<!--     - [parse data]{data-preview-image="figures/smarthome/activity_2.svg" .background-color-lightblue} -->
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="column" width="60%">
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img src="figures/smarthome/activity_1b.svg"
+data-preview-image="figures/smarthome/activity_1b.svg"
+data-preview-fit="contain" width="325" /></p>
+</div>
+<div class="fragment current-visible" data-fragment-index="1">
+<figure>
+<img src="figures/smarthome/activity_2.svg" alt="read and parse data" />
+<figcaption aria-hidden="true">read and parse data</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!--::::::::: {.column width="35%" .mt-1}
+&#10;![read and parse data](figures/smarthome/activity_2.svg)
+&#10;:::::::::-->
+</div>
+<div class="text-smaller">
+<p>can be used at a code level, but more practical at a higher level from
+an architectural point of view</p>
+</div>
 <h1 id="references"><a class="header" href="#references">references</a></h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 line-spacing="2">

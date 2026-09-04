@@ -1,0 +1,24 @@
+@startuml
+skin rose
+scale 2
+
+participant browser
+
+browser -> webservice: HTTP GET request
+activate webservice
+
+webservice -> database: query last 24 hours
+activate database
+
+database --> webservice: return records
+deactivate database
+
+webservice -> "HTML builder": send queried data
+activate "HTML builder"
+"HTML builder" --> webservice: constructed HTML
+deactivate "HTML builder"
+
+webservice -> browser: send HTML
+deactivate webservice
+
+@enduml

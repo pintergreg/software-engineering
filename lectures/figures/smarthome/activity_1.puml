@@ -1,0 +1,20 @@
+@startuml
+skin rose
+scale 2
+
+start
+
+repeat
+  :scan devices; <<procedure>>
+
+  :connect to sensor;
+  :discover services; <<procedure>>
+  :select characteristics; <<procedure>>
+  :read and parse data; <<procedure>>
+  :write to database; <<procedure>>
+
+  :wait 20 minutes;
+repeat while (exit command received?) is (no) not (yes)
+
+stop
+@enduml

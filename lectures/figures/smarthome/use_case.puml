@@ -1,0 +1,20 @@
+@startuml
+skin rose
+scale 2
+
+left to right direction
+
+actor user
+actor :temerature\nsensor: as sensor
+
+rectangle "temperature monitor" {
+  usecase "read\nlast measurements" as read
+  usecase "check temperature\n of the last 24 hour" as hist
+  usecase "record\n measurement" as write
+}
+
+user ---> read
+user ---> hist
+sensor -up--> write
+
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+skin rose
+scale 2
+
+node "raspberry pi 3B+" {
+
+component logger
+
+database sqlite3
+database sqlite3 #WhiteSmoke;line.dotted
+
+component webservice
+component webservice #WhiteSmoke;line.dotted
+}
+
+node "temperature sensor"
+
+[logger] - sqlite3 : write
+sqlite3 - [webservice]: read
+[logger] -(0)- "temperature sensor" : " bluetooth"
+
+node "user device"
+node "user device" #WhiteSmoke;line.dotted
+
+[webservice] -(0)- "user device" : " HTTP"
+
+@enduml
