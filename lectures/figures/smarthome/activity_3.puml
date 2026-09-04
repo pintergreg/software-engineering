@@ -1,0 +1,16 @@
+@startuml
+skin rose
+scale 2
+
+
+while (more devices available?)
+  if (address equals to wanted?) is (found sensor) then
+     :return device;
+    goto break
+  endif
+endwhile
+
+:not found;
+label break
+
+@enduml

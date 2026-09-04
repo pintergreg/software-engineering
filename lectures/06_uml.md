@@ -656,6 +656,87 @@ a join synchronizes two inflows (waits for the slower)
 source: [PlantUML documentation](https://plantuml.com/timing-diagram)
 :::
 
+# smart home example
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-2}
+- multiple smart thermometers
+    - also provide humidity
+- the thermometers can be accessed via bluetooth LE
+- there is a "server" in the apartment that cyclically reads the temperature (and humidity) values from the sensors
+- the server also provides a web-based interface to access the current and the historical temperature values
+- the smart home system should handle multiple sensors
+    - though it doesn't need to handle arbitrary sensor models
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/smarthome/smart_home.drawio.svg)
+
+:::::::::
+::::::::::::
+
+## smart home example -- use case diagram
+
+![](figures/smarthome/use_case.svg){height=400}
+
+although actors are denoted by stick figures, devices can also be actors
+
+## smart home example -- deployment diagram
+
+![](figures/smarthome/deployment.svg){height=400}
+
+## smart home example -- sequence diagram
+
+:::::::::::: {.columns}
+::::::::: {.column width="35%"}
+![](figures/smarthome/deployment_webservice.svg)
+
+
+:::::::::
+::::::::: {.column width="65%"}
+![](figures/smarthome/sequence.svg)
+
+:::::::::
+::::::::::::
+
+## smart home example -- activity diagram
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%" .text-smaller .mt-1}
+![](figures/smarthome/deployment_ble.svg)
+
+- sensor connection by address
+    - Bluetooth Low Energy
+    - [Generic ATTribute profile](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt)
+- services
+    - provides characteristics
+- characteristics
+    - single data point
+<!--     - [parse data]{data-preview-image="figures/smarthome/activity_2.svg" .background-color-lightblue} -->
+:::::::::
+::::::::: {.column width="60%"}
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+
+![](figures/smarthome/activity_1b.svg){width=325 data-preview-image="figures/smarthome/activity_1b.svg" data-preview-fit="contain"}
+
+:::
+::: {.fragment .current-visible data-fragment-index=1}
+![read and parse data](figures/smarthome/activity_2.svg)
+:::
+::::::
+:::::::::
+<!--::::::::: {.column width="35%" .mt-1}
+
+![read and parse data](figures/smarthome/activity_2.svg)
+
+:::::::::-->
+::::::::::::
+
+::: {.text-smaller}
+can be used at a code level, but more practical at a higher level from an architectural point of view 
+:::
+
 # references
 
 ::: {#refs}
