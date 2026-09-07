@@ -1900,6 +1900,111 @@ architectures!</p>
 </div>
 </section></section>
 <section>
+<section id="smarthome-example" class="title-slide slide level1">
+<h1>smarthome example</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ot">@spec</span> create_chart<span class="fu">(</span>list<span class="fu">(</span><span class="cn">Measurement</span><span class="op">.</span>t<span class="fu">()))</span> :: <span class="cn">Plot</span><span class="op">.</span>t<span class="fu">()</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_chart<span class="fu">(</span>last_day<span class="fu">)</span> <span class="kw">do</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="op">//...</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="cn">Enum</span><span class="op">.</span>map<span class="fu">(</span>last_day, <span class="kw">fn</span> x <span class="op">-&gt;</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="va">:ok</span>, datetime<span class="fu">}</span> <span class="op">=</span> <span class="cn">NaiveDateTime</span><span class="op">.</span>from_iso8601<span class="fu">(</span>x<span class="op">.</span>timestamp<span class="fu">)</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span>datetime, x<span class="op">.</span>temperature<span class="fu">}</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">end</span><span class="fu">)</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="op">//...</span></span></code></pre></div>
+<ul>
+<li>needs a list of measurements (as type)</li>
+<li>returns a Plot type</li>
+</ul>
+<p><img data-src="figures/smarthome/temperature.svg" width="450" /></p>
+</div><div class="column" style="width:30%;">
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">defmodule</span> <span class="cn">Frontend</span><span class="op">.</span><span class="cn">Measurement</span> <span class="kw">do</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="im">use</span> <span class="cn">Ecto</span><span class="op">.</span><span class="cn">Schema</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  schema <span class="st">&quot;measurements&quot;</span> <span class="kw">do</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    field<span class="fu">(</span><span class="va">:timestamp</span>, <span class="va">:string</span><span class="fu">)</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    field<span class="fu">(</span><span class="va">:address</span>, <span class="va">:string</span><span class="fu">)</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    field<span class="fu">(</span><span class="va">:temperature</span>, <span class="va">:float</span><span class="fu">)</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    field<span class="fu">(</span><span class="va">:humidity</span>, <span class="va">:float</span><span class="fu">)</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    field<span class="fu">(</span><span class="va">:battery</span>, <span class="va">:float</span><span class="fu">)</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">end</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
+<div class="text-smaller">
+<p>later, to save the chart</p>
+</div>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> create_chart<span class="fu">(</span>last_day<span class="fu">)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cn">Plot</span><span class="op">.</span>to_svg<span class="fu">(</span>plot<span class="fu">)</span></span></code></pre></div>
+<div class="mt-4 background-color-lightblue">
+<p>what’s the issue with this? <br> <em>name a few!</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="figures/smarthome/chartbuilder_dependencies.svg"
+data-preview-image="figures/smarthome/chartbuilder_dependencies2.svg"
+data-preview-fit="contain" /></p>
+</div><div class="column" style="width:55%;">
+<ul>
+<li>OOP principle: <strong>abstraction</strong>
+<ul>
+<li>hiding the complex reality while exposing only the necessary
+parts</li>
+<li>plotting the temperature, other measurements are not required</li>
+</ul></li>
+<li>SOLID: <strong>interface segregation principle</strong>
+<ul>
+<li>many client-specific interfaces are better than one general-purpose
+interface</li>
+</ul></li>
+<li>increased coupling</li>
+<li>reusability</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="smarthome-example---after-refactoring"
+class="slide level2">
+<h2>smarthome example - after refactoring</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ot">@spec</span> create_chart<span class="fu">(</span>list<span class="fu">(</span><span class="cn">Float</span><span class="fu">)</span>, list<span class="fu">(</span><span class="cn">String</span><span class="fu">))</span> :: <span class="cn">String</span><span class="op">.</span>t<span class="fu">()</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_chart<span class="fu">(</span>temperatures, timestamps<span class="fu">)</span> <span class="kw">do</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">//...</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="cn">Enum</span><span class="op">.</span>zip<span class="fu">(</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>      <span class="cn">Enum</span><span class="op">.</span>map<span class="fu">(</span>timestamps, <span class="kw">fn</span> x <span class="op">-&gt;</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span><span class="va">:ok</span>, datetime<span class="fu">}</span> <span class="op">=</span> <span class="cn">NaiveDateTime</span><span class="op">.</span>from_iso8601<span class="fu">(</span>x<span class="fu">)</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        datetime</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">end</span><span class="fu">)</span>,</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>      temperatures</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">)</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">//...</span></span></code></pre></div>
+<ul>
+<li>needs two lists, one with the temperatures, another with the
+timestamps</li>
+<li>returns a string (SVG)</li>
+<li>produces the same chart</li>
+<li>abstracts dependencies</li>
+<li>cleaner interfaces</li>
+<li>easier to reuse</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img
+data-src="figures/smarthome/chartbuilder_dependencies4.svg" /></p>
+<p><img data-src="figures/smarthome/temperature.svg" /></p>
+</div>
+</div>
+</section></section>
+<section>
 <section id="record-architecture-decisions"
 class="title-slide slide level1">
 <h1>record architecture decisions</h1>
@@ -1918,24 +2023,24 @@ into components and how the components interact through interfaces. –
 Ralph Johnson</p>
 </blockquote>
 </div>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Title</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Status</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.?</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>What is the issue that we&#39;re seeing that is motivating this decision or change?</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>What is the change that we&#39;re proposing and/or doing?</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consequences</span></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>What becomes easier or more difficult to do because of this change?</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Title</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Status</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.?</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>What is the issue that we&#39;re seeing that is motivating this decision or change?</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>What is the change that we&#39;re proposing and/or doing?</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consequences</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>What becomes easier or more difficult to do because of this change?</span></code></pre></div>
 <div class="text-small">
 <p>ADR template by Michael Nygard from <a
 href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions">Documenting

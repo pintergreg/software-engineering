@@ -7877,6 +7877,106 @@ but that would also be a dependency</li>
 <p>on the other hand, most of these are present in all the three
 architectures!</p>
 </div>
+<h1 id="smarthome-example"><a class="header" href="#smarthome-example">smarthome example</a></h1>
+<div class="columns">
+<div class="column" width="60%">
+<pre><code class="language-elixir">@spec create_chart(list(Measurement.t())) :: Plot.t()
+def create_chart(last_day) do
+//...
+data =
+  Enum.map(last_day, fn x -&gt;
+    {:ok, datetime} = NaiveDateTime.from_iso8601(x.timestamp)
+    {datetime, x.temperature}
+  end)
+//...
+</code></pre>
+<ul>
+<li>needs a list of measurements (as type)</li>
+<li>returns a Plot type</li>
+</ul>
+<img src="lectures/figures/smarthome/temperature.svg" width="450" />
+</div>
+<div class="column" width="30%">
+<pre><code class="language-elixir">defmodule Frontend.Measurement do
+  use Ecto.Schema
+
+  schema "measurements" do
+    field(:timestamp, :string)
+    field(:address, :string)
+    field(:temperature, :float)
+    field(:humidity, :float)
+    field(:battery, :float)
+  end
+end
+</code></pre>
+<div class="text-smaller">
+<p>later, to save the chart</p>
+</div>
+<pre><code class="language-elixir">plot = create_chart(last_day)
+Plot.to_svg(plot)
+</code></pre>
+<div class="mt-4 background-color-lightblue">
+<p>what’s the issue with this? <br> <em>name a few!</em></p>
+</div>
+</div>
+</div>
+<h2 id="-6"><a class="header" href="#-6"></a></h2>
+<div class="columns">
+<div class="column" width="45%">
+<p><img src="lectures/figures/smarthome/chartbuilder_dependencies.svg"
+data-preview-image="figures/smarthome/chartbuilder_dependencies2.svg"
+data-preview-fit="contain" /></p>
+</div>
+<div class="column" width="55%">
+<ul>
+<li>OOP principle: <strong>abstraction</strong>
+<ul>
+<li>hiding the complex reality while exposing only the necessary parts</li>
+<li>plotting the temperature, other measurements are not required</li>
+</ul>
+</li>
+<li>SOLID: <strong>interface segregation principle</strong>
+<ul>
+<li>many client-specific interfaces are better than one general-purpose
+interface</li>
+</ul>
+</li>
+<li>increased coupling</li>
+<li>reusability</li>
+</ul>
+</div>
+</div>
+<h2 id="smarthome-example---after-refactoring"><a class="header" href="#smarthome-example---after-refactoring">smarthome example - after refactoring</a></h2>
+<div class="columns">
+<div class="column" width="60%">
+<pre><code class="language-elixir">@spec create_chart(list(Float), list(String)) :: String.t()
+def create_chart(temperatures, timestamps) do
+  //...
+  data =
+    Enum.zip(
+      Enum.map(timestamps, fn x -&gt;
+        {:ok, datetime} = NaiveDateTime.from_iso8601(x)
+        datetime
+      end),
+      temperatures
+    )
+  //...
+</code></pre>
+<ul>
+<li>needs two lists, one with the temperatures, another with the
+timestamps</li>
+<li>returns a string (SVG)</li>
+<li>produces the same chart</li>
+<li>abstracts dependencies</li>
+<li>cleaner interfaces</li>
+<li>easier to reuse</li>
+</ul>
+</div>
+<div class="column" width="35%">
+<p><img src="lectures/figures/smarthome/chartbuilder_dependencies4.svg" alt="" /></p>
+<p><img src="lectures/figures/smarthome/temperature.svg" alt="" /></p>
+</div>
+</div>
 <h1 id="record-architecture-decisions"><a class="header" href="#record-architecture-decisions">record architecture decisions</a></h1>
 <div class="wide-quote text-smaller">
 <blockquote>
@@ -8259,7 +8359,7 @@ contributors, 2024b</a>)</span></span></figcaption>
 story</a> written by
 Tim Dodd</p>
 </div>
-<h1 id="-6"><a class="header" href="#-6"></a></h1>
+<h1 id="-7"><a class="header" href="#-7"></a></h1>
 <figure>
 <img src="lectures/figures/hexagonal_interface.drawio.svg" width="700"
 alt="hexagonal arcitectural pattern (a.k.a. ports &amp; adapters)" />
@@ -8268,7 +8368,7 @@ ports &amp; adapters)</figcaption>
 </figure>
 <p>the most important elements of the design are the interfaces, hexagonal
 arcitecture focuses on them</p>
-<h2 id="-7"><a class="header" href="#-7"></a></h2>
+<h2 id="-8"><a class="header" href="#-8"></a></h2>
 <blockquote>
 <p>if the code is AI generated then the focus has to go elsewhere and I
 think the focus will go to the interfaces and to the types</p>
@@ -10080,7 +10180,7 @@ Proverbs</a></p>
 </div>
 <p>source: <a href="https://golangprojectstructure.com/rob-pike-go-proverbs-3/#clear-is-better-than-clever">Rob Pike’s Go
 Proverbs</a></p>
-<h2 id="-8"><a class="header" href="#-8"></a></h2>
+<h2 id="-9"><a class="header" href="#-9"></a></h2>
 <pre><code class="language-go">func isPrime(n int) bool {
     if n &lt; 2 {
         return false
@@ -11437,7 +11537,7 @@ Wikipedia, the free encyclopedia</em>.
 <a href="https://en.wikipedia.org/w/index.php?title=Side_effect_(computer_science)&amp;oldid=1063806709">https://en.wikipedia.org/w/index.php?title=Side_effect_(computer_science)&amp;oldid=1063806709</a>.</p>
 </div>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="-9"><a class="header" href="#-9"></a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-10"><a class="header" href="#-10"></a></h1>
 <div class="text-align-left">
 <p>agile<br />
 working software over comprehensive documentation</p>
@@ -12653,7 +12753,7 @@ process</figcaption>
 </ul>
 </div>
 </div>
-<h2 id="-10"><a class="header" href="#-10"></a></h2>
+<h2 id="-11"><a class="header" href="#-11"></a></h2>
 <div class="r-fit-text">
 <p>every work product can and <em>should</em> be reviewed</p>
 </div>
@@ -14193,7 +14293,7 @@ except that according to the PEP8 Python style guide the ‘star import’
 is not allowed; it should be <code>import fizzbuzz</code></span></p>
 </div>
 </div>
-<h2 id="-11"><a class="header" href="#-11"></a></h2>
+<h2 id="-12"><a class="header" href="#-12"></a></h2>
 <blockquote>
 <p>As the tests get more specific, the code gets more generic.</p>
 <p>– Robert C. Martin, <a href="http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html">The Cycles of
@@ -16818,7 +16918,7 @@ title="semantic versioning">semver</span></a>: “If your
 software is being used in production, it should probably already be
 1.0.0.”</p>
 </div>
-<h2 id="-12"><a class="header" href="#-12"></a></h2>
+<h2 id="-13"><a class="header" href="#-13"></a></h2>
 <figure>
 <img src="lectures/figures/hugo_0_147_3.png" alt="Hugo 0.147.3" />
 <figcaption aria-hidden="true">Hugo <a
