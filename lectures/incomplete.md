@@ -148,6 +148,115 @@ Rule 5 was previously stated by Fred Brooks in The Mythical Man-Month. Rule 5 is
 
 :::
 
+# refactoring
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+```elixir
+@spec create_chart(list(Measurement.t())) :: Plot.t()
+def create_chart(last_day) do
+//...
+data =
+  Enum.map(last_day, fn x ->
+    {:ok, datetime} = NaiveDateTime.from_iso8601(x.timestamp)
+    {datetime, x.temperature}
+  end)
+//...
+```
+
+- needs a list of measurements (as type)
+- returns a Plot type
+
+
+![](figures/smarthome/temperature.svg){width=450}
+
+:::::::::
+::::::::: {.column width="30%"}
+```elixir
+defmodule Frontend.Measurement do
+  use Ecto.Schema
+
+  schema "measurements" do
+    field(:timestamp, :string)
+    field(:address, :string)
+    field(:temperature, :float)
+    field(:humidity, :float)
+    field(:battery, :float)
+  end
+end
+```
+
+::: {.text-smaller}
+later, to save the chart
+:::
+
+```elixir
+plot = create_chart(last_day)
+Plot.to_svg(plot)
+```
+
+:::{.mt-4 .background-color-lightblue}
+what's the issue with this?
+<br>
+_name a few!_
+:::
+
+:::::::::
+:::::::::::: 
+
+##
+
+:::::::::::: {.columns}
+::::::::: {.column width="45%"}
+![](figures/smarthome/chartbuilder_dependencies.svg){data-preview-image="figures/smarthome/chartbuilder_dependencies2.svg" data-preview-fit="contain"}
+
+:::::::::
+::::::::: {.column width="55%"}
+- OOP principle: **abstraction**
+    - hiding the complex reality while exposing only the necessary parts
+    - plotting the temperature, other measurements are not required
+- SOLID: **interface segregation principle**
+    - many client-specific interfaces are better than one general-purpose interface
+- increased coupling
+- reusability
+:::::::::
+:::::::::::: 
+
+# refactoring
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+```elixir
+@spec create_chart(list(Float), list(String)) :: String.t()
+def create_chart(temperatures, timestamps) do
+  //...
+  data =
+    Enum.zip(
+      Enum.map(timestamps, fn x ->
+        {:ok, datetime} = NaiveDateTime.from_iso8601(x)
+        datetime
+      end),
+      temperatures
+    )
+  //...
+```
+
+- needs two lists, one with the temperatures, another with the timestamps
+- returns a string (SVG)
+- produces the same chart
+- abstracts dependencies
+- cleaner interfaces
+- easier to reuse
+
+:::::::::
+::::::::: {.column width="35%"}
+![](figures/smarthome/chartbuilder_dependencies4.svg)
+
+![](figures/smarthome/temperature.svg)
+
+:::::::::
+:::::::::::: 
+
 # references
 
 ::: #refs

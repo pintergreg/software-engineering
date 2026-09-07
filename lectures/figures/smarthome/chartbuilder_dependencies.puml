@@ -1,0 +1,19 @@
+@startuml
+skin rose
+scale 2
+
+component Plot as P
+component ChartBuilder as C
+component Measurement as M
+
+C --> M : depend
+C --> P : depend
+
+note bottom of P
+  draws the actual chart
+end note
+
+note bottom of M
+  serves as input type
+end note
+@enduml
