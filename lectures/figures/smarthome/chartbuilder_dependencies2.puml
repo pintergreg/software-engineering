@@ -1,0 +1,23 @@
+@startuml
+skin rose
+scale 2
+
+component Plot as P
+component ChartBuilder as C
+component Measurement as M
+component "DB connector" as D
+
+C --> P : depend
+C --> M : depend
+D -left-> M
+
+P -[hidden] M
+
+note bottom of P
+  draws the actual chart
+end note
+
+note bottom of M
+  serves as input type
+end note
+@enduml

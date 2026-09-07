@@ -1,0 +1,20 @@
+@startchart
+<style>
+chartDiagram {
+    line {
+        LineColor #a80036
+        LineThickness 5
+    }
+    axis {
+        LineColor #2d2d2d
+        LineThickness 2
+        FontSize 12
+        FontColor #2d2d2d
+    }
+}
+</style>
+h-axis [00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, 22:00]
+v-axis "temperature (°C)" 23 --> 27 spacing 1
+line "temperature" [25.38, 25.22, 24.3, 23.94, 24.97, 25.48, 26.52, 26.69, 25.97, 25.1, 24.65, 24.01]
+
+@endchart

@@ -1,0 +1,16 @@
+@startuml
+skin rose
+scale 2
+
+component ChartBuilder as C {
+  component Plot as P
+}
+component Measurement as M #WhiteSmoke;line.dotted
+component "DB connector" as D #WhiteSmoke;line.dotted
+
+C -[hidden]-> M
+D -left-> M
+
+input -down-> C: float list and string list
+C -> output : string
+@enduml
