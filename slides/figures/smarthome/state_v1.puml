@@ -1,0 +1,44 @@
+@startuml
+skin rose
+scale 2
+
+hide empty description
+[*] --> scanning
+scanning --> interruption
+interruption --> [*]
+interruption: CTRL + C
+scanning : for available bluetooth devices
+scanning : to select the temperature sensor
+
+state "discovering services" as service
+service : to select the right one
+state "selecting characteristics" as characteristics
+characteristics : to read temperature data
+
+state write
+write : temperature to sqlite3 database
+
+state waiting
+waiting: for 20 minutes
+
+scanning -> service : found sensor
+service -> characteristics : device has the required service
+
+characteristics -> write : service had the required data
+
+write -up> close
+close -left> waiting
+close: disconnect from sensor
+
+state retry
+
+
+service -down-> retry
+characteristics -> retry
+retry -> scanning
+retry: at most 3 times
+
+
+waiting --> scanning
+waiting --> interruption
+@enduml

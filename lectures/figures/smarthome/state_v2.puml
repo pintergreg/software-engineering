@@ -1,0 +1,32 @@
+@startuml
+skin rose
+scale 2
+
+state "scanning" as sc: for sensor
+state "select service" as se
+state "select characteristics" as ch
+state "read and parse" as re
+state "write" as wr: write to database
+state "retry" as rt: 3 times
+state "wait" as wa: for 20 minutes
+'state "interruption" as in: CTRL+C pressed
+
+[*] --> sc
+sc --> se: found
+se --> ch: service found
+ch --> re: characteristics found
+re -> wr
+wr --> wa
+wa -> sc
+
+sc --> rt: not found
+se --> rt: not found
+ch -right-> rt: not found
+rt --> sc
+rt --> wa: after 3rd try
+
+'wa --> in
+'sc --> in
+'in --> [*]
+
+@enduml
