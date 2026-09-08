@@ -737,6 +737,27 @@ although actors are denoted by stick figures, devices can also be actors
 can be used at a code level, but more practical at a higher level from an architectural point of view 
 :::
 
+## smart home example -- state diagram
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%" .text-smaller .mt-1}
+![](figures/smarthome/deployment_ble.svg)
+
+- sensor connection by address
+    - Bluetooth Low Energy
+    - [Generic ATTribute profile](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt)
+- services
+    - provides characteristics
+- characteristics
+    - single data point
+
+:::::::::
+::::::::: {.column width="60%"}
+![](figures/smarthome/state_v2.svg){data-preview-image="figures/smarthome/state_v2.svg" data-preview-fit="contain"}
+
+:::::::::
+::::::::::::
+
 # references
 
 ::: {#refs}
