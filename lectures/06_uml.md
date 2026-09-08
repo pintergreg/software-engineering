@@ -740,7 +740,7 @@ can be used at a code level, but more practical at a higher level from an archit
 ## smart home example -- state diagram
 
 :::::::::::: {.columns}
-::::::::: {.column width="40%" .text-smaller .mt-1}
+::::::::: {.column width="40%" .text-smaller}
 ![](figures/smarthome/deployment_ble.svg)
 
 - sensor connection by address
@@ -753,7 +753,7 @@ can be used at a code level, but more practical at a higher level from an archit
 
 :::::::::
 ::::::::: {.column width="60%"}
-![](figures/smarthome/state_v2.svg){data-preview-image="figures/smarthome/state_v2.svg" data-preview-fit="contain"}
+![actually incomplete](figures/smarthome/state_v2.svg){data-preview-image="figures/smarthome/state_v2.svg" data-preview-fit="contain"}
 
 :::::::::
 ::::::::::::
