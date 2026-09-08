@@ -434,6 +434,17 @@ a software does not have to obey the laws of physics
 - the size of a room can be changed during the construction -- even several times
 
 
+::: {.wide-quote .text-smaller .mt-4}
+> Software is in the domain of the abstract.
+> It is not like a building, or a bridge, that is in the physical realm where you can see and feel the nature of the thing.
+> If you continue to add floors and rooms to a building forever, it will collapse.
+> Software faces no such constraint.
+>
+> --  Zach Kehs, [There's No Limit to How Bad Code Can Get](https://zachkehs.com/blog/theres_no_limit_to_how_bad_code_can_get/)
+
+:::
+
+
 # software development is like gardening
 
 ::: {.text-smaller}
