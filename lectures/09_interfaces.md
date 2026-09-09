@@ -73,7 +73,7 @@ based on [@dodd2020metric], read the [full story](https://everydayastronaut.com/
 
 the most important elements of the design are the interfaces, hexagonal arcitecture focuses on them
 
-##
+## discussion
 
 > if the code is AI generated then the focus has to go elsewhere and I think the focus will go to the interfaces and to the types
 >
