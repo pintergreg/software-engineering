@@ -16,6 +16,8 @@ During the second half of the semester, lectures also cover topics such as code 
 
 - the [how to run short & effective meetings](lectures/figures/borrowed/how_to_run_short_and_effective_meetings.jpg) comic is by [Sam Lau](https://www.samlau.xyz/about), and used with the author's permission
 - the [let's hop on a quick call](lectures/figures/borrowed/quick_call.jpg) comic is by [Ash Lamb](https://ashlamb.com/), and used with the author's permission
+- the [a very comprehensive and precise spec](https://www.commitstrip.com/en/2016/08/25/a-very-comprehensive-and-precise-spec/?) comic by [commitstrip.com](https://www.commitstrip.com/en/?)
+    - its license is roughly CC-BY-ND-NC: "You can use our strips for any non-commercial purpose. You can use them to illustrate an article or a blog post, as long as you aren’t just duplicating our content for the sake of it. In all cases, a link to the strip and attribution to us is required."
 
 ## acknowledgements
 
