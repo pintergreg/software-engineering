@@ -336,6 +336,18 @@ which can get performing a requirement analysis
 >
 > [Frederick Vanbrabant](https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/)
 
+##
+
+![](figures/borrowed/a-very-comprehensive-and-precise-spec.jpg){width=600}
+
+:::{.text-smaller}
+source: [a very comprehensive and precise spec](https://www.commitstrip.com/en/2016/08/25/a-very-comprehensive-and-precise-spec/?) | [commitstrip.com](https://www.commitstrip.com/en/?)
+:::
+
+::: notes
+commitstrip license: "You can use our strips for any non-commercial purpose. You can use them to illustrate an article or a blog post, as long as you aren’t just duplicating our content for the sake of it. In all cases, a link to the strip and attribution to us is required."
+:::
+
 ## from today, is software engineering dead?
 
 :::::::::::: {.columns}
@@ -830,12 +842,17 @@ The principle is sometimes paraphrased as "of two competing theories, the simple
 
 ## Zawinski's law of software envelopment
 
+::: {.wide-quote}
 > Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can.
 >
 > -- Jamie Zawinski
 
+:::
+
+::: {.mt-3}
 - programs experience pressure to evolve into toolkits and application platforms
 - often interpreted as a comment on software bloat
+:::
 
 ## second-system effect
 
@@ -853,7 +870,7 @@ migitation:
 - ensuring experienced architectural leadership
 
 ::: {.text-smaller}
-more in [Laws of Software Engineering / Second-System Effect] by Dr. Milan Milanović
+more in [Laws of Software Engineering / Second-System Effect](https://lawsofsoftwareengineering.com/laws/second-system-effect/) by Dr. Milan Milanović
 :::
 
 
@@ -1111,7 +1128,7 @@ trade-off between
 - reading/understanding the code and the number of dependencies
 
 ::: {.mt-4 .text-smaller}
-[advice:]{.text-color-lightblue} you don't want to reimplement datetime / timezone handling
+[advice:]{.background-color-lightblue} you don't want to reimplement datetime / timezone handling
 :::
 <!--
 :::::::::
