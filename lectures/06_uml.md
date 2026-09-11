@@ -685,6 +685,10 @@ although actors are denoted by stick figures, devices can also be actors
 
 ![](figures/smarthome/deployment.svg){height=400}
 
+## smart home example -- component diagram
+
+![](figures/smarthome/component.svg)
+
 ## smart home example -- sequence diagram
 
 :::::::::::: {.columns}
