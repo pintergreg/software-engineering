@@ -284,6 +284,12 @@ shows user flow, ~ user story map flow
 - [Figma](https://www.figma.com/)
     - has a limited free plan
 
+    
+# summary {data-background-iframe="mindmap/wireframing.html" data-background-interactive="true" .text-align-left .exclude-header}
+
+::: {.mt-8}
+:::
+
 
 # references
 
