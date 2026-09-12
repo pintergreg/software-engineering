@@ -599,6 +599,7 @@ you can read [the rest of the scenarios](https://dannorth.net/blog/whats-in-a-st
 :::::::::
 ::::::::::::
 
+
 # data flow diagram (DFD)
 
 - use comprehensible entity names
@@ -608,11 +609,19 @@ you can read [the rest of the scenarios](https://dannorth.net/blog/whats-in-a-st
 
 ![DFD components, there are multiple notations, sometimes extended with flowcharts elements](figures/dfd.drawio.svg){data-preview-image="figures/dfd.drawio.svg" data-preview-fit="contain" height=200}
 
+
 ## data flow diagram example
 
 ![](figures/dfd_flashcard.drawio.svg)
 
 additional reading: [how to create DFD in draw.io](https://www.drawio.com/blog/data-flow-diagrams)
+
+
+# summary {data-background-iframe="mindmap/requirement_analysis.html" data-background-interactive="true" .text-align-left .exclude-header}
+
+::: {.mt-8}
+:::
+
 
 # references
 

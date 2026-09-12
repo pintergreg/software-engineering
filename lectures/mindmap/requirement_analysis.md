@@ -1,0 +1,73 @@
+---
+title: requirement analysis
+markmap:
+  colorFreezeLevel: -1
+  initialExpandLevel: 2
+---
+
+- understanding what software is supposed to do
+- avoid costly mistakes early
+- enhanced product quality
+- better risk management
+- steps
+    - stakeholder identification
+        - not just the customers
+        - end user (groups)
+    - elicitation of requirements
+        - interviews
+        - questionnaires
+        - user observation
+            - telemetry
+    - documentation of requirements
+        - for who
+            - future self
+            - colleagues
+            - every stakeholder of the project
+        - how
+            - searchable
+            - version tracked
+            - traceable
+                - who wrote / edited / approved it
+    - analysis and negotiation
+        - reviewing the documented requirements
+        - make sure they are realistic and its implications are understood
+    - validation and verification
+        - validation
+            - confirming the requirements actually meet the stakeholders' needs
+            - are we building the right thing?
+        - verification
+            - making sure the requirements are documented correctly and consistently
+            - are we building the thing right?
+- requirement smells
+    - indicate something not necessarily wrong but potentially problematic
+    - subjective language
+    - ambiguous adverbs and adjectives
+    - non-verifiable terms
+- functional requirements
+    - features
+- non-functional requirements
+    - quality goals
+    - quality of service requirements
+- user story
+    - simple description of a feature
+    - from the user's perspective
+    - often accompanied by acceptance criteria
+        - define the conditions that must be met to be considered complete
+- user story mapping
+    - performed in workshops
+    - build a shared understanding
+    - user story map
+        - three levels
+            - activities
+                - big thing that users do
+                - has multiple steps
+                - not always has a precise workflow
+                - has roles
+            - steps
+            - details
+        - zooms from an overview to details 
+        - multiple interations
+            - living document
+            - versions
+        - backbone
+        - skeleton
