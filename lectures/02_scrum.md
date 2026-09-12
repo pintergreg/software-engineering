@@ -672,19 +672,13 @@ The team also doesn’t have any intention to improve their situation. Actually,
 
 :::::::::::: {.columns}
 ::::::::: {.column width="55%"}
-::: {.column-align-left}
 zombie scrum
 
 : although every sprint can result in a  new version, only the final version delivers real value
 
-:::
-
-::: {.column-align-left .fragment}
 healthy scrum
 
 : every sprint delivers value
-
-:::
 
 :::::::::
 ::::::::: {.column width="45%"}
@@ -695,6 +689,8 @@ healthy scrum
 
 ## working software
 
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
 ::: {.column-align-left}
 zombie scrum
 
@@ -702,30 +698,35 @@ zombie scrum
 
 :::
 
-::: {.column-align-left .fragment}
+::: {.column-align-left}
 healthy scrum
 
 : working software is essential
 
 :::
 
+:::::::::
+::::::::: {.column width="50%"}
+![](figures/publicdomainvectors/system-update.svg){width=200}
+
+from agile manifesto
+
+: working software over comprehensive documentation
+
+:::::::::
+::::::::::::
+
 ## what is work
 
 :::::::::::: {.columns}
 ::::::::: {.column width="55%"}
-::: {.column-align-left}
 zombie scrum
 
 : writing code is work, everything else is a waste of time
 
-:::
-
-::: {.column-align-left .fragment}
 healthy scrum
 
 : writing code is important part of work, but building good software requires frequent interaction with the team, stakeholders, and peers
-
-:::
 
 :::::::::
 ::::::::: {.column width="45%"}
@@ -737,10 +738,10 @@ healthy scrum
 ## treatments
 
 ::: {.incremental}
-- Zombie Scrum teams often benefit from a shortened Sprint length. Instead of three to four-week iterations decrease the length to two weeks or even just one.
+- Zombie Scrum teams often benefit from a shortened sprint length. Instead of three to four-week iterations decrease the length to two weeks or even just one.
 - Focus the Sprint Planning on answering the question of what type of impact the team would like to achieve within the upcoming Sprint.
 - Start the Daily Scrum by reviewing the Sprint Goal and asking what achievements the team has made towards reaching that goal.
-- Use the roadmap to provide context for the insights from the Review meeting. And for heaven’s sake, invite some real customers or stakeholders!
+- Use the roadmap to provide context for the insights from the Review meeting. And invite some real customers or stakeholders!
 - Use the Retrospective not to drag out the same old problems but to dream big. A transformational approach might be better suited than an incremental one.
 :::
 
