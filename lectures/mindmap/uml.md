@@ -2,7 +2,7 @@
 title: unified modelling language
 markmap:
   colorFreezeLevel: -1
-  initialExpandLevel: 2
+  initialExpandLevel: 3
 ---
 
 - structural diagrams
