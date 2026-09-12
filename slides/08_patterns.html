@@ -1884,8 +1884,13 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb18-1"><a href="#
 <li>business logic in persistence layer</li>
 <li>code depends on the SQL dialect
 <ul>
-<li>can be mitigated with an object-relational mapping (ORM) framework
-but that would also be a dependency</li>
+<li>seemingly can be mitigated with an object-relational mapping (ORM)
+framework but that would also be a dependency
+<ul>
+<li>and ORM has its own serious issues: <a
+href="https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/">ORM
+is the Vietnam of Computer Science</a> – Jeff Atwood</li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li>may not suitable for complex aggregations
@@ -1894,7 +1899,7 @@ but that would also be a dependency</li>
 </ul></li>
 <li>harder to unit test</li>
 </ul>
-<div class="fragment text-color-secondary">
+<div class="text-color-secondary">
 <p>on the other hand, most of these are present in all the three
 architectures!</p>
 </div>
