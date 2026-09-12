@@ -735,7 +735,7 @@ healthy scrum
 :::::::::
 ::::::::::::
 
-## treatments
+## treatments {background-image="figures/publicdomainvectors/farmer-spraying-pesticides.svg" data-background-size="300px" data-background-position="right 2.25em bottom 2.25em"}
 
 ::: {.incremental}
 - Zombie scrum teams often benefit from a shortened sprint length. Instead of three to four-week iterations decrease the length to two weeks or even just one.
