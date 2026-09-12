@@ -1,0 +1,54 @@
+---
+title: wireframing
+markmap:
+  colorFreezeLevel: -1
+  initialExpandLevel: 2
+---
+
+- UI/UX designers' responsibility
+    - understanding ~ requirement elicitation
+        - user tests
+        - focus groups
+        - surveys
+        - interviews
+    - bridging ~ analysis and negotiation
+        - mold technology into products that meet real needs
+    - flowing ~ diagramming
+        - paper sketches
+        - mockups
+        - motion studies
+        - journey maps
+    - refining ~ implementation
+        - **delight users**
+        - color themes
+        - animations
+        - copywriting
+        - styleguide, icons 
+- principle of least astonishment
+- iterative process
+    - presented to the stakeholders
+    - feedback
+- wireframe
+    - outline / blueprint / concept art
+    - visual understanding 
+        - structure, layout, user flow, functionality and intended behaviours
+    - low fidelity
+        - first sketch
+        - simple
+        - don't include actual content
+        - don't consider scale or pixel accuracy
+        - can be hand-drawn
+    - mid fidelity
+        - more details
+        - usually no images, typography
+        - no colors, grayscale
+        - usually made with digital tool
+    - high fidelity
+        - finalising the design
+            - can be an initial prototype
+        - created using a digital tool
+        - pixel-specific layouts
+        - has actual typography, 
+        - detailed design elements (logos)
+- wireframe map
+    - shows user flow

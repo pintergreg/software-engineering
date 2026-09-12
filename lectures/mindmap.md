@@ -246,11 +246,11 @@ markmap:
         - useful in real-time systems
         - more like for documentation rather than modelling
 
-### C4
+### C4 model
 
 - hierarchical set of software architecture diagrams
 - has four levels
-    - context
+    - system context
         - how the software fits into the world
         - who use the software
         - what other software interacts with
@@ -274,6 +274,25 @@ markmap:
 ### wireframing
 
 - UI/UX designers' responsibility
+    - understanding ~ requirement elicitation
+        - user tests
+        - focus groups
+        - surveys
+        - interviews
+    - bridging ~ analysis and negotiation
+        - mold technology into products that meet real needs
+    - flowing ~ diagramming
+        - paper sketches
+        - mockups
+        - motion studies
+        - journey maps
+    - refining ~ implementation
+        - **delight users**
+        - color themes
+        - animations
+        - copywriting
+        - styleguide, icons
+- principle of least astonishment
 - iterative process
     - presented to the stakeholders
     - feedback
