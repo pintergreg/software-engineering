@@ -1,0 +1,98 @@
+---
+title: implementation planning
+markmap:
+  colorFreezeLevel: -1
+  initialExpandLevel: 2
+---
+
+- define goals
+- conduct research
+    - learning can be a task
+        - new codebase
+        - new technology
+    - do experiments
+    - fail fast
+        - proof of contradiction
+        - eliminate candidates as soon as possible
+    - document findings
+    - minimal workable example
+- identify risks
+    - prioritize risks
+    - probability
+        - how likely is it that the risk will happen?
+    - impact
+        - what is the negative impact if the risk does occur?
+    - risk register
+        - document
+        - risk management tool
+        - table or scatterplot
+        - additional info
+            - nature of the risk
+            - probability
+            - impact
+            - reference and owner
+            - mitigation measures
+    - risk storming
+        - visual and collaborative risk identification
+        - collaborative activity
+        - steps
+            - draw some software architecture diagrams 
+                - ideally C4
+            - identify the risks individually
+                - sticky notes
+                    - color for priority
+                - 10 minutes
+                - in silence
+            - converge the risks on the diagrams
+            - review and summarise the risks
+                - focusing on risks that only one person identified
+                - disagreement on the priority
+    - mitigating risks
+        - after risks are identified and prioritized
+        - either to prevent the risks from happening
+        - or to take corrective action if the risk does occur
+    - mitigation strategies
+        - education
+        - writing code
+            - create prototypes
+            - proofs of concept
+            - walking skeletons
+                - tiny implementation of the system
+                - performs a small end-to-end function
+                - do not use the final architecture
+                - link together the main architectural components
+        - rework
+            - change software architecture
+            - and repeat risk storming
+- schedule milestones
+    - pay attention to holidays
+    - Gantt chart
+    - add safety margin
+- assign responsibilities and tasks
+    - define area of responsibility 
+    - exactly one person should be responsible
+    - share responsibilities
+        - scrum board
+        - kanban
+        - ticket/issue tracker
+- allocate resources
+    - estimating time requirement
+    - story points
+        - unit of effort required to fully implement a task
+        - Fibonacci sequence
+        - powers of 2
+    - planning poker
+        - gamified technique
+        - make estimates by playing numbered cards face-down
+            - avoid the cognitive bias of anchoring
+                - first number spoken aloud sets a precedent
+        - estimates are then discussed 
+            - high and low estimates are explained
+        - consensus-based
+            - repeat until estimates converge
+    - measure instead of guessing
+        - infer from previous tasks
+        - burn down charts
+        - cumulative flow diagram
+        - Brooks’s law
+            - Adding manpower to a late software project makes it later.

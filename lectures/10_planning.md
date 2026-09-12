@@ -641,8 +641,8 @@ on the other hand, addig more resources (manpower) may help depending on
 source: [effectiviology.com/brooks-law](https://effectiviology.com/brooks-law/)
 :::
 
-
 <!-- Brooks' law says that it is impossible to measure useful work in man-months. -->
+
 
 ## Brooks' law vs Torvalds' law
 
@@ -660,6 +660,13 @@ source: [effectiviology.com/brooks-law](https://effectiviology.com/brooks-law/)
 
 :::
 
+
+# summary {data-background-iframe="mindmap/implementation_planning.html" data-background-interactive="true" .text-align-left .exclude-header}
+
+::: {.mt-8}
+:::
+
+
 # summary
 
 - conduct research
@@ -675,8 +682,9 @@ source: [effectiviology.com/brooks-law](https://effectiviology.com/brooks-law/)
     - planning poker
 
 ::: {}
-[open mindmap](mindmap.html){target="_blank"}
+[open mindmap](mindmap/implementation_planning.html){target="_blank"}
 :::
+
 
 # references
 

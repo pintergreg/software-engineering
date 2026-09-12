@@ -762,7 +762,7 @@ can be used at a code level, but more practical at a higher level from an archit
 :::::::::
 ::::::::::::
 
-# summary {data-background-iframe="mindmap/uml.html" data-background-interactive="true" .text-align-left}
+# summary {data-background-iframe="mindmap/uml.html" data-background-interactive="true" .text-align-left .exclude-header}
 
 ::: {.mt-8}
 :::
