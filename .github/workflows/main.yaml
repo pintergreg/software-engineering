@@ -42,6 +42,7 @@ jobs:
             - name: compile mindmap
               run: |
                   npx markmap-cli -o lectures/mindmap.html --offline --no-open lectures/mindmap.md
+                  for mm in $(ls lectures/mindmap/*.md); do npx markmap-cli --offline --no-open $mm; done
 
             - name: build mock exam
               run: |
