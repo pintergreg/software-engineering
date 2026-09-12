@@ -31,7 +31,7 @@ an interface is a shared boundary across which two or more separate components o
 ![](figures/uml/component_horizontal.svg){height=150}
 
 
-## interface is an agreement
+## interface is an aggreement
 
 :::::::::::: {.columns}
 ::::::::: {.column width="55%" .mt-4}
@@ -474,6 +474,31 @@ think like a villian, someone who's going to abuse the system that you’re desi
 :::{.text-smaller}
 source: [Laws of Software Engineering / Postel's Law](https://lawsofsoftwareengineering.com/laws/postels-law/) by Dr. Milan Milanović
 :::
+
+
+# summary
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+- like an agreement
+- shared boundary across two or more components
+- a boundary where a module can be separated
+- separation of concerns
+- hides inner details
+- communicate change
+    - between teams during design
+    - API level
+    - code level
+- Hyrum’s Law
+- Postel’s law / robustness principle
+
+:::::::::
+::::::::: {.column width="30%" .exclude}
+![](figures/publicdomainvectors/business-handshake-hands.svg){width=200}
+
+![](figures/publicdomainvectors/policeman-screams-into-a-megaphone.svg){width=150}
+:::::::::
+::::::::::::
 
 # references
 
