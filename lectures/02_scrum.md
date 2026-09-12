@@ -738,11 +738,11 @@ healthy scrum
 ## treatments
 
 ::: {.incremental}
-- Zombie Scrum teams often benefit from a shortened sprint length. Instead of three to four-week iterations decrease the length to two weeks or even just one.
-- Focus the Sprint Planning on answering the question of what type of impact the team would like to achieve within the upcoming Sprint.
-- Start the Daily Scrum by reviewing the Sprint Goal and asking what achievements the team has made towards reaching that goal.
-- Use the roadmap to provide context for the insights from the Review meeting. And invite some real customers or stakeholders!
-- Use the Retrospective not to drag out the same old problems but to dream big. A transformational approach might be better suited than an incremental one.
+- Zombie scrum teams often benefit from a shortened sprint length. Instead of three to four-week iterations decrease the length to two weeks or even just one.
+- Focus the _sprint planning_ on answering the question of what type of impact the team would like to achieve within the upcoming sprint.
+- Start the _daily scrum_ by reviewing the _sprint goal_ and asking what achievements the team has made towards reaching that goal.
+- Use the roadmap to provide context for the insights from the _review meeting_. And invite some real customers or stakeholders!
+- Use the _retrospective_ not to drag out the same old problems but to dream big.<br>A transformational approach might be better suited than an incremental one.
 :::
 
 # references
