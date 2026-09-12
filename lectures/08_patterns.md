@@ -1462,12 +1462,13 @@ LIMIT 1;
 - hard dependency on database
     - business logic in persistence layer
     - code depends on the SQL dialect
-        - can be mitigated with an object-relational mapping (ORM) framework but that would also be a dependency
+        - seemingly can be mitigated with an object-relational mapping (ORM) framework but that would also be a dependency
+            - and ORM has its own serious issues: [ORM is the Vietnam of Computer Science](https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/) -- Jeff Atwood
 - may not suitable for complex aggregations
     - stored functions just increase dependency
 - harder to unit test
 
-::: {.fragment .text-color-secondary}
+::: {.text-color-secondary}
 on the other hand, most of these are present in all the three architectures!
 :::
 
