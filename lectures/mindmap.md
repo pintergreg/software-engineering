@@ -332,6 +332,8 @@ markmap:
     - between teams during design
     - API level
     - code level
+- Hyrum’s Law
+- Postel’s law / robustness principle
 
 ### architecture decision record
 
