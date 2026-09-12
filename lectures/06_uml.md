@@ -762,6 +762,11 @@ can be used at a code level, but more practical at a higher level from an archit
 :::::::::
 ::::::::::::
 
+# summary {data-background-iframe="mindmap/uml.html" data-background-interactive="true" .text-align-left}
+
+::: {.mt-8}
+:::
+
 # references
 
 ::: {#refs}
