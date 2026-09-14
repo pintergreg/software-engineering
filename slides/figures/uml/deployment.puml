@@ -1,0 +1,19 @@
+@startuml
+skin rose
+scale 2
+
+node "server in the corner (node)" {
+file config.yaml as conf
+
+component "component\n(artifact)" as c
+
+}
+
+cloud cloud
+database "S3 data storage" as s3
+
+c -right- cloud
+cloud -right- s3
+
+conf -[hidden]right-c
+@enduml
