@@ -252,3 +252,40 @@ create content feature from a [social media platform v2]{data-preview-image="fig
 ::: {.text-smaller}
 more from Jeff Patton: [5 story mapping mistakes](https://jpattonassociates.com/5-story-mapping-mistakes/)
 :::
+
+
+# user story mapping -- summary
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+**user story mapping**
+
+- performed in workshop
+- build a shared understanding
+
+::: {.mt-6 .r-frame}
+
+![](figures/usm/usm_create_content.svg){data-preview-image="figures/usm/usm_create_content.svg" data-preview-fit="contain"}
+
+:::
+:::::::::
+::::::::: {.column width="50%"}
+**user story map**
+
+- three levels
+    - activities (backbone)
+        - big thing that users do
+        - has multiple steps
+        - not always has a workflow
+        - has roles
+    - steps (skeleton)
+    - details
+- zooms from an overview to details 
+- not a flowchart
+- multiple interations
+    - living document
+    - versions
+
+:::::::::
+::::::::::::
+
