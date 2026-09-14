@@ -523,6 +523,20 @@ Aggregation can occur when a class is a collection or container of other classes
 ![](figures/uml/object_collections.svg){height=350}
 -->
 
+# deployment diagram
+
+- represents the deployment of software components on hardware nodes
+- shows how software is distributed across devices
+    - e.g., servers, and network infrastructure
+    - and what software components (artifacts) run on each node 
+    - can also display actors, files, interfaces
+    
+![](figures/uml/deployment.svg){height=250}
+
+:::{.text-smaller}
+more at [Deployment Diagram in Unified Modeling Language(UML)](https://www.geeksforgeeks.org/system-design/deployment-diagram-unified-modeling-languageuml/)
+:::
+
 # component diagram
 
 - depicts the component structure and relations

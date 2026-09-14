@@ -16,6 +16,10 @@ markmap:
     - component
         - depicts the component structure and relations
         - highlights the interfaces
+    - deployment
+        - represents the deployment of software components on hardware
+        - shows what software components (artifacts) run on each node 
+        - can also display actors, files, interfaces
 - behavior diagrams
     - use case
         - depicts the interactions between system users
