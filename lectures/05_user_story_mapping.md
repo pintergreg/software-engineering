@@ -218,7 +218,7 @@ sign-up feature from a [minimal social media platform]{data-preview-image="figur
 user management features from a [social media platform v2]{data-preview-image="figures/social_media_platform/p1_wbs.svg" data-preview-fit="contain"}
 
 # social media platform example -- create content
-![](figures/usm/um_create_content.svg){data-preview-image="figures/usm/um_create_content.svg" data-preview-fit="contain"}
+![](figures/usm/usm_create_content.svg){data-preview-image="figures/usm/usm_create_content.svg" data-preview-fit="contain"}
 
 create content feature from a [social media platform v2]{data-preview-image="figures/social_media_platform/p2_wbs.svg" data-preview-fit="contain"}
 
