@@ -254,6 +254,23 @@ Kanban contributes to scrumban:
 :::::::::
 ::::::::::::
 
+# summary
+
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
+- pull-based system
+- uses a visual workflow
+- uses columns for states of the product
+- continuous flow (not iterative)
+- no roles, no events
+- pick top right task
+- encourages to improve the workflow
+:::::::::
+::::::::: {.column width="45%"}
+![simple kanban board<br>by [Jeff Lasovski](https://commons.wikimedia.org/wiki/File:Simple-kanban-board-.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)](figures/borrowed/simple_kanban_board.jpg){width=700}
+:::::::::
+::::::::::::
+
 # references
 
 ::: refs

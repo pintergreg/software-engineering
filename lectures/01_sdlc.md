@@ -278,6 +278,11 @@ source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.c
 source: [Spec-Driven Development: The Waterfall Strikes Back](https://marmelab.com/blog/2025/11/12/spec-driven-development-waterfall-strikes-back.html) by François Zaninotto [@zaninotto2025specdriven]
 :::
 
+# summary {data-background-iframe="mindmap/sdlc.html" data-background-interactive="true" .text-align-left}
+
+::: {.mt-8}
+:::
+
 # references
 
 ::: {#refs}
