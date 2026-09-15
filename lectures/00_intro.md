@@ -309,8 +309,8 @@ expectation: AI's going to make it so much faster
 
 :::::::::::: {.columns}
 ::::::::: {.column width="75%" .mt-3}
-- coding got cheap^*^ with coding agents
-    - [^*^price is increasing though]{.text-smaller}
+- coding got cheap with coding agents
+    - price is increasing though
 - but coding wasn't the difficult part
     - comprehension and coordination are
 - to translate a problem into a solution that a computer can understand, you need a full overview of the problem
