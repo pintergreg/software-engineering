@@ -314,6 +314,7 @@ expectation: AI's going to make it so much faster
 - but coding wasn't the difficult part
     - comprehension and coordination are
 - to translate a problem into a solution that a computer can understand, you need a full overview of the problem
+    - the code isn't just a recipe but a mental model
     - e.g., with constant iteration with the domain experts <!--(more agile)-->
     - this is often the part that slows down software development
 
