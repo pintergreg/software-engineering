@@ -383,7 +383,7 @@ if AI writes code, should the session be part of the commit?
     - also for managing stable (released) versions
     - and bugfixing though multiple versions
 
-::: {.r-frame .border-color-lightblue .text-align-left .mt-2}
+::: {.r-frame .text-align-left .mt-2}
 - [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model) [@driessen2010successful]
     - introduced in 2010
     - a criticism: [A succesful Git branching model considered harmful](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful) [@judin2016succesful]

@@ -128,15 +128,6 @@ figcaption {
 .no-figure-top-margin img {
     margin-top: 0;
 }
-.border-color-primary {
-    border-color: var(--r-main-color);
-}
-.border-color-secondary {
-    border-color: var(--r-link-color) !important;
-}
-.border-color-lightblue {
-    border-color: #bee4fd !important;
-}
 .svg-invert {
     filter: invert(100%);
 }
