@@ -93,7 +93,7 @@
     color: var(--r-heading-color) !important;
 }
 .text-color-secondary {
-    color: var(--r-link-color) !important;
+    color: var(--r-link-color);
 }
 .text-color-lightblue {
     color: #bee4fd;
