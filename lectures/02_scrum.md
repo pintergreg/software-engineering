@@ -204,6 +204,13 @@ You can watch a parody about a the scrum master role: [Scrum Master - Funny movi
 - causing the removal of impediments to the scrum team's progress, and
 - ensuring that all scrum events take place and are positive, productive, and kept within the timebox
 
+::: {.wide-quote .mt-2 .text-smaller}
+> Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
+>
+> from the agile principles
+
+:::
+
 ## scrum master serves the product owner
 
 - helping find techniques for effective product goal definition and product backlog management,
@@ -387,14 +394,14 @@ Read more from [Kat Boogaard](https://www.wrike.com/blog/how-to-use-cumulative-f
 - in agreement with the product owner, the developers select items from the product backlog to include in the current sprint agenda
 - the scrum team may refine these items during this process
 <!--     - which increases understanding and confidence -->
-- not easy to select how much can be completed within a sprint
+- **not easy to select how much can be completed within a sprint**
 - the more the developers know about
     - their past performance (e.g., burndown charts),
     - their upcoming capacity (e.g., vacation, holidays), and
     - the definition of done,
     - the more confident they will be in their sprint forecasts
 
-## topics of sprint planning - wow will the chosen work get done?
+## topics of sprint planning - how will the chosen work get done?
 
 - for each selected item, the developers plan the work necessary to create an increment that meets the DoD
 - often done by decomposing product backlog items into smaller work items of one day or less
@@ -506,7 +513,7 @@ Also known as "demo", when the scrum team demonstrates the sprint goal to the st
 
 # sprint retrospective
 
-- he purpose of the sprint retrospective is to increase quality and effectiveness
+- the purpose of the sprint retrospective is to increase quality and effectiveness
 - the sprint retrospective concludes the sprint
 - it is timeboxed to a maximum of three hours for a one-month sprint 
     - for shorter sprints, the event is usually shorter
@@ -534,12 +541,18 @@ Also known as "demo", when the scrum team demonstrates the sprint goal to the st
 
 :::::::::::: {.columns}
 ::::::::: {.column width="55%"}
-![](figures/retrospective_starfish.drawio.svg)
+![](figures/retrospective_starfish.drawio.svg){width=500}
 
 :::::::::
-::::::::: {.column width="45%" .mt-4}
+::::::::: {.column width="45%" .mt-1}
 - divide the whiteboard to 5 parts
 - every team member adds sticky notes to the respective parts
+- what the team should
+    - start doing
+    - do more during a spring
+    - keep as it is
+    - do less during a spring
+    - stop doing
 :::::::::
 ::::::::::::
 
@@ -570,10 +583,14 @@ For example, less online meeting, because it is not so efficient as face-to-face
 - describes a future state of the product 
 <!-- - it is the single source of work undertaken by the scrum team -->
 - product owner is responsible for its content and prioritization
+    - dependencies between tasks!
 
-## product backlog refinement
+::: {.mt-3}
+**product backlog refinement**
 
 > product backlog refinement is the act of breaking down and further defining product backlog items into smaller more precise items.
+
+:::
 
 ## sprint backlog
 
@@ -744,6 +761,12 @@ healthy scrum
 - Use the roadmap to provide context for the insights from the _review meeting_. And invite some real customers or stakeholders!
 - Use the _retrospective_ not to drag out the same old problems but to dream big.<br>A transformational approach might be better suited than an incremental one.
 :::
+
+# summary
+
+[Scrum Master - Funny movie about The Power of Scrum](https://www.youtube.com/watch?v=P6v-I9VvTq4){target="_blank"}
+
+~5 minute
 
 # references
 
