@@ -1,4 +1,4 @@
-@startwbs
+@startmindmap
 scale 2
 skin rose
 
@@ -41,4 +41,4 @@ skin rose
 +++++ are card groups depend on subscription plan
 ++++ user management for the card manager role?
 ++++ subscriber/user management?
-@endwbs
+@endmindmap
