@@ -103,14 +103,14 @@ Some general examples are:
     - conditions when to move an item between columns
 
 :::
-::: {.fragment data-fragment-index="1"}
+::: {data-fragment-index="1"}
 - a definition of the individual units of value that are moving through the workflow
     - referred to as work items (or items)
 
 :::
 :::::::::
 ::::::::: {.column width="40%"}
-![](figures/job_hunting_kanban_item.drawio.svg){.fragment data-fragment-index="1"}
+![](figures/job_hunting_kanban_item.drawio.svg){data-fragment-index="1"}
 
 :::::::::
 ::::::::::::
@@ -189,7 +189,7 @@ changes needed
 ::::::::: {.column width="60%"}
 - WIP: number of work items started but not finished
 - throughput: number of work items finished per unit of time
-    - Note the measurement of throughput is the exact count of work items
+    - the measurement of throughput is the exact count of work items
 - work item age: elapsed time from when a work item started
 - cycle time: time between when a work item started and finished
 :::::::::
