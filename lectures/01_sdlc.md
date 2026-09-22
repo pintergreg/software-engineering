@@ -38,11 +38,15 @@ link-citations: true
 ## criticism
 
 - Clients may not know exactly what their requirements are before they see working software and so change their requirements, leading to redesign, redevelopment, and retesting, and increased costs. [@parnas1986rational]
-In most cases the people who comission the building of the a software system do not know exactly what they want and are unable to tell us all they know.
+- In most cases the people who comission the building of the a software system do not know exactly what they want and are unable to tell us all they know.
 
 ## modified waterfall model
 
-![based on Figure 4. of [@royce1970managing]](figures/waterfall_modified.svg){width=750}
+![based on Figure 4 of [@royce1970managing]](figures/waterfall_modified.svg){width=750}
+
+::: {.text-align-left}
+why is this important?
+:::
 
 
 # V model [@forsberg1991relationship]
@@ -51,19 +55,20 @@ In most cases the people who comission the building of the a software system do 
 ::::::::: {.column width="50%"}
 - still rigid
 - each phase has output and a review process
-    - errors are found at early stage
+    - errors are found at [early stage](){width=500 data-preview-image="figures/cost_of_fixing.drawio.svg" data-preview-fit="contain"}
     - decreases the risk of failure
 - large to small: testing is done in a hierarchical perspective
+- testing centralism
 
 :::::::::
 ::::::::: {.column width="50%"}
 :::::: {.r-stack}
-![based on [guru99.com's image](https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png)](figures/v_model.drawio.svg){width=500}
+![based on [guru99.com's image](https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png)](figures/v_model_handdrawn.drawio.svg){width=500 data-preview-image="figures/v_model.drawio.svg" data-preview-fit="contain"}
 ::::::
 :::::::::
 ::::::::::::
 
-::: notes
+::: {.text-smaller .mt-2}
 The *unit testing* will be discussed later in the testing chapter. For now it is enough to know that it is a tool to test the lower level part of the software.
 :::
 
@@ -79,7 +84,7 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 :::::::::
 ::::::::: {.column width="50%"}
 :::::: {.r-stack}
-![](figures/iterative.drawio.svg){width=500 data-preview-image="figures/iterative.drawio.svg"}
+![](figures/iterative.drawio.svg){width=500 data-preview-image="figures/iterative.drawio.svg" data-preview-fit="contain"}
 ::::::
 :::::::::
 ::::::::::::
@@ -101,7 +106,7 @@ The *unit testing* will be discussed later in the testing chapter. For now it is
 
 :::::::::
 ::::::::: {.column width="50%"}
-![[based on [@yerukala2023what]]{.text-smaller}](figures/extreme_programming.drawio.svg){height=200 data-preview-image="figures/extreme_programming_white.drawio.svg"}
+![[based on [@yerukala2023what]]{.text-smaller}](figures/extreme_programming.drawio.svg){width=500 data-preview-image="figures/extreme_programming_white.drawio.svg" data-preview-fit="contain"}
 
 :::::::::
 ::::::::::::
@@ -117,8 +122,11 @@ spike is a task for exploring or answering questions, not delivering a product
 # agile model
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%"}
-- continuous collaboration and fast response to change, while the iterative model takes a more gradual approach, building up the final product over multiple iterations
+::::::::: {.column width="50%" .mt-2}
+- continuous collaboration and 
+- fast response to change
+- while the iterative model takes a more gradual approach,
+    - building up the final product over multiple iterations
 - SCRUM is an agile methodology
 
 :::::::::
@@ -141,7 +149,6 @@ spike is a task for exploring or answering questions, not delivering a product
 
 [agilemanifesto.org](https://agilemanifesto.org/)
 
-. . .
 
 [Principles behind the Agile Manifesto](https://agilemanifesto.org/principles.html)
 
@@ -165,7 +172,7 @@ There are also twelve principles behind the Agile Manifesto, that provides some 
 3. **Deliver working software frequently**, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
     - [significant seep-up compared to the waterfall]{.text-smaller}
 4. Business people and developers must work together daily throughout the project.
-5. Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
+5. Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done. &larr; **scrum master**
 6. The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
 
 ::: notes
@@ -239,6 +246,10 @@ The working software is good, but should well-crafted, which aligns with the nin
 | phases repeated                       | phases completed exactly once          |
 | flexible                              | rigid                                  |
 | allows changes during the development | no change once the development started |
+
+::: {.mt-3 .text-larger}
+can waterfall work? 
+:::
 
 ## agile vs. waterfall
 
