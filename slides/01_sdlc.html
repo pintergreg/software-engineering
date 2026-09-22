@@ -109,22 +109,25 @@ downwards like a waterfall</li>
 see working software and so change their requirements, leading to
 redesign, redevelopment, and retesting, and increased costs. <span
 class="citation" data-cites="parnas1986rational"><a
-href="#/ref-parnas1986rational" role="doc-biblioref">[1]</a></span> In
-most cases the people who comission the building of the a software
-system do not know exactly what they want and are unable to tell us all
-they know.</li>
+href="#/ref-parnas1986rational" role="doc-biblioref">[1]</a></span></li>
+<li>In most cases the people who comission the building of the a
+software system do not know exactly what they want and are unable to
+tell us all they know.</li>
 </ul>
 </section>
 <section id="modified-waterfall-model" class="slide level2">
 <h2>modified waterfall model</h2>
 <figure>
 <img data-src="figures/waterfall_modified.svg" width="750"
-alt="based on Figure 4. of [2]" />
-<figcaption aria-hidden="true">based on Figure 4. of <span
+alt="based on Figure 4 of [2]" />
+<figcaption aria-hidden="true">based on Figure 4 of <span
 class="citation" data-cites="royce1970managing"><a
 href="#/ref-royce1970managing"
 role="doc-biblioref">[2]</a></span></figcaption>
 </figure>
+<div class="text-align-left">
+<p>why is this important?</p>
+</div>
 </section></section>
 <section id="v-model-forsberg1991relationship"
 class="title-slide slide level1">
@@ -138,15 +141,20 @@ role="doc-biblioref">[3]</a></span></h1>
 <li>still rigid</li>
 <li>each phase has output and a review process
 <ul>
-<li>errors are found at early stage</li>
+<li>errors are found at <a href="" width="500"
+data-preview-image="figures/cost_of_fixing.drawio.svg"
+data-preview-fit="contain">early stage</a></li>
 <li>decreases the risk of failure</li>
 </ul></li>
 <li>large to small: testing is done in a hierarchical perspective</li>
+<li>testing centralism</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="r-stack">
 <figure>
-<img data-src="figures/v_model.drawio.svg" width="500"
+<img data-src="figures/v_model_handdrawn.drawio.svg"
+data-preview-image="figures/v_model.drawio.svg"
+data-preview-fit="contain" width="500"
 alt="based on guru99.com’s image" />
 <figcaption aria-hidden="true">based on <a
 href="https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png">guru99.com’s
@@ -155,11 +163,11 @@ image</a></figcaption>
 </div>
 </div>
 </div>
-<aside class="notes">
+<div class="text-smaller mt-2">
 <p>The <em>unit testing</em> will be discussed later in the testing
 chapter. For now it is enough to know that it is a tool to test the
 lower level part of the software.</p>
-</aside>
+</div>
 </section>
 
 <section>
@@ -179,7 +187,8 @@ ones</li>
 </div><div class="column" style="width:50%;">
 <div class="r-stack">
 <p><img data-src="figures/iterative.drawio.svg"
-data-preview-image="figures/iterative.drawio.svg" width="500" /></p>
+data-preview-image="figures/iterative.drawio.svg"
+data-preview-fit="contain" width="500" /></p>
 </div>
 </div>
 </div>
@@ -207,7 +216,7 @@ new customer requirements can be adopted</li>
 <figure>
 <img data-src="figures/extreme_programming.drawio.svg"
 data-preview-image="figures/extreme_programming_white.drawio.svg"
-height="200" alt="based on [4]" />
+data-preview-fit="contain" width="500" alt="based on [4]" />
 <figcaption aria-hidden="true"><span class="text-smaller">based on <span
 class="citation" data-cites="yerukala2023what"><a
 href="#/ref-yerukala2023what"
@@ -228,11 +237,14 @@ a product</p>
 <section id="agile-model" class="title-slide slide level1">
 <h1>agile model</h1>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column mt-2" style="width:50%;">
 <ul>
-<li>continuous collaboration and fast response to change, while the
-iterative model takes a more gradual approach, building up the final
-product over multiple iterations</li>
+<li>continuous collaboration and</li>
+<li>fast response to change</li>
+<li>while the iterative model takes a more gradual approach,
+<ul>
+<li>building up the final product over multiple iterations</li>
+</ul></li>
 <li>SCRUM is an agile methodology</li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -260,7 +272,6 @@ negotiation</li>
 items on the left more.</p>
 </blockquote>
 <p><a href="https://agilemanifesto.org/">agilemanifesto.org</a></p>
-<div class="fragment">
 <p><a href="https://agilemanifesto.org/principles.html">Principles
 behind the Agile Manifesto</a></p>
 <aside class="notes">
@@ -285,7 +296,6 @@ gardening.</li>
 <p>There are also twelve principles behind the Agile Manifesto, that
 provides some more detailed interpretation for the values.</p>
 </aside>
-</div>
 </section>
 <section id="principles-behind-the-agile-manifesto"
 class="slide level2">
@@ -312,8 +322,8 @@ waterfall</span></li>
 <li>Business people and developers must work together daily throughout
 the project.</li>
 <li>Build projects around motivated individuals. Give them the
-environment and support they need, and trust them to get the job
-done.</li>
+environment and support they need, and trust them to get the job done. ←
+<strong>scrum master</strong></li>
 <li>The most efficient and effective method of conveying information to
 and within a development team is face-to-face conversation.</li>
 </ol>
@@ -444,6 +454,9 @@ started</td>
 </tr>
 </tbody>
 </table>
+<div class="mt-3 text-larger">
+<p>can waterfall work?</p>
+</div>
 </section>
 <section id="agile-vs.-waterfall-1" class="slide level2">
 <h2>agile vs. waterfall</h2>

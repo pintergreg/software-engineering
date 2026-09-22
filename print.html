@@ -2900,19 +2900,23 @@ downwards like a waterfall</li>
 <li>Clients may not know exactly what their requirements are before they
 see working software and so change their requirements, leading to
 redesign, redevelopment, and retesting, and increased costs. (<a href="lectures/01_sdlc.html#ref-parnas1986rational">Parnas
-&amp; Clements, 1986</a>) In most cases the people
-who comission the building of the a software system do not know
-exactly what they want and are unable to tell us all they know.</li>
+&amp; Clements, 1986</a>)</li>
+<li>In most cases the people who comission the building of the a software
+system do not know exactly what they want and are unable to tell us
+all they know.</li>
 </ul>
 <h2 id="modified-waterfall-model"><a class="header" href="#modified-waterfall-model">modified waterfall model</a></h2>
 <figure>
 <img src="lectures/figures/waterfall_modified.svg" width="750"
-alt="based on Figure 4. of (Royce, 1970)" />
-<figcaption aria-hidden="true">based on Figure 4. of <span
+alt="based on Figure 4 of (Royce, 1970)" />
+<figcaption aria-hidden="true">based on Figure 4 of <span
 class="citation" data-cites="royce1970managing">(<a
 href="#ref-royce1970managing" role="doc-biblioref">Royce,
 1970</a>)</span></figcaption>
 </figure>
+<div class="text-align-left">
+<p>why is this important?</p>
+</div>
 <h1 id="v-model-forsberg--mooz-1991"><a class="header" href="#v-model-forsberg--mooz-1991">V model (<a href="lectures/01_sdlc.html#ref-forsberg1991relationship">Forsberg &amp; Mooz, 1991</a>)</a></h1>
 <div class="columns">
 <div class="column" width="50%">
@@ -2920,17 +2924,22 @@ href="#ref-royce1970managing" role="doc-biblioref">Royce,
 <li>still rigid</li>
 <li>each phase has output and a review process
 <ul>
-<li>errors are found at early stage</li>
+<li>errors are found at <a href="" width="500"
+data-preview-image="figures/cost_of_fixing.drawio.svg"
+data-preview-fit="contain">early stage</a></li>
 <li>decreases the risk of failure</li>
 </ul>
 </li>
 <li>large to small: testing is done in a hierarchical perspective</li>
+<li>testing centralism</li>
 </ul>
 </div>
 <div class="column" width="50%">
 <div class="r-stack">
 <figure>
-<img src="lectures/figures/v_model.drawio.svg" width="500"
+<img src="lectures/figures/v_model_handdrawn.drawio.svg"
+data-preview-image="figures/v_model.drawio.svg"
+data-preview-fit="contain" width="500"
 alt="based on guru99.com’s image" />
 <figcaption aria-hidden="true">based on <a
 href="https://www.guru99.com/images/6-2015/052715_0904_GuidetoSDLC3.png">guru99.com’s
@@ -2939,7 +2948,7 @@ image</a></figcaption>
 </div>
 </div>
 </div>
-<div class="notes">
+<div class="text-smaller mt-2">
 <p>The <em>unit testing</em> will be discussed later in the testing chapter. For
 now it is enough to know that it is a tool to test the lower level part
 of the software.</p>
@@ -2960,7 +2969,8 @@ of the software.</p>
 <div class="column" width="50%">
 <div class="r-stack">
 <p><img src="lectures/figures/iterative.drawio.svg"
-data-preview-image="figures/iterative.drawio.svg" width="500" /></p>
+data-preview-image="figures/iterative.drawio.svg"
+data-preview-fit="contain" width="500" /></p>
 </div>
 </div>
 </div>
@@ -2988,7 +2998,8 @@ new customer requirements can be adopted</li>
 <figure>
 <img src="lectures/figures/extreme_programming.drawio.svg"
 data-preview-image="figures/extreme_programming_white.drawio.svg"
-height="200" alt="based on (Yerukala, 2023)" />
+data-preview-fit="contain" width="500"
+alt="based on (Yerukala, 2023)" />
 <figcaption aria-hidden="true"><span class="text-smaller">based on <span
 class="citation" data-cites="yerukala2023what">(<a
 href="#ref-yerukala2023what" role="doc-biblioref">Yerukala,
@@ -3007,11 +3018,15 @@ product</p>
 </div>
 <h1 id="agile-model"><a class="header" href="#agile-model">agile model</a></h1>
 <div class="columns">
-<div class="column" width="50%">
+<div class="column mt-2" width="50%">
 <ul>
-<li>continuous collaboration and fast response to change, while the
-iterative model takes a more gradual approach, building up the final
-product over multiple iterations</li>
+<li>continuous collaboration and</li>
+<li>fast response to change</li>
+<li>while the iterative model takes a more gradual approach,
+<ul>
+<li>building up the final product over multiple iterations</li>
+</ul>
+</li>
 <li>SCRUM is an agile methodology</li>
 </ul>
 </div>
@@ -3033,7 +3048,6 @@ helping others do it. Through this work we have come to value:</p>
 items on the left more.</p>
 </blockquote>
 <p><a href="https://agilemanifesto.org/">agilemanifesto.org</a></p>
-<p>. . .</p>
 <p><a href="https://agilemanifesto.org/principles.html">Principles behind the Agile
 Manifesto</a></p>
 <div class="notes">
@@ -3082,7 +3096,7 @@ waterfall</span></li>
 the project.</li>
 <li>Build projects around motivated individuals. Give them the
 environment and support they need, and trust them to get the job
-done.</li>
+done. ← <strong>scrum master</strong></li>
 <li>The most efficient and effective method of conveying information to
 and within a development team is face-to-face conversation.</li>
 </ol>
@@ -3198,6 +3212,9 @@ started</td>
 </tr>
 </tbody>
 </table>
+<div class="mt-3 text-larger">
+<p>can waterfall work?</p>
+</div>
 <h2 id="agile-vs-waterfall-1"><a class="header" href="#agile-vs-waterfall-1">agile vs. waterfall</a></h2>
 <p>Can waterfall work? Yes, it can, if the customer exactly knows what they
 want and can express it in technical terms.</p>
@@ -3493,6 +3510,13 @@ meet the definition of done,</li>
 <li>ensuring that all scrum events take place and are positive,
 productive, and kept within the timebox</li>
 </ul>
+<div class="wide-quote mt-2 text-smaller">
+<blockquote>
+<p>Build projects around motivated individuals. Give them the environment
+and support they need, and trust them to get the job done.</p>
+<p>from the agile principles</p>
+</blockquote>
+</div>
 <h2 id="scrum-master-serves-the-product-owner"><a class="header" href="#scrum-master-serves-the-product-owner">scrum master serves the product owner</a></h2>
 <ul>
 <li>helping find techniques for effective product goal definition and
@@ -3691,7 +3715,7 @@ communicates why the sprint is valuable to stakeholders</li>
 the product backlog to include in the current sprint agenda</li>
 <li>the scrum team may refine these items during this process<!--     - which increases understanding and confidence -->
 </li>
-<li>not easy to select how much can be completed within a sprint</li>
+<li><strong>not easy to select how much can be completed within a sprint</strong></li>
 <li>the more the developers know about
 <ul>
 <li>their past performance (e.g., burndown charts),</li>
@@ -3701,7 +3725,7 @@ the product backlog to include in the current sprint agenda</li>
 </ul>
 </li>
 </ul>
-<h2 id="topics-of-sprint-planning---wow-will-the-chosen-work-get-done"><a class="header" href="#topics-of-sprint-planning---wow-will-the-chosen-work-get-done">topics of sprint planning - wow will the chosen work get done?</a></h2>
+<h2 id="topics-of-sprint-planning---how-will-the-chosen-work-get-done"><a class="header" href="#topics-of-sprint-planning---how-will-the-chosen-work-get-done">topics of sprint planning - how will the chosen work get done?</a></h2>
 <ul>
 <li>for each selected item, the developers plan the work necessary to
 create an increment that meets the DoD</li>
@@ -3856,7 +3880,7 @@ to the stakeholders.</p>
 </div>
 <h1 id="sprint-retrospective"><a class="header" href="#sprint-retrospective">sprint retrospective</a></h1>
 <ul>
-<li>he purpose of the sprint retrospective is to increase quality and
+<li>the purpose of the sprint retrospective is to increase quality and
 effectiveness</li>
 <li>the sprint retrospective concludes the sprint</li>
 <li>it is timeboxed to a maximum of three hours for a one-month sprint
@@ -3894,12 +3918,21 @@ effectiveness</li>
 <h2 id="retrospective-starfish"><a class="header" href="#retrospective-starfish">retrospective starfish</a></h2>
 <div class="columns">
 <div class="column" width="55%">
-<p><img src="lectures/figures/retrospective_starfish.drawio.svg" alt="" /></p>
+<img src="lectures/figures/retrospective_starfish.drawio.svg" width="500" />
 </div>
-<div class="column mt-4" width="45%">
+<div class="column mt-1" width="45%">
 <ul>
 <li>divide the whiteboard to 5 parts</li>
 <li>every team member adds sticky notes to the respective parts</li>
+<li>what the team should
+<ul>
+<li>start doing</li>
+<li>do more during a spring</li>
+<li>keep as it is</li>
+<li>do less during a spring</li>
+<li>stop doing</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -3938,13 +3971,19 @@ might be true.</p>
 <li>ordered list of what is needed to improve the product</li>
 <li>describes a future state of the product<!-- - it is the single source of work undertaken by the scrum team -->
 </li>
-<li>product owner is responsible for its content and prioritization</li>
+<li>product owner is responsible for its content and prioritization
+<ul>
+<li>dependencies between tasks!</li>
 </ul>
-<h2 id="product-backlog-refinement"><a class="header" href="#product-backlog-refinement">product backlog refinement</a></h2>
+</li>
+</ul>
+<div class="mt-3">
+<p><strong>product backlog refinement</strong></p>
 <blockquote>
 <p>product backlog refinement is the act of breaking down and further
 defining product backlog items into smaller more precise items.</p>
 </blockquote>
+</div>
 <h2 id="sprint-backlog"><a class="header" href="#sprint-backlog">sprint backlog</a></h2>
 <div class="columns">
 <div class="column" width="70%">
@@ -4117,6 +4156,10 @@ dream big.<br>A transformational approach might be better suited than
 an incremental one.</li>
 </ul>
 </div>
+<h1 id="summary-1"><a class="header" href="#summary-1">summary</a></h1>
+<p><a href="https://www.youtube.com/watch?v=P6v-I9VvTq4"
+target="_blank">Scrum Master - Funny movie about The Power of Scrum</a></p>
+<p>~5 minute</p>
 <h1 id="references-2"><a class="header" href="#references-2">references</a></h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 line-spacing="2">
@@ -4233,7 +4276,7 @@ paid plans - WeKan (https://wekan.github.io/) - open source, self-hosted</p>
 </li>
 </ul>
 </div>
-<div class="fragment" data-fragment-index="1">
+<div data-fragment-index="1">
 <ul>
 <li>a definition of the individual units of value that are moving through
 the workflow
@@ -4245,7 +4288,7 @@ the workflow
 </div>
 </div>
 <div class="column" width="40%">
-<p><img src="lectures/figures/job_hunting_kanban_item.drawio.svg" class="fragment"
+<p><img src="lectures/figures/job_hunting_kanban_item.drawio.svg"
 data-fragment-index="1" /></p>
 </div>
 </div>
@@ -4340,7 +4383,7 @@ make these changes</li>
 <li>WIP: number of work items started but not finished</li>
 <li>throughput: number of work items finished per unit of time
 <ul>
-<li>Note the measurement of throughput is the exact count of work items</li>
+<li>the measurement of throughput is the exact count of work items</li>
 </ul>
 </li>
 <li>work item age: elapsed time from when a work item started</li>
@@ -4408,7 +4451,7 @@ functionalities.</p>
 </ul>
 </div>
 </div>
-<h1 id="summary-1"><a class="header" href="#summary-1">summary</a></h1>
+<h1 id="summary-2"><a class="header" href="#summary-2">summary</a></h1>
 <div class="columns">
 <div class="column" width="55%">
 <ul>
@@ -6482,7 +6525,7 @@ circle and a rectange</li>
 <p><img src="lectures/figures/c4_drawings_person_shape.png" alt="" /></p>
 </div>
 </div>
-<h1 id="summary-2"><a class="header" href="#summary-2">summary</a></h1>
+<h1 id="summary-3"><a class="header" href="#summary-3">summary</a></h1>
 <blockquote>
 <p>overview first, zoom and filter, then details on demand</p>
 <p>– Ben Shneiderman</p>
@@ -8241,7 +8284,7 @@ which reduces interruption</li>
 <p>based on <a href="https://github.blog/2020-08-13-why-write-adrs/">Why Write
 ADRs</a> by Eli Perkins</p>
 </div>
-<h1 id="summary-3"><a class="header" href="#summary-3">summary</a></h1>
+<h1 id="summary-4"><a class="header" href="#summary-4">summary</a></h1>
 <table>
 <colgroup>
 <col style="width: 34%" />
@@ -8941,7 +8984,7 @@ so this law is occasionally tempered with security considerations.</p>
 Law</a> by
 Dr. Milan Milanović</p>
 </div>
-<h1 id="summary-4"><a class="header" href="#summary-4">summary</a></h1>
+<h1 id="summary-5"><a class="header" href="#summary-5">summary</a></h1>
 <div class="columns">
 <div class="column" width="70%">
 <ul>
@@ -9783,7 +9826,7 @@ relaxed environment instead of adding more people</p>
 </div>
 <div class="mt-8">
 </div>
-<h1 id="summary-5"><a class="header" href="#summary-5">summary</a></h1>
+<h1 id="summary-6"><a class="header" href="#summary-6">summary</a></h1>
 <ul>
 <li>conduct research
 <ul>
@@ -11557,7 +11600,7 @@ Test passed.
 </div>
 </div>
 </div>
-<h1 id="summary-6"><a class="header" href="#summary-6">summary</a></h1>
+<h1 id="summary-7"><a class="header" href="#summary-7">summary</a></h1>
 <blockquote>
 <p>Any fool can write code that a computer can understand. Good
 programmers write code that humans can understand.</p>
@@ -12663,7 +12706,7 @@ href="https://commadot.com/wtf-per-minute/">Glen Lipka’s</a>, which is
 based on <a href="https://www.osnews.com/story/19266/wtfsm/">Thom
 Holwerda</a>’s</figcaption>
 </figure>
-<h1 id="summary-7"><a class="header" href="#summary-7">summary</a></h1>
+<h1 id="summary-8"><a class="header" href="#summary-8">summary</a></h1>
 <ul>
 <li>code smells indicate issues with the code
 <ul>
@@ -13541,7 +13584,7 @@ width="300" /></p>
 <div class="text-smaller">
 <p>source: (<a href="lectures/14_code_review.html#ref-smartbear_best">Smartbear, n.d.</a>)</p>
 </div>
-<h1 id="summary-8"><a class="header" href="#summary-8">summary</a></h1>
+<h1 id="summary-9"><a class="header" href="#summary-9">summary</a></h1>
 <ul>
 <li>(code) review is for improving (code) quality
 <ul>
@@ -15771,7 +15814,7 @@ needs and <strong>requirements</strong> of the user</li>
 <p>source/reading: <a href="https://community.dynamics.com/blogs/post/?postid=8b2ddab8-271d-4e17-9591-7c25c5d10766">The Seven Principles of Software
 Testing</a></p>
 </div>
-<h1 id="summary-9"><a class="header" href="#summary-9">summary</a></h1>
+<h1 id="summary-10"><a class="header" href="#summary-10">summary</a></h1>
 <div class="columns">
 <div class="column text-smaller" width="50%">
 <img src="lectures/figures/v_model_unit_testing.drawio.svg" width="450" />
@@ -17475,7 +17518,7 @@ to breathe.</p>
 Productivity</a>
 by Leon Ho (<a href="lectures/16_automatization.html#ref-ho2025pomodoro">Ho, 2025</a>)</p>
 </div>
-<h1 id="summary-10"><a class="header" href="#summary-10">summary</a></h1>
+<h1 id="summary-11"><a class="header" href="#summary-11">summary</a></h1>
 <div class="columns">
 <div class="column" width="60%">
 <div class="text-align-left">
