@@ -108,10 +108,16 @@ misunderstanding the task can cost a lot
 
 # let's collect the requirements
 
-::: {.r-fit-text .mt-3}
-[open PlantUML editor](https://editor.plantuml.com/uml/SoWkIImgoStCIybDBE0gJaxCILKmuYhEpinJACelJkNYqbP8oqaipaXEB4fHI2meuE9oI0MgXQe70000)
+::: {.text-size-3}
+[open markmap editor](https://markmap.js.org/repl#?d=github%3Apintergreg%2Fsoftware-engineering%40refs%3Aheads%2Fmain%2Fpracticals%2Fflashcard.md){target="_blank"}
+:::
 
-with a Work Breakdown Structure (WBS) diagram skeleton
+::: {.text-size-3 .mt-3}
+[open PlantUML editor](https://editor.plantuml.com/uml/SoWkIImgoStCIybDBE0gJaxCILKmuYhEpinJACelJkNYqbP8oqaipaXEB4fHI2meuE9oI0MgXQe70000){target="_blank"}
+
+:::
+::: {}
+as mindmap
 
 :::
 
@@ -123,7 +129,7 @@ with a Work Breakdown Structure (WBS) diagram skeleton
         - log in, log out
     - or it can be completely offline
 - "user selects a group"
-    - is this action starts the "game"
+    - is this action starts the "game"?
 - it is not mentioned explicitly, but cards management is possible required
     - CRUD
     - sort into group
@@ -211,7 +217,7 @@ these are just some considerations, the customer needs to decide
 
 - cutomer is a language association, probably doesn't have technical expertise
     - they'll probably send an excel file in e-mail
-- can we load the into an app?
+- can we load the excel file into an app?
     - of course
 - do we want to do that?
     - not necessarily
