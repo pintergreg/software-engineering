@@ -1,5 +1,6 @@
 ---
-title: sample task
+title: informal requirement analysis
+subtitle: flashcard application
 author: Gergő Pintér, PhD
 date: gergo.pinter@uni-corvinus.hu
 lang: en-US
@@ -153,7 +154,7 @@ as mindmap
 - price of the application?
     - subscription model / one time payment / free
 
-# possible architecture
+# possible solution
 
 ![offline application, a simple case](../lectures/figures/simple_case.drawio.svg)
 
@@ -170,7 +171,29 @@ as mindmap
 these are just some considerations, the customer needs to decide
 :::
 
-# possible architecture 2
+
+## customer wants telemetry
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .text-smaller}
+![](../lectures/figures/telemetry_v1.drawio.svg)
+
+- app is like in solution 1
+- but we need to run a server for the telemetry
+- at least the communication is one directional
+
+:::::::::
+::::::::: {.column width="50%" .text-smaller .fragment}
+![](../lectures/figures/telemetry_v2.drawio.svg)
+
+- like solution 1, we only build the app
+- telemetry is outsourced the a 3rd party service
+    - not our responsibility!
+
+:::::::::
+::::::::::::
+
+# possible solution 2
 
 ![service-based application, a more complicated case](../lectures/figures/complicated_case.drawio.svg)
 
@@ -192,26 +215,6 @@ these are just some considerations, the customer needs to decide
 these are just some considerations, the customer needs to decide
 :::
 
-# customer wants telemetry
-
-:::::::::::: {.columns}
-::::::::: {.column width="50%" .text-smaller}
-![](../lectures/figures/telemetry_v1.drawio.svg)
-
-- app is like in scenario 1
-- but we need to run a server for the telemetry
-- at least the communication is one directional
-
-:::::::::
-::::::::: {.column width="50%" .text-smaller .fragment}
-![](../lectures/figures/telemetry_v2.drawio.svg)
-
-- like architecture 1, we only build the app
-- telemetry is outsourced the a 3rd party service
-    - not our responsibility!
-
-:::::::::
-::::::::::::
 
 # database transfer
 
