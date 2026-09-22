@@ -1,0 +1,12 @@
+@startuml
+skin rose
+scale 4
+app -> server: authentication request
+group login [successful]
+    server --> app: authentication accepted
+    app -> server: synchronization request
+    server --> app: send progress state
+else failure
+server --> app: authentication denied
+end
+@enduml

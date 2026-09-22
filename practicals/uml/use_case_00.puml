@@ -1,0 +1,5 @@
+@startuml
+skin rose
+scale 4
+:user: --> (play)
+@enduml

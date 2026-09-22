@@ -1,0 +1,8 @@
+@startuml
+skin rose
+scale 4
+:user: --> (login)
+:user: --> (select group)
+:user: --> (play)
+:user: --> (log out)
+@enduml
