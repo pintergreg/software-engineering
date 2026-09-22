@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Gergő Pintér, PhD">
-  <title>sample task</title>
+  <title>informal requirement analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -68,7 +68,8 @@
 
 <section id="title-slide" data-background-color="#181d37" data-background-image="../assets/by-sa.svg" data-background-position="1.25rem
 calc(100% - 1.25rem)" data-background-size="125px">
-  <h1 class="title">sample task</h1>
+  <h1 class="title">informal requirement analysis</h1>
+  <p class="subtitle">flashcard application</p>
   <p class="author">Gergő Pintér, PhD</p>
   <p class="date">gergo.pinter@uni-corvinus.hu</p>
 </section>
@@ -278,8 +279,8 @@ mechanics?</li>
 </ul>
 </section></section>
 <section>
-<section id="possible-architecture" class="title-slide slide level1">
-<h1>possible architecture</h1>
+<section id="possible-solution" class="title-slide slide level1">
+<h1>possible solution</h1>
 <figure>
 <img data-src="../lectures/figures/simple_case.drawio.svg"
 alt="offline application, a simple case" />
@@ -306,10 +307,32 @@ above what the app store provide</li>
 <div class="text-color-secondary mt-2">
 <p>these are just some considerations, the customer needs to decide</p>
 </div>
+</section>
+<section id="customer-wants-telemetry" class="slide level2">
+<h2>customer wants telemetry</h2>
+<div class="columns">
+<div class="column text-smaller" style="width:50%;">
+<p><img data-src="../lectures/figures/telemetry_v1.drawio.svg" /></p>
+<ul>
+<li>app is like in solution 1</li>
+<li>but we need to run a server for the telemetry</li>
+<li>at least the communication is one directional</li>
+</ul>
+</div><div class="column text-smaller fragment" style="width:50%;">
+<p><img data-src="../lectures/figures/telemetry_v2.drawio.svg" /></p>
+<ul>
+<li>like solution 1, we only build the app</li>
+<li>telemetry is outsourced the a 3rd party service
+<ul>
+<li>not our responsibility!</li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section></section>
 <section>
-<section id="possible-architecture-2" class="title-slide slide level1">
-<h1>possible architecture 2</h1>
+<section id="possible-solution-2" class="title-slide slide level1">
+<h1>possible solution 2</h1>
 <figure>
 <img data-src="../lectures/figures/complicated_case.drawio.svg"
 alt="service-based application, a more complicated case" />
@@ -348,29 +371,6 @@ subscription plan</li>
 <p>these are just some considerations, the customer needs to decide</p>
 </div>
 </section></section>
-<section id="customer-wants-telemetry" class="title-slide slide level1">
-<h1>customer wants telemetry</h1>
-<div class="columns">
-<div class="column text-smaller" style="width:50%;">
-<p><img data-src="../lectures/figures/telemetry_v1.drawio.svg" /></p>
-<ul>
-<li>app is like in scenario 1</li>
-<li>but we need to run a server for the telemetry</li>
-<li>at least the communication is one directional</li>
-</ul>
-</div><div class="column text-smaller fragment" style="width:50%;">
-<p><img data-src="../lectures/figures/telemetry_v2.drawio.svg" /></p>
-<ul>
-<li>like architecture 1, we only build the app</li>
-<li>telemetry is outsourced the a 3rd party service
-<ul>
-<li>not our responsibility!</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-
 <section>
 <section id="database-transfer" class="title-slide slide level1">
 <h1>database transfer</h1>
