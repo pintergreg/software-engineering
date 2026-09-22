@@ -44,6 +44,48 @@ link-citations: true
 :::::::::
 ::::::::::::
 
+# software growth
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- number of lines of code is increasing
+    - which increases complexity
+- "every line of code written comes at a price: maintenance" [@tef2016write]
+    - larger garden, more gardening
+- software development [processes to handle the complexity]{.background-color-lightblue}
+
+:::::::::
+::::::::: {.column width="40%"}
+:::::: {.r-stack}
+![](figures/publicdomainvectors/idea-of-success-achievement.svg){width=250}
+::::::
+:::::::::
+::::::::::::
+
+# software is made between commits
+
+:::::::::::: {.columns}
+::::::::: {.column width="75%" .mt-3}
+- coding got cheap with coding agents
+    - price is increasing though
+- but coding wasn't the difficult part
+    - comprehension and coordination are
+- to translate a problem into a solution that a computer can understand, you need a full overview of the problem
+    - the code isn't just a recipe but a mental model
+    - e.g., with constant iteration with the domain experts <!--(more agile)-->
+    - this is often the part that slows down software development
+
+:::::::::
+::::::::: {.column width="25%"}
+![](figures/borrowed/mermaid-diagram-2026-07-31-130228.svg)
+
+:::::::::
+::::::::::::
+
+:::{.text-smaller}
+source/reading: [I don't think AI will make your processes go faster](https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/) by Frederick Vanbrabant
+:::
+
 # software development often compared to house building
 
 :::::::::::: {.columns}
@@ -81,23 +123,6 @@ link-citations: true
 :::::::::
 ::::::::::::
 
-# software growth
-
-:::::::::::: {.columns}
-::::::::: {.column width="60%"}
-- number of lines of code is increasing
-    - which increases complexity
-- "every line of code written comes at a price: maintenance" [@tef2016write]
-    - larger garden, more gardening
-- software development processes to handle the complexity
-
-:::::::::
-::::::::: {.column width="40%"}
-:::::: {.r-stack}
-![](figures/publicdomainvectors/idea-of-success-achievement.svg){width=250}
-::::::
-:::::::::
-::::::::::::
 
 # references
 
