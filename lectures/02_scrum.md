@@ -568,6 +568,8 @@ For example, less online meeting, because it is not so efficient as face-to-face
 
 # scrum artifacts
 
+:::::::::::: {.columns}
+::::::::: {.column width="55%"}
 - scrum artifacts represent work or value 
 - they are designed to maximize transparency of information
 - the product backlog
@@ -576,6 +578,22 @@ For example, less online meeting, because it is not so efficient as face-to-face
     - progress within the sprint goal
 - definition of done
     - state of the product increment
+:::::::::
+::::::::: {.column width="45%" .text-smaller}
+epic
+
+: groups user stories under a bigger goal
+: span multiple sprints
+
+user story
+: short, user-focused description of a desired feature
+: “As role when/where, I want a feature because”
+
+task
+: a singe unit of a user story
+
+:::::::::
+::::::::::::
 
 # product backlog
 
