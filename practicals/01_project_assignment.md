@@ -217,7 +217,14 @@ more like usage roles than actual components in terms of architecture
 
 ## component sketch
 
-![](../lectures/figures/choreographer/arch.drawio.svg){width=800}
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![](../lectures/figures/choreographer/arch_v2.drawio.svg){width=765}
+:::
+::: {.fragment .current-visible data-fragment-index=1}
+![](../lectures/figures/choreographer/arch_groups.drawio.svg){width=800}
+:::
+::::::
 
 - each color is a responsibility area
 - this figure is not comprehensive!
