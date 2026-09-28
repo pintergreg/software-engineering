@@ -1,0 +1,16 @@
+# user_activities: USER ACTIVITIES
+# user_tasks: USER TASKS
+# user_stories: USER STORIES
+# release1: RELEASE 1
+# release2: RELEASE 2
+# release3: RELEASE 3
+# card_width: 150
+# card_height: 75
+# font_size: 14
+see user statistics
+    open statistics view from the main menu
+    view progress
+        shows the finished lessons as a progressbar
+    view activity of the month
+        last 4 weeks as a 4×7 matrix
+        the more activity the darker colors

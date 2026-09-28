@@ -253,6 +253,40 @@ create content feature from a [social media platform v2]{data-preview-image="fig
 more from Jeff Patton: [5 story mapping mistakes](https://jpattonassociates.com/5-story-mapping-mistakes/)
 :::
 
+# flashcard app example
+
+:::::: {.r-stack}
+::: {.fragment .fade-out fragment-index=1}
+![](figures/user_statistics/story_map.drawio.svg)
+
+- let's say the idea of the progressbar came later
+    - but feels strongly connected to the previous card
+:::
+::: {.fragment .current-visible fragment-index=1}
+![](figures/user_statistics/story_map_v2.drawio.svg){height=450}
+
+- the you freely merge the two
+- it's fine to add every idea then do some cleaning
+:::
+::::::
+
+## flashcard app example
+
+:::::: {.r-stack}
+::: {.fragment .fade-out fragment-index=1}
+- software doesn't matter, cards are just rectangles
+    - collaborative work does
+
+![](figures/user_statistics/view_statistics.svg)
+:::
+::: {.fragment .current-visible fragment-index=1}
+- the color doesn't matter to much
+    - [the blue-pink-yellow will be used for consistency]{.text-smaller}
+
+![](figures/user_statistics/view_statistics_blue.svg)
+:::
+::::::
+
 
 # user story mapping -- summary
 
