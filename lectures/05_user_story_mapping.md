@@ -287,6 +287,14 @@ more from Jeff Patton: [5 story mapping mistakes](https://jpattonassociates.com/
 :::
 ::::::
 
+## speadsheet as a user story map
+
+![](figures/user_statistics/usm_as_spreadsheet.png){height=400}
+
+- Google Sheets can be used, shared between team members
+- [Avion's User Story Mapping Template](https://go.avion.io/usm-template-google-sheets){target="_blank"}
+    - [its documentation](https://www.avion.io/blog/user-story-mapping-template/){target="_blank"}
+
 
 # user story mapping -- summary
 
