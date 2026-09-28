@@ -24,6 +24,35 @@ link-citations: true
 - the backlog is one dimensional
     - which is priority
 
+## dependencies, again
+
+:::::::::::: {.columns}
+::::::::: {.column width="35%"}
+![](figures/usm/tasks.svg)
+
+:::::::::
+::::::::: {.column width="65%" .fragment}
+![](figures/usm/tasks_network.svg)
+
+::: {.text-smaller}
+after dependencies are identified ordering isn't so difficult 
+:::
+:::::::::
+::::::::::::
+
+## dependencies, again {visibility=hidden}
+
+:::::: {.r-stack}
+::: {.fragment .fade-out fragment-index=1}
+![](figures/usm/tasks.svg){height=500}
+
+:::
+::: {.fragment .current-visible fragment-index=1}
+![](figures/usm/tasks_network.svg){height=500}
+
+:::
+::::::
+
 # user story mapping
 
 - popularized by Jeff Patton
