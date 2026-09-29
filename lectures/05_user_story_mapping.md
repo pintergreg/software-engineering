@@ -184,10 +184,28 @@ top-down structure, high-level overview first, then adding details
 ![](figures/user_story_map_increments.drawio.svg)
 
 
-# note that
+# user roles / goals
 
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-1}
 - there can be several different types of user
-- each one could have a different reason for their activities
+    - a.k.a., role / persona
+- each one could have a different reason (goal) for their activities
+
+::: {.mt-6}
+- as a `[type of user]`,
+- I want to `[action/function]`
+- in order to `[reach goal]`
+
+:::
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/user_story_map_short.drawio.svg)
+
+:::::::::
+::::::::::::
+
 
 # story mapping steps
 
@@ -323,7 +341,7 @@ more from Jeff Patton: [5 story mapping mistakes](https://jpattonassociates.com/
 - Google Sheets can be used, shared between team members
 - [Avion's User Story Mapping Template](https://go.avion.io/usm-template-google-sheets){target="_blank"}
     - [its documentation](https://www.avion.io/blog/user-story-mapping-template/){target="_blank"}
-
+    
 
 # user story mapping -- summary
 
