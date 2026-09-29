@@ -251,9 +251,10 @@ right?</span></li>
 </dl>
 </div>
 </div>
-</section>
-<section id="requirement-smells" class="slide level2">
-<h2>requirement smells</h2>
+</section></section>
+<section>
+<section id="requirement-smells" class="title-slide slide level1">
+<h1>requirement smells</h1>
 <ul>
 <li>based on the idea of code smells (later in the course)</li>
 <li>(language based) signs in the requirements that are not necessarily
@@ -281,6 +282,57 @@ accuracy.”</span></li>
 <div class="text-smaller">
 <p>examples from <span class="citation" data-cites="femmer2017rapid"><a
 href="#/ref-femmer2017rapid" role="doc-biblioref">[3]</a></span></p>
+</div>
+</section>
+<section id="user-story-quality-framework" class="slide level2">
+<h2>user story quality framework</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><strong>syntactic quality</strong></p>
+<p><span class="text-smaller">textual structure without considering its
+meaning</span></p>
+<ul>
+<li>well-formed</li>
+<li>atomic
+<ul>
+<li><span class="text-smaller">concerns only one feature</span></li>
+</ul></li>
+<li>minimal
+<ul>
+<li>s<span class="text-smaller">hould contain a role, a function, and
+(optimally) some rationale</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><strong>semantic quality</strong></p>
+<p><span class="text-smaller">relations and meaning of (parts of) the
+user story text</span></p>
+<ul>
+<li>conceptually sound</li>
+<li>problem-oriented</li>
+<li>unambiguous</li>
+<li>conflict-free</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><strong>pragmatic quality</strong></p>
+<p><span class="text-smaller">subjective interpretation of the user
+story texts</span></p>
+<ul>
+<li>full sentence</li>
+<li>estimatable</li>
+<li>unique</li>
+<li>uniform</li>
+<li>independent</li>
+<li>complete</li>
+</ul>
+</div>
+</div>
+<p>reviewing, testing the user stories</p>
+<div class="text-smaller">
+<p>source: Improving agile requirements: the Quality User Story
+framework and tool <span class="citation"
+data-cites="lucassen2016improving"><a href="#/ref-lucassen2016improving"
+role="doc-biblioref">[4]</a></span></p>
 </div>
 </section></section>
 <section>
@@ -324,7 +376,7 @@ class="slide level2">
 <p>functional requirements define what a system is supposed to do<br>and
 non-functional requirements define how a system is supposed to operate
 <span class="citation" data-cites="enwiki:1245895117"><a
-href="#/ref-enwiki:1245895117" role="doc-biblioref">[4]</a></span></p>
+href="#/ref-enwiki:1245895117" role="doc-biblioref">[5]</a></span></p>
 </div>
 <div class="columns mt-3">
 <div class="column" style="width:50%;">
@@ -577,7 +629,7 @@ idea for a requirement into implemented, tested, production-ready code,
 <ul>
 <li>as long as the requirement is specific enough that everyone knows
 what’s going on <span class="citation" data-cites="north2007what"><a
-href="#/ref-north2007what" role="doc-biblioref">[5]</a></span></li>
+href="#/ref-north2007what" role="doc-biblioref">[6]</a></span></li>
 </ul></li>
 <li>BDD starts from a user story and focuses on adding the acceptance
 criteria</li>
@@ -608,7 +660,7 @@ Scenario 2: ...</code></pre>
 and the expected outcomes</p>
 <div class="text-smaller">
 <p>taken from <span class="citation" data-cites="north2007what"><a
-href="#/ref-north2007what" role="doc-biblioref">[5]</a></span> by Daniel
+href="#/ref-north2007what" role="doc-biblioref">[6]</a></span> by Daniel
 Terhorst-North | CC-BY 4.0</p>
 </div>
 </section>
@@ -635,7 +687,7 @@ Then the ATM should dispense $20
 </div>
 <div class="text-smaller">
 <p>taken from <span class="citation" data-cites="north2007what"><a
-href="#/ref-north2007what" role="doc-biblioref">[5]</a></span> by Daniel
+href="#/ref-north2007what" role="doc-biblioref">[6]</a></span> by Daniel
 Terhorst-North | CC-BY 4.0</p>
 <p>you can read <a
 href="https://dannorth.net/blog/whats-in-a-story/">the rest of the
@@ -820,8 +872,15 @@ Femmer, D. M. Fernández, S. Wagner, and S. Eder, <span>“Rapid quality
 assurance with requirements smells,”</span> <em>Journal of Systems and
 Software</em>, vol. 123, pp. 190–213, 2017.</div>
 </div>
+<div id="ref-lucassen2016improving" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">G.
+Lucassen, F. Dalpiaz, J. M. E. van der Werf, and S. Brinkkemper,
+<span>“Improving agile requirements: The quality user story framework
+and tool,”</span> <em>Requirements engineering</em>, vol. 21, no. 3, pp.
+383–403, 2016.</div>
+</div>
 <div id="ref-enwiki:1245895117" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div
+<div class="csl-left-margin">[5] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Non-functional
 requirement — <span>Wikipedia</span><span>,</span> the free
 encyclopedia.”</span> <a
@@ -830,7 +889,7 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Non-functional_requiremen
 2024.</div>
 </div>
 <div id="ref-north2007what" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">D.
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">D.
 Terhorst-North, <span>“What’s in a story?”</span> <a href="
                     https://dannorth.net/whats-in-a-story
                     " class="uri">
