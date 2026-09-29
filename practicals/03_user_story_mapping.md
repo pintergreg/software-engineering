@@ -96,15 +96,15 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 # user story mapping
 
 :::::::::::: {.columns}
-::::::::: {.column width="50%" .mt-3}
+::::::::: {.column width="50%" .mt-4}
 - let's draw a user story map
-- [open textusm](https://app.textusm.com/)
 - [open excalidraw](https://excalidraw.com/)
-- [USM template for Google sheets / Excel](https://www.avion.io/blog/user-story-mapping-template/)
+- [USM template for Google Sheets](https://www.avion.io/blog/user-story-mapping-template/)
+<!-- - [open textusm](https://app.textusm.com/) -->
 
 :::::::::
 ::::::::: {.column width="50%"}
-![](../lectures/figures/user_story_map.drawio.svg)
+![](../lectures/figures/user_story_map_sketch.drawio.svg)
 
 :::::::::
 ::::::::::::
