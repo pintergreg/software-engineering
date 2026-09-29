@@ -342,6 +342,15 @@ more from Jeff Patton: [5 story mapping mistakes](https://jpattonassociates.com/
 - [Avion's User Story Mapping Template](https://go.avion.io/usm-template-google-sheets){target="_blank"}
     - [its documentation](https://www.avion.io/blog/user-story-mapping-template/){target="_blank"}
     
+# how is user story mapping agile?
+
+- performed in workshops with diverse teams
+    - [the most effective method of conveying information is face-to-face conversation]{.text-smaller}
+    - [cross functional teams]{.text-smaller}
+- welcomes changing requirements
+    - the user story map is a living document
+    - content is not set in stone
+
 
 # user story mapping -- summary
 
