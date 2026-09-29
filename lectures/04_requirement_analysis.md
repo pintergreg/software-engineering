@@ -141,7 +141,7 @@ verification
 ::::::::::::
 
 
-## requirement smells 
+# requirement smells 
 
 - based on the idea of code smells (later in the course)
 - (language based) signs in the requirements that are not necessarily wrong but could be problematic, e.g.,:
@@ -154,6 +154,53 @@ verification
 
 ::: {.text-smaller}
 examples from [@femmer2017rapid]
+:::
+
+## user story quality framework
+
+:::::::::::: {.columns}
+::::::::: {.column width="35%"}
+**syntactic quality**
+
+[textual structure without considering its meaning]{.text-smaller}
+
+- well-formed
+- atomic
+    - [concerns only one feature]{.text-smaller}
+- minimal
+    - s[hould contain a role, a function, and (optimally) some rationale]{.text-smaller}
+
+:::::::::
+::::::::: {.column width="30%"}
+**semantic quality**
+
+[relations and meaning of (parts of) the user story text]{.text-smaller}
+
+- conceptually sound
+- problem-oriented
+- unambiguous
+- conflict-free
+
+:::::::::
+::::::::: {.column width="30%"}
+**pragmatic quality**
+
+[subjective interpretation of the user story texts]{.text-smaller}
+
+- full sentence
+- estimatable
+- unique
+- uniform
+- independent
+- complete
+
+:::::::::
+::::::::::::
+
+reviewing, testing the user stories
+
+:::{.text-smaller}
+source: Improving agile requirements: the Quality User Story framework and tool [@lucassen2016improving]
 :::
 
 

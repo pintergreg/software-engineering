@@ -1,0 +1,22 @@
+@startmindmap
+skin rose
+
+* user story quality
+** syntactic
+*** well-formed
+*** atomic
+*** minimal
+** semantic
+*** conceptually sound
+*** problem-oriented
+*** unambiguous
+*** conflict-free
+** pragmatic
+*** full sentence
+*** estimatable
+*** unique
+*** uniform
+*** independent
+*** complete
+
+@endmindmap
