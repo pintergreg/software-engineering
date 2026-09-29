@@ -93,6 +93,27 @@ revealjs-url: "../assets/reveal.js-5.2.1/"
 
 ![ETL (Extract Transform Load)](../lectures/figures/etl.drawio.svg)
 
+# view statistics
+
+:::::::::::: {.columns}
+::::::::: {.column width="70%"}
+![](../lectures/figures/user_statistics/view_statistics.excalidraw.svg)
+:::::::::
+::::::::: {.column width="30%"}
+::: {}
+as a language learner
+
+I want to see my stats
+
+in order to follow my progress
+:::
+
+::: {.mt-7}
+the scope of this activity is relatively small 
+:::
+:::::::::
+::::::::::::
+
 # user story mapping
 
 :::::::::::: {.columns}
