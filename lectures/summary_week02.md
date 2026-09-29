@@ -104,11 +104,36 @@ link-citations: true
 :::::::::
 ::::::::::::
 
-# scrum team
+# scrum
 
-- optimally 3 to 9 people
-- cross-functional
-- self-organizing
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+agile implementation <br>iterative, incremental framework
+
+team
+
+: optimally 3 to 9 people
+: cross-functional
+: self-organizing
+
+:::::::::
+::::::::: {.column width="60%"}
+epic
+
+: groups user stories under a bigger goal
+: span multiple sprints
+
+user story
+: short, user-focused description of a desired feature
+: *as a role, I want a feature because*
+
+task
+: a singe unit of a user story
+
+:::::::::
+::::::::::::
+
+
 
 ## roles
 
@@ -120,8 +145,9 @@ link-citations: true
     - responsible for maximizing the value of the product resulting from the work of the scrum team
     - also responsible for effective product backlog management
 - developers
+    - responsible for creating a usable increment each sprint
 
-# sprint planning
+## sprint planning
 
 - initiates the sprint
 - maximum of eight hours for a one-month sprint
@@ -132,7 +158,7 @@ link-citations: true
 
 ![](figures/scrum_sprint_planning.drawio.svg){height=300}
 
-# sprint
+## sprint
 
 - 1-4 week long
 - considered a short project
@@ -141,7 +167,7 @@ link-citations: true
 
 ![](figures/scrum_sprint_standup.drawio.svg){height=300}
 
-# sprint review
+## sprint review
 
 - scrum team presents the their work to the stakeholders
     - increment is evaluated
@@ -151,7 +177,7 @@ link-citations: true
 ![](figures/scrum_sprint_review.drawio.svg){height=300}
 
 
-# sprint retrospective
+## sprint retrospective
 
 - concludes the sprint
 - maximum of three hours for a one-month sprint
