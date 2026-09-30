@@ -28,7 +28,26 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../assets/reveal.js-5.2.1//dist/theme/black.css" id="theme">
   <link rel="stylesheet" href="../assets/custom.css"/>
   <link rel="stylesheet" href="../assets/helpers.css"/>
@@ -105,8 +124,15 @@ data-visibility="hidden">
 <li>popularized by Jeff Patton
 <ul>
 <li><a href="https://jpattonassociates.com/the-new-backlog/">original
-blog post</a></li>
-<li>User Story Mapping, O’Reilly, 2014, ISBN-13: 978-1491904909</li>
+blog post</a>
+<ul>
+<li>The new user story backlog is a map <span class="citation"
+data-cites="patton2008new"><a href="#/ref-patton2008new"
+role="doc-biblioref">[1]</a></span></li>
+</ul></li>
+<li>User Story Mapping, O’Reilly, 2014, ISBN-13: 978-1491904909 <span
+class="citation" data-cites="patton2014user"><a
+href="#/ref-patton2014user" role="doc-biblioref">[2]</a></span></li>
 </ul></li>
 <li>performed in workshops including
 <ul>
@@ -131,6 +157,7 @@ viewpoint</li>
 viewpoints</li>
 </ul>
 </section></section>
+<section>
 <section id="user-story-map" class="title-slide slide level1">
 <h1>user story map</h1>
 <div class="columns">
@@ -149,7 +176,46 @@ data-preview-fit="contain" /></p>
 </div>
 </div>
 </section>
-
+<section id="users-perspective" class="slide level2">
+<h2>users’ perspective</h2>
+<div class="columns">
+<div class="column mt-3" style="width:50%;">
+<p>the USM uses the <em>user’s</em> perspective to tell a story /
+narrative</p>
+<p>so the developers have to imagine how the user would use the
+eventually implemented software</p>
+<div class="wide-quote mt-4">
+<blockquote>
+<p>the most important thing in [UI/UX] design is empathy – Scott
+Jenson</p>
+</blockquote>
+</div>
+</div><div class="column" style="width:45%;">
+<p><strong>readme-driven development</strong></p>
+<div class="text-smaller">
+<p>readme ~ user manual, but brief, concise</p>
+</div>
+<div class="mt-2">
+<ul>
+<li>before you write any code or tests or behaviors or stories or
+anything</li>
+<li>document how a user would use the implemented software</li>
+<li>you will know what you need to implement</li>
+<li>a lot simpler to have a discussion based on something written
+down</li>
+</ul>
+</div>
+<div class="text-smaller">
+<p>source: <a
+href="https://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme
+Driven Development</a> <br> by Tom Preston-Werner <span class="citation"
+data-cites="prestonwerner2010readme"><a
+href="#/ref-prestonwerner2010readme"
+role="doc-biblioref">[3]</a></span></p>
+</div>
+</div>
+</div>
+</section></section>
 <section>
 <section id="user-story-map-1" class="title-slide slide level1"
 data-visibility="hidden">
@@ -501,6 +567,10 @@ information is face-to-face conversation</span></li>
 <li>the user story map is a living document</li>
 <li>content is not set in stone</li>
 </ul></li>
+<li>USM can discussed with the customer / users
+<ul>
+<li>easy to understand and gain feedback</li>
+</ul></li>
 </ul>
 </section>
 
@@ -542,6 +612,33 @@ data-preview-fit="contain" /></p>
 <li>versions</li>
 </ul></li>
 </ul>
+</div>
+</div>
+</section>
+
+<section id="references" class="title-slide slide level1">
+<h1>references</h1>
+<div id="refs" class="text-smaller references csl-bib-body" role="list">
+<div id="ref-patton2008new" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J.
+Patton, <span>“The new user story backlog is a map.”</span> <a href="
+                   https://jpattonassociates.com/the-new-backlog/
+                    " class="uri">
+                   https://jpattonassociates.com/the-new-backlog/
+</a>, 08-Oct-2008.</div>
+</div>
+<div id="ref-patton2014user" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J.
+Patton and P. Economy, <em>User story mapping: Discover the whole story,
+build the right product</em>. " O’Reilly Media, Inc.", 2014.</div>
+</div>
+<div id="ref-prestonwerner2010readme" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">T.
+Preston-Werner, <span>“Readme driven development.”</span> <a href="
+                   https://tom.preston-werner.com/2010/08/23/readme-driven-development.html
+                    " class="uri">
+                   https://tom.preston-werner.com/2010/08/23/readme-driven-development.html
+</a>, 23-Aug-2010.</div>
 </div>
 </div>
 </section>
