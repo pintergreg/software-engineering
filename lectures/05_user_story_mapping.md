@@ -57,7 +57,8 @@ after dependencies are identified ordering isn't so difficult
 
 - popularized by Jeff Patton
     - [original blog post](https://jpattonassociates.com/the-new-backlog/)
-    - User Story Mapping, O'Reilly, 2014, ISBN-13: 978-1491904909
+        - The new user story backlog is a map [@patton2008new]
+    - User Story Mapping, O'Reilly, 2014, ISBN-13: 978-1491904909 [@patton2014user]
 - performed in workshops including 
     - users,
     - (UI) designers,
@@ -85,6 +86,40 @@ after dependencies are identified ordering isn't so difficult
 ::::::::: {.column width="50%" .text-size-2}
 ![](figures/user_story_map_sketch.drawio.svg){data-preview-image="figures/user_story_map_sketch.drawio.svg" data-preview-fit="contain"}
 
+:::::::::
+::::::::::::
+
+## users' perspective
+
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-3}
+the USM uses the *user's* perspective to tell a story / narrative
+
+so the developers have to imagine how the user would use the eventually implemented software
+
+::: {.wide-quote .mt-4}
+> the most important thing in [UI/UX] design is empathy -- Scott Jenson
+
+:::
+:::::::::
+::::::::: {.column width="45%"}
+**readme-driven development**
+
+::: {.text-smaller}
+readme ~ user manual, but brief, concise
+:::
+
+::: {.mt-2}
+- before you write any code or tests or behaviors or stories or anything
+- document how a user would use the implemented software
+- you will know what you need to implement
+- a lot simpler to have a discussion based on something written down
+:::
+
+::: {.text-smaller}
+source: [Readme Driven Development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html) <br> by Tom Preston-Werner [@prestonwerner2010readme]
+:::
 :::::::::
 ::::::::::::
 
@@ -350,6 +385,8 @@ more from Jeff Patton: [5 story mapping mistakes](https://jpattonassociates.com/
 - welcomes changing requirements
     - the user story map is a living document
     - content is not set in stone
+- USM can discussed with the customer / users
+    - easy to understand and gain feedback
 
 
 # user story mapping -- summary
@@ -387,3 +424,7 @@ more from Jeff Patton: [5 story mapping mistakes](https://jpattonassociates.com/
 :::::::::
 ::::::::::::
 
+# references
+
+::: {#refs .text-smaller}
+:::
