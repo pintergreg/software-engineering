@@ -44,7 +44,7 @@ options["bibliography"].each do |bibfile|
   arguments += " --bibliography #{bibfile}"
 end
 if options["mathml"]
-  arguments += " --mathml"
+  arguments += " --math-method=mathml"
 end
 arguments += " -H #{options["assets"]}/custom_header.html -A #{options["assets"]}/custom_after_body.html"
 
