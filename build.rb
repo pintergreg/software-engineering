@@ -18,7 +18,7 @@ FileUtils.mkdir_p "#{@target}/practicals"
 
 FileUtils.cp('lectures/SUMMARY.md', "#{@target}/")
 chapters.each do |x|
-  `pandoc #{x} -f markdown+tex_math_double_backslash -t commonmark+tex_math_dollars --mathjax -o #{@target}/#{x} -L assets/exclude_elements.lua --citeproc --csl assets/apa.csl --bibliography lectures/references.bib --bibliography lectures/wikipedia.bib`
+  `pandoc #{x} -f markdown+tex_math_double_backslash -t commonmark+tex_math_dollars --math-method=mathjax -o #{@target}/#{x} -L assets/exclude_elements.lua --citeproc --csl assets/apa.csl --bibliography lectures/references.bib --bibliography lectures/wikipedia.bib`
 end
 
 FileUtils.cp_r "lectures/figures/.", "#{@target}/lectures/figures/"
