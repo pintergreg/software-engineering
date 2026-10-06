@@ -46,6 +46,14 @@ end
 if options["mathml"]
   arguments += " --math-method=mathml"
 end
-arguments += " -H #{options["assets"]}/custom_header.html -A #{options["assets"]}/custom_after_body.html"
+if options["html_header"]
+  arguments += " -H #{options["assets"]}/#{options["html_header"]}"
+end
+if options["html_after_body"]
+  arguments += " -A #{options["assets"]}/#{options["html_after_body"]}"
+end
+if options["template"]
+  arguments += " --template #{options["assets"]}/#{options["template"]}"
+end
 
 `pandoc #{arguments}`
