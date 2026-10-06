@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -29,8 +35,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -96,6 +103,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -650,22 +658,22 @@ class="sourceCode rust"><code class="sourceCode rust"><span id="cb25-1"><a href=
 href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">sslKeyExchange.c</a></p>
 </div>
 <div class="sourceCode" id="cb26" data-startFrom="623"><pre
-class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 622;"><span id="cb26-623"><a href="#cb26-623"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> ReadyHash<span class="op">(&amp;</span>SSLHashSHA1<span class="op">,</span> <span class="op">&amp;</span>hashCtx<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb26-624"><a href="#cb26-624"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb26-625"><a href="#cb26-625"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>clientRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb26-626"><a href="#cb26-626"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb26-627"><a href="#cb26-627"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>serverRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb26-628"><a href="#cb26-628"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb26-629"><a href="#cb26-629"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>signedParams<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb26-630"><a href="#cb26-630"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb26-631"><a href="#cb26-631"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
-<span id="cb26-632"><a href="#cb26-632"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>final<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>hashOut<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb26-633"><a href="#cb26-633"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span></code></pre></div>
+class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 622;"><span id="cb26-623"><a href="#cb26-623" aria-label="623"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> ReadyHash<span class="op">(&amp;</span>SSLHashSHA1<span class="op">,</span> <span class="op">&amp;</span>hashCtx<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb26-624"><a href="#cb26-624" aria-label="624"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb26-625"><a href="#cb26-625" aria-label="625"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>clientRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb26-626"><a href="#cb26-626" aria-label="626"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb26-627"><a href="#cb26-627" aria-label="627"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>serverRandom<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb26-628"><a href="#cb26-628" aria-label="628"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb26-629"><a href="#cb26-629" aria-label="629"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>update<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>signedParams<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb26-630"><a href="#cb26-630" aria-label="630"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb26-631"><a href="#cb26-631" aria-label="631"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span>
+<span id="cb26-632"><a href="#cb26-632" aria-label="632"></a><span class="cf">if</span> <span class="op">((</span>err <span class="op">=</span> SSLHashSHA1<span class="op">.</span>final<span class="op">(&amp;</span>hashCtx<span class="op">,</span> <span class="op">&amp;</span>hashOut<span class="op">))</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb26-633"><a href="#cb26-633" aria-label="633"></a>    <span class="cf">goto</span> fail<span class="op">;</span></span></code></pre></div>
 <div class="sourceCode" id="cb27" data-startFrom="647"><pre
-class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 646;"><span id="cb27-647"><a href="#cb27-647"></a>fail<span class="op">:</span></span>
-<span id="cb27-648"><a href="#cb27-648"></a>    SSLFreeBuffer<span class="op">(&amp;</span>signedHashes<span class="op">);</span></span>
-<span id="cb27-649"><a href="#cb27-649"></a>    SSLFreeBuffer<span class="op">(&amp;</span>hashCtx<span class="op">);</span></span>
-<span id="cb27-650"><a href="#cb27-650"></a>    <span class="cf">return</span> err<span class="op">;</span></span></code></pre></div>
+class="sourceCode numberSource c numberLines"><code class="sourceCode c" style="counter-reset: source-line 646;"><span id="cb27-647"><a href="#cb27-647" aria-label="647"></a>fail<span class="op">:</span></span>
+<span id="cb27-648"><a href="#cb27-648" aria-label="648"></a>    SSLFreeBuffer<span class="op">(&amp;</span>signedHashes<span class="op">);</span></span>
+<span id="cb27-649"><a href="#cb27-649" aria-label="649"></a>    SSLFreeBuffer<span class="op">(&amp;</span>hashCtx<span class="op">);</span></span>
+<span id="cb27-650"><a href="#cb27-650" aria-label="650"></a>    <span class="cf">return</span> err<span class="op">;</span></span></code></pre></div>
 <div>
 <p>more about Apple’s “goto fail” fiasco (2014): <span class="citation"
 data-cites="wheeler2014apple"><a href="#/ref-wheeler2014apple"
@@ -850,55 +858,55 @@ class="slide level2">
 <col style="width: 70%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>construct</th>
 <th>effect</th>
 <th>reasoning</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>if</td>
 <td>+1</td>
 <td>An if statement is a single decision.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>elif</td>
 <td>+1</td>
 <td>The elif statement adds another decision.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>else</td>
 <td>+0</td>
 <td>The else statement does not cause a new decision. The decision is at
 the if.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>for</td>
 <td>+1</td>
 <td>There is a decision at the start of the loop.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>while</td>
 <td>+1</td>
 <td>There is a decision at the while statement.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>except</td>
 <td>+1</td>
 <td>Each except branch adds a new conditional path of execution.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>finally</td>
 <td>+0</td>
 <td>The finally block is unconditionally executed.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>with</td>
 <td>+1</td>
 <td>The with statement roughly corresponds to a try/except block.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>boolean operator</td>
 <td>+1</td>
 <td>Every boolean operator (and, or) adds a decision point.</td>
@@ -920,39 +928,39 @@ class="slide level2">
 <h2>interpretation of cyclomatic complexity – Radon</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>CC score</th>
 <th>rank</th>
 <th>risk</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1 - 5</td>
 <td>A</td>
 <td>low - simple block</td>
 </tr>
-<tr class="even">
+<tr>
 <td>6 - 10</td>
 <td>B</td>
 <td>low - well structured and stable block</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>11 - 20</td>
 <td>C</td>
 <td>moderate - slightly complex block</td>
 </tr>
-<tr class="even">
+<tr>
 <td>21 - 30</td>
 <td>D</td>
 <td>more than moderate - more complex block</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>31 - 40</td>
 <td>E</td>
 <td>high - complex block, alarming</td>
 </tr>
-<tr class="even">
+<tr>
 <td>41+</td>
 <td>F</td>
 <td>very high - error-prone, unstable block</td>
@@ -973,11 +981,11 @@ role="doc-biblioref">[9]</a></span></p>
 <dt>original <span class="citation" data-cites="coleman1994using"><a
 href="#/ref-coleman1994using" role="doc-biblioref">[10]</a></span>:</dt>
 <dd>
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>I</mi><mo>=</mo><mn>171</mn><mo>−</mo><mn>5.2</mn><mo>ln</mo><mi>V</mi><mo>−</mo><mn>0.23</mn><mi>G</mi><mo>−</mo><mn>16.2</mn><mo>ln</mo><mi>L</mi></mrow><annotation encoding="application/x-tex"> MI = 171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L} </annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>I</mi><mo>=</mo><mn>171</mn><mo>−</mo><mn>5.2</mn><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>V</mi><mo>−</mo><mn>0.23</mn><mi>G</mi><mo>−</mo><mn>16.2</mn><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>L</mi></mrow><annotation encoding="application/x-tex"> MI = 171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L} </annotation></semantics></math>
 </dd>
 <dt>Visual Studio derivate:</dt>
 <dd>
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>I</mi><mo>=</mo><mi>m</mi><mi>a</mi><mi>x</mi><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>100</mn><mfrac><mrow><mn>171</mn><mo>−</mo><mn>5.2</mn><mo>ln</mo><mi>V</mi><mo>−</mo><mn>0.23</mn><mi>G</mi><mo>−</mo><mn>16.2</mn><mo>ln</mo><mi>L</mi></mrow><mn>171</mn></mfrac><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex"> MI = max\left[0,100 \frac{171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L}}{171}\right] </annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>I</mi><mo>=</mo><mi>m</mi><mi>a</mi><mi>x</mi><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>100</mn><mfrac><mrow><mn>171</mn><mo>−</mo><mn>5.2</mn><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>V</mi><mo>−</mo><mn>0.23</mn><mi>G</mi><mo>−</mo><mn>16.2</mn><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>L</mi></mrow><mn>171</mn></mfrac><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex"> MI = max\left[0,100 \frac{171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L}}{171}\right] </annotation></semantics></math>
 </dd>
 </dl>
 <div class="text-smaller mt-2">
@@ -992,21 +1000,21 @@ href="#/ref-coleman1994using" role="doc-biblioref">[10]</a></span>:</dt>
 <table>
 <caption>Visual Studio</caption>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">score</th>
 <th style="text-align: center;">maintainability</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">0-10</td>
 <td style="text-align: center;">low</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">10-20</td>
 <td style="text-align: center;">moderate</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">20+</td>
 <td style="text-align: center;">high</td>
 </tr>
@@ -1018,29 +1026,29 @@ href="#/ref-coleman1994using" role="doc-biblioref">[10]</a></span>:</dt>
 data-cites="sharma2024analyzing"><a href="#/ref-sharma2024analyzing"
 role="doc-biblioref">[11]</a></span></caption>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">score</th>
 <th style="text-align: center;">maintainability</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">0–10</td>
 <td style="text-align: center;">low</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">10–20</td>
 <td style="text-align: center;">moderate</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">20–30</td>
 <td style="text-align: center;">good</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">30–40</td>
 <td style="text-align: center;">very good</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">40–100</td>
 <td style="text-align: center;">excellent</td>
 </tr>
@@ -1105,43 +1113,43 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a h
 </div><div class="column text-smaller" style="width:25%;">
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: right;">score</th>
 <th style="text-align: center;">grade</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: right;">&gt;90</td>
 <td style="text-align: center;"><img
 data-src="figures/go%20report_%20A+.svg" class="m-0" width="113" /></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: right;">&gt;80</td>
 <td style="text-align: center;"><img
 data-src="figures/go%20report_%20A.svg" class="m-0" width="100" /></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: right;">&gt;70</td>
 <td style="text-align: center;"><img
 data-src="figures/go%20report_%20B.svg" class="m-0" width="100" /></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: right;">&gt;60</td>
 <td style="text-align: center;"><img
 data-src="figures/go%20report_%20C.svg" class="m-0" width="100" /></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: right;">&gt;50</td>
 <td style="text-align: center;"><img
 data-src="figures/go%20report_%20D.svg" class="m-0" width="100" /></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: right;">&gt;40</td>
 <td style="text-align: center;"><img
 data-src="figures/go%20report_%20E.svg" class="m-0" width="100" /></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: right;">&lt;=40</td>
 <td style="text-align: center;"><img
 data-src="figures/go%20report_%20F.svg" class="m-0" width="100" /></td>
@@ -1217,7 +1225,8 @@ Holwerda</a>’s</figcaption>
 
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="references csl-bib-body" role="list">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0"
+role="list">
 <div id="ref-fowler2006code" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">M.
 Fowler, <span>“Code smell.”</span> <a href="
@@ -1336,9 +1345,9 @@ pp. 309–318.</div>
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 

@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -29,8 +35,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -96,6 +103,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -528,24 +536,24 @@ simpler building blocks</li>
 </ul>
 </div><div class="column" style="width:60%;">
 <div class="sourceCode" id="cb7"><pre
-class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">defmodule</span> <span class="cn">Wish</span> <span class="kw">do</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> power<span class="fu">(</span>a, b<span class="fu">)</span> <span class="kw">do</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> b <span class="op">&gt;</span> <span class="dv">1</span> <span class="kw">do</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            a <span class="op">*</span> power<span class="fu">(</span>a, b <span class="op">-</span> <span class="dv">1</span><span class="fu">)</span></span>
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">defmodule</span> Wish <span class="kw">do</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">power</span>(a, b) <span class="kw">do</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> b <span class="er">&gt;</span> <span class="dv">1</span> <span class="kw">do</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            a <span class="er">*</span> <span class="fu">power</span>(a, b <span class="er">-</span> <span class="dv">1</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            a</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> what_to_do<span class="fu">(</span>a, b, func<span class="fu">)</span> <span class="kw">do</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        func<span class="op">.</span><span class="fu">(</span>a, b<span class="fu">)</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">what_to_do</span>(a, b, func) <span class="kw">do</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        func.(a, b)</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="cn">Wish</span><span class="op">.</span>power<span class="fu">(</span><span class="dv">3</span>, <span class="dv">4</span><span class="fu">))</span> <span class="co"># 81</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="cn">Wish</span><span class="op">.</span>what_to_do<span class="fu">(</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="op">&amp;</span><span class="cn">Wish</span><span class="op">.</span>power<span class="op">/</span><span class="dv">2</span><span class="fu">))</span> <span class="co"># 81</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="cn">Wish</span><span class="op">.</span>what_to_do<span class="fu">(</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="kw">fn</span> x, y <span class="op">-&gt;</span> x <span class="op">+</span> y <span class="kw">end</span><span class="fu">))</span> <span class="co"># 7</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>sub <span class="op">=</span> <span class="kw">fn</span> x, y <span class="op">-&gt;</span> x <span class="op">-</span> y <span class="kw">end</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="cn">Wish</span><span class="op">.</span>what_to_do<span class="fu">(</span><span class="dv">3</span>, <span class="dv">4</span>, sub<span class="fu">))</span> <span class="co"># -1</span></span></code></pre></div>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>IO.<span class="fu">puts</span>(Wish.<span class="fu">power</span>(<span class="dv">3</span>, <span class="dv">4</span>)) <span class="co"># 81</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>IO.<span class="fu">puts</span>(Wish.<span class="fu">what_to_do</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="er">&amp;</span>Wish.power<span class="er">/</span><span class="dv">2</span>)) <span class="co"># 81</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>IO.<span class="fu">puts</span>(Wish.<span class="fu">what_to_do</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="kw">fn</span> x, y <span class="er">-&gt;</span> x <span class="er">+</span> y <span class="kw">end</span>)) <span class="co"># 7</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>sub <span class="er">=</span> <span class="kw">fn</span> x, y <span class="er">-&gt;</span> x <span class="er">-</span> y <span class="kw">end</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>IO.<span class="fu">puts</span>(Wish.<span class="fu">what_to_do</span>(<span class="dv">3</span>, <span class="dv">4</span>, sub)) <span class="co"># -1</span></span></code></pre></div>
 </div>
 </div>
 </section></section>
@@ -1066,7 +1074,8 @@ data-background-interactive="true">summary</h1>
 
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="references csl-bib-body" role="list">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0"
+role="list">
 <div id="ref-stroustrup2015object" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">B.
 Stroustrup, <span>“Object oriented programming without inheritance -
@@ -1095,9 +1104,9 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Class_diagram&amp;oldid=1
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 

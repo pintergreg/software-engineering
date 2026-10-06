@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -29,8 +35,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -96,6 +103,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -508,7 +516,7 @@ possible defects</li>
 <col style="width: 38%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">type</th>
 <th style="text-align: center;">formality</th>
 <th style="text-align: center;">led by</th>
@@ -517,14 +525,14 @@ possible defects</li>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">informal</td>
 <td style="text-align: center;">not formal</td>
 <td style="text-align: center;">noone</td>
 <td style="text-align: center;">minimal</td>
 <td style="text-align: center;">undocumented</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">walkthrough</td>
 <td style="text-align: center;">not formal<a href="#/fn1"
 class="footnote-ref" id="fnref1"
@@ -533,14 +541,14 @@ role="doc-noteref"><sup>1</sup></a></td>
 <td style="text-align: center;">very low</td>
 <td style="text-align: center;">normal, fault-finding</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">technical</td>
 <td style="text-align: center;">less formal</td>
 <td style="text-align: center;">trained moderator, not the author</td>
 <td style="text-align: center;">moderate</td>
 <td style="text-align: center;">more detailed</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">inspection</td>
 <td style="text-align: center;">most formal</td>
 <td style="text-align: center;">trained moderator</td>
@@ -1063,7 +1071,8 @@ href="#/ref-smartbear_best" role="doc-biblioref">[9]</a></span></p>
 
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="references csl-bib-body" role="list">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0"
+role="list">
 <div id="ref-forsberg1991relationship" class="csl-entry"
 role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
@@ -1103,7 +1112,7 @@ Hauer, <span>“Code review guidelines for humans.”</span> <a href="
                    https://phauer.com/2018/code-review-guidelines/
                     " class="uri">
                    https://phauer.com/2018/code-review-guidelines/
-</a>, 31-Jul-2018.</div>
+</a>, 31-July-2018.</div>
 </div>
 <div id="ref-wensel2018compassionate" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[6] </div><div class="csl-right-inline">A.
@@ -1112,7 +1121,7 @@ href="
                    https://www.slideshare.net/slideshow/compassionate-yet-candid-code-reviews/113119451
                     " class="uri">
                    https://www.slideshare.net/slideshow/compassionate-yet-candid-code-reviews/113119451
-</a>, 06-Sep-2018.</div>
+</a>, 06-Sept-2018.</div>
 </div>
 <div id="ref-fowler2026provenance" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[7] </div><div class="csl-right-inline">C.
@@ -1156,9 +1165,9 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 

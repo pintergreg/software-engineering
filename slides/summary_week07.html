@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -32,6 +38,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -383,7 +390,8 @@ href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></figcaption>
 
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="references csl-bib-body" role="list">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0"
+role="list">
 <div id="ref-ixdf2019what" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div
 class="csl-right-inline">Interaction Design Foundation, <span>“What are
@@ -399,7 +407,7 @@ Bruton, <span>“What is wireframing? A complete guide.”</span> <a href="
                    https://www.uxdesigninstitute.com/blog/what-is-wireframing/
                     " class="uri">
                    https://www.uxdesigninstitute.com/blog/what-is-wireframing/
-</a>, 08-Sep-2022.</div>
+</a>, 08-Sept-2022.</div>
 </div>
 <div id="ref-stemmler2019how" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[3] </div><div class="csl-right-inline">K.
@@ -408,7 +416,7 @@ Stemmler, <span>“How to learn software design and architecture.”</span>
                     https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
                     " class="uri">
                     https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
-</a>, 28-Sep-2019.</div>
+</a>, 28-Sept-2019.</div>
 </div>
 <div id="ref-martin2009clean" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[4] </div><div class="csl-right-inline">R.
@@ -423,9 +431,9 @@ craftsmanship</em>. Pearson Education, 2009.</div>
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 

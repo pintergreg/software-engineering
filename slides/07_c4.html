@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -230,7 +236,7 @@ class="title-slide slide level1">
 <ul>
 <li>based on the UML deployment diagram
 <!--    - audience: technical people inside and outside of the software development team
-      - software architects, developers, infrastructure architects, and operations/support staff--></li>
+  - software architects, developers, infrastructure architects, and operations/support staff--></li>
 </ul></li>
 </ul>
 </section>
@@ -314,6 +320,15 @@ data-src="figures/smarthome/smarthome_c4_component_frontend_v2.drawio.svg" /></p
 <div class="r-fit-text">
 <p>is it possible to use UML in a hierarchical manner as C4?</p>
 </div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<figure>
+<img data-src="figures/smarthome/component_extra.svg"
+alt="extending UML component diagram with actors to mimic C4 representation" />
+<figcaption aria-hidden="true">extending UML component diagram with
+actors to mimic C4 representation</figcaption>
+</figure>
 </section></section>
 <section id="suggested-software" class="title-slide slide level1">
 <h1>suggested software</h1>
@@ -357,9 +372,9 @@ smooth</li>
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 

@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -32,6 +38,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -155,13 +162,13 @@ and product owner</li>
 <p><img data-src="figures/team_intercommunication_3.drawio.svg"
 width="200" /></p>
 <div class="text-size-3 mt-6">
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>3</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex"> \frac{3(3 − 1)}{2} = 3 </annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>3</mn><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mn>2</mn></mfrac><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex"> \frac{3(3 − 1)}{2} = 3 </annotation></semantics></math></p>
 </div>
 </div><div class="column" style="width:50%;">
 <p><img data-src="figures/team_intercommunication_4.drawio.svg"
 width="200" /></p>
 <div class="text-size-3 mt-3">
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>4</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex"> \frac{4(4 − 1)}{2} = 6 </annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>4</mn><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mn>2</mn></mfrac><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex"> \frac{4(4 − 1)}{2} = 6 </annotation></semantics></math></p>
 </div>
 </div>
 </div>
@@ -180,10 +187,10 @@ data-fragment-index="1" /></p>
 </div><div class="column center-content" style="width:50%;">
 <div class="r-stack">
 <div class="text-size-4 fragment fade-out" data-fragment-index="1">
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>5</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex"> \frac{5(5 − 1)}{2} = 10 </annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>5</mn><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mn>2</mn></mfrac><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex"> \frac{5(5 − 1)}{2} = 10 </annotation></semantics></math></p>
 </div>
 <div class="fragment text-size-4" data-fragment-index="1">
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mrow><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><annotation encoding="application/x-tex"> \frac{n(n − 1)}{2} </annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mrow><mi>n</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mn>2</mn></mfrac><annotation encoding="application/x-tex"> \frac{n(n − 1)}{2} </annotation></semantics></math></p>
 </div>
 </div>
 </div>
@@ -832,10 +839,10 @@ might be true.</p>
 <dl>
 <dt>epic</dt>
 <dd>
-<p>groups user stories under a bigger goal</p>
+groups user stories under a bigger goal
 </dd>
 <dd>
-span multiple sprints
+<p>span multiple sprints</p>
 </dd>
 <dt>user story</dt>
 <dd>
@@ -1078,7 +1085,6 @@ data-background-position="right 2.25em bottom 2.25em">
 data-background-image="figures/publicdomainvectors/farmer-spraying-pesticides.svg"
 data-background-size="300px"
 data-background-position="right 2.25em bottom 2.25em">treatments</h2>
-<div>
 <ul>
 <li class="fragment">Zombie scrum teams often benefit from a shortened
 sprint length. Instead of three to four-week iterations decrease the
@@ -1096,7 +1102,6 @@ stakeholders!</li>
 same old problems but to dream big.<br>A transformational approach might
 be better suited than an incremental one.</li>
 </ul>
-</div>
 </section></section>
 <section id="summary" class="title-slide slide level1">
 <h1>summary</h1>
@@ -1108,7 +1113,8 @@ Scrum</a></p>
 
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="references csl-bib-body" role="list">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0"
+role="list">
 <div id="ref-schwaber2020scrum" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
 Schwaber and J. Sutherland, <em><a href="
@@ -1142,9 +1148,9 @@ Boogaard, <span>“How to use a cumulative flow diagram – wrike.”</span>
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 

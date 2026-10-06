@@ -783,55 +783,55 @@ through the source code</li>
 <col style="width: 70%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>construct</th>
 <th>effect</th>
 <th>reasoning</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>if</td>
 <td>+1</td>
 <td>An if statement is a single decision.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>elif</td>
 <td>+1</td>
 <td>The elif statement adds another decision.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>else</td>
 <td>+0</td>
 <td>The else statement does not cause a new decision. The decision is at
 the if.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>for</td>
 <td>+1</td>
 <td>There is a decision at the start of the loop.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>while</td>
 <td>+1</td>
 <td>There is a decision at the while statement.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>except</td>
 <td>+1</td>
 <td>Each except branch adds a new conditional path of execution.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>finally</td>
 <td>+0</td>
 <td>The finally block is unconditionally executed.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>with</td>
 <td>+1</td>
 <td>The with statement roughly corresponds to a try/except block.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>boolean operator</td>
 <td>+1</td>
 <td>Every boolean operator (and, or) adds a decision point.</td>
@@ -849,39 +849,39 @@ the if.</td>
 <h2 id="interpretation-of-cyclomatic-complexity--radon"><a class="header" href="#interpretation-of-cyclomatic-complexity--radon">interpretation of cyclomatic complexity – Radon</a></h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>CC score</th>
 <th>rank</th>
 <th>risk</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1 - 5</td>
 <td>A</td>
 <td>low - simple block</td>
 </tr>
-<tr class="even">
+<tr>
 <td>6 - 10</td>
 <td>B</td>
 <td>low - well structured and stable block</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>11 - 20</td>
 <td>C</td>
 <td>moderate - slightly complex block</td>
 </tr>
-<tr class="even">
+<tr>
 <td>21 - 30</td>
 <td>D</td>
 <td>more than moderate - more complex block</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>31 - 40</td>
 <td>E</td>
 <td>high - complex block, alarming</td>
 </tr>
-<tr class="even">
+<tr>
 <td>41+</td>
 <td>F</td>
 <td>very high - error-prone, unstable block</td>
@@ -911,27 +911,26 @@ $$ MI = max\left[0,100 \frac{171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L}}{171}\right] 
 <table>
 <caption>Visual Studio</caption>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">score</th>
 <th style="text-align: center;">maintainability</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">0-10</td>
 <td style="text-align: center;">low</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">10-20</td>
 <td style="text-align: center;">moderate</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">20+</td>
 <td style="text-align: center;">high</td>
 </tr>
 </tbody>
 </table>
-<p>Visual Studio</p>
 </div>
 <div class="column text-size-1" width="30%">
 <table>
@@ -939,35 +938,34 @@ $$ MI = max\left[0,100 \frac{171 - 5.2 \ln{V} - 0.23G - 16.2\ln{L}}{171}\right] 
 data-cites="sharma2024analyzing">(<a href="#ref-sharma2024analyzing"
 role="doc-biblioref">Sharma, 2024</a>)</span></caption>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">score</th>
 <th style="text-align: center;">maintainability</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">0–10</td>
 <td style="text-align: center;">low</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">10–20</td>
 <td style="text-align: center;">moderate</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">20–30</td>
 <td style="text-align: center;">good</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">30–40</td>
 <td style="text-align: center;">very good</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">40–100</td>
 <td style="text-align: center;">excellent</td>
 </tr>
 </tbody>
 </table>
-<p>based on (<a href="#ref-sharma2024analyzing">Sharma, 2024</a>)</p>
 </div>
 </div>
 </div>
@@ -1019,43 +1017,43 @@ def calculate_progress_2(
 <div class="column text-smaller" width="25%">
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: right;">score</th>
 <th style="text-align: center;">grade</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: right;">&gt;90</td>
 <td style="text-align: center;"><img src="figures/go%20report_%20A+.svg"
 class="m-0" width="113" /></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: right;">&gt;80</td>
 <td style="text-align: center;"><img src="figures/go%20report_%20A.svg"
 class="m-0" width="100" /></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: right;">&gt;70</td>
 <td style="text-align: center;"><img src="figures/go%20report_%20B.svg"
 class="m-0" width="100" /></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: right;">&gt;60</td>
 <td style="text-align: center;"><img src="figures/go%20report_%20C.svg"
 class="m-0" width="100" /></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: right;">&gt;50</td>
 <td style="text-align: center;"><img src="figures/go%20report_%20D.svg"
 class="m-0" width="100" /></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: right;">&gt;40</td>
 <td style="text-align: center;"><img src="figures/go%20report_%20E.svg"
 class="m-0" width="100" /></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: right;">&lt;=40</td>
 <td style="text-align: center;"><img src="figures/go%20report_%20F.svg"
 class="m-0" width="100" /></td>
@@ -1119,7 +1117,7 @@ Holwerda</a>’s</figcaption>
 </ul>
 <h1 id="references"><a class="header" href="#references">references</a></h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
-line-spacing="2">
+data-entry-spacing="0" data-line-spacing="2">
 <div id="ref-atwood2006code" class="csl-entry">
 <p>Atwood, J. (2006). <em>Code smells</em>. <a href="
                    https://blog.codinghorror.com/code-smells/

@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -29,8 +35,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -96,6 +103,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -178,11 +186,11 @@ addition to OOP’s from week 4</p>
 class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>foo <span class="op">=</span> [<span class="dv">1</span>, <span class="fl">2.4</span>, <span class="fl">3.1</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">match</span> foo:</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    case [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]:</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;it&#39;s a list with 1, 2, and 3&quot;</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    case [<span class="dv">1</span>, <span class="dv">2</span>, _]:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> [<span class="dv">1</span>, <span class="dv">2</span>, _]:</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;it&#39;s a list with 1, 2, and whatever&quot;</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    case [<span class="dv">1</span>, <span class="bu">float</span>(), <span class="bu">float</span>()]:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> [<span class="dv">1</span>, <span class="bu">float</span>(), <span class="bu">float</span>()]:</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;it&#39;s a list with 1, and two floats&quot;</span>)</span></code></pre></div>
 </div>
 </section></section>
@@ -357,29 +365,29 @@ class="slide level2">
 <h2>GoF design patterns in functional programming</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>OO pattern</th>
 <th>FP pattern</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>factory pattern</td>
 <td>function</td>
 </tr>
-<tr class="even">
+<tr>
 <td>strategy pattern</td>
 <td>function</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>decorator pattern</td>
 <td>function</td>
 </tr>
-<tr class="even">
+<tr>
 <td>visitor pattern</td>
 <td>function</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>…</td>
 <td>…</td>
 </tr>
@@ -407,8 +415,8 @@ role="doc-biblioref">[4]</a></span></p>
 <p>apply a function to each item and produce a new collection</p>
 </div><div class="column" style="width:60%;">
 <div class="sourceCode" id="cb7"><pre
-class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>map<span class="fu">(</span><span class="ot">[</span><span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span><span class="ot">]</span>, <span class="kw">fn</span><span class="fu">(</span>x<span class="fu">)</span> <span class="op">-&gt;</span> x <span class="op">-</span> <span class="dv">1</span> <span class="kw">end</span><span class="fu">)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span><span class="ot">]</span></span></code></pre></div>
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Enum.<span class="fu">map</span>([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="fu">fn</span>(x) <span class="er">-&gt;</span> x <span class="er">-</span> <span class="dv">1</span> <span class="kw">end</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>[<span class="er">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span></code></pre></div>
 </div>
 </div>
 <div class="columns">
@@ -419,8 +427,8 @@ class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb7-1"><a hr
 true using the provided function</p>
 </div><div class="column" style="width:60%;">
 <div class="sourceCode" id="cb8"><pre
-class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>filter<span class="fu">(</span><span class="ot">[</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span><span class="ot">]</span>, <span class="kw">fn</span><span class="fu">(</span>x<span class="fu">)</span> <span class="op">-&gt;</span> rem<span class="fu">(</span>x, <span class="dv">2</span><span class="fu">)</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">end</span><span class="fu">)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="dv">2</span>, <span class="dv">4</span><span class="ot">]</span></span></code></pre></div>
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Enum.<span class="fu">filter</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], <span class="fu">fn</span>(x) <span class="er">-&gt;</span> <span class="fu">rem</span>(x, <span class="dv">2</span>) <span class="er">==</span> <span class="dv">0</span> <span class="kw">end</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>, <span class="dv">4</span>]</span></code></pre></div>
 <p><span class="text-smaller">remove odd elements</span></p>
 </div>
 </div>
@@ -431,7 +439,7 @@ class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb8-1"><a hr
 <p>distill the collection down into a single value</p>
 </div><div class="column" style="width:60%;">
 <div class="sourceCode" id="cb9"><pre
-class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>reduce<span class="fu">(</span><span class="ot">[</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span><span class="ot">]</span>, <span class="kw">fn</span><span class="fu">(</span>x, acc<span class="fu">)</span> <span class="op">-&gt;</span> x <span class="op">+</span> acc <span class="kw">end</span><span class="fu">)</span></span>
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Enum.<span class="fu">reduce</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="fu">fn</span>(x, acc) <span class="er">-&gt;</span> x <span class="er">+</span> acc <span class="kw">end</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span></span></code></pre></div>
 </div>
 </div>
@@ -1910,15 +1918,15 @@ architectures!</p>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="sourceCode" id="cb19"><pre
-class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ot">@spec</span> create_chart<span class="fu">(</span>list<span class="fu">(</span><span class="cn">Measurement</span><span class="op">.</span>t<span class="fu">()))</span> :: <span class="cn">Plot</span><span class="op">.</span>t<span class="fu">()</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_chart<span class="fu">(</span>last_day<span class="fu">)</span> <span class="kw">do</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="op">//...</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="cn">Enum</span><span class="op">.</span>map<span class="fu">(</span>last_day, <span class="kw">fn</span> x <span class="op">-&gt;</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="va">:ok</span>, datetime<span class="fu">}</span> <span class="op">=</span> <span class="cn">NaiveDateTime</span><span class="op">.</span>from_iso8601<span class="fu">(</span>x<span class="op">.</span>timestamp<span class="fu">)</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span>datetime, x<span class="op">.</span>temperature<span class="fu">}</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">end</span><span class="fu">)</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="op">//...</span></span></code></pre></div>
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>@spec <span class="fu">create_chart</span>(<span class="fu">list</span>(Measurement.<span class="fu">t</span>())) <span class="op">::</span> Plot.<span class="fu">t</span>()</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="fu">create_chart</span>(last_day) <span class="kw">do</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="er">//</span><span class="op">...</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>data <span class="er">=</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  Enum.<span class="fu">map</span>(last_day, <span class="kw">fn</span> x <span class="er">-&gt;</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    {<span class="va">:ok</span>, datetime} <span class="er">=</span> NaiveDateTime.<span class="fu">from_iso8601</span>(x.timestamp)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    {datetime, x.temperature}</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">end</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="er">//</span><span class="op">...</span></span></code></pre></div>
 <ul>
 <li>needs a list of measurements (as type)</li>
 <li>returns a Plot type</li>
@@ -1926,23 +1934,23 @@ class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb19-1"><a h
 <p><img data-src="figures/smarthome/temperature.svg" width="450" /></p>
 </div><div class="column" style="width:30%;">
 <div class="sourceCode" id="cb20"><pre
-class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">defmodule</span> <span class="cn">Frontend</span><span class="op">.</span><span class="cn">Measurement</span> <span class="kw">do</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="im">use</span> <span class="cn">Ecto</span><span class="op">.</span><span class="cn">Schema</span></span>
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">defmodule</span> Frontend.Measurement <span class="kw">do</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="im">use</span> Ecto.Schema</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  schema <span class="st">&quot;measurements&quot;</span> <span class="kw">do</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    field<span class="fu">(</span><span class="va">:timestamp</span>, <span class="va">:string</span><span class="fu">)</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    field<span class="fu">(</span><span class="va">:address</span>, <span class="va">:string</span><span class="fu">)</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    field<span class="fu">(</span><span class="va">:temperature</span>, <span class="va">:float</span><span class="fu">)</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    field<span class="fu">(</span><span class="va">:humidity</span>, <span class="va">:float</span><span class="fu">)</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    field<span class="fu">(</span><span class="va">:battery</span>, <span class="va">:float</span><span class="fu">)</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">field</span>(<span class="va">:timestamp</span>, <span class="va">:string</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">field</span>(<span class="va">:address</span>, <span class="va">:string</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">field</span>(<span class="va">:temperature</span>, <span class="va">:float</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">field</span>(<span class="va">:humidity</span>, <span class="va">:float</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">field</span>(<span class="va">:battery</span>, <span class="va">:float</span>)</span>
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">end</span></span>
 <span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
 <div class="text-smaller">
 <p>later, to save the chart</p>
 </div>
 <div class="sourceCode" id="cb21"><pre
-class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> create_chart<span class="fu">(</span>last_day<span class="fu">)</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cn">Plot</span><span class="op">.</span>to_svg<span class="fu">(</span>plot<span class="fu">)</span></span></code></pre></div>
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plot <span class="er">=</span> <span class="fu">create_chart</span>(last_day)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>Plot.<span class="fu">to_svg</span>(plot)</span></code></pre></div>
 <div class="mt-4 background-color-lightblue">
 <p>what’s the issue with this? <br> <em>name a few!</em></p>
 </div>
@@ -1981,18 +1989,18 @@ class="slide level2">
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="sourceCode" id="cb22"><pre
-class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ot">@spec</span> create_chart<span class="fu">(</span>list<span class="fu">(</span><span class="cn">Float</span><span class="fu">)</span>, list<span class="fu">(</span><span class="cn">String</span><span class="fu">))</span> :: <span class="cn">String</span><span class="op">.</span>t<span class="fu">()</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_chart<span class="fu">(</span>temperatures, timestamps<span class="fu">)</span> <span class="kw">do</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">//...</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="cn">Enum</span><span class="op">.</span>zip<span class="fu">(</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>      <span class="cn">Enum</span><span class="op">.</span>map<span class="fu">(</span>timestamps, <span class="kw">fn</span> x <span class="op">-&gt;</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span><span class="va">:ok</span>, datetime<span class="fu">}</span> <span class="op">=</span> <span class="cn">NaiveDateTime</span><span class="op">.</span>from_iso8601<span class="fu">(</span>x<span class="fu">)</span></span>
+class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>@spec <span class="fu">create_chart</span>(<span class="fu">list</span>(Float), <span class="fu">list</span>(String)) <span class="op">::</span> String.<span class="fu">t</span>()</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="fu">create_chart</span>(temperatures, timestamps) <span class="kw">do</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="er">//</span><span class="op">...</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  data <span class="er">=</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    Enum.<span class="fu">zip</span>(</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>      Enum.<span class="fu">map</span>(timestamps, <span class="kw">fn</span> x <span class="er">-&gt;</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        {<span class="va">:ok</span>, datetime} <span class="er">=</span> NaiveDateTime.<span class="fu">from_iso8601</span>(x)</span>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        datetime</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">end</span><span class="fu">)</span>,</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">end</span>),</span>
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>      temperatures</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">)</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">//...</span></span></code></pre></div>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="er">//</span><span class="op">...</span></span></code></pre></div>
 <ul>
 <li>needs two lists, one with the temperatures, another with the
 timestamps</li>
@@ -2105,23 +2113,23 @@ Write ADRs</a> by Eli Perkins</p>
 <col style="width: 65%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>architectural patterns</td>
 <td>model-view-controller, MVP, MVVM</td>
 </tr>
-<tr class="even">
+<tr>
 <td>architectural styles</td>
 <td>layered, onion, hexagonal, clear, client-server</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>architectural principles</td>
 <td>coupling &amp; cohesion</td>
 </tr>
-<tr class="even">
+<tr>
 <td><span class="alpha-50">design patterns</span></td>
 <td><span class="alpha-50">GOF, map-filter-reduce</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>desing principles</td>
 <td>SOLID, DRY, YAGNI, hollywood principle</td>
 </tr>
@@ -2144,7 +2152,8 @@ width="150" /></p>
 
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="text-small references csl-bib-body" role="list">
+<div id="refs" class="text-small references csl-bib-body"
+data-entry-spacing="0" role="list">
 <div id="ref-stemmler2019how" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
 Stemmler, <span>“How to learn software design and architecture.”</span>
@@ -2152,7 +2161,7 @@ Stemmler, <span>“How to learn software design and architecture.”</span>
                     https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
                     " class="uri">
                     https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
-</a>, 28-Sep-2019.</div>
+</a>, 28-Sept-2019.</div>
 </div>
 <div id="ref-gamma1994design" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[2] </div><div class="csl-right-inline">E.
@@ -2302,12 +2311,12 @@ differences.”</span> <a href="
                     https://www.inngest.com/blog/message-bus-vs-queues
                     " class="uri">
                     https://www.inngest.com/blog/message-bus-vs-queues
-</a>, 29-Jun-2022.</div>
+</a>, 29-June-2022.</div>
 </div>
 <div id="ref-baeldung20214layered" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[20] </div><div
-class="csl-right-inline">baeldung, <span>“Layered architecture.”</span>
-<a href="
+class="csl-right-inline"><span class="nocase">baeldung</span>,
+<span>“Layered architecture.”</span> <a href="
                     https://www.baeldung.com/cs/layered-architecture
                     " class="uri">
                     https://www.baeldung.com/cs/layered-architecture
@@ -2319,7 +2328,7 @@ Palermo, <span>“The onion architecture : Part 1.”</span> <a href="
                     https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
                     " class="uri">
                     https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
-</a>, 29-Jul-2008.</div>
+</a>, 29-July-2008.</div>
 </div>
 <div id="ref-cockburn2010hexagonal" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[22] </div><div class="csl-right-inline">A.
@@ -2371,9 +2380,9 @@ class="uri">https://en.wikipedia.org/w/index.php?title=Leaky_abstraction&amp;old
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 

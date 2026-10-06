@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -29,8 +35,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -96,6 +103,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -388,19 +396,19 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a hr
 </div><div class="column" style="width:25%;">
 <div class="fragment" data-fragment-index="2">
 <div class="sourceCode" id="cb8"><pre
-class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="cf">in</span> <span class="dv">0</span><span class="kw">..</span><span class="dv">9</span> <span class="cf">do</span></span>
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="cf">in</span> <span class="dv">0</span><span class="op">..</span><span class="dv">9</span> <span class="cf">do</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">puts</span> i</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
 </div>
 <div class="fragment" data-fragment-index="3">
 <div class="sourceCode" id="cb9"><pre
-class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span><span class="kw">..</span><span class="dv">9</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>i<span class="kw">|</span></span>
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span><span class="op">..</span><span class="dv">9</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="op">|</span>i<span class="op">|</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">puts</span> i</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
 </div>
 <div class="fragment" data-fragment-index="4">
 <div class="sourceCode" id="cb10"><pre
-class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span><span class="kw">..</span><span class="dv">9</span>)<span class="at">.each</span> <span class="kw">{|</span>i<span class="kw">|</span> <span class="fu">puts</span> i<span class="kw">}</span></span></code></pre></div>
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span><span class="op">..</span><span class="dv">9</span>)<span class="at">.each</span> <span class="op">{|</span>i<span class="op">|</span> <span class="fu">puts</span> i<span class="op">}</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -835,24 +843,24 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="#
 <table>
 <caption>queried user activity</caption>
 <thead>
-<tr class="header">
+<tr>
 <th>week_of_year</th>
 <th>day_of_week</th>
 <th>count</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>36</td>
 <td>2</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>38</td>
 <td>5</td>
 <td>1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>39</td>
 <td>6</td>
 <td>2</td>
@@ -864,7 +872,7 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="#
 <table>
 <caption>pivoted user activity table</caption>
 <thead>
-<tr class="header">
+<tr>
 <th>day_of_week</th>
 <th>1</th>
 <th>2</th>
@@ -876,7 +884,7 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="#
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>week_of_year</td>
 <td></td>
 <td></td>
@@ -886,7 +894,7 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="#
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>36</td>
 <td>0</td>
 <td>1</td>
@@ -896,7 +904,7 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="#
 <td>0</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>37</td>
 <td>0</td>
 <td>0</td>
@@ -906,7 +914,7 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="#
 <td>0</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>38</td>
 <td>0</td>
 <td>0</td>
@@ -916,7 +924,7 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="#
 <td>0</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>39</td>
 <td>0</td>
 <td>0</td>
@@ -934,74 +942,74 @@ class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="#
 <table>
 <caption>empty activity table</caption>
 <thead>
-<tr class="header">
+<tr>
 <th>week_of_year</th>
 <th>day_of_week</th>
 <th>count</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>36</td>
 <td>1</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>36</td>
 <td>2</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>…</td>
 <td>…</td>
 <td>…</td>
 </tr>
-<tr class="even">
+<tr>
 <td>36</td>
 <td>7</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>37</td>
 <td>1</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>…</td>
 <td>…</td>
 <td>…</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>37</td>
 <td>7</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>38</td>
 <td>1</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>…</td>
 <td>…</td>
 <td>…</td>
 </tr>
-<tr class="even">
+<tr>
 <td>38</td>
 <td>5</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>…</td>
 <td>…</td>
 <td>…</td>
 </tr>
-<tr class="even">
+<tr>
 <td>39</td>
 <td>6</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>39</td>
 <td>7</td>
 <td>0</td>
@@ -1368,25 +1376,25 @@ href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></figcaption>
 <section id="apollo-11---colossus-2a" class="slide level2">
 <h2>Apollo 11 - Colossus 2A</h2>
 <div class="sourceCode" id="cb39" data-startFrom="149"><pre
-class="sourceCode numberSource numberLines"><code class="sourceCode" style="counter-reset: source-line 148;"><span id="cb39-149"><a href="#cb39-149"></a>P21VSAVE    DLOAD           # SAVE CURRENT BASE VECTOR</span>
-<span id="cb39-150"><a href="#cb39-150"></a>            TAT</span>
-<span id="cb39-151"><a href="#cb39-151"></a>        STOVL   P21TIME     # ..TIME</span>
-<span id="cb39-152"><a href="#cb39-152"></a>            RATT1</span>
-<span id="cb39-153"><a href="#cb39-153"></a>        STOVL   P21BASER    # ..POS B-29 OR B-27</span>
-<span id="cb39-154"><a href="#cb39-154"></a>            VATT1</span>
-<span id="cb39-155"><a href="#cb39-155"></a>        STORE   P21BASEV    # ..VEL B-7  OR B-5</span>
-<span id="cb39-156"><a href="#cb39-156"></a>        ABVAL   SL*</span>
-<span id="cb39-157"><a href="#cb39-157"></a>            0,2</span>
-<span id="cb39-158"><a href="#cb39-158"></a>        STOVL   P21VEL      # /VEL/ FOR N73 DSP</span>
-<span id="cb39-159"><a href="#cb39-159"></a>            RATT</span>
-<span id="cb39-160"><a href="#cb39-160"></a>        UNIT    DOT</span>
-<span id="cb39-161"><a href="#cb39-161"></a>            VATT        # U(R).(V)</span>
-<span id="cb39-162"><a href="#cb39-162"></a>        DDV ASIN        # U(R).U(V)</span>
-<span id="cb39-163"><a href="#cb39-163"></a>            P21VEL</span>
-<span id="cb39-164"><a href="#cb39-164"></a>        STORE   P21GAM      # SIN-1 U(R).U(V), -90 TO +90</span>
-<span id="cb39-165"><a href="#cb39-165"></a>        SXA,2   SET</span>
-<span id="cb39-166"><a href="#cb39-166"></a>            P21ORIG     # 0 = EARTH  2 = MOON</span>
-<span id="cb39-167"><a href="#cb39-167"></a>            P21FLAG</span></code></pre></div>
+class="sourceCode numberSource numberLines"><code class="sourceCode" style="counter-reset: source-line 148;"><span id="cb39-149"><a href="#cb39-149" aria-label="149"></a>P21VSAVE    DLOAD           # SAVE CURRENT BASE VECTOR</span>
+<span id="cb39-150"><a href="#cb39-150" aria-label="150"></a>            TAT</span>
+<span id="cb39-151"><a href="#cb39-151" aria-label="151"></a>        STOVL   P21TIME     # ..TIME</span>
+<span id="cb39-152"><a href="#cb39-152" aria-label="152"></a>            RATT1</span>
+<span id="cb39-153"><a href="#cb39-153" aria-label="153"></a>        STOVL   P21BASER    # ..POS B-29 OR B-27</span>
+<span id="cb39-154"><a href="#cb39-154" aria-label="154"></a>            VATT1</span>
+<span id="cb39-155"><a href="#cb39-155" aria-label="155"></a>        STORE   P21BASEV    # ..VEL B-7  OR B-5</span>
+<span id="cb39-156"><a href="#cb39-156" aria-label="156"></a>        ABVAL   SL*</span>
+<span id="cb39-157"><a href="#cb39-157" aria-label="157"></a>            0,2</span>
+<span id="cb39-158"><a href="#cb39-158" aria-label="158"></a>        STOVL   P21VEL      # /VEL/ FOR N73 DSP</span>
+<span id="cb39-159"><a href="#cb39-159" aria-label="159"></a>            RATT</span>
+<span id="cb39-160"><a href="#cb39-160" aria-label="160"></a>        UNIT    DOT</span>
+<span id="cb39-161"><a href="#cb39-161" aria-label="161"></a>            VATT        # U(R).(V)</span>
+<span id="cb39-162"><a href="#cb39-162" aria-label="162"></a>        DDV ASIN        # U(R).U(V)</span>
+<span id="cb39-163"><a href="#cb39-163" aria-label="163"></a>            P21VEL</span>
+<span id="cb39-164"><a href="#cb39-164" aria-label="164"></a>        STORE   P21GAM      # SIN-1 U(R).U(V), -90 TO +90</span>
+<span id="cb39-165"><a href="#cb39-165" aria-label="165"></a>        SXA,2   SET</span>
+<span id="cb39-166"><a href="#cb39-166" aria-label="166"></a>            P21ORIG     # 0 = EARTH  2 = MOON</span>
+<span id="cb39-167"><a href="#cb39-167" aria-label="167"></a>            P21FLAG</span></code></pre></div>
 <p><a
 href="https://github.com/chrislgarry/Apollo-11/blob/4d15e4d9d37202847334d4c640058803ed4e782e/Comanche055/GROUND_TRACKING_DETERMINATION_PROGRAM.agc#L149-L167">source</a>,
 <a href="https://github.com/chrislgarry/Apollo-11">GitHub
@@ -1405,12 +1413,12 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a h
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>timestamp <span class="op">=</span> <span class="st">&quot;2024-10-22 09:30:42&quot;</span></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># matches for timestamps in the format of: YYYY-MM-DD HH:MM:SS</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;\d</span><span class="sc">{4}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs"> \d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;</span><span class="dv">\d</span><span class="op">{4}</span><span class="vs">-</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">-</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs"> </span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">:</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">:</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
 <div class="fragment">
 <p><strong>TODOs – good or bad?</strong></p>
 <div class="sourceCode" id="cb41"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: this allows invalid month, day, hour, minute and second values</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;\d</span><span class="sc">{4}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs">-\d</span><span class="sc">{2}</span><span class="vs"> \d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">:\d</span><span class="sc">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;</span><span class="dv">\d</span><span class="op">{4}</span><span class="vs">-</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">-</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs"> </span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">:</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">:</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
 <p><span class="text-smaller">editors can collect <code>TODO</code> (and
 <code>FIXME</code>) annotations and warn about them</span></p>
 </div>
@@ -1654,7 +1662,8 @@ href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></figcaption>
 </section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="references csl-bib-body" role="list">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0"
+role="list">
 <div id="ref-stemmler2019how" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
 Stemmler, <span>“How to learn software design and architecture.”</span>
@@ -1662,7 +1671,7 @@ Stemmler, <span>“How to learn software design and architecture.”</span>
                     https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
                     " class="uri">
                     https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
-</a>, 28-Sep-2019.</div>
+</a>, 28-Sept-2019.</div>
 </div>
 <div id="ref-fowler2018refactoring" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[2] </div><div class="csl-right-inline">M.
@@ -1715,9 +1724,9 @@ href="
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 

@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -29,8 +35,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -96,6 +103,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -544,7 +552,7 @@ tested</p>
 <h1>changing the software</h1>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th></th>
 <th>add feature</th>
 <th>fix a bug</th>
@@ -553,28 +561,28 @@ tested</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>structure</td>
 <td>changes</td>
 <td>changes</td>
 <td>changes</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>new funcionality</td>
 <td>changes</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>functionality</td>
 <td></td>
 <td>changes</td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>resource usage</td>
 <td></td>
 <td></td>
@@ -616,7 +624,8 @@ structure</li>
 
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="references csl-bib-body" role="list">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0"
+role="list">
 <div id="ref-forsberg1991relationship" class="csl-entry"
 role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
@@ -672,9 +681,9 @@ Professional, 2004.</div>
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 

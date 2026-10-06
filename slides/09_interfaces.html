@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -29,8 +35,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -96,6 +103,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -326,33 +334,33 @@ role="doc-biblioref">[4]</a></span>.
 <div class="columns">
 <div class="column text-smaller code-no-max-height" style="width:60%;">
 <div class="sourceCode" id="sinatra" style="height:450px"><pre
-class="sourceCode numberSource ruby number-lines"><code class="sourceCode ruby"><span id="sinatra-1"><a href="#sinatra-1"></a><span class="fu">require</span> <span class="vs">&#39;sinatra&#39;</span></span>
-<span id="sinatra-2"><a href="#sinatra-2"></a></span>
-<span id="sinatra-3"><a href="#sinatra-3"></a><span class="cf">def</span> generate_progress</span>
-<span id="sinatra-4"><a href="#sinatra-4"></a>  <span class="fu">rand</span><span class="at">.round</span>(<span class="dv">2</span>)</span>
-<span id="sinatra-5"><a href="#sinatra-5"></a><span class="cf">end</span></span>
-<span id="sinatra-6"><a href="#sinatra-6"></a></span>
-<span id="sinatra-7"><a href="#sinatra-7"></a><span class="cf">def</span> generate_activity_matrix</span>
-<span id="sinatra-8"><a href="#sinatra-8"></a>  result <span class="kw">=</span> <span class="kw">[]</span></span>
-<span id="sinatra-9"><a href="#sinatra-9"></a>  (<span class="dv">1</span><span class="kw">..</span><span class="dv">4</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>_w<span class="kw">|</span></span>
-<span id="sinatra-10"><a href="#sinatra-10"></a>    daily <span class="kw">=</span> <span class="kw">[]</span></span>
-<span id="sinatra-11"><a href="#sinatra-11"></a>    (<span class="dv">1</span><span class="kw">..</span><span class="dv">7</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>_d<span class="kw">|</span></span>
-<span id="sinatra-12"><a href="#sinatra-12"></a>      daily<span class="at">.push</span> <span class="fu">rand</span>(<span class="dv">10</span>)</span>
-<span id="sinatra-13"><a href="#sinatra-13"></a>    <span class="cf">end</span></span>
-<span id="sinatra-14"><a href="#sinatra-14"></a>    result<span class="at">.push</span> daily</span>
-<span id="sinatra-15"><a href="#sinatra-15"></a>  <span class="cf">end</span></span>
-<span id="sinatra-16"><a href="#sinatra-16"></a>  result</span>
-<span id="sinatra-17"><a href="#sinatra-17"></a><span class="cf">end</span></span>
-<span id="sinatra-18"><a href="#sinatra-18"></a></span>
-<span id="sinatra-19"><a href="#sinatra-19"></a>get <span class="vs">&#39;/user/:id/statistics&#39;</span> <span class="cf">do</span></span>
-<span id="sinatra-20"><a href="#sinatra-20"></a>  data <span class="kw">=</span> <span class="kw">{}</span></span>
-<span id="sinatra-21"><a href="#sinatra-21"></a>  data<span class="kw">[</span><span class="vs">&#39;name&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;Marvin&#39;</span></span>
-<span id="sinatra-22"><a href="#sinatra-22"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="kw">=</span> params<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span></span>
-<span id="sinatra-23"><a href="#sinatra-23"></a>  data<span class="kw">[</span><span class="vs">&#39;registration&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;2019-10-02&#39;</span></span>
-<span id="sinatra-24"><a href="#sinatra-24"></a>  data<span class="kw">[</span><span class="vs">&#39;progress&#39;</span><span class="kw">]</span> <span class="kw">=</span> generate_progress</span>
-<span id="sinatra-25"><a href="#sinatra-25"></a>  data<span class="kw">[</span><span class="vs">&#39;activity&#39;</span><span class="kw">]</span> <span class="kw">=</span> generate_activity_matrix</span>
-<span id="sinatra-26"><a href="#sinatra-26"></a>  <span class="cf">return</span> data<span class="at">.to_json</span></span>
-<span id="sinatra-27"><a href="#sinatra-27"></a><span class="cf">end</span></span></code></pre></div>
+class="sourceCode numberSource ruby number-lines"><code class="sourceCode ruby"><span id="sinatra-1"><a href="#sinatra-1" aria-label="1"></a><span class="fu">require</span> <span class="vs">&#39;sinatra&#39;</span></span>
+<span id="sinatra-2"><a href="#sinatra-2" aria-label="2"></a></span>
+<span id="sinatra-3"><a href="#sinatra-3" aria-label="3"></a><span class="cf">def</span> generate_progress</span>
+<span id="sinatra-4"><a href="#sinatra-4" aria-label="4"></a>  <span class="fu">rand</span><span class="at">.round</span>(<span class="dv">2</span>)</span>
+<span id="sinatra-5"><a href="#sinatra-5" aria-label="5"></a><span class="cf">end</span></span>
+<span id="sinatra-6"><a href="#sinatra-6" aria-label="6"></a></span>
+<span id="sinatra-7"><a href="#sinatra-7" aria-label="7"></a><span class="cf">def</span> generate_activity_matrix</span>
+<span id="sinatra-8"><a href="#sinatra-8" aria-label="8"></a>  result <span class="op">=</span> <span class="kw">[]</span></span>
+<span id="sinatra-9"><a href="#sinatra-9" aria-label="9"></a>  (<span class="dv">1</span><span class="op">..</span><span class="dv">4</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="op">|</span>_w<span class="op">|</span></span>
+<span id="sinatra-10"><a href="#sinatra-10" aria-label="10"></a>    daily <span class="op">=</span> <span class="kw">[]</span></span>
+<span id="sinatra-11"><a href="#sinatra-11" aria-label="11"></a>    (<span class="dv">1</span><span class="op">..</span><span class="dv">7</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="op">|</span>_d<span class="op">|</span></span>
+<span id="sinatra-12"><a href="#sinatra-12" aria-label="12"></a>      daily<span class="at">.push</span> <span class="fu">rand</span>(<span class="dv">10</span>)</span>
+<span id="sinatra-13"><a href="#sinatra-13" aria-label="13"></a>    <span class="cf">end</span></span>
+<span id="sinatra-14"><a href="#sinatra-14" aria-label="14"></a>    result<span class="at">.push</span> daily</span>
+<span id="sinatra-15"><a href="#sinatra-15" aria-label="15"></a>  <span class="cf">end</span></span>
+<span id="sinatra-16"><a href="#sinatra-16" aria-label="16"></a>  result</span>
+<span id="sinatra-17"><a href="#sinatra-17" aria-label="17"></a><span class="cf">end</span></span>
+<span id="sinatra-18"><a href="#sinatra-18" aria-label="18"></a></span>
+<span id="sinatra-19"><a href="#sinatra-19" aria-label="19"></a>get <span class="vs">&#39;/user/:id/statistics&#39;</span> <span class="cf">do</span></span>
+<span id="sinatra-20"><a href="#sinatra-20" aria-label="20"></a>  data <span class="op">=</span> <span class="op">{}</span></span>
+<span id="sinatra-21"><a href="#sinatra-21" aria-label="21"></a>  data<span class="kw">[</span><span class="vs">&#39;name&#39;</span><span class="kw">]</span> <span class="op">=</span> <span class="vs">&#39;Marvin&#39;</span></span>
+<span id="sinatra-22"><a href="#sinatra-22" aria-label="22"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="op">=</span> params<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span></span>
+<span id="sinatra-23"><a href="#sinatra-23" aria-label="23"></a>  data<span class="kw">[</span><span class="vs">&#39;registration&#39;</span><span class="kw">]</span> <span class="op">=</span> <span class="vs">&#39;2019-10-02&#39;</span></span>
+<span id="sinatra-24"><a href="#sinatra-24" aria-label="24"></a>  data<span class="kw">[</span><span class="vs">&#39;progress&#39;</span><span class="kw">]</span> <span class="op">=</span> generate_progress</span>
+<span id="sinatra-25"><a href="#sinatra-25" aria-label="25"></a>  data<span class="kw">[</span><span class="vs">&#39;activity&#39;</span><span class="kw">]</span> <span class="op">=</span> generate_activity_matrix</span>
+<span id="sinatra-26"><a href="#sinatra-26" aria-label="26"></a>  <span class="cf">return</span> data<span class="at">.to_json</span></span>
+<span id="sinatra-27"><a href="#sinatra-27" aria-label="27"></a><span class="cf">end</span></span></code></pre></div>
 </div><div class="column" style="width:40%;">
 <div class="text-smaller">
 <p><code>http://localhost:4567/user/42/statistics</code></p>
@@ -555,12 +563,12 @@ href="https://github.com/geopandas/geopandas/blob/f150ec0480cfbf2ad8074d210d103b
 class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Worker <span class="op">{</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/**</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> Calculate period between versions</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">     * @</span>deprecated</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">     * </span><span class="an">@deprecated</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> This method is no longer acceptable to compute time between versions<span class="co">.</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span> Use <span class="co">{@</span>link Utils<span class="co">#</span>calculatePeriod<span class="co">(</span>Machine<span class="co">)}</span> instead<span class="co">.</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span> Use <span class="an">{@link</span> Utils<span class="an">#</span>calculatePeriod<span class="an">(</span>Machine<span class="an">)}</span> instead<span class="co">.</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> <span class="co">@</span>param machine instance</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> <span class="co">@</span>return computed time</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> <span class="an">@param</span><span class="co"> </span><span class="an">machine</span><span class="co"> </span>instance</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>     <span class="co">*</span> <span class="an">@return</span> computed time</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>     <span class="co">*/</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Deprecated</span><span class="op">(</span>since <span class="op">=</span> <span class="st">&quot;4.5&quot;</span><span class="op">,</span> forRemoval <span class="op">=</span> <span class="kw">true</span><span class="op">)</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">calculate</span><span class="op">(</span>Machine machine<span class="op">)</span> <span class="op">{</span></span>
@@ -621,7 +629,7 @@ class="sourceCode json"><code class="sourceCode json"><span id="cb6-1"><a href="
 implementation</p>
 <div class="sourceCode" id="cb7"><pre
 class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>get <span class="vs">&#39;/users&#39;</span> <span class="cf">do</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  data <span class="kw">=</span> <span class="kw">{</span><span class="st">&quot;ids&quot;</span> <span class="kw">=&gt;</span> <span class="kw">[</span><span class="dv">42</span><span class="kw">]}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span> <span class="op">{</span><span class="st">&quot;ids&quot;</span> <span class="op">=&gt;</span> <span class="kw">[</span><span class="dv">42</span><span class="kw">]</span><span class="op">}</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="at">.to_json</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
 <p>sooner or later someone will discover the undocumented behavior and
@@ -707,7 +715,8 @@ width="150" /></p>
 
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="text-smaller references csl-bib-body" role="list">
+<div id="refs" class="text-smaller references csl-bib-body"
+data-entry-spacing="0" role="list">
 <div id="ref-enwiki:1244878409" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div
 class="csl-right-inline">Wikipedia contributors, <span>“Interface
@@ -760,9 +769,9 @@ Ozler, <span>“Java @deprecated annotation.”</span> <a href="
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 

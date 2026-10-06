@@ -1,0 +1,42 @@
+@startuml
+skin rose
+scale 2
+!pragma layout smetana
+left to right direction
+
+actor user
+actor :temerature\nsensor: as sensor
+
+package "temperature monitoring system" as tm {
+
+package "logger" {
+  component "scheduler" as s
+  component "database connector" as l.dbc
+  component "bluetooth connector" as btc
+}
+
+package "frontend" {
+[plotter] as p
+[template engine] as te
+[web service] as ws
+[database connector] as f.dbc
+}
+
+database "sqlite3" as db
+
+l.dbc -up--> db
+f.dbc ---> db
+s --> btc
+s --> l.dbc
+
+ws --> p
+ws --> te
+ws --> f.dbc
+
+}
+
+l.dbc -[hidden]right- btc
+sensor -up--> btc
+user ---> frontend
+
+@enduml

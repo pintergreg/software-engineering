@@ -14,10 +14,16 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -29,8 +35,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -96,6 +103,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -627,7 +635,7 @@ href="#/ref-seemann2007unit" role="doc-biblioref">[5]</a></span></p>
 class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="vs">&#39;sinatra&#39;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>get <span class="vs">&#39;/user-statistics&#39;</span> <span class="cf">do</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">{}</span><span class="at">.to_json</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">{}</span><span class="at">.to_json</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
 </div>
 </div>
@@ -652,12 +660,12 @@ href="#/ref-seemann2007unit" role="doc-biblioref">[5]</a></span></p>
 class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="vs">&#39;sinatra&#39;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>get <span class="vs">&#39;/user-statistics&#39;</span> <span class="cf">do</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  data <span class="kw">=</span> <span class="kw">{}</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;name&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;Marvin&#39;</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="dv">42</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;registration&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;2019-10-02&#39;</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;progress&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="fl">0.84</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;activity&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="kw">[</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span> <span class="op">{}</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;name&#39;</span><span class="kw">]</span> <span class="op">=</span> <span class="vs">&#39;Marvin&#39;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;registration&#39;</span><span class="kw">]</span> <span class="op">=</span> <span class="vs">&#39;2019-10-02&#39;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;progress&#39;</span><span class="kw">]</span> <span class="op">=</span> <span class="fl">0.84</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;activity&#39;</span><span class="kw">]</span> <span class="op">=</span> <span class="kw">[</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">2</span><span class="kw">]</span>,</span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">4</span><span class="kw">]</span>,</span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[</span><span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">0</span><span class="kw">]</span>,</span>
@@ -721,22 +729,22 @@ class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb13-1"><a href=
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="cf">def</span> generate_activity_matrix</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  result <span class="kw">=</span> <span class="kw">[]</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">1</span><span class="kw">..</span><span class="dv">4</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>_w<span class="kw">|</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    daily <span class="kw">=</span> <span class="kw">[]</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span><span class="kw">..</span><span class="dv">7</span>)<span class="at">.each</span> <span class="kw">{|</span>_d<span class="kw">|</span> daily<span class="at">.push</span> <span class="fu">rand</span>(<span class="dv">10</span>)<span class="kw">}</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  result <span class="op">=</span> <span class="kw">[]</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">1</span><span class="op">..</span><span class="dv">4</span>)<span class="at">.each</span> <span class="cf">do</span> <span class="op">|</span>_w<span class="op">|</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    daily <span class="op">=</span> <span class="kw">[]</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span><span class="op">..</span><span class="dv">7</span>)<span class="at">.each</span> <span class="op">{|</span>_d<span class="op">|</span> daily<span class="at">.push</span> <span class="fu">rand</span>(<span class="dv">10</span>)<span class="op">}</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    result<span class="at">.push</span> daily</span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  result</span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>get <span class="vs">&#39;/user-statistics&#39;</span> <span class="cf">do</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  data <span class="kw">=</span> <span class="kw">{}</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;name&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;Marvin&#39;</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="dv">42</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;registration&#39;</span><span class="kw">]</span> <span class="kw">=</span> <span class="vs">&#39;2019-10-02&#39;</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;progress&#39;</span><span class="kw">]</span> <span class="kw">=</span> generate_progress</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;activity&#39;</span><span class="kw">]</span> <span class="kw">=</span> generate_activity_matrix</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span> <span class="op">{}</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;name&#39;</span><span class="kw">]</span> <span class="op">=</span> <span class="vs">&#39;Marvin&#39;</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;id&#39;</span><span class="kw">]</span> <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;registration&#39;</span><span class="kw">]</span> <span class="op">=</span> <span class="vs">&#39;2019-10-02&#39;</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;progress&#39;</span><span class="kw">]</span> <span class="op">=</span> generate_progress</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  data<span class="kw">[</span><span class="vs">&#39;activity&#39;</span><span class="kw">]</span> <span class="op">=</span> generate_activity_matrix</span>
 <span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="at">.to_json</span></span>
 <span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
 </div>
@@ -2171,7 +2179,7 @@ fake</figcaption>
 <h1>changing the software</h1>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th></th>
 <th>add feature</th>
 <th>fix a bug</th>
@@ -2180,28 +2188,28 @@ fake</figcaption>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>structure</td>
 <td>changes</td>
 <td>changes</td>
 <td>changes</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>new funcionality</td>
 <td>changes</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>functionality</td>
 <td></td>
 <td>changes</td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>resource usage</td>
 <td></td>
 <td></td>
@@ -2568,7 +2576,7 @@ place, we often have to change code.</p>
 </div>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th></th>
 <th>add feature</th>
 <th>fix a bug</th>
@@ -2577,28 +2585,28 @@ place, we often have to change code.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>structure</td>
 <td>changes</td>
 <td>changes</td>
 <td>changes</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>new funcionality</td>
 <td>changes</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>functionality</td>
 <td></td>
 <td>changes</td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>resource usage</td>
 <td></td>
 <td></td>
@@ -2616,7 +2624,8 @@ role="doc-biblioref">[21]</a></span></p>
 </section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
-<div id="refs" class="text-smaller references csl-bib-body" role="list">
+<div id="refs" class="text-smaller references csl-bib-body"
+data-entry-spacing="0" role="list">
 <div id="ref-forsberg1991relationship" class="csl-entry"
 role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">K.
@@ -2644,7 +2653,7 @@ Fowler, <span>“On the diverse and fantastical shapes of testing.”</span>
                    https://martinfowler.com/articles/2021-test-shapes.html
                     " class="uri">
                    https://martinfowler.com/articles/2021-test-shapes.html
-</a>, 02-Jun-2021.</div>
+</a>, 02-June-2021.</div>
 </div>
 <div id="ref-seemann2007unit" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[5] </div><div class="csl-right-inline">M.
@@ -2797,9 +2806,10 @@ Hunt and D. Thomas, <em>The pragmatic programmer: From journeyman to
 master</em>, 2nd ed. Boston, MA: Addison Wesley, 2019.</div>
 </div>
 <div id="ref-dorothy2008foundations" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[25] </div><div class="csl-right-inline">G.
-Dorothy, E. Isabel, B. Rex, <em>et al.</em>, <span>“Foundations of
-software testing: ISTQB certification.”</span> 2008.</div>
+<div class="csl-left-margin">[25] </div><div
+class="csl-right-inline"><span class="nocase">G. Dorothy, E. Isabel, B.
+Rex, <em>et al.</em></span>, <span>“Foundations of software testing:
+ISTQB certification.”</span> 2008.</div>
 </div>
 <div id="ref-ambler2002agile" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[26] </div><div class="csl-right-inline">S.
@@ -2814,9 +2824,9 @@ and the unified process</em>. John Wiley &amp; Sons, 2002.</div>
   <script src="../assets/reveal.js-5.2.1//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="../assets/reveal.js-5.2.1//plugin/notes/notes.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/search/search.js"></script>
-  <script src="../assets/reveal.js-5.2.1//plugin/zoom/zoom.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/notes.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/search.js"></script>
+  <script src="../assets/reveal.js-5.2.1//dist/plugin/zoom.js"></script>
 
   <script>
 
