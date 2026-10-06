@@ -24,7 +24,7 @@ jobs:
                   sudo tar xf mdbook.tar.gz -C /usr/local/bin mdbook
                   mdbook --version
                   rm -rf mdbook.tar.gz
-                  wget -q0 pandoc-3.12-1-amd64.deb https://github.com/jgm/pandoc/releases/download/3.12/pandoc-3.12-1-amd64.deb
+                  wget -qO pandoc-3.12-1-amd64.deb https://github.com/jgm/pandoc/releases/download/3.12/pandoc-3.12-1-amd64.deb
                   sudo apt install pandoc-3.12-1-amd64.deb
 
             - name: compile presentaion
