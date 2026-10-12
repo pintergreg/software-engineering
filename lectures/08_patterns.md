@@ -1217,9 +1217,10 @@ other alternatives: [Alternatives To MVC ](https://blog.ircmaxell.com/2014/11/al
 
 # common pitfalls of architecture design and how to avoid them
 
+<!-- ~ - follow dependency injection principles for flexible dependency management -->
+
 tight coupling between layers
 
-<!-- ~ - follow dependency injection principles for flexible dependency management -->
 ~ - use techniques like inversion of control for flexible dependency management
 ~ - each layer should only interacts with its adjacent layer through well-defined interfaces
 
