@@ -1214,6 +1214,32 @@ figures based on [@pedamkar2023mvc]
 other alternatives: [Alternatives To MVC ](https://blog.ircmaxell.com/2014/11/alternatives-to-mvc.html) - by Anthony Ferrara
 :::
 
+## the elm architecture
+
+::: {.position-absolute .float_left}
+- model: the state of your application
+- view: a way to turn your state into HTML
+- update: a way to update your state<br>based on messages
+:::
+:::::: {.r-stack}
+
+::: {.fragment .fade-out fragment-index=1}
+![](figures/tea_loop.drawio.svg)
+:::
+::: {.fragment .current-visible fragment-index=1}
+![](figures/tea.drawio.svg)
+:::
+::::::
+
+::: notes
+- model: the state of your application
+- view: the visual representation of the Model
+- update: the mechanism to update the Model, based on messages
+:::
+
+::: {.text-smaller}
+source: [The Elm Architecture](https://www.huy.rocks/everyday/02-27-2022-design-patterns-the-elm-architecture)
+:::
 
 # common pitfalls of architecture design and how to avoid them
 
