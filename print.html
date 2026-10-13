@@ -8073,13 +8073,45 @@ data model</li>
 MVC</a> - by
 Anthony Ferrara</p>
 </div>
-<h1 id="common-pitfalls-of-architecture-design-and-how-to-avoid-them"><a class="header" href="#common-pitfalls-of-architecture-design-and-how-to-avoid-them">common pitfalls of architecture design and how to avoid them</a></h1>
-<p>tight coupling between layers</p>
-<!-- ~ - follow dependency injection principles for flexible dependency management -->
-<p>~ - use techniques like inversion of control for flexible dependency management</p>
+<h2 id="the-elm-architecture"><a class="header" href="#the-elm-architecture">the elm architecture</a></h2>
+<div class="position-absolute float_left">
 <ul>
-<li>each layer should only interacts with its adjacent layer through
-well-defined interfaces</li>
+<li>model: the state of your application</li>
+<li>view: a way to turn your state into HTML</li>
+<li>update: a way to update your state<br>based on messages</li>
+</ul>
+</div>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img src="lectures/figures/tea_loop.drawio.svg" alt="" /></p>
+</div>
+<div class="fragment current-visible" data-fragment-index="1">
+<p><img src="lectures/figures/tea.drawio.svg" alt="" /></p>
+</div>
+</div>
+<div class="notes">
+<ul>
+<li>model: the state of your application</li>
+<li>view: the visual representation of the Model</li>
+<li>update: the mechanism to update the Model, based on messages</li>
+</ul>
+</div>
+<div class="text-smaller">
+<p>source: <a href="https://www.huy.rocks/everyday/02-27-2022-design-patterns-the-elm-architecture">The Elm
+Architecture</a></p>
+</div>
+<h1 id="common-pitfalls-of-architecture-design-and-how-to-avoid-them"><a class="header" href="#common-pitfalls-of-architecture-design-and-how-to-avoid-them">common pitfalls of architecture design and how to avoid them</a></h1>
+<!-- ~ - follow dependency injection principles for flexible dependency management -->
+<p>tight coupling between layers</p>
+<ul>
+<li>
+<p>use techniques like inversion of control for flexible dependency
+management</p>
+</li>
+<li>
+<p>each layer should only interacts with its adjacent layer through
+well-defined interfaces</p>
+</li>
 </ul>
 <p>too many layers</p>
 <ul>

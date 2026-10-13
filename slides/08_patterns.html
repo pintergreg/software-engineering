@@ -1565,17 +1565,51 @@ role="doc-biblioref">[25]</a></span></p>
 href="https://blog.ircmaxell.com/2014/11/alternatives-to-mvc.html">Alternatives
 To MVC</a> - by Anthony Ferrara</p>
 </div>
+</section>
+<section id="the-elm-architecture" class="slide level2">
+<h2>the elm architecture</h2>
+<div class="position-absolute float_left">
+<ul>
+<li>model: the state of your application</li>
+<li>view: a way to turn your state into HTML</li>
+<li>update: a way to update your state<br>based on messages</li>
+</ul>
+</div>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img data-src="figures/tea_loop.drawio.svg" /></p>
+</div>
+<div class="fragment current-visible" data-fragment-index="1">
+<p><img data-src="figures/tea.drawio.svg" /></p>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>model: the state of your application</li>
+<li>view: the visual representation of the Model</li>
+<li>update: the mechanism to update the Model, based on messages</li>
+</ul>
+</aside>
+<div class="text-smaller">
+<p>source: <a
+href="https://www.huy.rocks/everyday/02-27-2022-design-patterns-the-elm-architecture">The
+Elm Architecture</a></p>
+</div>
 </section></section>
 <section>
 <section
 id="common-pitfalls-of-architecture-design-and-how-to-avoid-them"
 class="title-slide slide level1">
 <h1>common pitfalls of architecture design and how to avoid them</h1>
-<p>tight coupling between layers</p>
 <!-- ~ - follow dependency injection principles for flexible dependency management -->
 <dl>
-<dt>~ - use techniques like inversion of control for flexible dependency
-management</dt>
+<dt>tight coupling between layers</dt>
+<dd>
+<ul>
+<li>use techniques like inversion of control for flexible dependency
+management</li>
+</ul>
+</dd>
 <dd>
 <ul>
 <li>each layer should only interacts with its adjacent layer through
