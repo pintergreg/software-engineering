@@ -298,8 +298,9 @@ href="https://refactoring.guru/design-patterns/observer">refactoring.guru
 <h2>observer pattern - Python example</h2>
 <div class="columns text-smaller">
 <div class="column" style="width:45%;">
+<!-- from abc import ABC, abstractmethod -->
 <div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Observable:</span>
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Observable(ABC):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.subscribers <span class="op">=</span> []</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -316,6 +317,8 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a hr
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> update(<span class="va">self</span>, data):</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> received data: </span><span class="sc">{</span>data<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<p><img data-src="figures/gof/observer_sensor.svg"
+data-preview-image="figures/gof/observer_sensor.svg" width="330" /></p>
 </div><div class="column" style="width:55%;">
 <div class="sourceCode" id="cb4"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TemperatureSensor(Observable):</span>
@@ -342,12 +345,12 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a hr
 <pre><code>Temperature changed to: 25
 Display 1 updated with temperature: 25
 Display 2 updated with temperature: 25</code></pre>
-</div>
-</div>
-<div class="text-small">
+<div class="text-small mt-4">
 <p>example code is based on: <a
 href="https://softwarepatternslexicon.com/functional-programming/essential-functional-programming-patterns/observer-pattern-in-functional-reactive-programming/">Observer
 Pattern in Functional Reactive Programming (FRP)</a></p>
+</div>
+</div>
 </div>
 </section>
 <section id="gof-design-patterns-in-functional-programming"

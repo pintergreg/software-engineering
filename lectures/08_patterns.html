@@ -326,7 +326,8 @@ Observer</a></p>
 <h2 id="observer-pattern---python-example"><a class="header" href="#observer-pattern---python-example">observer pattern - Python example</a></h2>
 <div class="columns text-smaller">
 <div class="column" width="45%">
-<pre><code class="language-python">class Observable:
+<!-- from abc import ABC, abstractmethod -->
+<pre><code class="language-python">class Observable(ABC):
     def __init__(self):
         self.subscribers = []
 
@@ -344,6 +345,8 @@ class Subscriber:  # aka Observer
     def update(self, data):
         print(f"{self.name} received data: {data}")
 </code></pre>
+<p><img src="figures/gof/observer_sensor.svg"
+data-preview-image="figures/gof/observer_sensor.svg" width="330" /></p>
 </div>
 <div class="column" width="55%">
 <pre><code class="language-python">class TemperatureSensor(Observable):
@@ -372,12 +375,12 @@ sensor.change_temperature(25)  # change value
 Display 1 updated with temperature: 25
 Display 2 updated with temperature: 25
 </code></pre>
-</div>
-</div>
-<div class="text-small">
+<div class="text-small mt-4">
 <p>example code is based on: <a href="https://softwarepatternslexicon.com/functional-programming/essential-functional-programming-patterns/observer-pattern-in-functional-reactive-programming/">Observer Pattern in Functional Reactive
 Programming
 (FRP)</a></p>
+</div>
+</div>
 </div>
 <h2 id="gof-design-patterns-in-functional-programming"><a class="header" href="#gof-design-patterns-in-functional-programming">GoF design patterns in functional programming</a></h2>
 <table>
