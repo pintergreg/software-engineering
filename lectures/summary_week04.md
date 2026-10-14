@@ -140,7 +140,7 @@ most software developer do not use UML (in a formal way), but hand drawn sketche
 ::::::::::::
 
 
-# deployment diagram
+## deployment diagram
 
 - represents the deployment of software components on hardware nodes
 - shows how software is distributed across devices
