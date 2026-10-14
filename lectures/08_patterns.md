@@ -1681,8 +1681,8 @@ based on [Why Write ADRs](https://github.blog/2020-08-13-why-write-adrs/) by Eli
 
 |                          |
 |--------------------------|-------------------------------------------------|
-| architectural patterns   | model-view-controller, MVP, MVVM                |
-| architectural styles     | layered, onion, hexagonal, clear, client-server |
+| architectural patterns   | model-view-controller, MVP, MVVM, TEA           |
+| architectural styles     | layered, onion, hexagonal, clean, client-server |
 | architectural principles | coupling & cohesion                             |
 | [design patterns]{.alpha-50} | [GOF, map-filter-reduce]{.alpha-50} |
 | desing principles        | SOLID, DRY, YAGNI, hollywood principle |
