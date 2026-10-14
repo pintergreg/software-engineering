@@ -610,10 +610,10 @@ example based on [@oloruntoba2024solid]
 
 > Dependency inversion principle says that modules should depend upon interfaces or abstract classes, not concrete classes. It's an inversion because implementations depend upon abstractions and not the other way round. [@millington2019solid]
 
-![](figures/solid/dependency_inversion.svg){height=300}
+![](figures/solid/dependency_inversion.svg){height=300 data-preview-image="figures/solid/dependency_inversion.svg" data-preview-fit="contain"}
 
 ::: {.text-smaller}
-increases reusability
+increases reusability, hides implementation details
 :::
 
 
