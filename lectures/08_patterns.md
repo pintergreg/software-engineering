@@ -871,7 +871,7 @@ source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers
 ::::::::: {.column width="60%"}
 Object-oriented design (OOD) is the process of planning a system of interacting objects to solve a software problem [@enwiki:1230588445].
 
-::: {.fragment data-fragment-index=1}
+::: {}
 control flow? structure?
 
 ![historically grown architecture<br>based on [@woltmann2023hexagonal]](figures/legacy_structure.drawio.svg){width=400 data-preview-image="figures/legacy_structure.drawio.svg" data-preview-fit="contain"}
