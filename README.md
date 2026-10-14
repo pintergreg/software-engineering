@@ -1,4 +1,4 @@
-# software engineering meterials
+# software engineering materials
 
 The goal of this course is to provide a common foundation in software engineering for students from various backgrounds.
 It aims to provide a shared terminology that enables experts in business informatics to be able to work seamlessly with software developers.
