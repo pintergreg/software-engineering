@@ -372,6 +372,10 @@ examples and definitions are from [Elixir School](https://elixirschool.com/en/le
 Unix philosophy
 
 Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features".
+
+::: {.mt-3}
+preventing Zawinski’s law: "Every program attempts to expand until it can read mail."
+:::
 :::::::::
 ::::::::: {.column width="50%" .text-smaller}
 advantages
