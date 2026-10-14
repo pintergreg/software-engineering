@@ -24,7 +24,7 @@ link-citations: true
 - designed to be a complete language of software modelling
 - UML 2 has 14 diagrams in two categories: structure and behavior
 
-::: {.fragment}
+::: {}
 most software developer do not use UML (in a formal way), but hand drawn sketches which often include UML elements [@baltes2014sketches]
 :::
 :::::::::
@@ -139,6 +139,20 @@ most software developer do not use UML (in a formal way), but hand drawn sketche
 :::::::::
 ::::::::::::
 
+
+# deployment diagram
+
+- represents the deployment of software components on hardware nodes
+- shows how software is distributed across devices
+    - e.g., servers, and network infrastructure
+    - and what software components (artifacts) run on each node 
+    - can also display actors, files, interfaces
+    
+![](figures/uml/deployment.svg){height=250}
+
+:::{.text-smaller}
+more at [Deployment Diagram in Unified Modeling Language(UML)](https://www.geeksforgeeks.org/system-design/deployment-diagram-unified-modeling-languageuml/)
+:::
 
 # what is the issue with UML?
 
