@@ -473,6 +473,9 @@ example based on [@oloruntoba2024solid]
 
 ## Liskov substitution principle
 
+:::::::::::: {.columns}
+::::::::: {.column width="80%" .wide-quote .mt-4}
+
 > if class A is a subtype of class B, B should be able to replaced with A without disrupting the behavior of the program [@millington2019solid]
 
 ::: {.text-smaller .mt-3}
@@ -481,6 +484,12 @@ example based on [@oloruntoba2024solid]
 - circle-ellipse problem / square–rectangle problem
     - existence of the circle–ellipse problem is used to criticize object-oriented programming [@enwiki:1165573623]
 :::
+
+:::::::::
+::::::::: {.column width="20%"}
+![](figures/solid/liskov.svg){width=150}
+:::::::::
+::::::::::::
 
 
 ## Liskov substitution principle - example
