@@ -394,7 +394,7 @@ advantages
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
-![](figures/solid/open_closed_pre.svg)
+![](figures/solid/open_closed_pre.svg){width=450}
 :::::::::
 ::::::::: {.column width="50%" .text-smaller}
 ```python
@@ -434,7 +434,7 @@ example based on [@oloruntoba2024solid]
 
 :::::::::::: {.columns}
 ::::::::: {.column width="50%"}
-![](figures/solid/open_closed.svg)
+![](figures/solid/open_closed.svg){width=450}
 :::::::::
 ::::::::: {.column width="50%" .text-smaller}
 ```python
