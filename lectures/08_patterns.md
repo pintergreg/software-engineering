@@ -169,8 +169,9 @@ more at: [refactoring.guru / Observer](https://refactoring.guru/design-patterns/
 
 :::::::::::: {.columns .text-smaller}
 ::::::::: {.column width="45%"}
+<!-- from abc import ABC, abstractmethod -->
 ``` python
-class Observable:
+class Observable(ABC):
     def __init__(self):
         self.subscribers = []
 
@@ -189,6 +190,7 @@ class Subscriber:  # aka Observer
         print(f"{self.name} received data: {data}")
 ```
 
+![](figures/gof/observer_sensor.svg){width=330 data-preview-image="figures/gof/observer_sensor.svg"}
 :::::::::
 ::::::::: {.column width="55%"}
 ``` python
@@ -221,12 +223,12 @@ Display 1 updated with temperature: 25
 Display 2 updated with temperature: 25
 ```
 
+::: {.text-small .mt-4}
+example code is based on: [Observer Pattern in Functional Reactive Programming (FRP)](https://softwarepatternslexicon.com/functional-programming/essential-functional-programming-patterns/observer-pattern-in-functional-reactive-programming/)
+:::
 :::::::::
 ::::::::::::
 
-::: {.text-small}
-example code is based on: [Observer Pattern in Functional Reactive Programming (FRP)](https://softwarepatternslexicon.com/functional-programming/essential-functional-programming-patterns/observer-pattern-in-functional-reactive-programming/)
-:::
 
 
 ## GoF design patterns in functional programming

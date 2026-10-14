@@ -1,0 +1,41 @@
+@startuml
+skin rose
+scale 2
+
+abstract class Observable {
+    - subscribers[]
+    + void subscribe()
+'    + void unsubscribe()
+    + void notify()
+}
+
+interface Subscriber {
+    + void update()
+}
+
+
+class TemperatureSensor {
+    - temperature
+    + void change_temperature()
+}
+
+class DisplayUnit {
+    - temperature
+    + void update()
+}
+
+Observable <|.. TemperatureSensor
+Subscriber <|.. DisplayUnit
+
+Observable "0..*" <.right. Subscriber
+
+note right of Observable::notify
+  for s in subscribers:
+    s.update()
+end note
+
+note right of TemperatureSensor::change_temperature
+  self.notify(temperature)
+end note
+
+@enduml
