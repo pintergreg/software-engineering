@@ -1,0 +1,21 @@
+@startuml
+skin rose
+scale 2
+
+class Square {
++ {method} setWidth()
++ {method} setHeight()
++ {method} getArea()
+}
+class Rectangle {
+- int width
+- int height
++ getWidth()
++ setWidth()
++ getHeight()
++ setHeight()
++ getArea()
+}
+
+Square -up-|> Rectangle
+@enduml

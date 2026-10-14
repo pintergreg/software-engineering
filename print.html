@@ -7144,6 +7144,10 @@ reason to change</p>
 <p>Unix philosophy</p>
 <p>Make each program do one thing well. To do a new job, build afresh
 rather than complicate old programs by adding new “features”.</p>
+<div class="mt-3">
+<p>preventing Zawinski’s law: “Every program attempts to expand until it
+can read mail.”</p>
+</div>
 </div>
 <div class="column text-smaller" width="50%">
 <p>advantages</p>
@@ -7167,7 +7171,7 @@ rather than complicate old programs by adding new “features”.</p>
 </blockquote>
 <div class="columns">
 <div class="column" width="50%">
-<p><img src="lectures/figures/solid/open_closed_pre.svg" alt="" /></p>
+<img src="lectures/figures/solid/open_closed_pre.svg" width="450" />
 </div>
 <div class="column text-smaller" width="50%">
 <pre><code class="language-python">class Shape:
@@ -7202,7 +7206,7 @@ class AreaCalculator:
 <h2 id="open-closed-principle-1"><a class="header" href="#open-closed-principle-1">open-closed principle</a></h2>
 <div class="columns">
 <div class="column" width="50%">
-<p><img src="lectures/figures/solid/open_closed.svg" alt="" /></p>
+<img src="lectures/figures/solid/open_closed.svg" width="450" />
 </div>
 <div class="column text-smaller" width="50%">
 <pre><code class="language-python">class Shape:
@@ -7236,6 +7240,8 @@ class AreaCalculator:
 <p>example based on (<a href="lectures/08_patterns.html#ref-oloruntoba2024solid">Oloruntoba &amp; Walia, 2024</a>)</p>
 </div>
 <h2 id="liskov-substitution-principle"><a class="header" href="#liskov-substitution-principle">Liskov substitution principle</a></h2>
+<div class="columns">
+<div class="column wide-quote mt-4" width="80%">
 <blockquote>
 <p>if class A is a subtype of class B, B should be able to replaced with
 A without disrupting the behavior of the program (<a href="lectures/08_patterns.html#ref-millington2019solid">Millington,
@@ -7253,6 +7259,11 @@ object-oriented programming (<a href="lectures/08_patterns.html#ref-enwiki:11655
 </ul>
 </li>
 </ul>
+</div>
+</div>
+<div class="column" width="20%">
+<img src="lectures/figures/solid/liskov.svg" width="150" />
+</div>
 </div>
 <h2 id="liskov-substitution-principle---example"><a class="header" href="#liskov-substitution-principle---example">Liskov substitution principle - example</a></h2>
 <div class="columns">
@@ -8579,11 +8590,11 @@ ADRs</a> by Eli Perkins</p>
 <tbody>
 <tr>
 <td>architectural patterns</td>
-<td>model-view-controller, MVP, MVVM</td>
+<td>model-view-controller, MVP, MVVM, TEA</td>
 </tr>
 <tr>
 <td>architectural styles</td>
-<td>layered, onion, hexagonal, clear, client-server</td>
+<td>layered, onion, hexagonal, clean, client-server</td>
 </tr>
 <tr>
 <td>architectural principles</td>
