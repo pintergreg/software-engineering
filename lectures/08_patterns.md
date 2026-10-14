@@ -874,7 +874,7 @@ Object-oriented design (OOD) is the process of planning a system of interacting 
 ::: {.fragment data-fragment-index=1}
 control flow? structure?
 
-![historically grown architecture<br>based on [@woltmann2023hexagonal]](figures/legacy_structure.drawio.svg){width=400}
+![historically grown architecture<br>based on [@woltmann2023hexagonal]](figures/legacy_structure.drawio.svg){width=400 data-preview-image="figures/legacy_structure.drawio.svg" data-preview-fit="contain"}
 :::
 
 
