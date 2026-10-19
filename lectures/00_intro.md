@@ -912,6 +912,10 @@ further reading: [Simplicity](https://www.joelonsoftware.com/2006/12/09/simplici
 a more technical read: [Why Linux’s biggest ever kernel release is really no big deal](https://www.linux.com/news/why-linuxs-biggest-ever-kernel-release-is-really-no-big-deal/)
 :::
 
+::: {.r-frame}
+[Linux 7.3](https://lwn.net/Articles/1101143/) brought in 18,765 non-merge commits from 3,021 developers.
+:::
+
 ## version control
 
 :::::::::::: {.columns}
