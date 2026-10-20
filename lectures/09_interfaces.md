@@ -157,7 +157,7 @@ specify
 ## user statistics - mock backend
 
 :::::::::::: {.columns}
-::::::::: {.column width="60%" .text-smaller .code-no-max-height}
+::::::::: {.column width="50%" .text-smaller .code-no-max-height}
 ```ruby {#sinatra .number-lines style="height:450px"}
 require 'sinatra'
 
@@ -188,7 +188,7 @@ get '/user/:id/statistics' do
 end
 ```
 :::::::::
-::::::::: {.column width="40%"}
+::::::::: {.column width="50%"}
 ::: {.text-smaller}
 `http://localhost:4567/user/42/statistics`
 :::
@@ -207,6 +207,12 @@ end
     ]
 }
 ```
+
+::: {.mt-2 .text-smaller}
+- randomizes the matrix and the progress
+- uses the ID from the path
+- returns constant name and registration date
+:::
 :::::::::
 ::::::::::::
 
@@ -215,6 +221,10 @@ end
 :::::::::::: {.columns}
 ::::::::: {.column width="55%"}
 a mock backend should be enough for a frontend developer to create and test the user statistics view of the user interface
+
+::: {.text-smaller}
+decreased dependency between developers/teams
+:::
 
 ```json
 {
