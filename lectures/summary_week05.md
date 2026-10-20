@@ -61,13 +61,13 @@ open-closed principle
 ~ [classes should be open for extension and closed to modification]{.text-smaller}
 
 Liskov substitution principle
-~ [if class A is a subtype of class B, B should be able to replaced with A without disrupting the behavior of the program]{.text-smaller}
+~ [if class A is a subtype of class B, B should be able to replaced with A without disrupting the behavior of the program &rarr; [square/rectangle problem]{.background-color-lightblue}]{.text-smaller}
 
 interface segregation principle
-~ [many client-specific interfaces are better than one general-purpose interface. Clients should not be forced to implement a function they do no need.]{.text-smaller}
+~ [many client-specific interfaces are better than one general-purpose interface; clients should not be forced to implement a function they do no need]{.text-smaller}
 
 dependency inversion principle
-~ [modules should depend upon interfaces or abstract classes, not concrete classes. It's an inversion because implementations depend upon abstractions and not the other way round]{.text-smaller}
+~ [modules should depend upon interfaces or abstract classes, not concrete classes; it's an inversion because implementations depend upon abstractions and not the other way round]{.text-smaller}
 
 ::: {.text-smaller}
 based on [@millington2019solid], [@oloruntoba2024solid]
@@ -114,36 +114,75 @@ source [Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming)
 ::::::::::::
 
 
-# architectural patterns
+# common pitfalls of architecture design and how to avoid them
+
+tight coupling between layers
+
+~ - use techniques like inversion of control for flexible dependency management
+~ - each layer should only interacts with its adjacent layer through well-defined interfaces
+
+too many layers
+
+~ - define the essential layers based on your application requirements; 4&#8209;5&nbsp;layers are usually enough 
+~ - avoid splitting responsibilities into too many small layers without reason
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+## common pitfalls of architecture design and how to avoid them
+
+cross-layer communication 
+
+~ - violates the separation of concerns
+~ - each layer only interacts with its adjacent layers (see [law of Demeter]{.tooltip title="An object should only interact with its immediate friends, not strangers."})
+
+mixing business logic in the presentation layer
+
+~ - happens when business rules implemented directly in the presentation layer resulting duplicated or inconsistent logic, which is harder to update, scale, or test
+~ - keep business logic in the business logic layer and presentation layer should only display data/status updates
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+## common pitfalls of architecture design and how to avoid them
+
+failure to refactor and maintain the architecture
+
+~ - "over time, the architecture may become outdated or cluttered with technical debt, making it hard to scale or add new features" [@hudge2024layers]
+~ - regularly review and refactor the codebase to keep layers clean and maintainable -- iterative design, [boys scout rule]{.tooltip title="Leave the code cleaner than you found it."}
+
+lack of proper layer abstraction
+
+~ - "if layers are not abstracted properly (e.g., exposing internal implementation details), it becomes difficult to replace or update components without affecting other layers" [@hudge2024layers]
+~ - each layer should have a clear interface that hides internal details from other layers
+
+::: {.text-smaller}
+source: [Layers in software architecture](https://medium.com/@sagar.hudge/layers-in-software-architecture-c8cc16329ff6) by Sagar Hudge [@hudge2024layers]
+:::
+
+
+# law of leaky abstractions
+
+> All non-trivial abstractions, to some degree, are leaky.
+>
+> -- Joel Spolsky
 
 :::::::::::: {.columns}
-::::::::: {.column width="30%"}
-![MVC](figures/mvc.drawio.svg){width=300}
+::::::::: {.column width="80%"}
+- refers to a design flaw where an abstraction, intended to simplify and hide the underlying complexity of a system, fails to completely do so
+- this results in some of the implementation details becoming exposed or 'leaking' through the abstraction,
+- forcing users to have knowledge of these underlying complexities to effectively use or troubleshoot the system
 
-:::{.text-smaller}
-ASP.NET, Django (Python), Ruby on Rails, Laravel (PHP)
-:::
 :::::::::
-::::::::: {.column width="30%"}
-![MVP](figures/mvp.drawio.svg){width=300}
-
-:::{.text-smaller}
-Windows Forms, Java Swing
-:::
-:::::::::
-::::::::: {.column width="30%"}
-![MVVM](figures/mvvm.drawio.svg){width=300}
-
-:::{.text-smaller}
-WPF, AngularJS
-:::
+::::::::: {.column width="20%" .mt-2}
+![](figures/publicdomainvectors/water-leak.svg)
 :::::::::
 ::::::::::::
 
-::: {.text-smaller .mt-2}
-- view is responsible for rendering UI
-- controller responds to the user input (in MVC) and performs interactions on the data model
-- model is responsible for managing the data
+::: {.text-smaller}
+source: Wikipedia / [Leaky abstraction](https://en.wikipedia.org/wiki/Leaky_abstraction) [@enwiki:1314409362]
 :::
 
 
