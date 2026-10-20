@@ -93,7 +93,35 @@ source: [Ryan Peterman's interview with Martin Odersky](https://www.youtube.com/
 :::
 
 
-# user statistics example - interfaces
+# user statistics - C4 component
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+:::::: {.r-stack}
+::: {.absolute-left data-left="250"}
+focus on the interface<br>between the UI and<br>the user statistics module
+:::
+
+![](figures/user_statistics/c4_component.drawio.svg)
+::::::
+:::::::::
+::::::::: {.column width="40%" .wide-quote}
+*sends user statistics in JSON via a REST endpoint*
+
+::: {.fragment .mt-3}
+- what is in the JSON?
+- which endpoint?
+:::
+
+::: {.fragment .mt-3}
+![](figures/user_statistics/user_data_light.svg)
+
+`/user/<id>/statistics`
+:::
+:::::::::
+::::::::::::
+
+## user statistics example - interfaces
 
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
@@ -113,12 +141,6 @@ specify
 :::::::::
 ::::::::::::
 
-
-## user statistics - C4 component
-
-![](figures/user_statistics/c4_component.excalidraw.svg){height=500}
-
-
 # interface mocking
 
 - an interface is a boundary where a module can be separated
@@ -126,7 +148,7 @@ specify
 - with a well defined interface, the frontend can work regardless of the backends's state
     - e.g., using a mock backend
 
-::: {.wide-quote .fragment .mt-2}
+::: {.wide-quote .mt-4}
 > A mock, in software engineering, is a simulated object or module that acts as a stand-in for a real object or module [@geeksforgeeks2019mock].
 <!-- Mocks are often used in testing to isolate the behavior of a particular module or component and to verify that it behaves as expected. -->
 :::
