@@ -137,3 +137,13 @@ figcaption {
 .reveal pre {
     width: 99%;
 }
+.absolute-left {
+  position: absolute;
+  left: 0; /* fallback */
+}
+
+@supports (left: attr(data-left px)) {
+  .absolute-left {
+    left: attr(data-left px);
+  }
+}
