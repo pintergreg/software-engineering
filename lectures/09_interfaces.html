@@ -295,7 +295,32 @@ and concise enough to be reviewed.</p>
 <p>source: <a href="https://www.youtube.com/watch?v=LdN4sPWM-WY&amp;t=1860s">Ryan Peterman’s interview with Martin
 Odersky</a></p>
 </div>
-<h1 id="user-statistics-example---interfaces"><a class="header" href="#user-statistics-example---interfaces">user statistics example - interfaces</a></h1>
+<h1 id="user-statistics---c4-component"><a class="header" href="#user-statistics---c4-component">user statistics - C4 component</a></h1>
+<div class="columns">
+<div class="column" width="60%">
+<div class="r-stack">
+<div class="absolute-left" data-left="250">
+<p>focus on the interface<br>between the UI and<br>the user statistics
+module</p>
+</div>
+<p><img src="figures/user_statistics/c4_component.drawio.svg" alt="" /></p>
+</div>
+</div>
+<div class="column wide-quote" width="40%">
+<p><em>sends user statistics in JSON via a REST endpoint</em></p>
+<div class="fragment mt-3">
+<ul>
+<li>what is in the JSON?</li>
+<li>which endpoint?</li>
+</ul>
+</div>
+<div class="fragment mt-3">
+<p><img src="figures/user_statistics/user_data_light.svg" alt="" /></p>
+<p><code>/user/&lt;id&gt;/statistics</code></p>
+</div>
+</div>
+</div>
+<h2 id="user-statistics-example---interfaces"><a class="header" href="#user-statistics-example---interfaces">user statistics example - interfaces</a></h2>
 <div class="columns">
 <div class="column" width="60%">
 <p><img src="figures/user_statistics/component_interface.svg" alt="" /></p>
@@ -311,9 +336,6 @@ Odersky</a></p>
 </ul>
 </div>
 </div>
-<h2 id="user-statistics---c4-component"><a class="header" href="#user-statistics---c4-component">user statistics - C4 component</a></h2>
-<p><img src="figures/user_statistics/c4_component.excalidraw.svg"
-height="500" /></p>
 <h1 id="interface-mocking"><a class="header" href="#interface-mocking">interface mocking</a></h1>
 <ul>
 <li>an interface is a boundary where a module can be separated</li>
@@ -326,7 +348,7 @@ backends’s state
 </ul>
 </li>
 </ul>
-<div class="wide-quote fragment mt-2">
+<div class="wide-quote mt-4">
 <blockquote>
 <p>A mock, in software engineering, is a simulated object or module that
 acts as a stand-in for a real object or module (<a href="#ref-geeksforgeeks2019mock">GeeksforGeeks,
@@ -336,7 +358,7 @@ acts as a stand-in for a real object or module (<a href="#ref-geeksforgeeks2019m
 </div>
 <h2 id="user-statistics---mock-backend"><a class="header" href="#user-statistics---mock-backend">user statistics - mock backend</a></h2>
 <div class="columns">
-<div class="column text-smaller code-no-max-height" width="60%">
+<div class="column text-smaller code-no-max-height" width="50%">
 <pre><code class="language-ruby">require 'sinatra'
 
 def generate_progress
@@ -366,7 +388,7 @@ get '/user/:id/statistics' do
 end
 </code></pre>
 </div>
-<div class="column" width="40%">
+<div class="column" width="50%">
 <div class="text-smaller">
 <p><code>http://localhost:4567/user/42/statistics</code></p>
 </div>
@@ -383,6 +405,13 @@ end
     ]
 }
 </code></pre>
+<div class="mt-2 text-smaller">
+<ul>
+<li>randomizes the matrix and the progress</li>
+<li>uses the ID from the path</li>
+<li>returns constant name and registration date</li>
+</ul>
+</div>
 </div>
 </div>
 <h2 id="frontend-development"><a class="header" href="#frontend-development">frontend development</a></h2>
@@ -390,6 +419,9 @@ end
 <div class="column" width="55%">
 <p>a mock backend should be enough for a frontend developer to create and
 test the user statistics view of the user interface</p>
+<div class="text-smaller">
+<p>decreased dependency between developers/teams</p>
+</div>
 <pre><code class="language-json">{
     "name": "Marvin",
     "id": 42,
