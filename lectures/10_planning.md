@@ -161,7 +161,7 @@ based on [riskstorming.com](https://riskstorming.com/) | [CC BY 4.0](https://cre
 
 :::::::::
 ::::::::: {.column width="40%"}
-![](figures/borrowed/quantifying-risk-1.png){width=350}
+![](figures/quantifying_risk.drawio.svg){width=350}
 
 :::::::::
 ::::::::::::
