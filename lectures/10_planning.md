@@ -57,7 +57,9 @@ based on [What is an implementation plan? 6 steps to create one](https://asana.c
 
 :::::::::
 ::::::::: {.column width="50%"}
-![](figures/complex_projects.drawio.cropped_no_people.svg){height=400}
+Stacey matrix [@stacey2007strategic]
+
+![](figures/complex_projects.drawio.cropped_no_people.svg)
 
 :::::::::
 ::::::::::::
