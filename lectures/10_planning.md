@@ -458,6 +458,9 @@ source: [@paquet2019when]
 ![](figures/team_dependency_2.drawio.svg){width=450}
 :::
 ::::::
+::: {.fragment data-fragment-index=1 .text-smaller}
+mocking works, but less mocking saves time
+:::
 :::::::::
 ::::::::: {.column width="50%" .fragment data-fragment-index=2}
 ![](figures/borrowed/CouplingVsCohesion.svg){width=350}
