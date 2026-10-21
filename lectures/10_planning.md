@@ -666,7 +666,7 @@ source: [effectiviology.com/brooks-law](https://effectiviology.com/brooks-law/)
 :::
 
 
-# summary {data-background-iframe="mindmap/implementation_planning.html" data-background-interactive="true" .text-align-left .exclude-header}
+# summary {data-background-iframe="mindmap/implementation_planning.html" data-background-interactive="true" .text-align-left .exclude-header visibility=hidden}
 
 ::: {.mt-8}
 :::
