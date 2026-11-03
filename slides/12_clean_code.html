@@ -334,12 +334,12 @@ standard</a></li>
 </ul></li>
 </ul>
 </div>
-<div class="fragment text-align-left">
+<div class="text-align-left">
 <ul>
 <li>some languages implements multiple paradigms</li>
 </ul>
 </div>
-<div class="fragment text-align-left">
+<div class="text-align-left">
 <ul>
 <li>and languages have their own way of doing things
 <ul>
@@ -353,7 +353,7 @@ data-src="figures/publicdomainvectors/rural-road-with-signpost.svg"
 width="250" /></p>
 </div>
 </div>
-<div class="fragment mt-3">
+<div class="mt-3">
 <p>just as in the case of natural languages, you ought to use a language
 properly</p>
 </div>
@@ -433,11 +433,11 @@ height="300" /></p>
 <h2>use intention-revealing names</h2>
 <div class="text-size-3">
 <div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> d<span class="op">;</span> <span class="co">// elapsed time in days</span></span></code></pre></div>
-<div class="text-size-2 fragment" data-fragment-index="1">
+<div class="text-size-2">
 <p>the definition is only available ad the declaration</p>
 </div>
 <div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> elapsedTimeInDays<span class="op">;</span></span></code></pre></div>
-<div class="text-size-2 fragment" data-fragment-index="1">
+<div class="text-size-2">
 <p>the definition is available at every usage</p>
 </div>
 </div>
@@ -480,13 +480,12 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a h
 </div>
 </div>
 </div>
-<div class="fragment mt-4">
-<!-- according to a study, camelCase is faster to type but snake_case is faster to read [@sharif2010eye] -->
-<p>a study states, camelCase is faster to type but snake_case is faster
-to read <span class="citation" data-cites="sharif2010eye"><a
+<div class="mt-4">
+<p>based on a study, camelCase is faster to type but snake_case is
+faster to read <span class="citation" data-cites="sharif2010eye"><a
 href="#/ref-sharif2010eye" role="doc-biblioref">[4]</a></span></p>
 </div>
-<div class="fragment mt-2">
+<div class="mt-2">
 <p>read the style guide</p>
 </div>
 </section>
@@ -502,10 +501,10 @@ role="doc-biblioref">[3]</a></span>.</p>
 <p>better to use <code>accounts</code>, it does not depend on the
 collection name</p>
 </div>
-<div class="fragment mt-3">
+<div class="mt-3">
 <p>inconsistent spelling is also disinformation</p>
 </div>
-<div class="fragment mt-3">
+<div class="mt-3">
 <blockquote>
 <p>disinformative names would be the use of lower-case <code>L</code> or
 uppercase <code>O</code> <span class="citation"
@@ -569,7 +568,7 @@ href="#/ref-martin2009clean" role="doc-biblioref">[3]</a></span>.</p>
 <li>Should <code>etid</code> be an integer?</li>
 <li>Should <code>elapsed_time_in_days</code> be an integer?</li>
 </ul>
-<div class="fragment mt-3">
+<div class="mt-3">
 <p>could be especially important for non-native speakers as some words
 are more difficult to pronounce</p>
 </div>
@@ -1085,7 +1084,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a h
 <span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(something.foo)  <span class="co"># 0</span></span>
 <span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>something.increase(<span class="dv">2</span>)</span>
 <span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(something.foo)  <span class="co"># 2</span></span></code></pre></div>
-</div><div class="column fragment" style="width:50%;">
+</div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb29"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>smth <span class="op">=</span> {<span class="st">&quot;foo&quot;</span>: <span class="dv">0</span>}</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1123,7 +1122,7 @@ C. Martin</a></p>
 <div class="text-smaller mt-3">
 <p>“longer scope”: more general part of a code</p>
 </div>
-</div><div class="column fragment" style="width:30%;">
+</div><div class="column" style="width:30%;">
 <p><img data-src="figures/name_and_scope.drawio.svg" width="300" /></p>
 </div>
 </div>
@@ -1139,7 +1138,7 @@ data-cites="martin2009clean"><a href="#/ref-martin2009clean"
 role="doc-biblioref">[3]</a></span></li>
 </ul>
 </div>
-<div class="text-align-left fragment" data-fragment-index="1">
+<div class="text-align-left" data-fragment-index="1">
 <ul>
 <li>what if you’d need more?
 <ul>
@@ -1404,7 +1403,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a h
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>timestamp <span class="op">=</span> <span class="st">&quot;2024-10-22 09:30:42&quot;</span></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># matches for timestamps in the format of: YYYY-MM-DD HH:MM:SS</span></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>re.match(<span class="vs">r&quot;</span><span class="dv">\d</span><span class="op">{4}</span><span class="vs">-</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">-</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs"> </span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">:</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">:</span><span class="dv">\d</span><span class="op">{2}</span><span class="vs">&quot;</span>, timestamp)</span></code></pre></div>
-<div class="fragment">
+<div>
 <p><strong>TODOs – good or bad?</strong></p>
 <div class="sourceCode" id="cb41"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: this allows invalid month, day, hour, minute and second values</span></span>
@@ -1473,7 +1472,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a h
 <span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="bu">str</span>(i)</span>
 <span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div>
 </div>
-</div><div class="column fragment" style="width:50%;">
+</div><div class="column" style="width:50%;">
 <div class="code-no-max-height">
 <div class="sourceCode" id="cb44"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m doctest <span class="op">-</span>v fizzbuzz_doctest.py</span>

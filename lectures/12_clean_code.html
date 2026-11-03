@@ -362,12 +362,12 @@ standard</a></li>
 </li>
 </ul>
 </div>
-<div class="fragment text-align-left">
+<div class="text-align-left">
 <ul>
 <li>some languages implements multiple paradigms</li>
 </ul>
 </div>
-<div class="fragment text-align-left">
+<div class="text-align-left">
 <ul>
 <li>and languages have their own way of doing things
 <ul>
@@ -382,7 +382,7 @@ standard</a></li>
 width="250" /></p>
 </div>
 </div>
-<div class="fragment mt-3">
+<div class="mt-3">
 <p>just as in the case of natural languages, you ought to use a language
 properly</p>
 </div>
@@ -453,12 +453,12 @@ height="300" /></p>
 <div class="text-size-3">
 <pre><code class="language-c">int d; // elapsed time in days
 </code></pre>
-<div class="text-size-2 fragment" data-fragment-index="1">
+<div class="text-size-2">
 <p>the definition is only available ad the declaration</p>
 </div>
 <pre><code class="language-c">int elapsedTimeInDays;
 </code></pre>
-<div class="text-size-2 fragment" data-fragment-index="1">
+<div class="text-size-2">
 <p>the definition is available at every usage</p>
 </div>
 </div>
@@ -502,12 +502,11 @@ height="300" /></p>
 </div>
 </div>
 </div>
-<div class="fragment mt-4">
-<!-- according to a study, camelCase is faster to type but snake_case is faster to read [@sharif2010eye] -->
-<p>a study states, camelCase is faster to type but snake_case is faster to
-read (<a href="#ref-sharif2010eye">Sharif &amp; Maletic, 2010</a>)</p>
+<div class="mt-4">
+<p>based on a study, camelCase is faster to type but snake_case is faster
+to read (<a href="#ref-sharif2010eye">Sharif &amp; Maletic, 2010</a>)</p>
 </div>
-<div class="fragment mt-2">
+<div class="mt-2">
 <p>read the style guide</p>
 </div>
 <h2 id="avoid-disinformation"><a class="header" href="#avoid-disinformation">avoid disinformation</a></h2>
@@ -518,10 +517,10 @@ actually a <code>List</code> (<a href="#ref-martin2009clean">Martin, 2009</a>).<
 <div class="text-smaller">
 <p>better to use <code>accounts</code>, it does not depend on the collection name</p>
 </div>
-<div class="fragment mt-3">
+<div class="mt-3">
 <p>inconsistent spelling is also disinformation</p>
 </div>
-<div class="fragment mt-3">
+<div class="mt-3">
 <blockquote>
 <p>disinformative names would be the use of lower-case <code>L</code> or uppercase
 <code>O</code> (<a href="#ref-martin2009clean">Martin, 2009</a>)</p>
@@ -572,7 +571,7 @@ an idiot (<a href="#ref-martin2009clean">Martin, 2009</a>).</p>
 <li>Should <code>etid</code> be an integer?</li>
 <li>Should <code>elapsed_time_in_days</code> be an integer?</li>
 </ul>
-<div class="fragment mt-3">
+<div class="mt-3">
 <p>could be especially important for non-native speakers as some words are
 more difficult to pronounce</p>
 </div>
@@ -1054,7 +1053,7 @@ something.increase(2)
 print(something.foo)  # 2
 </code></pre>
 </div>
-<div class="column fragment" width="50%">
+<div class="column" width="50%">
 <pre><code class="language-python">smth = {"foo": 0}
 
 def increase(what, by):
@@ -1089,7 +1088,7 @@ Martin</a></p>
 <p>“longer scope”: more general part of a code</p>
 </div>
 </div>
-<div class="column fragment" width="30%">
+<div class="column" width="30%">
 <img src="figures/name_and_scope.drawio.svg" width="300" />
 </div>
 </div>
@@ -1101,7 +1100,7 @@ Martin</a></p>
 <li>do not use more than three (<a href="#ref-martin2009clean">Martin, 2009</a>)</li>
 </ul>
 </div>
-<div class="text-align-left fragment" data-fragment-index="1">
+<div class="text-align-left" data-fragment-index="1">
 <ul>
 <li>what if you’d need more?
 <ul>
@@ -1346,7 +1345,7 @@ timestamp = "2024-10-22 09:30:42"
 # matches for timestamps in the format of: YYYY-MM-DD HH:MM:SS
 re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
 </code></pre>
-<div class="fragment">
+<div>
 <p><strong>TODOs – good or bad?</strong></p>
 <pre><code class="language-python"># TODO: this allows invalid month, day, hour, minute and second values
 re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
@@ -1412,7 +1411,7 @@ annotations and warn about them</span></p>
 </code></pre>
 </div>
 </div>
-<div class="column fragment" width="50%">
+<div class="column" width="50%">
 <div class="code-no-max-height">
 <pre><code class="language-python">python -m doctest -v fizzbuzz_doctest.py
 Trying:
