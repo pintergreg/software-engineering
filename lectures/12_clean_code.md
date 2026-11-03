@@ -167,10 +167,10 @@ not just style guides, also best practices
     - using different abstractions / building blocks
     - promoting a given concept
 :::
-::: {.fragment .text-align-left}
+::: {.text-align-left}
 - some languages implements multiple paradigms
 :::
-::: {.fragment .text-align-left}
+::: {.text-align-left}
 - and languages have their own way of doing things
     - languages have pros and cons for a given problem
 :::
@@ -181,7 +181,7 @@ not just style guides, also best practices
 :::::::::
 ::::::::::::
 
-::: {.fragment .mt-3}
+::: {.mt-3}
 just as in the case of natural languages, you ought to use a language properly
 :::
 
@@ -282,7 +282,7 @@ with own examples
 int d; // elapsed time in days
 ```
 
-::: {.text-size-2 .fragment data-fragment-index=1}
+::: {.text-size-2}
 the definition is only available ad the declaration
 :::
 
@@ -290,7 +290,7 @@ the definition is only available ad the declaration
 int elapsedTimeInDays;
 ```
 
-::: {.text-size-2 .fragment data-fragment-index=1}
+::: {.text-size-2}
 the definition is available at every usage
 :::
 ::::::
@@ -344,12 +344,11 @@ elapsed_time_in_days = 17
 :::::::::
 ::::::::::::
 
-::: {.fragment .mt-4}
-<!-- according to a study, camelCase is faster to type but snake_case is faster to read [@sharif2010eye] -->
-a study states, camelCase is faster to type but snake_case is faster to read [@sharif2010eye]
+::: {.mt-4}
+based on a study, camelCase is faster to type but snake_case is faster to read [@sharif2010eye]
 :::
 
-::: {.fragment .mt-2}
+::: {.mt-2}
 read the style guide
 :::
 
@@ -362,11 +361,11 @@ read the style guide
 better to use `accounts`, it does not depend on the collection name
 :::
 
-::: {.fragment .mt-3}
+::: {.mt-3}
 inconsistent spelling is also disinformation
 :::
 
-::: {.fragment .mt-3}
+::: {.mt-3}
 > disinformative names would be the use of lower-case `L` or uppercase `O` [@martin2009clean]
 
 - they can look almost like the one and zero, respectively -- use the right font
@@ -418,7 +417,7 @@ def calculate_levenshtein_distance(data: pd.DataFrame) -> pd.Series:
 - Should `etid` be an integer?
 - Should `elapsed_time_in_days` be an integer?
 
-::: {.fragment .mt-3}
+::: {.mt-3}
 could be especially important for non-native speakers as some words are more difficult to pronounce
 :::
 
@@ -777,7 +776,7 @@ something.increase(2)
 print(something.foo)  # 2
 ```
 :::::::::
-::::::::: {.column width="50%" .fragment}
+::::::::: {.column width="50%"}
 ```python
 smth = {"foo": 0}
 
@@ -812,7 +811,7 @@ print(smth["foo"])  # 2
 "longer scope": more general part of a code
 :::
 :::::::::
-::::::::: {.column width="30%" .fragment}
+::::::::: {.column width="30%"}
 ![](figures/name_and_scope.drawio.svg){width=300}
 :::::::::
 ::::::::::::
@@ -825,7 +824,7 @@ print(smth["foo"])  # 2
 ::: {.text-align-left}
 - do not use more than three [@martin2009clean]
 :::
-::: {.text-align-left .fragment data-fragment-index=1}
+::: {.text-align-left data-fragment-index=1}
 - what if you'd need more?
     - wrap it into an object
 :::
@@ -1095,7 +1094,7 @@ timestamp = "2024-10-22 09:30:42"
 re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp)
 ```
 
-::: {.fragment}
+::: {}
 **TODOs -- good or bad?**
 
 ```python
@@ -1174,7 +1173,7 @@ def fizzbuzz(i: int) -> str:
 :::
 
 :::::::::
-::::::::: {.column width="50%" .fragment}
+::::::::: {.column width="50%"}
 ::: {.code-no-max-height}
 ``` {.python}
 python -m doctest -v fizzbuzz_doctest.py
