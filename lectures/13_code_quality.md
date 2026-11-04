@@ -422,7 +422,7 @@ can be an adjustable parameter
 
 # denoting blocks
 
-:::::::::::: {.columns .column-gapless}
+:::::::::::: {.columns}
 ::::::::: {.column width="50"}
 ```javascript
 for (i = 0; i < 10; i++) {
