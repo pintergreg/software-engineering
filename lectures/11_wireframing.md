@@ -230,7 +230,7 @@ source: [@bruton2022what]
 
 # wireframe map
 
-![](figures/user_statistics/wireframe_map_2.drawio.svg){height=500}
+![](figures/user_statistics/wireframe_map_full.drawio.svg){height=500}
 
 ::: {.text-smaller}
 shows user flow, ~ user story map flow 
