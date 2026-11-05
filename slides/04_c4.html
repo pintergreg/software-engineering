@@ -34,6 +34,71 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../assets/reveal.js-6.0.2//dist/theme/black.css" id="theme">
   <link rel="stylesheet" href="../assets/custom.css"/>
@@ -132,6 +197,7 @@ learnt</li>
 <h2>simple, offline architecture</h2>
 <p><img data-src="../lectures/figures/simple_case.drawio.svg" /></p>
 </section></section>
+<section>
 <section id="level-1-system-context-diagram"
 class="title-slide slide level1">
 <h1>Level 1: System Context diagram</h1>
@@ -166,7 +232,19 @@ in Excalidraw</a></figcaption>
 </div>
 </div>
 </section>
-
+<section id="displaying-outer-systems" class="slide level2">
+<h2>displaying outer systems</h2>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img
+data-src="../lectures/figures/user_statistics/flashcard_system_context_2b.drawio.svg" /></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<p><img
+data-src="../lectures/figures/user_statistics/flashcard_system_context_2.drawio.svg" /></p>
+</div>
+</div>
+</section></section>
 <section>
 <section id="level-2-container-diagram"
 class="title-slide slide level1">
@@ -202,6 +280,19 @@ Model for Software Architecture</a></p>
 <section id="container-diagram-of-the-flashcard-application"
 class="slide level2">
 <h2>container diagram of the flashcard application</h2>
+<ul>
+<li>the software system is opened up, showing containers
+<ul>
+<li>executables</li>
+</ul></li>
+</ul>
+<p><img
+data-src="../lectures/figures/user_statistics/flashcard_container.drawio.svg" /></p>
+</section>
+<section id="container-diagram-of-the-flashcard-application-1"
+class="slide level2" data-visibility="hidden">
+<h2 data-visibility="hidden">container diagram of the flashcard
+application</h2>
 <div class="columns">
 <div class="column" style="width:35%;">
 <p><img
@@ -258,6 +349,167 @@ in Excalidraw</a></p>
 </div><div class="column" style="width:40%;">
 <p><img data-src="../lectures/figures/user_stats.drawio.svg"
 width="300" /></p>
+</div>
+</div>
+</section>
+<section id="component-diagram-for-statistics-module---ui-focus"
+class="slide level2">
+<h2>component diagram for statistics module - UI focus</h2>
+<div class="columns">
+<div class="column mt-3" style="width:60%;">
+<ul>
+<li>let’s break down a complex element to multiple simpler elements</li>
+<li>statistics view has three main parts
+<ul>
+<li>account information</li>
+<li>progress</li>
+<li>latest activity</li>
+</ul></li>
+<li>three functionalities, three responsibilities</li>
+<li>define a component responsible for each functionality</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="../lectures/figures/user_stats.drawio.svg"
+width="300" /></p>
+<p><img data-src="../lectures/figures/ellipse1.drawio.svg"
+class="absolute-left absolute-top fragment" data-top="80"
+data-left="620" data-fragment-index="1" width="305" /></p>
+<p><img data-src="../lectures/figures/ellipse3.drawio.svg"
+class="absolute-left absolute-top fragment" data-top="180"
+data-left="620" data-fragment-index="1" width="305" /></p>
+<p><img data-src="../lectures/figures/ellipse2.drawio.svg"
+class="absolute-left absolute-top fragment" data-top="330"
+data-left="620" data-fragment-index="1" width="305" /></p>
+</div>
+</div>
+</section>
+<section id="account-information" class="slide level2">
+<h2>account information</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img
+data-src="../lectures/figures/user_statistics/account_information_component.svg" /></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">template</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;account_information_template&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.row</span> {<span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.avatar-column</span> {<span class="kw">flex</span><span class="ch">:</span> <span class="dv">25</span><span class="dt">%</span><span class="op">;</span><span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span>}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.avatar-column</span> img {<span class="kw">width</span><span class="ch">:</span> <span class="dv">90</span><span class="dt">px</span><span class="op">;</span><span class="kw">height</span><span class="ch">:</span> <span class="dv">90</span><span class="dt">px</span><span class="op">;</span>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.info-column</span> {<span class="kw">flex</span><span class="ch">:</span> <span class="dv">75</span><span class="dt">%</span><span class="op">;</span><span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.info-column</span> h1 {<span class="kw">font-size</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.info-column</span> h2 {<span class="kw">font-size</span><span class="ch">:</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;row&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;avatar-column&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;info-column&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>username<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>registration date<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">template</span><span class="dt">&gt;</span></span></code></pre></div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="../lectures/figures/user_stats.drawio.svg"
+width="300" /></p>
+<p><img data-src="../lectures/figures/ellipse1.drawio.svg"
+class="absolute-left absolute-top" data-top="80" data-left="620"
+width="305" /></p>
+</div>
+</div>
+</section>
+<section id="learning-progress" class="slide level2">
+<h2>learning progress</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img
+data-src="../lectures/figures/user_statistics/learning_progress_component.drawio.svg" /></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">template</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;learning_progress_template&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        meter {<span class="kw">width</span><span class="ch">:</span> <span class="dv">240</span><span class="dt">px</span><span class="op">;</span><span class="kw">height</span><span class="ch">:</span> <span class="dv">21</span><span class="dt">px</span><span class="op">;</span>}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meter</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;progress&quot;</span><span class="ot"> min</span><span class="op">=</span><span class="st">&quot;0&quot;</span><span class="ot"> max</span><span class="op">=</span><span class="st">&quot;100&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;0&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">meter</span><span class="dt">&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">template</span><span class="dt">&gt;</span></span></code></pre></div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="../lectures/figures/user_stats.drawio.svg"
+width="300" /></p>
+<p><img data-src="../lectures/figures/ellipse3.drawio.svg"
+class="absolute-left absolute-top" data-top="180" data-left="620"
+width="305" /></p>
+</div>
+</div>
+</section>
+<section id="latest-activity" class="slide level2">
+<h2>latest activity</h2>
+<div class="columns">
+<div class="column text-size-1" style="width:60%;">
+<p><img
+data-src="../lectures/figures/user_statistics/latest_activity_component.drawio.svg" /></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">template</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;latest_activity_template&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span>table td {<span class="kw">width</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span><span class="kw">height</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span>}<span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">table</span><span class="dt">&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">thead</span><span class="dt">&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">th</span><span class="dt">&gt;&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>M<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>T<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>W<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>T<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>F<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>S<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>S<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">thead</span><span class="dt">&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">tbody</span><span class="dt">&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>1<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>2<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>3<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>4<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">tbody</span><span class="dt">&gt;</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">table</span><span class="dt">&gt;</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">template</span><span class="dt">&gt;</span></span></code></pre></div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="../lectures/figures/user_stats.drawio.svg"
+width="300" /></p>
+<p><img data-src="../lectures/figures/ellipse2.drawio.svg"
+class="absolute-left absolute-top" data-top="330" data-left="620"
+width="305" /></p>
+</div>
+</div>
+</section>
+<section id="components-for-statistics-module" class="slide level2">
+<h2>components for statistics module</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img
+data-src="../lectures/figures/user_statistics/account_information_component.svg" /></p>
+<p><img
+data-src="../lectures/figures/user_statistics/learning_progress_component.drawio.svg" /></p>
+<p><img
+data-src="../lectures/figures/user_statistics/latest_activity_component.drawio.svg" /></p>
+</div><div class="column mt-2" style="width:50%;">
+<ul>
+<li>we’ve got some UI components</li>
+<li>which need data</li>
+<li>let’s have a data collector
+<ul>
+<li>query the database</li>
+</ul></li>
+<li>data needs aggregation
+<ul>
+<li>who will aggregate it?</li>
+</ul></li>
+<li>what schema does the aggregated data have?</li>
+</ul>
+<p><img
+data-src="../lectures/figures/user_statistics/user_data_light.svg" /></p>
 </div>
 </div>
 </section></section>

@@ -141,9 +141,17 @@ figcaption {
   position: absolute;
   left: 0; /* fallback */
 }
-
 @supports (left: attr(data-left px)) {
   .absolute-left {
     left: attr(data-left px);
+  }
+}
+.absolute-top {
+  position: absolute;
+  top: 0; /* fallback */
+}
+@supports (top: attr(data-top px)) {
+  .absolute-top {
+    top: attr(data-top px);
   }
 }
