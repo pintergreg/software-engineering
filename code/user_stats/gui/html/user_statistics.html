@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                width: 400px;
+            }
+            .row {
+              display: flex;
+            }
+            .column {
+              flex: 50%;
+              flex: attr(data-column-width %);
+              padding: 10px;
+            }
+
+            table.heatmap td {
+                width: 30px;
+                height: 30px;
+                background-color: yellow;
+            }
+            .progress {
+                width: 270px;
+                height: 21px;
+            }
+        </style>
+    </head>
+    <body>
+        <template id="account_information_template">
+            <style>
+            .row {display: flex;}
+            .avatar-column {flex: 25%;padding: 10px;}
+            .avatar-column img {width: 90px;height: 90px;}
+            .info-column {flex: 75%;padding: 10px;}
+            .info-column h1 {font-size: 20px;}
+            .info-column h2 {font-size: 16px;}
+            </style>
+            <div class="row">
+                <div class="avatar-column"><img src=""></div>
+                <div class="info-column">
+                    <h1>username</h1>
+                    <h2>registration date</h2>
+                </div>
+            </div>
+        </template>
+        <account-information></account-information>
+        <script>
+        class AccountInformation extends HTMLElement {
+            constructor() {
+              super();
+
+              const shadow = this.attachShadow({ mode: "open" });
+              const template = document.querySelector(
+                "#account_information_template"
+              );
+
+              shadow.append(document.importNode(template.content, true));
+            }
+
+            set avatar(value) {
+              this._avatar_path = value;
+              this.render();
+            }
+
+            set username(value) {
+              this._username = value;
+              this.render();
+            }
+
+            set registrationDate(value) {
+              this._registrationDate = value;
+              this.render();
+            }
+
+            connectedCallback() {
+              this.render();
+            }
+
+            render() {
+              const usernameHeading = this.shadowRoot.querySelector("h1");
+              const registrationHeading = this.shadowRoot.querySelector("h2");
+              const avatar = this.shadowRoot.querySelector("img");
+
+              usernameHeading.textContent = this._username ?? "";
+              registrationHeading.textContent = this._registrationDate ?? "";
+              avatar.src = this._avatar_path ?? "avatar.drawio.svg";
+            }
+          }
+
+            customElements.define("account-information", AccountInformation);
+
+            const accInfo = document.querySelector("account-information");
+            accInfo.username = "Marvin";
+            accInfo.registrationDate = "25 May 2001";
+            accInfo.avatar = "marvin.drawio.svg";
+        </script>
+
+        <template id="learning_progress_template">
+            <style>
+                meter {width: 240px;height: 21px;}
+            </style>
+            <meter class="progress" min="0" max="100" value="0"></meter>
+        </template>
+        <learning-progress></learning-progress>
+        <script>
+        class LearningProgress extends HTMLElement {
+            constructor() {
+              super();
+              const shadow = this.attachShadow({ mode: "open" });
+              const template = document.querySelector("#learning_progress_template");
+              shadow.append(document.importNode(template.content, true));
+            }
+
+            set progress(value) {
+              this._progress = value;
+              this.render();
+            }
+
+            connectedCallback() {
+              this.render();
+            }
+
+            render() {
+              const progressBar = this.shadowRoot.querySelector("meter");
+              progressBar.value = this._progress ?? 0;
+            }
+        }
+
+        customElements.define("learning-progress", LearningProgress);
+        const progressBar = document.querySelector("learning-progress");
+        progressBar.progress = 78;
+        </script>
+
+        <template id="latest_activity_template">
+            <style>
+            table td {
+                width: 30px;
+                height: 30px;
+            }
+            </style>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th><th>S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <th>2</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <th>3</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <th>4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </template>
+        <latest-activity></latest-activity>
+        <script>
+        class LatestActivity extends HTMLElement {
+            constructor() {
+              super();
+              const shadow = this.attachShadow({ mode: "open" });
+              const template = document.querySelector("#latest_activity_template");
+              shadow.append(document.importNode(template.content, true));
+            }
+
+            set values(value) {
+              this._values = value;
+              this.render();
+            }
+
+            connectedCallback() {
+              this.render();
+            }
+
+            render() {
+            }
+        }
+
+        customElements.define("latest-activity", LatestActivity);
+        const activityMatrix = document.querySelector("latest-activity");
+        </script>
+
+
+        <!--<div id="account_information">
+            <div class="row">
+                <div class="column" data-column-width="25">
+                <img src="marvin.drawio.svg">
+                </div>
+                <div class="column" data-column-width="75">
+                    <h1>username</h1>
+                    <h2>reg.date</h2>
+                </div>
+            </div>
+        </div>-->
+        <!--<div id="progress">
+            <meter class="progress" min="0" max="100" value="0"></meter>
+        </div>-->
+        <!--<div id="latest_activity">
+            <table class="heatmap">
+                <thead>
+                    <tr>
+                        <th></th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th><th>S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <th>2</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <th>3</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <th>4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>-->
+    </body>
+</html>
