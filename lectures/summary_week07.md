@@ -14,6 +14,48 @@ revealjs-url: "../assets/reveal.js-6.0.2/"
 link-citations: true
 ---
 
+# user interface (UI) / user experience (UX)
+
+according to Scott Jenson, the most important thing in design is _empathy_
+
+**understanding**
+
+~ - learn about your "users", convert them into people
+~ - market insight
+~ - user tests, focus groups, surveys, interviews | [requirement elicitation]{.background-color-lightblue}
+
+**bridging**
+
+~ - use that learning to mold technology into products that meet real needs
+~ - new products
+~ - what is easy/hard/important? | [analysis and negotiation]{.background-color-lightblue}
+
+::: {.text-smaller .mt-2}
+source: [The Paradox of Empathy](https://jenson.org/paradox/) by Scott Jenson
+:::
+
+## user interface (UI) / user experience (UX)
+
+according to Scott Jenson, the most important thing in design is _empathy_
+
+**flowing**
+
+~ - simplify the structure of the product to streamline use
+~ - intuitive design
+~ - paper sketches, mockups, motion studies, journey maps | [diagramming]{.background-color-lightblue}
+
+**refining**
+
+~ - sweat the details, get the little things right that save time and boost value
+~ - delight users
+~ - color themes, animations, [copywriting]{.tooltip title="'crafting clear, purposeful text that helps users navigate digital products effortlessly\' -- Sakshi Jonwal"}, styleguide, icons | [implementation]{.background-color-lightblue}
+
+::: {.text-smaller .mt-2}
+source: [The Paradox of Empathy](https://jenson.org/paradox/) by Scott Jenson
+
+optional reading on copywriting: [What is UX Copywriting?](https://www.youngurbanproject.com/what-is-ux-copywriting/) by Sakshi Jonwal [@jonwal2025what]
+:::
+
 
 # wireframing
 
@@ -74,7 +116,7 @@ source: [@bruton2022what]
 
 ## wireframe map
 
-![](figures/user_statistics/wireframe_map_2.drawio.svg){height=500}
+![](figures/user_statistics/wireframe_map_full.drawio.svg){height=500}
 
 ::: {.text-smaller}
 shows user flow, ~ user story map flow 
@@ -85,6 +127,7 @@ shows user flow, ~ user story map flow
 
 ![based on Khalil Stemmel's figure [@stemmler2019how]](figures/the_software_design_and_architecture_stack_generalized.drawio.svg){height=475}
 
+![](../lectures/figures/ellipse1.drawio.svg){width=305 .absolute-left .absolute-top top=440 left=100}
 
 ## hierarchy in style guides
 
@@ -101,9 +144,9 @@ shows user flow, ~ user story map flow
         - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
         - [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
 
-::: {.fragment}
+
 not just style guides, also best practices
-:::
+
 :::::::::
 ::::::::: {.column width="45%"}
 ![](figures/style_hierarchy.drawio.svg){width=300}
@@ -122,10 +165,10 @@ not just style guides, also best practices
     - using different abstractions / building blocks
     - promoting a given concept
 :::
-::: {.fragment .text-align-left}
+::: {.text-align-left}
 - some languages implements multiple paradigms
 :::
-::: {.fragment .text-align-left}
+::: {.text-align-left}
 - and languages have their own way of doing things
     - languages have pros and cons for a given problem
 :::
@@ -136,7 +179,7 @@ not just style guides, also best practices
 :::::::::
 ::::::::::::
 
-::: {.fragment .mt-3}
+::: {.mt-3}
 just as in the case of natural languages, you ought to use a language properly
 :::
 
@@ -150,7 +193,7 @@ just as in the case of natural languages, you ought to use a language properly
 - pick one word per concept
 - avoid disinformation
 - make meaningful distinctions
-  - d[on't use names like `doSomething()` and `doSomething2()`]{.text-smaller}
+  - [don't use names like `doSomething()` and `doSomething2()`]{.text-smaller}
 - use pronounceable names
 - use searchable names
   - ["The longer the scope of a function, the shorter its name should be." -- Robert C. Martin]{.text-smaller}
