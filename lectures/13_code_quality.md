@@ -777,7 +777,7 @@ Table: based on [@sharma2024analyzing]
 ::::::::::::
 :::
 
-::: {.text-smaller .mt-2 .fragment}
+::: {.text-smaller .mt-2}
 **issues**: ease of computation, language independence, understandability, explainability [@heitlager2007practical]
 
 read more in [Think Twice Before Using the "Maintainability Index"](https://avandeursen.com/2014/08/29/think-twice-before-using-the-maintainability-index/) [@vandeursen2014think]
