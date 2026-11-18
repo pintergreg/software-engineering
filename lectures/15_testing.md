@@ -2015,8 +2015,9 @@ source/reading: [The Seven Principles of Software Testing](https://community.dyn
 ::::::::: {.column width="50%" .text-smaller .wide-quote}
 - testing needs to be tailored according to the type of project
 - different software systems have different levels of risk and impact therefore testing needs to reflect this
+    - risk analysis
 
-![](figures/quantifying_risks_wide.drawio.svg){width=400 data-preview-image="figures/quantifying_risks.drawio.svg" data-preview-fit="contain"}
+![rist register](figures/quantifying_risks_wide.drawio.svg){width=400 data-preview-image="figures/quantifying_risks.drawio.svg" data-preview-fit="contain"}
 
 :::::::::
 ::::::::::::
