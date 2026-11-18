@@ -216,6 +216,9 @@
 </div>
 </div>
 </div>
+<div class="fragment" data-fragment-index="2">
+<p>especially true if end-to-end testing requires manual work</p>
+</div>
 <div class="fragment text-size-1" data-fragment-index="2">
 <p>the turtle and rabbit figures by <a href="https://delapouite.com/">Delapouite</a>
 under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> via
@@ -223,7 +226,7 @@ under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> via
 </div>
 <h1 id="what-is-a-unit-test"><a class="header" href="#what-is-a-unit-test">what is a unit test?</a></h1>
 <div class="columns">
-<div class="column" width="55%">
+<div class="column mt-2" width="55%">
 <ul>
 <li>what is a unit?
 <ul>
@@ -1054,7 +1057,7 @@ TDD</a>
 (<a href="#ref-martin2014cycles">Martin, 2014</a>)</p>
 </blockquote>
 <p><img src="figures/test_code_generality.drawio.svg" class="mt-4"
-width="375" /></p>
+width="600" /></p>
 <h2 id="transformation-priority-premise"><a class="header" href="#transformation-priority-premise">transformation priority premise</a></h2>
 <ol>
 <li>({} -&gt; nil) <em>from no code at all to code that employs nil</em></li>
@@ -1375,7 +1378,11 @@ worthless […]</p>
 <div class="mt-2">
 <ul>
 <li>before you write any code or tests or behaviors or stories or anything</li>
-<li>document how a user would use the software</li>
+<li>document how a user would use the software
+<ul>
+<li>empathy, similar mindset to user story mapping</li>
+</ul>
+</li>
 <li>you’ll know what you need to implement</li>
 <li>a lot simpler to have a discussion based on something written down</li>
 </ul>
@@ -1385,6 +1392,41 @@ worthless […]</p>
 Development</a>
 – by Tom Preston-Werner (<a href="#ref-prestonwerner2010readme">Preston-Werner,
 2010</a>)</p>
+</div>
+<h2 id="readme-driven-development-1"><a class="header" href="#readme-driven-development-1">readme driven development</a></h2>
+<div class="wide-quote">
+<blockquote>
+<p>beautifully crafted library with no documentation is damn near
+worthless […]</p>
+<p>So how do we solve this problem? Write your Readme first.</p>
+<p>– by Tom Preston-Werner (<a href="#ref-prestonwerner2010readme">Preston-Werner,
+2010</a>)</p>
+</blockquote>
+</div>
+<div class="text-smaller">
+<p>readme ~ user manual, but brief, concise</p>
+</div>
+<div class="mt-2">
+</div>
+<ul>
+<li>it is worth to test the readme (manual)</li>
+<li>all the instructions are correct?
+<ul>
+<li>no typos</li>
+<li>work in every (targeted environment)</li>
+</ul>
+</li>
+<li>is it understandable?
+<ul>
+<li>technical terms are explained</li>
+<li>sections or steps ordered properly</li>
+</ul>
+</li>
+</ul>
+<div class="text-smaller">
+<p>story: <a href="https://shkspr.mobi/blog/2026/10/i-paid-people-to-try-and-follow-my-readme/">I paid people to try and follow my
+README</a>
+by Terence Eden</p>
 </div>
 <h1 id="test-coverage"><a class="header" href="#test-coverage">test coverage</a></h1>
 <ul>
@@ -2282,11 +2324,18 @@ Testing</a></p>
 <ul>
 <li>testing needs to be tailored according to the type of project</li>
 <li>different software systems have different levels of risk and impact
-therefore testing needs to reflect this</li>
+therefore testing needs to reflect this
+<ul>
+<li>risk analysis</li>
 </ul>
-<p><img src="figures/quantifying_risks_wide.drawio.svg"
+</li>
+</ul>
+<figure>
+<img src="figures/quantifying_risks_wide.drawio.svg"
 data-preview-image="figures/quantifying_risks.drawio.svg"
-data-preview-fit="contain" width="400" /></p>
+data-preview-fit="contain" width="400" alt="rist register" />
+<figcaption aria-hidden="true">rist register</figcaption>
+</figure>
 </div>
 </div>
 <div class="text-smaller mt-1">
