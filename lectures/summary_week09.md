@@ -98,11 +98,11 @@ it is hard to objectively measure the quality of code
 :::::::::::: {.columns}
 ::::::::: {.column width="60%"}
 - [number of source lines of code (SLOC)]{.alpha-50}
-- style guide compliance [-- is the code clean?]{.fragment data-fragment-index=1 .text-color-secondary}
+- style guide compliance [-- is the code clean?]{.text-color-secondary}
 - [Halstead metrics]{.alpha-50}
-- cyclomatic complexity [-- is the code simple?]{.fragment data-fragment-index=1 .text-color-secondary}
+- cyclomatic complexity [-- is the code simple?]{.text-color-secondary}
 - [maintainability index]{.alpha-50}
-- test coverage [-- is the code tested?]{.fragment data-fragment-index=1 .text-color-secondary}
+- test coverage [-- is the code tested?]{.text-color-secondary}
 
 :::::::::
 ::::::::: {.column width="40%"}
@@ -113,24 +113,6 @@ it is hard to objectively measure the quality of code
 
 
 ## cyclomatic comlexity
-
-- developed by Thomas J. McCabe in 1976
-- quantitative measure of the number of linearly independent paths through the source code
-- computed using the control-flow graph of the program
-
-defined as:
-
-$$ M = E - N + 2P $$
-
-::: {.text-smaller}
-- E: the number of edges of the graph
-- N: the number of nodes of the graph
-- P: the number of connected components
-    - for a single method, P always equals 1
-:::
-
-
-## cyclomatic comlexity -- example
 
 :::::::::::: {.columns}
 ::::::::: {.column width="40%"}
@@ -166,12 +148,27 @@ control flow
 :::::::::
 ::::::::::::
 
-::: {}
-$$ CC = E - N + 2 $$
+:::::::::::: {.columns}
+::::::::: {.column width="50%"}
+
+computed using the control-flow graph of the program
+
+$$ M = E - N + 2P $$
+
+::: {.text-smaller}
+- E: the number of edges of the graph
+- N: the number of nodes of the graph
+- P: the number of connected components
+    - for a single method, P always equals 1
+:::
+:::::::::
+::::::::: {.column width="50%"}
+$$ CC = E - N + (2×1) $$
 $$ CC = 7 - 6 + 2 $$
 $$ CC = 3 $$
-:::
 
+:::::::::
+::::::::::::
 
 # WTF per minute
 
