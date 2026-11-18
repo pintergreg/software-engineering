@@ -263,14 +263,14 @@ class="title-slide slide level1">
 <ul>
 <li><span class="alpha-50">number of source lines of code
 (SLOC)</span></li>
-<li>style guide compliance <span class="fragment text-color-secondary"
-data-fragment-index="1">– is the code clean?</span></li>
+<li>style guide compliance <span class="text-color-secondary">– is the
+code clean?</span></li>
 <li><span class="alpha-50">Halstead metrics</span></li>
-<li>cyclomatic complexity <span class="fragment text-color-secondary"
-data-fragment-index="1">– is the code simple?</span></li>
+<li>cyclomatic complexity <span class="text-color-secondary">– is the
+code simple?</span></li>
 <li><span class="alpha-50">maintainability index</span></li>
-<li>test coverage <span class="fragment text-color-secondary"
-data-fragment-index="1">– is the code tested?</span></li>
+<li>test coverage <span class="text-color-secondary">– is the code
+tested?</span></li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img
@@ -281,27 +281,6 @@ width="400" /></p>
 </section>
 <section id="cyclomatic-comlexity" class="slide level2">
 <h2>cyclomatic comlexity</h2>
-<ul>
-<li>developed by Thomas J. McCabe in 1976</li>
-<li>quantitative measure of the number of linearly independent paths
-through the source code</li>
-<li>computed using the control-flow graph of the program</li>
-</ul>
-<p>defined as:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>E</mi><mo>−</mo><mi>N</mi><mo>+</mo><mn>2</mn><mi>P</mi></mrow><annotation encoding="application/x-tex"> M = E - N + 2P </annotation></semantics></math></p>
-<div class="text-smaller">
-<ul>
-<li>E: the number of edges of the graph</li>
-<li>N: the number of nodes of the graph</li>
-<li>P: the number of connected components
-<ul>
-<li>for a single method, P always equals 1</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="cyclomatic-comlexity-example" class="slide level2">
-<h2>cyclomatic comlexity – example</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="sourceCode" id="cb1"><pre
@@ -329,10 +308,25 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a hr
 <p><img data-src="figures/progress_foo_2.drawio.svg" width="300" /></p>
 </div>
 </div>
-<div>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><mo>=</mo><mi>E</mi><mo>−</mo><mi>N</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex"> CC = E - N + 2 </annotation></semantics></math>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>computed using the control-flow graph of the program</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>E</mi><mo>−</mo><mi>N</mi><mo>+</mo><mn>2</mn><mi>P</mi></mrow><annotation encoding="application/x-tex"> M = E - N + 2P </annotation></semantics></math></p>
+<div class="text-smaller">
+<ul>
+<li>E: the number of edges of the graph</li>
+<li>N: the number of nodes of the graph</li>
+<li>P: the number of connected components
+<ul>
+<li>for a single method, P always equals 1</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><mo>=</mo><mi>E</mi><mo>−</mo><mi>N</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>×</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex"> CC = E - N + (2×1) </annotation></semantics></math>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><mo>=</mo><mn>7</mn><mo>−</mo><mn>6</mn><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex"> CC = 7 - 6 + 2 </annotation></semantics></math>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex"> CC = 3 </annotation></semantics></math></p>
+</div>
 </div>
 </section></section>
 <section id="wtf-per-minute" class="title-slide slide level1">
