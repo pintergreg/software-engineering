@@ -56,6 +56,11 @@ link-citations: true
 :::::::::
 ::::::::::::
 
+::: {.fragment data-fragment-index=2}
+especially true if end-to-end testing requires manual work
+
+:::
+
 ::: {.fragment data-fragment-index=2 .text-size-1}
 the turtle and rabbit figures by [Delapouite](https://delapouite.com/) under [CC&nbsp;BY&nbsp;3.0](https://creativecommons.org/licenses/by/3.0/) via [game-icons.net](https://game-icons.net)
 :::
@@ -64,7 +69,7 @@ the turtle and rabbit figures by [Delapouite](https://delapouite.com/) under [CC
 # what is a unit test?
 
 :::::::::::: {.columns}
-::::::::: {.column width="55%"}
+::::::::: {.column width="55%" .mt-2}
 - what is a unit?
     - smallest testable part of a program
     - usually a method
@@ -915,7 +920,7 @@ passed
 >
 > -- Robert C. Martin, [The Cycles of TDD](http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html) [@martin2014cycles]
 
-![](figures/test_code_generality.drawio.svg){width=375 .mt-4}
+![](figures/test_code_generality.drawio.svg){width=600 .mt-4}
 
 
 ## transformation priority premise
