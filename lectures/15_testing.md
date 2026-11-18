@@ -1197,6 +1197,7 @@ readme ~ user manual, but brief, concise
 ::: {.mt-2}
 - before you write any code or tests or behaviors or stories or anything
 - document how a user would use the software
+    - empathy, similar mindset to user story mapping
 - you'll know what you need to implement
 - a lot simpler to have a discussion based on something written down
 :::
@@ -1205,6 +1206,39 @@ readme ~ user manual, but brief, concise
 source: [Readme Driven Development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html) -- by Tom Preston-Werner [@prestonwerner2010readme]
 :::
 
+
+## readme driven development
+
+::: {.wide-quote}
+> beautifully crafted library with no documentation is damn near worthless
+> [...]
+>
+> So how do we solve this problem?
+> Write your Readme first.
+>
+> -- by Tom Preston-Werner [@prestonwerner2010readme]
+
+:::
+
+
+::: {.text-smaller}
+readme ~ user manual, but brief, concise
+:::
+
+::: {.mt-2}
+:::
+
+- it is worth to test the readme (manual)
+- all the instructions are correct?
+    - no typos
+    - work in every (targeted environment)
+- is it understandable?
+    - technical terms are explained
+    - sections or steps ordered properly
+
+::: {.text-smaller}
+story: [I paid people to try and follow my README](https://shkspr.mobi/blog/2026/10/i-paid-people-to-try-and-follow-my-readme/) by Terence Eden
+:::
 
 # test coverage
 
