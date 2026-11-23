@@ -58,6 +58,13 @@ link-citations: true
 the turtle and rabbit figures by [Delapouite](https://delapouite.com/) under [CC&nbsp;BY&nbsp;3.0](https://creativecommons.org/licenses/by/3.0/) via [game-icons.net](https://game-icons.net)
 :::
 
+# types of testing
+
+![](figures/types_of_testing.drawio.svg)
+
+::: {.text-smaller .mt-2}
+source and reading: [A Better Vocabulary for Testing](https://alperenkeles.com/posts/vocab-for-testing/) by Alperen Keles
+:::
 
 # what is a unit?
 
