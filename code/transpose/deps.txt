@@ -1,0 +1,35 @@
+Installed 6 packages in 37ms
+ + numpy==2.3.3
+ + pandas==2.3.2
+ + python-dateutil==2.9.0.post0
+ + pytz==2025.2
+ + six==1.17.0
+ + tzdata==2025.2
+
+
+uv add pandas
+Using CPython 3.13.7 interpreter at: /bin/python3.13
+Creating virtual environment at: .venv
+Resolved 7 packages in 571ms
+Prepared 1 package in 1.03s
+Installed 6 packages in 37ms
+ + numpy==2.3.3
+ + pandas==2.3.2
+ + python-dateutil==2.9.0.post0
+ + pytz==2025.2
+ + six==1.17.0
+ + tzdata==2025.2
+Missing optional dependency 'openpyxl'
+
+
+
+gergo@Tsuyu ~/D/transpose (master) [1]> uv add openpyxl
+Resolved 9 packages in 126ms
+Installed 2 packages in 8ms
+ + et-xmlfile==2.0.0
+ + openpyxl==3.1.5
+
+ Installed 3 packages in 64ms
+ + et-xmlfile==2.0.0
+ + numpy==2.5.1
+ + openpyxl==3.1.5
