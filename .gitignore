@@ -1,9 +1,9 @@
 .directory
 
-untracked/*
-ref/*
+untracked/
+ref/
 
 # preprocessed source for the mdbook compilation
-src/*
+src/
 # compiled mdbook
-book/*
+book/
