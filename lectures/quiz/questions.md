@@ -1,4 +1,3 @@
-<!-- code quality:4 -->
 ### What does the "Boy Scout Rule" or "campground rule" mean in clean code?  
 
 1. [ ] Avoid leaving any code incomplete  
@@ -27,7 +26,6 @@
 3. [ ] Code that strictly follows design patterns  
 4. [ ] Code that is intentionally obfuscated for security purposes  
 
-<!-- automatization:4 -->
 ### What is a linter in software development?  
 
 1. [x] A tool that analyzes code for potential errors, style issues, and best practices  
@@ -56,7 +54,6 @@
 3. [x] It allows multiple developers to work on the same file simultaneously without blocking each other  
 4. [ ] It simplifies the process of merging code changes automatically  
 
-<!-- design:10 -->
 ### Which stakeholders benefit most from wireframe maps?
 
 1. [ ] Marketing teams focusing on branding  
@@ -127,8 +124,6 @@
 3. [x] State diagram  
 4. [ ] Class diagram  
 
-<!-- design_patterns:4 -->
-
 ### What role does the View play in all three architectural patterns (MVC, MVP, and MVVM)?  
 
 1. [ ] The View processes business logic and updates the Model  
@@ -157,7 +152,6 @@
 3. [x] Hexagonal architecture  
 4. [ ] Message-bus  
 
-<!-- requirement_analysis:10 -->
 ### What is not a requirement elicitation technique?
 
 1. [ ] user observation (telemetry)
@@ -228,7 +222,6 @@
 3. [ ] The summary of all user stories in the project  
 4. [ ] The underlying system architecture  
 
-<!-- planning:4 -->
 ### When is Planning Poker typically performed in Scrum?  
 
 1. [ ] During the daily stand-up meeting  
@@ -256,8 +249,6 @@
 2. [ ] To replace the need for sprint planning sessions  
 3. [ ] To make project deadlines more flexible  
 4. [ ] To simplify team communication  
-
-<!-- testing.md:4 -->
 
 ### What is a "test suite"?  
 
@@ -287,7 +278,6 @@
 3. [x] It is conducted by peers with expertise in the technical domain of the work being reviewed  
 4. [ ] It does not involve any predefined roles  
 
-<!-- sdlc:10 -->
 ### What is true about the Definition of Done?
 
 1. [ ] it is a list of risks that must be avoided to complete the sprint
@@ -357,3 +347,185 @@
 2. [x] Refining and prioritizing items in the product backlog  
 3. [ ] Assigning tasks to team members  
 4. [ ] Writing new user stories for the next sprint  
+
+### A team adds a new test after finding a defect, then reviews its test suite for gaps and stale assumptions. Which principle does this most directly support?
+
+1. [ ] Brooks’ law
+2. [x] The pesticide paradox
+3. [ ] Postel’s law
+4. [ ] The law of unintended consequences
+
+### Which statement best captures the idea behind Linus Torvalds’ law?
+
+1. [x] More reviewers can make it easier to notice defects, though review alone does not guarantee bug-free software.
+2. [ ] More developers always make a project finish sooner.
+3. [ ] Every metric becomes useless once it is measured.
+4. [ ] A complex system should be designed in one step.
+
+### What is a potential downside of interpreting Postel’s law too broadly?
+
+1. [ ] It necessarily prevents interoperability.
+2. [x] Accepting overly varied or malformed input can hide errors and create inconsistent behavior.
+3. [ ] It makes all specifications unnecessary.
+4. [ ] It requires every sender to accept data.
+
+### Which statement about technical debt is most accurate?
+
+1. [ ] It is always caused by careless programming.
+2. [ ] It refers only to financial spending on software.
+3. [ ] It is identical to a software bug.
+4. [x] A deliberate shortcut can create future costs, much like borrowing creates repayment obligations.
+
+### A designer moves a complicated workflow from the user to an automated service. According to Tesler’s law, the complexity has most likely been:
+
+1. [ ] Eliminated from the problem entirely.
+2. [ ] Turned into technical debt by definition.
+3. [ ] Replaced by a simpler requirement.
+4. [x] Shifted from the user to the system.
+
+### A manager rewards teams solely for minimizing reported defects. Teams begin classifying defects as “enhancements” instead. Which principle is most directly illustrated?
+
+1. [ ] Postel’s law
+2. [x] Goodhart’s law
+3. [ ] The law of Demeter
+4. [ ] Zawinski’s law
+
+### Gall’s law suggests that a complex system that works well is most likely to have:
+
+1. [x] Evolved from a simpler system that worked.
+2. [ ] Been designed completely in advance.
+3. [ ] Avoided all changes after launch.
+4. [ ] Started as a collection of unrelated features.
+
+### What is Postel’s law (robustness principle) commonly summarized as?
+
+1. [ ] Optimize only after measuring performance.
+2. [x] Be conservative in what you send and liberal in what you accept.
+3. [ ] Add people to a late project to speed it up.
+4. [ ] Every abstraction eventually leaks.
+
+### A company uses “number of bugs closed” as its main quality measure. Teams start closing easy bugs while serious defects remain. What is the best interpretation?
+
+1. [ ] Hyrum’s law
+2. [ ] Tesler’s law
+3. [ ] Gall’s law
+4. [x] Goodhart’s law
+
+### Which proposed task is least consistent with YAGNI?
+
+1. [x] Building a generic plugin framework for a hypothetical future need.
+2. [ ] Fixing a bug reported by current users.
+3. [ ] Implementing a feature required by the current release.
+4. [ ] Simplifying a confusing code path that the team is changing now.
+
+### A developer wants to add several flexible options to a tool “just in case,” though no user or requirement currently calls for them. Which principle most directly challenges this choice?
+
+1. [ ] Linus Torvalds’ law
+2. [ ] Tesler’s law
+3. [x] YAGNI
+4. [ ] The pesticide paradox
+
+### Why is “optimize after profiling” consistent with Knuth’s optimization principle?
+
+1. [ ] It removes the need to consider performance.
+2. [x] It directs effort toward measured bottlenecks instead of guessed ones.
+3. [ ] It guarantees that every optimization improves readability.
+4. [ ] It prevents technical debt from accumulating.
+
+### A test suite has not found a defect in a module for months. What response best reflects the pesticide paradox?
+
+1. [ ] Stop testing the module because it is proven correct.
+2. [ ] Run the exact same tests more often.
+3. [ ] Assume the module has no remaining defects.
+4. [x] Review and vary the tests, since repeated tests may stop finding new bugs.
+
+### How should dependencies be handled in clean code?  
+
+1. [ ] By including them in every module  
+2. [x] By minimizing them and ensuring they are well-managed  
+3. [ ] By avoiding their use altogether  
+4. [ ] By embedding them directly in the code
+
+### What is a "single responsibility" in clean code?  
+
+1. [ ] A rule stating that a team member can only work on one task at a time  
+2. [ ] A design principle where a repository contains only one project  
+3. [ ] A principle where a class can only inherit from one parent  
+4. [x] A principle stating that a class or function should have only one reason to change  
+
+### In a typical layered architecture, which layer is responsible for business logic?  
+
+1. [ ] The presentation layer  
+2. [ ] The data access layer  
+3. [x] The application or service layer  
+4. [ ] The infrastructure layer  
+
+### What is the innermost layer in onion architecture?  
+
+1. [ ] Infrastructure  
+2. [ ] Application services  
+3. [x] Domain entities and logic  
+4. [ ] User interface  
+
+### In a layered architecture, which layer interacts directly with the database?  
+
+1. [ ] Presentation layer  
+2. [x] Data access layer  
+3. [ ] Domain layer  
+4. [ ] Infrastructure layer  
+
+### Which architectural style is best suited for an application requiring strict separation of concerns and independent testing of business logic?  
+
+1. [ ] Client-server  
+2. [ ] Layered architecture  
+3. [x] Hexagonal architecture  
+4. [ ] Message-bus  
+
+### Which architectural style promotes using the same core application logic for different user interfaces, such as web, mobile, and API?  
+
+1. [ ] Client-server  
+2. [ ] Layered architecture  
+3. [x] Hexagonal architecture  
+4. [ ] Message-bus  
+
+### Which UML diagram is most similar in purpose to a flowchart?
+
+1. [ ] Class diagram
+2. [ ] Deployment diagram
+3. [x] Activity diagram
+4. [ ] Use case diagram
+
+### Which level of the C4 model details the internal structure of a container?
+
+1. [ ] Context  
+2. [ ] Container  
+3. [x] Component  
+4. [ ] Code  
+
+### Which metric is commonly used in Kanban to measure the average time it takes for a task to move through the process?
+
+1. [x] Cycle time  
+2. [ ] Sprint velocity  
+3. [ ] Lead time  
+4. [ ] Burndown rate  
+
+### Who determines the definition of done?
+
+1. [ ] Scrum Master  
+2. [ ] Product Owner  
+3. [x] Development Team  
+4. [ ] Stakeholders  
+
+### What should the Product Backlog be ordered by?
+
+1. [ ] Alphabetical order  
+2. [ ] Stakeholder preferences  
+3. [x] Priority, with the most valuable items at the top  
+4. [ ] Team availability  
+
+### Which role is responsible for ensuring that Scrum is understood and enacted?
+
+1. [x] Scrum Master  
+2. [ ] Product Owner  
+3. [ ] Development Team  
+4. [ ] Project Manager  
