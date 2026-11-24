@@ -79,11 +79,113 @@ overview first, zoom into details later
 <!-- user story mapping | review with output | documentation -->
 :::
 
+## steps of requirement analysis
+
+1. stakeholder identification
+2. elicitation of requirements (gathering data)
+3. documentation of requirements
+4. analysis and negotiation
+5. validation and verification
+        
+:::::::::::: {.columns .text-smaller .mt-3}
+::::::::: {.column width="50%"}
+validation
+
+:    - are we building the right thing?
+:    - is about confirming that the requirements actually meet the needs of the stakeholders
+
+:::::::::
+::::::::: {.column width="50%"}
+verification
+
+:    - are we building the thing right?
+:    - to ensure that all requirements are clear, unambiguous, and consistent
+
+:::::::::
+::::::::::::
+
+## functional and non-functional requirements
+
+::: {.wide-quote}
+functional requirements define what a system is supposed to do<br>and non-functional requirements define how a system is supposed to operate [@enwiki:1245895117]
+
+:::
+
+:::::::::::: {.columns .mt-3}
+::::::::: {.column width="50%"}
+functional
+
+- [what]{.background-color-lightblue}
+- features
+- the webserver can serve pages via HTTP2
+
+:::::::::
+::::::::: {.column width="50%}
+non-functional
+
+- [how]{.background-color-lightblue}
+- quality goals, quality of service requirements
+- webserver is available 99.9% of time<br>(yearly about 8h 41m downtime)
+- can serve at least 5.000 queries per sec
+
+:::::::::
+::::::::::::
+
+## minimum viable product
+
+:::::::::::::::::: {.columns}
+::::::::::::::: {.column width="60%"}
+
+:::::::::::: {.columns}
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/blue-saloon-car-wheels.svg){height=150}
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/blue-saloon-car-body.svg){height=150}
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/blue-saloon-car.svg){height=150}
+
+:::::::::
+::::::::::::
+
+:::::::::::: {.columns}
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/children-bicycle.svg){height=150}
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/blue-scooter-motorbike.svg){height=150}
+
+:::::::::
+::::::::: {.column width="30%"}
+![](figures/publicdomainvectors/blue-saloon-car.svg){height=150}
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+based on [Making sense of MVP (Minimum Viable Product)](https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp) by Henrik Kniberg
+:::
+
+:::::::::::::::
+::::::::::::::: {.column width="40%"}
+![](figures/user_story_map_short.drawio.svg)
+:::::::::::::::
+::::::::::::::::::
+
+::: {.text-smaller}
+Gall's law: _A complex system that works is invariably evolved from a simple system that worked._
+
+:::
+
 # wireframing
 
 :::::::::::: {.columns}
 ::::::::: {.column width="40%" .text-smaller .mt-2}
-`as a user I want to see my activity to see my progress`
+`as a user I want to see my activity to track my progress`
 
 display user statistics including
 
