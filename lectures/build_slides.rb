@@ -7,6 +7,7 @@ Dir.glob('./summary_week*.md') do |x|
 end
 generate_full_summary
 inputs.push "summary_full.md"
+inputs.push "summary_by_practice.md"
 inputs.each do |x|
     `ruby build.rb -m #{x}`
 end
