@@ -821,6 +821,146 @@ data-cites="hauer2018code"><a href="#/ref-hauer2018code"
 role="doc-biblioref">[4]</a></span></p>
 </div>
 </section></section>
+<section id="software-design-and-architecture-stack"
+class="title-slide slide level1">
+<h1>software design and architecture stack</h1>
+<figure>
+<img
+data-src="figures/the_software_design_and_architecture_stack_generalized.drawio.svg"
+height="475" alt="based on Khalil Stemmel’s figure [5]" />
+<figcaption aria-hidden="true">based on Khalil Stemmel’s figure <span
+class="citation" data-cites="stemmler2019how"><a
+href="#/ref-stemmler2019how"
+role="doc-biblioref">[5]</a></span></figcaption>
+</figure>
+</section>
+
+<section>
+<section id="karpathy-inspired-claude-code-guidelines"
+class="title-slide slide level1">
+<h1>Karpathy-inspired claude code guidelines</h1>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr>
+<th>principle</th>
+<th>addresses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>think before coding</td>
+<td>wrong assumptions, hidden confusion,<br>missing tradeoffs</td>
+</tr>
+<tr>
+<td>simplicity first</td>
+<td>overcomplication, bloated abstractions</td>
+</tr>
+<tr>
+<td>surgical changes</td>
+<td>orthogonal edits, touching code you shouldn’t</td>
+</tr>
+<tr>
+<td>goal-driven execution</td>
+<td>leverage through tests-first, verifiable success criteria</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p>source: <a
+href="https://github.com/multica-ai/andrej-karpathy-skills">Karpathy-Inspired
+Claude Code Guidelines</a></p>
+</div>
+</section>
+<section id="think-before-coding" class="slide level2">
+<h2>1. Think Before Coding</h2>
+<p><strong>Don’t assume. Don’t hide confusion. Surface
+tradeoffs.</strong></p>
+<p>Before implementing:</p>
+<ul>
+<li>State your assumptions explicitly. If uncertain, ask.</li>
+<li>If multiple interpretations exist, present them - don’t pick
+silently.</li>
+<li>If a simpler approach exists, say so. Push back when warranted.</li>
+<li>If something is unclear, stop. Name what’s confusing. Ask.</li>
+</ul>
+<div class="text-smaller">
+<p>source: <a
+href="https://github.com/multica-ai/andrej-karpathy-skills">Karpathy-Inspired
+Claude Code Guidelines</a></p>
+</div>
+<div class="r-frame mt-2">
+<p>Explicit is better than implicit.</p>
+</div>
+</section>
+<section id="simplicity-first" class="slide level2">
+<h2>2. Simplicity First</h2>
+<p><strong>Minimum code that solves the problem. Nothing
+speculative.</strong></p>
+<ul>
+<li>No features beyond what was asked.</li>
+<li>No abstractions for single-use code.</li>
+<li>No “flexibility” or “configurability” that wasn’t requested.</li>
+<li>No error handling for impossible scenarios.</li>
+<li>If you write 200 lines and it could be 50, rewrite it.</li>
+</ul>
+<p>Ask yourself: “Would a senior engineer say this is overcomplicated?”
+If yes, simplify.</p>
+<div class="text-smaller">
+<p>source: <a
+href="https://github.com/multica-ai/andrej-karpathy-skills">Karpathy-Inspired
+Claude Code Guidelines</a></p>
+</div>
+</section>
+<section id="surgical-changes" class="slide level2">
+<h2>3. Surgical Changes</h2>
+<p><strong>Touch only what you must. Clean up only your own
+mess.</strong></p>
+<p>When editing existing code:</p>
+<ul>
+<li>Don’t “improve” adjacent code, comments, or formatting.</li>
+<li>Don’t refactor things that aren’t broken.</li>
+<li>Match existing style, even if you’d do it differently.</li>
+<li>If you notice unrelated dead code, mention it - don’t delete
+it.</li>
+</ul>
+<p>When your changes create orphans: - Remove
+imports/variables/functions that YOUR changes made unused. - Don’t
+remove pre-existing dead code unless asked.</p>
+<p>The test: Every changed line should trace directly to the user’s
+request.</p>
+<div class="text-smaller">
+<p>source: <a
+href="https://github.com/multica-ai/andrej-karpathy-skills">Karpathy-Inspired
+Claude Code Guidelines</a></p>
+</div>
+</section>
+<section id="goal-driven-execution" class="slide level2">
+<h2>4. Goal-Driven Execution</h2>
+<p><strong>Define success criteria. Loop until verified.</strong></p>
+<p>Transform tasks into verifiable goals:</p>
+<ul>
+<li>“Add validation” → “Write tests for invalid inputs, then make them
+pass”</li>
+<li>“Fix the bug” → “Write a test that reproduces it, then make it
+pass”</li>
+<li>“Refactor X” → “Ensure tests pass before and after”</li>
+</ul>
+<p>For multi-step tasks, state a brief plan:</p>
+<pre><code>1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]</code></pre>
+<p>Strong success criteria let you loop independently. Weak criteria
+(“make it work”) require constant clarification.</p>
+<div class="text-smaller">
+<p>source: <a
+href="https://github.com/multica-ai/andrej-karpathy-skills">Karpathy-Inspired
+Claude Code Guidelines</a></p>
+</div>
+</section></section>
 <section id="references" class="title-slide slide level1">
 <h1>references</h1>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0"
@@ -854,6 +994,15 @@ Hauer, <span>“Code review guidelines for humans.”</span> <a href="
                     " class="uri">
                    https://phauer.com/2018/code-review-guidelines/
 </a>, 31-July-2018.</div>
+</div>
+<div id="ref-stemmler2019how" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">K.
+Stemmler, <span>“How to learn software design and architecture.”</span>
+<a href="
+                    https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
+                    " class="uri">
+                    https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design
+</a>, 28-Sept-2019.</div>
 </div>
 </div>
 <!--
