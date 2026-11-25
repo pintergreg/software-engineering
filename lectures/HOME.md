@@ -232,6 +232,6 @@ MVC-MVP-MVVM
 ## week 12
 
 1. [summary](/software-engineering/slides/summary_full.html)
-2. [summary by practical example](/software-engineering/slides/sumary_by_practice.html)
+2. [summary by practical example](/software-engineering/slides/summary_by_practice.html)
 3. [mindmap](/software-engineering/slides/mindmap.html)
 4. [mock exam](/software-engineering/slides/mock_exam.html)
