@@ -52,8 +52,8 @@ misunderstanding the task can be costly
 requirement smell | review with output | documentation
 :::
 
-# requirement analysis
 
+# requirement analysis
 
 :::::::::::: {.columns}
 ::::::::: {.column width="65%" .text-smaller}
@@ -79,6 +79,7 @@ overview first, zoom into details later
 <!-- user story mapping | review with output | documentation -->
 :::
 
+
 ## steps of requirement analysis
 
 1. stakeholder identification
@@ -103,6 +104,7 @@ verification
 
 :::::::::
 ::::::::::::
+
 
 ## functional and non-functional requirements
 
@@ -130,6 +132,7 @@ non-functional
 
 :::::::::
 ::::::::::::
+
 
 ## minimum viable product
 
@@ -181,6 +184,7 @@ Gall's law: _A complex system that works is invariably evolved from a simple sys
 
 :::
 
+
 # wireframing
 
 :::::::::::: {.columns}
@@ -219,9 +223,166 @@ display user statistics including
 :::::::::
 ::::::::::::
 
+
 ## wireframe map
 
 ![](figures/user_statistics/wireframe_map_full.drawio.svg){width=750}
+
+
+# design
+
+offline application, a simple case
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![](../lectures/figures/user_statistics/simple_case_long.drawio.svg){width=550}
+:::
+::: {.fragment .fade-in data-fragment-index=1}
+![](../lectures/figures/user_statistics/telemetry_case_long.drawio.svg){width=550}
+:::
+::::::
+
+:::::: {.r-stack}
+::: {.fragment .fade-out data-fragment-index=1}
+![](../lectures/figures/user_statistics/flashcard_system_context_2b.drawio.svg)
+:::
+::: {.fragment .fade-in data-fragment-index=1}
+![](../lectures/figures/user_statistics/flashcard_system_context_2.drawio.svg)
+:::
+::::::
+
+
+## system context diagram
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%" .mt-2}
+- shows how the software fits into the world
+  - [who use it]{.text-smaller}
+  - [what other software does it interacts]{.text-smaller}
+- high level diagram
+  - [technologies, protocols and other low-level details are not important]{.text-smaller}
+- similar to use case diagram
+- understandable for non-technical people
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/user_statistics/c4_system_context.drawio.svg){width=400}
+
+::: {.text-smaller}
+other possible users:
+
+administrator, course planner
+:::
+:::::::::
+::::::::::::
+
+
+## system context vs use case
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" }
+![](../lectures/figures/user_statistics/flashcard_system_context.drawio.svg)
+
+:::::::::
+::::::::: {.column width="50%"}
+![](../lectures/figures/user_statistics/use_case.svg)
+
+:::::::::
+::::::::::::
+
+
+## container - SaaS variant
+
+:::::::::::: {.columns}
+::::::::: {.column width="50%" .mt-2}
+- zooms into the software system
+- shows the containers that make up that software system
+  - [applications, data stores, microservices]{.text-smaller}
+- technology decisions are also a key part of this diagram
+  - [what DBMS to use]{.text-smaller}
+  - [what e-mail service to use]{.text-smaller}
+  - [what programming language to use]{.text-smaller}
+  - [what UI framework to use]{.text-smaller}
+
+:::::::::
+::::::::: {.column width="50%"}
+
+![](figures/user_statistics/c4_contianer.drawio.svg){width=375}
+:::::::::
+::::::::::::
+
+
+## container
+
+![](../lectures/figures/user_statistics/flashcard_container.drawio.svg)
+
+## component diagram
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+- decomposition of each container to identify the major structural building blocks and their interactions
+- shows how a container is made up of a number of "components" 
+  - what these components are, 
+  - what they are responsibilities for, and
+  - what also shows technology / implementation details
+- roughly equivalent with the UML component diagram
+
+:::::::::
+::::::::: {.column width="40%"}
+![the example shows the components of only one feature, so incomplete](figures/user_statistics/c4_component.excalidraw.svg){width=400}
+
+:::::::::
+::::::::::::
+
+
+## component - GUI focus
+
+![](../lectures/figures/user_statistics/ui_example_v1.drawio.svg)
+
+
+# architectural styles / topologies
+
+:::::::::::: {.columns}
+::::::::: {.column width="33%"}
+control flow? structure?
+
+![[historically grown architecture<br>based on [@woltmann2023hexagonal]]{.text-smaller}](figures/legacy_structure.drawio.svg){width=400 data-preview-image="figures/legacy_structure.drawio.svg" data-preview-fit="contain"}
+
+:::::::::
+::::::::: {.column width="33%"}
+![](figures/layered_4.drawio.svg){width=200}
+
+:::::::::
+::::::::: {.column width="33%"}
+![](figures/onion.drawio.svg){width=250}
+
+![](figures/hexagonal_extend.drawio.svg){width=250}
+
+:::::::::
+::::::::::::
+
+
+# architecture review
+
+:::::::::::: {.columns}
+::::::::: {.column width="40%"}
+![C4 diagrams as the output of the high level design](figures/user_statistics/c4_component.excalidraw.svg){width=400}
+
+:::::::::
+::::::::: {.column width="15%" .mt-5}
+![](figures/double_arrow.drawio.svg){width=100}
+
+:::::::::
+::::::::: {.column width="40%"}
+![risk storming as a review process](figures/user_statistics/risk_storming.excalidraw.svg){width=400}
+
+:::::::::
+::::::::::::
+
+::: {.mt-2}
+documenting findings | evaluating them | risk register | mitigation
+:::
+
 
 # references
 
@@ -229,11 +390,13 @@ display user statistics including
 :::
 
 
-<!--:::::::::::: {.columns}
+<!--
+:::::::::::: {.columns}
 ::::::::: {.column width="50%" }
 
 :::::::::
 ::::::::: {.column width="50%"}
 
 :::::::::
-::::::::::::-->
+::::::::::::
+-->

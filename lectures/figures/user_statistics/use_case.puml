@@ -1,0 +1,15 @@
+@startuml
+skin rose
+scale 2
+left to right direction
+
+package "flashcard application" {
+usecase "track progress"
+usecase "learn words"
+usecase "select group"
+}
+
+:language learner: --> (select group)
+:language learner: --> (learn words)
+:language learner: --> (track progress)
+@enduml
