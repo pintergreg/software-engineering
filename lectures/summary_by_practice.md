@@ -361,6 +361,146 @@ control flow? structure?
 :::::::::
 ::::::::::::
 
+##
+
+![hexagonal arcitectural pattern (a.k.a. ports & adapters)](figures/hexagonal_interface.drawio.svg){width=700}
+
+the most important elements of the design are the interfaces, hexagonal architecture focuses on them
+
+## user statistics - C4 component
+
+:::::::::::: {.columns}
+::::::::: {.column width="60%"}
+:::::: {.r-stack}
+::: {.absolute-left data-left="250"}
+focus on the interface<br>between the UI and<br>the user statistics module
+:::
+
+![](figures/user_statistics/c4_component.drawio.svg)
+::::::
+:::::::::
+::::::::: {.column width="40%" .wide-quote}
+*sends user statistics in JSON via a REST endpoint*
+
+::: {.mt-3}
+- what is in the JSON?
+- which endpoint?
+:::
+
+::: {.mt-3}
+![](figures/user_statistics/user_data_light.svg)
+
+`/user/<id>/statistics`
+:::
+:::::::::
+::::::::::::
+
+
+## do not change the interface without notice
+
+:::::::::::: {.columns .mt-4}
+::::::::: {.column width="50%" }
+![float: 0--1](figures/user_statistics/user_data_light.svg){width=375}
+
+:::::::::
+::::::::: {.column width="50%" }
+![integer: 0--100](figures/user_statistics/user_data_light_changed.svg){width=375}
+
+:::::::::
+::::::::::::
+
+::: {.mt-4}
+this will break the frontend
+
+::: {.text-smaller}
+it is not just rude, but will waste the time of the other team (with pointless debugging)
+:::
+:::
+
+
+## API versions
+
+:::::::::::: {.columns .column-gapless}
+::::::::: {.column width="60%"}
+![](figures/user_statistics/interface_versions.svg){width=475}
+
+:::::::::
+::::::::: {.column width="40%"}
+![](figures/user_statistics/interface_versions_gantt.svg){width=375}
+
+::: {.text-smaller}
+- 2021-06-30: API v1's end of live
+    - service does not accept connections via APIv1
+    - code can be removed (no need to maintain it anymore)
+
+:::
+:::::::::
+::::::::::::
+
+::: {}
+`https://developers.facebook.com/v21.0/me?fields=id,name`
+:::
+
+## Hyrum's Law
+
+:::::::::::: {.columns}
+::::::::: {.column width="65%" .wide-quote .mt-5}
+> With a sufficient number of users of an API,
+> it does not matter what you promise in the contract:
+> all observable behaviors of your system
+> will be depended on by somebody.
+>
+> --  Hyrum Wright, 2012
+
+:::{}
+[Hyrum's Law](https://www.hyrumslaw.com/)
+:::
+
+:::::::::
+::::::::: {.column width="35%"}
+no documented `/users` endpoint, but existing implementation
+
+```ruby
+get '/users' do
+  data = {ids: [42]}
+  return data.to_json()
+end
+```
+
+sooner or later someone will discover the undocumented behavior and depend on it
+
+:::::::::
+::::::::::::
+
+::: {.text-smaller}
+think like a villian, someone who's going to abuse the system that you’re designing and building
+
+:::
+
+
+## Postel's law / robustness principle
+
+![](figures/postels_law.svg)
+
+:::::::::::: {.columns .wide-quote}
+::::::::: {.column width="33%"}
+> When receiving data, handle variations, minor errors, or deviations where possible. Don’t crash or reject communication over minor issues.
+
+:::::::::
+::::::::: {.column width="33%"}
+> When your system emits data or interacts with the outside world, adhere closely to protocols and standards.
+
+:::::::::
+::::::::: {.column width="33%"}
+> In modern times, overly liberal acceptance can sometimes mask errors, so this law is occasionally tempered with security considerations.
+
+:::::::::
+::::::::::::
+
+:::{.text-smaller}
+source: [Laws of Software Engineering / Postel's Law](https://lawsofsoftwareengineering.com/laws/postels-law/) by Dr. Milan Milanović
+:::
+
 
 # architecture review
 
