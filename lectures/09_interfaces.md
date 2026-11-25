@@ -71,7 +71,7 @@ based on [@dodd2020metric], read the [full story](https://everydayastronaut.com/
 
 ![hexagonal arcitectural pattern (a.k.a. ports & adapters)](figures/hexagonal_interface.drawio.svg){width=700}
 
-the most important elements of the design are the interfaces, hexagonal arcitecture focuses on them
+the most important elements of the design are the interfaces, hexagonal architecture focuses on them
 
 ## discussion
 
