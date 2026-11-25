@@ -523,6 +523,56 @@ source: [Laws of Software Engineering / Postel's Law](https://lawsofsoftwareengi
 documenting findings | evaluating them | risk register | mitigation
 :::
 
+## review types by formality
+
+|type       |formality     |led by                           |effort  |documentation                           |
+|:---------:|:------------:|:-------------------------------:|:------:|:--------------------------------------:|
+|informal   |not formal    |noone                            |minimal |undocumented                            |
+|walkthrough|somewhat formal|authors                          |very low|normal, fault-finding                   |
+|technical  |less formal   |trained moderator, not the author|moderate|more detailed                           |
+|inspection |most formal   |trained moderator                |high    |thorough; based on standards, checklists|
+
+
+## review -- author's perspective
+
+- be humble
+    - mind that everybody's code can be improved
+    - you are not perfect, accept that you will make mistakes
+- open to feedback
+- you are not your code
+- the goal is to deliver higher quality code, not about arguing who was right
+    - you and the reviewer are in the same side
+- you and the reviewer are not only talking about the code,
+    - you are exchanging best practices and experiences
+- you can learn from the review
+
+::: {.text-smaller}
+source: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
+
+## review -- reviewer's perspective
+
+- use I-messages
+- talk about the code, not the coder
+- ask questions instead of making statements
+- refer to the behavior, not the traits of the author
+- accept that there are different solutions
+- respect and trust the author
+- mind the OIR-rule of giving feedback
+    - [observation, impact, request]{.text-smaller}
+- before giving feedback, ask yourself:
+    - [is it true? (opinion != truth)]{.text-smaller}
+    - [is it necessary? (avoid nagging, focus on the current work product)]{.text-smaller}
+    - [is it kind? (no shaming)]{.text-smaller}
+- be humble; you are not perfect and you can also improve
+- it's fine to say: Everything is good!
+- don't forget to praise
+
+::: {.text-smaller}
+source: [Code Review Guidelines for Humans](https://phauer.com/2018/code-review-guidelines/) [@hauer2018code]
+:::
+
 
 # references
 
