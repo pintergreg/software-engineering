@@ -6,6 +6,8 @@ citeproc: true
 csl: "../assets/ieee.csl"
 mathml: true
 assets: "../assets"
+html_header: "custom_header.html"
+html_after_body: "custom_after_body.html"
 exclude:
     - README
     - SUMMARY
