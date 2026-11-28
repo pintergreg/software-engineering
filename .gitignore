@@ -7,3 +7,5 @@ ref/
 src/
 # compiled mdbook
 book/
+
+mdbook-*
